@@ -22,11 +22,5 @@ Windows, in PowerShell:
 irm https://raw.githubusercontent.com/workbench-soft/workbench-soft.github.io/main/media-organizer/install.ps1 | iex
 ```
 
-macOS, in Terminal:
-
-```sh
-curl -fsSL https://raw.githubusercontent.com/workbench-soft/workbench-soft.github.io/main/media-organizer/install.sh | sh
-```
-
 - **Version** each script reads `latest.json` from the [media-organizer-latest](https://github.com/workbench-soft/workbench-soft.github.io/releases/tag/media-organizer-latest) release. The desktop app reads the same file for its update.
 - **Android** get `MediaOrganizer-<version>-android.apk` from the [releases page](https://github.com/workbench-soft/workbench-soft.github.io/releases?q=media-organizer&expanded=true).
