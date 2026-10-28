@@ -1,0 +1,43 @@
+name: Pages
+
+# Publishes https://workbench-soft.github.io on each push to main.
+# The repo is public, so the hosted runner spends no Actions minutes.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/configure-pages@v6
+      - name: Build the Memories site
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./memories-mobile
+          destination: ./_site/memories-mobile
+      # The Jekyll step runs in a container as root, so _site belongs to root.
+      - name: Add the root files
+        run: sudo cp index.html app-ads.txt robots.txt _site/
+      - uses: actions/upload-pages-artifact@v5
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

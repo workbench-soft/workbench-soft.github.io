@@ -1,0 +1,26 @@
+---
+layout: default
+---
+<p class="text-gray"><a href="{{ "/guides/" | relative_url }}">Guides</a> · Updated {{ page.last_modified_at | date: "%-d %B %Y" }} by <a href="{{ "/about" | relative_url }}">{{ site.author }}</a></p>
+
+{{ content }}
+
+<h2>More guides</h2>
+<ul>
+{% assign guides = site.pages | where: "layout", "guide" | sort: "nav_order" %}
+{% for guide in guides %}{% unless guide.url == page.url %}
+  <li><a href="{{ guide.url | relative_url }}">{{ guide.title }}</a></li>
+{% endunless %}{% endfor %}
+</ul>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "{{ site.title }}", "item": "{{ "/" | absolute_url }}" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "{{ "/guides/" | absolute_url }}" },
+    { "@type": "ListItem", "position": 3, "name": {{ page.title | jsonify }}, "item": "{{ page.url | absolute_url }}" }
+  ]
+}
+</script>

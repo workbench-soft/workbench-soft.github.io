@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+{% seo %}
+    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ "/assets/favicon-32.png" | relative_url }}">
+    <link rel="apple-touch-icon" href="{{ "/assets/apple-touch-icon.png" | relative_url }}">
+    <link rel="manifest" href="{{ "/site.webmanifest" | relative_url }}">
+    {% include analytics.html %}
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      {% unless page.url == "/" %}
+      <p class="f3 text-bold"><a href="{{ "/" | relative_url }}">{{ site.title }}</a></p>
+      {% endunless %}
+
+      {{ content }}
+
+      <footer class="border-top border-gray-light mt-5 pt-3 text-gray">
+        <a href="{{ "/" | relative_url }}">Home</a> ·
+        <a href="{{ "/guides/" | relative_url }}">Guides</a> ·
+        <a href="{{ "/about" | relative_url }}">About</a> ·
+        <a href="{{ "/privacy-policy" | relative_url }}">Privacy policy</a> ·
+        <a href="mailto:workbench.soft@gmail.com">Contact</a>
+      </footer>
+    </div>
+  </body>
+</html>

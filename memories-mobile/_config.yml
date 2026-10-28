@@ -1,0 +1,34 @@
+title: Memories
+tagline: On this day photos from your QNAP or Synology NAS
+description: >-
+  Android app that shows "on this day" photo memories from your own QNAP or
+  Synology NAS over WebDAV. Like Google Photos memories, with no cloud and no account.
+url: https://workbench-soft.github.io
+baseurl: /memories-mobile
+lang: en
+author: Oleg Chibikov
+logo: /assets/icon.png
+theme: jekyll-theme-primer
+
+twitter:
+  card: summary_large_image
+
+defaults:
+  - scope:
+      path: ''
+    values:
+      image: /assets/og.png
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Proves ownership to Google Search Console. The token is public on every page.
+webmaster_verifications:
+  google: U_0inmjCQMowLmsrWTAMT8YFiTcKkR2UZ82EHVLM4zg
+
+# Counts site visits without cookies. The token is public on every page.
+cloudflare_analytics_token: 4dd25be2f0c940afbcb9dd447dc41154
+
+# Every Memories release, newest first. The APK is on each one.
+download_url: https://github.com/workbench-soft/workbench-soft.github.io/releases?q=memories-mobile&expanded=true
