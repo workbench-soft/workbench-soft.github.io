@@ -1,6 +1,6 @@
 # The Workbench Soft site, the Memories site and the Media Organizer installer
 
-Done on 2026-10-28, before the history was reset to one commit. The old commits sit under `refs/backup/main` in the local backup mirror of `workbench-soft.github.io`.
+Done on 2025-10-28, before the history was reset to one commit. The old commits sit under `refs/backup/main` in the local backup mirror of `workbench-soft.github.io`.
 
 ## Why
 
@@ -27,8 +27,8 @@ The studio needed one public site for its apps and their installers.
 
 ## Steps, in commit order
 
-1. Publish the Workbench Soft site and the Memories site (2d2ec63, 2026-10-28)
-2. Install Media Organizer from this repo (5da5f58, 2026-10-28)
+1. Publish the Workbench Soft site and the Memories site (2d2ec63, 2025-10-28)
+2. Install Media Organizer from this repo (5da5f58, 2025-10-28)
 
 ## Docs to update
 
