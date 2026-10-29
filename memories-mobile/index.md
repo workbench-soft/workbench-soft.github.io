@@ -1,6 +1,6 @@
 ---
 title: Memories
-last_modified_at: 2026-10-27
+last_modified_at: 2025-10-27
 ---
 
 # Memories: on this day photos from your NAS
