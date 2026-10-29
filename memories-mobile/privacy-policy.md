@@ -1,12 +1,12 @@
 ---
 title: Memories Privacy Policy
 description: Memories keeps your photos, their places and your NAS login on your phone and your NAS. Google AdMob shows the ads in the app.
-last_modified_at: 2026-10-27
+last_modified_at: 2026-10-29
 ---
 
 # Memories Privacy Policy
 
-Last updated: 27 October 2026
+Last updated: 29 October 2026
 
 Memories shows "on this day" photo memories from your own NAS. The app
 sends no data to the developer. Your photos, their places and your NAS
@@ -30,16 +30,25 @@ Google AdMob, which collects the data listed under "Ads".
   in Settings. Later the app compares the last known position with home,
   to pick the home or the remote NAS address. The position stays on the
   phone.
-- **All files access** lets the app read the date and GPS point of the
-  photos in your camera folder. It uploads them to your NAS when you ask.
-  It moves the phone copies to the trash or deletes them when you ask.
+- **The DCIM folder** you grant in the Android folder picker. The app
+  asks for no access to other files. Through this folder it reads the
+  date and GPS point of your camera photos and uploads them to your NAS
+  when you ask. Phone sort and auto sort rename the camera files and move
+  them into dated folders inside DCIM. After an upload the app deletes
+  the phone copy, unless you turn on "Keep a copy on the phone". Free up
+  moves the phone copies to the trash or deletes them when you ask. You
+  can take the grant back in Android Settings, Apps, Memories.
 - **Notifications** are daily reminders planned on the phone. No server
   sends them.
 
 ## Network connections the app makes
 
 - **Your NAS** over WebDAV, to list folders, read files and upload the
-  photos you choose.
+  photos you choose. On your home network this traffic may be plain
+  http, as many NAS models serve it that way.
+- **Your local network**, when you connect a NAS. The app looks for
+  WebDAV and NAS services on your Wi-Fi with a local network scan
+  (mDNS). The scan stays on your network.
 - **OpenStreetMap tile servers** and **unpkg.com**, only when you open a
   map. The tile server sees the map area you view. unpkg.com serves the
   map code.
@@ -51,7 +60,8 @@ Google AdMob, which collects the data listed under "Ads".
   updates from Google Play.
 
 GPS points from your photos are turned into place names by a database
-inside the app. No photo location leaves the phone.
+inside the app. The app sends no photo location to the developer. A map
+you open loads its area from OpenStreetMap.
 
 ## Ads
 
@@ -74,6 +84,18 @@ screens, and now and then a full screen ad when you close a photo.
 ## Analytics, accounts
 
 The app has no analytics of its own and no user accounts.
+
+## Deleting your data
+
+Uninstall the app, or clear its storage in Android Settings, Apps,
+Memories, Storage. Either removes the photo index, your home location,
+your NAS login and the thumbnails from the phone. The photos on your NAS
+stay there, with you.
+
+## Children
+
+The app is not meant for children, and it doesn't knowingly collect
+data from them.
 
 ## This website
 
