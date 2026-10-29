@@ -29,7 +29,9 @@ jobs:
           destination: ./_site/memories-mobile
       # The Jekyll step runs in a container as root, so _site belongs to root.
       - name: Add the root files
-        run: sudo cp index.html app-ads.txt robots.txt _site/
+        run: |
+          sudo cp index.html app-ads.txt robots.txt _site/
+          sudo cp -r langflip _site/
       - uses: actions/upload-pages-artifact@v5
 
   deploy:
