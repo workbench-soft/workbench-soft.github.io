@@ -12,6 +12,10 @@ Public files for the Workbench Soft apps. The code sits in private repos in this
 
 The release jobs push with the `RELEASES_TOKEN` secret of each app repo. It is a fine-grained token with write access to this repo only.
 
+## Langflip
+
+The page sits in [langflip/](langflip/) and is served at https://workbench-soft.github.io/langflip/. Its download link opens the [Langflip releases](https://github.com/workbench-soft/workbench-soft.github.io/releases?q=langflip&expanded=true), where the Langflip CI publishes `Langflip-<version>-windows-x64.exe`.
+
 ## Media Organizer
 
 The desktop app installs with one command. The scripts sit in [media-organizer/](media-organizer/).

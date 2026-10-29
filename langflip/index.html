@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Langflip: исправляет слова, набранные не в той раскладке</title>
+  <meta name="description" content="Langflip для Windows превращает ghbdtn в «привет» и hello, набранное по-русски, обратно в hello. Без сети и без журнала набора.">
+  <link rel="canonical" href="https://workbench-soft.github.io/langflip/">
+  <meta property="og:title" content="Langflip: исправляет слова, набранные не в той раскладке">
+  <meta property="og:description" content="ghbdtn превращается в «привет» на пробеле. Русский и английский, Windows.">
+  <meta property="og:url" content="https://workbench-soft.github.io/langflip/">
+  <meta property="og:type" content="website">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Langflip",
+    "operatingSystem": "Windows 10, Windows 11",
+    "applicationCategory": "UtilitiesApplication",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "url": "https://workbench-soft.github.io/langflip/"
+  }
+  </script>
+  <style>
+    body { font: 17px/1.5 system-ui, sans-serif; max-width: 40rem; margin: 3rem auto; padding: 0 1rem; color: #222; background: #fbf7f0; }
+    a { color: #5b3fd1; }
+    li { margin: .4rem 0; }
+    code, kbd { font: 15px ui-monospace, monospace; background: #efe8dc; padding: .1rem .3rem; border-radius: 4px; }
+    .download { display: inline-block; margin: .5rem 0 1rem; padding: .7rem 1.2rem; background: #5b3fd1; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 600; }
+    .note { color: #666; font-size: 15px; }
+  </style>
+</head>
+<body>
+  <p><a href="../">Workbench Soft</a></p>
+  <h1>Langflip</h1>
+  <p>Набрали <code>ghbdtn</code>, забыв переключить раскладку? Нажмите пробел, и Langflip сам напечатает «привет» и переключит раскладку на русскую. С английским так же: <code>руддщ</code> станет <code>hello</code>.</p>
+
+  <a class="download" href="https://github.com/workbench-soft/workbench-soft.github.io/releases?q=langflip&amp;expanded=true">Скачать для Windows</a>
+  <p class="note">Файл <code>Langflip-&lt;версия&gt;-windows-x64.exe</code>. Он пока без цифровой подписи, поэтому при первом запуске Windows покажет предупреждение: нажмите «Подробнее», затем «Выполнить в любом случае». Версия для macOS готовится.</p>
+
+  <h2>Как пользоваться</h2>
+  <ul>
+    <li><strong>Исправление</strong> срабатывает на пробеле, Enter или Tab. Langflip трогает слова от 4 букв, короткие оставляет как есть.</li>
+    <li><strong>Отмена</strong> клавиша <kbd>Pause</kbd> сразу после исправления возвращает слово как было и запоминает его.</li>
+    <li><strong>Перевод вручную</strong> <kbd>Shift</kbd>+<kbd>Pause</kbd> переводит последнее слово в другую раскладку.</li>
+    <li><strong>Пауза</strong> щелчок по значку в трее выключает Langflip, значок становится серым. Второй щелчок включает.</li>
+    <li><strong>Автозапуск</strong> включается при первом запуске. Выключить можно в меню значка: правая кнопка, «Запускать при входе».</li>
+  </ul>
+
+  <h2>Приватность</h2>
+  <p>Langflip не ходит в сеть, не шлёт статистику и не ведёт журнал набора. Текущее слово хранится только в памяти и забывается, когда начинается следующее. Поля паролей он пропускает.</p>
+
+  <h2>Что умеет</h2>
+  <ul>
+    <li><strong>Языки</strong> русский (ЙЦУКЕН) и английский (US QWERTY).</li>
+    <li><strong>Системы</strong> Windows 10 и 11. macOS скоро.</li>
+    <li><strong>Точность</strong> на тестовом наборе из 40 000 слов ошибочно исправляется меньше 1 слова на 1000.</li>
+  </ul>
+
+  <p>Вопросы и пожелания: <a href="mailto:workbench.soft@gmail.com">workbench.soft@gmail.com</a></p>
+</body>
+</html>
