@@ -2,8 +2,8 @@
 layout: guide
 title: How to turn on WebDAV on a QNAP NAS
 description: Turn on WebDAV in QTS, give your user access to the photo folder, find the WebDAV address and port, and fix the usual login and folder errors.
-date: 2026-10-27
-last_modified_at: 2026-10-27
+date: 2025-10-27
+last_modified_at: 2025-10-27
 nav_order: 1
 seo:
   type: Article

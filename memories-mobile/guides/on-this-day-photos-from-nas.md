@@ -2,8 +2,8 @@
 layout: guide
 title: On this day photos from your QNAP or Synology NAS
 description: See the photos you took on this day in past years, straight from your own NAS, with a daily reminder, the places and the trips abroad.
-date: 2026-10-27
-last_modified_at: 2026-10-27
+date: 2025-10-27
+last_modified_at: 2025-10-27
 nav_order: 3
 seo:
   type: Article

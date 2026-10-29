@@ -1,7 +1,7 @@
 ---
 title: Guides
 description: Set up WebDAV on a QNAP or Synology NAS, see on this day photos, back up Android photos to the NAS and open them away from home.
-last_modified_at: 2026-10-27
+last_modified_at: 2025-10-27
 ---
 
 # Guides

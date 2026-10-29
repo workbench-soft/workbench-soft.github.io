@@ -2,8 +2,8 @@
 layout: guide
 title: See your NAS photos away from home with Tailscale
 description: Open the photos on a QNAP or Synology NAS from your Android phone anywhere, through Tailscale, with no open router port.
-date: 2026-10-27
-last_modified_at: 2026-10-27
+date: 2025-10-27
+last_modified_at: 2025-10-27
 nav_order: 5
 seo:
   type: Article

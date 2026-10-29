@@ -2,7 +2,7 @@
 
 Public files for the Workbench Soft apps. The code sits in private repos in this org.
 
-- **Releases** each app's CI publishes its APKs and installers on the [releases page](https://github.com/workbench-soft/workbench-soft.github.io/releases). The tag starts with the repo name, such as `tickalot-v2026.10.28.3`. Each app keeps its last 3 releases.
+- **Releases** each app's CI publishes its APKs and installers on the [releases page](https://github.com/workbench-soft/workbench-soft.github.io/releases). The tag starts with the repo name, such as `tickalot-v2025.10.28.3`. Each app keeps its last 3 releases.
 - **Updates** the apps installed from an APK read the release list through the GitHub API and pick the newest tag with their own name.
 - **Site** https://workbench-soft.github.io, built by [pages.yml](.github/workflows/pages.yml) on each push to main.
 - **Memories site** sits in [memories-mobile/](memories-mobile/), a Jekyll site with its own `_config.yml`.

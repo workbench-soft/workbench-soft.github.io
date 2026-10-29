@@ -2,8 +2,8 @@
 layout: guide
 title: How to turn on WebDAV on a Synology NAS
 description: Install WebDAV Server in DSM, turn on HTTP on port 5005, give your user access to the photo folder and open it from an Android phone.
-date: 2026-10-27
-last_modified_at: 2026-10-27
+date: 2025-10-27
+last_modified_at: 2025-10-27
 nav_order: 2
 seo:
   type: Article

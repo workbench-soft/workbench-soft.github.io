@@ -1,7 +1,7 @@
 ---
 title: About Memories
 description: Who makes Memories, the Android app for on this day photos from your own NAS, why it exists and how to get in touch.
-last_modified_at: 2026-10-27
+last_modified_at: 2025-10-27
 ---
 
 # About Memories

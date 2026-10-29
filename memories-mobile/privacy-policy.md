@@ -1,12 +1,12 @@
 ---
 title: Memories Privacy Policy
 description: Memories keeps your photos, their places and your NAS login on your phone and your NAS. Google AdMob shows the ads in the app.
-last_modified_at: 2026-10-29
+last_modified_at: 2025-10-29
 ---
 
 # Memories Privacy Policy
 
-Last updated: 29 October 2026
+Last updated: 29 October 2025
 
 Memories shows "on this day" photo memories from your own NAS. The app
 sends no data to the developer. Your photos, their places and your NAS

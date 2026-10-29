@@ -2,8 +2,8 @@
 layout: guide
 title: Move Android photos to a NAS in dated folders
 description: Back up the Android camera folder to a QNAP or Synology NAS over WebDAV, sorted into year, place and day folders, then free up the phone.
-date: 2026-10-27
-last_modified_at: 2026-10-27
+date: 2025-10-27
+last_modified_at: 2025-10-27
 nav_order: 4
 seo:
   type: Article
