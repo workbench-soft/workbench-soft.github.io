@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Workbench Games</string>
+    <string name="title_activity_main">Workbench Games</string>
+    <string name="package_name">com.workbenchsoft.games</string>
+    <string name="custom_url_scheme">com.workbenchsoft.games</string>
+</resources>
