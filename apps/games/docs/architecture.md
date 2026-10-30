@@ -44,7 +44,7 @@ sequenceDiagram
   W-->>P: room page from dist/games/room
   P->>W: WebSocket /games/ws/ABC123
   W->>R: idFromName(ABC123)
-  P->>R: hello with token, name, color
+  P->>R: hello with protocol version, token, name, color
   R-->>P: state, chat log, drawing
   P->>R: draw ops every 80 ms
   R-->>P: draw ops to the other players
@@ -52,6 +52,7 @@ sequenceDiagram
 ```
 
 - **Identity** the browser keeps a random token. The room hashes it into the player id, so the token stays secret from the other players.
+- **Protocol version** `hello` carries `PROTOCOL` from `src/shared/protocol.ts`, and the room keeps it with the socket. The apps ship their own copy of the client, so a change an old client can't read raises the number, and the Worker answers each socket in its own format.
 - **Hibernation** the room accepts sockets through the Hibernation API. An idle room leaves memory, and a socket message or an alarm wakes it from storage.
 - **Timers** alarms drive every deadline: picking a word, the end of a turn, a telephone step, a clue round, and the cleanup 30 minutes after the room empties.
 

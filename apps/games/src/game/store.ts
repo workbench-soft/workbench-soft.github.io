@@ -1,6 +1,6 @@
 import { signal } from '@preact/signals';
 import { Drawing } from '../shared/canvas.ts';
-import type { ChatMsg, ClientMsg, ErrorKey, RoomView, ServerMsg, TeleEntry, TeleKind } from '../shared/protocol.ts';
+import { PROTOCOL, type ChatMsg, type ClientMsg, type ErrorKey, type RoomView, type ServerMsg, type TeleEntry, type TeleKind } from '../shared/protocol.ts';
 import { lang } from './i18n.ts';
 import { socketUrl } from './platform.ts';
 import { token } from './storage.ts';
@@ -75,7 +75,7 @@ export function connect(code: string, name: string, color: string): void {
   ws.addEventListener('open', () => {
     retry = 0;
     status.value = 'open';
-    ws.send(JSON.stringify({ t: 'hello', token: token(), name: identity.name, color: identity.color, lang: lang.value } satisfies ClientMsg));
+    ws.send(JSON.stringify({ t: 'hello', v: PROTOCOL, token: token(), name: identity.name, color: identity.color, lang: lang.value } satisfies ClientMsg));
     ping = window.setInterval(() => ws.readyState === WebSocket.OPEN && ws.send('ping'), 25_000);
   });
   ws.addEventListener('message', (event) => {
