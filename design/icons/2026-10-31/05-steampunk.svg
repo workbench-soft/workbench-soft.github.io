@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <title>Steampunk: a brass gear with a wrench across it, on dark leather with rivets</title>
+  <defs><linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe29a"/><stop offset="0.5" stop-color="#d39a3a"/><stop offset="1" stop-color="#7a4f17"/></linearGradient></defs>
+  <rect width="256" height="256" rx="44" fill="#2b1a10"/>
+  <g fill="#c79a52"><circle cx="30" cy="30" r="7"/><circle cx="226" cy="30" r="7"/><circle cx="30" cy="226" r="7"/><circle cx="226" cy="226" r="7"/></g>
+  <g transform="translate(128 128)" fill="url(#b)">
+    <circle r="72"/>
+    <rect x="-17" y="-100" width="34" height="40" rx="6" transform="rotate(0)"/><rect x="-17" y="-100" width="34" height="40" rx="6" transform="rotate(45)"/><rect x="-17" y="-100" width="34" height="40" rx="6" transform="rotate(90)"/><rect x="-17" y="-100" width="34" height="40" rx="6" transform="rotate(135)"/><rect x="-17" y="-100" width="34" height="40" rx="6" transform="rotate(180)"/><rect x="-17" y="-100" width="34" height="40" rx="6" transform="rotate(225)"/><rect x="-17" y="-100" width="34" height="40" rx="6" transform="rotate(270)"/><rect x="-17" y="-100" width="34" height="40" rx="6" transform="rotate(315)"/>
+    <circle r="40" fill="#2b1a10"/>
+  </g>
+  <g fill="#e8e1d4" stroke="#2b1a10" stroke-width="8" transform="rotate(45 128 128)"><path d="M113 34.6A44 44 0 1 0 143 34.6L143 70L113 70Z"/><rect x="114" y="96" width="28" height="124" rx="14"/></g>
+</svg>

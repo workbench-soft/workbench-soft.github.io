@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <title>Art deco: the rocket alone for small sizes</title>
+  <rect width="256" height="256" rx="40" fill="#0e0d0b"/>
+  <g fill="#e8c25a" transform="translate(128 128) scale(1.15) translate(-128 -130)">
+    <path d="M128 32C162 66 170 120 162 172H94C86 120 94 66 128 32Z"/>
+    <path d="M96 132L62 196L100 178ZM160 132L194 196L156 178Z"/>
+    <path d="M108 180H148L128 228Z"/>
+  </g>
+</svg>

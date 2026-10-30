@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **Icon** the browser tab and the home screen show a white wrench and hammer on a violet to pink tile, in place of the `WS` letters. The 10 drafts sit in `design/icons/2026-10-31`.
+
 - **Games apps** a phone that got the developer key over adb shows no banner. `--ads on` on the dev-phone script brings Google's test banner.
 - **Games rooms** a malformed message no longer stops a room, a kick in drawing telephone moves the step on, and a room keeps 24 seats at most.
 - **Room codes** the join form takes only the letters codes use, and a broken room link says so in the apps too.

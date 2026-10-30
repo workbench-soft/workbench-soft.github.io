@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <title>Stained glass: a golden wrench over four bright panes held in dark lead</title>
+  <rect width="256" height="256" rx="40" fill="#151515"/>
+  <path d="M18 18H238L128 128Z" fill="#2fb5a8"/><path d="M238 18V238L128 128Z" fill="#7a4cd9"/>
+  <path d="M238 238H18L128 128Z" fill="#e2453c"/><path d="M18 238V18L128 128Z" fill="#2f78e2"/>
+  <path d="M18 18L238 238M238 18L18 238" stroke="#151515" stroke-width="10"/>
+  <rect x="13" y="13" width="230" height="230" rx="34" fill="none" stroke="#151515" stroke-width="12"/>
+  <g fill="#ffd34d" stroke="#151515" stroke-width="10" stroke-linejoin="round" transform="rotate(45 128 128)"><path d="M113 34.6A44 44 0 1 0 143 34.6L143 70L113 70Z"/><rect x="114" y="96" width="28" height="124" rx="14"/></g>
+</svg>

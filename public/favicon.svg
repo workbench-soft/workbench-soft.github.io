@@ -1,1 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5cf2ff"/><stop offset=".55" stop-color="#a98bff"/><stop offset="1" stop-color="#c5ff4a"/></linearGradient></defs><rect width="32" height="32" rx="8" fill="url(#g)"/><text x="16" y="21" text-anchor="middle" font-family="ui-monospace,monospace" font-size="12" font-weight="700" fill="#04060b">WS</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <title>Gradient mesh: white crossed tools on a violet to pink gradient tile</title>
+  <defs><linearGradient id="m" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5b5cff"/><stop offset="0.55" stop-color="#b14dff"/><stop offset="1" stop-color="#ff5ca8"/></linearGradient></defs>
+  <rect width="256" height="256" rx="56" fill="url(#m)"/>
+  <g fill="#ffffff" transform="translate(128 128) scale(0.86) translate(-128 -128)">
+    <g transform="rotate(45 128 128)"><path d="M113 34.6A44 44 0 1 0 143 34.6L143 70L113 70Z"/><rect x="114" y="96" width="28" height="124" rx="14"/></g>
+    <g stroke="#a04cf0" stroke-width="10" transform="rotate(-45 128 128)"><rect x="72" y="40" width="112" height="48" rx="8"/><rect x="116" y="80" width="24" height="144" rx="12"/></g>
+  </g>
+</svg>

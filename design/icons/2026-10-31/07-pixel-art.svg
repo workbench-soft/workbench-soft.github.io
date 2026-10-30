@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" shape-rendering="crispEdges">
+  <title>Pixel art: a chunky hammer on a 16 by 16 grid, steel head and wooden handle</title>
+  <rect width="256" height="256" fill="#1b1f3b"/>
+  <g fill="#0a0c1c"><rect x="32" y="32" width="192" height="96"/><rect x="96" y="112" width="64" height="128"/></g>
+  <rect x="48" y="48" width="160" height="64" fill="#b8c4d8"/>
+  <rect x="48" y="48" width="160" height="16" fill="#e8eef8"/>
+  <rect x="48" y="96" width="160" height="16" fill="#7c8aa4"/>
+  <rect x="112" y="112" width="32" height="112" fill="#c8742c"/>
+  <rect x="112" y="112" width="16" height="112" fill="#e8964a"/>
+  <rect x="112" y="192" width="32" height="32" fill="#8a4a18"/>
+</svg>

@@ -68,3 +68,14 @@ The studio needed one public site for its apps and their installers.
   - **`CHANGELOG.md`** an entry.
 - **Content** each project's text comes from its repo: `docs/features.md` and the README. The `project-architecture` repo stays off the page, since it holds work done for an employer. Internal helpers (`memories-demo-webdav`, `speedcameralocationscraper`) stay off too.
 - **Limits** English only. Links go to the public sites and the releases page, since the code repos are private. Motion stops under `prefers-reduced-motion`.
+
+## 2026-10-31 A site icon from the icons skill
+
+- **Why** the favicon was the letters `WS` in a font the browser may lack,
+  and each tool with a UI now gets its icon from the `icon-styles` skill.
+- **Pick** `08-gradient-mesh`: a white wrench and hammer crossed on a violet
+  to pink tile. It was drawn for the launcher, which kept its own arch icon,
+  so the brand site takes it. All 10 drafts sit in `design/icons/2026-10-31`.
+- **Changes** `public/favicon.svg`, `public/favicon.ico` and
+  `public/apple-touch-icon.png`, linked from `src/layouts/Base.astro`.
+- **Docs** `CHANGELOG.md`.

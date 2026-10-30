@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <title>Blueprint: filled white tools for small sizes</title>
+  <rect width="256" height="256" rx="40" fill="#0d3b78"/>
+  <g fill="#ffffff" stroke="#0d3b78" stroke-width="10"><g transform="rotate(45 128 128)"><path d="M113 34.6A44 44 0 1 0 143 34.6L143 70L113 70Z"/><rect x="114" y="96" width="28" height="124" rx="14"/></g><g transform="rotate(-45 128 128)"><rect x="72" y="40" width="112" height="48" rx="8"/><rect x="116" y="80" width="24" height="144" rx="12"/></g></g>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <title>Art deco: a gold rocket lifting off over a sunburst, the launcher taking off</title>
+  <defs><linearGradient id="au" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbe7a1"/><stop offset="1" stop-color="#c8962e"/></linearGradient></defs>
+  <rect width="256" height="256" rx="40" fill="#0e0d0b"/>
+  <rect x="14" y="14" width="228" height="228" rx="28" fill="none" stroke="#c8962e" stroke-width="4"/>
+  <path d="M128 210L40 60L64 48ZM128 210L92 34L118 30ZM128 210L138 30L164 34ZM128 210L192 48L216 60Z" fill="#c8962e" opacity="0.4"/>
+  <g fill="url(#au)">
+    <path d="M128 32C162 66 170 120 162 172H94C86 120 94 66 128 32Z"/>
+    <path d="M96 132L62 196L100 178ZM160 132L194 196L156 178Z"/>
+    <path d="M108 180H148L128 228Z"/>
+  </g>
+  <circle cx="128" cy="108" r="17" fill="#0e0d0b" stroke="#fbe7a1" stroke-width="6"/>
+</svg>

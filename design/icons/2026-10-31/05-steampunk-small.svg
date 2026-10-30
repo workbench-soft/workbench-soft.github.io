@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <title>Steampunk: a big wrench on a brass disc for small sizes</title>
+  <defs><linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe29a"/><stop offset="1" stop-color="#b07a26"/></linearGradient></defs>
+  <rect width="256" height="256" rx="44" fill="#2b1a10"/>
+  <circle cx="128" cy="128" r="112" fill="url(#b)"/>
+  <g fill="#2b1a10" transform="rotate(45 128 128)"><path d="M113 34.6A44 44 0 1 0 143 34.6L143 70L113 70Z"/><rect x="114" y="96" width="28" height="124" rx="14"/></g>
+</svg>
