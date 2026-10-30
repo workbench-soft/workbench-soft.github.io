@@ -39,11 +39,11 @@ sequenceDiagram
   participant E as Edge
   participant W as Games Worker
   participant R as Room object
-  P->>E: GET /games/r/ABC123
+  P->>E: GET /games/r/ABC234
   E->>W: same request
   W-->>P: room page from dist/games/room
-  P->>W: WebSocket /games/ws/ABC123
-  W->>R: idFromName(ABC123)
+  P->>W: WebSocket /games/ws/ABC234
+  W->>R: idFromName(ABC234)
   P->>R: hello with protocol version, token, name, color
   R-->>P: state, chat log, drawing
   P->>R: draw ops every 80 ms

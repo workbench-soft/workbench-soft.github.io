@@ -1,5 +1,6 @@
 // The Android and iOS apps load the same pages from a local origin. They reach the rooms on the site.
 import { BASE, DEFAULT_SITE } from '../shared/paths.ts';
+import { CODE_RE } from '../shared/protocol.ts';
 
 type Capacitor = { isNativePlatform(): boolean; getPlatform(): string };
 
@@ -21,9 +22,13 @@ export function roomLink(code: string): string {
   return `${isNative() ? SITE_URL : location.origin}${BASE}/r/${code}`;
 }
 
-/** The room code from `/games/r/CODE`, or from `?code=` in the apps, which load the room page from local files. */
+/**
+ * The room code from `/games/r/CODE`, or from `?code=` in the apps, which load the room page from local files.
+ * A code the Worker would turn down gives null, so the page says the link is broken.
+ */
 export function codeFromLocation(): string | null {
   const path = location.pathname.match(/\/r\/([A-Za-z0-9]{6})\/?$/)?.[1];
   const query = new URLSearchParams(location.search).get('code');
-  return (path ?? query)?.toUpperCase() ?? null;
+  const code = (path ?? query)?.toUpperCase() ?? null;
+  return code && CODE_RE.test(code) ? code : null;
 }

@@ -11,14 +11,14 @@ const text = TEXT[lang];
   <button type="button" class="btn btn-big" data-create={mode ?? ''}>{label ?? text.create}</button>
   <form class="join-code" data-join>
     <label for={`code-${mode ?? 'any'}`}>{text.joinCode}</label>
-    <input id={`code-${mode ?? 'any'}`} name="code" maxlength="6" autocomplete="off" autocapitalize="characters" placeholder={text.joinCodePlaceholder} pattern="[A-Za-z0-9]{6}" required />
+    <input id={`code-${mode ?? 'any'}`} name="code" maxlength="6" autocomplete="off" autocapitalize="characters" placeholder={text.joinCodePlaceholder} pattern="[A-HJ-NP-Za-hj-np-z2-9]{6}" title={text.joinCodeHint} required />
     <button type="submit" class="btn btn-ghost">{text.joinGo}</button>
   </form>
 </div>
 
 <script>
   import { BASE } from '../shared/paths.ts';
-  import { randomCode } from '../shared/protocol.ts';
+  import { CODE_RE, randomCode } from '../shared/protocol.ts';
 
   // The apps load these pages from local files, where /r/ links have no server behind them.
   const native = Boolean((globalThis as { Capacitor?: { isNativePlatform(): boolean } }).Capacitor?.isNativePlatform());
@@ -37,7 +37,7 @@ const text = TEXT[lang];
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       const code = String(new FormData(form).get('code') ?? '').trim().toUpperCase();
-      if (/^[A-Z0-9]{6}$/.test(code)) open(code);
+      if (CODE_RE.test(code)) open(code);
     });
   }
 </script>

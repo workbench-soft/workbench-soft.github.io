@@ -20,6 +20,8 @@ type SiteText = {
   createFor: string;
   joinCode: string;
   joinCodePlaceholder: string;
+  /** Shown when the typed code has a letter that codes don't use. */
+  joinCodeHint: string;
   joinGo: string;
   rulesTitle: string;
   tipsTitle: string;
@@ -42,7 +44,8 @@ const en: SiteText = {
   create: 'Create a room',
   createFor: 'Play {game}',
   joinCode: 'Have a room code?',
-  joinCodePlaceholder: 'ABC123',
+  joinCodePlaceholder: 'ABC234',
+  joinCodeHint: 'Six letters and digits. Codes have no I, O, 0 or 1.',
   joinGo: 'Join',
   rulesTitle: 'How to play',
   tipsTitle: 'Tips',
@@ -165,7 +168,8 @@ const ru: SiteText = {
   create: 'Создать комнату',
   createFor: 'Играть: {game}',
   joinCode: 'Есть код комнаты?',
-  joinCodePlaceholder: 'ABC123',
+  joinCodePlaceholder: 'ABC234',
+  joinCodeHint: 'Шесть латинских букв и цифр. В кодах нет I, O, 0 и 1.',
   joinGo: 'Войти',
   rulesTitle: 'Как играть',
   tipsTitle: 'Советы',
