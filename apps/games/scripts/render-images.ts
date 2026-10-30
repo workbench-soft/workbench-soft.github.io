@@ -20,7 +20,8 @@ const share = `
   <text x="80" y="540" font-family="Segoe UI, Arial, sans-serif" font-size="36" fill="#5b3df5">Free party games in the browser</text>
 </svg>`;
 
-const render = (svg: string, file: string) => writeFileSync(file, new Resvg(svg, { font: { loadSystemFonts: true } }).render().asPng());
+const render = (svg: string, file: string) =>
+  writeFileSync(file, new Resvg(svg, { font: { loadSystemFonts: true } }).render().asPng());
 
 render(logo(192), 'public/icon-192.png');
 render(logo(512), 'public/icon-512.png');

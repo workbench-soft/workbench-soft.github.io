@@ -9,7 +9,9 @@ import { drawing, drawingVersion, room, send } from './store.ts';
 function Hint({ hint }: { hint: string }) {
   return (
     <span class="hint" aria-label={hint.replaceAll('_', '?')}>
-      {[...hint].map((ch) => (ch === ' ' ? <span class="hint-gap" /> : <span class="hint-cell">{ch === '_' ? '' : ch}</span>))}
+      {[...hint].map((ch) =>
+        ch === ' ' ? <span class="hint-gap" /> : <span class="hint-cell">{ch === '_' ? '' : ch}</span>,
+      )}
       <small class="muted">{[...hint].filter((c) => c !== ' ' && c !== '-').length}</small>
     </span>
   );
@@ -29,8 +31,11 @@ export function GuessScreen() {
       <header class="play-bar">
         <span class="muted">{t('roundOf', { a: g.round, b: g.rounds })}</span>
         <div class="word">
-          {view.phase === 'drawing' && (g.word ? <strong>{isDrawer ? `${t('youDraw')} ${g.word}` : g.word}</strong> : <Hint hint={g.hint} />)}
-          {view.phase === 'choosing' && <span>{isDrawer ? t('chooseWord') : t('choosing', { name: drawer?.name ?? '' })}</span>}
+          {view.phase === 'drawing' &&
+            (g.word ? <strong>{isDrawer ? `${t('youDraw')} ${g.word}` : g.word}</strong> : <Hint hint={g.hint} />)}
+          {view.phase === 'choosing' && (
+            <span>{isDrawer ? t('chooseWord') : t('choosing', { name: drawer?.name ?? '' })}</span>
+          )}
           {view.phase === 'turnEnd' && (
             <span>
               {t('theWordWas')} <strong>{g.word}</strong>
@@ -44,7 +49,12 @@ export function GuessScreen() {
           <PlayerList mark={(p) => (p.id === g.drawerId ? '✎' : p.guessed ? '✓' : null)} />
         </aside>
         <div class="stage">
-          <Board drawing={drawing} version={drawingVersion} editable={isDrawer && view.phase === 'drawing'} onOps={onOps} />
+          <Board
+            drawing={drawing}
+            version={drawingVersion}
+            editable={isDrawer && view.phase === 'drawing'}
+            onOps={onOps}
+          />
           {view.phase === 'choosing' && isDrawer && g.choices && (
             <div class="overlay">
               <h2>{t('chooseWord')}</h2>

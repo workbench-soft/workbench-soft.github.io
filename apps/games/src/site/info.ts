@@ -54,7 +54,10 @@ export const INFO: Record<InfoKey, Record<Lang, Info>> = {
             'В ЕС, Великобритании и Швейцарии перед персональной рекламой появляется запрос согласия. Как Google использует данные: <a href="https://policies.google.com/technologies/partner-sites">policies.google.com</a>.',
           ],
         },
-        { h: 'Хостинг', p: ['Сайт и комнаты работают на Cloudflare. Cloudflare хранит короткие журналы запросов для защиты.'] },
+        {
+          h: 'Хостинг',
+          p: ['Сайт и комнаты работают на Cloudflare. Cloudflare хранит короткие журналы запросов для защиты.'],
+        },
         { h: 'Дети', p: ['Игры рассчитаны на широкую аудиторию и не просят личных данных.'] },
         { h: 'Связь', p: [`Вопросы и просьбы об удалении: <a href="mailto:${CONTACT}">${CONTACT}</a>.`] },
       ],
@@ -63,7 +66,8 @@ export const INFO: Record<InfoKey, Record<Lang, Info>> = {
   about: {
     en: {
       title: 'About Workbench Games',
-      description: 'Workbench Games makes free party games for friends: drawing, guessing and word games that run in the browser.',
+      description:
+        'Workbench Games makes free party games for friends: drawing, guessing and word games that run in the browser.',
       sections: [
         {
           p: [
@@ -76,7 +80,8 @@ export const INFO: Record<InfoKey, Record<Lang, Info>> = {
     },
     ru: {
       title: 'О Workbench Games',
-      description: 'Workbench Games делает бесплатные игры для компании: рисовалки, угадайки и игры в слова прямо в браузере.',
+      description:
+        'Workbench Games делает бесплатные игры для компании: рисовалки, угадайки и игры в слова прямо в браузере.',
       sections: [
         {
           p: [

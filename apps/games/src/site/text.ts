@@ -34,7 +34,15 @@ type SiteText = {
   about: string;
   langOther: string;
   langSuggest: string;
-  home: { title: string; description: string; h1: string; lead: string; stepsTitle: string; steps: string[]; faq: Faq[] };
+  home: {
+    title: string;
+    description: string;
+    h1: string;
+    lead: string;
+    stepsTitle: string;
+    steps: string[];
+    faq: Faq[];
+  };
   games: Record<Mode, GameText>;
 };
 
@@ -71,10 +79,19 @@ const en: SiteText = {
       'Pick a game in the lobby and press Start.',
     ],
     faq: [
-      { q: 'Is it free?', a: 'Yes. Every game is free. A small banner shows in the lobby and on the results screen, and the game screens stay free of ads.' },
+      {
+        q: 'Is it free?',
+        a: 'Yes. Every game is free. A small banner shows in the lobby and on the results screen, and the game screens stay free of ads.',
+      },
       { q: 'Do I need an account?', a: 'No. Type a name when you open the room. The browser keeps it for next time.' },
-      { q: 'How many people can play?', a: 'From 2 to 12 players in a room. The clue duel needs 4 or more, in two teams.' },
-      { q: 'Does it work on a phone?', a: 'Yes. The games run in any modern browser on Android, iPhone, tablets and computers. Draw with a finger, a pen or a mouse.' },
+      {
+        q: 'How many people can play?',
+        a: 'From 2 to 12 players in a room. The clue duel needs 4 or more, in two teams.',
+      },
+      {
+        q: 'Does it work on a phone?',
+        a: 'Yes. The games run in any modern browser on Android, iPhone, tablets and computers. Draw with a finger, a pen or a mouse.',
+      },
     ],
   },
   games: {
@@ -101,7 +118,10 @@ const en: SiteText = {
         'The host can add the group’s own words, such as names of friends or inside jokes.',
       ],
       faq: [
-        { q: 'Can we use our own words?', a: 'Yes. The host types them in the lobby, comma separated. With 12 words or more the game can use only those.' },
+        {
+          q: 'Can we use our own words?',
+          a: 'Yes. The host types them in the lobby, comma separated. With 12 words or more the game can use only those.',
+        },
         { q: 'Which languages are the words in?', a: 'English and Russian. The host picks the language in the lobby.' },
         { q: 'What if the artist leaves?', a: 'The turn ends, everyone sees the word, and the next player draws.' },
       ],
@@ -128,7 +148,10 @@ const en: SiteText = {
       ],
       faq: [
         { q: 'Is there a score?', a: 'No. The fun is in the stories at the end.' },
-        { q: 'What happens when time runs out?', a: 'The game sends what you have so far. An empty step shows as skipped.' },
+        {
+          q: 'What happens when time runs out?',
+          a: 'The game sends what you have so far. An empty step shows as skipped.',
+        },
         { q: 'Can someone join in the middle?', a: 'They watch the current game and play in the next one.' },
       ],
     },
@@ -154,9 +177,18 @@ const en: SiteText = {
         'Talk it over in voice chat before you lock in.',
       ],
       faq: [
-        { q: 'How is this different from other word games?', a: 'Both teams play at the same time on one board, and every clue is public. Stealing points makes each clue a bet.' },
-        { q: 'What if the teams are uneven?', a: 'The game evens them out at the start, so each team has at least 2 players.' },
-        { q: 'Can we use our own words?', a: 'Yes. The host adds them in the lobby. With 12 or more the board can use only those.' },
+        {
+          q: 'How is this different from other word games?',
+          a: 'Both teams play at the same time on one board, and every clue is public. Stealing points makes each clue a bet.',
+        },
+        {
+          q: 'What if the teams are uneven?',
+          a: 'The game evens them out at the start, so each team has at least 2 players.',
+        },
+        {
+          q: 'Can we use our own words?',
+          a: 'Yes. The host adds them in the lobby. With 12 or more the board can use only those.',
+        },
       ],
     },
   },
@@ -195,10 +227,19 @@ const ru: SiteText = {
       'Выберите игру в лобби и нажмите «Начать».',
     ],
     faq: [
-      { q: 'Это бесплатно?', a: 'Да, все игры бесплатные. Небольшой баннер есть в лобби и на экране итогов, а во время игры рекламы нет.' },
+      {
+        q: 'Это бесплатно?',
+        a: 'Да, все игры бесплатные. Небольшой баннер есть в лобби и на экране итогов, а во время игры рекламы нет.',
+      },
       { q: 'Нужна регистрация?', a: 'Нет. Введите имя, когда откроете комнату. Браузер запомнит его.' },
-      { q: 'Сколько человек может играть?', a: 'От 2 до 12 в одной комнате. Для дуэли подсказок нужно от 4 игроков в двух командах.' },
-      { q: 'Работает на телефоне?', a: 'Да. Игры идут в любом современном браузере на Android, iPhone, планшетах и компьютерах. Рисовать можно пальцем, стилусом или мышкой.' },
+      {
+        q: 'Сколько человек может играть?',
+        a: 'От 2 до 12 в одной комнате. Для дуэли подсказок нужно от 4 игроков в двух командах.',
+      },
+      {
+        q: 'Работает на телефоне?',
+        a: 'Да. Игры идут в любом современном браузере на Android, iPhone, планшетах и компьютерах. Рисовать можно пальцем, стилусом или мышкой.',
+      },
     ],
   },
   games: {
@@ -225,7 +266,10 @@ const ru: SiteText = {
         'Ведущий может добавить свои слова: имена друзей или шутки вашей компании.',
       ],
       faq: [
-        { q: 'Можно играть со своими словами?', a: 'Да. Ведущий вводит их в лобби через запятую. Если слов 12 и больше, игра может брать только их.' },
+        {
+          q: 'Можно играть со своими словами?',
+          a: 'Да. Ведущий вводит их в лобби через запятую. Если слов 12 и больше, игра может брать только их.',
+        },
         { q: 'На каких языках слова?', a: 'На русском и английском. Язык выбирает ведущий.' },
         { q: 'Что будет, если художник выйдет?', a: 'Ход закончится, все увидят слово, и рисовать начнёт следующий.' },
       ],
@@ -252,7 +296,10 @@ const ru: SiteText = {
       ],
       faq: [
         { q: 'Здесь есть очки?', a: 'Нет. Всё веселье в историях в конце.' },
-        { q: 'Что будет, если время вышло?', a: 'Игра отправит то, что уже есть. Пустой шаг будет отмечен как пропуск.' },
+        {
+          q: 'Что будет, если время вышло?',
+          a: 'Игра отправит то, что уже есть. Пустой шаг будет отмечен как пропуск.',
+        },
         { q: 'Можно присоединиться посреди игры?', a: 'Новый игрок смотрит текущую игру и играет в следующей.' },
       ],
     },
@@ -278,9 +325,18 @@ const ru: SiteText = {
         'Обсудите выбор в голосовом чате, прежде чем подтвердить.',
       ],
       faq: [
-        { q: 'Чем это отличается от других игр в слова?', a: 'Обе команды играют одновременно на одной доске, и каждая подсказка открыта. Перехват очков превращает подсказку в ставку.' },
-        { q: 'Что если команды неравные?', a: 'В начале игра выравнивает команды, так что в каждой будет минимум 2 игрока.' },
-        { q: 'Можно играть со своими словами?', a: 'Да. Ведущий добавляет их в лобби. Если слов 12 и больше, доска может брать только их.' },
+        {
+          q: 'Чем это отличается от других игр в слова?',
+          a: 'Обе команды играют одновременно на одной доске, и каждая подсказка открыта. Перехват очков превращает подсказку в ставку.',
+        },
+        {
+          q: 'Что если команды неравные?',
+          a: 'В начале игра выравнивает команды, так что в каждой будет минимум 2 игрока.',
+        },
+        {
+          q: 'Можно играть со своими словами?',
+          a: 'Да. Ведущий добавляет их в лобби. Если слов 12 и больше, доска может брать только их.',
+        },
       ],
     },
   },

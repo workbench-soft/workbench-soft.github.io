@@ -16,6 +16,7 @@ export function makeRoom(seed = 1) {
   const last = <T extends ServerMsg['t']>(id: string, t: T) =>
     (inbox.get(id) ?? []).findLast((m) => m.t === t) as Extract<ServerMsg, { t: T }> | undefined;
   const view = (id: string) => last(id, 'state')!.room;
-  const join = (ids: string[], now = 0) => ids.forEach((id) => room.connect(id, id.toUpperCase(), '#000000', 'en', now));
+  const join = (ids: string[], now = 0) =>
+    ids.forEach((id) => room.connect(id, id.toUpperCase(), '#000000', 'en', now));
   return { room, inbox, closed, last, view, join };
 }

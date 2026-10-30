@@ -98,8 +98,14 @@
 
   q.addEventListener("input", render);
   q.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowDown") (e.preventDefault(), select(sel + 1));
-    if (e.key === "ArrowUp") (e.preventDefault(), select(sel - 1));
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      select(sel + 1);
+    }
+    if (e.key === "ArrowUp") {
+      e.preventDefault();
+      select(sel - 1);
+    }
     if (e.key === "Enter" && shown[sel]) go(shown[sel]);
   });
   dlg.addEventListener("click", (e) => {

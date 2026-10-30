@@ -1,5 +1,13 @@
 import { sanitizeActions } from '../shared/canvas.ts';
-import { MAX_PHRASE, type AlbumView, type ClientMsg, type Speed, type TeleEntry, type TeleKind, type TeleView } from '../shared/protocol.ts';
+import {
+  MAX_PHRASE,
+  type AlbumView,
+  type ClientMsg,
+  type Speed,
+  type TeleEntry,
+  type TeleKind,
+  type TeleView,
+} from '../shared/protocol.ts';
 import { randomPrompt } from '../words/prompts.ts';
 import type { Room } from './room.ts';
 import { shuffle } from './util.ts';
@@ -36,7 +44,10 @@ export class TelephoneGame {
   }
 
   start(now: number): void {
-    this.order = shuffle(this.room.online().map((p) => p.id), this.room.random);
+    this.order = shuffle(
+      this.room.online().map((p) => p.id),
+      this.room.random,
+    );
     this.chains = this.order.map(() => []);
     this.step = 0;
     this.beginStep(now);
@@ -67,9 +78,19 @@ export class TelephoneGame {
       if (!actions) return;
       entry = { by: id, name, kind: 'drawing', actions, skipped: actions.length === 0 || undefined };
     } else {
-      const text = String(msg.text ?? '').replace(/\s+/g, ' ').trim().slice(0, MAX_PHRASE);
+      const text = String(msg.text ?? '')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .slice(0, MAX_PHRASE);
       if (text) entry = { by: id, name, kind: 'text', text };
-      else if (kind === 'write') entry = { by: id, name, kind: 'text', text: randomPrompt(this.room.settings.wordLang, this.room.random), skipped: true };
+      else if (kind === 'write')
+        entry = {
+          by: id,
+          name,
+          kind: 'text',
+          text: randomPrompt(this.room.settings.wordLang, this.room.random),
+          skipped: true,
+        };
       else entry = { by: id, name, kind: 'text', text: '', skipped: true };
     }
     this.chains[chain][this.step] = entry;
@@ -92,7 +113,13 @@ export class TelephoneGame {
 
   view(): TeleView | null {
     if (this.album) return null;
-    return { step: this.step, steps: this.steps, kind: kindOf(this.step), deadline: this.deadline, playing: this.order };
+    return {
+      step: this.step,
+      steps: this.steps,
+      kind: kindOf(this.step),
+      deadline: this.deadline,
+      playing: this.order,
+    };
   }
 
   albumView(): AlbumView | null {
@@ -132,7 +159,13 @@ export class TelephoneGame {
       this.chains[chain][this.step] =
         kind === 'draw'
           ? { by: id, name, kind: 'drawing', actions: [], skipped: true }
-          : { by: id, name, kind: 'text', text: kind === 'write' ? randomPrompt(this.room.settings.wordLang, this.room.random) : '', skipped: true };
+          : {
+              by: id,
+              name,
+              kind: 'text',
+              text: kind === 'write' ? randomPrompt(this.room.settings.wordLang, this.room.random) : '',
+              skipped: true,
+            };
       this.room.dirty.chains.add(chain);
     }
     this.step++;
@@ -156,7 +189,11 @@ export class TelephoneGame {
 
   private sendAlbum(to?: string): void {
     if (!this.album) return;
-    const msg = { t: 'album' as const, chain: this.album.chain, entries: this.chains[this.album.chain].slice(0, this.album.shown) };
+    const msg = {
+      t: 'album' as const,
+      chain: this.album.chain,
+      entries: this.chains[this.album.chain].slice(0, this.album.shown),
+    };
     if (to) this.room.send(to, msg);
     else this.room.broadcast(msg);
   }

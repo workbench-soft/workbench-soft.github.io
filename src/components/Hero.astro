@@ -64,7 +64,7 @@ const lines = ["We design,", "build and ship", "software."];
       const step = (now: number) => {
         const p = Math.min(1, Math.max(0, (now - start) / 900));
         const n = Math.floor(p * text.length);
-        const rest = [...text.slice(n)].map((ch) => (ch === " " ? " " : signs[(Math.random() * signs.length) | 0]));
+        const rest = Array.from(text.slice(n), (ch) => (ch === " " ? " " : signs[(Math.random() * signs.length) | 0]));
         el.textContent = text.slice(0, n) + rest.join("");
         if (p < 1) requestAnimationFrame(step);
       };

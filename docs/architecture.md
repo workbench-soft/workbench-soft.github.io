@@ -4,12 +4,12 @@ The repo serves https://workbench-soft.github.io from GitHub Pages. The site has
 
 ## Parts
 
-| Part | Folder | Built by |
-| --- | --- | --- |
-| Home page | `src/` | Astro, into `dist/` |
-| Memories site | `memories-mobile/` | Jekyll |
-| Langflip page | `langflip/` | copied as is |
-| Root files | `app-ads.txt`, `robots.txt` | copied as is |
+| Part          | Folder                      | Built by            |
+| ------------- | --------------------------- | ------------------- |
+| Home page     | `src/`                      | Astro, into `dist/` |
+| Memories site | `memories-mobile/`          | Jekyll              |
+| Langflip page | `langflip/`                 | copied as is        |
+| Root files    | `app-ads.txt`, `robots.txt` | copied as is        |
 
 ```mermaid
 flowchart LR

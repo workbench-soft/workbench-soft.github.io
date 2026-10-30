@@ -16,7 +16,11 @@ function Entry({ entry, index }: { entry: TeleEntry; index: number }) {
     <li class={`entry entry-${entry.kind}`}>
       <p class="entry-by">{t(label, { name: entry.name })}</p>
       {entry.kind === 'drawing' ? (
-        entry.skipped ? <p class="muted">{t('skipped')}</p> : <Picture actions={entry.actions ?? []} />
+        entry.skipped ? (
+          <p class="muted">{t('skipped')}</p>
+        ) : (
+          <Picture actions={entry.actions ?? []} />
+        )
       ) : (
         <p class="bubble">{entry.skipped && !entry.text ? t('skipped') : entry.text}</p>
       )}
@@ -84,7 +88,14 @@ function Task() {
               submit();
             }}
           >
-            <input value={text} maxLength={MAX_PHRASE} placeholder={t('writePlaceholder')} aria-label={t('write')} onInput={(e) => setText(e.currentTarget.value)} autofocus />
+            <input
+              value={text}
+              maxLength={MAX_PHRASE}
+              placeholder={t('writePlaceholder')}
+              aria-label={t('write')}
+              onInput={(e) => setText(e.currentTarget.value)}
+              autofocus
+            />
             <button type="button" class="btn btn-ghost" onClick={() => setText(randomPrompt(lang.value))}>
               {t('idea')}
             </button>
@@ -108,7 +119,11 @@ function Task() {
       {kind === 'describe' && (
         <>
           <h2 class="task-prompt">{t('describe')}</h2>
-          {prompt?.actions && !prompt.skipped ? <Picture actions={prompt.actions} key={tele.step} /> : <p class="muted">{t('skipped')}</p>}
+          {prompt?.actions && !prompt.skipped ? (
+            <Picture actions={prompt.actions} key={tele.step} />
+          ) : (
+            <p class="muted">{t('skipped')}</p>
+          )}
           <form
             class="task-form"
             onSubmit={(e) => {
@@ -116,7 +131,13 @@ function Task() {
               submit();
             }}
           >
-            <input value={text} maxLength={MAX_PHRASE} placeholder={t('describePlaceholder')} aria-label={t('describe')} onInput={(e) => setText(e.currentTarget.value)} />
+            <input
+              value={text}
+              maxLength={MAX_PHRASE}
+              placeholder={t('describePlaceholder')}
+              aria-label={t('describe')}
+              onInput={(e) => setText(e.currentTarget.value)}
+            />
             <button type="submit" class="btn">
               {t('done')}
             </button>

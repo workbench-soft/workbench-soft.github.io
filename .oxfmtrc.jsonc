@@ -1,0 +1,13 @@
+{
+  "singleQuote": true,
+  "printWidth": 120,
+  // Generated types, icon drafts and the static pages copied from other repos.
+  "ignorePatterns": [
+    "**/pnpm-lock.yaml",
+    "apps/games/worker/worker-configuration.d.ts",
+    "design/",
+    "langflip/",
+    "media-organizer/",
+    "memories-mobile/",
+  ],
+}

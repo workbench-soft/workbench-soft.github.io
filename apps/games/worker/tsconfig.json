@@ -11,6 +11,6 @@
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true
   },
-  "include": ["*.ts", "worker-configuration.d.ts","../src/shared", "../src/server", "../src/words"],
+  "include": ["*.ts", "worker-configuration.d.ts", "../src/shared", "../src/server", "../src/words"],
   "exclude": ["../src/**/*.test.ts", "../src/server/test-helpers.ts"]
 }

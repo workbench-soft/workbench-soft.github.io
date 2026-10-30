@@ -1,0 +1,17 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "unicorn", "oxc", "import"],
+  "categories": {
+    "correctness": "error"
+  },
+  "env": { "browser": true, "node": true },
+  "ignorePatterns": [
+    "dist/**",
+    ".astro/**",
+    "apps/**",
+    "design/**",
+    "langflip/**",
+    "media-organizer/**",
+    "memories-mobile/**"
+  ]
+}

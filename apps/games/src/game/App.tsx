@@ -13,11 +13,15 @@ import { load, save } from './storage.ts';
 import { connect, fatal, room, send, status } from './store.ts';
 import { AlbumScreen, TeleScreen } from './TeleScreen.tsx';
 
-const AVATAR_COLORS = COLORS.filter((c) => !['#ffffff', '#c3c3c3', '#fff59d', '#d7ccc8', '#ffd180', '#b9f6ca'].includes(c));
+const AVATAR_COLORS = COLORS.filter(
+  (c) => !['#ffffff', '#c3c3c3', '#fff59d', '#d7ccc8', '#ffd180', '#b9f6ca'].includes(c),
+);
 
 function JoinForm({ onJoin }: { onJoin: () => void }) {
   const [name, setName] = useState(load('name') ?? '');
-  const [color, setColor] = useState(() => load('color') ?? AVATAR_COLORS[Math.floor(Math.random() * AVATAR_COLORS.length)]);
+  const [color, setColor] = useState(
+    () => load('color') ?? AVATAR_COLORS[Math.floor(Math.random() * AVATAR_COLORS.length)],
+  );
   return (
     <form
       class="card join"
@@ -33,13 +37,27 @@ function JoinForm({ onJoin }: { onJoin: () => void }) {
       <h1>{t('join')}</h1>
       <label class="field">
         <span>{t('yourName')}</span>
-        <input value={name} maxLength={MAX_NAME} onInput={(e) => setName(e.currentTarget.value)} autofocus required autocomplete="off" />
+        <input
+          value={name}
+          maxLength={MAX_NAME}
+          onInput={(e) => setName(e.currentTarget.value)}
+          autofocus
+          required
+          autocomplete="off"
+        />
       </label>
       <fieldset class="field">
         <legend>{t('pickColor')}</legend>
         <div class="swatches">
           {AVATAR_COLORS.map((c) => (
-            <button type="button" class={`swatch${c === color ? ' on' : ''}`} style={{ background: c }} aria-label={c} aria-pressed={c === color} onClick={() => setColor(c)} />
+            <button
+              type="button"
+              class={`swatch${c === color ? ' on' : ''}`}
+              style={{ background: c }}
+              aria-label={c}
+              aria-pressed={c === color}
+              onClick={() => setColor(c)}
+            />
           ))}
         </div>
       </fieldset>
@@ -87,7 +105,14 @@ export function App() {
   useEffect(() => {
     const view = room.peek();
     const mode = new URLSearchParams(location.search).get('mode') as Mode | null;
-    if (view && mode && view.you === view.hostId && view.phase === 'lobby' && view.players.length === 1 && view.settings.mode !== mode) {
+    if (
+      view &&
+      mode &&
+      view.you === view.hostId &&
+      view.phase === 'lobby' &&
+      view.players.length === 1 &&
+      view.settings.mode !== mode
+    ) {
       send({ t: 'settings', settings: { mode } });
     }
   }, [you]);
@@ -111,7 +136,11 @@ export function App() {
               {t('room')} <b>{code}</b>
             </span>
           )}
-          <button type="button" class="btn btn-ghost btn-small" onClick={() => setLang(lang.value === 'ru' ? 'en' : 'ru')}>
+          <button
+            type="button"
+            class="btn btn-ghost btn-small"
+            onClick={() => setLang(lang.value === 'ru' ? 'en' : 'ru')}
+          >
             {lang.value === 'ru' ? 'EN' : 'RU'}
           </button>
         </div>
