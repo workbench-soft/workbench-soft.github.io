@@ -42,6 +42,8 @@ export interface Out {
 export const HOST_GRACE = 20_000;
 /** An empty room deletes its storage after this long. */
 export const EMPTY_TTL = 30 * 60_000;
+/** Seats a room keeps, offline players included, so new tokens can't grow it without end. */
+export const MAX_SEATS = MAX_PLAYERS * 2;
 const CHAT_LOG = 40;
 const CHAT_GAP = 350;
 
@@ -85,6 +87,7 @@ export class Room {
     }
     const cleanName = name.trim().replace(/\s+/g, ' ').slice(0, MAX_NAME) || 'Player';
     if (!player) {
+      if (this.players.size >= MAX_SEATS) this.dropNewestOffline();
       if (this.players.size === 0) this.settings.wordLang = lang;
       player = { id, name: cleanName, color: isColor(color) ? color : '#1e88e5', score: 0, online: true, team: this.smallerTeam() };
       this.players.set(id, player);
@@ -136,7 +139,7 @@ export class Room {
         if (host) this.backToLobby();
         break;
       case 'kick':
-        if (host && msg.id !== id) this.kick(String(msg.id));
+        if (host && msg.id !== id) this.kick(String(msg.id), now);
         break;
       case 'team':
         if (this.phase === 'lobby' && (msg.team === 'red' || msg.team === 'blue')) {
@@ -383,17 +386,27 @@ export class Room {
     if (this.online().length < need) this.backToLobby();
   }
 
-  private kick(id: string): void {
+  private kick(id: string, now: number): void {
     const player = this.players.get(id);
     if (!player) return;
     this.banned.add(id);
     this.sys('kicked', player.name);
     this.out.close(id, 'kicked');
     this.players.delete(id);
-    this.guess?.playerLeft(id, Date.now());
-    this.duel?.playerLeft(id, Date.now());
+    this.guess?.playerLeft(id, now);
+    this.tele?.playerLeft(now);
+    this.duel?.playerLeft(id, now);
     this.checkEnough();
     this.changed();
+  }
+
+  /**
+   * Frees the seat of the player who joined last among those offline. Players from the start of the
+   * game keep their seats and scores, and a flood of new tokens only replaces its own seats.
+   */
+  private dropNewestOffline(): void {
+    const seat = [...this.players.values()].findLast((p) => !p.online && p.id !== this.hostId);
+    if (seat) this.players.delete(seat.id);
   }
 
   private passHost(): void {

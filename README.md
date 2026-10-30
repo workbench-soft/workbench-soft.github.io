@@ -26,7 +26,7 @@ mise run dev
 
 - **Check** `mise run check` type checks the pages and scripts.
 - **Build** `mise run build` writes `dist/`. `mise run preview` serves it.
-- **Deploy** a push to `main` runs [pages.yml](.github/workflows/pages.yml). It builds the home page and the Memories site, then publishes both.
+- **Deploy** a push to `main` runs [pages.yml](.github/workflows/pages.yml). It builds the home page and the Memories site, then publishes both. A pull request runs the same build and skips the publish.
 
 ## Who writes here
 

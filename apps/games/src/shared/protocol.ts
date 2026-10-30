@@ -10,6 +10,12 @@ export type DuelStage = 'clue' | 'guess' | 'reveal';
 export const TEAMS: readonly Team[] = ['red', 'blue'];
 export const BOARD_SIZE = 12;
 
+/**
+ * The socket message format. The apps ship their own copy of the client, so old installs keep
+ * talking to each new Worker. Raise it on a change an old client can't read.
+ */
+export const PROTOCOL = 1;
+
 export const MAX_PLAYERS = 12;
 export const MAX_NAME = 20;
 export const MAX_CHAT = 100;
@@ -150,7 +156,8 @@ export type ChatMsg =
   | { kind: 'sys'; key: SystemKey; name?: string; word?: string };
 
 export type ClientMsg =
-  | { t: 'hello'; token: string; name: string; color: string; lang: Lang }
+  /** `v` is the client's PROTOCOL. Clients from before it send none, which counts as 1. */
+  | { t: 'hello'; v?: number; token: string; name: string; color: string; lang: Lang }
   | { t: 'chat'; text: string }
   | { t: 'settings'; settings: Partial<Settings> }
   | { t: 'start' }

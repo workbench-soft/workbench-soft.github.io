@@ -66,7 +66,8 @@ score, since the browser keeps a secret token.
 ## Limits
 
 - **Players** 2 to 12 in a room, 4 or more for the clue duel. A player who
-  joins mid game waits for the next turn, or the next game in telephone.
+  joins mid game waits for the next turn, or the next game in telephone. A
+  room keeps 24 seats at most, offline players included.
 - **Free plan** Workers Free gives 100,000 requests a day. With hibernation 20
   WebSocket messages count as 1 request. The artist sends points 12 times a
   second, about 40 hours of drawing a day before the limit.
@@ -118,3 +119,22 @@ score, since the browser keeps a secret token.
   5. Docs, CI, changelog, TODO.
 - **Docs** `README.md`, `docs/architecture.md`, `docs/user-flows.md`,
   `docs/features.md`, `CHANGELOG.md`.
+
+### 2026-10-30 Audit fixes: protocol version, seat cap, safer rooms
+
+- **Why** the app audit found rooms a bad message can break, and a socket
+  format with no version. The apps ship their own copy of the client, so old
+  installs keep talking to each new Worker.
+- **Changes**
+  - `apps/games/src/shared/protocol.ts` `PROTOCOL` version 1. The client
+    sends it in `hello`, and the room object keeps it with the socket. A
+    `hello` without it counts as version 1.
+  - `apps/games/src/server/room.ts` a room keeps at most 24 seats. A new
+    player past that takes the seat of the newest offline player, so the
+    players of a running game keep their seats and scores.
+  - `apps/games/src/server/` a kick in telephone moves the step on, and a
+    pick with a bad index is ignored.
+  - `apps/games/worker/room-object.ts` drops a message that isn't an object.
+  - The join form and the room page accept only the letters a room code uses.
+- **Steps** one commit per fix, each with its test where the code has tests.
+- **Docs** `apps/games/docs/architecture.md`, `CHANGELOG.md`.

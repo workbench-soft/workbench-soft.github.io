@@ -9,7 +9,11 @@ const CANVAS_SAVE_GAP = 2_000;
 const MAX_MESSAGE = 256 * 1024;
 const CLOSE_CODES: Record<ErrorKey, number> = { full: 4001, kicked: 4002, replaced: 4003, bad: 4004, clue: 4005 };
 
-type Attachment = { id: string } | null;
+/**
+ * `v` is the client's protocol version, so a later Worker can answer each socket in its own format.
+ * Sockets accepted before the version existed have none: read it as `v ?? 1`.
+ */
+type Attachment = { id: string; v?: number } | null;
 
 async function playerId(token: string): Promise<string> {
   const hash = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(`workbench-games:${token}`));
@@ -61,6 +65,7 @@ export class RoomObject extends DurableObject<Env> {
     } catch {
       return;
     }
+    if (!msg || typeof msg !== 'object') return;
     const now = Date.now();
     const attachment = ws.deserializeAttachment() as Attachment;
     if (msg.t === 'hello') {
@@ -72,7 +77,8 @@ export class RoomObject extends DurableObject<Env> {
         old.close(CLOSE_CODES.replaced, 'replaced');
         old.serializeAttachment(null);
       }
-      ws.serializeAttachment({ id } satisfies Attachment);
+      const v = Number.isInteger(msg.v) ? Number(msg.v) : 1;
+      ws.serializeAttachment({ id, v } satisfies Attachment);
       const lang: Lang = msg.lang === 'ru' ? 'ru' : 'en';
       room.connect(id, String(msg.name ?? ''), String(msg.color ?? ''), lang, now);
     } else if (attachment) {

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { CHOOSE_TIME, TURN_END_TIME } from './guess.ts';
-import { HOST_GRACE, EMPTY_TTL, Room } from './room.ts';
+import { HOST_GRACE, EMPTY_TTL, MAX_SEATS, Room } from './room.ts';
 import { GRACE, STEP_TIMES } from './telephone.ts';
 import { CLUE_TIME, PICK_TIME, REVEAL_TIME } from './duel.ts';
 import { makeRoom } from './test-helpers.ts';
@@ -35,6 +35,33 @@ describe('room', () => {
     room.message('a', { t: 'kick', id: 'b' }, 0);
     expect(closed.get('b')).toBe('kicked');
     expect(room.connect('b', 'B', '#000000', 'en', 1)).toBe(false);
+  });
+
+  it('keeps a bounded number of seats when new players keep coming and going', () => {
+    const { room, join } = makeRoom();
+    join(['host']);
+    for (let i = 0; i < MAX_SEATS * 3; i++) {
+      join([`p${i}`]);
+      room.disconnect(`p${i}`, 0);
+    }
+    expect(room.players.size).toBe(MAX_SEATS);
+    expect(room.players.has('host')).toBe(true);
+    expect(room.players.has(`p${MAX_SEATS * 3 - 1}`)).toBe(true);
+  });
+
+  it('keeps the seat and score of a player in the game while new tokens flood in', () => {
+    const { room, join } = makeRoom();
+    join(['host', 'alice', 'bob']);
+    room.message('host', { t: 'start' }, 0);
+    room.players.get('alice')!.score = 420;
+    room.disconnect('alice', 1);
+    for (let i = 0; i < MAX_SEATS * 2; i++) {
+      join([`p${i}`], 2);
+      room.disconnect(`p${i}`, 2);
+    }
+    expect(room.players.size).toBe(MAX_SEATS);
+    room.connect('alice', 'Alice', '#000000', 'en', 3);
+    expect(room.players.get('alice')?.score).toBe(420);
   });
 
   it('asks to be deleted after sitting empty', () => {
@@ -84,6 +111,16 @@ describe('guess the drawing', () => {
     room.message(drawer, { t: 'pick', index: 1 }, 1000);
     expect(view(drawer).guess?.word).toBe(room.guess!.word);
     expect(view(others[0]).guess?.word).toBeNull();
+    expect(view(others[0]).guess?.hint).toMatch(/^[_ -]+$/);
+  });
+
+  it('ignores a pick whose index is not a choice', () => {
+    const { view, drawer, others, room } = started();
+    for (const index of ['length', 'constructor', -1, 1.5, 3]) {
+      expect(() => room.message(drawer, { t: 'pick', index } as never, 1000)).not.toThrow();
+    }
+    expect(room.guess!.stage).toBe('choosing');
+    room.message(drawer, { t: 'pick', index: 2 }, 1000);
     expect(view(others[0]).guess?.hint).toMatch(/^[_ -]+$/);
   });
 
@@ -160,6 +197,17 @@ describe('drawing telephone', () => {
     expect(last('c', 'album')!.entries).toHaveLength(1);
     for (let i = 0; i < 9; i++) room.message('a', { t: 'next' }, 3);
     expect(view('a').album?.done).toBe(true);
+  });
+
+  it('moves on once the only player left to answer is kicked', () => {
+    const { room, view, join } = makeRoom();
+    join(['a', 'b', 'c']);
+    room.message('a', { t: 'settings', settings: { mode: 'telephone' } }, 0);
+    room.message('a', { t: 'start' }, 0);
+    room.message('a', { t: 'submit', text: 'one' }, 1);
+    room.message('b', { t: 'submit', text: 'two' }, 1);
+    room.message('a', { t: 'kick', id: 'c' }, 2);
+    expect(view('a').tele?.step).toBe(1);
   });
 });
 
