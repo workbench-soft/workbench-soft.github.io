@@ -87,6 +87,16 @@ describe('guess the drawing', () => {
     expect(view(others[0]).guess?.hint).toMatch(/^[_ -]+$/);
   });
 
+  it('ignores a pick whose index is not a choice', () => {
+    const { view, drawer, others, room } = started();
+    for (const index of ['length', 'constructor', -1, 1.5, 3]) {
+      expect(() => room.message(drawer, { t: 'pick', index } as never, 1000)).not.toThrow();
+    }
+    expect(room.guess!.stage).toBe('choosing');
+    room.message(drawer, { t: 'pick', index: 2 }, 1000);
+    expect(view(others[0]).guess?.hint).toMatch(/^[_ -]+$/);
+  });
+
   it('scores a fast guess higher and ends the turn once everyone guessed', () => {
     const { view, drawer, others, room } = started();
     room.message(drawer, { t: 'pick', index: 0 }, 0);

@@ -39,7 +39,8 @@ export class GuessGame {
 
   message(id: string, msg: ClientMsg, now: number): void {
     if (msg.t === 'pick' && id === this.drawerId && this.stage === 'choosing') {
-      const word = this.choices[msg.index];
+      // A name such as "length" would read a property of the list in place of a word.
+      const word = Number.isInteger(msg.index) ? this.choices[msg.index] : undefined;
       if (word) this.beginDrawing(word, now);
     } else if (msg.t === 'draw' && id === this.drawerId && this.stage === 'drawing' && Array.isArray(msg.ops)) {
       const ok = msg.ops.slice(0, 200).filter((op) => this.room.drawing.apply(op));

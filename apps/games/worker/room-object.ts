@@ -61,6 +61,7 @@ export class RoomObject extends DurableObject<Env> {
     } catch {
       return;
     }
+    if (!msg || typeof msg !== 'object') return;
     const now = Date.now();
     const attachment = ws.deserializeAttachment() as Attachment;
     if (msg.t === 'hello') {
