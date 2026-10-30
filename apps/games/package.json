@@ -1,0 +1,36 @@
+{
+  "name": "@workbench-soft/games",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.22.0",
+  "scripts": {
+    "dev": "node scripts/dev.ts",
+    "build": "node -e \"require('node:fs').rmSync('dist', { recursive: true, force: true })\" && astro build && node scripts/finish-build.ts",
+    "lint": "oxlint --deny-warnings",
+    "typecheck": "astro sync && tsc --noEmit && tsc --noEmit -p worker",
+    "types": "wrangler types worker/worker-configuration.d.ts",
+    "icons": "node scripts/render-images.ts",
+    "cap:sync": "pnpm build && cap sync",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@capacitor-community/admob": "^8.2.1",
+    "@capacitor/android": "^8.6.0",
+    "@capacitor/core": "^8.6.0",
+    "@capacitor/ios": "^8.6.0",
+    "@preact/signals": "^2.11.4",
+    "preact": "^11.1.0"
+  },
+  "devDependencies": {
+    "@astrojs/preact": "^6.1.1",
+    "@astrojs/sitemap": "^3.7.4",
+    "@capacitor/cli": "^8.6.0",
+    "@cloudflare/workers-types": "^5.20261030.1",
+    "@resvg/resvg-js": "^2.6.2",
+    "astro": "^7.4.4",
+    "oxlint": "^1.90.0",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.5",
+    "wrangler": "^4.156.0"
+  }
+}

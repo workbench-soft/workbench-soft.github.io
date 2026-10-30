@@ -52,3 +52,17 @@ sequenceDiagram
 3. `mise run check` and `mise run build` write `dist/`.
 4. Jekyll builds the Memories site into `_site/memories-mobile`.
 5. The job copies `dist/`, `langflip/` and the root files into `_site/` and publishes it.
+
+## workbenchsoft.com and the apps
+
+The domain sits behind the edge Worker in [apps/edge](../apps/edge/). [registry.json](../registry.json) lists which app owns each top path, and every other path comes from this site on GitHub Pages.
+
+```mermaid
+flowchart LR
+  B[Browser] --> E[Edge Worker]
+  E -- /games/* --> G[Games Worker<br/>apps/games]
+  E -- other paths --> P[GitHub Pages<br/>this site]
+```
+
+- **Apart** each app in `apps/` has its own packages, checks and deploy in the [Games workflow](../.github/workflows/games.yml). This site's build leaves `apps/` out.
+- **Games** [apps/games/docs/architecture.md](../apps/games/docs/architecture.md) describes the rooms and the games.

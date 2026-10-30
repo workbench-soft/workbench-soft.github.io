@@ -1,0 +1,21 @@
+// workbenchsoft.com/games: one Worker serves the static pages from dist/ and runs a Durable Object per room.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "workbench-games",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-10-20",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page",
+    // Only room links and sockets run the Worker code. Every other path is a static file, which costs nothing.
+    "run_worker_first": ["/", "/games/ws/*", "/games/r/*"]
+  },
+  "durable_objects": {
+    "bindings": [{ "name": "ROOMS", "class_name": "RoomObject" }]
+  },
+  // SQLite storage is the kind the Workers Free plan allows.
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["RoomObject"] }],
+  "observability": { "enabled": true }
+}

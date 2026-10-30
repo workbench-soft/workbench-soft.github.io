@@ -1,0 +1,73 @@
+name: Games
+
+# Checks the games and the edge on pull requests. A push to main deploys both to Cloudflare.
+# The repo is public, so the hosted runner spends no Actions minutes.
+on:
+  pull_request:
+    paths: ['apps/**', 'registry.json', '.github/workflows/games.yml']
+  push:
+    branches: [main]
+    paths: ['apps/**', 'registry.json', '.github/workflows/games.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      matrix:
+        app: [games, edge]
+    defaults:
+      run:
+        working-directory: apps/${{ matrix.app }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
+        with:
+          package_json_file: apps/${{ matrix.app }}/package.json
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version-file: apps/${{ matrix.app }}/.node-version
+      - run: pnpm install --frozen-lockfile
+      - if: matrix.app == 'games'
+        run: pnpm lint
+      - run: pnpm typecheck
+      - run: pnpm test
+      - if: matrix.app == 'games'
+        run: pnpm build
+
+  # The games deploy first, so the edge binds to a Worker that exists.
+  deploy:
+    needs: check
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && vars.CLOUDFLARE_ACCOUNT_ID != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    concurrency:
+      group: games-deploy
+      cancel-in-progress: true
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
+        with:
+          package_json_file: apps/games/package.json
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version-file: apps/games/.node-version
+      - name: Deploy the games
+        working-directory: apps/games
+        env:
+          PUBLIC_ADSENSE_CLIENT: ${{ vars.ADSENSE_CLIENT }}
+          PUBLIC_ADSENSE_SLOT_PAGE: ${{ vars.ADSENSE_SLOT_PAGE }}
+          PUBLIC_ADSENSE_SLOT_ROOM: ${{ vars.ADSENSE_SLOT_ROOM }}
+        run: pnpm install --frozen-lockfile && pnpm build && pnpm exec wrangler deploy
+      # Waits for the domain. Set EDGE_ENABLED once workbenchsoft.com's DNS sits on Cloudflare.
+      - name: Deploy the edge
+        if: vars.EDGE_ENABLED == 'true'
+        working-directory: apps/edge
+        run: pnpm install --frozen-lockfile && pnpm exec wrangler deploy

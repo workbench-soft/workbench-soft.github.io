@@ -1,0 +1,43 @@
+---
+import type { Lang, Mode } from '../shared/protocol.ts';
+import { TEXT } from '../site/text.ts';
+
+type Props = { lang: Lang; mode?: Mode; label?: string };
+const { lang, mode, label } = Astro.props;
+const text = TEXT[lang];
+---
+
+<div class="create">
+  <button type="button" class="btn btn-big" data-create={mode ?? ''}>{label ?? text.create}</button>
+  <form class="join-code" data-join>
+    <label for={`code-${mode ?? 'any'}`}>{text.joinCode}</label>
+    <input id={`code-${mode ?? 'any'}`} name="code" maxlength="6" autocomplete="off" autocapitalize="characters" placeholder={text.joinCodePlaceholder} pattern="[A-Za-z0-9]{6}" required />
+    <button type="submit" class="btn btn-ghost">{text.joinGo}</button>
+  </form>
+</div>
+
+<script>
+  import { BASE } from '../shared/paths.ts';
+  import { randomCode } from '../shared/protocol.ts';
+
+  // The apps load these pages from local files, where /r/ links have no server behind them.
+  const native = Boolean((globalThis as { Capacitor?: { isNativePlatform(): boolean } }).Capacitor?.isNativePlatform());
+  const open = (code: string, mode = '') => {
+    const query = new URLSearchParams();
+    if (native) query.set('code', code);
+    if (mode) query.set('mode', mode);
+    const q = query.toString();
+    location.href = `${BASE}${native ? '/room/' : `/r/${code}`}${q ? `?${q}` : ''}`;
+  };
+
+  for (const button of document.querySelectorAll<HTMLButtonElement>('[data-create]')) {
+    button.addEventListener('click', () => open(randomCode(), button.dataset.create));
+  }
+  for (const form of document.querySelectorAll<HTMLFormElement>('[data-join]')) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const code = String(new FormData(form).get('code') ?? '').trim().toUpperCase();
+      if (/^[A-Z0-9]{6}$/.test(code)) open(code);
+    });
+  }
+</script>

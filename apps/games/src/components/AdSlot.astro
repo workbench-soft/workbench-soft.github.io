@@ -1,0 +1,36 @@
+---
+// A banner low on the content pages. Its script loads only when the slot nears the screen, so the page paints first.
+const client = import.meta.env.PUBLIC_ADSENSE_CLIENT;
+const slot = import.meta.env.PUBLIC_ADSENSE_SLOT_PAGE;
+---
+
+{
+  client && slot && (
+    <div class="ad" data-ad>
+      <ins class="adsbygoogle" style="display:block" data-ad-client={client} data-ad-slot={slot} data-ad-format="auto" data-full-width-responsive="true" />
+    </div>
+  )
+}
+
+<script define:vars={{ client }}>
+  const native = Boolean(globalThis.Capacitor?.isNativePlatform?.());
+  const slots = document.querySelectorAll('[data-ad]');
+  if (client && slots.length && !native) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (!entries.some((e) => e.isIntersecting)) return;
+        io.disconnect();
+        const s = document.createElement('script');
+        s.async = true;
+        s.crossOrigin = 'anonymous';
+        s.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${client}`;
+        document.head.append(s);
+        for (const _ of slots) (window.adsbygoogle = window.adsbygoogle || []).push({});
+      },
+      { rootMargin: '400px' },
+    );
+    for (const el of slots) io.observe(el);
+  } else {
+    for (const el of slots) el.remove();
+  }
+</script>
