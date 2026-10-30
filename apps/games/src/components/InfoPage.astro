@@ -1,0 +1,23 @@
+---
+import Page from '../layouts/Page.astro';
+import type { Lang } from '../shared/protocol.ts';
+import { INFO, type InfoKey } from '../site/info.ts';
+
+type Props = { lang: Lang; page: InfoKey };
+const { lang, page } = Astro.props;
+const info = INFO[page][lang];
+---
+
+<Page lang={lang} page={page} title={`${info.title} | Workbench Games`} description={info.description}>
+  <article class="prose">
+    <h1>{info.title}</h1>
+    {
+      info.sections.map((s) => (
+        <section>
+          {s.h && <h2>{s.h}</h2>}
+          {s.p.map((p) => <p set:html={p} />)}
+        </section>
+      ))
+    }
+  </article>
+</Page>

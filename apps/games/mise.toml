@@ -1,0 +1,32 @@
+﻿[tools]
+node = "24"
+pnpm = "11.22.0"
+
+[tasks.dev]
+description = "Run the site on port 4321 and the Worker with the room objects on port 8787"
+run = "pnpm dev"
+
+[tasks.check]
+description = "Lint, typecheck and test"
+run = "pnpm lint && pnpm typecheck && pnpm test"
+
+[tasks.build]
+description = "Build the static site into dist/"
+run = "pnpm build"
+
+[tasks.preview]
+description = "Build, then serve dist/ and the Worker together on port 8787"
+run = "pnpm build && pnpm exec wrangler dev --port 8787"
+
+[tasks.deploy]
+description = "Build and deploy to Cloudflare"
+run = "pnpm build && pnpm exec wrangler deploy"
+
+[tasks."app:android"]
+description = "Build the pages, copy them into the Android app and open Android Studio"
+run = "pnpm build && pnpm exec cap sync android && pnpm exec cap open android"
+
+[tasks."app:ios"]
+description = "Build the pages and copy them into the iOS app. Xcode on a Mac builds it"
+run = "pnpm build && pnpm exec cap sync ios"
+

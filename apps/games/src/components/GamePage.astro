@@ -1,0 +1,92 @@
+---
+import Page from '../layouts/Page.astro';
+import CreateRoom from './CreateRoom.astro';
+import AdSlot from './AdSlot.astro';
+import type { Lang, Mode } from '../shared/protocol.ts';
+import { GAMES, ROUTES } from '../site/routes.ts';
+import { TEXT } from '../site/text.ts';
+
+type Props = { lang: Lang; mode: Mode };
+const { lang, mode } = Astro.props;
+const text = TEXT[lang];
+const g = text.games[mode];
+const site = Astro.site!;
+const url = new URL(ROUTES[mode][lang], site).href;
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'VideoGame',
+    name: g.h1,
+    description: g.description,
+    url,
+    genre: 'Party game',
+    gamePlatform: 'Web browser',
+    playMode: 'MultiPlayer',
+    applicationCategory: 'GameApplication',
+    operatingSystem: 'Any',
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+    publisher: { '@type': 'Organization', name: 'Workbench Soft' },
+    inLanguage: lang,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: text.brand, item: new URL(ROUTES.home[lang], site).href },
+      { '@type': 'ListItem', position: 2, name: g.h1, item: url },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: g.faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  },
+];
+---
+
+<Page lang={lang} page={mode} title={g.title} description={g.description} jsonLd={jsonLd}>
+  <section class={`hero hero-${mode}`}>
+    <h1>{g.h1}</h1>
+    <p class="lead">{g.lead}</p>
+    <dl class="facts">
+      <div><dt>{text.playersLabel}</dt><dd>{g.players}</dd></div>
+      <div><dt>{text.timeLabel}</dt><dd>{g.time}</dd></div>
+    </dl>
+    <CreateRoom lang={lang} mode={mode} label={text.createFor.replace('{game}', g.h1)} />
+  </section>
+
+  <section class="prose">
+    <h2>{text.rulesTitle}</h2>
+    <ol class="steps">{g.rules.map((r) => <li>{r}</li>)}</ol>
+    <h2>{text.tipsTitle}</h2>
+    <ul>{g.tips.map((r) => <li>{r}</li>)}</ul>
+  </section>
+
+  <AdSlot />
+
+  <section class="prose">
+    <h2>{text.faqTitle}</h2>
+    {
+      g.faq.map((f) => (
+        <details>
+          <summary>{f.q}</summary>
+          <p>{f.a}</p>
+        </details>
+      ))
+    }
+  </section>
+
+  <section class="prose">
+    <h2>{text.otherGames}</h2>
+    <ul class="other-games">
+      {
+        GAMES.filter((x) => x !== mode).map((x) => (
+          <li>
+            <a href={ROUTES[x][lang]}>{text.games[x].h1}</a>: {text.games[x].lead}
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Page>

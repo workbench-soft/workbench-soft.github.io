@@ -1,0 +1,39 @@
+---
+import '../styles/global.css';
+import { asset } from '../site/routes.ts';
+
+// Served for every /r/<code> link. Messengers show this title and image when someone shares a room.
+const image = new URL(asset('/og.png'), Astro.site!).href;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content" />
+    <title>Join the game | Workbench Games</title>
+    <meta name="description" content="Your friends are waiting. Open the room, type a name and play. Free, no sign up." />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href={asset('/favicon.svg')} type="image/svg+xml" />
+    <link rel="manifest" href={asset('/manifest.webmanifest')} />
+    <meta name="theme-color" content="#5b3df5" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Workbench Games" />
+    <meta property="og:title" content="Join my game room on Workbench Games" />
+    <meta property="og:description" content="Guess the drawing, drawing telephone and clue duel. Free, in the browser." />
+    <meta property="og:image" content={image} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script is:inline>
+      try {
+        const saved = localStorage.getItem('wg-lang');
+        document.documentElement.lang = saved || (navigator.language.toLowerCase().startsWith('ru') ? 'ru' : 'en');
+      } catch {}
+    </script>
+  </head>
+  <body class="room-page">
+    <div id="app"></div>
+    <script>
+      import '../game/main.tsx';
+    </script>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+---
+import Page from '../layouts/Page.astro';
+import CreateRoom from './CreateRoom.astro';
+import AdSlot from './AdSlot.astro';
+import type { Lang } from '../shared/protocol.ts';
+import { GAMES, ROUTES } from '../site/routes.ts';
+import { TEXT } from '../site/text.ts';
+
+type Props = { lang: Lang };
+const { lang } = Astro.props;
+const text = TEXT[lang];
+const h = text.home;
+const site = Astro.site!;
+
+const jsonLd = [
+  { '@context': 'https://schema.org', '@type': 'WebSite', name: 'Workbench Games', url: new URL(ROUTES.home[lang], site).href, inLanguage: lang },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: 'Workbench Games',
+    url: new URL(ROUTES.home[lang], site).href,
+    applicationCategory: 'GameApplication',
+    operatingSystem: 'Any',
+    browserRequirements: 'Requires JavaScript',
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+    inLanguage: lang,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: h.faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  },
+];
+---
+
+<Page lang={lang} page="home" title={h.title} description={h.description} jsonLd={jsonLd}>
+  <section class="hero">
+    <h1>{h.h1}</h1>
+    <p class="lead">{h.lead}</p>
+    <CreateRoom lang={lang} />
+  </section>
+
+  <section class="game-cards">
+    {
+      GAMES.map((g) => (
+        <a class={`game-card game-${g}`} href={ROUTES[g][lang]}>
+          <span class="game-art" aria-hidden="true" />
+          <h2>{text.games[g].h1}</h2>
+          <p>{text.games[g].lead}</p>
+          <span class="muted">
+            {text.playersLabel}: {text.games[g].players}
+          </span>
+        </a>
+      ))
+    }
+  </section>
+
+  <section class="prose">
+    <h2>{h.stepsTitle}</h2>
+    <ol class="steps">{h.steps.map((s) => <li>{s}</li>)}</ol>
+  </section>
+
+  <AdSlot />
+
+  <section class="prose">
+    <h2>{text.faqTitle}</h2>
+    {
+      h.faq.map((f) => (
+        <details>
+          <summary>{f.q}</summary>
+          <p>{f.a}</p>
+        </details>
+      ))
+    }
+  </section>
+</Page>
