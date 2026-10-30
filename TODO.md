@@ -19,4 +19,3 @@ Work left in the code:
 
 - [ ] Test the Android app on a phone: the pages under `/games/` load from local files, the room connects to workbenchsoft.com, the banner shows in the lobby.
 - [ ] Open room links in the apps: Android App Links with `/.well-known/assetlinks.json` and iOS Universal Links with `apple-app-site-association`, once the signing keys exist.
-- [ ] Merge with `feat/portfolio-site`, which edits the same `README.md` and `CHANGELOG.md`.
