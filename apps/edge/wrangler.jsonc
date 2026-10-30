@@ -1,0 +1,16 @@
+// workbenchsoft.com: the edge. It hands each path to the app that owns it in registry.json.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "workbench-edge",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-20",
+  // One binding per app in registry.json. A call through a binding costs no extra request.
+  "services": [{ "binding": "GAMES", "service": "workbench-games" }],
+  // Cloudflare makes the DNS records and the certificates once the domain's DNS sits on Cloudflare.
+  "routes": [
+    { "pattern": "workbenchsoft.com", "custom_domain": true },
+    { "pattern": "www.workbenchsoft.com", "custom_domain": true }
+  ],
+  "workers_dev": false,
+  "observability": { "enabled": true }
+}

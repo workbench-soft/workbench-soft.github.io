@@ -1,0 +1,17 @@
+{
+  "$comment": "Which app owns each top path of workbenchsoft.com. apps/edge reads this file. Paths no app owns go to the public site on GitHub Pages.",
+  "apps": [
+    {
+      "name": "games",
+      "path": "/games",
+      "dir": "apps/games",
+      "binding": "GAMES",
+      "worker": "workbench-games"
+    }
+  ],
+  "fallback": {
+    "name": "site",
+    "dir": ".",
+    "origin": "https://workbench-soft.github.io"
+  }
+}

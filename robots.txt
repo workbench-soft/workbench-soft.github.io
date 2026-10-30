@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://workbench-soft.github.io/memories-mobile/sitemap.xml
+Sitemap: https://workbenchsoft.com/games/sitemap-index.xml
