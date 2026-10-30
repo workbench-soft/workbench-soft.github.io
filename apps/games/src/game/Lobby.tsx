@@ -26,12 +26,22 @@ function Invite({ code }: { code: string }) {
       <h2>{t('invite')}</h2>
       <p class="muted">{t('inviteHint')}</p>
       <div class="invite-row">
-        <input class="invite-link" readOnly value={link} aria-label={t('invite')} onFocus={(e) => e.currentTarget.select()} />
+        <input
+          class="invite-link"
+          readOnly
+          value={link}
+          aria-label={t('invite')}
+          onFocus={(e) => e.currentTarget.select()}
+        />
         <button type="button" class="btn" onClick={copy}>
           {copied ? t('copied') : t('copy')}
         </button>
         {'share' in navigator && (
-          <button type="button" class="btn btn-ghost" onClick={() => navigator.share({ title: t('appName'), url: link }).catch(() => {})}>
+          <button
+            type="button"
+            class="btn btn-ghost"
+            onClick={() => navigator.share({ title: t('appName'), url: link }).catch(() => {})}
+          >
             {t('share')}
           </button>
         )}
@@ -108,7 +118,11 @@ function SettingsForm({ s, host }: { s: Settings; host: boolean }) {
             />
           </Field>
           <label class="check">
-            <input type="checkbox" checked={s.customOnly} onChange={(e) => set({ customOnly: e.currentTarget.checked })} />
+            <input
+              type="checkbox"
+              checked={s.customOnly}
+              onChange={(e) => set({ customOnly: e.currentTarget.checked })}
+            />
             {t('customOnly')}
           </label>
         </>

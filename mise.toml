@@ -17,3 +17,11 @@ run = "pnpm astro check"
 [tasks.preview]
 description = "Serve the built dist/ folder"
 run = "pnpm astro preview"
+
+[tasks.lint]
+description = "Lint the home page and check the format of the whole repo"
+run = ["pnpm lint", "pnpm format:check"]
+
+[tasks.format]
+description = "Format the whole repo with oxfmt"
+run = "pnpm format"

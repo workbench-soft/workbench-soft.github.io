@@ -71,7 +71,10 @@ export function Board({ drawing, version, editable = false, onOps }: Props) {
 
   const toGrid = (e: PointerEvent): [number, number] => {
     const rect = canvasRef.current!.getBoundingClientRect();
-    return [Math.round(((e.clientX - rect.left) / rect.width) * WIDTH), Math.round(((e.clientY - rect.top) / rect.height) * HEIGHT)];
+    return [
+      Math.round(((e.clientX - rect.left) / rect.width) * WIDTH),
+      Math.round(((e.clientY - rect.top) / rect.height) * HEIGHT),
+    ];
   };
 
   const down = (e: PointerEvent) => {
@@ -83,7 +86,14 @@ export function Board({ drawing, version, editable = false, onOps }: Props) {
     const id = ++strokeIds;
     stroke.current = { id, x, y };
     const eraser = tool === 'eraser';
-    emit({ k: 's', id, c: eraser ? '#ffffff' : color, w: eraser ? size * 2 : size, e: eraser ? 1 : undefined, p: [x, y] });
+    emit({
+      k: 's',
+      id,
+      c: eraser ? '#ffffff' : color,
+      w: eraser ? size * 2 : size,
+      e: eraser ? 1 : undefined,
+      p: [x, y],
+    });
   };
 
   const move = (e: PointerEvent) => {
@@ -128,14 +138,27 @@ export function Board({ drawing, version, editable = false, onOps }: Props) {
         <div class="tools" role="toolbar">
           <div class="tool-group">
             {(['pen', 'eraser', 'fill'] as Tool[]).map((name) => (
-              <button type="button" class={`icon-btn${tool === name ? ' on' : ''}`} title={t(name)} aria-label={t(name)} aria-pressed={tool === name} onClick={() => setTool(name)}>
+              <button
+                type="button"
+                class={`icon-btn${tool === name ? ' on' : ''}`}
+                title={t(name)}
+                aria-label={t(name)}
+                aria-pressed={tool === name}
+                onClick={() => setTool(name)}
+              >
                 <Icon name={name} />
               </button>
             ))}
           </div>
           <div class="tool-group">
             {SIZES.map((s) => (
-              <button type="button" class={`icon-btn${size === s ? ' on' : ''}`} title={`${t('size')} ${s}`} aria-label={`${t('size')} ${s}`} onClick={() => setSize(s)}>
+              <button
+                type="button"
+                class={`icon-btn${size === s ? ' on' : ''}`}
+                title={`${t('size')} ${s}`}
+                aria-label={`${t('size')} ${s}`}
+                onClick={() => setSize(s)}
+              >
                 <span class="dot" style={{ width: `${Math.max(4, s / 1.6)}px`, height: `${Math.max(4, s / 1.6)}px` }} />
               </button>
             ))}
@@ -155,10 +178,22 @@ export function Board({ drawing, version, editable = false, onOps }: Props) {
             ))}
           </div>
           <div class="tool-group">
-            <button type="button" class="icon-btn" title={t('undo')} aria-label={t('undo')} onClick={() => emit({ k: 'u' })}>
+            <button
+              type="button"
+              class="icon-btn"
+              title={t('undo')}
+              aria-label={t('undo')}
+              onClick={() => emit({ k: 'u' })}
+            >
               <Icon name="undo" />
             </button>
-            <button type="button" class="icon-btn" title={t('clear')} aria-label={t('clear')} onClick={() => emit({ k: 'x' })}>
+            <button
+              type="button"
+              class="icon-btn"
+              title={t('clear')}
+              aria-label={t('clear')}
+              onClick={() => emit({ k: 'x' })}
+            >
               <Icon name="clear" />
             </button>
           </div>
@@ -188,7 +223,17 @@ const PATHS: Record<string, string> = {
 
 export function Icon({ name }: { name: string }) {
   return (
-    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <svg
+      viewBox="0 0 24 24"
+      width="22"
+      height="22"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
       <path d={PATHS[name]} />
     </svg>
   );

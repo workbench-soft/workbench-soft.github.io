@@ -22,11 +22,26 @@ export type Op =
   | { k: 'x' };
 
 export const COLORS = [
-  '#000000', '#ffffff', '#7f7f7f', '#c3c3c3',
-  '#e53935', '#ff8a80', '#fb8c00', '#ffd180',
-  '#fdd835', '#fff59d', '#43a047', '#b9f6ca',
-  '#1e88e5', '#82b1ff', '#8e24aa', '#ea80fc',
-  '#6d4c41', '#d7ccc8', '#00acc1', '#f06292',
+  '#000000',
+  '#ffffff',
+  '#7f7f7f',
+  '#c3c3c3',
+  '#e53935',
+  '#ff8a80',
+  '#fb8c00',
+  '#ffd180',
+  '#fdd835',
+  '#fff59d',
+  '#43a047',
+  '#b9f6ca',
+  '#1e88e5',
+  '#82b1ff',
+  '#8e24aa',
+  '#ea80fc',
+  '#6d4c41',
+  '#d7ccc8',
+  '#00acc1',
+  '#f06292',
 ];
 export const SIZES = [4, 10, 20, 40];
 
@@ -77,7 +92,14 @@ export class Drawing {
         const points = cleanPoints(op.p, MAX_POINTS - this.points);
         const size = clampInt(op.w, MAX_SIZE);
         if (!points || points.length < 2 || size === null) return false;
-        this.actions.push({ k: 'stroke', id: op.id, color: op.c, size: Math.max(MIN_SIZE, size), eraser: op.e === 1, points });
+        this.actions.push({
+          k: 'stroke',
+          id: op.id,
+          color: op.c,
+          size: Math.max(MIN_SIZE, size),
+          eraser: op.e === 1,
+          points,
+        });
         this.points += points.length;
         return true;
       }
@@ -137,7 +159,8 @@ export function sanitizeActions(value: unknown): Action[] | null {
   for (const a of value) {
     if (!a || typeof a !== 'object') return null;
     if (a.k === 'stroke') {
-      if (!drawing.apply({ k: 's', id: ++id, c: a.color, w: a.size, e: a.eraser ? 1 : undefined, p: a.points })) return null;
+      if (!drawing.apply({ k: 's', id: ++id, c: a.color, w: a.size, e: a.eraser ? 1 : undefined, p: a.points }))
+        return null;
     } else if (a.k === 'fill') {
       if (!drawing.apply({ k: 'f', x: a.x, y: a.y, c: a.color })) return null;
     } else {

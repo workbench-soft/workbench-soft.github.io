@@ -57,12 +57,12 @@ function compile(gl: WebGL2RenderingContext, type: number, src: string) {
   const s = gl.createShader(type)!;
   gl.shaderSource(s, src);
   gl.compileShader(s);
-  if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(s) ?? "shader");
+  if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(s) ?? 'shader');
   return s;
 }
 
 export function startField(canvas: HTMLCanvasElement, still: boolean) {
-  const gl = canvas.getContext("webgl2", { antialias: false, powerPreference: "low-power" });
+  const gl = canvas.getContext('webgl2', { antialias: false, powerPreference: 'low-power' });
   if (!gl) return false;
 
   const prog = gl.createProgram()!;
@@ -73,16 +73,16 @@ export function startField(canvas: HTMLCanvasElement, still: boolean) {
 
   gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer());
   gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
-  const loc = gl.getAttribLocation(prog, "p");
+  const loc = gl.getAttribLocation(prog, 'p');
   gl.enableVertexAttribArray(loc);
   gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
 
-  const uRes = gl.getUniformLocation(prog, "uRes");
-  const uTime = gl.getUniformLocation(prog, "uTime");
-  const uPointer = gl.getUniformLocation(prog, "uPointer");
+  const uRes = gl.getUniformLocation(prog, 'uRes');
+  const uTime = gl.getUniformLocation(prog, 'uTime');
+  const uPointer = gl.getUniformLocation(prog, 'uPointer');
 
   // The march is heavy, so phones render fewer pixels and the browser scales them up.
-  const scale = Math.min(devicePixelRatio || 1, 1.5) * (matchMedia("(pointer: coarse)").matches ? 0.5 : 0.75);
+  const scale = Math.min(devicePixelRatio || 1, 1.5) * (matchMedia('(pointer: coarse)').matches ? 0.5 : 0.75);
   const resize = () => {
     canvas.width = Math.round(canvas.clientWidth * scale);
     canvas.height = Math.round(canvas.clientHeight * scale);
@@ -92,7 +92,7 @@ export function startField(canvas: HTMLCanvasElement, still: boolean) {
 
   let target = { x: 0, y: 0 };
   const pointer = { x: 0, y: 0 };
-  addEventListener("pointermove", (e) => {
+  addEventListener('pointermove', (e) => {
     target = { x: e.clientX / innerWidth - 0.5, y: e.clientY / innerHeight - 0.5 };
   });
 
@@ -111,7 +111,7 @@ export function startField(canvas: HTMLCanvasElement, still: boolean) {
   };
 
   resize();
-  addEventListener("resize", () => {
+  addEventListener('resize', () => {
     resize();
     if (still) draw(begin);
   });
@@ -125,6 +125,6 @@ export function startField(canvas: HTMLCanvasElement, still: boolean) {
     }).observe(canvas);
     requestAnimationFrame(loop);
   }
-  canvas.classList.add("live");
+  canvas.classList.add('live');
   return true;
 }

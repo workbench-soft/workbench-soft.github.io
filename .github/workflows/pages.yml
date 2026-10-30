@@ -33,6 +33,7 @@ jobs:
       - name: Build the home page
         run: |
           mise x -- pnpm install --frozen-lockfile
+          mise run lint
           mise run check
           mise run build
       - name: Build the Memories site

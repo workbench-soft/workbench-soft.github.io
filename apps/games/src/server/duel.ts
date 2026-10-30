@@ -41,7 +41,10 @@ export class DuelGame {
   }
 
   members(team: Team): string[] {
-    return this.room.online().filter((p) => p.team === team).map((p) => p.id);
+    return this.room
+      .online()
+      .filter((p) => p.team === team)
+      .map((p) => p.id);
   }
 
   message(id: string, msg: ClientMsg, now: number): void {

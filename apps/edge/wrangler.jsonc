@@ -9,8 +9,8 @@
   // Cloudflare makes the DNS records and the certificates once the domain's DNS sits on Cloudflare.
   "routes": [
     { "pattern": "workbenchsoft.com", "custom_domain": true },
-    { "pattern": "www.workbenchsoft.com", "custom_domain": true }
+    { "pattern": "www.workbenchsoft.com", "custom_domain": true },
   ],
   "workers_dev": false,
-  "observability": { "enabled": true }
+  "observability": { "enabled": true },
 }

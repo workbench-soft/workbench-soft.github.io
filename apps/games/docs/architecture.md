@@ -58,26 +58,26 @@ sequenceDiagram
 
 ## Data
 
-| Key in the room's storage | What it holds | When it is written |
-| --- | --- | --- |
-| `meta` | Players, scores, host, settings, phase, chat log, game state | After each event that changes it |
-| `canvas` | The drawing of the current turn | At most every 2 seconds |
-| `chain:N` | The entries of telephone story N | Once per entry |
+| Key in the room's storage | What it holds                                                | When it is written               |
+| ------------------------- | ------------------------------------------------------------ | -------------------------------- |
+| `meta`                    | Players, scores, host, settings, phase, chat log, game state | After each event that changes it |
+| `canvas`                  | The drawing of the current turn                              | At most every 2 seconds          |
+| `chain:N`                 | The entries of telephone story N                             | Once per entry                   |
 
 ## Shared page state
 
-| Resource | Owner | Guard |
-| --- | --- | --- |
-| Web storage | `src/game/storage.ts`, keys start with `wg-` | Other code calls `load` and `save` |
-| `<html lang>` | `src/game/i18n.ts` | `setLang` writes it |
-| URL paths | `src/site/routes.ts` and `src/shared/paths.ts` | Pages and the Worker read `ROUTES` and `BASE` |
+| Resource      | Owner                                          | Guard                                         |
+| ------------- | ---------------------------------------------- | --------------------------------------------- |
+| Web storage   | `src/game/storage.ts`, keys start with `wg-`   | Other code calls `load` and `save`            |
+| `<html lang>` | `src/game/i18n.ts`                             | `setLang` writes it                           |
+| URL paths     | `src/site/routes.ts` and `src/shared/paths.ts` | Pages and the Worker read `ROUTES` and `BASE` |
 
 ## Decisions
 
-| Decision | Options weighed | Picked | Why | Cost to undo |
-| --- | --- | --- | --- | --- |
-| Room server | Durable Objects, Supabase Realtime, PartyKit, a VPS | Durable Objects with hibernation | Free plan, one object per room, no server to run | High: the room code is written for it |
-| Split of the domain | One app, micro frontends by path | Micro frontends by path | The public site and the games build and deploy apart | Medium: the edge is small |
-| Pages | Astro static, a Preact SPA, Next.js | Astro static plus a Preact island | Search engines get full HTML, the pages ship almost no JS | Medium |
-| Drawing sync | Send pixels, send actions | Send actions on an 800 by 600 grid | Small messages, undo, and late joiners get the full picture | Medium |
-| Mobile apps | Capacitor, a TWA, React Native | Capacitor | The same pages on Android and iOS, with the AdMob plugin | Low |
+| Decision            | Options weighed                                     | Picked                             | Why                                                         | Cost to undo                          |
+| ------------------- | --------------------------------------------------- | ---------------------------------- | ----------------------------------------------------------- | ------------------------------------- |
+| Room server         | Durable Objects, Supabase Realtime, PartyKit, a VPS | Durable Objects with hibernation   | Free plan, one object per room, no server to run            | High: the room code is written for it |
+| Split of the domain | One app, micro frontends by path                    | Micro frontends by path            | The public site and the games build and deploy apart        | Medium: the edge is small             |
+| Pages               | Astro static, a Preact SPA, Next.js                 | Astro static plus a Preact island  | Search engines get full HTML, the pages ship almost no JS   | Medium                                |
+| Drawing sync        | Send pixels, send actions                           | Send actions on an 800 by 600 grid | Small messages, undo, and late joiners get the full picture | Medium                                |
+| Mobile apps         | Capacitor, a TWA, React Native                      | Capacitor                          | The same pages on Android and iOS, with the AdMob plugin    | Low                                   |

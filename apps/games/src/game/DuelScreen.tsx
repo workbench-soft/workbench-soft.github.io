@@ -43,7 +43,13 @@ export function DuelScreen() {
           {t(tm)} <b class="team-score">{d.score[tm]}</b>
         </h3>
         <p class="clue">
-          {clueText === null ? <span class="muted">{d.stage === 'clue' ? t('thinking') : ''}</span> : clueText ? <strong>{clueText}</strong> : <span class="muted">{t('noClue')}</span>}
+          {clueText === null ? (
+            <span class="muted">{d.stage === 'clue' ? t('thinking') : ''}</span>
+          ) : clueText ? (
+            <strong>{clueText}</strong>
+          ) : (
+            <span class="muted">{t('noClue')}</span>
+          )}
           {d.locked[tm] && d.stage === 'guess' && <small class="tag">{t('locked')}</small>}
         </p>
         <ul>
@@ -70,7 +76,13 @@ export function DuelScreen() {
         <div class="duel-center">
           <div class="duel-board">
             {d.board.map((word, i) => (
-              <button type="button" class={cardClass(i)} disabled={!canPick} aria-pressed={ownPicks.includes(i)} onClick={() => send({ t: 'toggle', index: i })}>
+              <button
+                type="button"
+                class={cardClass(i)}
+                disabled={!canPick}
+                aria-pressed={ownPicks.includes(i)}
+                onClick={() => send({ t: 'toggle', index: i })}
+              >
                 {word}
               </button>
             ))}
@@ -85,14 +97,23 @@ export function DuelScreen() {
               }}
             >
               <p class="muted">{t('yourWords')}</p>
-              <input value={clue} maxLength={24} placeholder={t('clueInput')} aria-label={t('clueInput')} onInput={(e) => setClue(e.currentTarget.value)} autofocus />
+              <input
+                value={clue}
+                maxLength={24}
+                placeholder={t('clueInput')}
+                aria-label={t('clueInput')}
+                onInput={(e) => setClue(e.currentTarget.value)}
+                autofocus
+              />
               <button type="submit" class="btn">
                 {t('send')}
               </button>
               {bad && <p class="error">{t('clueBad')}</p>}
             </form>
           )}
-          {view.phase === 'duel' && d.stage === 'clue' && !(giver && d.clues[team!] === null) && <p class="muted center">{t('waitClues')}</p>}
+          {view.phase === 'duel' && d.stage === 'clue' && !(giver && d.clues[team!] === null) && (
+            <p class="muted center">{t('waitClues')}</p>
+          )}
           {d.stage === 'guess' && canPick && (
             <div class="row center">
               <p class="muted">{t('pickTwo')}</p>

@@ -33,7 +33,10 @@ export class GuessGame {
   constructor(private room: Room) {}
 
   start(now: number): void {
-    this.order = shuffle(this.room.online().map((p) => p.id), this.room.random);
+    this.order = shuffle(
+      this.room.online().map((p) => p.id),
+      this.room.random,
+    );
     this.nextTurn(now);
   }
 
@@ -90,7 +93,8 @@ export class GuessGame {
       }
       return;
     }
-    if (this.stage === 'choosing') this.beginDrawing(this.choices[Math.floor(this.room.random() * this.choices.length)], now);
+    if (this.stage === 'choosing')
+      this.beginDrawing(this.choices[Math.floor(this.room.random() * this.choices.length)], now);
     else if (this.stage === 'drawing') this.endTurn(now);
     else this.nextTurn(now);
   }
@@ -143,7 +147,10 @@ export class GuessGame {
         this.deadline = 0;
         return room.finish();
       }
-      this.order = shuffle(room.online().map((p) => p.id), room.random);
+      this.order = shuffle(
+        room.online().map((p) => p.id),
+        room.random,
+      );
       this.turn = 0;
     }
     this.drawerId = this.order[this.turn];
@@ -175,7 +182,9 @@ export class GuessGame {
       const count = Math.min(3, Math.floor(letters.length / 3));
       this.hintPos = shuffle(letters, room.random).slice(0, count);
       // Hints come in the second half of the turn, spread evenly.
-      this.hintAt = this.hintPos.map((_, i) => now + Math.round(this.turnTime * (0.5 + (count > 1 ? (0.4 * i) / (count - 1) : 0))));
+      this.hintAt = this.hintPos.map(
+        (_, i) => now + Math.round(this.turnTime * (0.5 + (count > 1 ? (0.4 * i) / (count - 1) : 0))),
+      );
     }
     room.sys('drawing', room.name(this.drawerId));
     room.setPhase('drawing');

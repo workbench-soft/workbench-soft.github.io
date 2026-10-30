@@ -30,7 +30,8 @@ export default {
     }
 
     if (kind === 'r' && code && CODE_RE.test(code)) {
-      if (raw !== code || url.pathname.endsWith('/')) return Response.redirect(`${url.origin}${BASE}/r/${code}${url.search}`, 301);
+      if (raw !== code || url.pathname.endsWith('/'))
+        return Response.redirect(`${url.origin}${BASE}/r/${code}${url.search}`, 301);
       const page = await env.ASSETS.fetch(new Request(new URL(`${BASE}/room/`, url), request));
       return new Response(page.body, page);
     }

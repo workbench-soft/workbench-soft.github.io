@@ -22,7 +22,8 @@ async function admob() {
     await mod.AdMob.initialize();
     // The consent form shows once in the regions that need it, such as the EU and the UK.
     const consent = await mod.AdMob.requestConsentInfo();
-    if (consent.isConsentFormAvailable && consent.status === mod.AdmobConsentStatus.REQUIRED) await mod.AdMob.showConsentForm();
+    if (consent.isConsentFormAvailable && consent.status === mod.AdmobConsentStatus.REQUIRED)
+      await mod.AdMob.showConsentForm();
     return mod;
   })();
   return ready;
@@ -52,7 +53,8 @@ export async function syncBanner(visible: boolean): Promise<void> {
     const dev = isDevDevice();
     const show = visible && (!dev || devAdsShown());
     const mod = await admob();
-    const platform = (globalThis as { Capacitor?: { getPlatform(): string } }).Capacitor?.getPlatform() === 'ios' ? 'ios' : 'android';
+    const platform =
+      (globalThis as { Capacitor?: { getPlatform(): string } }).Capacitor?.getPlatform() === 'ios' ? 'ios' : 'android';
     if (show && !shown) {
       shown = true;
       const id = (!import.meta.env.DEV && !dev && BANNER[platform]) || TEST_BANNER[platform];

@@ -24,7 +24,11 @@ export function Timer({ deadline }: { deadline: number }) {
 
 export function Avatar({ player, size = 32 }: { player: Pick<PlayerView, 'name' | 'color'>; size?: number }) {
   return (
-    <span class="avatar" style={{ background: player.color, width: `${size}px`, height: `${size}px` }} aria-hidden="true">
+    <span
+      class="avatar"
+      style={{ background: player.color, width: `${size}px`, height: `${size}px` }}
+      aria-hidden="true"
+    >
       {player.name.slice(0, 1).toUpperCase()}
     </span>
   );
@@ -87,7 +91,15 @@ export function AdSlot() {
   if (!CLIENT || !SLOT || isNative()) return null;
   return (
     <div class="ad">
-      <ins ref={ref} class="adsbygoogle" style={{ display: 'block' }} data-ad-client={CLIENT} data-ad-slot={SLOT} data-ad-format="auto" data-full-width-responsive="true" />
+      <ins
+        ref={ref}
+        class="adsbygoogle"
+        style={{ display: 'block' }}
+        data-ad-client={CLIENT}
+        data-ad-slot={SLOT}
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      />
     </div>
   );
 }

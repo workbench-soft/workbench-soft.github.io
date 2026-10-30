@@ -10,12 +10,12 @@
     "html_handling": "auto-trailing-slash",
     "not_found_handling": "404-page",
     // Only room links and sockets run the Worker code. Every other path is a static file, which costs nothing.
-    "run_worker_first": ["/", "/games/ws/*", "/games/r/*"]
+    "run_worker_first": ["/", "/games/ws/*", "/games/r/*"],
   },
   "durable_objects": {
-    "bindings": [{ "name": "ROOMS", "class_name": "RoomObject" }]
+    "bindings": [{ "name": "ROOMS", "class_name": "RoomObject" }],
   },
   // SQLite storage is the kind the Workers Free plan allows.
   "migrations": [{ "tag": "v1", "new_sqlite_classes": ["RoomObject"] }],
-  "observability": { "enabled": true }
+  "observability": { "enabled": true },
 }

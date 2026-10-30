@@ -89,7 +89,14 @@ export class Room {
     if (!player) {
       if (this.players.size >= MAX_SEATS) this.dropNewestOffline();
       if (this.players.size === 0) this.settings.wordLang = lang;
-      player = { id, name: cleanName, color: isColor(color) ? color : '#1e88e5', score: 0, online: true, team: this.smallerTeam() };
+      player = {
+        id,
+        name: cleanName,
+        color: isColor(color) ? color : '#1e88e5',
+        score: 0,
+        online: true,
+        team: this.smallerTeam(),
+      };
       this.players.set(id, player);
       this.sys('joined', player.name);
     } else {
@@ -271,7 +278,8 @@ export class Room {
   flush(now = Date.now()): void {
     if (!this.stateChanged) return;
     this.stateChanged = false;
-    for (const p of this.players.values()) if (p.online) this.out.send(p.id, { t: 'state', room: this.viewFor(p.id, now) });
+    for (const p of this.players.values())
+      if (p.online) this.out.send(p.id, { t: 'state', room: this.viewFor(p.id, now) });
   }
 
   // Storage. The drawing and the telephone entries sit under keys of their own.
@@ -294,7 +302,13 @@ export class Room {
     };
   }
 
-  static restore(data: ReturnType<Room['toJSON']>, out: Out, actions: Action[], chains: TeleEntry[][], random?: Random): Room {
+  static restore(
+    data: ReturnType<Room['toJSON']>,
+    out: Out,
+    actions: Action[],
+    chains: TeleEntry[][],
+    random?: Random,
+  ): Room {
     const room = new Room(data.code, out, random);
     room.players = new Map(data.players.map((p) => [p.id, { ...p, online: false }]));
     room.hostId = data.hostId;
