@@ -43,3 +43,21 @@ The studio needed one public site for its apps and their installers.
   - **`.github/workflows/pages.yml`** copies `langflip/` into the site.
   - **`README.md`** a Langflip section.
 - **Limits** the download link opens the releases filtered to Langflip. It lists nothing until the first Langflip release.
+
+## 2026-10-30 Portfolio home page
+
+- **Why** the home page was a plain list of links. Workbench Soft plans to take custom development work, so the home page becomes its business card: each project with each of its features, and what the studio builds for clients. The page shows no ads.
+- **What the visitor gets**
+  - **Hero** the studio name, what it builds, and live counts of projects and features read from the page.
+  - **Services** the kinds of work a client can order: mobile, web, desktop, maps and voice, launch, tooling.
+  - **Projects** a panel per project: what it does, platforms, stack, links and the full feature list. Chips filter by apps, developer tools and archive.
+  - **Process** how a project goes from a spec to a release.
+  - **Contact** the email, with a button that starts a letter.
+  - **Quick jump** `Ctrl+K` or `/` opens a search over projects and features.
+- **Changes**
+  - **`index.html`** rewritten: one static page, CSS and script inline, fonts from Google Fonts. The text sits in the HTML, so search engines read it without the script.
+  - **`docs/features.md`**, **`docs/user-flows.md`**, **`docs/architecture.md`** new.
+  - **`README.md`** describes the home page.
+  - **`CHANGELOG.md`** an entry.
+- **Content** each project's text comes from its repo: `docs/features.md` and the README. The `project-architecture` repo stays off the page, since it holds work done for an employer. Internal helpers (`memories-demo-webdav`, `speedcameralocationscraper`) stay off too.
+- **Limits** English only. Links go to the public sites and the releases page, since the code repos are private. Motion stops under `prefers-reduced-motion`.
