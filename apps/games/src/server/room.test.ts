@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { CHOOSE_TIME, TURN_END_TIME } from './guess.ts';
-import { HOST_GRACE, EMPTY_TTL, Room } from './room.ts';
+import { HOST_GRACE, EMPTY_TTL, MAX_SEATS, Room } from './room.ts';
 import { GRACE, STEP_TIMES } from './telephone.ts';
 import { CLUE_TIME, PICK_TIME, REVEAL_TIME } from './duel.ts';
 import { makeRoom } from './test-helpers.ts';
@@ -35,6 +35,18 @@ describe('room', () => {
     room.message('a', { t: 'kick', id: 'b' }, 0);
     expect(closed.get('b')).toBe('kicked');
     expect(room.connect('b', 'B', '#000000', 'en', 1)).toBe(false);
+  });
+
+  it('keeps a bounded number of seats when new players keep coming and going', () => {
+    const { room, join } = makeRoom();
+    join(['host']);
+    for (let i = 0; i < MAX_SEATS * 3; i++) {
+      join([`p${i}`]);
+      room.disconnect(`p${i}`, 0);
+    }
+    expect(room.players.size).toBe(MAX_SEATS);
+    expect(room.players.has('host')).toBe(true);
+    expect(room.players.has(`p${MAX_SEATS * 3 - 1}`)).toBe(true);
   });
 
   it('asks to be deleted after sitting empty', () => {
