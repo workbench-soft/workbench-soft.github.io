@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <title>Blueprint: crossed tools drawn in white on blueprint blue, with a grid and ticks</title>
+  <rect width="256" height="256" rx="40" fill="#0d3b78"/>
+  <path d="M0 64H256M0 128H256M0 192H256M64 0V256M128 0V256M192 0V256" stroke="#ffffff" stroke-opacity="0.22" stroke-width="2" stroke-dasharray="6 6"/>
+  <path d="M24 236H232M24 228V244M232 228V244M236 24V232M228 24H244M228 232H244" stroke="#ffffff" stroke-width="4" opacity="0.7"/>
+  <g fill="#0d3b78" stroke="#ffffff" stroke-width="12" stroke-linejoin="round"><g transform="rotate(45 128 128)"><path d="M113 34.6A44 44 0 1 0 143 34.6L143 70L113 70Z"/><rect x="114" y="96" width="28" height="124" rx="14"/></g><g transform="rotate(-45 128 128)"><rect x="72" y="40" width="112" height="48" rx="8"/><rect x="116" y="80" width="24" height="144" rx="12"/></g></g>
+</svg>

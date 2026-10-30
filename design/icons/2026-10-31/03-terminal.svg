@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <title>Terminal: a green prompt chevron and a block cursor, ready to launch a task</title>
+  <rect width="256" height="256" rx="40" fill="#050806"/>
+  <rect x="12" y="12" width="232" height="232" rx="30" fill="none" stroke="#1d3a26" stroke-width="8"/>
+  <path d="M52 76L116 128L52 180" fill="none" stroke="#39ff6a" stroke-width="28" stroke-linecap="square"/>
+  <rect x="136" y="162" width="72" height="32" fill="#39ff6a" opacity="0.3"/>
+  <rect x="136" y="156" width="72" height="32" fill="#39ff6a"/>
+</svg>
