@@ -16,7 +16,7 @@ async function sha256(text: string): Promise<string> {
 }
 
 /**
- * Reads workbenchsoft-dev://unlock?key=…&ads=1, which scripts/dev-phone.ts in the docs repo sends over adb.
+ * Reads workbenchsoft-dev://unlock?key=…&ads=1, which scripts/dev-phone.ts in the workspace repo sends over adb.
  * Returns false for any other link.
  */
 export async function openDevLink(url: string): Promise<boolean> {

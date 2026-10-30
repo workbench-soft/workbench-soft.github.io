@@ -142,7 +142,7 @@ score, since the browser keeps a secret token.
 ### 2026-10-31 No ads on the developer's phone
 
 - **Why** the developer wants each Workbench Soft app on their phone without ads, and a way to see the ads too.
-- **How** `apps/games/src/game/dev-device.ts` holds the SHA-256 of `WORKBENCH_DEV_KEY`, a key that stays on the developer's PC. `scripts/dev-phone.ts` in the `docs` repo sends `workbenchsoft-dev://unlock?key=…` to the app over adb, and `@capacitor/app` hands it to the page. A matching key hides the banner. `&ads=1` brings Google's test banner, since AdMob bans taps on real ads from the publisher, and `&ads=0` hides it again.
+- **How** `apps/games/src/game/dev-device.ts` holds the SHA-256 of `WORKBENCH_DEV_KEY`, a key that stays on the developer's PC. `scripts/dev-phone.ts` in the `workspace` repo sends `workbenchsoft-dev://unlock?key=…` to the app over adb, and `@capacitor/app` hands it to the page. A matching key hides the banner. `&ads=1` brings Google's test banner, since AdMob bans taps on real ads from the publisher, and `&ads=0` hides it again.
 - **Changes**
   - `apps/games/src/game/dev-device.ts` new, with a test.
   - `apps/games/src/game/admob.ts` reads the link, skips the banner on the developer's phone, and picks the test unit there.
