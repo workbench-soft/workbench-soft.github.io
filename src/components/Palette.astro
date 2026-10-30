@@ -1,10 +1,10 @@
 <dialog id="palette" aria-label="Search projects and features">
   <div class="field">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
-    <input id="pal-q" type="search" placeholder="Search projects and features" autocomplete="off" role="combobox" aria-controls="pal-list" aria-expanded="true" />
+    <input id="pal-q" type="search" placeholder="Search projects and features" autocomplete="off" role="combobox" aria-controls="pal-list" aria-expanded="true" aria-autocomplete="list" />
     <kbd>Esc</kbd>
   </div>
-  <ul id="pal-list" role="listbox"></ul>
+  <ul id="pal-list" role="listbox" aria-label="Results"></ul>
 </dialog>
 
 <script>
@@ -47,10 +47,12 @@
       li.className = "empty";
       li.textContent = "No match. Try another word.";
       list.append(li);
+      q.removeAttribute("aria-activedescendant");
       return;
     }
     shown.forEach((it, i) => {
       const li = document.createElement("li");
+      li.id = `pal-opt-${i}`;
       li.setAttribute("role", "option");
       li.setAttribute("aria-selected", String(i === sel));
       const kind = document.createElement("small");
@@ -66,11 +68,14 @@
       });
       list.append(li);
     });
+    q.setAttribute("aria-activedescendant", "pal-opt-0");
   }
 
   function select(i: number) {
     sel = Math.max(0, Math.min(i, shown.length - 1));
     [...list.children].forEach((li, n) => li.setAttribute("aria-selected", String(n === sel)));
+    // Focus stays in the search field, so this tells a screen reader which option the arrows reached.
+    q.setAttribute("aria-activedescendant", `pal-opt-${sel}`);
     list.children[sel]?.scrollIntoView({ block: "nearest" });
   }
 
