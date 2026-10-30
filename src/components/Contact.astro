@@ -1,0 +1,58 @@
+---
+import { email, mailto } from "../data/studio";
+---
+
+<section class="wrap" id="contact">
+  <div class="contact rv">
+    <div class="top" aria-hidden="true"><i></i><i></i><i></i><span>contact.sh</span></div>
+    <div class="term">
+      <div class="eyebrow">04 / Contact</div>
+      <h2>Have an app in mind?</h2>
+      <p class="intro">Write a few lines about the idea, the platforms and the deadline.</p>
+      <p class="prompt"><span class="p">$</span> mail {email} <span class="caret" aria-hidden="true"></span></p>
+      <div class="cta">
+        <a class="btn pri" href={mailto}>Write an email</a>
+        <button class="btn" type="button" id="copy" data-email={email}>Copy the address</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const copy = document.querySelector<HTMLButtonElement>("#copy")!;
+  copy.addEventListener("click", async () => {
+    const address = copy.dataset.email!;
+    try {
+      await navigator.clipboard.writeText(address);
+      copy.textContent = "Copied";
+    } catch {
+      copy.textContent = address;
+    }
+    setTimeout(() => (copy.textContent = "Copy the address"), 2200);
+  });
+</script>
+
+<style>
+  .contact {
+    margin-top: clamp(80px, 11vw, 140px);
+    border: 1px solid var(--line-2);
+    border-radius: 24px;
+    overflow: hidden;
+    background:
+      radial-gradient(40rem 24rem at 100% 0, rgb(169 139 255 / 0.16), transparent 60%),
+      radial-gradient(40rem 24rem at 0 100%, rgb(92 242 255 / 0.12), transparent 60%),
+      var(--bg-2);
+  }
+  .top { display: flex; align-items: center; gap: 8px; padding: 12px 18px; border-bottom: 1px solid var(--line); font: 500 12px var(--mono); color: var(--dim); }
+  .top i { width: 11px; height: 11px; border-radius: 50%; }
+  .top i:nth-child(1) { background: #ff5f57; }
+  .top i:nth-child(2) { background: #febc2e; }
+  .top i:nth-child(3) { background: #28c840; }
+  .top span { margin-left: 10px; }
+  .term { padding: clamp(28px, 5vw, 56px); }
+  h2 { max-width: none; }
+  .prompt { font: 500 clamp(1rem, 2.6vw, 1.6rem) var(--mono); margin: 0 0 30px; overflow-wrap: anywhere; }
+  .p { color: var(--lime); }
+  .caret { display: inline-block; width: 0.6em; height: 1.1em; background: var(--cyan); vertical-align: -0.15em; animation: blink 1.1s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+</style>

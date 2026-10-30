@@ -1,0 +1,116 @@
+---
+import type { Project } from "../data/projects";
+
+interface Props {
+  project: Project;
+  number: number;
+}
+
+const { project: p, number } = Astro.props;
+const no = String(number).padStart(2, "0");
+---
+
+<article class="proj" id={p.id} data-kind={p.kind} style={`--hue: ${p.hue}`}>
+  <div class="meta">
+    <div class="code">{no} / {p.code}</div>
+    <h3>{p.name}</h3>
+    <p class="tag">{p.tagline}</p>
+    <dl>
+      <div><dt>Platforms</dt><dd>{p.platforms.map((x) => <span>{x}</span>)}</dd></div>
+      <div><dt>Stack</dt><dd>{p.stack.map((x) => <span>{x}</span>)}</dd></div>
+    </dl>
+    {
+      p.links.length > 0 && (
+        <div class="links">
+          {p.links.map((l) => <a href={l.href}>{l.label} ↗</a>)}
+        </div>
+      )
+    }
+  </div>
+  <div>
+    <p class="lede">{p.lede}</p>
+    <ul class="feats">
+      {
+        p.groups.map((g) => (
+          <>
+            {g.title && <li class="sub">{g.title}</li>}
+            {g.features.map((f) => (
+              <li class="feat spot">
+                <b>{f.name}</b>
+                <span>{f.text}</span>
+              </li>
+            ))}
+          </>
+        ))
+      }
+    </ul>
+  </div>
+</article>
+
+<style>
+  .proj {
+    --acc: oklch(0.85 0.14 var(--hue));
+    --acc-a: oklch(0.85 0.14 var(--hue) / 0.14);
+    --glow: oklch(0.85 0.14 var(--hue) / 0.12);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    padding: 44px 0;
+    border-top: 1px solid var(--line);
+  }
+  .proj[hidden] { display: none; }
+  @container projects (min-width: 900px) {
+    .proj { grid-template-columns: minmax(250px, 330px) minmax(0, 1fr); gap: clamp(28px, 4vw, 56px); }
+    .meta { position: sticky; top: 92px; align-self: start; }
+  }
+  .code { display: flex; align-items: center; gap: 10px; font: 500 12px var(--mono); letter-spacing: 0.12em; color: var(--acc); }
+  .code::before { content: ""; width: 10px; height: 10px; border-radius: 3px; background: var(--acc); box-shadow: 0 0 16px var(--acc); }
+  h3 { font-size: clamp(1.9rem, 3.4vw, 2.6rem); letter-spacing: -0.035em; line-height: 1; margin: 16px 0 12px; }
+  .tag { color: var(--soft); margin: 0 0 22px; font-size: 1.05rem; }
+  dl { margin: 0 0 22px; display: grid; gap: 12px; }
+  dt { font: 500 10.5px var(--mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--dim); margin-bottom: 4px; }
+  dd { margin: 0; display: flex; flex-wrap: wrap; gap: 5px; }
+  dd span { font: 500 11.5px var(--mono); color: var(--soft); padding: 3px 8px; border-radius: 6px; background: rgb(255 255 255 / 0.04); border: 1px solid var(--line); }
+  .links { display: flex; flex-wrap: wrap; gap: 8px; }
+  .links a {
+    font: 600 13px var(--sans);
+    text-decoration: none;
+    padding: 9px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--acc);
+    color: var(--acc);
+    background: var(--acc-a);
+    transition: background 0.2s, color 0.2s;
+  }
+  .links a:hover { background: var(--acc); color: var(--bg); }
+  .lede { font-size: 1.12rem; color: var(--soft); margin: 0 0 24px; max-width: 46rem; }
+  .feats {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .feat { background: var(--bg-2); padding: 18px 20px; transition: background 0.25s; }
+  .feat:hover { background: linear-gradient(160deg, var(--acc-a), var(--bg-2) 70%); }
+  .feat b { display: block; font: 500 11.5px var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--acc); margin-bottom: 7px; }
+  .feat span { font-size: 14.5px; color: var(--soft); }
+  .sub {
+    grid-column: 1 / -1;
+    padding: 12px 20px;
+    background: var(--bg-3);
+    font: 500 11px var(--mono);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  :global(.flash) { animation: flash 1.8s ease-out; }
+  @keyframes flash {
+    0%, 30% { box-shadow: inset 0 0 0 2px var(--acc, var(--cyan)); background: var(--acc-a, rgb(92 242 255 / 0.14)); }
+  }
+</style>

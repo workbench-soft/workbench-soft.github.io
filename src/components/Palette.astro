@@ -1,0 +1,136 @@
+<dialog id="palette" aria-label="Search projects and features">
+  <div class="field">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+    <input id="pal-q" type="search" placeholder="Search projects and features" autocomplete="off" role="combobox" aria-controls="pal-list" aria-expanded="true" />
+    <kbd>Esc</kbd>
+  </div>
+  <ul id="pal-list" role="listbox"></ul>
+</dialog>
+
+<script>
+  interface Item {
+    kind: "Project" | "Feature";
+    label: string;
+    project: string;
+    hay: string;
+    el: HTMLElement;
+  }
+
+  const dlg = document.querySelector<HTMLDialogElement>("#palette")!;
+  const q = document.querySelector<HTMLInputElement>("#pal-q")!;
+  const list = document.querySelector<HTMLUListElement>("#pal-list")!;
+  const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // The index reads the rendered panels, so it lists what the page shows.
+  const items: Item[] = [];
+  for (const p of document.querySelectorAll<HTMLElement>(".proj")) {
+    const project = p.querySelector("h3")!.textContent!;
+    const tag = p.querySelector(".tag")!.textContent!;
+    items.push({ kind: "Project", label: project, project, hay: `${project} ${tag}`.toLowerCase(), el: p });
+    for (const f of p.querySelectorAll<HTMLElement>(".feat")) {
+      const label = f.querySelector("b")!.textContent!;
+      const text = f.querySelector("span")!.textContent!;
+      items.push({ kind: "Feature", label, project, hay: `${label} ${project} ${text}`.toLowerCase(), el: f });
+    }
+  }
+
+  let shown: Item[] = [];
+  let sel = 0;
+
+  function render() {
+    const terms = q.value.toLowerCase().split(/\s+/).filter(Boolean);
+    shown = items.filter((it) => terms.every((t) => it.hay.includes(t))).slice(0, 40);
+    sel = 0;
+    list.replaceChildren();
+    if (!shown.length) {
+      const li = document.createElement("li");
+      li.className = "empty";
+      li.textContent = "No match. Try another word.";
+      list.append(li);
+      return;
+    }
+    shown.forEach((it, i) => {
+      const li = document.createElement("li");
+      li.setAttribute("role", "option");
+      li.setAttribute("aria-selected", String(i === sel));
+      const kind = document.createElement("small");
+      kind.textContent = it.kind;
+      const label = document.createElement("span");
+      label.textContent = it.label;
+      const project = document.createElement("em");
+      project.textContent = it.kind === "Feature" ? it.project : "";
+      li.append(kind, label, project);
+      li.addEventListener("click", () => go(it));
+      li.addEventListener("pointermove", () => {
+        if (sel !== i) select(i);
+      });
+      list.append(li);
+    });
+  }
+
+  function select(i: number) {
+    sel = Math.max(0, Math.min(i, shown.length - 1));
+    [...list.children].forEach((li, n) => li.setAttribute("aria-selected", String(n === sel)));
+    list.children[sel]?.scrollIntoView({ block: "nearest" });
+  }
+
+  function open() {
+    q.value = "";
+    render();
+    dlg.showModal();
+    q.focus();
+  }
+
+  function go(it: Item) {
+    dlg.close();
+    if (it.el.closest("[hidden]")) dispatchEvent(new Event("show-all-projects"));
+    it.el.scrollIntoView({ behavior: still ? "auto" : "smooth", block: "center" });
+    it.el.classList.remove("flash");
+    void it.el.offsetWidth;
+    it.el.classList.add("flash");
+  }
+
+  q.addEventListener("input", render);
+  q.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowDown") (e.preventDefault(), select(sel + 1));
+    if (e.key === "ArrowUp") (e.preventDefault(), select(sel - 1));
+    if (e.key === "Enter" && shown[sel]) go(shown[sel]);
+  });
+  dlg.addEventListener("click", (e) => {
+    if (e.target === dlg) dlg.close();
+  });
+  for (const b of document.querySelectorAll("[data-palette]")) b.addEventListener("click", open);
+  addEventListener("keydown", (e) => {
+    const typing = /^(INPUT|TEXTAREA|SELECT)$/.test((document.activeElement as HTMLElement | null)?.tagName ?? "");
+    if ((e.key === "k" && (e.ctrlKey || e.metaKey)) || (e.key === "/" && !typing)) {
+      e.preventDefault();
+      if (dlg.open) dlg.close();
+      else open();
+    }
+  });
+</script>
+
+<style>
+  dialog {
+    width: min(640px, calc(100vw - 32px));
+    padding: 0;
+    border: 1px solid var(--line-2);
+    border-radius: 16px;
+    background: rgb(10 14 26 / 0.96);
+    color: var(--text);
+    box-shadow: 0 30px 120px -20px rgb(0 0 0 / 0.9), 0 0 0 1px rgb(92 242 255 / 0.1);
+    margin-top: 12vh;
+  }
+  dialog[open] { animation: pop 0.22s var(--ease); }
+  @keyframes pop { from { opacity: 0; scale: 0.96; } }
+  dialog::backdrop { background: rgb(2 3 8 / 0.6); backdrop-filter: blur(6px); }
+  .field { display: flex; align-items: center; gap: 12px; padding: 16px 18px; border-bottom: 1px solid var(--line); }
+  input { flex: 1; background: none; border: 0; outline: 0; color: var(--text); font: 500 17px var(--sans); }
+  .field svg { width: 18px; height: 18px; color: var(--cyan); flex: none; }
+  ul { list-style: none; margin: 0; padding: 8px; max-height: 52vh; overflow: auto; }
+  ul :global(li) { display: flex; gap: 12px; align-items: baseline; padding: 10px 12px; border-radius: 10px; cursor: pointer; }
+  ul :global(li[aria-selected="true"]) { background: rgb(92 242 255 / 0.1); }
+  ul :global(small) { font: 500 10.5px var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--dim); flex: 0 0 64px; }
+  ul :global(em) { margin-left: auto; font: normal 500 12px var(--mono); color: var(--muted); white-space: nowrap; }
+  ul :global(.empty) { color: var(--muted); font-size: 14px; cursor: default; }
+</style>

@@ -1,0 +1,24 @@
+---
+import { stack } from "../data/studio";
+---
+
+<div class="marquee" aria-label="Technologies">
+  <div class="track">
+    {stack.map((s) => <span>{s}</span>)}
+    {stack.map((s) => <span aria-hidden="true">{s}</span>)}
+  </div>
+</div>
+
+<style>
+  .marquee {
+    border-block: 1px solid var(--line);
+    overflow: hidden;
+    background: rgb(8 12 22 / 0.6);
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  }
+  .track { display: flex; width: max-content; animation: slide 50s linear infinite; }
+  .marquee:hover .track { animation-play-state: paused; }
+  span { font: 500 13px var(--mono); letter-spacing: 0.08em; color: var(--muted); padding: 16px 26px; white-space: nowrap; }
+  span::before { content: "◆"; color: var(--cyan); margin-right: 26px; font-size: 9px; vertical-align: 2px; }
+  @keyframes slide { to { translate: -50% 0; } }
+</style>
