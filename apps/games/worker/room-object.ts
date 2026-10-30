@@ -9,8 +9,11 @@ const CANVAS_SAVE_GAP = 2_000;
 const MAX_MESSAGE = 256 * 1024;
 const CLOSE_CODES: Record<ErrorKey, number> = { full: 4001, kicked: 4002, replaced: 4003, bad: 4004, clue: 4005 };
 
-/** `v` is the client's protocol version, so a later Worker can answer each socket in its own format. */
-type Attachment = { id: string; v: number } | null;
+/**
+ * `v` is the client's protocol version, so a later Worker can answer each socket in its own format.
+ * Sockets accepted before the version existed have none: read it as `v ?? 1`.
+ */
+type Attachment = { id: string; v?: number } | null;
 
 async function playerId(token: string): Promise<string> {
   const hash = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(`workbench-games:${token}`));
