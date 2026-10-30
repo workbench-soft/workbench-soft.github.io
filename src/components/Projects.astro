@@ -1,0 +1,114 @@
+---
+import { projects, kinds, featureCount } from "../data/projects";
+import ProjectPanel from "./ProjectPanel.astro";
+
+const numbered = projects.map((p, i) => ({ p, n: i + 1 }));
+---
+
+<section class="block" id="projects">
+  <div class="wrap">
+    <div class="eyebrow rv">02 / Projects</div>
+    <h2 class="rv">The work, feature by feature</h2>
+    <p class="intro rv">Each project below lists what it does for the person who uses it. Press <kbd>/</kbd> to search any feature.</p>
+
+    <div class="bar" role="toolbar" aria-label="Filter the projects">
+      <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+      {kinds.map((k) => <button class="chip" type="button" data-filter={k.id} aria-pressed="false">{k.label}</button>)}
+      <button class="kbtn" type="button" data-palette>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+        <span>Find a feature</span><kbd>/</kbd>
+      </button>
+    </div>
+
+    <ul class="index" aria-label="Project index">
+      {
+        numbered.map(({ p, n }) => (
+          <li data-kind={p.kind} style={`--hue: ${p.hue}`}>
+            <a href={`#${p.id}`}>
+              <i>{String(n).padStart(2, "0")}</i>
+              {p.name}
+              <em title="Features">{featureCount(p)}</em>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="list">
+      {
+        kinds.map((k) => (
+          <div class="group" data-kind={k.id}>
+            <h3 class="group-title">{k.label}</h3>
+            {numbered.filter(({ p }) => p.kind === k.id).map(({ p, n }) => <ProjectPanel project={p} number={n} />)}
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<script>
+  const chips = [...document.querySelectorAll<HTMLButtonElement>(".chip")];
+  const filtered = [...document.querySelectorAll<HTMLElement>(".index li, .group")];
+
+  // Shown items fade in through @starting-style in the CSS below.
+  function filter(kind: string) {
+    for (const c of chips) c.setAttribute("aria-pressed", String(c.dataset.filter === kind));
+    for (const el of filtered) el.hidden = kind !== "all" && el.dataset.kind !== kind;
+  }
+
+  for (const c of chips) c.addEventListener("click", () => filter(c.dataset.filter!));
+  addEventListener("show-all-projects", () => filter("all"));
+</script>
+
+<style>
+  .bar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 22px; }
+  .chip {
+    cursor: pointer;
+    font: 500 12px var(--mono);
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    background: transparent;
+    border: 1px solid var(--line-2);
+    border-radius: 999px;
+    padding: 8px 14px;
+    transition: color 0.2s, background 0.2s;
+  }
+  .chip:hover { color: var(--text); }
+  .chip[aria-pressed="true"] { color: var(--bg); background: var(--text); border-color: var(--text); }
+  .bar .kbtn { margin-left: auto; }
+  @media (max-width: 640px) {
+    .bar .kbtn { margin-left: 0; }
+  }
+  .index {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 8px;
+    margin: 0 0 32px;
+    padding: 0;
+    list-style: none;
+  }
+  .index li { --acc: oklch(0.85 0.14 var(--hue)); }
+  .index li, .group { transition: opacity 0.45s var(--ease), translate 0.45s var(--ease), display 0.45s allow-discrete; }
+  .index li[hidden], .group[hidden] { display: none; opacity: 0; }
+  @starting-style {
+    .index li, .group { opacity: 0; translate: 0 18px; }
+  }
+  .index a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    background: rgb(8 12 22 / 0.6);
+    font-size: 14px;
+    transition: border-color 0.2s, translate 0.2s;
+  }
+  .index a:hover { border-color: var(--acc); translate: 0 -2px; }
+  .index i { font: normal 500 11px var(--mono); color: var(--dim); }
+  .index em { margin-left: auto; font: normal 500 11px var(--mono); color: var(--acc); }
+  .list { container: projects / inline-size; }
+  .group-title { margin: 56px 0 0; font: 500 12px var(--mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+</style>
