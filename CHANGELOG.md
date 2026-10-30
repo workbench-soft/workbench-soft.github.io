@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Games apps** a phone that got the developer key over adb shows no banner. `--ads on` on the dev-phone script brings Google's test banner.
 - **Games rooms** a malformed message no longer stops a room, a kick in drawing telephone moves the step on, and a room keeps 24 seats at most.
 - **Room codes** the join form takes only the letters codes use, and a broken room link says so in the apps too.
 - **Games protocol** each socket hello carries a version, for the apps that ship their own client.
