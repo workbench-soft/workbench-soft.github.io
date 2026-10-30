@@ -19,3 +19,12 @@ Work left in the code:
 
 - [ ] Test the Android app on a phone: the pages under `/games/` load from local files, the room connects to workbenchsoft.com, the banner shows in the lobby.
 - [ ] Open room links in the apps: Android App Links with `/.well-known/assetlinks.json` and iOS Universal Links with `apple-app-site-association`, once the signing keys exist.
+
+## app-audit
+
+- [ ] Check that the first Pages run on main after the audit PR deploys https://workbench-soft.github.io (pages.yml now pins actions and splits permissions per job).
+- [ ] Try a room in the Android and iOS apps once they build: a mistyped code shows "This room link is broken", and the room reconnects after the phone sleeps.
+- Left: self-host the Google Fonts of the home page. It saves a third-party request and an IP sent to Google, and adds font files plus a design check.
+- Left: one pnpm version and one workspace for the root, apps/games and apps/edge. It is a tooling migration across 3 lockfiles.
+- Left: memories-mobile/assets/social.png (192 KB) has no link in the repo. It is a served file another site or store listing may use.
+- Left: media-organizer/install.ps1 builds the installer URL itself in place of the `url` in latest.json. Both give the same URL today.
