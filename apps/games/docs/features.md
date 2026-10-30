@@ -40,6 +40,7 @@
 - **For the person** the games stay free. A banner sits on the content pages, in the lobby and on the results.
 - **Where** AdSense on the site, AdMob in the apps.
 - **Limits** no ad shows while someone draws or guesses.
+- **Developer's phone** the apps hide the banner on a phone that got the developer key from `mise run dev-phone` in the `workspace` repo. `--ads on` brings Google's test banner, `--ads off` hides it again.
 
 ## Android and iOS apps
 
