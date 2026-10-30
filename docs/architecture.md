@@ -53,6 +53,8 @@ sequenceDiagram
 4. Jekyll builds the Memories site into `_site/memories-mobile`.
 5. The job copies `dist/`, `langflip/` and the root files into `_site/` and publishes it.
 
+A pull request runs steps 2 to 4 and the copy, then stops before the publish.
+
 ## workbenchsoft.com and the apps
 
 The domain sits behind the edge Worker in [apps/edge](../apps/edge/). [registry.json](../registry.json) lists which app owns each top path, and every other path comes from this site on GitHub Pages.

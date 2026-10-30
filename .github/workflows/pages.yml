@@ -1,18 +1,23 @@
 name: Pages
 
 # Publishes https://workbench-soft.github.io on each push to main.
+# A pull request runs the same checks and build, and skips the deploy.
 # The repo is public, so the hosted runner spends no Actions minutes.
 on:
   push:
     branches: [main]
+  # The Games workflow checks apps/.
+  pull_request:
+    paths-ignore: ['apps/**']
   workflow_dispatch:
 
 # Each job gets only what it needs. The deploy alone may write to Pages.
 permissions:
   contents: read
 
+# Main keeps one group, so a pull request can't cancel a deploy.
 concurrency:
-  group: pages
+  group: pages-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -41,10 +46,12 @@ jobs:
           sudo cp -r dist/. _site/
           sudo cp app-ads.txt robots.txt _site/
           sudo cp -r langflip _site/
-      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+      - if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
 
   deploy:
     needs: build
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     permissions:
       pages: write
