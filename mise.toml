@@ -1,0 +1,19 @@
+[tools]
+node = "24"
+pnpm = "12.16.1"
+
+[tasks.dev]
+description = "Run the home page on a local server"
+run = "pnpm astro dev"
+
+[tasks.build]
+description = "Build the home page into dist/"
+run = "pnpm astro build"
+
+[tasks.check]
+description = "Type check the Astro pages and scripts"
+run = "pnpm astro check"
+
+[tasks.preview]
+description = "Serve the built dist/ folder"
+run = "pnpm astro preview"

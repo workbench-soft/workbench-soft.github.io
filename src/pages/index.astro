@@ -1,0 +1,76 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+import Hero from "../components/Hero.astro";
+import Marquee from "../components/Marquee.astro";
+import Services from "../components/Services.astro";
+import Projects from "../components/Projects.astro";
+import Process from "../components/Process.astro";
+import Contact from "../components/Contact.astro";
+import Palette from "../components/Palette.astro";
+import { email } from "../data/studio";
+import { projects } from "../data/projects";
+
+const names = projects.filter((p) => p.kind === "app").map((p) => p.name);
+---
+
+<Base
+  title="Workbench Soft: apps for Android, the web, Windows and macOS"
+  description={`Workbench Soft builds and ships apps: ${names.join(", ")} and developer tools. Each project with each of its features.`}
+>
+  <a class="skip" href="#projects">Skip to the projects</a>
+  <Nav />
+  <Hero />
+  <Marquee />
+  <main>
+    <Services />
+    <Projects />
+    <Process />
+    <Contact />
+  </main>
+  <footer>
+    <div class="wrap">
+      <span>© {new Date().getFullYear()} Workbench Soft. This site shows no ads.</span>
+      <span>
+        <a href="https://github.com/workbench-soft/workbench-soft.github.io/releases">Releases</a> ·
+        <a href="/memories-mobile/privacy-policy.html">Memories privacy</a> ·
+        <a href={`mailto:${email}`}>{email}</a>
+      </span>
+    </div>
+  </footer>
+  <Palette />
+</Base>
+
+<script>
+  // Light follows the pointer over cards and feature tiles.
+  document.addEventListener("pointermove", (e) => {
+    const el = (e.target as Element).closest<HTMLElement>(".spot");
+    if (!el) return;
+    const r = el.getBoundingClientRect();
+    el.style.setProperty("--mx", `${e.clientX - r.left}px`);
+    el.style.setProperty("--my", `${e.clientY - r.top}px`);
+  });
+
+  // Browsers without scroll timelines reveal blocks through an observer.
+  if (!CSS.supports("animation-timeline: view()")) {
+    document.documentElement.classList.add("io");
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (!e.isIntersecting) continue;
+          e.target.classList.add("in");
+          io.unobserve(e.target);
+        }
+      },
+      { rootMargin: "0px 0px -8% 0px" },
+    );
+    document.querySelectorAll(".rv").forEach((el) => io.observe(el));
+  }
+</script>
+
+<style>
+  footer { padding: 56px 0 40px; color: var(--dim); font: 500 12px var(--mono); letter-spacing: 0.04em; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 16px 28px; justify-content: space-between; border-top: 1px solid var(--line); padding-top: 28px; }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--text); }
+</style>

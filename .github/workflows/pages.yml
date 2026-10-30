@@ -22,15 +22,22 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - uses: actions/configure-pages@v6
+      - uses: jdx/mise-action@v5.2.4
+      - name: Build the home page
+        run: |
+          mise x -- pnpm install --frozen-lockfile
+          mise run check
+          mise run build
       - name: Build the Memories site
         uses: actions/jekyll-build-pages@v1
         with:
           source: ./memories-mobile
           destination: ./_site/memories-mobile
       # The Jekyll step runs in a container as root, so _site belongs to root.
-      - name: Add the root files
+      - name: Add the home page and the root files
         run: |
-          sudo cp index.html app-ads.txt robots.txt _site/
+          sudo cp -r dist/. _site/
+          sudo cp app-ads.txt robots.txt _site/
           sudo cp -r langflip _site/
       - uses: actions/upload-pages-artifact@v5
 
