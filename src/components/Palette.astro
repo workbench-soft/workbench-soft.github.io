@@ -72,6 +72,7 @@
   }
 
   function select(i: number) {
+    if (!shown.length) return;
     sel = Math.max(0, Math.min(i, shown.length - 1));
     [...list.children].forEach((li, n) => li.setAttribute("aria-selected", String(n === sel)));
     // Focus stays in the search field, so this tells a screen reader which option the arrows reached.
