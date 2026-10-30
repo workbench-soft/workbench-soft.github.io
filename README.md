@@ -28,3 +28,12 @@ irm https://raw.githubusercontent.com/workbench-soft/workbench-soft.github.io/ma
 
 - **Version** each script reads `latest.json` from the [media-organizer-latest](https://github.com/workbench-soft/workbench-soft.github.io/releases/tag/media-organizer-latest) release. The desktop app reads the same file for its update.
 - **Android** get `MediaOrganizer-<version>-android.apk` from the [releases page](https://github.com/workbench-soft/workbench-soft.github.io/releases?q=media-organizer&expanded=true).
+
+## Games and the edge
+
+Free party games live in [apps/games/](apps/games/) and run at https://workbenchsoft.com/games/: guess the drawing, drawing telephone and clue duel, with Android and iOS apps.
+
+- **Micro frontends** each folder in `apps/` builds and deploys on its own. [registry.json](registry.json) says which app owns each path.
+- **Edge** [apps/edge/](apps/edge/) is the Worker on workbenchsoft.com. It sends `/games` to the games Worker and every other path to this site on GitHub Pages.
+- **Checks and deploy** the [Games workflow](.github/workflows/games.yml) checks both apps on pull requests and deploys them from main.
+- **Docs** [architecture](apps/games/docs/architecture.md), [user flows](apps/games/docs/user-flows.md), [features](apps/games/docs/features.md).
