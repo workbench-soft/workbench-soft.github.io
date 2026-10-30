@@ -8,6 +8,26 @@ Public files for the Workbench Soft apps. The code sits in private repos in this
 - **Memories site** sits in [memories-mobile/](memories-mobile/), a Jekyll site with its own `_config.yml`.
 - **app-ads.txt** lists the AdMob publisher for apps whose Play listing points at this site.
 
+## Home page
+
+The home page is the studio's business card: what it builds for clients, and each project with each of its features. It shows no ads.
+
+- **Stack** Astro 7 and TypeScript build it into static HTML in `dist/`. A WebGL2 shader draws the hero.
+- **Content** the projects sit in [src/data/projects.ts](src/data/projects.ts), the services and the process in [src/data/studio.ts](src/data/studio.ts). A new project or feature is one entry there.
+- **Docs** [features](docs/features.md), [user flows](docs/user-flows.md) and [architecture](docs/architecture.md).
+
+Run it with [mise](https://mise.jdx.dev):
+
+```sh
+mise install
+mise x -- pnpm install
+mise run dev
+```
+
+- **Check** `mise run check` type checks the pages and scripts.
+- **Build** `mise run build` writes `dist/`. `mise run preview` serves it.
+- **Deploy** a push to `main` runs [pages.yml](.github/workflows/pages.yml). It builds the home page and the Memories site, then publishes both.
+
 ## Who writes here
 
 The release jobs push with the `RELEASES_TOKEN` secret of each app repo. It is a fine-grained token with write access to this repo only.
