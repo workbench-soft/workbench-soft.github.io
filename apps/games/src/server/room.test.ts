@@ -171,6 +171,17 @@ describe('drawing telephone', () => {
     for (let i = 0; i < 9; i++) room.message('a', { t: 'next' }, 3);
     expect(view('a').album?.done).toBe(true);
   });
+
+  it('moves on once the only player left to answer is kicked', () => {
+    const { room, view, join } = makeRoom();
+    join(['a', 'b', 'c']);
+    room.message('a', { t: 'settings', settings: { mode: 'telephone' } }, 0);
+    room.message('a', { t: 'start' }, 0);
+    room.message('a', { t: 'submit', text: 'one' }, 1);
+    room.message('b', { t: 'submit', text: 'two' }, 1);
+    room.message('a', { t: 'kick', id: 'c' }, 2);
+    expect(view('a').tele?.step).toBe(1);
+  });
 });
 
 describe('clue duel', () => {

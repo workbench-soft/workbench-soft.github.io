@@ -136,7 +136,7 @@ export class Room {
         if (host) this.backToLobby();
         break;
       case 'kick':
-        if (host && msg.id !== id) this.kick(String(msg.id));
+        if (host && msg.id !== id) this.kick(String(msg.id), now);
         break;
       case 'team':
         if (this.phase === 'lobby' && (msg.team === 'red' || msg.team === 'blue')) {
@@ -383,15 +383,16 @@ export class Room {
     if (this.online().length < need) this.backToLobby();
   }
 
-  private kick(id: string): void {
+  private kick(id: string, now: number): void {
     const player = this.players.get(id);
     if (!player) return;
     this.banned.add(id);
     this.sys('kicked', player.name);
     this.out.close(id, 'kicked');
     this.players.delete(id);
-    this.guess?.playerLeft(id, Date.now());
-    this.duel?.playerLeft(id, Date.now());
+    this.guess?.playerLeft(id, now);
+    this.tele?.playerLeft(now);
+    this.duel?.playerLeft(id, now);
     this.checkEnough();
     this.changed();
   }
