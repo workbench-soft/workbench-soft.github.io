@@ -49,6 +49,21 @@ describe('room', () => {
     expect(room.players.has(`p${MAX_SEATS * 3 - 1}`)).toBe(true);
   });
 
+  it('keeps the seat and score of a player in the game while new tokens flood in', () => {
+    const { room, join } = makeRoom();
+    join(['host', 'alice', 'bob']);
+    room.message('host', { t: 'start' }, 0);
+    room.players.get('alice')!.score = 420;
+    room.disconnect('alice', 1);
+    for (let i = 0; i < MAX_SEATS * 2; i++) {
+      join([`p${i}`], 2);
+      room.disconnect(`p${i}`, 2);
+    }
+    expect(room.players.size).toBe(MAX_SEATS);
+    room.connect('alice', 'Alice', '#000000', 'en', 3);
+    expect(room.players.get('alice')?.score).toBe(420);
+  });
+
   it('asks to be deleted after sitting empty', () => {
     const { room, join } = makeRoom();
     join(['a']);

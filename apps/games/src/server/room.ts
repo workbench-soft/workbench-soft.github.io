@@ -87,7 +87,7 @@ export class Room {
     }
     const cleanName = name.trim().replace(/\s+/g, ' ').slice(0, MAX_NAME) || 'Player';
     if (!player) {
-      if (this.players.size >= MAX_SEATS) this.dropOldestOffline();
+      if (this.players.size >= MAX_SEATS) this.dropNewestOffline();
       if (this.players.size === 0) this.settings.wordLang = lang;
       player = { id, name: cleanName, color: isColor(color) ? color : '#1e88e5', score: 0, online: true, team: this.smallerTeam() };
       this.players.set(id, player);
@@ -400,10 +400,13 @@ export class Room {
     this.changed();
   }
 
-  /** Frees the seat of the player who joined first among those offline. The host keeps the seat. */
-  private dropOldestOffline(): void {
-    const old = [...this.players.values()].find((p) => !p.online && p.id !== this.hostId);
-    if (old) this.players.delete(old.id);
+  /**
+   * Frees the seat of the player who joined last among those offline. Players from the start of the
+   * game keep their seats and scores, and a flood of new tokens only replaces its own seats.
+   */
+  private dropNewestOffline(): void {
+    const seat = [...this.players.values()].findLast((p) => !p.online && p.id !== this.hostId);
+    if (seat) this.players.delete(seat.id);
   }
 
   private passHost(): void {

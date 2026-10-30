@@ -130,10 +130,11 @@ score, since the browser keeps a secret token.
     sends it in `hello`, and the room object keeps it with the socket. A
     `hello` without it counts as version 1.
   - `apps/games/src/server/room.ts` a room keeps at most 24 seats. A new
-    player past that takes the seat of the oldest offline player.
+    player past that takes the seat of the newest offline player, so the
+    players of a running game keep their seats and scores.
   - `apps/games/src/server/` a kick in telephone moves the step on, and a
     pick with a bad index is ignored.
   - `apps/games/worker/room-object.ts` drops a message that isn't an object.
   - The join form and the room page accept only the letters a room code uses.
 - **Steps** one commit per fix, each with its test where the code has tests.
-- **Docs** `docs/architecture.md`, `CHANGELOG.md`.
+- **Docs** `apps/games/docs/architecture.md`, `CHANGELOG.md`.
