@@ -1,15 +1,22 @@
-<dialog id="palette" aria-label="Search projects and features">
+---
+import { langOf } from "../i18n/locales";
+import { ui } from "../i18n";
+
+const t = ui(langOf(Astro.currentLocale));
+---
+
+<dialog id="palette" aria-label={t.nav.searchLabel} data-empty={t.palette.empty} data-project={t.palette.project} data-feature={t.palette.feature}>
   <div class="field">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
-    <input id="pal-q" type="search" placeholder="Search projects and features" autocomplete="off" role="combobox" aria-controls="pal-list" aria-expanded="true" aria-autocomplete="list" />
+    <input id="pal-q" type="search" placeholder={t.nav.searchLabel} autocomplete="off" role="combobox" aria-controls="pal-list" aria-expanded="true" aria-autocomplete="list" />
     <kbd>Esc</kbd>
   </div>
-  <ul id="pal-list" role="listbox" aria-label="Results"></ul>
+  <ul id="pal-list" role="listbox" aria-label={t.palette.results}></ul>
 </dialog>
 
 <script>
   interface Item {
-    kind: "Project" | "Feature";
+    kind: "project" | "feature";
     label: string;
     project: string;
     hay: string;
@@ -26,11 +33,11 @@
   for (const p of document.querySelectorAll<HTMLElement>(".proj")) {
     const project = p.querySelector("h3")!.textContent!;
     const tag = p.querySelector(".tag")!.textContent!;
-    items.push({ kind: "Project", label: project, project, hay: `${project} ${tag}`.toLowerCase(), el: p });
+    items.push({ kind: "project", label: project, project, hay: `${project} ${tag}`.toLowerCase(), el: p });
     for (const f of p.querySelectorAll<HTMLElement>(".feat")) {
       const label = f.querySelector("b")!.textContent!;
       const text = f.querySelector("span")!.textContent!;
-      items.push({ kind: "Feature", label, project, hay: `${label} ${project} ${text}`.toLowerCase(), el: f });
+      items.push({ kind: "feature", label, project, hay: `${label} ${project} ${text}`.toLowerCase(), el: f });
     }
   }
 
@@ -45,7 +52,7 @@
     if (!shown.length) {
       const li = document.createElement("li");
       li.className = "empty";
-      li.textContent = "No match. Try another word.";
+      li.textContent = dlg.dataset.empty!;
       list.append(li);
       q.removeAttribute("aria-activedescendant");
       return;
@@ -56,11 +63,11 @@
       li.setAttribute("role", "option");
       li.setAttribute("aria-selected", String(i === sel));
       const kind = document.createElement("small");
-      kind.textContent = it.kind;
+      kind.textContent = dlg.dataset[it.kind]!;
       const label = document.createElement("span");
       label.textContent = it.label;
       const project = document.createElement("em");
-      project.textContent = it.kind === "Feature" ? it.project : "";
+      project.textContent = it.kind === "feature" ? it.project : "";
       li.append(kind, label, project);
       li.addEventListener("click", () => go(it));
       li.addEventListener("pointermove", () => {

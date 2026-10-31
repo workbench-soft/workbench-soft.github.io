@@ -1,15 +1,18 @@
 ---
 import { projects, featureCount } from "../data/projects";
 import { devicePlatforms, mailto } from "../data/studio";
+import { langOf } from "../i18n/locales";
+import { ui } from "../i18n";
 
+const t = ui(langOf(Astro.currentLocale));
 const platforms = new Set(projects.flatMap((p) => p.platforms).filter((p) => devicePlatforms.includes(p)));
 const stats = [
-  { value: projects.length, label: "Projects" },
-  { value: projects.reduce((n, p) => n + featureCount(p), 0), label: "Features shipped" },
-  { value: platforms.size, label: "Platforms" },
-  { value: 0, label: "Ads on this site" },
+  { value: projects.length, label: t.hero.projects },
+  { value: projects.reduce((n, p) => n + featureCount(p), 0), label: t.hero.features },
+  { value: platforms.size, label: t.hero.platforms },
+  { value: 0, label: t.hero.ads },
 ];
-const lines = ["We design,", "build and ship", "software."];
+const lines = t.hero.lines;
 ---
 
 <header class="hero" id="top">
@@ -17,20 +20,17 @@ const lines = ["We design,", "build and ship", "software."];
   <div class="hud tl" aria-hidden="true">WS://studio <b>online</b></div>
   <div class="hud tr" aria-hidden="true">Local <b id="clock">--:--:--</b><br />Render <b id="renderer">CSS</b></div>
   <div class="wrap">
-    <span class="status"><span class="dot" aria-hidden="true"></span>Open for client projects</span>
+    <span class="status"><span class="dot" aria-hidden="true"></span>{t.hero.status}</span>
     <h1 aria-label={lines.join(" ")}>
       {lines.map((l, i) => <span class:list={{ grad: i === lines.length - 1 }} data-scramble aria-hidden="true">{l}</span>)}
     </h1>
-    <p class="lead">
-      Workbench Soft is an independent studio. It makes apps for Android, iPhone, the web, Windows and macOS, and takes
-      each one from the first spec to the store, to search results and to the updates after.
-    </p>
+    <p class="lead">{t.hero.lead}</p>
     <div class="cta">
-      <a class="btn pri" href={mailto}>
-        Start a project
+      <a class="btn pri" href={mailto(t.contact.subject)}>
+        {t.hero.start}
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
       </a>
-      <a class="btn" href="#projects">See the work</a>
+      <a class="btn" href="#projects">{t.hero.work}</a>
     </div>
     <dl class="stats">
       {stats.map((s) => <div><dt>{s.label}</dt><dd data-count={s.value}>{s.value}</dd></div>)}

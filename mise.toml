@@ -25,3 +25,7 @@ run = ["pnpm lint", "pnpm format:check"]
 [tasks.format]
 description = "Format the whole repo with oxfmt"
 run = "pnpm format"
+
+[tasks.test]
+description = "Check that each language catalog matches English"
+run = "pnpm test"

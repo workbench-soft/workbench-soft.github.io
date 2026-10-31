@@ -1,6 +1,12 @@
 ---
-import { services, type Icon } from "../data/studio";
+import type { Icon } from "../data/studio";
 import { projects } from "../data/projects";
+import { langOf } from "../i18n/locales";
+import { servicesIn, ui } from "../i18n";
+
+const lang = langOf(Astro.currentLocale);
+const t = ui(lang);
+const services = servicesIn(lang);
 
 const icons: Record<Icon, string> = {
   phone: '<rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10.5 18.5h3"/>',
@@ -15,9 +21,9 @@ const nameOf = (id: string) => projects.find((p) => p.id === id)?.name ?? id;
 
 <section class="block" id="services">
   <div class="wrap">
-    <div class="eyebrow rv">01 / Services</div>
-    <h2 class="rv">What the studio builds for you</h2>
-    <p class="intro rv">The same team that shipped the apps below can build yours. Each line of work links to the projects that prove it.</p>
+    <div class="eyebrow rv">01 / {t.nav.services}</div>
+    <h2 class="rv">{t.services.title}</h2>
+    <p class="intro rv">{t.services.intro}</p>
     <div class="grid">
       {
         services.map((s) => (

@@ -9,16 +9,19 @@
     "preview": "astro preview",
     "lint": "oxlint --deny-warnings",
     "format": "oxfmt",
-    "format:check": "oxfmt --check"
+    "format:check": "oxfmt --check",
+    "test": "vitest run --dir src"
   },
   "dependencies": {
+    "@astrojs/sitemap": "3.7.4",
     "astro": "7.4.4"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.12",
     "oxfmt": "^0.75.0",
     "oxlint": "^1.90.0",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "vitest": "5.0.5"
   },
   "packageManager": "pnpm@12.16.1"
 }

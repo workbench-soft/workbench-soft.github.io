@@ -96,7 +96,7 @@ The studio needed one public site for its apps and their installers.
     lede, link labels and features.
 - **How it works**
   - **Routing** Astro's built-in i18n routing, `prefixDefaultLocale: false`.
-    One page file `src/pages/[...lang]/index.astro` builds all 9.
+    One page file `src/pages/[...lang].astro` builds all 9.
   - **Catalogs** `src/i18n/<code>.ts`, one typed catalog per language. The
     English text stays in `src/data/projects.ts` and `src/data/studio.ts`, and
     the other catalogs follow it by project id and feature order.
