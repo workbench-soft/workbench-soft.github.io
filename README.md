@@ -34,6 +34,10 @@ mise run dev
 
 The release jobs push with the `RELEASES_TOKEN` secret of each app repo. It is a fine-grained token with write access to this repo only.
 
+## Marketing
+
+[docs/marketing.md](docs/marketing.md) holds the plan the weekly marketing job reads: the budget, the message, the channels, the calendar and the date each app page was last pushed. The job posts nothing. It leaves Reddit drafts in Reddit Desk and the person posts them.
+
 ## Langflip
 
 The page sits in [langflip/](langflip/) and is served at https://workbench-soft.github.io/langflip/. Its download link opens the [Langflip releases](https://github.com/workbench-soft/workbench-soft.github.io/releases?q=langflip&expanded=true), where the Langflip CI publishes `Langflip-<version>-windows-x64.exe`.
