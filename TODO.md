@@ -28,3 +28,9 @@ Work left in the code:
 - Left: one pnpm version and one workspace for the root, apps/games and apps/edge. It is a tooling migration across 3 lockfiles.
 - Left: memories-mobile/assets/social.png (192 KB) has no link in the repo. It is a served file another site or store listing may use.
 - Left: media-organizer/install.ps1 builds the installer URL itself in place of the `url` in latest.json. Both give the same URL today.
+
+## marketing
+
+- [ ] Post the Reddit drafts you like from Reddit Desk, Posts tab: r/selfhosted for Memories, and the 2 test-for-test posts. On r/selfhosted a bot asks how AI was involved; reply to it and the post goes live.
+- [ ] Open https://search.google.com/search-console for workbench-soft.github.io and request indexing of https://workbench-soft.github.io/langflip/ and https://workbench-soft.github.io/sitemap-index.xml.
+- [ ] Give the Langflip page a 1200×630 image at `langflip/og.png` and link it as `og:image`, so a shared link shows a picture.

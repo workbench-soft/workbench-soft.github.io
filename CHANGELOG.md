@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Langflip page** the title and the heading name the search words, a FAQ answers 5 questions, and `sitemap-index.xml` lists the page. The Memories page gets `SoftwareApplication` data. `docs/marketing.md` holds the marketing plan.
 - **Docs** `docs/architecture.md` and the games architecture doc get a Decisions section: why each part won, what it costs and which rivals lost.
 
 - **9 languages** the home page reads in English, Russian, German, French, Spanish, Chinese, Japanese, Korean and Norwegian Bokmål. English stays at `/`, the others sit under `/ru/`, `/de/` and so on, and a menu in the header switches between them. Each page lists the others for search engines, and `sitemap-index.xml` lists them all.
