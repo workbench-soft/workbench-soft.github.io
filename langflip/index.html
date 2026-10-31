@@ -3,60 +3,128 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Langflip: исправляет слова, набранные не в той раскладке</title>
-  <meta name="description" content="Langflip для Windows превращает ghbdtn в «привет» и hello, набранное по-русски, обратно в hello. Без сети и без журнала набора.">
+  <title>Langflip: автопереключение раскладки клавиатуры для Windows</title>
+  <meta name="description" content="Бесплатный переключатель раскладки для Windows. Набрали ghbdtn вместо «привет»? Langflip сам исправит слово и переключит раскладку. Без сети и без журнала набора.">
   <link rel="canonical" href="https://workbench-soft.github.io/langflip/">
-  <meta property="og:title" content="Langflip: исправляет слова, набранные не в той раскладке">
-  <meta property="og:description" content="ghbdtn превращается в «привет» на пробеле. Русский и английский, Windows.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="Langflip: автопереключение раскладки клавиатуры для Windows">
+  <meta property="og:description" content="ghbdtn превращается в «привет» прямо при наборе. Русский и английский, бесплатно, без сети.">
   <meta property="og:url" content="https://workbench-soft.github.io/langflip/">
   <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="Workbench Soft">
+  <meta name="twitter:card" content="summary">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "Langflip",
+    "description": "Исправляет слово, набранное не в той раскладке, и переключает раскладку. Русский и английский, Windows.",
     "operatingSystem": "Windows 10, Windows 11",
     "applicationCategory": "UtilitiesApplication",
+    "inLanguage": ["ru", "en"],
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "url": "https://workbench-soft.github.io/langflip/"
+    "downloadUrl": "https://github.com/workbench-soft/workbench-soft.github.io/releases?q=langflip&expanded=true",
+    "url": "https://workbench-soft.github.io/langflip/",
+    "author": { "@type": "Organization", "name": "Workbench Soft", "url": "https://workbench-soft.github.io/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Чем Langflip отличается от Punto Switcher?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Langflip делает одно дело: исправляет слово и переключает раскладку. Только русский и английский, без автозамены, без дневника и без сети. Скачивается одним exe-файлом без установщика и без прав администратора." }
+      },
+      {
+        "@type": "Question",
+        "name": "Работает ли Langflip без интернета?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Да. Словари лежат внутри программы. Langflip не ходит в сеть и не шлёт статистику." }
+      },
+      {
+        "@type": "Question",
+        "name": "Langflip исправил слово зря. Что делать?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Нажмите Pause сразу после исправления: слово вернётся как было, раскладка тоже. После второй отмены того же слова Langflip запишет его в исключения и дальше оставляет как есть." }
+      },
+      {
+        "@type": "Question",
+        "name": "Какие раскладки поддерживает Langflip?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Русскую ЙЦУКЕН и английскую US QWERTY. Других языков пока нет." }
+      },
+      {
+        "@type": "Question",
+        "name": "Будет ли Langflip для macOS?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Код для macOS 13 и новее уже есть, сборка готовится. Пока скачать можно только версию для Windows." }
+      }
+    ]
   }
   </script>
   <style>
     body { font: 17px/1.5 system-ui, sans-serif; max-width: 40rem; margin: 3rem auto; padding: 0 1rem; color: #222; background: #fbf7f0; }
     a { color: #5b3fd1; }
     li { margin: .4rem 0; }
+    h3 { margin-bottom: .2rem; }
+    h3 + p { margin-top: 0; }
     code, kbd { font: 15px ui-monospace, monospace; background: #efe8dc; padding: .1rem .3rem; border-radius: 4px; }
     .download { display: inline-block; margin: .5rem 0 1rem; padding: .7rem 1.2rem; background: #5b3fd1; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 600; }
     .note { color: #666; font-size: 15px; }
+    footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #e3dccf; color: #666; font-size: 15px; }
   </style>
 </head>
 <body>
-  <p><a href="../">Workbench Soft</a></p>
-  <h1>Langflip</h1>
-  <p>Набрали <code>ghbdtn</code>, забыв переключить раскладку? Нажмите пробел, и Langflip сам напечатает «привет» и переключит раскладку на русскую. С английским так же: <code>руддщ</code> станет <code>hello</code>.</p>
+  <p><a href="../ru/">Workbench Soft</a></p>
+  <h1>Langflip: автоматическое переключение раскладки</h1>
+  <p>Бесплатный переключатель раскладки для Windows, аналог Punto Switcher для русского и английского. Набрали <code>ghbdtn</code>, забыв переключить раскладку? С 4-й буквы Langflip сам перепечатает слово как «привет» и переключит раскладку на русскую. С английским так же: <code>руддщ</code> станет <code>hello</code>.</p>
 
   <a class="download" href="https://github.com/workbench-soft/workbench-soft.github.io/releases?q=langflip&amp;expanded=true">Скачать для Windows</a>
   <p class="note">Файл <code>Langflip-&lt;версия&gt;-windows-x64.exe</code>. Он пока без цифровой подписи, поэтому при первом запуске Windows покажет предупреждение: нажмите «Подробнее», затем «Выполнить в любом случае». Версия для macOS готовится.</p>
 
-  <h2>Как пользоваться</h2>
+  <h2>Как исправляет</h2>
   <ul>
-    <li><strong>Исправление</strong> срабатывает на пробеле, Enter или Tab. Langflip трогает слова от 4 букв, короткие оставляет как есть.</li>
-    <li><strong>Отмена</strong> клавиша <kbd>Pause</kbd> сразу после исправления возвращает слово как было и запоминает его.</li>
-    <li><strong>Перевод вручную</strong> <kbd>Shift</kbd>+<kbd>Pause</kbd> переводит последнее слово в другую раскладку.</li>
-    <li><strong>Пауза</strong> щелчок по значку в трее выключает Langflip, значок становится серым. Второй щелчок включает.</li>
-    <li><strong>Автозапуск</strong> включается при первом запуске. Выключить можно в меню значка: правая кнопка, «Запускать при входе».</li>
+    <li><strong>На ходу</strong> с 4-й буквы, как только набранные буквы не похожи ни на одно слово своей раскладки, а в другой раскладке дают слово. Если сомневается, ждёт пробела, Enter или Tab.</li>
+    <li><strong>Короткие слова</strong> до 3 букв меняются на пробеле и только на словарное слово: <code>z</code> станет «я», <code>yt</code> станет «не».</li>
+    <li><strong>Цифры</strong> остаются в слове: <code>ьз3</code> станет <code>mp3</code>.</li>
+    <li><strong>Отмена</strong> клавиша <kbd>Pause</kbd> сразу после исправления возвращает слово как было. Вторая отмена того же слова делает его исключением.</li>
+    <li><strong>Перевод вручную</strong> <kbd>Shift</kbd>+<kbd>Pause</kbd> переводит последнее слово в другую раскладку, короткое тоже.</li>
+  </ul>
+
+  <h2>Значок в трее</h2>
+  <ul>
+    <li><strong>Раскладка</strong> значок показывает <code>EN</code> или <code>RU</code> для окна, в котором вы печатаете.</li>
+    <li><strong>Пауза</strong> щелчок по значку выключает исправление, значок становится серым. Второй щелчок включает.</li>
+    <li><strong>Переключить раскладку</strong> двойной щелчок по значку.</li>
+    <li><strong>Меню</strong> правая кнопка: включить и выключить, автозапуск, список исключений, файл настроек, выход.</li>
+    <li><strong>Автозапуск</strong> включается при первом запуске. Снимите галочку «Запускать при входе», чтобы выключить.</li>
   </ul>
 
   <h2>Приватность</h2>
-  <p>Langflip не ходит в сеть, не шлёт статистику и не ведёт журнал набора. Текущее слово хранится только в памяти и забывается, когда начинается следующее. Поля паролей он пропускает.</p>
+  <p>Langflip не ходит в сеть, не шлёт статистику и не ведёт журнал набора. Текущее слово хранится только в памяти и забывается, когда начинается следующее. Поля паролей и окна администратора он пропускает, а в файле настроек можно перечислить программы, где исправлять не надо.</p>
 
   <h2>Что умеет</h2>
   <ul>
     <li><strong>Языки</strong> русский (ЙЦУКЕН) и английский (US QWERTY).</li>
-    <li><strong>Системы</strong> Windows 10 и 11. macOS скоро.</li>
-    <li><strong>Точность</strong> на тестовом наборе из 40 000 слов ошибочно исправляется меньше 1 слова на 1000.</li>
+    <li><strong>Системы</strong> Windows 10 и 11. macOS 13 и новее готовится.</li>
+    <li><strong>Точность</strong> на тестовом наборе из 40 000 слов зря исправляется примерно 1 редкое слово на 1000.</li>
   </ul>
 
-  <p>Вопросы и пожелания: <a href="mailto:workbench.soft@gmail.com">workbench.soft@gmail.com</a></p>
+  <h2>Вопросы</h2>
+  <h3>Чем Langflip отличается от Punto Switcher?</h3>
+  <p>Langflip делает одно дело: исправляет слово и переключает раскладку. Только русский и английский, без автозамены, без дневника и без сети. Скачивается одним exe-файлом без установщика и без прав администратора.</p>
+  <h3>Работает ли Langflip без интернета?</h3>
+  <p>Да. Словари лежат внутри программы. Langflip не ходит в сеть и не шлёт статистику.</p>
+  <h3>Langflip исправил слово зря. Что делать?</h3>
+  <p>Нажмите <kbd>Pause</kbd> сразу после исправления: слово вернётся как было, раскладка тоже. После второй отмены того же слова Langflip запишет его в исключения и дальше оставляет как есть.</p>
+  <h3>Какие раскладки поддерживает Langflip?</h3>
+  <p>Русскую ЙЦУКЕН и английскую US QWERTY. Других языков пока нет.</p>
+  <h3>Будет ли Langflip для macOS?</h3>
+  <p>Код для macOS 13 и новее уже есть, сборка готовится. Пока скачать можно только версию для Windows.</p>
+
+  <footer>
+    <p>Вопросы и пожелания: <a href="mailto:workbench.soft@gmail.com">workbench.soft@gmail.com</a>.<br>
+    <a href="../ru/">Другие приложения Workbench Soft</a> · <a href="../memories-mobile/">Memories: фото этого дня с вашего NAS</a></p>
+  </footer>
 </body>
 </html>
