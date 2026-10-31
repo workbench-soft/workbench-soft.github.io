@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Memories policy** the Memories privacy policy says Google Play handles the Remove ads payment, and the app only learns whether you own it.
 - **Docs** `docs/architecture.md` and the games architecture doc get a Decisions section: why each part won, what it costs and which rivals lost.
 
 - **9 languages** the home page reads in English, Russian, German, French, Spanish, Chinese, Japanese, Korean and Norwegian Bokmål. English stays at `/`, the others sit under `/ru/`, `/de/` and so on, and a menu in the header switches between them. Each page lists the others for search engines, and `sitemap-index.xml` lists them all.
