@@ -14,5 +14,11 @@ export default defineConfig({
     routing: { prefixDefaultLocale: false },
   },
   // Each language version lists the others as alternates in sitemap-index.xml.
-  integrations: [sitemap({ i18n: { defaultLocale: defaultLang, locales: tags } })],
+  // The Langflip page is a static file Astro doesn't build, so it goes in by hand.
+  integrations: [
+    sitemap({
+      i18n: { defaultLocale: defaultLang, locales: tags },
+      customPages: ['https://workbench-soft.github.io/langflip/'],
+    }),
+  ],
 });

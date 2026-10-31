@@ -77,3 +77,19 @@ It is free. You can support it through [GitHub Sponsors](https://github.com/spon
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 }
 </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Memories",
+  "description": {{ site.description | strip | jsonify }},
+  "operatingSystem": "Android",
+  "applicationCategory": "MultimediaApplication",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "downloadUrl": {{ site.download_url | jsonify }},
+  "image": {{ "/assets/og.png" | absolute_url | jsonify }},
+  "url": {{ "/" | absolute_url | jsonify }},
+  "author": { "@type": "Person", "name": {{ site.author | jsonify }} }
+}
+</script>

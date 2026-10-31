@@ -45,3 +45,9 @@ The features of https://workbench-soft.github.io. The Memories site and the Lang
 - **Scroll** blocks rise in as they enter the screen, and a bar at the top shows how far the page has scrolled.
 - **Reduced motion** the system setting turns off the shader motion, the headline decode, the counters and the reveals.
 - **Keyboard** a skip link jumps to the projects. Each button and link shows a focus ring.
+
+## Langflip page
+
+- **What it does** names what people search for, переключатель раскладки and аналог Punto Switcher, says how the fix works, and answers 5 questions in a FAQ that search engines read as `FAQPage` data.
+- **Where** `/langflip/`, in Russian, from the Download link of the Langflip panel on the home page. `sitemap-index.xml` lists it.
+- **Limits** no 1200×630 image yet, so a shared link shows text alone. The page is a static file in `langflip/`, outside the Astro build.
