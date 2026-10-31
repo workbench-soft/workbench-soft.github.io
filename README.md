@@ -13,7 +13,8 @@ Public files for the Workbench Soft apps. The code sits in private repos in this
 The home page is the studio's business card: what it builds for clients, and each project with each of its features. It shows no ads.
 
 - **Stack** Astro 7 and TypeScript build it into static HTML in `dist/`. A WebGL2 shader draws the hero.
-- **Content** the projects sit in [src/data/projects.ts](src/data/projects.ts), the services and the process in [src/data/studio.ts](src/data/studio.ts). A new project or feature is one entry there.
+- **Content** the projects sit in [src/data/projects.ts](src/data/projects.ts), the services and the process in [src/data/studio.ts](src/data/studio.ts). A new project or feature is one entry there, plus its translation in each catalog.
+- **Languages** English at `/`, and Russian, German, French, Spanish, Chinese, Japanese, Korean and Norwegian Bokmål under `/<code>/`. The text of each language sits in [src/i18n/](src/i18n/), one catalog per language.
 - **Docs** [features](docs/features.md), [user flows](docs/user-flows.md) and [architecture](docs/architecture.md).
 
 Run it with [mise](https://mise.jdx.dev):
@@ -25,6 +26,7 @@ mise run dev
 ```
 
 - **Check** `mise run check` type checks the pages and scripts.
+- **Test** `mise run test` checks that each language catalog holds the same keys, projects and features as English.
 - **Build** `mise run build` writes `dist/`. `mise run preview` serves it.
 - **Deploy** a push to `main` runs [pages.yml](.github/workflows/pages.yml). It builds the home page and the Memories site, then publishes both. A pull request runs the same build and skips the publish.
 

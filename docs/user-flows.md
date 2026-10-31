@@ -1,5 +1,20 @@
 # User flows
 
+## A visitor reads the page in their language
+
+1. A search result or a link opens the page in one of the 9 languages.
+2. The visitor presses the globe button in the header.
+3. The menu lists each language in its own name, such as Deutsch or 日本語.
+4. A pick opens the same page in that language, at `/` for English or `/<code>/` for the rest.
+
+```mermaid
+flowchart LR
+  search["Search result or link"] --> page["Page in one language"]
+  page --> globe["Globe button"] --> menu["Language menu"]
+  menu --> pick["Pick a language"] --> other["Same page at /code/"]
+  menu --> away["Click outside or Esc"] --> page
+```
+
 ## A client looks for a studio
 
 1. The client opens https://workbench-soft.github.io and reads the hero.
