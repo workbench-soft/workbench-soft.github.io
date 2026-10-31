@@ -74,10 +74,62 @@ sequenceDiagram
 
 ## Decisions
 
-| Decision            | Options weighed                                     | Picked                             | Why                                                         | Cost to undo                          |
-| ------------------- | --------------------------------------------------- | ---------------------------------- | ----------------------------------------------------------- | ------------------------------------- |
-| Room server         | Durable Objects, Supabase Realtime, PartyKit, a VPS | Durable Objects with hibernation   | Free plan, one object per room, no server to run            | High: the room code is written for it |
-| Split of the domain | One app, micro frontends by path                    | Micro frontends by path            | The public site and the games build and deploy apart        | Medium: the edge is small             |
-| Pages               | Astro static, a Preact SPA, Next.js                 | Astro static plus a Preact island  | Search engines get full HTML, the pages ship almost no JS   | Medium                                |
-| Drawing sync        | Send pixels, send actions                           | Send actions on an 800 by 600 grid | Small messages, undo, and late joiners get the full picture | Medium                                |
-| Mobile apps         | Capacitor, a TWA, React Native                      | Capacitor                          | The same pages on Android and iOS, with the AdMob plugin    | Low                                   |
+Each choice below names what the games picked, what it costs and what lost. The most expensive to undo comes first.
+
+### Room server: Durable Objects with hibernation
+
+- **Picked** one Durable Object per room code, through the Hibernation API. Alarms drive the timers, and the room's SQLite storage keeps its state.
+- **Why** the owner wants no hosting bill. Workers Free covers the rooms, one object maps to one room, and there is no server to run. With hibernation 20 WebSocket messages count as 1 request.
+- **Trade-off** Workers Free gives 100,000 requests a day, about 40 hours of drawing a day. The room code is written for Durable Objects.
+- **Rejected**
+  - **Supabase Realtime** no source records why it lost beyond the points above. It relays messages, and the game rules and timers would still need a server.
+  - **PartyKit** no source records why it lost. It adds a layer over the same Durable Objects.
+  - **A VPS** a server to pay for, patch and keep up.
+- **Cost to undo** high. `worker/room-object.ts`, the storage keys and the alarms are written for it.
+
+### Domain split: micro frontends by path
+
+- **Picked** the edge Worker in `apps/edge` sends `/games/*` to the games Worker, and every other path to GitHub Pages.
+- **Why** the public site and the games build and deploy apart. No page mixes two apps, so they share no runtime code.
+- **Trade-off** each app keeps its own packages, checks and workflow, so a shared tool bump happens once per app.
+- **Rejected**
+  - **One app for the domain** the public site and the games would ship in one build.
+- **Cost to undo** medium. The edge is small, but each app's base path and deploy follow it.
+
+### Pages: Astro static pages with a Preact island
+
+- **Picked** Astro builds the landing, game and info pages into `dist/games/`. Preact runs the room app on `/games/room/`.
+- **Why** search engines get full HTML, and the pages ship almost no JS. Only the "Create a room" button runs a script.
+- **Trade-off** the room app and the pages are 2 kinds of code: Astro components and Preact components.
+- **Rejected**
+  - **A Preact single page app** search engines would get an empty page to index.
+  - **Next.js** more JS on each page and a server build, for pages that are static.
+- **Cost to undo** medium. Each page and the room app's mount point would move.
+
+### Drawing sync: actions on a fixed grid
+
+- **Picked** `src/shared/canvas.ts` keeps a drawing as a list of actions on an 800 by 600 grid. The server and every browser apply the same actions.
+- **Why** the messages stay small, undo is one step back in the list, and a late joiner gets the full picture from the list.
+- **Trade-off** the server stores the list, at most every 2 seconds, and each painter must give the same result from it.
+- **Rejected**
+  - **Send pixels** each update would be large, with no undo and no way to rebuild the picture for a late joiner.
+- **Cost to undo** medium. The painter, the room storage and the telephone stories use the action list.
+
+### Game rules: plain classes outside the Worker
+
+- **Picked** `src/server` holds the room and the three games with no Cloudflare code. `worker/` is the only folder that touches Durable Objects, storage and alarms.
+- **Why** Vitest runs the rules with a fake clock and a fake socket layer.
+- **Trade-off** the room object has to pass each event and timer into the rules, and save what they change.
+- **Rejected**
+  - **Rules inside the Durable Object** each test would need the Workers runtime and real timers.
+- **Cost to undo** low. The boundary sits in `room-object.ts`.
+
+### Mobile apps: Capacitor
+
+- **Picked** Capacitor wraps `dist/` for Android and iOS. The apps load the pages from local files and open the sockets on workbenchsoft.com.
+- **Why** the same pages run on Android and iOS, with the AdMob plugin for the banner.
+- **Trade-off** an iOS build needs a Mac or a cloud Mac and the paid Apple developer account. The apps ship their own copy of the client, so the socket format carries a `PROTOCOL` version.
+- **Rejected**
+  - **A Trusted Web Activity** Android only, and it can't place a native AdMob banner.
+  - **React Native** the pages would be written again as native screens.
+- **Cost to undo** low. `capacitor.config.ts`, `admob.ts` and the native projects hold it.

@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **Docs** `docs/architecture.md` and the games architecture doc get a Decisions section: why each part won, what it costs and which rivals lost.
+
 - **9 languages** the home page reads in English, Russian, German, French, Spanish, Chinese, Japanese, Korean and Norwegian Bokmål. English stays at `/`, the others sit under `/ru/`, `/de/` and so on, and a menu in the header switches between them. Each page lists the others for search engines, and `sitemap-index.xml` lists them all.
 - **Lint and format** oxfmt formats the whole repo. oxlint lints the home page and the edge Worker, as it already did the games. CI runs both.
 

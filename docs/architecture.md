@@ -74,3 +74,73 @@ flowchart LR
 
 - **Apart** each app in `apps/` has its own packages, checks and deploy in the [Games workflow](../.github/workflows/games.yml). This site's build leaves `apps/` out.
 - **Games** [apps/games/docs/architecture.md](../apps/games/docs/architecture.md) describes the rooms and the games.
+
+## Decisions
+
+Each choice below names what the repo picked, what it costs and what lost. The most expensive to undo comes first. The games keep their own decisions in [apps/games/docs/architecture.md](../apps/games/docs/architecture.md#decisions).
+
+### App releases: in this public repo
+
+- **Picked** each app's CI publishes its APKs and installers on this repo's releases page. The tag starts with the repo name, such as `tickalot-v2025.10.28.3`.
+- **Why** the code repos are private. The apps installed from an APK read the release list through the GitHub API, which needs no token for a public repo.
+- **Trade-off** each app repo needs the `RELEASES_TOKEN` secret, a fine-grained token with write access here. The releases of every app share one list.
+- **Rejected**
+  - **Releases in each private repo** a visitor couldn't download them, and each updater would need a token.
+- **Cost to undo** high. Each app's release job and in-app updater point at this repo.
+
+### Hosting: GitHub Pages
+
+- **Picked** `pages.yml` publishes `_site/` to https://workbench-soft.github.io.
+- **Why** the org stack puts a static site on GitHub Pages. The repo is public, so Pages costs nothing, and the site needs no server.
+- **Trade-off** Pages runs no code and sends no custom headers. The games on workbenchsoft.com need a Worker in front, see below.
+- **Rejected**
+  - **Cloudflare Workers static assets** the org host for apps with a backend. No source records why the site stayed off it. Pages needs no account token in CI.
+- **Cost to undo** medium. The deploy job, the domain and the links in each app's Play listing would move.
+
+### workbenchsoft.com: an edge Worker in front of Pages
+
+- **Picked** the Worker in `apps/edge` reads `registry.json` and sends each top path to the app that owns it. Every other path comes from GitHub Pages.
+- **Why** the games need a Worker and Durable Objects, while the public site stays on Pages. Each app in `apps/` builds and deploys apart.
+- **Trade-off** the domain's DNS has to sit on Cloudflare, and each request to workbenchsoft.com passes through one more Worker.
+- **Rejected**
+  - **One app for the whole domain** the public site and the games would share one build and one deploy.
+  - **Move the whole site to Cloudflare** no source records why it lost. The site then leaves the free Pages host it already has.
+- **Cost to undo** medium. `registry.json` and the edge Worker are small, but the domain setup moves with them.
+
+### Home page: Astro static pages
+
+- **Picked** Astro 7 and TypeScript build the home page into static HTML in `dist/`, with small scripts per component.
+- **Why** the org stack builds a static site with Astro. Search engines read the text without the scripts, and the hero counts sit in the HTML before any script runs.
+- **Trade-off** the repo holds 2 site builders, since the Memories site stays on Jekyll.
+- **Rejected**
+  - **One hand-written `index.html`** the first version, a plain list of links. The portfolio page needed data, components and 9 languages.
+  - **A React app that renders in the browser** search engines and visitors without scripts would see an empty page.
+- **Cost to undo** medium. Each component and the i18n routing would move.
+
+### Languages: Astro i18n routing with typed catalogs
+
+- **Picked** Astro's built-in i18n routing with `prefixDefaultLocale: false`. `src/pages/[...lang].astro` builds all 9 languages from `src/i18n/<code>.ts`.
+- **Why** each Workbench Soft app ships in 9 languages, and the studio page should reach the same people. A page per language gets its own `hreflang` alternate in the sitemap.
+- **Trade-off** each new string goes into 9 catalogs. A Vitest test checks they hold the same keys and counts.
+- **Rejected**
+  - **i18next with react-i18next** the org pick for TypeScript apps. No source records why it lost. The page has no React, and Astro writes a static page per language with no library in the browser.
+  - **One URL that switches language in the browser** search engines would index one language only.
+- **Cost to undo** medium. Every component reads its text from the catalogs.
+
+### Memories site: Jekyll as before
+
+- **Picked** `memories-mobile/` keeps its Jekyll build, and `pages.yml` copies the Astro output beside it.
+- **Why** the Memories pages came first and work as they are. GitHub Pages builds Jekyll on its own.
+- **Trade-off** CI runs Ruby for Jekyll next to Node for Astro.
+- **Rejected**
+  - **Port the Memories pages to Astro** no source records why it waits. The move gives the visitor the same pages.
+- **Cost to undo** low. The Memories site is one folder with its own `_config.yml`.
+
+### Page content: typed data modules
+
+- **Picked** `src/data/projects.ts` and `src/data/studio.ts` hold each project, service and step. The components and the search palette read them.
+- **Why** the hero counts, the project panels and the search index all come from one source at build time.
+- **Trade-off** a text edit is a code change and a deploy.
+- **Rejected**
+  - **A headless CMS** the site calls no outside service at run time, apart from Google Fonts.
+- **Cost to undo** low. The data sits in 2 files.
