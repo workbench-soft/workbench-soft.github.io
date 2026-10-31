@@ -1,17 +1,38 @@
 # The Workbench Soft site, the Memories site and the Media Organizer installer
 
-Done on 2025-10-28, before the history was reset to one commit. The old commits sit under `refs/backup/main` in the local backup mirror of `workbench-soft.github.io`.
-
-## Why
+## What it does for the person
 
 The studio needed one public site for its apps and their installers.
 
-## User flows it touches
+## User flows
 
 - **Visit** the Workbench Soft and Memories pages.
 - **Install** Media Organizer from this repo.
 
+## How it works: modules, files, data
+
+Each entry below names the files it changed.
+
+## Limits
+
+None written down yet.
+
 ## Changes
+
+### 2025-10-28 The Workbench Soft site, the Memories site and the Media Organizer installer
+
+Done on 2025-10-28, before the history was reset to one commit. The old commits sit under `refs/backup/main` in the local backup mirror of `workbench-soft.github.io`.
+
+#### Why
+
+The studio needed one public site for its apps and their installers.
+
+#### User flows it touches
+
+- **Visit** the Workbench Soft and Memories pages.
+- **Install** Media Organizer from this repo.
+
+#### Changes
 
 - **`.github/workflows/pages.yml`** new.
 - **`app-ads.txt`** new.
@@ -25,16 +46,16 @@ The studio needed one public site for its apps and their installers.
 - **`memories-mobile/assets/archive.jpg`** new.
 - **Other files** 22 more.
 
-## Steps, in commit order
+#### Steps, in commit order
 
 1. Publish the Workbench Soft site and the Memories site (2d2ec63, 2025-10-28)
 2. Install Media Organizer from this repo (5da5f58, 2025-10-28)
 
-## Docs to update
+#### Docs to update
 
 - `README.md`
 
-## 2026-10-30 Langflip page
+#### 2026-10-30 Langflip page
 
 - **Why** Langflip needs a public page with the download, so people can find it and get `langflip.exe`.
 - **Changes**
@@ -44,7 +65,7 @@ The studio needed one public site for its apps and their installers.
   - **`README.md`** a Langflip section.
 - **Limits** the download link opens the releases filtered to Langflip. It lists nothing until the first Langflip release.
 
-## 2026-10-30 Portfolio home page
+#### 2026-10-30 Portfolio home page
 
 - **Why** the home page was a plain list of links. Workbench Soft plans to take custom development work, so the home page becomes its business card: each project with each of its features, and what the studio builds for clients. The page shows no ads.
 - **What the visitor gets**
@@ -69,7 +90,7 @@ The studio needed one public site for its apps and their installers.
 - **Content** each project's text comes from its repo: `docs/features.md` and the README. The `project-architecture` repo stays off the page, since it holds work done for an employer. Internal helpers (`memories-demo-webdav`, `speedcameralocationscraper`) stay off too.
 - **Limits** English only. Links go to the public sites and the releases page, since the code repos are private. Motion stops under `prefers-reduced-motion`.
 
-## 2026-10-31 A site icon from the icons skill
+#### 2026-10-31 A site icon from the icons skill
 
 - **Why** the favicon was the letters `WS` in a font the browser may lack,
   and each tool with a UI now gets its icon from the `icon-styles` skill.
@@ -80,7 +101,7 @@ The studio needed one public site for its apps and their installers.
   `public/apple-touch-icon.png`, linked from `src/layouts/Base.astro`.
 - **Docs** `CHANGELOG.md`.
 
-## 2026-10-31 The home page in 9 languages
+#### 2026-10-31 The home page in 9 languages
 
 - **Why** each Workbench Soft app ships in 9 languages, and the studio page
   should reach the same people: English, Russian, German, French, Spanish,
@@ -119,7 +140,7 @@ The studio needed one public site for its apps and their installers.
 - **Docs** `README.md`, `docs/features.md`, `docs/user-flows.md`,
   `docs/architecture.md`, `CHANGELOG.md`.
 
-## 2026-10-31 Search words and a FAQ on the Langflip page, and a marketing plan
+#### 2026-10-31 Search words and a FAQ on the Langflip page, and a marketing plan
 
 - **Why** the weekly marketing job picks the app page pushed least and makes
   it easier to find. The Langflip page was in no sitemap, its heading held
