@@ -79,3 +79,42 @@ The studio needed one public site for its apps and their installers.
 - **Changes** `public/favicon.svg`, `public/favicon.ico` and
   `public/apple-touch-icon.png`, linked from `src/layouts/Base.astro`.
 - **Docs** `CHANGELOG.md`.
+
+## 2026-10-31 The home page in 9 languages
+
+- **Why** each Workbench Soft app ships in 9 languages, and the studio page
+  should reach the same people: English, Russian, German, French, Spanish,
+  Chinese (Simplified), Japanese, Korean and Norwegian Bokmål.
+- **What the visitor gets**
+  - **Own language** `/` stays English. The other languages sit under
+    `/<code>/`: `/ru/`, `/de/`, `/fr/`, `/es/`, `/zh/`, `/ja/`, `/ko/`, `/nb/`.
+  - **Picker** a language menu in the header lists each language in its own
+    name, such as Deutsch or 日本語. It is a list of plain links, so it works
+    without scripts.
+  - **Everything translated** headings, buttons, the footer, the search
+    palette, page titles, meta descriptions, and each project's tagline,
+    lede, link labels and features.
+- **How it works**
+  - **Routing** Astro's built-in i18n routing, `prefixDefaultLocale: false`.
+    One page file `src/pages/[...lang]/index.astro` builds all 9.
+  - **Catalogs** `src/i18n/<code>.ts`, one typed catalog per language. The
+    English text stays in `src/data/projects.ts` and `src/data/studio.ts`, and
+    the other catalogs follow it by project id and feature order.
+  - **Check** a Vitest test compares each catalog with English: the same UI
+    keys, the same projects, the same count of groups, features, links,
+    services and steps, the same placeholders, and no empty string.
+  - **SEO** each page sets `<html lang>`, a canonical link, `og:locale` and an
+    `hreflang` alternate for each language plus `x-default`.
+    `@astrojs/sitemap` writes `sitemap-index.xml` with the alternates, and
+    `robots.txt` points to it.
+- **Tools added** `@astrojs/sitemap`, Astro's own sitemap integration, and
+  Vitest with a `test` task in `mise.toml`.
+- **Limits**
+  - **Product names** app names, stack names and platform names stay as they
+    are.
+  - **Other pages** the Memories site, the Langflip page and the games keep
+    their own languages.
+  - **Fonts** Space Grotesk has no Cyrillic or CJK letters, so those fall back
+    to the system font.
+- **Docs** `README.md`, `docs/features.md`, `docs/user-flows.md`,
+  `docs/architecture.md`, `CHANGELOG.md`.
