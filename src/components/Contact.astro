@@ -1,18 +1,22 @@
 ---
 import { email, mailto } from "../data/studio";
+import { langOf } from "../i18n/locales";
+import { ui } from "../i18n";
+
+const t = ui(langOf(Astro.currentLocale));
 ---
 
 <section class="wrap" id="contact">
   <div class="contact rv">
     <div class="top" aria-hidden="true"><i></i><i></i><i></i><span>contact.sh</span></div>
     <div class="term">
-      <div class="eyebrow">04 / Contact</div>
-      <h2>Have an app in mind?</h2>
-      <p class="intro">Write a few lines about the idea, the platforms and the deadline.</p>
+      <div class="eyebrow">04 / {t.nav.contact}</div>
+      <h2>{t.contact.title}</h2>
+      <p class="intro">{t.contact.intro}</p>
       <p class="prompt"><span class="p">$</span> mail {email} <span class="caret" aria-hidden="true"></span></p>
       <div class="cta">
-        <a class="btn pri" href={mailto}>Write an email</a>
-        <button class="btn" type="button" id="copy" data-email={email}>Copy the address</button>
+        <a class="btn pri" href={mailto(t.contact.subject)}>{t.contact.write}</a>
+        <button class="btn" type="button" id="copy" data-email={email} data-copied={t.contact.copied}>{t.contact.copy}</button>
       </div>
     </div>
   </div>
@@ -20,15 +24,16 @@ import { email, mailto } from "../data/studio";
 
 <script>
   const copy = document.querySelector<HTMLButtonElement>("#copy")!;
+  const idle = copy.textContent;
   copy.addEventListener("click", async () => {
     const address = copy.dataset.email!;
     try {
       await navigator.clipboard.writeText(address);
-      copy.textContent = "Copied";
+      copy.textContent = copy.dataset.copied!;
     } catch {
       copy.textContent = address;
     }
-    setTimeout(() => (copy.textContent = "Copy the address"), 2200);
+    setTimeout(() => (copy.textContent = idle), 2200);
   });
 </script>
 

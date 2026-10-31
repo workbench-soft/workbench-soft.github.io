@@ -1,12 +1,17 @@
 ---
-import { steps } from "../data/studio";
+import { langOf } from "../i18n/locales";
+import { stepsIn, ui } from "../i18n";
+
+const lang = langOf(Astro.currentLocale);
+const t = ui(lang);
+const steps = stepsIn(lang);
 ---
 
 <section class="block" id="process">
   <div class="wrap">
-    <div class="eyebrow rv">03 / Process</div>
-    <h2 class="rv">From the first spec to the store</h2>
-    <p class="intro rv">Each project above went through the same steps. A client project goes through them too, and sees each one.</p>
+    <div class="eyebrow rv">03 / {t.nav.process}</div>
+    <h2 class="rv">{t.process.title}</h2>
+    <p class="intro rv">{t.process.intro}</p>
     <ol class="steps">
       {
         steps.map((s, i) => (

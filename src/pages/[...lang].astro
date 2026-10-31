@@ -10,15 +10,20 @@ import Contact from "../components/Contact.astro";
 import Palette from "../components/Palette.astro";
 import { email } from "../data/studio";
 import { projects } from "../data/projects";
+import { defaultLang, langOf, locales } from "../i18n/locales";
+import { ui } from "../i18n";
 
+// English builds at /, each other language at /<code>/.
+export function getStaticPaths() {
+  return locales.map((l) => ({ params: { lang: l === defaultLang ? undefined : l } }));
+}
+
+const t = ui(langOf(Astro.currentLocale));
 const names = projects.filter((p) => p.kind === "app").map((p) => p.name);
 ---
 
-<Base
-  title="Workbench Soft: apps for Android, the web, Windows and macOS"
-  description={`Workbench Soft builds and ships apps: ${names.join(", ")} and developer tools. Each project with each of its features.`}
->
-  <a class="skip" href="#projects">Skip to the projects</a>
+<Base title={t.meta.title} description={t.meta.description.replace("{names}", names.join(", "))}>
+  <a class="skip" href="#projects">{t.nav.skip}</a>
   <Nav />
   <Hero />
   <Marquee />
@@ -30,10 +35,10 @@ const names = projects.filter((p) => p.kind === "app").map((p) => p.name);
   </main>
   <footer>
     <div class="wrap">
-      <span>© {new Date().getFullYear()} Workbench Soft. This site shows no ads.</span>
+      <span>© {new Date().getFullYear()} Workbench Soft. {t.footer.noAds}</span>
       <span>
-        <a href="https://github.com/workbench-soft/workbench-soft.github.io/releases">Releases</a> ·
-        <a href="/memories-mobile/privacy-policy.html">Memories privacy</a> ·
+        <a href="https://github.com/workbench-soft/workbench-soft.github.io/releases">{t.footer.releases}</a> ·
+        <a href="/memories-mobile/privacy-policy.html">{t.footer.privacy}</a> ·
         <a href={`mailto:${email}`}>{email}</a>
       </span>
     </div>

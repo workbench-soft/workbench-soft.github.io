@@ -25,7 +25,14 @@ The features of https://workbench-soft.github.io. The Memories site and the Lang
 
 - **What it does** finds a project or a feature by any word of its name or text, then scrolls to it and lights it up.
 - **Where** `Ctrl+K`, `Cmd+K` or `/`, and the Search buttons. The arrow keys move through the results, and Enter opens one.
-- **Limits** English words only, up to 40 results.
+- **Limits** words in the language of the page, up to 40 results.
+
+## Languages
+
+- **What it does** shows the whole page in English, Russian, German, French, Spanish, Chinese (Simplified), Japanese, Korean or Norwegian Bokmål.
+- **Where** the globe button in the header opens a menu with each language in its own name. English sits at `/`, the others at `/ru/`, `/de/`, `/fr/`, `/es/`, `/zh/`, `/ja/`, `/ko/` and `/nb/`.
+- **Search engines** each page names the other 8 as `hreflang` alternates, and `sitemap-index.xml` lists all 9.
+- **Limits** app, stack and platform names stay in English. The page doesn't follow the browser language on its own. The Memories site, the Langflip page and the games keep their own languages.
 
 ## Process and contact
 

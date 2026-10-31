@@ -1,27 +1,60 @@
 ---
+import { langOf, locales, names, pathOf, tags } from "../i18n/locales";
+import { ui } from "../i18n";
+
+const lang = langOf(Astro.currentLocale);
+const t = ui(lang).nav;
 const links = [
-  { href: "#services", label: "Services" },
-  { href: "#projects", label: "Projects" },
-  { href: "#process", label: "Process" },
-  { href: "#contact", label: "Contact" },
+  { href: "#services", label: t.services },
+  { href: "#projects", label: t.projects },
+  { href: "#process", label: t.process },
+  { href: "#contact", label: t.contact },
 ];
 ---
 
-<nav class="nav" aria-label="Main">
+<nav class="nav" aria-label={t.main}>
   <div class="wrap">
     <a class="brand" href="#top"><span class="mark" aria-hidden="true">WS</span>Workbench Soft</a>
-    <ul>
+    <ul class="links">
       {links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
     </ul>
-    <button class="kbtn" type="button" data-palette aria-label="Search projects and features">
+    <button class="kbtn" type="button" data-palette aria-label={t.searchLabel}>
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
-      <span class="label">Search</span><kbd>Ctrl K</kbd>
+      <span class="label">{t.search}</span><kbd>Ctrl K</kbd>
     </button>
+    <details class="lang">
+      <summary class="kbtn" aria-label={t.language} title={t.language}>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg>
+        {lang.toUpperCase()}
+      </summary>
+      <ul>
+        {
+          locales.map((l) => (
+            <li>
+              <a href={pathOf(l)} hreflang={tags[l]} lang={tags[l]} aria-current={l === lang ? "page" : undefined}>
+                {names[l]}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </details>
   </div>
 </nav>
 
 <script>
-  const links = [...document.querySelectorAll<HTMLAnchorElement>(".nav ul a")];
+  // The language menu closes on a click outside it or on Escape.
+  const menu = document.querySelector<HTMLDetailsElement>(".nav .lang")!;
+  document.addEventListener("click", (e) => {
+    if (!menu.contains(e.target as Node)) menu.open = false;
+  });
+  menu.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape" || !menu.open) return;
+    menu.open = false;
+    menu.querySelector("summary")!.focus();
+  });
+
+  const links = [...document.querySelectorAll<HTMLAnchorElement>(".nav .links a")];
   const io = new IntersectionObserver(
     (entries) => {
       for (const e of entries) {
@@ -48,7 +81,7 @@ const links = [
     border-bottom: 1px solid var(--line);
   }
   .wrap { height: 100%; display: flex; align-items: center; gap: 28px; }
-  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 700; letter-spacing: -0.01em; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 700; letter-spacing: -0.01em; white-space: nowrap; }
   .mark {
     width: 30px;
     height: 30px;
@@ -60,14 +93,34 @@ const links = [
     font: 700 12px var(--mono);
     box-shadow: 0 0 24px rgb(92 242 255 / 0.35);
   }
-  ul { display: flex; gap: 22px; list-style: none; margin: 0 0 0 auto; padding: 0; }
-  ul a { text-decoration: none; color: var(--muted); font: 500 13px var(--mono); letter-spacing: 0.04em; transition: color 0.2s; }
-  ul a:hover, ul a.on { color: var(--text); }
+  .links { display: flex; gap: 22px; list-style: none; margin: 0 0 0 auto; padding: 0; }
+  .links a { text-decoration: none; color: var(--muted); font: 500 13px var(--mono); letter-spacing: 0.04em; transition: color 0.2s; white-space: nowrap; }
+  .links a:hover, .links a.on { color: var(--text); }
+  .lang { position: relative; margin-left: -16px; }
+  .lang summary { list-style: none; gap: 8px; }
+  .lang summary::-webkit-details-marker { display: none; }
+  .lang[open] summary { color: var(--text); border-color: var(--cyan); }
+  .lang ul {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 8px);
+    min-width: 180px;
+    margin: 0;
+    padding: 6px;
+    list-style: none;
+    background: rgb(10 14 26 / 0.97);
+    border: 1px solid var(--line-2);
+    border-radius: 12px;
+    box-shadow: 0 20px 60px -10px rgb(0 0 0 / 0.8);
+  }
+  .lang a { display: block; padding: 8px 12px; border-radius: 8px; text-decoration: none; color: var(--soft); font-size: 14px; }
+  .lang a:hover { background: rgb(255 255 255 / 0.05); color: var(--text); }
+  .lang a[aria-current] { color: var(--cyan); }
   @media (max-width: 980px) {
-    ul { display: none; }
-    .kbtn { margin-left: auto; }
+    .links { display: none; }
+    .kbtn[data-palette] { margin-left: auto; }
   }
   @media (max-width: 640px) {
-    .label { display: none; }
+    .label, .kbtn[data-palette] kbd { display: none; }
   }
 </style>

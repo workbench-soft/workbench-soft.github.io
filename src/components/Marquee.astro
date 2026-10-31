@@ -1,8 +1,12 @@
 ---
 import { stack } from "../data/studio";
+import { langOf } from "../i18n/locales";
+import { ui } from "../i18n";
+
+const t = ui(langOf(Astro.currentLocale));
 ---
 
-<div class="marquee" aria-label="Technologies">
+<div class="marquee" aria-label={t.technologies}>
   <div class="track">
     {stack.map((s) => <span>{s}</span>)}
     {stack.map((s) => <span aria-hidden="true">{s}</span>)}

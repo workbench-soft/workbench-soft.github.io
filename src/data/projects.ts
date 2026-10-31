@@ -28,11 +28,8 @@ export interface Project {
   groups: FeatureGroup[];
 }
 
-export const kinds: { id: Kind; label: string }[] = [
-  { id: 'app', label: 'Apps' },
-  { id: 'tool', label: 'Developer tools' },
-  { id: 'archive', label: 'Archive' },
-];
+/** The order of the filter chips and the groups. Their labels sit in src/i18n/. */
+export const kinds: Kind[] = ['app', 'tool', 'archive'];
 
 export const projects: Project[] = [
   {

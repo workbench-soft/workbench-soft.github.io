@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **9 languages** the home page reads in English, Russian, German, French, Spanish, Chinese, Japanese, Korean and Norwegian Bokmål. English stays at `/`, the others sit under `/ru/`, `/de/` and so on, and a menu in the header switches between them. Each page lists the others for search engines, and `sitemap-index.xml` lists them all.
 - **Lint and format** oxfmt formats the whole repo. oxlint lints the home page and the edge Worker, as it already did the games. CI runs both.
 
 - **Icon** the browser tab and the home screen show a white wrench and hammer on a violet to pink tile, in place of the `WS` letters. The 10 drafts sit in `design/icons/2026-10-31`.

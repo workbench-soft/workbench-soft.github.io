@@ -1,5 +1,7 @@
 ---
 import type { Project } from "../data/projects";
+import { langOf } from "../i18n/locales";
+import { ui } from "../i18n";
 
 interface Props {
   project: Project;
@@ -7,6 +9,7 @@ interface Props {
 }
 
 const { project: p, number } = Astro.props;
+const t = ui(langOf(Astro.currentLocale)).projects;
 const no = String(number).padStart(2, "0");
 ---
 
@@ -16,8 +19,8 @@ const no = String(number).padStart(2, "0");
     <h3>{p.name}</h3>
     <p class="tag">{p.tagline}</p>
     <dl>
-      <div><dt>Platforms</dt><dd>{p.platforms.map((x) => <span>{x}</span>)}</dd></div>
-      <div><dt>Stack</dt><dd>{p.stack.map((x) => <span>{x}</span>)}</dd></div>
+      <div><dt>{t.platforms}</dt><dd>{p.platforms.map((x) => <span>{x}</span>)}</dd></div>
+      <div><dt>{t.stack}</dt><dd>{p.stack.map((x) => <span>{x}</span>)}</dd></div>
     </dl>
     {
       p.links.length > 0 && (

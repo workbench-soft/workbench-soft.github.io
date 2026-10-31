@@ -1,5 +1,5 @@
 export const email = 'workbench.soft@gmail.com';
-export const mailto = `mailto:${email}?subject=${encodeURIComponent('A project for Workbench Soft')}`;
+export const mailto = (subject: string) => `mailto:${email}?subject=${encodeURIComponent(subject)}`;
 
 /** Platforms a person installs or opens an app on. Tool hosts such as VS Code stay out of the count. */
 export const devicePlatforms = ['Android', 'iPhone', 'Web', 'Windows', 'macOS', 'Linux'];
