@@ -118,3 +118,28 @@ The studio needed one public site for its apps and their installers.
     to the system font.
 - **Docs** `README.md`, `docs/features.md`, `docs/user-flows.md`,
   `docs/architecture.md`, `CHANGELOG.md`.
+
+## 2026-10-31 Search words and a FAQ on the Langflip page, and a marketing plan
+
+- **Why** the weekly marketing job picks the app page pushed least and makes
+  it easier to find. The Langflip page was in no sitemap, its heading held
+  only the name, and its text lagged behind the app: fixes now happen while
+  the word is typed, and the tray shows the layout.
+- **Changes**
+  - **`langflip/index.html`** the title, the heading and the first lines name
+    what people search for: переключатель раскладки, аналог Punto Switcher.
+    A FAQ with 5 questions and the matching `FAQPage` data. The
+    `SoftwareApplication` data gets a description, the download link and the
+    author. `og:locale`, `og:site_name` and `twitter:card`. A link to the
+    Russian home page.
+  - **`astro.config.mjs`** `sitemap-index.xml` lists `/langflip/` as a custom
+    page, since Astro doesn't build it.
+  - **`memories-mobile/index.md`** `SoftwareApplication` data for Memories,
+    the one app page that lacked it.
+  - **`docs/marketing.md`** new: the plan file the marketing job reads on each
+    run. Budget, message, channels, calendar, routine, and the table of app
+    pages with the date each was last pushed.
+- **Limits** the Langflip page has no 1200×630 image yet, so a shared link
+  shows text alone. The home page holds the other apps as sections, so their
+  search data stays at the `Organization` level.
+- **Docs** `README.md`, `docs/features.md`, `CHANGELOG.md`, `TODO.md`.
