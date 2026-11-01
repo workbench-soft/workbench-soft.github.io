@@ -149,3 +149,28 @@ score, since the browser keeps a secret token.
   - `apps/games/package.json` gets `@capacitor/app`, and the Android and iOS projects list it.
 - **Steps** this entry, then the code with its test, then the docs.
 - **Docs** `apps/games/docs/features.md`, `CHANGELOG.md`.
+
+### 2026-11-02 Move the games to games.workbench-soft.com
+
+- **Why** the games never deployed: the repo has no Cloudflare token, and
+  workbenchsoft.com sits on Bluehost with no site. The studio domain
+  `workbench-soft.com` already sits on Cloudflare, so the games move there.
+- **How** the games Worker gets its own custom domain,
+  `games.workbench-soft.com`. Cloudflare makes that record and its
+  certificate on deploy. The apex keeps its grey cloud records to GitHub
+  Pages, so GitHub still issues the site certificate. The root of the
+  subdomain already redirects to `/games/`.
+- **Edge** `apps/edge` stays in the repo, undeployed. It would need the
+  Cloudflare proxy on the apex, which `docs/architecture.md` rejects.
+- **Changes**
+  - `apps/games/wrangler.jsonc` the custom domain route.
+  - `apps/games/src/shared/paths.ts`, `astro.config.mjs` the default site
+    `https://games.workbench-soft.com`. The tests follow.
+  - `apps/games/src/site/info.ts` the contact address is the studio's.
+  - `.github/workflows/games.yml` deploys the games once the token exists.
+    The edge step waits for `EDGE_ENABLED`, as before.
+  - `robots.txt` names the games sitemap on the new host.
+  - The home page links the games from its projects.
+- **Steps** this entry, then the domain, then the link, then the docs.
+- **Docs** `README.md`, `apps/games/README.md`, `apps/games/docs/`,
+  `apps/edge/README.md`, `docs/architecture.md`, `CHANGELOG.md`, `TODO.md`.
