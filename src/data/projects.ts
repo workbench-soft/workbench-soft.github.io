@@ -455,6 +455,33 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: 'games',
+    kind: 'app',
+    hue: 130,
+    code: 'GAM',
+    name: 'Workbench Games',
+    tagline: 'Party games in the browser: draw, guess and give clues.',
+    lede: 'Workbench Games are three party games for friends. One person makes a room and sends the link, and the others join in the browser with no account.',
+    platforms: ['Web'],
+    stack: ['Astro', 'Preact', 'Cloudflare Workers', 'Durable Objects'],
+    links: [{ href: 'https://games.workbench-soft.com/games/', label: 'Play now' }],
+    groups: [
+      {
+        features: [
+          { name: 'Rooms by link', text: 'One link brings 2 to 12 friends into the same room.' },
+          { name: 'Guess the drawing', text: "Draw a word, guess the others' drawings, race for points." },
+          {
+            name: 'Drawing telephone',
+            text: 'A phrase turns into drawings and back, and the album shows how it changed.',
+          },
+          { name: 'Clue duel', text: 'A team word game where every clue is public and stealing pays.' },
+          { name: 'Drawing tools', text: 'Pen, eraser, fill, 20 colours, 4 sizes and undo.' },
+          { name: 'Two languages', text: 'The pages and the rooms work in English and Russian.' },
+        ],
+      },
+    ],
+  },
+  {
     id: 'langflip',
     kind: 'app',
     hue: 345,

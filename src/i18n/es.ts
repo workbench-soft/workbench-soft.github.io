@@ -491,6 +491,23 @@ const es: Catalog = {
         },
       ],
     },
+    games: {
+      tagline: 'Juegos de fiesta en el navegador: dibuja, adivina y da pistas.',
+      lede: 'Workbench Games son tres juegos de fiesta para amigos. Una persona crea una sala y envía el enlace, y los demás entran desde el navegador, sin cuenta.',
+      links: ['Jugar'],
+      groups: [
+        {
+          features: [
+            ['Salas por enlace', 'Un enlace reúne de 2 a 12 amigos en la misma sala.'],
+            ['Adivina el dibujo', 'Dibuja una palabra, adivina los dibujos de los demás, suma puntos.'],
+            ['Teléfono dibujado', 'Una frase se convierte en dibujos y vuelve, y el álbum muestra cómo cambió.'],
+            ['Duelo de pistas', 'Un juego de palabras por equipos donde cada pista es pública y robar da puntos.'],
+            ['Herramientas de dibujo', 'Lápiz, goma, relleno, 20 colores, 4 tamaños y deshacer.'],
+            ['Dos idiomas', 'Las páginas y las salas funcionan en inglés y en ruso.'],
+          ],
+        },
+      ],
+    },
     langflip: {
       tagline: 'Corrige palabras escritas con la distribución de teclado equivocada.',
       lede: 'Escribe ghbdtn con la distribución equivocada, y Langflip escribe «привет» en su lugar y cambia la distribución. Con el inglés funciona igual. Va sin conexión y no guarda registro de lo que escribes.',
