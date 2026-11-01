@@ -39,4 +39,3 @@ Work left in the code:
 
 - [ ] In Google Play Console, set the developer website of each app with ads to `https://workbench-soft.com` (Store presence, Store settings, Contact details). AdMob reads `app-ads.txt` there, and its crawler may refuse the redirect from workbench-soft.github.io.
 - [ ] Add `https://workbench-soft.com` as a property in Google Search Console at <https://search.google.com/search-console> and submit `https://workbench-soft.com/sitemap-index.xml`. Keep the old property, so Google sees the move.
-- [ ] Verify workbench-soft.com for the org at <https://github.com/organizations/workbench-soft/settings/pages>: GitHub shows a TXT record to add in Cloudflare DNS. It stops other accounts from taking the domain on Pages.
