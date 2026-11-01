@@ -413,7 +413,7 @@ const es: Catalog = {
     },
     servohop: {
       tagline: 'Precios del combustible en Australia en un mapa, con el historial de cada gasolinera.',
-      lede: 'Servo Hop lee los datos de precios de cada estado y pone cada gasolinera en un mapa, coloreada según su precio. Guarda el historial diario y muestra también cargadores para coches eléctricos. Es gratis y no pide cuenta.',
+      lede: 'ServoHop lee los datos de precios de cada estado y pone cada gasolinera en un mapa, coloreada según su precio. Guarda el historial diario y muestra también cargadores para coches eléctricos. Es gratis y no pide cuenta.',
       links: ['servohop.com'],
       groups: [
         {

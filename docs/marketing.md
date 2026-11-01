@@ -30,7 +30,7 @@ A guess, since no one set one yet. Change the table and the job follows it.
   - **Russian speaking Windows users** type in the wrong layout all day.
     Langflip. Russian forums and subs, answers in old threads.
   - **Drivers in Australia and New Zealand** want the camera and the limit
-    on one map. SpotTheCam, Servo Hop. City subs, Whirlpool.
+    on one map. SpotTheCam, ServoHop. City subs, Whirlpool.
 
 ## Channels
 

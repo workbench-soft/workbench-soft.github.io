@@ -401,7 +401,7 @@ const de: Catalog = {
     },
     servohop: {
       tagline: 'Spritpreise in Australien auf einer Karte, mit dem Verlauf jeder Tankstelle.',
-      lede: 'Servo Hop liest die staatlichen Spritpreisdaten und setzt jede Tankstelle nach Preis gefärbt auf eine Karte. Es speichert den täglichen Verlauf und zeigt auch Ladesäulen. Es ist kostenlos und braucht kein Konto.',
+      lede: 'ServoHop liest die staatlichen Spritpreisdaten und setzt jede Tankstelle nach Preis gefärbt auf eine Karte. Es speichert den täglichen Verlauf und zeigt auch Ladesäulen. Es ist kostenlos und braucht kein Konto.',
       links: ['servohop.com'],
       groups: [
         {

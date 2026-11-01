@@ -371,7 +371,7 @@ const nb: Catalog = {
     },
     servohop: {
       tagline: 'Drivstoffpriser i Australia på et kart, med historikken til hver stasjon.',
-      lede: 'Servo Hop leser delstatenes prisdata for drivstoff og setter hver stasjon på et kart, farget etter pris. Den lagrer den daglige historikken og viser også ladere for elbil. Den er gratis og krever ingen konto.',
+      lede: 'ServoHop leser delstatenes prisdata for drivstoff og setter hver stasjon på et kart, farget etter pris. Den lagrer den daglige historikken og viser også ladere for elbil. Den er gratis og krever ingen konto.',
       links: ['servohop.com'],
       groups: [
         {
