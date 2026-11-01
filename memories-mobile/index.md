@@ -70,9 +70,9 @@ It is free. You can support it through [GitHub Sponsors](https://github.com/spon
   "description": "On this day photo memories from your own QNAP or Synology NAS. No cloud, no account.",
   "operatingSystem": "Android",
   "applicationCategory": "MultimediaApplication",
-  "url": "https://workbench-soft.github.io/memories-mobile/",
+  "url": "https://workbench-soft.com/memories-mobile/",
   "downloadUrl": "{{ site.download_url }}",
-  "image": "https://workbench-soft.github.io/memories-mobile/assets/icon.png",
+  "image": "https://workbench-soft.com/memories-mobile/assets/icon.png",
   "author": { "@type": "Person", "name": "Oleg Chibikov" },
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 }

@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://workbench-soft.github.io/sitemap-index.xml
-Sitemap: https://workbench-soft.github.io/memories-mobile/sitemap.xml
+Sitemap: https://workbench-soft.com/sitemap-index.xml
+Sitemap: https://workbench-soft.com/memories-mobile/sitemap.xml
 Sitemap: https://workbenchsoft.com/games/sitemap-index.xml

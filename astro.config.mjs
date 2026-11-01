@@ -3,10 +3,10 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import { defaultLang, locales, tags } from './src/i18n/locales.ts';
 
-// The build fills the root of https://workbench-soft.github.io. The Pages
+// The build fills the root of https://workbench-soft.com. The Pages
 // workflow adds the Jekyll Memories site and the other folders next to it.
 export default defineConfig({
-  site: 'https://workbench-soft.github.io',
+  site: 'https://workbench-soft.com',
   outDir: './dist',
   i18n: {
     locales: [...locales],
@@ -18,7 +18,7 @@ export default defineConfig({
   integrations: [
     sitemap({
       i18n: { defaultLocale: defaultLang, locales: tags },
-      customPages: ['https://workbench-soft.github.io/langflip/'],
+      customPages: ['https://workbench-soft.com/langflip/'],
     }),
   ],
 });

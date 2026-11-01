@@ -1,6 +1,6 @@
 # Architecture
 
-The repo serves https://workbench-soft.github.io from GitHub Pages. The site has no server and no outside service at run time, apart from Google Fonts.
+The repo serves https://workbench-soft.com from GitHub Pages. The site has no server and no outside service at run time, apart from Google Fonts.
 
 ## Parts
 
@@ -61,6 +61,13 @@ sequenceDiagram
 
 A pull request runs steps 2 to 4 and the copy, then stops before the publish.
 
+## Domain
+
+- **Name** `workbench-soft.com`, bought at Cloudflare Registrar. Its DNS sits on Cloudflare.
+- **Records** the apex holds the 4 GitHub Pages `A` and `AAAA` addresses, and `www` is a `CNAME` to `workbench-soft.github.io`. Both are DNS only, so GitHub issues the certificate.
+- **Pages setting** the repo's Pages settings hold the custom domain with Enforce HTTPS on. `pages.yml` deploys an artifact, so a `CNAME` file would do nothing.
+- **Redirects** GitHub sends `www` and each `workbench-soft.github.io/<path>` to the same path on `https://workbench-soft.com` with a 301.
+
 ## workbenchsoft.com and the apps
 
 The domain sits behind the edge Worker in [apps/edge](../apps/edge/). [registry.json](../registry.json) lists which app owns each top path, and every other path comes from this site on GitHub Pages.
@@ -90,12 +97,22 @@ Each choice below names what the repo picked, what it costs and what lost. The m
 
 ### Hosting: GitHub Pages
 
-- **Picked** `pages.yml` publishes `_site/` to https://workbench-soft.github.io.
+- **Picked** `pages.yml` publishes `_site/` to https://workbench-soft.com.
 - **Why** the org stack puts a static site on GitHub Pages. The repo is public, so Pages costs nothing, and the site needs no server.
 - **Trade-off** Pages runs no code and sends no custom headers. The games on workbenchsoft.com need a Worker in front, see below.
 - **Rejected**
   - **Cloudflare Workers static assets** the org host for apps with a backend. No source records why the site stayed off it. Pages needs no account token in CI.
 - **Cost to undo** medium. The deploy job, the domain and the links in each app's Play listing would move.
+
+### Domain: workbench-soft.com with DNS only records
+
+- **Picked** the apex points at GitHub Pages through grey cloud records on Cloudflare DNS.
+- **Why** the Google Play payments profile and the store listings want the studio's own domain. GitHub Pages issues the certificate and does the `www` and `github.io` redirects at no cost.
+- **Trade-off** Cloudflare caches nothing and adds no headers, since the proxy is off. An `app-ads.txt` crawler may refuse the cross domain redirect from `github.io`, so each Play listing has to name the new domain.
+- **Rejected**
+  - **Cloudflare proxy on** GitHub can't issue or renew its certificate behind the proxy, and the SSL mode would need care to avoid a redirect loop.
+  - **Stay on workbench-soft.github.io** a `github.io` name reads as a hobby page on a payments profile.
+- **Cost to undo** low. Removing the domain in the Pages settings brings back `workbench-soft.github.io`.
 
 ### workbenchsoft.com: an edge Worker in front of Pages
 

@@ -17,7 +17,7 @@ flowchart LR
 
 ## A client looks for a studio
 
-1. The client opens https://workbench-soft.github.io and reads the hero.
+1. The client opens https://workbench-soft.com and reads the hero.
 2. The client opens Services and picks the kind of work they need.
 3. A project chip on the card jumps to a project that shows that work.
 4. The client reads the features, then presses Start a project or Write an email.

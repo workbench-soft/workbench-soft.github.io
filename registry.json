@@ -12,6 +12,6 @@
   "fallback": {
     "name": "site",
     "dir": ".",
-    "origin": "https://workbench-soft.github.io"
+    "origin": "https://workbench-soft.com"
   }
 }
