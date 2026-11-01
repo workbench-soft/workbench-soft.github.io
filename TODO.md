@@ -2,10 +2,8 @@
 
 ## feat/games: party games at games.workbench-soft.com/games
 
-Accounts and purchases, in this order:
+The games run at <https://games.workbench-soft.com/games/>. Accounts and purchases, in this order:
 
-- [ ] Make a Cloudflare API token with the "Edit Cloudflare Workers" template at <https://dash.cloudflare.com/profile/api-tokens>, with the zone `workbench-soft.com` under Zone Resources. Add it as the repo secret `CLOUDFLARE_API_TOKEN` at <https://github.com/workbench-soft/workbench-soft.github.io/settings/secrets/actions/new>.
-- [ ] Add the Cloudflare account id, shown on the right of <https://dash.cloudflare.com/?to=/:account/workers-and-pages>, as the repo variable `CLOUDFLARE_ACCOUNT_ID` at <https://github.com/workbench-soft/workbench-soft.github.io/settings/variables/actions/new>. Then run the Games workflow by hand: <https://github.com/workbench-soft/workbench-soft.github.io/actions/workflows/games.yml>. The games open at <https://games.workbench-soft.com/games/>.
 - [ ] Apply for AdSense at <https://adsense.google.com> with workbench-soft.com. After approval make 2 display units and set the repo variables `ADSENSE_CLIENT`, `ADSENSE_SLOT_PAGE`, `ADSENSE_SLOT_ROOM`. Publish the consent message under Privacy and messaging.
 - [ ] Add the Android and the iOS app "Workbench Games" at <https://apps.admob.com> with a banner unit each. Put the Android app id into the Gradle property `admobAppId`, the iOS app id into `GADApplicationIdentifier` in `apps/games/ios/App/App/Info.plist`, and the units into `PUBLIC_ADMOB_BANNER_ANDROID` and `PUBLIC_ADMOB_BANNER_IOS`.
 - [ ] Open a Google Play developer account at <https://play.google.com/console/signup> (25 USD once), then run the `play-release` skill for `com.workbenchsoft.games`.
