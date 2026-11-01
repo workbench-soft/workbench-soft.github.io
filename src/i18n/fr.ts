@@ -420,7 +420,7 @@ const fr: Catalog = {
     },
     servohop: {
       tagline: 'Les prix du carburant en Australie sur une carte, avec l’historique de chaque station.',
-      lede: 'Servo Hop lit les relevés de prix des États et place chaque station sur une carte, colorée selon son prix. Il garde l’historique jour par jour et montre aussi les bornes de recharge. Il est gratuit et sans compte.',
+      lede: 'ServoHop lit les relevés de prix des États et place chaque station sur une carte, colorée selon son prix. Il garde l’historique jour par jour et montre aussi les bornes de recharge. Il est gratuit et sans compte.',
       links: ['servohop.com'],
       groups: [
         {

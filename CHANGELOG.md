@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Names** the project pages call the apps KeepPad and ServoHop.
 - **Markdown** markdownlint-cli2 lints the docs in `mise run lint` and CI.
 
 - **Domain** the site opens at <https://workbench-soft.com>. `www` and <https://workbench-soft.github.io> send each path there.
