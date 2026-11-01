@@ -1,6 +1,6 @@
 # Features
 
-The features of https://workbench-soft.com. The Memories site and the Langflip page have their own folders.
+The features of <https://workbench-soft.com>. The Memories site and the Langflip page have their own folders.
 
 ## Hero
 

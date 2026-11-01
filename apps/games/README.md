@@ -8,8 +8,8 @@ Free party games at [workbenchsoft.com/games](https://workbenchsoft.com/games/):
 mise run dev
 ```
 
-- **Site** http://localhost:4321/games/ with hot reload. It sends `/games/ws` to the Worker.
-- **Worker** http://localhost:8787/games/ serves the last build with the rooms. `mise run preview` builds first.
+- **Site** <http://localhost:4321/games/> with hot reload. It sends `/games/ws` to the Worker.
+- **Worker** <http://localhost:8787/games/> serves the last build with the rooms. `mise run preview` builds first.
 
 ## Check and build
 
