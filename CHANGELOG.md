@@ -2,7 +2,9 @@
 
 ## Unreleased
 
-- **Domain** the site opens at https://workbench-soft.com. `www` and https://workbench-soft.github.io send each path there.
+- **Markdown** markdownlint-cli2 lints the docs in `mise run lint` and CI.
+
+- **Domain** the site opens at <https://workbench-soft.com>. `www` and <https://workbench-soft.github.io> send each path there.
 - Specs: one file per feature under `specs/`, with each dated spec moved in as an entry under `## Changes`.
 - **Memories policy** the Memories privacy policy says Google Play handles the Remove ads payment, and the app only learns whether you own it.
 - **Langflip page** the title and the heading name the search words, a FAQ answers 5 questions, and `sitemap-index.xml` lists the page. The Memories page gets `SoftwareApplication` data. `docs/marketing.md` holds the marketing plan.

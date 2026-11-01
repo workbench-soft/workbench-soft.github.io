@@ -1,6 +1,6 @@
 # Architecture
 
-The repo serves https://workbench-soft.com from GitHub Pages. The site has no server and no outside service at run time, apart from Google Fonts.
+The repo serves <https://workbench-soft.com> from GitHub Pages. The site has no server and no outside service at run time, apart from Google Fonts.
 
 ## Parts
 
@@ -97,7 +97,7 @@ Each choice below names what the repo picked, what it costs and what lost. The m
 
 ### Hosting: GitHub Pages
 
-- **Picked** `pages.yml` publishes `_site/` to https://workbench-soft.com.
+- **Picked** `pages.yml` publishes `_site/` to <https://workbench-soft.com>.
 - **Why** the org stack puts a static site on GitHub Pages. The repo is public, so Pages costs nothing, and the site needs no server.
 - **Trade-off** Pages runs no code and sends no custom headers. The games on workbenchsoft.com need a Worker in front, see below.
 - **Rejected**

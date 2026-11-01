@@ -1,5 +1,6 @@
 [tools]
 node = "24"
+"npm:markdownlint-cli2" = "0.24.0"
 pnpm = "12.16.1"
 
 [tasks.dev]
@@ -20,7 +21,7 @@ run = "pnpm astro preview"
 
 [tasks.lint]
 description = "Lint the home page and check the format of the whole repo"
-run = ["pnpm lint", "pnpm format:check"]
+run = ["markdownlint-cli2", "pnpm lint", "pnpm format:check"]
 
 [tasks.format]
 description = "Format the whole repo with oxfmt"

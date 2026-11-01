@@ -112,4 +112,4 @@ The app sends no data to Cloudflare.
 
 ## Contact
 
-Email workbench.soft@gmail.com.
+Email <workbench.soft@gmail.com>.
