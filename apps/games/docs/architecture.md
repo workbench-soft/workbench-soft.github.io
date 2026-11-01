@@ -2,13 +2,12 @@
 
 ## Shape
 
-Micro frontends split by top path. Each app in `apps/` builds and deploys alone, and the edge Worker on workbenchsoft.com sends each path to its owner. No page mixes two apps, so the apps share no runtime code.
+Each app in `apps/` builds and deploys alone, so the apps share no runtime code. The games Worker owns `games.workbench-soft.com`, and its root leads to `/games/`. The studio site stays on GitHub Pages at the apex.
 
 ```mermaid
 flowchart LR
-  B[Browser or app] --> E[Edge Worker<br/>apps/edge]
-  E -- /games/* --> G[Games Worker<br/>apps/games]
-  E -- other paths --> P[GitHub Pages<br/>repo root]
+  B[Browser or app] -- games.workbench-soft.com --> G[Games Worker<br/>apps/games]
+  B -- workbench-soft.com --> P[GitHub Pages<br/>repo root]
   G -- static files --> A[(dist/games)]
   G -- /games/ws/CODE --> R[Room Durable Object<br/>one per code]
   R --> S[(SQLite storage<br/>of the room)]
@@ -36,11 +35,9 @@ flowchart TD
 ```mermaid
 sequenceDiagram
   participant P as Player browser
-  participant E as Edge
   participant W as Games Worker
   participant R as Room object
-  P->>E: GET /games/r/ABC234
-  E->>W: same request
+  P->>W: GET /games/r/ABC234
   W-->>P: room page from dist/games/room
   P->>W: WebSocket /games/ws/ABC234
   W->>R: idFromName(ABC234)
@@ -87,14 +84,16 @@ Each choice below names what the games picked, what it costs and what lost. The 
   - **A VPS** a server to pay for, patch and keep up.
 - **Cost to undo** high. `worker/room-object.ts`, the storage keys and the alarms are written for it.
 
-### Domain split: micro frontends by path
+### Domain split: a subdomain per app
 
-- **Picked** the edge Worker in `apps/edge` sends `/games/*` to the games Worker, and every other path to GitHub Pages.
-- **Why** the public site and the games build and deploy apart. No page mixes two apps, so they share no runtime code.
-- **Trade-off** each app keeps its own packages, checks and workflow, so a shared tool bump happens once per app.
+- **Picked** the games Worker owns `games.workbench-soft.com` as a custom domain. The studio site keeps the apex on GitHub Pages.
+- **Why** the public site and the games build and deploy apart. The apex records stay DNS only, so GitHub keeps issuing the site certificate.
+- **Trade-off** the game URLs read `games.workbench-soft.com/games/`, since the pages keep the `/games` base. Each app keeps its own packages, checks and workflow.
 - **Rejected**
+  - **The edge Worker in `apps/edge` on the apex** it needs the Cloudflare proxy in front of GitHub Pages, which can't renew its certificate there. The code stays in the repo, undeployed.
+  - **workbenchsoft.com** its DNS sits on Bluehost, and it serves no site.
   - **One app for the domain** the public site and the games would ship in one build.
-- **Cost to undo** medium. The edge is small, but each app's base path and deploy follow it.
+- **Cost to undo** low. The route sits in `apps/games/wrangler.jsonc`, and `DEFAULT_SITE` in `src/shared/paths.ts`.
 
 ### Pages: Astro static pages with a Preact island
 
@@ -126,7 +125,7 @@ Each choice below names what the games picked, what it costs and what lost. The 
 
 ### Mobile apps: Capacitor
 
-- **Picked** Capacitor wraps `dist/` for Android and iOS. The apps load the pages from local files and open the sockets on workbenchsoft.com.
+- **Picked** Capacitor wraps `dist/` for Android and iOS. The apps load the pages from local files and open the sockets on games.workbench-soft.com.
 - **Why** the same pages run on Android and iOS, with the AdMob plugin for the banner.
 - **Trade-off** an iOS build needs a Mac or a cloud Mac and the paid Apple developer account. The apps ship their own copy of the client, so the socket format carries a `PROTOCOL` version.
 - **Rejected**

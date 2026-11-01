@@ -434,6 +434,23 @@ const nb: Catalog = {
         },
       ],
     },
+    games: {
+      tagline: 'Selskapsspill i nettleseren: tegn, gjett og gi hint.',
+      lede: 'Workbench Games er tre selskapsspill for venner. Én lager et rom og sender lenken, og de andre blir med i nettleseren uten konto.',
+      links: ['Spill nå'],
+      groups: [
+        {
+          features: [
+            ['Rom med lenke', 'Én lenke samler 2 til 12 venner i samme rom.'],
+            ['Gjett tegningen', 'Tegn et ord, gjett de andres tegninger, kjemp om poeng.'],
+            ['Tegnetelefon', 'En setning blir til tegninger og tilbake, og albumet viser hvordan den endret seg.'],
+            ['Hintduell', 'Et ordspill i lag der hvert hint er åpent og det lønner seg å stjele.'],
+            ['Tegneverktøy', 'Penn, viskelær, fyll, 20 farger, 4 størrelser og angre.'],
+            ['To språk', 'Sidene og rommene fungerer på engelsk og russisk.'],
+          ],
+        },
+      ],
+    },
     langflip: {
       tagline: 'Retter ord skrevet med feil tastaturoppsett.',
       lede: 'Skriv ghbdtn med feil oppsett på, og Langflip skriver «привет» i stedet og bytter oppsett. Engelsk fungerer på samme måte. Den kjører uten nett og logger ikke det du skriver.',

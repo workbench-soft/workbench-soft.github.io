@@ -1,6 +1,6 @@
 ﻿# Workbench Games
 
-Free party games at [workbenchsoft.com/games](https://workbenchsoft.com/games/): guess the drawing, drawing telephone and clue duel. A person makes a room, sends the link, and friends play in the browser or in the Android and iOS apps.
+Free party games at [games.workbench-soft.com/games](https://games.workbench-soft.com/games/): guess the drawing, drawing telephone and clue duel. A person makes a room, sends the link, and friends play in the browser or in the Android and iOS apps.
 
 ## Run it
 
@@ -28,12 +28,12 @@ mise run deploy
 
 The `Games` workflow deploys on each push to main once the repo has `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`. The build reads these variables:
 
-| Variable                                                 | What it sets                                                                  |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `PUBLIC_SITE_URL`                                        | The site the pages and the apps point at. Default `https://workbenchsoft.com` |
-| `PUBLIC_ADSENSE_CLIENT`                                  | `ca-pub-…` for the site banners                                               |
-| `PUBLIC_ADSENSE_SLOT_PAGE`, `PUBLIC_ADSENSE_SLOT_ROOM`   | The banner units on the pages and in the room                                 |
-| `PUBLIC_ADMOB_BANNER_ANDROID`, `PUBLIC_ADMOB_BANNER_IOS` | The AdMob banner units. Without them the apps show test ads                   |
+| Variable                                                 | What it sets                                                                         |
+| -------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| `PUBLIC_SITE_URL`                                        | The site the pages and the apps point at. Default `https://games.workbench-soft.com` |
+| `PUBLIC_ADSENSE_CLIENT`                                  | `ca-pub-…` for the site banners                                                      |
+| `PUBLIC_ADSENSE_SLOT_PAGE`, `PUBLIC_ADSENSE_SLOT_ROOM`   | The banner units on the pages and in the room                                        |
+| `PUBLIC_ADMOB_BANNER_ANDROID`, `PUBLIC_ADMOB_BANNER_IOS` | The AdMob banner units. Without them the apps show test ads                          |
 
 ## Android and iOS
 

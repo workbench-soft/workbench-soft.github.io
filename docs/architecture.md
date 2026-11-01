@@ -68,15 +68,14 @@ A pull request runs steps 2 to 4 and the copy, then stops before the publish.
 - **Pages setting** the repo's Pages settings hold the custom domain with Enforce HTTPS on. `pages.yml` deploys an artifact, so a `CNAME` file would do nothing.
 - **Redirects** GitHub sends `www` and each `workbench-soft.github.io/<path>` to the same path on `https://workbench-soft.com` with a 301.
 
-## workbenchsoft.com and the apps
+## The apps beside the site
 
-The domain sits behind the edge Worker in [apps/edge](../apps/edge/). [registry.json](../registry.json) lists which app owns each top path, and every other path comes from this site on GitHub Pages.
+The games Worker owns `games.workbench-soft.com` as a Cloudflare custom domain. The apex stays on GitHub Pages.
 
 ```mermaid
 flowchart LR
-  B[Browser] --> E[Edge Worker]
-  E -- /games/* --> G[Games Worker<br/>apps/games]
-  E -- other paths --> P[GitHub Pages<br/>this site]
+  B[Browser] -- workbench-soft.com --> P[GitHub Pages<br/>this site]
+  B -- games.workbench-soft.com --> G[Games Worker<br/>apps/games]
 ```
 
 - **Apart** each app in `apps/` has its own packages, checks and deploy in the [Games workflow](../.github/workflows/games.yml). This site's build leaves `apps/` out.
@@ -99,7 +98,7 @@ Each choice below names what the repo picked, what it costs and what lost. The m
 
 - **Picked** `pages.yml` publishes `_site/` to <https://workbench-soft.com>.
 - **Why** the org stack puts a static site on GitHub Pages. The repo is public, so Pages costs nothing, and the site needs no server.
-- **Trade-off** Pages runs no code and sends no custom headers. The games on workbenchsoft.com need a Worker in front, see below.
+- **Trade-off** Pages runs no code and sends no custom headers. The games run on their own Worker, see below.
 - **Rejected**
   - **Cloudflare Workers static assets** the org host for apps with a backend. No source records why the site stayed off it. Pages needs no account token in CI.
 - **Cost to undo** medium. The deploy job, the domain and the links in each app's Play listing would move.
@@ -114,15 +113,17 @@ Each choice below names what the repo picked, what it costs and what lost. The m
   - **Stay on workbench-soft.github.io** a `github.io` name reads as a hobby page on a payments profile.
 - **Cost to undo** low. Removing the domain in the Pages settings brings back `workbench-soft.github.io`.
 
-### workbenchsoft.com: an edge Worker in front of Pages
+### Apps: a subdomain each
 
-- **Picked** the Worker in `apps/edge` reads `registry.json` and sends each top path to the app that owns it. Every other path comes from GitHub Pages.
-- **Why** the games need a Worker and Durable Objects, while the public site stays on Pages. Each app in `apps/` builds and deploys apart.
-- **Trade-off** the domain's DNS has to sit on Cloudflare, and each request to workbenchsoft.com passes through one more Worker.
+- **Picked** the games Worker owns `games.workbench-soft.com`. Cloudflare makes its record and certificate on deploy.
+- **Why** the games need a Worker and Durable Objects, while the public site stays on Pages with DNS only records.
+- **Trade-off** the games sit on another host, so their pages keep the `/games` base and read `games.workbench-soft.com/games/`.
 - **Rejected**
+  - **The edge Worker in `apps/edge` on the apex** it needs the Cloudflare proxy in front of Pages, which the domain decision above rejects. Its code stays, undeployed.
+  - **workbenchsoft.com** its DNS sits on Bluehost, and it serves no site.
   - **One app for the whole domain** the public site and the games would share one build and one deploy.
   - **Move the whole site to Cloudflare** no source records why it lost. The site then leaves the free Pages host it already has.
-- **Cost to undo** medium. `registry.json` and the edge Worker are small, but the domain setup moves with them.
+- **Cost to undo** low. The route sits in `apps/games/wrangler.jsonc`.
 
 ### Home page: Astro static pages
 

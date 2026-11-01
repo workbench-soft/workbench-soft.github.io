@@ -65,7 +65,7 @@ jobs:
           PUBLIC_ADSENSE_SLOT_PAGE: ${{ vars.ADSENSE_SLOT_PAGE }}
           PUBLIC_ADSENSE_SLOT_ROOM: ${{ vars.ADSENSE_SLOT_ROOM }}
         run: pnpm install --frozen-lockfile && pnpm build && pnpm exec wrangler deploy
-      # Waits for the domain. Set EDGE_ENABLED once workbenchsoft.com's DNS sits on Cloudflare.
+      # Off: the games have their own host, and the apex of workbench-soft.com stays on GitHub Pages.
       - name: Deploy the edge
         if: vars.EDGE_ENABLED == 'true'
         working-directory: apps/edge

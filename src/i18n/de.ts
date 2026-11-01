@@ -479,6 +479,26 @@ const de: Catalog = {
         },
       ],
     },
+    games: {
+      tagline: 'Partyspiele im Browser: zeichnen, raten, Hinweise geben.',
+      lede: 'Workbench Games sind drei Partyspiele für Freunde. Eine Person öffnet einen Raum und schickt den Link, die anderen spielen im Browser mit, ohne Konto.',
+      links: ['Jetzt spielen'],
+      groups: [
+        {
+          features: [
+            ['Räume per Link', 'Ein Link bringt 2 bis 12 Freunde in denselben Raum.'],
+            ['Zeichnung raten', 'Zeichne ein Wort, rate die Zeichnungen der anderen, sammle Punkte.'],
+            [
+              'Zeichen-Stille-Post',
+              'Ein Satz wird zu Zeichnungen und zurück, und das Album zeigt, wie er sich verändert hat.',
+            ],
+            ['Hinweis-Duell', 'Ein Wortspiel in Teams, bei dem jeder Hinweis offen liegt und Klauen sich lohnt.'],
+            ['Zeichenwerkzeuge', 'Stift, Radierer, Füllen, 20 Farben, 4 Größen und Rückgängig.'],
+            ['Zwei Sprachen', 'Die Seiten und die Räume gibt es auf Englisch und Russisch.'],
+          ],
+        },
+      ],
+    },
     langflip: {
       tagline: 'Korrigiert Wörter, die im falschen Tastaturlayout getippt wurden.',
       lede: 'Tippen Sie ghbdtn im falschen Layout, und Langflip schreibt stattdessen «привет» und wechselt das Layout. Englisch funktioniert genauso. Es läuft offline und protokolliert nicht, was Sie tippen.',

@@ -498,6 +498,26 @@ const fr: Catalog = {
         },
       ],
     },
+    games: {
+      tagline: 'Jeux de soirée dans le navigateur : dessiner, deviner, donner des indices.',
+      lede: 'Workbench Games, ce sont trois jeux de soirée entre amis. Une personne crée un salon et envoie le lien, les autres rejoignent dans le navigateur, sans compte.',
+      links: ['Jouer'],
+      groups: [
+        {
+          features: [
+            ['Salons par lien', 'Un lien réunit de 2 à 12 amis dans le même salon.'],
+            ['Devine le dessin', 'Dessine un mot, devine les dessins des autres, marque des points.'],
+            [
+              'Téléphone dessiné',
+              "Une phrase devient des dessins puis revient, et l'album montre comment elle a changé.",
+            ],
+            ["Duel d'indices", 'Un jeu de mots en équipes où chaque indice est public et où voler rapporte.'],
+            ['Outils de dessin', 'Crayon, gomme, remplissage, 20 couleurs, 4 tailles et annulation.'],
+            ['Deux langues', 'Les pages et les salons sont en anglais et en russe.'],
+          ],
+        },
+      ],
+    },
     langflip: {
       tagline: 'Corrige les mots tapés dans la mauvaise disposition de clavier.',
       lede: 'Tapez ghbdtn avec la mauvaise disposition, et Langflip tape « привет » à la place puis change la disposition. L’anglais marche pareil. Il tourne hors ligne et ne garde aucune trace de ce que vous tapez.',

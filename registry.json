@@ -1,5 +1,5 @@
 {
-  "$comment": "Which app owns each top path of workbenchsoft.com. apps/edge reads this file. Paths no app owns go to the public site on GitHub Pages.",
+  "$comment": "Which app owns each top path of the edge domain. apps/edge reads this file. Paths no app owns go to the public site on GitHub Pages.",
   "apps": [
     {
       "name": "games",
