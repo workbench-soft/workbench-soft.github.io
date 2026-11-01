@@ -1,4 +1,4 @@
-// workbenchsoft.com: the edge. It hands each path to the app that owns it in registry.json.
+// The edge, undeployed. It hands each path to the app that owns it in registry.json.
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "workbench-edge",

@@ -21,7 +21,7 @@ describe('developer phone link', () => {
   beforeEach(() => store.clear());
 
   it('leaves other links alone', async () => {
-    expect(await openDevLink('https://workbenchsoft.com/games/r/abc234')).toBe(false);
+    expect(await openDevLink('https://games.workbench-soft.com/games/r/abc234')).toBe(false);
     expect(isDevDevice()).toBe(false);
   });
 

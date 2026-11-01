@@ -78,5 +78,5 @@ flowchart LR
 ## In the Android and iOS apps
 
 1. The app opens on the games home page from its own files.
-2. Creating a room opens the room page inside the app. The invite link points at workbenchsoft.com, so friends without the app join in the browser.
+2. Creating a room opens the room page inside the app. The invite link points at games.workbench-soft.com, so friends without the app join in the browser.
 3. An AdMob banner shows in the lobby and on the results, and hides during play.

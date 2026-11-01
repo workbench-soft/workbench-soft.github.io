@@ -1,4 +1,4 @@
-// workbenchsoft.com/games: one Worker serves the static pages from dist/ and runs a Durable Object per room.
+// games.workbench-soft.com/games: one Worker serves the static pages from dist/ and runs a Durable Object per room.
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "workbench-games",
@@ -17,5 +17,7 @@
   },
   // SQLite storage is the kind the Workers Free plan allows.
   "migrations": [{ "tag": "v1", "new_sqlite_classes": ["RoomObject"] }],
+  // Cloudflare makes the DNS record and the certificate on deploy. The apex stays on GitHub Pages.
+  "routes": [{ "pattern": "games.workbench-soft.com", "custom_domain": true }],
   "observability": { "enabled": true },
 }

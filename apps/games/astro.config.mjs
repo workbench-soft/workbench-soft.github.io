@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 
 // Keep in step with src/shared/paths.ts.
 const BASE = '/games';
-const site = process.env.PUBLIC_SITE_URL ?? 'https://workbenchsoft.com';
+const site = process.env.PUBLIC_SITE_URL ?? 'https://games.workbench-soft.com';
 
 // `astro dev` has no Worker. This sends room links to the room page, as the Worker does.
 const roomLinks = {
