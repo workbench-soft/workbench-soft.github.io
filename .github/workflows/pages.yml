@@ -48,6 +48,17 @@ jobs:
           sudo cp -r dist/. _site/
           sudo cp app-ads.txt robots.txt _site/
           sudo cp -r langflip _site/
+      # property-trends publishes its web build with its data as a release here. The newest one goes under /property-trends/.
+      - name: Add Property Trends
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag=$(gh release list --repo "$GITHUB_REPOSITORY" --limit 200 --json tagName --jq '.[].tagName' | grep '^property-trends-web-v' | sort -V | tail -n 1 || true)
+          if [ -n "$tag" ]; then
+            gh release download "$tag" --repo "$GITHUB_REPOSITORY" --pattern property-trends-web.tar.gz --dir "$RUNNER_TEMP"
+            sudo mkdir -p _site/property-trends
+            sudo tar -xzf "$RUNNER_TEMP/property-trends-web.tar.gz" -C _site/property-trends
+          fi
       - if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
 

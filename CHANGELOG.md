@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **Property Trends** the suburb price map opens at <https://workbench-soft.com/property-trends/>, unpacked from its newest release.
+
 - **Games domain** the games move to <https://games.workbench-soft.com/games/>, and the home page lists them as Workbench Games in all 9 languages. The deploy waits for the Cloudflare token.
 - **Names** the project pages call the apps KeepPad and ServoHop.
 - **Markdown** markdownlint-cli2 lints the docs in `mise run lint` and CI.

@@ -187,3 +187,17 @@ The studio needed one public site for its apps and their installers.
   `https://workbench-soft.com` as the developer website.
 - **Docs** `README.md`, `docs/architecture.md`, `docs/features.md`,
   `docs/user-flows.md`, `CHANGELOG.md`, `TODO.md`.
+
+#### 2026-11-02 Property Trends under /property-trends/
+
+- **Why** Property Trends, a private repo, needs a free public host for its
+  web build and about 100 MB of open data. Cloudflare R2 needs a card, so
+  the app joins this site.
+- **Changes**
+  - **`pages.yml`** a step after the home page downloads the newest
+    `property-trends-web-v*` release and unpacks it into
+    `_site/property-trends/`. No release means no folder.
+  - **Releases** `mise run deploy:web` in `property-trends` publishes them
+    and starts this workflow. It keeps the last 3.
+- **Limits** GitHub Pages caps the whole site at 1 GB.
+- **Docs** `README.md`, `CHANGELOG.md`.
