@@ -164,3 +164,26 @@ The studio needed one public site for its apps and their installers.
   shows text alone. The home page holds the other apps as sections, so their
   search data stays at the `Organization` level.
 - **Docs** `README.md`, `docs/features.md`, `CHANGELOG.md`, `TODO.md`.
+
+#### 2026-11-01 The site opens at workbench-soft.com
+
+- **Why** the Google Play payments profile asks for a website, and the
+  studio wants its own domain there. The org bought `workbench-soft.com` at
+  Cloudflare Registrar on 2026-10-30, and its DNS sits on Cloudflare.
+- **Changes**
+  - **Pages settings** the custom domain `workbench-soft.com`, set through
+    the API, since `pages.yml` deploys an artifact and GitHub ignores a
+    `CNAME` file there. Enforce HTTPS once the certificate is issued.
+  - **Cloudflare DNS** the 4 GitHub Pages `A` and `AAAA` records on the apex
+    and a `www` `CNAME` to `workbench-soft.github.io`, DNS only (grey cloud),
+    so GitHub issues the certificate.
+  - **`astro.config.mjs`, `robots.txt`, `langflip/index.html`,
+    `memories-mobile/`** the absolute URLs name `https://workbench-soft.com`.
+  - **`registry.json`** the edge Worker of workbenchsoft.com takes the site
+    from `https://workbench-soft.com`, to skip the redirect.
+- **Limits** GitHub sends `workbench-soft.github.io/<path>` to the same path
+  on the new domain with a 301. An `app-ads.txt` crawler may refuse a
+  redirect to another domain, so each Play listing SHOULD name
+  `https://workbench-soft.com` as the developer website.
+- **Docs** `README.md`, `docs/architecture.md`, `docs/features.md`,
+  `docs/user-flows.md`, `CHANGELOG.md`, `TODO.md`.
