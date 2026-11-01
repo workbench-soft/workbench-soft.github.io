@@ -1,6 +1,6 @@
 name: Pages
 
-# Publishes https://workbench-soft.github.io on each push to main.
+# Publishes https://workbench-soft.com on each push to main.
 # A pull request runs the same checks and build, and skips the deploy.
 # The repo is public, so the hosted runner spends no Actions minutes.
 on:

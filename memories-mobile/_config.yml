@@ -3,7 +3,7 @@ tagline: On this day photos from your QNAP or Synology NAS
 description: >-
   Android app that shows "on this day" photo memories from your own QNAP or
   Synology NAS over WebDAV. Like Google Photos memories, with no cloud and no account.
-url: https://workbench-soft.github.io
+url: https://workbench-soft.com
 baseurl: /memories-mobile
 lang: en
 author: Oleg Chibikov

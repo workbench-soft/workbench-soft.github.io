@@ -4,7 +4,7 @@ Public files for the Workbench Soft apps. The code sits in private repos in this
 
 - **Releases** each app's CI publishes its APKs and installers on the [releases page](https://github.com/workbench-soft/workbench-soft.github.io/releases). The tag starts with the repo name, such as `tickalot-v2025.10.28.3`. Each app keeps its last 3 releases.
 - **Updates** the apps installed from an APK read the release list through the GitHub API and pick the newest tag with their own name.
-- **Site** https://workbench-soft.github.io, built by [pages.yml](.github/workflows/pages.yml) on each push to main.
+- **Site** https://workbench-soft.com, built by [pages.yml](.github/workflows/pages.yml) on each push to main. `www` and the old https://workbench-soft.github.io send each path there. [docs/architecture.md](docs/architecture.md#domain) has the DNS setup.
 - **Memories site** sits in [memories-mobile/](memories-mobile/), a Jekyll site with its own `_config.yml`.
 - **app-ads.txt** lists the AdMob publisher for apps whose Play listing points at this site.
 
@@ -40,7 +40,7 @@ The release jobs push with the `RELEASES_TOKEN` secret of each app repo. It is a
 
 ## Langflip
 
-The page sits in [langflip/](langflip/) and is served at https://workbench-soft.github.io/langflip/. Its download link opens the [Langflip releases](https://github.com/workbench-soft/workbench-soft.github.io/releases?q=langflip&expanded=true), where the Langflip CI publishes `Langflip-<version>-windows-x64.exe`.
+The page sits in [langflip/](langflip/) and is served at https://workbench-soft.com/langflip/. Its download link opens the [Langflip releases](https://github.com/workbench-soft/workbench-soft.github.io/releases?q=langflip&expanded=true), where the Langflip CI publishes `Langflip-<version>-windows-x64.exe`.
 
 ## Media Organizer
 
