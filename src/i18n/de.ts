@@ -1044,7 +1044,7 @@ const de: Catalog = {
             ['Vorortkarte und Verlauf', 'Der Median eines Vororts, die Zahl der Verkäufe und ein Diagramm über Jahre.'],
             ['Suche', 'Findet einen Vorort nach Name oder Postleitzahl und fliegt hin.'],
             ['Sprachen', 'In 9 Sprachen, nach der Sprache von Telefon oder Browser.'],
-            ['Mieten', 'Jede Postleitzahl in NSW nach der mittleren Wochenmiete neuer Verträge gefärbt.'],
+            ['Mieten', 'Jede Postleitzahl in NSW, QLD, SA und TAS nach der mittleren Wochenmiete neuer Verträge gefärbt.'],
             ['Aus dem Browser installieren', 'Die Web-Version installiert sich als App mit eigenem Symbol.'],
           ],
         },

@@ -954,7 +954,7 @@ const nb: Catalog = {
             ['Forstadskort og historikk', 'Forstadens median, antall salg og et diagram over år.'],
             ['Søk', 'Finner en forstad etter navn eller postnummer og flyr kartet dit.'],
             ['Språk', 'På 9 språk, etter telefonen eller nettleseren.'],
-            ['Leie', 'Hvert postnummer i NSW farget etter medianleien for nye leieavtaler per uke.'],
+            ['Leie', 'Hvert postnummer i NSW, QLD, SA og TAS farget etter medianleien for nye leieavtaler per uke.'],
             ['Installer fra nettleseren', 'Nettversjonen installeres som en app med eget ikon.'],
           ],
         },

@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Property Trends** the Rents feature covers NSW, QLD, SA and TAS.
 - **SpotTheCam** the Trip log feature says the speeds stay on your phone.
 - **Memories** Memories in the browser joins the features, and the platforms list Web.
 - **Shuttrix** Slow motion and Time lapse join the features.

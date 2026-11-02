@@ -1084,7 +1084,7 @@ const fr: Catalog = {
             ['Fiche et historique', "La médiane d'une banlieue, le nombre de ventes et un graphique sur les années."],
             ['Recherche', 'Trouve une banlieue par nom ou code postal et y emmène la carte.'],
             ['Langues', 'En 9 langues, selon le téléphone ou le navigateur.'],
-            ['Loyers', 'Chaque code postal de NSW coloré selon le loyer hebdomadaire médian des nouveaux baux.'],
+            ['Loyers', 'Chaque code postal de NSW, QLD, SA et TAS coloré selon le loyer hebdomadaire médian des nouveaux baux.'],
             ['Installer depuis le navigateur', "La version web s'installe comme une app avec son icône."],
           ],
         },

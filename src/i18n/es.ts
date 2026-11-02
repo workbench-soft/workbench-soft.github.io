@@ -1034,7 +1034,7 @@ const es: Catalog = {
             ['Idiomas', 'En 9 idiomas, según el teléfono o el navegador.'],
             [
               'Alquileres',
-              'Cada código postal de NSW coloreado por el alquiler semanal medio de los nuevos contratos.',
+              'Cada código postal de NSW, QLD, SA y TAS coloreado por el alquiler semanal medio de los nuevos contratos.',
             ],
             ['Instalar desde el navegador', 'La versión web se instala como app con su propio icono.'],
           ],

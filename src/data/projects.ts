@@ -755,7 +755,7 @@ export const projects: Project[] = [
           },
           { name: 'Search', text: 'Finds a suburb by name or postcode and flies the map there.' },
           { name: 'Languages', text: 'The app in 9 languages, following the phone or browser.' },
-          { name: 'Rents', text: 'Each NSW postcode coloured by the median weekly rent of new leases.' },
+          { name: 'Rents', text: 'Each postcode of NSW, QLD, SA and TAS coloured by the median weekly rent of new leases.' },
           { name: 'Install from the browser', text: 'The web build installs as an app with its own icon.' },
         ],
       },
