@@ -14,7 +14,7 @@ Public files for the Workbench Soft apps. The code sits in private repos in this
 The home page is the studio's business card: what it builds for clients, and each project with each of its features. It shows no ads.
 
 - **Stack** Astro 7 and TypeScript build it into static HTML in `dist/`. A WebGL2 shader draws the hero.
-- **Content** the projects sit in [src/data/projects.ts](src/data/projects.ts), the services and the process in [src/data/studio.ts](src/data/studio.ts). A new project or feature is one entry there, plus its translation in each catalog.
+- **Content** the projects sit in [src/data/projects.ts](src/data/projects.ts), the services and the process in [src/data/studio.ts](src/data/studio.ts). A new project or feature is one entry there, plus its translation in each catalog. Each project names its `repo`, and each heading of that repo's `docs/features.md` is a feature name or a group title. `mise run feature-check` in the workspace folder lists the gaps.
 - **Languages** English at `/`, and Russian, German, French, Spanish, Chinese, Japanese, Korean and Norwegian Bokmål under `/<code>/`. The text of each language sits in [src/i18n/](src/i18n/), one catalog per language.
 - **Docs** [features](docs/features.md), [user flows](docs/user-flows.md) and [architecture](docs/architecture.md).
 

@@ -188,6 +188,13 @@ The studio needed one public site for its apps and their installers.
 - **Docs** `README.md`, `docs/architecture.md`, `docs/features.md`,
   `docs/user-flows.md`, `CHANGELOG.md`, `TODO.md`.
 
+### 2026-11-02 Each feature of each repo on the site
+
+- **Why** the person asked that each feature of each project shows on workbench-soft.com. Nine projects had no entry, and many features had no line.
+- **Changes** each project in `src/data/projects.ts` names its `repo`, the clone that holds its `docs/features.md`. Each heading there is now a feature name or a group title of the project. Shuttrix, Farnear, Memoire, Lumiere Player, Property Trends, Tripforge, Reddit Desk, Songfactory and Speed Camera Scraper get entries. The 8 other catalogs get each new line.
+- **Check** `mise run feature-check` in the workspace folder lists each heading the site lacks.
+- **Docs** `README.md`, `CHANGELOG.md`, `docs/features.md`.
+
 #### 2026-11-02 Property Trends under /property-trends/
 
 - **Why** Property Trends, a private repo, needs a free public host for its
