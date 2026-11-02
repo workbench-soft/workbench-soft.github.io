@@ -1120,6 +1120,7 @@ const de: Catalog = {
             ['Repo-Auswahl', 'Eine Liste jedes Git-Ordners unter der Wurzel.'],
             ['Subreddits', 'Claude liest das Repo und trägt passende Subs ein.'],
             ['Threads finden', 'Claude Code findet passende Threads und entwirft einen Kommentar.'],
+            ['Schritte oben', 'Drei Schritte oben sagen, wer was tut, und der wartende leuchtet.'],
             ['Karten', 'Jede Karte zeigt Sub, Threadtitel und den Entwurf zum Bearbeiten.'],
             ['In Chrome öffnen', 'Chrome öffnet den Thread mit eingetipptem Kommentar, bereit zum Posten.'],
             ['Beiträge-Tab', 'Entwirft Beiträge über die gewählten Repos in passenden Subs.'],

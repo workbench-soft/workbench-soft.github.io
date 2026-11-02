@@ -1021,6 +1021,7 @@ const nb: Catalog = {
             ['Repovelger', 'En nedtrekksliste med hver git-mappe under roten.'],
             ['Subreddits', 'Claude leser repoet og fyller inn passende subs.'],
             ['Finn tråder', 'Claude Code finner tråder repoet kan svare på og lager et utkast.'],
+            ['Steg øverst', 'Tre steg øverst sier hvem som gjør hva, og steget som venter lyser.'],
             ['Kort', 'Hvert kort viser sub, trådtittel og utkastet som kan redigeres.'],
             ['Åpne i Chrome', 'Chrome åpner tråden med kommentaren skrevet inn, klar til å postes.'],
             ['Innlegg-fanen', 'Lager utkast til innlegg om valgte repoer i passende subs.'],

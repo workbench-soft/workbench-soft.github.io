@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **Reddit Desk and Tripforge** Reddit Desk lists Steps on top, and the Tripforge feature is named To Tickalot, as in the apps' docs.
+
 - **Site Sources** the card shows the popup with its progress bar and the one zip it saves.
 - **Shuttrix Auto tune** the Shuttrix page lists the Auto button that sets Light, Warmth and Color for the scene.
 - **Feedback** a Feedback button in the corner of every page opens a short form that mails the studio. The footer and `#feedback` links open it too.

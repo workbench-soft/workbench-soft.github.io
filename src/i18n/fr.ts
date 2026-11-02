@@ -1157,6 +1157,7 @@ const fr: Catalog = {
             ['Choix du dépôt', 'Une liste de chaque dossier git sous la racine.'],
             ['Subreddits', 'Claude lit le dépôt et remplit les subs qui lui vont.'],
             ['Trouver des fils', 'Claude Code trouve les fils auxquels le dépôt répond et rédige un commentaire.'],
+            ['Étapes en haut', 'Trois étapes en haut disent qui fait quoi, et celle qui attend s’allume.'],
             ['Cartes', 'Chaque carte montre le sub, le titre du fil et le brouillon à modifier.'],
             ['Ouvrir dans Chrome', 'Chrome ouvre le fil avec le commentaire saisi, prêt à publier.'],
             ['Onglet publications', 'Rédige des posts sur les dépôts choisis dans les subs qui conviennent.'],
