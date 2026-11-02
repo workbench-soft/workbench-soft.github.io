@@ -296,7 +296,10 @@ export const projects: Project[] = [
             name: 'Lenses',
             text: 'A chip per lens the phone has, over one zoom scale. A selfie zooms to fit the people in the frame.',
           },
-          { name: 'Focus', text: 'AF-C follows a moving subject and faces. A tap focuses on a point, and a drag of the reticle moves it.' },
+          {
+            name: 'Focus',
+            text: 'AF-C follows a moving subject and faces. A tap focuses on a point, and a drag of the reticle moves it.',
+          },
           { name: 'White balance', text: 'Auto, presets or kelvin on a dial.' },
           {
             name: 'Exposure',
@@ -646,10 +649,10 @@ export const projects: Project[] = [
     hue: 280,
     code: 'LUM',
     name: 'Lumiere Player',
-    tagline: 'A video player for Google TV that plays files from a USB stick or a NAS.',
+    tagline: 'A video player for Google TV and Android phones that plays files from a USB stick or a NAS.',
     lede: 'Lumiere Player plays files from a USB stick or an SMB share on libVLC, so it opens what VLC opens. Each file keeps its place, and the remote skips and switches tracks.',
-    platforms: ['Google TV', 'Android TV'],
-    stack: ['Kotlin', 'Jetpack Compose', 'libVLC'],
+    platforms: ['Google TV', 'Android TV', 'Android'],
+    stack: ['Kotlin', 'Android Views', 'libVLC'],
     links: [],
     groups: [
       {
@@ -661,6 +664,12 @@ export const projects: Project[] = [
           { name: 'Updates', text: 'Finds new releases on GitHub at launch or under Updates.' },
           { name: 'Ads', text: 'A banner on the home screen, with a one time unlock in the Play build.' },
           { name: 'Languages', text: 'The TV screens in 9 languages, following the phone or browser.' },
+          {
+            name: 'Touch on a phone',
+            text: 'Tap for the panel, double tap a side to skip, drag to scrub, swipe for brightness and volume, and a touch lock.',
+          },
+          { name: 'Panel buttons', text: 'Pick the buttons the player shows, aspect ratio included.' },
+          { name: 'Sponsor skip', text: 'Videos saved with yt-dlp skip their SponsorBlock sponsor segments.' },
         ],
       },
     ],

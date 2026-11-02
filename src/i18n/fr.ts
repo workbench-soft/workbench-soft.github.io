@@ -1037,7 +1037,10 @@ const fr: Catalog = {
               'Portrait',
               'Ce que vous touchez reste net, proche ou à 10 m, personne ou objet. Le reste devient doux, un curseur règle le flou.',
             ],
-            ['Macro', 'Un insecte ou une goutte à 2 ou 3 cm, aussi grand que le téléphone le permet, avec la largeur du cadre en mm.'],
+            [
+              'Macro',
+              'Un insecte ou une goutte à 2 ou 3 cm, aussi grand que le téléphone le permet, avec la largeur du cadre en mm.',
+            ],
             ['Panorama', "Une photo large d'un lent pivot, assemblée sur le téléphone."],
             ['Ralenti', 'Une vidéo à 120 ou 240 images par seconde, lue au ralenti.'],
             ['Accéléré', 'Une image chaque demi-seconde, lue 15 fois plus vite : nuages, couchers de soleil, foules.'],
@@ -1045,7 +1048,10 @@ const fr: Catalog = {
               'Objectifs',
               "Une pastille par objectif du téléphone, sur une seule échelle de zoom. En selfie, le zoom s'ajuste aux personnes du cadre.",
             ],
-            ['Mise au point', "L'AF-C suit un sujet en mouvement et les visages. Un appui vise un point, et le réticule se déplace au doigt."],
+            [
+              'Mise au point',
+              "L'AF-C suit un sujet en mouvement et les visages. Un appui vise un point, et le réticule se déplace au doigt.",
+            ],
             ['Balance des blancs', 'Auto, préréglages ou kelvins sur une molette.'],
             [
               'Exposition',
@@ -1162,7 +1168,8 @@ const fr: Catalog = {
       ],
     },
     'lumiere-player': {
-      tagline: "Un lecteur vidéo pour Google TV qui lit les fichiers d'une clé USB ou d'un NAS.",
+      tagline:
+        "Un lecteur vidéo pour Google TV et les téléphones Android qui lit les fichiers d'une clé USB ou d'un NAS.",
       lede: "Lumiere Player lit les fichiers d'une clé USB ou d'un partage SMB avec libVLC, donc il ouvre ce qu'ouvre VLC. Chaque fichier garde sa position, et la télécommande saute et change de piste.",
       links: [],
       groups: [
@@ -1175,6 +1182,15 @@ const fr: Catalog = {
             ['Mises à jour', 'Trouve les nouvelles versions sur GitHub au lancement ou dans Mises à jour.'],
             ['Publicité', "Une bannière sur l'accueil, avec un déblocage unique dans la version Play."],
             ['Langues', 'En 9 langues, selon le téléphone ou le navigateur.'],
+            [
+              'Tactile sur téléphone',
+              'Touchez pour le panneau, double touche sur un côté pour sauter, glissez pour avancer, balayez pour la luminosité et le volume, et un verrou tactile.',
+            ],
+            ['Boutons du lecteur', "Choisissez les boutons du lecteur, format d'image compris."],
+            [
+              'Ignorer les sponsors',
+              'Les vidéos enregistrées avec yt-dlp sautent leurs segments sponsorisés SponsorBlock.',
+            ],
           ],
         },
       ],

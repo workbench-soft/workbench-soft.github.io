@@ -1000,7 +1000,10 @@ const de: Catalog = {
               'Porträt',
               'Was du antippst, bleibt scharf, nah oder 10 m entfernt, Person oder Ding. Der Rest wird weich, ein Regler stellt die Unschärfe ein.',
             ],
-            ['Makro', 'Ein Käfer oder ein Tropfen aus 2 bis 3 cm, so groß wie das Telefon es zulässt, mit der Bildbreite in mm.'],
+            [
+              'Makro',
+              'Ein Käfer oder ein Tropfen aus 2 bis 3 cm, so groß wie das Telefon es zulässt, mit der Bildbreite in mm.',
+            ],
             ['Panorama', 'Ein breites Foto aus einer langsamen Drehung, auf dem Telefon zusammengesetzt.'],
             ['Zeitlupe', 'Ein Video mit 120 oder 240 Bildern pro Sekunde, das verlangsamt abspielt.'],
             [
@@ -1011,7 +1014,10 @@ const de: Catalog = {
               'Objektive',
               'Ein Knopf pro Objektiv des Telefons über einer Zoomskala. Beim Selfie passt sich der Zoom an die Personen im Bild an.',
             ],
-            ['Fokus', 'AF-C folgt bewegten Motiven und Gesichtern. Ein Tipp fokussiert einen Punkt, und das Fokusfeld lässt sich ziehen.'],
+            [
+              'Fokus',
+              'AF-C folgt bewegten Motiven und Gesichtern. Ein Tipp fokussiert einen Punkt, und das Fokusfeld lässt sich ziehen.',
+            ],
             ['Weißabgleich', 'Auto, Voreinstellungen oder Kelvin auf einem Rad.'],
             [
               'Belichtung',
@@ -1125,7 +1131,7 @@ const de: Catalog = {
       ],
     },
     'lumiere-player': {
-      tagline: 'Ein Videoplayer für Google TV, der Dateien vom USB-Stick oder einem NAS abspielt.',
+      tagline: 'Ein Videoplayer für Google TV und Android-Telefone, der Dateien vom USB-Stick oder einem NAS abspielt.',
       lede: 'Lumiere Player spielt Dateien vom USB-Stick oder einer SMB-Freigabe mit libVLC, also öffnet er, was VLC öffnet. Jede Datei merkt sich die Stelle, die Fernbedienung springt und wechselt Spuren.',
       links: [],
       groups: [
@@ -1138,6 +1144,12 @@ const de: Catalog = {
             ['Updates', 'Findet neue Releases auf GitHub beim Start oder unter Updates.'],
             ['Werbung', 'Ein Banner auf dem Startbildschirm, mit einmaliger Freischaltung im Play-Build.'],
             ['Sprachen', 'In 9 Sprachen, nach der Sprache von Telefon oder Browser.'],
+            [
+              'Touch am Telefon',
+              'Tippen für die Leiste, Doppeltipp an der Seite springt, Ziehen spult, Wischen für Helligkeit und Lautstärke, dazu eine Touch-Sperre.',
+            ],
+            ['Player-Tasten', 'Die Tasten des Players selbst wählen, auch das Seitenverhältnis.'],
+            ['Sponsoren überspringen', 'Mit yt-dlp gespeicherte Videos überspringen ihre SponsorBlock-Abschnitte.'],
           ],
         },
       ],
