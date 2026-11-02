@@ -1105,6 +1105,7 @@ const es: Catalog = {
             ['Selector de repo', 'Una lista de cada carpeta git bajo la raíz.'],
             ['Subreddits', 'Claude lee el repo y rellena los subs que encajan.'],
             ['Buscar hilos', 'Claude Code encuentra hilos que el repo puede responder y redacta un comentario.'],
+            ['Pasos arriba', 'Tres pasos arriba dicen quién hace qué, y el que espera se ilumina.'],
             ['Tarjetas', 'Cada tarjeta muestra el sub, el título del hilo y el borrador editable.'],
             ['Abrir en Chrome', 'Chrome abre el hilo con el comentario escrito, listo para publicar.'],
             ['Pestaña de posts', 'Redacta posts sobre los repos elegidos en los subs adecuados.'],

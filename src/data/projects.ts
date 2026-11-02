@@ -817,7 +817,7 @@ export const projects: Project[] = [
         features: [
           { name: 'Ask', text: 'Type the places, a rough date, how long and who goes.' },
           { name: 'Flights', text: 'The cheapest round trips around the asked date, with cheaper dates beside.' },
-          { name: 'To Tick-a-Lot', text: 'One tap turns the trip into Tick-a-Lot lists: sights and packing.' },
+          { name: 'To Tickalot', text: 'One tap turns the trip into Tick-a-Lot lists: sights and packing.' },
           { name: 'Settings', text: "The language: the phone's, or one of the 9." },
         ],
       },
@@ -1165,6 +1165,7 @@ export const projects: Project[] = [
           { name: 'Repo picker', text: 'A dropdown lists each git folder under the root.' },
           { name: 'Subreddits', text: 'Claude reads the repo and fills in the subs that fit it.' },
           { name: 'Find threads', text: 'Claude Code finds threads the repo can answer and drafts a comment.' },
+          { name: 'Steps on top', text: 'Three steps on top say who does what, and the waiting one lights up.' },
           { name: 'Cards', text: 'Each card shows the sub, the thread title and the draft to edit.' },
           { name: 'Open in Chrome', text: 'Chrome opens the thread with the comment typed in, ready to post.' },
           { name: 'Posts tab', text: 'Drafts posts that promote the picked repos in fitting subs.' },

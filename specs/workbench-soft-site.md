@@ -237,3 +237,13 @@ The studio needed one public site for its apps and their installers.
   - **`src/components/Palette.astro`** a jump to a hidden feature opens its project's list first.
   - **`src/i18n/`** the menu and button labels and the game link names, in each catalog.
 - **Docs** `docs/features.md`, `docs/user-flows.md`, `CHANGELOG.md`.
+
+#### 2026-11-02 Reddit Desk "Steps on top" and Tripforge "To Tickalot"
+
+- **Why** `mise run feature-check` found two headings of the apps' `docs/features.md` missing from the site.
+- **What the visitor gets**
+  - **Reddit Desk** a Steps on top feature: the Comments tab shows the 3 steps, who takes each, and lights the one that waits.
+  - **Tripforge** the feature is named To Tickalot, as in the app's docs.
+- **Changes**
+  - **`src/data/projects.ts`** the new feature after Find threads, and the renamed one.
+  - **`src/i18n/`** the new feature in each of the 8 other catalogs.
