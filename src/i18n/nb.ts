@@ -261,7 +261,7 @@ const nb: Catalog = {
             ['Fartsmerke', 'Farten din ved siden av veiens grense. Merket blir rødt over grensen.'],
             [
               'Kameravarsler',
-              'Et pip omtrent 20 sekunder før, så «Fartskamera forut. Grense 60.» Det når også låseskjermen.',
+              'Et pip omtrent 20 sekunder før, så «Fartskamera forut. Grense 60.» Det når også låseskjermen og viser når kameraet står på den andre siden av veien.',
             ],
             ['Over grensen', '«Du kjører i 72. Sett ned farten.» Bare nær kameraer, eller på alle veier.'],
             [
@@ -865,7 +865,10 @@ const nb: Catalog = {
               'Tidsforløp',
               'Ett bilde hvert halve sekund, spilt av 15 ganger raskere: skyer, solnedganger, folkemengder.',
             ],
-            ['Objektiver', 'En knapp per objektiv på telefonen, over én zoomskala. En selfie zoomer etter personene i bildet.'],
+            [
+              'Objektiver',
+              'En knapp per objektiv på telefonen, over én zoomskala. En selfie zoomer etter personene i bildet.',
+            ],
             ['Fokus', 'AF-C følger et motiv i bevegelse og ansikter. Et trykk fokuserer på et punkt.'],
             ['Hvitbalanse', 'Auto, forvalg eller kelvin på et hjul.'],
             [

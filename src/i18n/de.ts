@@ -285,7 +285,7 @@ const de: Catalog = {
             ['Tempoanzeige', 'Ihr Tempo neben dem Limit der Straße. Darüber wird die Anzeige rot.'],
             [
               'Blitzerwarnungen',
-              'Ein Ton etwa 20 Sekunden vorher, dann „Blitzer voraus. Limit 60.“ Auch auf dem Sperrbildschirm.',
+              'Ein Ton etwa 20 Sekunden vorher, dann „Blitzer voraus. Limit 60.“ Auch auf dem Sperrbildschirm, mit einem Hinweis auf Blitzer auf der anderen Straßenseite.',
             ],
             ['Zu schnell', '„Sie fahren 72. Bitte langsamer.“ Nur nahe Blitzern oder auf jeder Straße.'],
             [
@@ -958,7 +958,10 @@ const de: Catalog = {
               'Zeitraffer',
               'Ein Bild pro halbe Sekunde, 15-mal schneller abgespielt: Wolken, Sonnenuntergänge, Menschenmengen.',
             ],
-            ['Objektive', 'Ein Knopf pro Objektiv des Telefons über einer Zoomskala. Beim Selfie passt sich der Zoom an die Personen im Bild an.'],
+            [
+              'Objektive',
+              'Ein Knopf pro Objektiv des Telefons über einer Zoomskala. Beim Selfie passt sich der Zoom an die Personen im Bild an.',
+            ],
             ['Fokus', 'AF-C folgt bewegten Motiven und Gesichtern. Ein Tipp fokussiert einen Punkt.'],
             ['Weißabgleich', 'Auto, Voreinstellungen oder Kelvin auf einem Rad.'],
             [
