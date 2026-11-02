@@ -286,7 +286,10 @@ export const projects: Project[] = [
             name: 'Exposure',
             text: 'ISO and shutter, each auto or manual in third stops. FIT sets both for the scene.',
           },
-          { name: 'Auto tune', text: 'One button in Simple mode, or a tap on the preview, sets Light, Warmth and Color for the scene.' },
+          {
+            name: 'Auto tune',
+            text: 'One button in Simple mode, or a tap on the preview, sets Light, Warmth and Color for the scene.',
+          },
           { name: 'Color', text: 'One saturation value for the COLOR dial and the Color slider.' },
           {
             name: 'Photo, video and flash',
@@ -301,6 +304,7 @@ export const projects: Project[] = [
             text: 'The time in the top left corner, where the phone clock sits, out of the controls’ way.',
           },
           { name: 'Gallery', text: 'The shots in a grid and full screen, with pinch and double tap zoom.' },
+          { name: 'Ads', text: 'One banner under the gallery grid. The camera and the viewer stay clear.' },
           { name: 'Straighten and rotate', text: 'EDIT in the viewer levels and turns a photo.' },
           { name: 'Quick start', text: 'A double press of the power button opens Shuttrix, over the lock screen too.' },
           { name: 'Languages', text: 'The app in 9 languages, following the phone or browser.' },
