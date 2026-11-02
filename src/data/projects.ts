@@ -210,7 +210,7 @@ export const projects: Project[] = [
           { name: 'Speed badge', text: "Your speed beside the road's limit. The badge turns red above it." },
           {
             name: 'Camera warnings',
-            text: 'A beep about 20 seconds ahead, then "Speed camera ahead. Limit 60." It reaches the lock screen too.',
+            text: 'A beep about 20 seconds ahead, then "Speed camera ahead. Limit 60." It reaches the lock screen too, and names a camera on the other side of the road.',
           },
           { name: 'Over the limit', text: '"You\'re doing 72. Slow down." Near cameras only, or on any road.' },
           {
@@ -273,7 +273,10 @@ export const projects: Project[] = [
           { name: 'Panorama', text: 'A wide photo from a slow turn, stitched on the phone.' },
           { name: 'Slow motion', text: 'A video at 120 or 240 frames a second that plays back slowed.' },
           { name: 'Time lapse', text: 'A frame each half second, played 15 times faster: clouds, sunsets, crowds.' },
-          { name: 'Lenses', text: 'A chip per lens the phone has, over one zoom scale. A selfie zooms to fit the people in the frame.' },
+          {
+            name: 'Lenses',
+            text: 'A chip per lens the phone has, over one zoom scale. A selfie zooms to fit the people in the frame.',
+          },
           { name: 'Focus', text: 'AF-C follows a moving subject and faces. A tap focuses on a point.' },
           { name: 'White balance', text: 'Auto, presets or kelvin on a dial.' },
           {

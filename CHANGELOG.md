@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **SpotTheCam** Camera warnings say on the lock screen when the camera stands on the other side of the road.
 - **Shuttrix** Lenses says a selfie zooms to fit the people in the frame.
 - **Sky Altar** Ambient music names the violin song, the off switch and the own audio file.
 - **Games apps** the developer's phone gets a Show test ads box in the lobby, to show or hide the test banner right in the app.
