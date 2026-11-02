@@ -1126,6 +1126,10 @@ const fr: Catalog = {
             ],
             ['Publicités et retrait', 'Les pubs restent hors du ciel. Un achat unique de $2.99 les retire.'],
             ['Langues de l’app', 'Les écrans et les noms des constellations en 9 langues.'],
+            [
+              'Mises à jour depuis GitHub',
+              'L’app Android trouve une nouvelle version et l’installe. Les réglages ont « Rechercher des mises à jour ».',
+            ],
           ],
         },
       ],

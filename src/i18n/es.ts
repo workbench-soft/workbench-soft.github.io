@@ -1071,6 +1071,10 @@ const es: Catalog = {
             ],
             ['Anuncios y quitarlos', 'Los anuncios no tapan el cielo. Una compra única de $2.99 los quita.'],
             ['Idiomas de la app', 'Las pantallas y los nombres de las constelaciones en 9 idiomas.'],
+            [
+              'Actualizaciones desde GitHub',
+              'La app de Android encuentra una versión nueva y la instala. Ajustes tiene «Buscar actualizaciones».',
+            ],
           ],
         },
       ],

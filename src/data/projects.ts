@@ -627,6 +627,10 @@ export const projects: Project[] = [
           },
           { name: 'Ads and Remove ads', text: 'Ads stay off the sky. A one time $2.99 purchase removes them.' },
           { name: 'App languages', text: 'The screens and the constellation names in 9 languages.' },
+          {
+            name: 'Updates from GitHub',
+            text: 'The Android app finds a new version and installs it. Settings has a Check for updates button.',
+          },
         ],
       },
     ],

@@ -1089,6 +1089,10 @@ const de: Catalog = {
             ],
             ['Werbung und Werbefreiheit', 'Werbung bleibt vom Himmel fern. Ein Kauf für $2.99 entfernt sie.'],
             ['App-Sprachen', 'Die Ansichten und die Sternbildnamen in 9 Sprachen.'],
+            [
+              'Updates von GitHub',
+              'Die Android-App findet eine neue Version und installiert sie. Die Einstellungen haben „Nach Updates suchen“.',
+            ],
           ],
         },
       ],
