@@ -784,19 +784,23 @@ const es: Catalog = {
       ],
     },
     'site-sources': {
-      tagline: 'Una extensión de Chrome que guarda las fuentes de cualquier página con un clic.',
-      lede: 'Un clic en el icono y la página, cada archivo que cargó y el código original de sus source maps van a una carpeta en Descargas.',
+      tagline: 'Una extensión de Chrome que guarda las fuentes de cualquier página en un solo zip.',
+      lede: 'Pulsa Descargar en su ventana y mira cómo se llena la barra. La página, cada archivo que cargó y el código original de sus source maps van a un zip en Descargas.',
       links: [],
       groups: [
         {
           features: [
             [
-              'Guardar con un clic',
-              'El HTML en vivo y cada script, estilo, imagen y fuente, en las carpetas del servidor.',
+              'Descargar desde la ventana',
+              'El icono abre una ventana con el sitio y un botón Descargar. Sigue trabajando al cerrarla.',
             ],
+            [
+              'Barra de progreso',
+              'Cuenta los archivos que encuentra y luego se llena con 12 de 40 descargados y los que fallaron.',
+            ],
+            ['Un solo zip', 'El HTML en vivo y cada script, estilo, imagen y fuente, ordenados como en el servidor.'],
             ['Fuentes originales', 'Cada source map con código devuelve los archivos .ts, .tsx o .vue.'],
-            ['Insignia y título', 'La insignia cuenta los archivos y el título nombra la carpeta.'],
-            ['Idiomas', 'El nombre y los títulos siguen el idioma de Chrome.'],
+            ['Idiomas', 'La ventana sigue el idioma de Chrome.'],
           ],
         },
       ],

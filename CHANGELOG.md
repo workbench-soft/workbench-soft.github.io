@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Site Sources** the card shows the popup with its progress bar and the one zip it saves.
 - **Shuttrix Auto tune** the Shuttrix page lists the Auto button that sets Light, Warmth and Color for the scene.
 - **Feedback** a Feedback button in the corner of every page opens a short form that mails the studio. The footer and `#feedback` links open it too.
 - **Site Sources** joins the tools: a Chrome extension that saves a page, its files and the original sources from its source maps with one click.
