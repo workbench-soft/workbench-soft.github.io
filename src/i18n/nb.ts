@@ -911,7 +911,7 @@ const nb: Catalog = {
               'Objektiver',
               'En knapp per objektiv på telefonen, over én zoomskala. En selfie zoomer etter personene i bildet.',
             ],
-            ['Fokus', 'AF-C følger et motiv i bevegelse og ansikter. Et trykk fokuserer på et punkt.'],
+            ['Fokus', 'AF-C følger et motiv i bevegelse og ansikter. Et trykk fokuserer på et punkt, og fokusrammen kan dras.'],
             ['Hvitbalanse', 'Auto, forvalg eller kelvin på et hjul.'],
             [
               'Eksponering',

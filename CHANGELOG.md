@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Shuttrix focus** the Focus line says a drag of the reticle moves the point, as the app does since its focus reach change.
 - **Sites menu** in the header: each site we host, then Our clients with Aspiration Style. Farnear links to farnear.workbench-soft.com.
 - **Sky Altar** lists Updates from GitHub: the Android app finds a new version and has Check for updates in Settings.
 - **Shuttrix privacy policy** at <https://workbench-soft.com/shuttrix/privacy-policy>: photos and place tags stay on the phone, the AdMob banner in the gallery and the consent form.

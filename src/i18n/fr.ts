@@ -1044,7 +1044,7 @@ const fr: Catalog = {
               'Objectifs',
               "Une pastille par objectif du téléphone, sur une seule échelle de zoom. En selfie, le zoom s'ajuste aux personnes du cadre.",
             ],
-            ['Mise au point', "L'AF-C suit un sujet en mouvement et les visages. Un appui vise un point."],
+            ['Mise au point', "L'AF-C suit un sujet en mouvement et les visages. Un appui vise un point, et le réticule se déplace au doigt."],
             ['Balance des blancs', 'Auto, préréglages ou kelvins sur une molette.'],
             [
               'Exposition',
