@@ -975,6 +975,7 @@ const de: Catalog = {
             ['Foto- und Videogröße', 'Die Einstellungen wählen die Größe von Foto und Video.'],
             ['Fotos verbessern', 'Tieferes Schwarz, hellere Schatten, lebendigere Farben und etwas Schärfe.'],
             ['QR-Codes', 'Ein Code in der Vorschau bekommt Klammern und einen Knopf zum Öffnen.'],
+            ['Uhr', 'Die Uhrzeit oben links, wo sonst die Uhr des Telefons steht, abseits der Tasten.'],
             ['Galerie', 'Die Aufnahmen im Raster und im Vollbild, mit Zoom per Zwicken und Doppeltipp.'],
             ['Begradigen und drehen', 'EDIT in der Ansicht richtet ein Foto aus und dreht es.'],
             ['Schnellstart', 'Zweimal die Ein-Taste öffnet Shuttrix, auch über dem Sperrbildschirm.'],
@@ -1023,6 +1024,7 @@ const de: Catalog = {
               'Himmelsansicht',
               'Sterne, Sonne, Mond, Planeten und 88 Sternbilder über der Kamera oder von Hand gedreht.',
             ],
+            ['Uhr', 'Eine ruhige Uhr mit Datum oben am Himmel, in der Schrift des Themas. Sie wird mit den Tasten blasser.'],
             [
               'Kamerasterne',
               'Das Kamerabild bleibt gedämpft. Sterne darauf funkeln mit einer Funkenspur und leuchten golden auf, wenn sie zum Himmel passen.',

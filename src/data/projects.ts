@@ -293,6 +293,7 @@ export const projects: Project[] = [
           { name: 'Photo and video size', text: 'Settings pick the photo and video size.' },
           { name: 'Enhance photos', text: 'Deeper blacks, lifted shadows, livelier colour and a touch of sharpness.' },
           { name: 'QR codes', text: 'A code in the preview gets brackets and a pill to open it.' },
+          { name: 'Clock', text: 'The time in the top left corner, where the phone clock sits, out of the controls’ way.' },
           { name: 'Gallery', text: 'The shots in a grid and full screen, with pinch and double tap zoom.' },
           { name: 'Straighten and rotate', text: 'EDIT in the viewer levels and turns a photo.' },
           { name: 'Quick start', text: 'A double press of the power button opens Shuttrix, over the lock screen too.' },
@@ -589,6 +590,7 @@ export const projects: Project[] = [
             name: 'Sky view',
             text: 'Stars, the Sun, the Moon, the planets and 88 constellations over the camera, or turned by hand.',
           },
+          { name: 'Clock', text: 'A calm clock with the date at the top of the sky, in the theme’s font. It dims with the buttons.' },
           {
             name: 'Camera stars',
             text: 'The camera picture stays dim. Stars it sees twinkle with a trail of sparks and flash gold when they match the sky.',

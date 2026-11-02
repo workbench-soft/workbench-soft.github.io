@@ -954,6 +954,7 @@ const es: Catalog = {
             ['Tamaño de foto y vídeo', 'Los ajustes eligen el tamaño de foto y vídeo.'],
             ['Mejorar fotos', 'Negros más profundos, sombras más claras, color más vivo y algo de nitidez.'],
             ['Códigos QR', 'Un código en la vista previa recibe un marco y un botón para abrirlo.'],
+            ['Reloj', 'La hora arriba a la izquierda, donde suele estar el reloj del teléfono, lejos de los controles.'],
             ['Galería', 'Las tomas en cuadrícula y a pantalla completa, con zoom al pellizcar y doble toque.'],
             ['Enderezar y girar', 'EDIT en el visor nivela y gira una foto.'],
             [
@@ -1002,6 +1003,7 @@ const es: Catalog = {
               'Vista del cielo',
               'Estrellas, Sol, Luna, planetas y 88 constelaciones sobre la cámara, o giradas a mano.',
             ],
+            ['Reloj', 'Un reloj discreto con la fecha en lo alto del cielo, con la letra del tema. Se atenúa con los botones.'],
             [
               'Estrellas de la cámara',
               'La imagen de la cámara queda tenue. Sus estrellas titilan con una estela de chispas y brillan en oro cuando coinciden con el cielo.',
