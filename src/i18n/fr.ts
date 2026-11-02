@@ -887,6 +887,7 @@ const fr: Catalog = {
             ['Renouveler les secrets', 'Renouvelle les secrets de CI et les clés, app par app.'],
             ['Règles de travail', 'Une spec d’abord, une fusion tout de suite, un test groupé ensuite.'],
             ['Releases', 'Une release datée pour chaque push vert sur main.'],
+            ['File des fonctionnalités', 'Les sessions sur une même app se relaient sur les fichiers partagés, puis une seule version sort.'],
           ],
         },
       ],
@@ -930,7 +931,7 @@ const fr: Catalog = {
     },
     shuttrix: {
       tagline: 'Un appareil photo aux molettes de reflex, avec un mode simple à grands curseurs.',
-      lede: 'Shuttrix est un appareil photo Android en 2 modes. Le mode simple a de grands curseurs avec Nuit, Pose longue et Panorama, et Pro met objectif, mise au point, balance des blancs, ISO et vitesse sur des molettes.',
+      lede: 'Shuttrix est un appareil photo Android en 2 modes. Le mode simple a de grands curseurs avec Nuit, Portrait, Pose longue et Panorama, et Pro met objectif, mise au point, balance des blancs, ISO et vitesse sur des molettes.',
       links: [],
       groups: [
         {
@@ -945,6 +946,7 @@ const fr: Catalog = {
             ],
             ['Nuit', "Le téléphone compose la photo à partir de plusieurs images pendant qu'une barre avance."],
             ['Pose longue', "Floute ce qui bouge : eau soyeuse, traînées de phares, foule qui s'efface."],
+            ['Portrait', 'Les personnes restent nettes et le fond devient doux. Un curseur règle le flou.'],
             ['Panorama', "Une photo large d'un lent pivot, assemblée sur le téléphone."],
             ['Ralenti', 'Une vidéo à 120 ou 240 images par seconde, lue au ralenti.'],
             ['Accéléré', 'Une image chaque demi-seconde, lue 15 fois plus vite : nuages, couchers de soleil, foules.'],

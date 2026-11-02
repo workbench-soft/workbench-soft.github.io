@@ -3,6 +3,9 @@
 ## Unreleased
 
 - **Shuttrix** Slow motion and Time lapse join the features.
+- **Agent Skills, private** a Feature queue feature: sessions on one app take turns on shared files, and one release follows.
+
+- **Shuttrix** a Portrait feature: people sharp and the background soft, with a slider for the blur.
 - **Shuttrix** the Exposure feature names the FIT button that sets ISO and shutter for the scene.
 - **Sky Altar** a new app entry: the night sky through the phone in the style of 13 old cultures, with ambient music.
 

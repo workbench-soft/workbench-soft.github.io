@@ -838,6 +838,7 @@ const es: Catalog = {
             ['Renovar secretos', 'Renueva los secretos de CI y las claves, app por app.'],
             ['Reglas de trabajo', 'Primero una spec, fusión enseguida, prueba en lote después.'],
             ['Releases', 'Una release con fecha por cada push verde a main.'],
+            ['Cola de funciones', 'Las sesiones de una app se turnan en los archivos compartidos y sale una sola versión.'],
           ],
         },
       ],
@@ -875,7 +876,7 @@ const es: Catalog = {
     },
     shuttrix: {
       tagline: 'Una cámara con los diales de una réflex y un modo simple de grandes deslizadores.',
-      lede: 'Shuttrix es una cámara Android con 2 modos. El modo simple tiene grandes deslizadores con Noche, Exposición larga y Panorama, y Pro pone objetivo, enfoque, balance de blancos, ISO y obturador en diales.',
+      lede: 'Shuttrix es una cámara Android con 2 modos. El modo simple tiene grandes deslizadores con Noche, Retrato, Exposición larga y Panorama, y Pro pone objetivo, enfoque, balance de blancos, ISO y obturador en diales.',
       links: [],
       groups: [
         {
@@ -887,6 +888,7 @@ const es: Catalog = {
             ],
             ['Noche', 'El teléfono crea la foto con varios fotogramas mientras avanza una barra.'],
             ['Exposición larga', 'Difumina lo que se mueve: agua sedosa, estelas de luz, una multitud que se borra.'],
+            ['Retrato', 'Las personas quedan nítidas y el fondo se suaviza. Un deslizador ajusta el desenfoque.'],
             ['Panorama', 'Una foto ancha de un giro lento, unida en el teléfono.'],
             ['Cámara lenta', 'Un vídeo a 120 o 240 fotogramas por segundo que se reproduce ralentizado.'],
             ['Time-lapse', 'Un fotograma cada medio segundo, reproducido 15 veces más rápido: nubes, atardeceres, multitudes.'],

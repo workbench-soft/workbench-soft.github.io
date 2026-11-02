@@ -853,6 +853,7 @@ const de: Catalog = {
             ['Secrets erneuern', 'Erneuert CI-Secrets und Schlüssel, App für App.'],
             ['Arbeitsregeln', 'Erst eine Spec, sofort mergen, später gesammelt testen.'],
             ['Releases', 'Ein datiertes Release für jeden grünen Push auf main.'],
+            ['Feature-Warteschlange', 'Sitzungen an einer App wechseln sich bei gemeinsamen Dateien ab, danach folgt ein Release.'],
           ],
         },
       ],
@@ -893,7 +894,7 @@ const de: Catalog = {
     },
     shuttrix: {
       tagline: 'Eine Kamera mit den Rädern einer DSLR und einem einfachen Modus mit großen Reglern.',
-      lede: 'Shuttrix ist eine Android-Kamera mit 2 Modi. Der einfache Modus hat große Regler mit Nacht, Langzeitbelichtung und Panorama, Pro legt Objektiv, Fokus, Weißabgleich, ISO und Verschluss auf Räder.',
+      lede: 'Shuttrix ist eine Android-Kamera mit 2 Modi. Der einfache Modus hat große Regler mit Nacht, Porträt, Langzeitbelichtung und Panorama, Pro legt Objektiv, Fokus, Weißabgleich, ISO und Verschluss auf Räder.',
       links: [],
       groups: [
         {
@@ -905,6 +906,7 @@ const de: Catalog = {
             ],
             ['Nacht', 'Das Telefon baut das Foto aus mehreren Bildern, während ein Balken läuft.'],
             ['Langzeitbelichtung', 'Verwischt Bewegung: seidiges Wasser, Lichtspuren, eine verblassende Menge.'],
+            ['Porträt', 'Personen bleiben scharf, der Hintergrund wird weich. Ein Regler stellt die Unschärfe ein.'],
             ['Panorama', 'Ein breites Foto aus einer langsamen Drehung, auf dem Telefon zusammengesetzt.'],
             ['Zeitlupe', 'Ein Video mit 120 oder 240 Bildern pro Sekunde, das verlangsamt abspielt.'],
             ['Zeitraffer', 'Ein Bild pro halbe Sekunde, 15-mal schneller abgespielt: Wolken, Sonnenuntergänge, Menschenmengen.'],

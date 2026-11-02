@@ -772,6 +772,7 @@ const nb: Catalog = {
             ['Forny hemmeligheter', 'Fornyer CI-hemmeligheter og nøkler, app for app.'],
             ['Arbeidsregler', 'Først en spesifikasjon, flett med en gang, test samlet senere.'],
             ['Utgivelser', 'En datert utgivelse for hver grønne push til main.'],
+            ['Funksjonskø', 'Økter på samme app bytter på delte filer, og det kommer én utgivelse til slutt.'],
           ],
         },
       ],
@@ -809,7 +810,7 @@ const nb: Catalog = {
     },
     shuttrix: {
       tagline: 'Et kamera med hjulene til et speilrefleks, og en enkel modus med store glidebrytere.',
-      lede: 'Shuttrix er et Android-kamera med 2 moduser. Enkel modus har store glidebrytere med Natt, Lang eksponering og Panorama, og Pro legger objektiv, fokus, hvitbalanse, ISO og lukker på hjul.',
+      lede: 'Shuttrix er et Android-kamera med 2 moduser. Enkel modus har store glidebrytere med Natt, Portrett, Lang eksponering og Panorama, og Pro legger objektiv, fokus, hvitbalanse, ISO og lukker på hjul.',
       links: [],
       groups: [
         {
@@ -821,6 +822,7 @@ const nb: Catalog = {
             ],
             ['Natt', 'Telefonen bygger bildet av flere bilder mens en linje fylles.'],
             ['Lang eksponering', 'Gjør bevegelse uskarp: silkevann, lysspor, en folkemengde som blekner.'],
+            ['Portrett', 'Personer blir skarpe og bakgrunnen myk. En glidebryter setter uskarpheten.'],
             ['Panorama', 'Et bredt bilde fra en langsom vending, satt sammen på telefonen.'],
             ['Sakte film', 'En video i 120 eller 240 bilder i sekundet som spilles av langsomt.'],
             ['Tidsforløp', 'Ett bilde hvert halve sekund, spilt av 15 ganger raskere: skyer, solnedganger, folkemengder.'],
