@@ -1020,6 +1020,10 @@ const de: Catalog = {
               'Himmelsansicht',
               'Sterne, Sonne, Mond, Planeten und 88 Sternbilder über der Kamera oder von Hand gedreht.',
             ],
+            [
+              'Kamerasterne',
+              'Das Kamerabild bleibt gedämpft. Sterne darauf funkeln mit einer Funkenspur und leuchten golden auf, wenn sie zum Himmel passen.',
+            ],
             ['Kulturthemen', '13 Kulturen, von Griechenland und Rom bis zu den Inka, Sumer und der Steinzeit.'],
             ['Ambient-Musik', 'Eine ruhige Schleife blendet beim Start ein. Ein Tippen schaltet sie stumm.'],
             ['Werbung und Werbefreiheit', 'Werbung bleibt vom Himmel fern. Ein Kauf für $2.99 entfernt sie.'],

@@ -924,6 +924,10 @@ const nb: Catalog = {
               'Himmelvisning',
               'Stjerner, solen, månen, planetene og 88 stjernebilder over kameraet, eller snudd med hånden.',
             ],
+            [
+              'Kamerastjerner',
+              'Kamerabildet holdes dempet. Stjernene i det blinker med et spor av gnister og lyser gull når de stemmer med himmelen.',
+            ],
             ['Kulturtemaer', '13 kulturer, fra Hellas og Roma til inkaene, Sumer og steinalderen.'],
             ['Ambient-musikk', 'En rolig sløyfe toner inn når appen åpnes. Ett trykk demper den.'],
             ['Reklame og reklamefritt', 'Reklamen holder seg unna himmelen. Et engangskjøp på $2.99 fjerner den.'],

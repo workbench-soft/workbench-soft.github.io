@@ -586,6 +586,10 @@ export const projects: Project[] = [
             name: 'Sky view',
             text: 'Stars, the Sun, the Moon, the planets and 88 constellations over the camera, or turned by hand.',
           },
+          {
+            name: 'Camera stars',
+            text: 'The camera picture stays dim. Stars it sees twinkle with a trail of sparks and flash gold when they match the sky.',
+          },
           { name: 'Culture themes', text: '13 cultures, from Greece and Rome to the Inca, Sumer and the Stone Age.' },
           { name: 'Ambient music', text: 'A slow loop fades in on open. One tap mutes it.' },
           { name: 'Ads and Remove ads', text: 'Ads stay off the sky. A one time $2.99 purchase removes them.' },
