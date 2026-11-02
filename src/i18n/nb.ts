@@ -248,6 +248,10 @@ const nb: Catalog = {
             ],
             ['Over grensen', '«Du kjører i 72. Sett ned farten.» Bare nær kameraer, eller på alle veier.'],
             [
+              'Høye varsler',
+              'Full lydstyrke fra telefonhøyttaleren, også i lydløs modus eller med Bluetooth. Hver del har en bryter.',
+            ],
+            [
               'Kjørelogg',
               'Kjøreturer og gåturer registreres av seg selv. Hver rute viser farten din ved hvert kamera, grønt eller rødt.',
             ],

@@ -210,6 +210,10 @@ export const projects: Project[] = [
           },
           { name: 'Over the limit', text: '"You\'re doing 72. Slow down." Near cameras only, or on any road.' },
           {
+            name: 'Loud warnings',
+            text: 'Full volume from the phone speaker, also in silent mode or with Bluetooth on. Each part has a switch.',
+          },
+          {
             name: 'Trip log',
             text: 'Drives and walks record on their own. Each route shows your speed at each camera, green or red.',
           },

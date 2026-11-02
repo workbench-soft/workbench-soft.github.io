@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **SpotTheCam** the Android app lists Loud warnings: full volume from the phone speaker, also in silent mode or with Bluetooth on.
 - **Groups** projects sit under apps for people, tools for developers, internal studio tools and the archive. Archon, Agent Skills private and the Memories demo NAS join the internal tools.
 - **Icons and screenshots** each project panel shows the app icon and a strip of screenshots.
 - **Email** the site, the Memories pages, the Langflip page and the games name `hello@workbench-soft.com`.

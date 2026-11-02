@@ -269,6 +269,10 @@ const es: Catalog = {
             ],
             ['Por encima del límite', '«Vas a 72. Reduce la velocidad». Solo cerca de radares, o en cualquier vía.'],
             [
+              'Avisos fuertes',
+              'Volumen máximo por el altavoz del teléfono, también en silencio o con Bluetooth. Cada parte tiene su interruptor.',
+            ],
+            [
               'Registro de viajes',
               'Trayectos en coche y paseos se graban solos. Cada ruta muestra tu velocidad en cada radar, en verde o rojo.',
             ],

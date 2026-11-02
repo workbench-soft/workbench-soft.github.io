@@ -273,6 +273,10 @@ const fr: Catalog = {
               '« Vous roulez à 72. Ralentissez. » Près des radars seulement, ou sur toute route.',
             ],
             [
+              'Alertes fortes',
+              'Volume maximal sur le haut-parleur du téléphone, même en silencieux ou avec le Bluetooth. Chaque partie a son interrupteur.',
+            ],
+            [
               'Journal de trajets',
               'Trajets et marches s’enregistrent seuls. Chaque parcours montre votre vitesse à chaque radar, en vert ou en rouge.',
             ],
