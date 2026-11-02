@@ -1,37 +1,42 @@
-# Feedback form on workbench-soft.com
+# Order form on workbench-soft.com
 
 ## What it does for the person
 
-- **Always in reach** a Feedback button stays in the bottom right corner of
-  every page and every language, at any scroll point.
-- **Short form** the button opens a dialog with a message box and an
-  optional email for a reply. Send posts it, and the dialog says it went.
-- **Other ways in** the footer has a Feedback link, and `/#feedback` (or
-  `/<lang>/#feedback`) opens the dialog straight away, so other pages and
-  apps can link to it.
+- **Order on the page** the Contact section at the bottom of every language
+  is a form: what to build, an email for the reply and an optional name. Send
+  posts it from the site, and the form says it reached the studio.
+- **Always in reach** an Order button stays in the bottom right corner at
+  any scroll point. It scrolls to the form and puts the cursor in the message
+  box. It hides while the form is on screen.
+- **Other ways in** Start a project in the hero, Contact in the header and
+  `/#contact`, `/#order` or the old `/#feedback` all lead to the form.
+- **Email as a backup** a line under the form gives the studio address with a
+  copy button, for people who prefer their own mail app.
 
 ## User flows
 
-1. The person presses Feedback in the corner, the footer link, or opens a
-   `#feedback` link.
-2. The dialog opens with the cursor in the message box.
-3. The person types the message and, if they want a reply, an email.
-4. Send posts the form. The dialog shows "Thanks, it went" and the form
-   clears. On a failure it shows the error and a link to email the studio.
-5. Esc, the close button or a click outside closes the dialog.
+1. The person presses Order in the corner, Start a project, Contact, or opens
+   a `#order` link.
+2. The page scrolls to the form with the cursor in the message box.
+3. The person describes the app, gives an email and, if they want, a name.
+4. Send, or `Ctrl+Enter`, posts the form. A line says it reached the studio
+   and the form clears. On a failure the line gives the studio address.
 
 ## How it works: modules, files, data
 
-- **`src/components/Feedback.astro`** the corner button, the dialog, the
-  form and its script, rendered once per page from `[...lang].astro`.
+- **`src/components/Contact.astro`** the section, the form, the corner
+  button and their script, rendered once per page from `[...lang].astro`.
 - **Delivery** the script posts JSON to
   `https://formsubmit.co/ajax/hello@workbench-soft.com`. FormSubmit mails it
   to `hello@workbench-soft.com`, and Cloudflare Email Routing forwards that
-  to the studio Gmail. The mail holds the message, the reply email, the page
-  language and the page address.
+  to the studio Gmail. The mail subject is "Order from workbench-soft.com" and
+  it holds the message, the email, the name, the page language and address.
+  The person sees only the site's own form.
+- **Reply** the email field is required and goes as `_replyto`, so Reply in
+  Gmail answers the person.
 - **Spam** a hidden `_honey` field drops bots, and `_captcha` stays off
   since the post goes through fetch.
-- **Text** the strings sit under `feedback` in each of the 9 catalogs.
+- **Text** the strings sit under `contact` in each of the 9 catalogs.
 - **Why FormSubmit** the site is static on GitHub Pages and the studio rule
   puts "no server" first. FormSubmit is free, needs no account and no key,
   and mails the studio address the site already shows. A Rust Worker with
@@ -45,7 +50,7 @@
   its own activation.
 - **Third party** the message passes through FormSubmit's servers.
 - **Main site only** the Games, Langflip, Memories and Media Organizer pages
-  keep their own layouts. They MAY link to `/#feedback`.
+  keep their own layouts. They MAY link to `/#order`.
 
 ## Changes
 
@@ -59,3 +64,17 @@
 - **Docs** `docs/features.md` gets a Feedback heading, `docs/user-flows.md`
   a flow, and `CHANGELOG.md` a line. The site has no project entry of its own, so
   `projects.ts` stays as it is.
+
+### 2026-11-02 Orders in place of feedback, sent from the Contact section
+
+- **Why** the person wants orders, not feedback. The form belongs at the
+  bottom in place of the mailto buttons, the corner button leads there, and
+  email stays only as a backup.
+- **Changes** `Contact.astro` holds the form, the corner Order button and
+  the script, taken from `Feedback.astro`, which goes. The email field turns
+  required and a name field joins. The hero Start a project button links to
+  `#contact`. The footer Feedback link goes. The `feedback` catalog block
+  merges into `contact`.
+- **Steps** this spec, then the component and the catalogs, then the docs.
+- **Docs** `docs/features.md` renames Feedback to Order form,
+  `docs/user-flows.md` rewrites its flow, `CHANGELOG.md` gets a line.

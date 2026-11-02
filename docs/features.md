@@ -57,17 +57,17 @@ Spec: [workbench-soft-site](../specs/workbench-soft-site.md).
 
 ## Process and contact
 
-- **What it does** shows the 4 steps a project goes through, then the email address with buttons to write or copy it.
+- **What it does** shows the 4 steps a project goes through, then the order form.
 - **Where** the Process and Contact links in the header.
-- **Limits** contact is by email only.
+- **Limits** see Order form.
 
 Spec: [workbench-soft-site](../specs/workbench-soft-site.md).
 
-## Feedback
+## Order form
 
-- **What it does** a form for a bug, an idea or a question, with an optional email for a reply. It goes to the studio inbox.
-- **Where** the Feedback button in the bottom right corner of every page, the Feedback link in the footer, and any `#feedback` link.
-- **Limits** the main site only. FormSubmit carries the message, and the first post from a new address waits for its activation mail.
+- **What it does** the Contact section is a form: what to build, an email for the reply and an optional name. Send posts it from the site to the studio inbox. The studio address with a Copy button sits under it as a backup.
+- **Where** the Order an app button in the bottom right corner, Start a project in the hero, Contact in the header, and any `#order` or `#feedback` link.
+- **Limits** the main site only. FormSubmit carries the order, and the first post from a new address waits for its activation mail.
 
 Spec: [feedback](../specs/feedback.md).
 

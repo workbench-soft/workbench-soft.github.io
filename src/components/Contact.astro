@@ -3,35 +3,122 @@ import { email, mailto } from "../data/studio";
 import { langOf } from "../i18n/locales";
 import { ui } from "../i18n";
 
-const t = ui(langOf(Astro.currentLocale));
+const lang = langOf(Astro.currentLocale);
+const t = ui(lang).contact;
+const [failBefore, failAfter] = t.failed.split("{email}");
+const [orBefore, orAfter] = t.or.split("{email}");
 ---
 
 <section class="wrap" id="contact">
   <div class="contact rv">
-    <div class="top" aria-hidden="true"><i></i><i></i><i></i><span>contact.sh</span></div>
+    <div class="top" aria-hidden="true"><i></i><i></i><i></i><span>order.sh</span></div>
     <div class="term">
-      <div class="eyebrow">04 / {t.nav.contact}</div>
-      <h2>{t.contact.title}</h2>
-      <p class="intro">{t.contact.intro}</p>
-      <p class="prompt"><span class="p">$</span> mail {email} <span class="caret" aria-hidden="true"></span></p>
-      <div class="cta">
-        <a class="btn pri" href={mailto(t.contact.subject)}>{t.contact.write}</a>
-        <button class="btn" type="button" id="copy" data-email={email} data-copied={t.contact.copied}>{t.contact.copy}</button>
-      </div>
+      <div class="eyebrow">04 / {ui(lang).nav.contact}</div>
+      <h2>{t.title}</h2>
+      <p class="intro">{t.intro}</p>
+      <form id="order" data-lang={lang}>
+        <label class="wide">
+          <span>{t.message}</span>
+          <textarea name="message" rows="5" maxlength="5000" placeholder={t.placeholder} required></textarea>
+        </label>
+        <label>
+          <span>{t.email}</span>
+          <input name="email" type="email" autocomplete="email" maxlength="200" required />
+        </label>
+        <label>
+          <span>{t.name}</span>
+          <input name="name" type="text" autocomplete="name" maxlength="200" />
+        </label>
+        <input class="honey" name="_honey" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <div class="wide row">
+          <p class="status" role="status" aria-live="polite">
+            <span class="ok" hidden>{t.sent}</span>
+            <span class="err" hidden>{failBefore}<a href={mailto(t.subject)}>{email}</a>{failAfter}</span>
+          </p>
+          <button class="btn pri" type="submit" data-idle={t.send} data-busy={t.sending}>{t.send}</button>
+        </div>
+      </form>
+      <p class="alt">
+        {orBefore}<a href={mailto(t.subject)}>{email}</a>{orAfter}
+        <button class="copy" type="button" id="copy" data-email={email} data-copied={t.copied}>{t.copy}</button>
+      </p>
     </div>
   </div>
 </section>
 
+<a class="fab" href="#order" data-order>
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16v4ZM13.5 6.5l4 4"></path></svg>
+  <span>{t.order}</span>
+</a>
+
 <script>
+  import { email } from "../data/studio";
+
+  const section = document.querySelector<HTMLElement>("#contact")!;
+  const form = document.querySelector<HTMLFormElement>("#order")!;
+  const send = form.querySelector<HTMLButtonElement>("[type=submit]")!;
+  const ok = form.querySelector<HTMLElement>(".ok")!;
+  const err = form.querySelector<HTMLElement>(".err")!;
+  const fab = document.querySelector<HTMLElement>(".fab")!;
+
+  function goToForm() {
+    form.message.scrollIntoView({ block: "center" });
+    form.message.focus({ preventScroll: true });
+  }
+
+  // Any #order link, and the old #feedback one, scrolls to the form.
+  for (const a of document.querySelectorAll('[data-order], a[href$="#order"]')) {
+    a.addEventListener("click", (e) => {
+      e.preventDefault();
+      goToForm();
+    });
+  }
+  const fromHash = () => ["#order", "#feedback"].includes(location.hash) && goToForm();
+  fromHash();
+  addEventListener("hashchange", fromHash);
+
+  // The corner button hides while the form is on screen.
+  new IntersectionObserver(([e]) => fab.classList.toggle("away", e.isIntersecting), { threshold: 0.25 }).observe(section);
+
+  form.message.addEventListener("keydown", (e: KeyboardEvent) => {
+    if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) form.requestSubmit();
+  });
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    ok.hidden = err.hidden = true;
+    send.disabled = true;
+    send.textContent = send.dataset.busy!;
+    const data = Object.fromEntries(new FormData(form));
+    // FormSubmit mails the post to the studio address. See specs/feedback.md.
+    const body = { ...data, _replyto: data.email, _subject: "Order from workbench-soft.com", _template: "table", _captcha: "false", lang: form.dataset.lang, page: location.href };
+    try {
+      const res = await fetch(`https://formsubmit.co/ajax/${email}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(body),
+      });
+      const json = (await res.json()) as { success?: string | boolean };
+      if (!res.ok || String(json.success) !== "true") throw new Error(JSON.stringify(json));
+      form.reset();
+      ok.hidden = false;
+    } catch (x) {
+      console.error("Order failed", x);
+      err.hidden = false;
+    } finally {
+      send.disabled = false;
+      send.textContent = send.dataset.idle!;
+    }
+  });
+
   const copy = document.querySelector<HTMLButtonElement>("#copy")!;
   const idle = copy.textContent;
   copy.addEventListener("click", async () => {
-    const address = copy.dataset.email!;
     try {
-      await navigator.clipboard.writeText(address);
+      await navigator.clipboard.writeText(copy.dataset.email!);
       copy.textContent = copy.dataset.copied!;
     } catch {
-      copy.textContent = address;
+      copy.textContent = copy.dataset.email!;
     }
     setTimeout(() => (copy.textContent = idle), 2200);
   });
@@ -56,8 +143,48 @@ const t = ui(langOf(Astro.currentLocale));
   .top span { margin-left: 10px; }
   .term { padding: clamp(28px, 5vw, 56px); }
   h2 { max-width: none; }
-  .prompt { font: 500 clamp(1rem, 2.6vw, 1.6rem) var(--mono); margin: 0 0 30px; overflow-wrap: anywhere; }
-  .p { color: var(--lime); }
-  .caret { display: inline-block; width: 0.6em; height: 1.1em; background: var(--cyan); vertical-align: -0.15em; animation: blink 1.1s steps(1) infinite; }
-  @keyframes blink { 50% { opacity: 0; } }
+  form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 760px; margin-top: 28px; }
+  .wide { grid-column: 1 / -1; }
+  label { display: grid; gap: 6px; }
+  label span { font: 500 12px var(--mono); letter-spacing: 0.04em; color: var(--soft); }
+  textarea, input { width: 100%; box-sizing: border-box; padding: 12px 14px; border: 1px solid var(--line-2); border-radius: 12px; background: rgb(2 3 8 / 0.5); color: var(--text); font: 400 15px var(--sans); }
+  textarea { resize: vertical; min-height: 130px; }
+  textarea::placeholder { color: var(--dim); }
+  textarea:focus, input:focus { outline: 0; border-color: var(--cyan); box-shadow: 0 0 0 3px rgb(92 242 255 / 0.15); }
+  .honey { position: absolute; left: -9999px; width: 1px; height: 1px; }
+  .row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 20px; }
+  .status { margin: 0; font-size: 14px; flex: 1 1 240px; }
+  .ok { color: var(--lime); }
+  .err { color: #ff8a8a; }
+  .err a { color: inherit; }
+  .alt { margin: 28px 0 0; color: var(--muted); font-size: 14px; overflow-wrap: anywhere; }
+  .alt a { color: var(--soft); }
+  .copy { margin-left: 6px; padding: 3px 10px; border: 1px solid var(--line-2); border-radius: 999px; background: none; color: var(--muted); font: 500 12px var(--mono); cursor: pointer; }
+  .copy:hover { color: var(--text); }
+  .fab {
+    position: fixed;
+    right: max(16px, env(safe-area-inset-right));
+    bottom: max(16px, env(safe-area-inset-bottom));
+    z-index: 39;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 18px;
+    border-radius: 999px;
+    background: linear-gradient(120deg, var(--cyan), var(--violet));
+    color: var(--bg);
+    font: 700 14px var(--sans);
+    text-decoration: none;
+    box-shadow: 0 10px 40px -8px rgb(0 0 0 / 0.8), 0 0 28px rgb(92 242 255 / 0.45);
+    transition: box-shadow 0.2s, translate 0.25s var(--ease), opacity 0.25s, visibility 0.25s;
+  }
+  .fab:hover { translate: 0 -2px; box-shadow: 0 14px 44px -8px rgb(0 0 0 / 0.8), 0 0 40px rgb(92 242 255 / 0.65); }
+  .fab.away { opacity: 0; translate: 0 12px; visibility: hidden; }
+  @media (max-width: 640px) {
+    form { grid-template-columns: 1fr; }
+    .fab { padding: 12px 14px; }
+  }
+  @media print {
+    .fab { display: none; }
+  }
 </style>
