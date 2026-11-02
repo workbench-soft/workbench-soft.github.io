@@ -1,9 +1,8 @@
 # TODO
 
-## feat-feedback: the feedback form
+## feat-feedback: the order form
 
-- [ ] **Activate FormSubmit** in the `workbench.soft@gmail.com` inbox, open the mail "Action Required: Activate FormSubmit on `https://workbench-soft.com/`" from 2026-11-02 and press ACTIVATE FORM. Until then each post from the Feedback form shows the "failed to send" line. The auto mode check blocked the agent from opening the link.
-- [ ] **Delete the test mails** "Feedback from workbench-soft.com" and "Activate FormSubmit on `http://localhost:4391/`" from 2026-11-02 can go.
+- [ ] **Delete the test mails** in the `workbench.soft@gmail.com` inbox, search `from:formsubmit`, tick all 5 mails from 2026-11-02 and 2026-11-03 and press Delete. They are 2 "Feedback from workbench-soft.com" tests, 1 "Order from workbench-soft.com" test and 2 "Activate FormSubmit" mails. The auto mode check blocked the agent from moving them to Trash.
 
 ## site-groups-icons-shots: studio email, groups, icons, screenshots
 
