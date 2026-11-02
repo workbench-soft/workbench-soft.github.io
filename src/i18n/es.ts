@@ -419,7 +419,7 @@ const es: Catalog = {
             ['Canciones por aprender', 'Una lista de canciones para la guitarra, las más deseadas primero.'],
             ['Cambiar y borrar', 'Cada campo se guarda solo, un toque marca y un borrado ofrece Deshacer.'],
             ['Idiomas', 'Una lista compartida se abre en el idioma del teléfono que la abre.'],
-            ['Tickalot en la búsqueda', 'Guías y una página de inicio llevan de la búsqueda a la app.'],
+            ['Tick-a-Lot en la búsqueda', 'Guías y una página de inicio llevan de la búsqueda a la app.'],
           ],
         },
       ],
@@ -1014,7 +1014,7 @@ const es: Catalog = {
           features: [
             ['Preguntar', 'Escribe los lugares, una fecha aproximada, la duración y quién va.'],
             ['Vuelos', 'Los vuelos de ida y vuelta más baratos cerca de la fecha, con fechas más baratas al lado.'],
-            ['A Tickalot', 'Un toque convierte el viaje en listas de Tickalot: lugares y equipaje.'],
+            ['A Tick-a-Lot', 'Un toque convierte el viaje en listas de Tick-a-Lot: lugares y equipaje.'],
             ['Ajustes', 'El idioma: el del teléfono o uno de los 9.'],
           ],
         },

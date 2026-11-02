@@ -374,7 +374,7 @@ const nb: Catalog = {
             ['Sanger å lære', 'En liste med sanger på gitar, de mest ønskede først.'],
             ['Endre og slette', 'Hvert felt lagres selv, et trykk krysser av, og sletting kan angres.'],
             ['Språk', 'En delt liste åpnes på språket til telefonen som åpner den.'],
-            ['Finn Tickalot i søk', 'Guider og en forside fører folk fra søk til appen.'],
+            ['Finn Tick-a-Lot i søk', 'Guider og en forside fører folk fra søk til appen.'],
           ],
         },
       ],
@@ -936,7 +936,7 @@ const nb: Catalog = {
           features: [
             ['Spør', 'Skriv stedene, en omtrentlig dato, hvor lenge og hvem som skal.'],
             ['Fly', 'De billigste tur-retur-flyene rundt datoen, med billigere datoer ved siden av.'],
-            ['Til Tickalot', 'Ett trykk gjør reisen om til Tickalot-lister: severdigheter og pakking.'],
+            ['Til Tick-a-Lot', 'Ett trykk gjør reisen om til Tick-a-Lot-lister: severdigheter og pakking.'],
             ['Innstillinger', 'Språket: telefonens, eller ett av de 9.'],
           ],
         },
