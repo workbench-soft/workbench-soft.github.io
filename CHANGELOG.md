@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **Shuttrix** its entry points at `memories/apps/shuttrix`, where the camera now lives.
+
 - **SpotTheCam** the Android app lists Loud warnings: full volume from the phone speaker, also in silent mode or with Bluetooth on.
 - **Groups** projects sit under apps for people, tools for developers, internal studio tools and the archive. Archon, Agent Skills private and the Memories demo NAS join the internal tools.
 - **Icons and screenshots** each project panel shows the app icon and a strip of screenshots.

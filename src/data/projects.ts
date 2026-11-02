@@ -246,7 +246,7 @@ export const projects: Project[] = [
   {
     id: 'shuttrix',
     kind: 'app',
-    repo: 'shuttrix',
+    repo: 'memories/apps/shuttrix',
     hue: 190,
     code: 'SHX',
     name: 'Shuttrix',
