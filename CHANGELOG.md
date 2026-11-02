@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **Projects** each heading of each repo's `docs/features.md` shows on the site, in all 9 languages. Shuttrix, Farnear, Memoire, Lumiere Player, Property Trends, Tripforge, Reddit Desk, Songfactory and Speed Camera Scraper get their own entries.
+- **Docs** each heading of `docs/features.md` links its spec.
 - **Games domain** the games move to <https://games.workbench-soft.com/games/>, and the home page lists them as Workbench Games in all 9 languages. The deploy waits for the Cloudflare token.
 - **Names** the project pages call the apps KeepPad and ServoHop.
 - **Markdown** markdownlint-cli2 lints the docs in `mise run lint` and CI.
