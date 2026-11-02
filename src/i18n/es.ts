@@ -999,6 +999,10 @@ const es: Catalog = {
               'Vista del cielo',
               'Estrellas, Sol, Luna, planetas y 88 constelaciones sobre la cámara, o giradas a mano.',
             ],
+            [
+              'Estrellas de la cámara',
+              'La imagen de la cámara queda tenue. Sus estrellas titilan con una estela de chispas y brillan en oro cuando coinciden con el cielo.',
+            ],
             ['Temas de culturas', '13 culturas, de Grecia y Roma a los incas, Sumeria y la Edad de Piedra.'],
             ['Música ambient', 'Un bucle lento entra al abrir. Un toque lo silencia.'],
             ['Anuncios y quitarlos', 'Los anuncios no tapan el cielo. Una compra única de $2.99 los quita.'],
