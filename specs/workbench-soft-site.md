@@ -247,3 +247,14 @@ The studio needed one public site for its apps and their installers.
 - **Changes**
   - **`src/data/projects.ts`** the new feature after Find threads, and the renamed one.
   - **`src/i18n/`** the new feature in each of the 8 other catalogs.
+
+#### 2026-11-02 Suno Download joins the tools
+
+- **Why** `suno-download` shipped its first features, and each tool of the org gets a page on the site in the same session.
+- **What the visitor gets**
+  - **Suno Download** a tool card for the Chrome extension: a ⬇ button beside each song title on suno.com saves the song to `Downloads/Suno`.
+  - **Features** Download button on each song, Decrypted in the browser, Done or failed, and Languages, as in the extension's `docs/features.md`.
+  - **No links** the repo is private, so the card links to no release.
+- **Changes**
+  - **`src/data/projects.ts`** the entry after Site Sources, with `repo: 'suno-download'`.
+  - **`src/i18n/`** the entry in each of the 8 other catalogs.

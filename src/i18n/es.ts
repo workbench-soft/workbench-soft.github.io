@@ -802,6 +802,27 @@ const es: Catalog = {
         },
       ],
     },
+    'suno-download': {
+      tagline: 'Una extensión de Chrome que guarda tus canciones de Suno como archivos de audio.',
+      lede: 'Un botón ⬇ aparece junto al título de cada canción en suno.com. Un clic descifra la canción en el navegador y la guarda en Descargas/Suno.',
+      links: [],
+      groups: [
+        {
+          features: [
+            [
+              'Botón de descarga en cada canción',
+              'Un botón ⬇ junto a cada título en las listas, las tarjetas y el reproductor guarda la canción en Descargas/Suno.',
+            ],
+            [
+              'Descifrado en el navegador',
+              'El clic reproduce la canción un momento, capta su licencia y descifra el audio en tu PC.',
+            ],
+            ['Listo o error', 'El botón pasa a ✓ cuando el archivo se guarda, o a ✗ con el error al pasar el ratón.'],
+            ['Idiomas', 'El nombre, la descripción y el texto emergente siguen el idioma de Chrome.'],
+          ],
+        },
+      ],
+    },
     'open-in-remote-repo': {
       tagline: 'Una extensión de VS Code que abre un archivo en GitHub, GitLab o Bitbucket.',
       lede: 'Un fork de Open in GitHub de Stanislav Sysoev. Abre o copia el enlace al archivo, su blame o su historial, con las líneas seleccionadas marcadas.',
@@ -930,7 +951,10 @@ const es: Catalog = {
             ],
             ['Noche', 'El teléfono crea la foto con varios fotogramas mientras avanza una barra.'],
             ['Exposición larga', 'Difumina lo que se mueve: agua sedosa, estelas de luz, una multitud que se borra.'],
-            ['Retrato', 'Lo que tocas queda nítido, cerca o a 10 m, persona u objeto. El resto se suaviza y un deslizador ajusta el desenfoque.'],
+            [
+              'Retrato',
+              'Lo que tocas queda nítido, cerca o a 10 m, persona u objeto. El resto se suaviza y un deslizador ajusta el desenfoque.',
+            ],
             ['Panorama', 'Una foto ancha de un giro lento, unida en el teléfono.'],
             ['Cámara lenta', 'Un vídeo a 120 o 240 fotogramas por segundo que se reproduce ralentizado.'],
             [
@@ -954,7 +978,10 @@ const es: Catalog = {
             ['Tamaño de foto y vídeo', 'Los ajustes eligen el tamaño de foto y vídeo.'],
             ['Mejorar fotos', 'Negros más profundos, sombras más claras, color más vivo y algo de nitidez.'],
             ['Códigos QR', 'Un código en la vista previa recibe un marco y un botón para abrirlo.'],
-            ['Reloj', 'La hora arriba a la izquierda, donde suele estar el reloj del teléfono, lejos de los controles.'],
+            [
+              'Reloj',
+              'La hora arriba a la izquierda, donde suele estar el reloj del teléfono, lejos de los controles.',
+            ],
             ['Galería', 'Las tomas en cuadrícula y a pantalla completa, con zoom al pellizcar y doble toque.'],
             ['Enderezar y girar', 'EDIT en el visor nivela y gira una foto.'],
             [
@@ -1003,7 +1030,10 @@ const es: Catalog = {
               'Vista del cielo',
               'Estrellas, Sol, Luna, planetas y 88 constelaciones sobre la cámara, o giradas a mano.',
             ],
-            ['Reloj', 'Un reloj discreto con la fecha en lo alto del cielo, con la letra del tema. Se atenúa con los botones.'],
+            [
+              'Reloj',
+              'Un reloj discreto con la fecha en lo alto del cielo, con la letra del tema. Se atenúa con los botones.',
+            ],
             [
               'Estrellas de la cámara',
               'La imagen de la cámara queda tenue. Sus estrellas titilan con una estela de chispas y brillan en oro cuando coinciden con el cielo.',

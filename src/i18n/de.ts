@@ -823,6 +823,30 @@ const de: Catalog = {
         },
       ],
     },
+    'suno-download': {
+      tagline: 'Eine Chrome-Erweiterung, die Songs von Suno als Audiodateien speichert.',
+      lede: 'Neben jedem Songtitel auf suno.com sitzt ein ⬇-Knopf. Ein Klick entschlüsselt den Song im Browser und speichert ihn unter Downloads/Suno.',
+      links: [],
+      groups: [
+        {
+          features: [
+            [
+              'Download-Knopf an jedem Song',
+              'Ein ⬇-Knopf neben jedem Titel in den Listen, auf Songkarten und in der Abspielleiste speichert den Song unter Downloads/Suno.',
+            ],
+            [
+              'Im Browser entschlüsselt',
+              'Der Klick spielt den Song kurz an, fängt seine Lizenz ab und entschlüsselt den Stream auf dem eigenen PC.',
+            ],
+            [
+              'Fertig oder Fehler',
+              'Der Knopf wird zu ✓, wenn die Datei gespeichert ist, oder zu ✗ mit dem Fehler beim Darüberfahren.',
+            ],
+            ['Sprachen', 'Name, Beschreibung und Hinweistext folgen der Chrome-Sprache.'],
+          ],
+        },
+      ],
+    },
     'open-in-remote-repo': {
       tagline: 'Eine VS-Code-Erweiterung, die eine Datei auf GitHub, GitLab oder Bitbucket öffnet.',
       lede: 'Ein Fork von Open in GitHub von Stanislav Sysoev. Sie öffnet oder kopiert den Link zur Datei, ihrem Blame oder ihrem Verlauf, mit markierten Zeilen.',
@@ -951,7 +975,10 @@ const de: Catalog = {
             ],
             ['Nacht', 'Das Telefon baut das Foto aus mehreren Bildern, während ein Balken läuft.'],
             ['Langzeitbelichtung', 'Verwischt Bewegung: seidiges Wasser, Lichtspuren, eine verblassende Menge.'],
-            ['Porträt', 'Was du antippst, bleibt scharf, nah oder 10 m entfernt, Person oder Ding. Der Rest wird weich, ein Regler stellt die Unschärfe ein.'],
+            [
+              'Porträt',
+              'Was du antippst, bleibt scharf, nah oder 10 m entfernt, Person oder Ding. Der Rest wird weich, ein Regler stellt die Unschärfe ein.',
+            ],
             ['Panorama', 'Ein breites Foto aus einer langsamen Drehung, auf dem Telefon zusammengesetzt.'],
             ['Zeitlupe', 'Ein Video mit 120 oder 240 Bildern pro Sekunde, das verlangsamt abspielt.'],
             [
@@ -1024,7 +1051,10 @@ const de: Catalog = {
               'Himmelsansicht',
               'Sterne, Sonne, Mond, Planeten und 88 Sternbilder über der Kamera oder von Hand gedreht.',
             ],
-            ['Uhr', 'Eine ruhige Uhr mit Datum oben am Himmel, in der Schrift des Themas. Sie wird mit den Tasten blasser.'],
+            [
+              'Uhr',
+              'Eine ruhige Uhr mit Datum oben am Himmel, in der Schrift des Themas. Sie wird mit den Tasten blasser.',
+            ],
             [
               'Kamerasterne',
               'Das Kamerabild bleibt gedämpft. Sterne darauf funkeln mit einer Funkenspur und leuchten golden auf, wenn sie zum Himmel passen.',

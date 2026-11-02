@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Suno Download** a tool card for the Chrome extension that saves a Suno song with one click on the ⬇ beside its title.
 - **Shuttrix Portrait** the page says the blur keeps what you tap sharp, near or far, a person or a thing.
 - **Shuttrix, Sky Altar** each lists its new Clock: the time on the camera and over the sky.
 - **SpotTheCam** Camera warnings say on the lock screen when the camera stands on the other side of the road.
