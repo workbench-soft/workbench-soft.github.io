@@ -2,12 +2,6 @@
 
 ## site-groups-icons-shots: studio email, groups, icons, screenshots
 
-- [ ] **Email routing, before anyone writes** the site names `hello@workbench-soft.com` since 2026-11-02, and the domain has no MX record yet, so mail to it bounces. The agent's click on Continue was blocked:
-  1. Open <https://dash.cloudflare.com/021a5552010625b00e5e81cfd41e9437/email-service/routing/onboarding>.
-  2. Pick the zone `workbench-soft.com`, press Continue.
-  3. Custom address `hello`, action Send to an email, destination `workbench.soft@gmail.com`, press Create and continue.
-  4. Open the Cloudflare letter in workbench.soft@gmail.com and press Verify email address.
-  5. Back in Cloudflare press Add records and enable.
 - [ ] **Screenshots** Shuttrix, Farnear, Memoire, Lumiere Player, Tripforge, Langflip, Media Organizer, Archon and the tools have none on the site. Run the `demo-media` skill in each repo, then copy the shots to `src/assets/shots/<id>/`.
 
 ## feat/games: party games at games.workbench-soft.com/games
