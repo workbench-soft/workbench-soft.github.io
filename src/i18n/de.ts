@@ -1000,6 +1000,7 @@ const de: Catalog = {
               'Porträt',
               'Was du antippst, bleibt scharf, nah oder 10 m entfernt, Person oder Ding. Der Rest wird weich, ein Regler stellt die Unschärfe ein.',
             ],
+            ['Makro', 'Ein Käfer oder ein Tropfen aus 2 bis 3 cm, so groß wie das Telefon es zulässt, mit der Bildbreite in mm.'],
             ['Panorama', 'Ein breites Foto aus einer langsamen Drehung, auf dem Telefon zusammengesetzt.'],
             ['Zeitlupe', 'Ein Video mit 120 oder 240 Bildern pro Sekunde, das verlangsamt abspielt.'],
             [

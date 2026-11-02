@@ -1037,6 +1037,7 @@ const fr: Catalog = {
               'Portrait',
               'Ce que vous touchez reste net, proche ou à 10 m, personne ou objet. Le reste devient doux, un curseur règle le flou.',
             ],
+            ['Macro', 'Un insecte ou une goutte à 2 ou 3 cm, aussi grand que le téléphone le permet, avec la largeur du cadre en mm.'],
             ['Panorama', "Une photo large d'un lent pivot, assemblée sur le téléphone."],
             ['Ralenti', 'Une vidéo à 120 ou 240 images par seconde, lue au ralenti.'],
             ['Accéléré', 'Une image chaque demi-seconde, lue 15 fois plus vite : nuages, couchers de soleil, foules.'],
