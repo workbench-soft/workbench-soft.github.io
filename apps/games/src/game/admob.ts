@@ -36,7 +36,9 @@ function readDevLinks(): Promise<void> {
     const launch = await App.getLaunchUrl();
     if (launch) await openDevLink(launch.url);
     await App.addListener('appUrlOpen', ({ url }) => {
-      void openDevLink(url).then((isDevLink) => isDevLink && resyncBanner());
+      void openDevLink(url).then(async (isDevLink) => {
+        if (isDevLink) await resyncBanner();
+      });
     });
   })().catch(() => undefined);
   return devLinks;
