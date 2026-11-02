@@ -161,6 +161,7 @@ const nb: Catalog = {
               'Albumlenker',
               'Valgte bilder blir en lenke. Den andre personen åpner albumet i en nettleser, uten app eller konto.',
             ],
+            ['Memories i nettleseren', 'NAS-en gir appen til datamaskiner i tailnet, med alle bildene og samme sortering og redigering som på telefonen.'],
             [
               'Rydd',
               'Trinnkort sorterer bildene på mobilen, flytter dem til daterte mapper på NAS-en og frigjør plass på mobilen.',

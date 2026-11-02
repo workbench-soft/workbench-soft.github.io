@@ -164,6 +164,7 @@ const de: Catalog = {
               'Album-Links',
               'Gewählte Fotos werden zu einem Link. Die andere Person öffnet das Album im Browser, ohne App und ohne Konto.',
             ],
+            ['Memories im Browser', 'Das NAS liefert die App an Computer im Tailnet, mit allen Fotos und demselben Sortieren und Bearbeiten wie am Handy.'],
             [
               'Ordnen',
               'Schrittkarten sortieren die Fotos auf dem Handy, verschieben sie in Datumsordner auf dem NAS und machen das Handy frei.',

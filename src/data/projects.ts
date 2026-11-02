@@ -43,7 +43,7 @@ export const projects: Project[] = [
     name: 'Memories',
     tagline: 'On this day photos from your own NAS.',
     lede: 'Memories shows this day in earlier years, from the photos and videos on a home NAS. It works like the reminders in Google Photos, and the photos stay on hardware the owner keeps at home.',
-    platforms: ['Android', 'Windows', 'macOS', 'NAS'],
+    platforms: ['Android', 'Web', 'Windows', 'macOS', 'NAS'],
     stack: ['Expo', 'React Native', 'Rust', 'Tauri', 'WebDAV', 'Tailscale'],
     links: [{ href: '/memories-mobile/', label: 'Open the site' }],
     groups: [
@@ -84,6 +84,10 @@ export const projects: Project[] = [
           {
             name: 'Share an album by link',
             text: 'Picked photos become a link. The other person opens the album in a browser, with no app or account.',
+          },
+          {
+            name: 'Memories in the browser',
+            text: 'The NAS serves the app to computers in the tailnet, with every photo and the same sort and edit as the phone.',
           },
           {
             name: 'Organize',

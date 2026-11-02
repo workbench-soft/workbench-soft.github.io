@@ -161,6 +161,7 @@ const es: Catalog = {
               'Enlaces de álbum',
               'Las fotos elegidas se convierten en un enlace. La otra persona abre el álbum en un navegador, sin app ni cuenta.',
             ],
+            ['Memories en el navegador', 'El NAS sirve la app a los ordenadores del tailnet, con todas las fotos y el mismo orden y edición que en el móvil.'],
             [
               'Organizar',
               'Tarjetas por pasos ordenan las fotos del teléfono, las mueven a carpetas por fecha en el NAS y liberan el teléfono.',
