@@ -1180,6 +1180,10 @@ const es: Catalog = {
           features: [
             ['Preguntar', 'Escribe los lugares, una fecha aproximada, la duración y quién va.'],
             ['Vuelos', 'Los vuelos de ida y vuelta más baratos cerca de la fecha, con fechas más baratas al lado.'],
+            [
+              'Lugares',
+              'Los imprescindibles y los lugares secretos de cada ciudad según tus intereses, con una marca y un enlace.',
+            ],
             ['A Tick-a-Lot', 'Un toque convierte el viaje en listas de Tick-a-Lot: lugares y equipaje.'],
             ['Ajustes', 'El idioma: el del teléfono o uno de los 9.'],
           ],

@@ -1189,6 +1189,10 @@ const de: Catalog = {
           features: [
             ['Fragen', 'Orte, ein grobes Datum, die Dauer und wer mitfährt eingeben.'],
             ['Flüge', 'Die günstigsten Hin- und Rückflüge um das Datum, mit günstigeren Daten daneben.'],
+            [
+              'Orte',
+              'Die Top-Sehenswürdigkeiten und Geheimtipps jeder Stadt nach deinen Interessen, je mit Haken und Link.',
+            ],
             ['Zu Tick-a-Lot', 'Ein Tipp macht aus der Reise Tick-a-Lot-Listen: Sehenswertes und Packen.'],
             ['Einstellungen', 'Die Sprache: die des Telefons oder eine der 9.'],
           ],
