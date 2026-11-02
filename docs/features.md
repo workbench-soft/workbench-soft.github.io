@@ -24,15 +24,24 @@ Spec: [workbench-soft-site](../specs/workbench-soft-site.md).
 - **Where** the Projects link in the header. The index above the panels jumps to a project and shows its feature count.
 - **Groups** the panels sit in 4 groups: apps for people, tools for developers, internal studio tools such as Archon, and the archive. Chips show one group or all.
 - **Screenshots** a strip under the text scrolls sideways. A click opens the full image.
+- **Features** one line each, the name then the text, in two columns. The first 6 show, and Show all opens the rest.
 - **Source** each project lists the headings of its repo's `docs/features.md`, as a feature or a group title.
 - **Limits** links go to the public sites, the install pages and the releases page. The code repos are private. A project with no icon shows its code on a tile, and one with no screenshots shows none.
+
+Spec: [workbench-soft-site](../specs/workbench-soft-site.md).
+
+## Games menu
+
+- **What it does** takes the visitor to the party games from any part of the page.
+- **Where** Games in the header, on a phone too. It lists all games, Guess the drawing, Drawing telephone, Clue duel and the Workbench Games panel.
+- **Limits** the games open on games.workbench-soft.com. The list comes from the links of the games project in `src/data/projects.ts`.
 
 Spec: [workbench-soft-site](../specs/workbench-soft-site.md).
 
 ## Search
 
 - **What it does** finds a project or a feature by any word of its name or text, then scrolls to it and lights it up.
-- **Where** `Ctrl+K`, `Cmd+K` or `/`, and the Search buttons. The arrow keys move through the results, and Enter opens one.
+- **Where** `Ctrl+K`, `Cmd+K` or `/`, and the Search buttons. The arrow keys move through the results, and Enter opens one. A feature behind Show all opens its list first.
 - **Limits** words in the language of the page, up to 40 results.
 
 Spec: [workbench-soft-site](../specs/workbench-soft-site.md).

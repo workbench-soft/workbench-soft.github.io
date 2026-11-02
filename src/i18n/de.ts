@@ -18,6 +18,8 @@ const de: Catalog = {
       searchLabel: 'Projekte und Funktionen durchsuchen',
       language: 'Sprache',
       skip: 'Zu den Projekten springen',
+      games: 'Spiele',
+      gamesPanel: 'Über die Spiele',
     },
     hero: {
       status: 'Offen für Kundenprojekte',
@@ -46,6 +48,8 @@ const de: Catalog = {
       platforms: 'Plattformen',
       stack: 'Technik',
       shot: 'Bildschirm {n} von {name}',
+      more: 'Alle {n} zeigen',
+      less: 'Weniger zeigen',
       kinds: {
         app: 'Apps für Menschen',
         tool: 'Werkzeuge für Entwickler',
@@ -554,7 +558,7 @@ const de: Catalog = {
     games: {
       tagline: 'Partyspiele im Browser: zeichnen, raten, Hinweise geben.',
       lede: 'Workbench Games sind drei Partyspiele für Freunde. Eine Person öffnet einen Raum und schickt den Link, die anderen spielen im Browser mit, ohne Konto.',
-      links: ['Jetzt spielen'],
+      links: ['Alle Spiele', 'Zeichnung raten', 'Zeichen-Stille-Post', 'Hinweis-Duell'],
       groups: [
         {
           features: [
@@ -1044,7 +1048,10 @@ const de: Catalog = {
             ['Vorortkarte und Verlauf', 'Der Median eines Vororts, die Zahl der Verkäufe und ein Diagramm über Jahre.'],
             ['Suche', 'Findet einen Vorort nach Name oder Postleitzahl und fliegt hin.'],
             ['Sprachen', 'In 9 Sprachen, nach der Sprache von Telefon oder Browser.'],
-            ['Mieten', 'Jede Postleitzahl in NSW, QLD, SA und TAS nach der mittleren Wochenmiete neuer Verträge gefärbt.'],
+            [
+              'Mieten',
+              'Jede Postleitzahl in NSW, QLD, SA und TAS nach der mittleren Wochenmiete neuer Verträge gefärbt.',
+            ],
             ['Aus dem Browser installieren', 'Die Web-Version installiert sich als App mit eigenem Symbol.'],
           ],
         },

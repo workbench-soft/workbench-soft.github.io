@@ -17,6 +17,8 @@ export const en = {
     searchLabel: 'Search projects and features',
     language: 'Language',
     skip: 'Skip to the projects',
+    games: 'Games',
+    gamesPanel: 'About the games',
   },
   hero: {
     status: 'Open for client projects',
@@ -45,6 +47,8 @@ export const en = {
     platforms: 'Platforms',
     stack: 'Stack',
     shot: 'Screen {n} of {name}',
+    more: 'Show all {n}',
+    less: 'Show fewer',
     kinds: {
       app: 'Apps for people',
       tool: 'Tools for developers',

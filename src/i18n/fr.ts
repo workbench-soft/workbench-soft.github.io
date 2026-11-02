@@ -18,6 +18,8 @@ const fr: Catalog = {
       searchLabel: 'Rechercher des projets et des fonctions',
       language: 'Langue',
       skip: 'Aller aux projets',
+      games: 'Jeux',
+      gamesPanel: 'À propos des jeux',
     },
     hero: {
       status: 'Ouvert aux projets clients',
@@ -47,6 +49,8 @@ const fr: Catalog = {
       platforms: 'Plateformes',
       stack: 'Technologies',
       shot: 'Écran {n} de {name}',
+      more: 'Tout afficher ({n})',
+      less: 'Afficher moins',
       kinds: {
         app: 'Apps pour tous',
         tool: 'Outils pour développeurs',
@@ -576,7 +580,7 @@ const fr: Catalog = {
     games: {
       tagline: 'Jeux de soirée dans le navigateur : dessiner, deviner, donner des indices.',
       lede: 'Workbench Games, ce sont trois jeux de soirée entre amis. Une personne crée un salon et envoie le lien, les autres rejoignent dans le navigateur, sans compte.',
-      links: ['Jouer'],
+      links: ['Tous les jeux', 'Devine le dessin', 'Téléphone dessiné', "Duel d'indices"],
       groups: [
         {
           features: [
@@ -1084,7 +1088,10 @@ const fr: Catalog = {
             ['Fiche et historique', "La médiane d'une banlieue, le nombre de ventes et un graphique sur les années."],
             ['Recherche', 'Trouve une banlieue par nom ou code postal et y emmène la carte.'],
             ['Langues', 'En 9 langues, selon le téléphone ou le navigateur.'],
-            ['Loyers', 'Chaque code postal de NSW, QLD, SA et TAS coloré selon le loyer hebdomadaire médian des nouveaux baux.'],
+            [
+              'Loyers',
+              'Chaque code postal de NSW, QLD, SA et TAS coloré selon le loyer hebdomadaire médian des nouveaux baux.',
+            ],
             ['Installer depuis le navigateur', "La version web s'installe comme une app avec son icône."],
           ],
         },

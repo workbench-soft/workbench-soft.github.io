@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import type { Project } from "../data/projects";
+import { featureCount, type Project } from "../data/projects";
 import { iconOf, shotsOf } from "../data/media";
 import { langOf } from "../i18n/locales";
 import { ui } from "../i18n";
@@ -15,6 +15,10 @@ const t = ui(langOf(Astro.currentLocale)).projects;
 const no = String(number).padStart(2, "0");
 const icon = iconOf(p.id);
 const shots = shotsOf(p.id);
+// The first features show, the rest wait behind the Show all button.
+const shown = 6;
+const count = featureCount(p);
+let n = 0;
 ---
 
 <article class="proj" id={p.id} data-kind={p.kind} style={`--hue: ${p.hue}`}>
@@ -52,23 +56,41 @@ const shots = shotsOf(p.id);
         </ul>
       )
     }
-    <ul class="feats">
+    <ul class="feats" data-clip={count > shown ? "" : undefined}>
       {
         p.groups.map((g) => (
           <>
-            {g.title && <li class="sub">{g.title}</li>}
+            {g.title && <li class:list={["sub", { extra: n >= shown }]}>{g.title}</li>}
             {g.features.map((f) => (
-              <li class="feat spot">
-                <b>{f.name}</b>
-                <span>{f.text}</span>
+              <li class:list={["feat spot", { extra: n++ >= shown }]}>
+                <b>{f.name}</b> <span>{f.text}</span>
               </li>
             ))}
           </>
         ))
       }
     </ul>
+    {
+      count > shown && (
+        <button class="more" type="button" aria-expanded="false" data-less={t.less}>
+          {t.more.replace("{n}", String(count))}
+        </button>
+      )
+    }
   </div>
 </article>
+
+<script>
+  for (const b of document.querySelectorAll<HTMLButtonElement>(".proj .more")) {
+    const more = b.textContent!.trim();
+    b.addEventListener("click", () => {
+      const open = b.getAttribute("aria-expanded") !== "true";
+      b.previousElementSibling!.toggleAttribute("data-clip", !open);
+      b.setAttribute("aria-expanded", String(open));
+      b.textContent = open ? b.dataset.less! : more;
+    });
+  }
+</script>
 
 <style>
   .proj {
@@ -120,26 +142,34 @@ const shots = shotsOf(p.id);
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr));
-    gap: 1px;
-    background: var(--line);
-    border: 1px solid var(--line);
-    border-radius: 16px;
-    overflow: hidden;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+    column-gap: 24px;
   }
-  .feat { background: var(--bg-2); padding: 18px 20px; transition: background 0.25s; }
-  .feat:hover { background: linear-gradient(160deg, var(--acc-a), var(--bg-2) 70%); }
-  .feat b { display: block; font: 500 11.5px var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--acc); margin-bottom: 7px; }
-  .feat span { font-size: 14.5px; color: var(--soft); }
+  .feats[data-clip] .extra { display: none; }
+  .feat { padding: 9px 10px; border-top: 1px solid var(--line); border-radius: 8px; font-size: 14px; line-height: 1.5; color: var(--soft); }
+  .feat b { font-weight: 600; color: var(--acc); }
   .sub {
     grid-column: 1 / -1;
-    padding: 12px 20px;
-    background: var(--bg-3);
+    padding: 18px 10px 6px;
     font: 500 11px var(--mono);
     letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--muted);
   }
+  .sub:first-child { padding-top: 0; }
+  .more {
+    margin-top: 12px;
+    cursor: pointer;
+    font: 500 12px var(--mono);
+    letter-spacing: 0.06em;
+    color: var(--acc);
+    background: transparent;
+    border: 1px solid var(--line-2);
+    border-radius: 999px;
+    padding: 8px 14px;
+    transition: border-color 0.2s;
+  }
+  .more:hover { border-color: var(--acc); }
   :global(.flash) { animation: flash 1.8s ease-out; }
   @keyframes flash {
     0%, 30% { box-shadow: inset 0 0 0 2px var(--acc, var(--cyan)); background: var(--acc-a, rgb(92 242 255 / 0.14)); }

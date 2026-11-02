@@ -18,6 +18,8 @@ const ja: Catalog = {
       searchLabel: 'プロジェクトと機能を検索',
       language: '言語',
       skip: 'プロジェクトへ移動',
+      games: 'ゲーム',
+      gamesPanel: 'ゲームについて',
     },
     hero: {
       status: 'クライアント案件を受付中',
@@ -46,6 +48,8 @@ const ja: Catalog = {
       platforms: 'プラットフォーム',
       stack: '技術スタック',
       shot: '{name} の画面 {n}',
+      more: '{n} 件すべて表示',
+      less: '閉じる',
       kinds: {
         app: 'みんなのためのアプリ',
         tool: '開発者向けツール',
@@ -448,7 +452,7 @@ const ja: Catalog = {
     games: {
       tagline: 'ブラウザで遊ぶパーティーゲーム：描いて、当てて、ヒントを出す。',
       lede: 'Workbench Games は友だちと遊ぶ 3 つのパーティーゲームです。1 人がルームを作ってリンクを送れば、ほかの人はアカウントなしでブラウザから参加できます。',
-      links: ['遊ぶ'],
+      links: ['すべてのゲーム', 'お絵かき当て', 'お絵かき伝言', 'ヒント対決'],
       groups: [
         {
           features: [
