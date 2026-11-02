@@ -912,7 +912,10 @@ const nb: Catalog = {
               'Objektiver',
               'En knapp per objektiv på telefonen, over én zoomskala. En selfie zoomer etter personene i bildet.',
             ],
-            ['Fokus', 'AF-C følger et motiv i bevegelse og ansikter. Et trykk fokuserer på et punkt, og fokusrammen kan dras.'],
+            [
+              'Fokus',
+              'AF-C følger et motiv i bevegelse og ansikter. Et trykk fokuserer på et punkt, og fokusrammen kan dras.',
+            ],
             ['Hvitbalanse', 'Auto, forvalg eller kelvin på et hjul.'],
             [
               'Eksponering',
@@ -1023,7 +1026,7 @@ const nb: Catalog = {
       ],
     },
     'lumiere-player': {
-      tagline: 'En videospiller for Google TV som spiller filer fra en USB-pinne eller en NAS.',
+      tagline: 'En videospiller for Google TV og Android-telefoner som spiller filer fra en USB-pinne eller en NAS.',
       lede: 'Lumiere Player spiller filer fra en USB-pinne eller en SMB-deling med libVLC, så den åpner det VLC åpner. Hver fil husker stedet, og fjernkontrollen hopper og bytter spor.',
       links: [],
       groups: [
@@ -1036,6 +1039,12 @@ const nb: Catalog = {
             ['Oppdateringer', 'Finner nye utgivelser på GitHub ved oppstart eller under Oppdateringer.'],
             ['Reklame', 'Et banner på startskjermen, med en engangs opplåsing i Play-bygget.'],
             ['Språk', 'På 9 språk, etter telefonen eller nettleseren.'],
+            [
+              'Berøring på telefonen',
+              'Trykk for panelet, dobbelttrykk på en side for å hoppe, dra for å spole, sveip for lysstyrke og volum, og en berøringslås.',
+            ],
+            ['Spillerknapper', 'Velg hvilke knapper spilleren viser, også bildeforhold.'],
+            ['Hopp over sponsorer', 'Videoer lagret med yt-dlp hopper over SponsorBlock-sponsordelene.'],
           ],
         },
       ],

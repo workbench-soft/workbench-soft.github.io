@@ -792,7 +792,7 @@ const zh: Catalog = {
       ],
     },
     'lumiere-player': {
-      tagline: 'Google TV 视频播放器，播放 U 盘或 NAS 上的文件。',
+      tagline: '适用于 Google TV 和 Android 手机的视频播放器，播放 U 盘或 NAS 上的文件。',
       lede: 'Lumiere Player 用 libVLC 播放 U 盘或 SMB 共享上的文件，VLC 能开的它都能开。每个文件记住进度，遥控器可跳转和切换音轨。',
       links: [],
       groups: [
@@ -805,6 +805,9 @@ const zh: Catalog = {
             ['更新', '启动时或在“更新”里从 GitHub 找新版本。'],
             ['广告', '主屏有横幅，Play 版可一次性解锁。'],
             ['语言', '9 种语言，跟随手机或浏览器。'],
+            ['手机触控', '点按显示面板，双击两侧跳转，横向拖动定位，上下滑动调亮度和音量，还有触控锁。'],
+            ['播放器按钮', '自选播放器显示的按钮，包括画面比例。'],
+            ['跳过赞助', '用 yt-dlp 保存的视频会跳过 SponsorBlock 赞助片段。'],
           ],
         },
       ],

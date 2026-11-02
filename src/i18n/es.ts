@@ -979,7 +979,10 @@ const es: Catalog = {
               'Retrato',
               'Lo que tocas queda nítido, cerca o a 10 m, persona u objeto. El resto se suaviza y un deslizador ajusta el desenfoque.',
             ],
-            ['Macro', 'Un insecto o una gota a 2 o 3 cm, tan grande como lo permite el teléfono, con el ancho del encuadre en mm.'],
+            [
+              'Macro',
+              'Un insecto o una gota a 2 o 3 cm, tan grande como lo permite el teléfono, con el ancho del encuadre en mm.',
+            ],
             ['Panorama', 'Una foto ancha de un giro lento, unida en el teléfono.'],
             ['Cámara lenta', 'Un vídeo a 120 o 240 fotogramas por segundo que se reproduce ralentizado.'],
             [
@@ -990,7 +993,10 @@ const es: Catalog = {
               'Objetivos',
               'Un botón por cada objetivo del teléfono sobre una escala de zoom. En el selfie, el zoom se ajusta a las personas del encuadre.',
             ],
-            ['Enfoque', 'AF-C sigue un sujeto en movimiento y las caras. Un toque enfoca un punto, y la retícula se arrastra.'],
+            [
+              'Enfoque',
+              'AF-C sigue un sujeto en movimiento y las caras. Un toque enfoca un punto, y la retícula se arrastra.',
+            ],
             ['Balance de blancos', 'Auto, preajustes o kelvin en un dial.'],
             [
               'Exposición',
@@ -1113,7 +1119,7 @@ const es: Catalog = {
       ],
     },
     'lumiere-player': {
-      tagline: 'Un reproductor de vídeo para Google TV que reproduce archivos de un USB o un NAS.',
+      tagline: 'Un reproductor de vídeo para Google TV y móviles Android que reproduce archivos de un USB o un NAS.',
       lede: 'Lumiere Player reproduce archivos de un USB o una carpeta SMB con libVLC, así que abre lo que abre VLC. Cada archivo recuerda su punto y el mando salta y cambia de pista.',
       links: [],
       groups: [
@@ -1126,6 +1132,15 @@ const es: Catalog = {
             ['Actualizaciones', 'Encuentra versiones nuevas en GitHub al abrir o en Actualizaciones.'],
             ['Anuncios', 'Un banner en el inicio, con un desbloqueo único en la versión de Play.'],
             ['Idiomas', 'En 9 idiomas, según el teléfono o el navegador.'],
+            [
+              'Táctil en el móvil',
+              'Toca para el panel, doble toque en un lado para saltar, arrastra para avanzar, desliza para brillo y volumen, y un bloqueo táctil.',
+            ],
+            ['Botones del reproductor', 'Elige qué botones muestra el reproductor, también la relación de aspecto.'],
+            [
+              'Omitir patrocinios',
+              'Los vídeos guardados con yt-dlp omiten sus segmentos patrocinados de SponsorBlock.',
+            ],
           ],
         },
       ],
