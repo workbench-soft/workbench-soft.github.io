@@ -291,7 +291,7 @@ const es: Catalog = {
             ],
             [
               'Registro de viajes',
-              'Trayectos en coche y paseos se graban solos. Cada ruta muestra tu velocidad en cada radar, en verde o rojo. La velocidad se queda en tu teléfono.',
+              'Trayectos en coche y paseos se graban solos. Cada viaje separa los km en coche y los km a pie. Cada ruta muestra tu velocidad en cada radar, en verde o rojo. La velocidad se queda en tu teléfono.',
             ],
             [
               'Compartir un viaje',
@@ -929,8 +929,16 @@ const es: Catalog = {
               'Botones de objetivo sobre un deslizador de zoom, luego Luz, Calidez y Color. Los modos van arriba, y el disparador queda solo bajo el pulgar.',
             ],
             ['Noche', 'El teléfono crea la foto con varios fotogramas mientras avanza una barra.'],
+            [
+              'Astro',
+              'El cielo nocturno a pulso: estrellas nítidas, la Vía Láctea y un cielo oscuro en vez de gris o naranja.',
+            ],
+            ['Luna', 'Zoom a 10x y exposición para la Luna: se ven sus mares y cráteres, no una mancha blanca.'],
             ['Exposición larga', 'Difumina lo que se mueve: agua sedosa, estelas de luz, una multitud que se borra.'],
-            ['Retrato', 'Lo que tocas queda nítido, cerca o a 10 m, persona u objeto. El resto se suaviza y un deslizador ajusta el desenfoque.'],
+            [
+              'Retrato',
+              'Lo que tocas queda nítido, cerca o a 10 m, persona u objeto. El resto se suaviza y un deslizador ajusta el desenfoque.',
+            ],
             ['Panorama', 'Una foto ancha de un giro lento, unida en el teléfono.'],
             ['Cámara lenta', 'Un vídeo a 120 o 240 fotogramas por segundo que se reproduce ralentizado.'],
             [
@@ -947,15 +955,22 @@ const es: Catalog = {
               'Exposición',
               'ISO y obturador, cada uno auto o manual en tercios de paso. AJUSTE fija ambos para la escena.',
             ],
-            ['Ajuste automático', 'Un botón en el modo simple ajusta Luz, Calidez y Color a la escena.'],
+            [
+              'Ajuste automático',
+              'Un botón en el modo simple, o un toque en la vista, ajusta Luz, Calidez y Color a la escena.',
+            ],
             ['Color', 'Una sola saturación para el dial COLOR y el deslizador Color.'],
             ['Foto, vídeo y flash', 'La foto es el fotograma en pantalla al tocar. Mantener graba.'],
             ['Lugar y cámara', 'Cada toma guarda dónde y cómo se hizo, en etiquetas EXIF.'],
             ['Tamaño de foto y vídeo', 'Los ajustes eligen el tamaño de foto y vídeo.'],
             ['Mejorar fotos', 'Negros más profundos, sombras más claras, color más vivo y algo de nitidez.'],
             ['Códigos QR', 'Un código en la vista previa recibe un marco y un botón para abrirlo.'],
-            ['Reloj', 'La hora arriba a la izquierda, donde suele estar el reloj del teléfono, lejos de los controles.'],
+            [
+              'Reloj',
+              'La hora arriba a la izquierda, donde suele estar el reloj del teléfono, lejos de los controles.',
+            ],
             ['Galería', 'Las tomas en cuadrícula y a pantalla completa, con zoom al pellizcar y doble toque.'],
+            ['Anuncios', 'Un banner bajo la cuadrícula de la galería. La cámara y el visor quedan libres.'],
             ['Enderezar y girar', 'EDIT en el visor nivela y gira una foto.'],
             [
               'Inicio rápido',
@@ -1003,7 +1018,10 @@ const es: Catalog = {
               'Vista del cielo',
               'Estrellas, Sol, Luna, planetas y 88 constelaciones sobre la cámara, o giradas a mano.',
             ],
-            ['Reloj', 'Un reloj discreto con la fecha en lo alto del cielo, con la letra del tema. Se atenúa con los botones.'],
+            [
+              'Reloj',
+              'Un reloj discreto con la fecha en lo alto del cielo, con la letra del tema. Se atenúa con los botones.',
+            ],
             [
               'Estrellas de la cámara',
               'La imagen de la cámara queda tenue. Sus estrellas titilan con una estela de chispas y brillan en oro cuando coinciden con el cielo.',

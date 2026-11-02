@@ -294,7 +294,7 @@ const de: Catalog = {
             ],
             [
               'Fahrtenbuch',
-              'Fahrten und Spaziergänge zeichnen sich selbst auf. Jede Route zeigt Ihr Tempo an jedem Blitzer, grün oder rot. Das Tempo bleibt auf Ihrem Handy.',
+              'Fahrten und Spaziergänge zeichnen sich selbst auf. Jede Fahrt zeigt gefahrene und gelaufene Kilometer getrennt. Jede Route zeigt Ihr Tempo an jedem Blitzer, grün oder rot. Das Tempo bleibt auf Ihrem Handy.',
             ],
             ['Fahrt teilen', 'Ein Link zeigt die Route in jedem Browser. „Teilen beenden“ löscht sie vom Server.'],
             ['Strecke', 'Große Ziffern zeigen die Kilometer der aktuellen Fahrt und die Summe des Tages.'],
@@ -950,8 +950,19 @@ const de: Catalog = {
               'Objektivknöpfe über einem Zoomregler, dann Regler für Licht, Wärme und Farbe. Die Modi sitzen oben, so steht der Auslöser allein unter dem Daumen.',
             ],
             ['Nacht', 'Das Telefon baut das Foto aus mehreren Bildern, während ein Balken läuft.'],
+            [
+              'Astro',
+              'Der Nachthimmel aus der Hand: scharfe Sterne, die Milchstraße und ein dunkler Himmel statt Grau oder Orange.',
+            ],
+            [
+              'Mond',
+              'Zoomt auf 10x und belichtet für den Mond, so zeigen sich Meere und Krater statt eines weißen Flecks.',
+            ],
             ['Langzeitbelichtung', 'Verwischt Bewegung: seidiges Wasser, Lichtspuren, eine verblassende Menge.'],
-            ['Porträt', 'Was du antippst, bleibt scharf, nah oder 10 m entfernt, Person oder Ding. Der Rest wird weich, ein Regler stellt die Unschärfe ein.'],
+            [
+              'Porträt',
+              'Was du antippst, bleibt scharf, nah oder 10 m entfernt, Person oder Ding. Der Rest wird weich, ein Regler stellt die Unschärfe ein.',
+            ],
             ['Panorama', 'Ein breites Foto aus einer langsamen Drehung, auf dem Telefon zusammengesetzt.'],
             ['Zeitlupe', 'Ein Video mit 120 oder 240 Bildern pro Sekunde, das verlangsamt abspielt.'],
             [
@@ -968,7 +979,10 @@ const de: Catalog = {
               'Belichtung',
               'ISO und Verschluss, jeweils auto oder manuell in Drittelstufen. AUTO stellt beide für die Szene ein.',
             ],
-            ['Auto-Abstimmung', 'Ein Knopf im einfachen Modus stellt Licht, Wärme und Farbe auf die Szene ein.'],
+            [
+              'Auto-Abstimmung',
+              'Ein Knopf im einfachen Modus oder ein Tippen aufs Bild stellt Licht, Wärme und Farbe auf die Szene ein.',
+            ],
             ['Farbe', 'Ein Sättigungswert für das COLOR-Rad und den Farbregler.'],
             ['Foto, Video und Blitz', 'Das Foto ist das Bild auf dem Schirm im Moment der Berührung. Halten filmt.'],
             ['Ort- und Kameradaten', 'Jede Aufnahme trägt Ort und Einstellungen als EXIF-Tags.'],
@@ -977,6 +991,7 @@ const de: Catalog = {
             ['QR-Codes', 'Ein Code in der Vorschau bekommt Klammern und einen Knopf zum Öffnen.'],
             ['Uhr', 'Die Uhrzeit oben links, wo sonst die Uhr des Telefons steht, abseits der Tasten.'],
             ['Galerie', 'Die Aufnahmen im Raster und im Vollbild, mit Zoom per Zwicken und Doppeltipp.'],
+            ['Werbung', 'Ein Banner unter dem Galerieraster. Kamera und Ansicht bleiben frei.'],
             ['Begradigen und drehen', 'EDIT in der Ansicht richtet ein Foto aus und dreht es.'],
             ['Schnellstart', 'Zweimal die Ein-Taste öffnet Shuttrix, auch über dem Sperrbildschirm.'],
             ['Sprachen', 'In 9 Sprachen, nach der Sprache von Telefon oder Browser.'],
@@ -1024,7 +1039,10 @@ const de: Catalog = {
               'Himmelsansicht',
               'Sterne, Sonne, Mond, Planeten und 88 Sternbilder über der Kamera oder von Hand gedreht.',
             ],
-            ['Uhr', 'Eine ruhige Uhr mit Datum oben am Himmel, in der Schrift des Themas. Sie wird mit den Tasten blasser.'],
+            [
+              'Uhr',
+              'Eine ruhige Uhr mit Datum oben am Himmel, in der Schrift des Themas. Sie wird mit den Tasten blasser.',
+            ],
             [
               'Kamerasterne',
               'Das Kamerabild bleibt gedämpft. Sterne darauf funkeln mit einer Funkenspur und leuchten golden auf, wenn sie zum Himmel passen.',

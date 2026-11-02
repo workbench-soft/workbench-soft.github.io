@@ -270,7 +270,7 @@ const nb: Catalog = {
             ],
             [
               'Kjørelogg',
-              'Kjøreturer og gåturer registreres av seg selv. Hver rute viser farten din ved hvert kamera, grønt eller rødt. Farten blir på telefonen din.',
+              'Kjøreturer og gåturer registreres av seg selv. Hver tur viser kjørte og gåtte kilometer hver for seg. Hver rute viser farten din ved hvert kamera, grønt eller rødt. Farten blir på telefonen din.',
             ],
             [
               'Del en tur',
@@ -857,8 +857,16 @@ const nb: Catalog = {
               'Objektivknapper over en zoomglidebryter, så Lys, Varme og Farge. Modusene ligger øverst, så utløseren står alene under tommelen.',
             ],
             ['Natt', 'Telefonen bygger bildet av flere bilder mens en linje fylles.'],
+            [
+              'Astro',
+              'Nattehimmelen på frihånd: skarpe stjerner, Melkeveien og en mørk himmel i stedet for grå eller oransje.',
+            ],
+            ['Måne', 'Zoomer til 10x og eksponerer for månen, så havene og kraterne vises i stedet for en hvit flekk.'],
             ['Lang eksponering', 'Gjør bevegelse uskarp: silkevann, lysspor, en folkemengde som blekner.'],
-            ['Portrett', 'Det du trykker på blir skarpt, nært eller 10 m unna, person eller ting. Resten blir mykt, og en glidebryter setter uskarpheten.'],
+            [
+              'Portrett',
+              'Det du trykker på blir skarpt, nært eller 10 m unna, person eller ting. Resten blir mykt, og en glidebryter setter uskarpheten.',
+            ],
             ['Panorama', 'Et bredt bilde fra en langsom vending, satt sammen på telefonen.'],
             ['Sakte film', 'En video i 120 eller 240 bilder i sekundet som spilles av langsomt.'],
             [
@@ -875,7 +883,10 @@ const nb: Catalog = {
               'Eksponering',
               'ISO og lukker, hver auto eller manuelt i tredjedels trinn. TILPASS stiller begge for scenen.',
             ],
-            ['Autojustering', 'Én knapp i enkel modus stiller Lys, Varme og Farge for motivet.'],
+            [
+              'Autojustering',
+              'Én knapp i enkel modus, eller et trykk på bildet, stiller Lys, Varme og Farge for motivet.',
+            ],
             ['Farge', 'Én metning for COLOR-hjulet og Farge-glidebryteren.'],
             ['Foto, video og blits', 'Bildet er rammen på skjermen ved berøring. Hold for å filme.'],
             ['Sted og kameradata', 'Hvert bilde bærer hvor og hvordan det ble tatt, som EXIF-tagger.'],
@@ -884,6 +895,7 @@ const nb: Catalog = {
             ['QR-koder', 'En kode i forhåndsvisningen får klammer og en knapp for å åpne den.'],
             ['Klokke', 'Klokkeslettet øverst til venstre, der telefonens klokke pleier å stå, unna knappene.'],
             ['Galleri', 'Bildene i rutenett og fullskjerm, med zoom ved klyp og dobbelttrykk.'],
+            ['Reklame', 'Ett banner under gallerirutenettet. Kameraet og visningen er uten reklame.'],
             ['Rett opp og roter', 'EDIT i visningen retter opp og snur et bilde.'],
             ['Hurtigstart', 'To trykk på av/på-knappen åpner Shuttrix, også over låseskjermen.'],
             ['Språk', 'På 9 språk, etter telefonen eller nettleseren.'],
@@ -928,7 +940,10 @@ const nb: Catalog = {
               'Himmelvisning',
               'Stjerner, solen, månen, planetene og 88 stjernebilder over kameraet, eller snudd med hånden.',
             ],
-            ['Klokke', 'En rolig klokke med dato øverst på himmelen, i temaets skrift. Den dempes sammen med knappene.'],
+            [
+              'Klokke',
+              'En rolig klokke med dato øverst på himmelen, i temaets skrift. Den dempes sammen med knappene.',
+            ],
             [
               'Kamerastjerner',
               'Kamerabildet holdes dempet. Stjernene i det blinker med et spor av gnister og lyser gull når de stemmer med himmelen.',

@@ -295,7 +295,7 @@ const fr: Catalog = {
             ],
             [
               'Journal de trajets',
-              'Trajets et marches s’enregistrent seuls. Chaque parcours montre votre vitesse à chaque radar, en vert ou en rouge. Vos vitesses restent sur votre téléphone.',
+              'Trajets et marches s’enregistrent seuls. Chaque trajet sépare les km en voiture et les km à pied. Chaque parcours montre votre vitesse à chaque radar, en vert ou en rouge. Vos vitesses restent sur votre téléphone.',
             ],
             [
               'Partager un trajet',
@@ -987,8 +987,19 @@ const fr: Catalog = {
               "Des pastilles d'objectif sur un curseur de zoom, puis Lumière, Chaleur et Couleur. Les modes sont en haut, et le déclencheur reste seul sous le pouce.",
             ],
             ['Nuit', "Le téléphone compose la photo à partir de plusieurs images pendant qu'une barre avance."],
+            [
+              'Astro',
+              'Le ciel nocturne à main levée : étoiles nettes, Voie lactée et ciel sombre au lieu de gris ou orange.',
+            ],
+            [
+              'Lune',
+              'Zoom 10x et exposition pour la Lune : les mers et les cratères apparaissent, pas une tache blanche.',
+            ],
             ['Pose longue', "Floute ce qui bouge : eau soyeuse, traînées de phares, foule qui s'efface."],
-            ['Portrait', 'Ce que vous touchez reste net, proche ou à 10 m, personne ou objet. Le reste devient doux, un curseur règle le flou.'],
+            [
+              'Portrait',
+              'Ce que vous touchez reste net, proche ou à 10 m, personne ou objet. Le reste devient doux, un curseur règle le flou.',
+            ],
             ['Panorama', "Une photo large d'un lent pivot, assemblée sur le téléphone."],
             ['Ralenti', 'Une vidéo à 120 ou 240 images par seconde, lue au ralenti.'],
             ['Accéléré', 'Une image chaque demi-seconde, lue 15 fois plus vite : nuages, couchers de soleil, foules.'],
@@ -1002,7 +1013,10 @@ const fr: Catalog = {
               'Exposition',
               'ISO et vitesse, chacun auto ou manuel par tiers de valeur. AJUST règle les deux pour la scène.',
             ],
-            ['Réglage auto', 'Un bouton du mode simple règle Lumière, Chaleur et Couleur pour la scène.'],
+            [
+              'Réglage auto',
+              'Un bouton du mode simple, ou un toucher sur l’aperçu, règle Lumière, Chaleur et Couleur pour la scène.',
+            ],
             ['Couleur', 'Une seule saturation pour la molette COLOR et le curseur Couleur.'],
             ['Photo, vidéo et flash', "La photo est l'image à l'écran au toucher. Un appui long filme."],
             ['Lieu et réglages', 'Chaque prise garde où et comment elle a été faite, en balises EXIF.'],
@@ -1014,6 +1028,7 @@ const fr: Catalog = {
             ['Codes QR', "Un code dans l'aperçu reçoit un cadre et une pastille pour l'ouvrir."],
             ['Horloge', 'L’heure en haut à gauche, à la place de l’horloge du téléphone, loin des commandes.'],
             ['Galerie', 'Les prises en grille et en plein écran, avec zoom au pincement et double appui.'],
+            ['Publicités', 'Une bannière sous la grille de la galerie. La caméra et la visionneuse restent libres.'],
             ['Redresser et pivoter', 'EDIT dans la visionneuse redresse et tourne une photo.'],
             ['Démarrage rapide', "Deux appuis sur le bouton marche ouvrent Shuttrix, même sur l'écran verrouillé."],
             ['Langues', 'En 9 langues, selon le téléphone ou le navigateur.'],
@@ -1061,7 +1076,10 @@ const fr: Catalog = {
               'Vue du ciel',
               'Étoiles, Soleil, Lune, planètes et 88 constellations sur la caméra, ou tournées à la main.',
             ],
-            ['Horloge', 'Une horloge discrète avec la date en haut du ciel, dans la police du thème. Elle pâlit avec les boutons.'],
+            [
+              'Horloge',
+              'Une horloge discrète avec la date en haut du ciel, dans la police du thème. Elle pâlit avec les boutons.',
+            ],
             [
               'Étoiles de la caméra',
               "L'image de la caméra reste sombre. Ses étoiles scintillent avec une traînée d'étincelles et brillent d'or quand elles collent au ciel.",

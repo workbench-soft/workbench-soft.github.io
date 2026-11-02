@@ -219,7 +219,7 @@ export const projects: Project[] = [
           },
           {
             name: 'Trip log',
-            text: 'Drives and walks record on their own. Each route shows your speed at each camera, green or red. The speeds stay on your phone.',
+            text: 'Drives and walks record on their own. Each trip gives the km driven and the km walked apart. Each route shows your speed at each camera, green or red. The speeds stay on your phone.',
           },
           {
             name: 'Share a trip',
@@ -268,8 +268,19 @@ export const projects: Project[] = [
             text: 'Lens pills over a zoom slider, then Light, Warmth and Color sliders. The modes sit up top, so the shutter stands alone under the thumb.',
           },
           { name: 'Night', text: 'The phone builds the photo from several frames while a bar shows.' },
+          {
+            name: 'Astro',
+            text: 'A night sky held in the hand: sharp stars, the Milky Way, and a dark sky in place of a grey or orange one.',
+          },
+          {
+            name: 'Moon',
+            text: 'Zooms to 10x and exposes for the moon, so its seas and craters show in place of a white blob.',
+          },
           { name: 'Long exposure', text: 'Blurs what moves: silky water, light trails, a crowd that fades.' },
-          { name: 'Portrait', text: 'What you tap stays sharp, near or 10 m away, a person or a thing. The rest goes soft, and a slider sets the blur.' },
+          {
+            name: 'Portrait',
+            text: 'What you tap stays sharp, near or 10 m away, a person or a thing. The rest goes soft, and a slider sets the blur.',
+          },
           { name: 'Panorama', text: 'A wide photo from a slow turn, stitched on the phone.' },
           { name: 'Slow motion', text: 'A video at 120 or 240 frames a second that plays back slowed.' },
           { name: 'Time lapse', text: 'A frame each half second, played 15 times faster: clouds, sunsets, crowds.' },
@@ -283,7 +294,10 @@ export const projects: Project[] = [
             name: 'Exposure',
             text: 'ISO and shutter, each auto or manual in third stops. FIT sets both for the scene.',
           },
-          { name: 'Auto tune', text: 'One button in Simple mode sets Light, Warmth and Color for the scene.' },
+          {
+            name: 'Auto tune',
+            text: 'One button in Simple mode, or a tap on the preview, sets Light, Warmth and Color for the scene.',
+          },
           { name: 'Color', text: 'One saturation value for the COLOR dial and the Color slider.' },
           {
             name: 'Photo, video and flash',
@@ -293,8 +307,12 @@ export const projects: Project[] = [
           { name: 'Photo and video size', text: 'Settings pick the photo and video size.' },
           { name: 'Enhance photos', text: 'Deeper blacks, lifted shadows, livelier colour and a touch of sharpness.' },
           { name: 'QR codes', text: 'A code in the preview gets brackets and a pill to open it.' },
-          { name: 'Clock', text: 'The time in the top left corner, where the phone clock sits, out of the controls’ way.' },
+          {
+            name: 'Clock',
+            text: 'The time in the top left corner, where the phone clock sits, out of the controls’ way.',
+          },
           { name: 'Gallery', text: 'The shots in a grid and full screen, with pinch and double tap zoom.' },
+          { name: 'Ads', text: 'One banner under the gallery grid. The camera and the viewer stay clear.' },
           { name: 'Straighten and rotate', text: 'EDIT in the viewer levels and turns a photo.' },
           { name: 'Quick start', text: 'A double press of the power button opens Shuttrix, over the lock screen too.' },
           { name: 'Languages', text: 'The app in 9 languages, following the phone or browser.' },
@@ -590,7 +608,10 @@ export const projects: Project[] = [
             name: 'Sky view',
             text: 'Stars, the Sun, the Moon, the planets and 88 constellations over the camera, or turned by hand.',
           },
-          { name: 'Clock', text: 'A calm clock with the date at the top of the sky, in the theme’s font. It dims with the buttons.' },
+          {
+            name: 'Clock',
+            text: 'A calm clock with the date at the top of the sky, in the theme’s font. It dims with the buttons.',
+          },
           {
             name: 'Camera stars',
             text: 'The camera picture stays dim. Stars it sees twinkle with a trail of sparks and flash gold when they match the sky.',
