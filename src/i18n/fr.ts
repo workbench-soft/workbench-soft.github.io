@@ -1022,7 +1022,7 @@ const fr: Catalog = {
             ['Balance des blancs', 'Auto, préréglages ou kelvins sur une molette.'],
             [
               'Exposition',
-              'ISO et vitesse, chacun auto ou manuel par tiers de valeur. AJUST règle les deux pour la scène.',
+              'ISO et vitesse, chacun auto ou manuel par tiers de valeur. AJUST règle les deux pour la scène. Une pose lente affiche en grand « Ne bougez pas ».',
             ],
             [
               'Réglage auto',

@@ -964,7 +964,7 @@ const es: Catalog = {
             ['Balance de blancos', 'Auto, preajustes o kelvin en un dial.'],
             [
               'Exposición',
-              'ISO y obturador, cada uno auto o manual en tercios de paso. AJUSTE fija ambos para la escena.',
+              'ISO y obturador, cada uno auto o manual en tercios de paso. AJUSTE fija ambos para la escena. Con una exposición lenta aparece en grande «No te muevas».',
             ],
             [
               'Ajuste automático',
