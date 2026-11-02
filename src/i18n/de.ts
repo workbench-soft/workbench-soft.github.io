@@ -951,7 +951,7 @@ const de: Catalog = {
             ],
             ['Nacht', 'Das Telefon baut das Foto aus mehreren Bildern, während ein Balken läuft.'],
             ['Langzeitbelichtung', 'Verwischt Bewegung: seidiges Wasser, Lichtspuren, eine verblassende Menge.'],
-            ['Porträt', 'Personen bleiben scharf, der Hintergrund wird weich. Ein Regler stellt die Unschärfe ein.'],
+            ['Porträt', 'Was du antippst, bleibt scharf, nah oder 10 m entfernt, Person oder Ding. Der Rest wird weich, ein Regler stellt die Unschärfe ein.'],
             ['Panorama', 'Ein breites Foto aus einer langsamen Drehung, auf dem Telefon zusammengesetzt.'],
             ['Zeitlupe', 'Ein Video mit 120 oder 240 Bildern pro Sekunde, das verlangsamt abspielt.'],
             [
