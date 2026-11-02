@@ -266,3 +266,14 @@ The studio needed one public site for its apps and their installers.
 - **Changes**
   - **`src/data/projects.ts`** and **`src/i18n/`** drop the `suno-download` entry.
   - **`feature-check`** the workspace repo lists `suno-download` in `skip`, so the check asks for no card.
+
+#### 2026-11-03 Development for clients
+
+- **Why** the owner wants the sites built for clients in a section of their own, and `alina-photo` has no card yet.
+- **What the visitor gets**
+  - **Development for clients** a new filter chip and group, after the tools for developers.
+  - **Alina Photography** the first card: portfolio, booking, questions, admin, calendar sync and client galleries, as in the repo's `docs/features.md`.
+  - **No links** the site isn't live yet, so the card links to no address.
+- **Changes**
+  - **`src/data/projects.ts`** a `client` kind in `kinds`, and the entry with `repo: 'alina-photo'`.
+  - **`src/i18n/`** the section label and the entry in each catalog.
