@@ -802,27 +802,6 @@ const es: Catalog = {
         },
       ],
     },
-    'suno-download': {
-      tagline: 'Una extensión de Chrome que guarda tus canciones de Suno como archivos de audio.',
-      lede: 'Un botón ⬇ aparece junto al título de cada canción en suno.com. Un clic descifra la canción en el navegador y la guarda en Descargas/Suno.',
-      links: [],
-      groups: [
-        {
-          features: [
-            [
-              'Botón de descarga en cada canción',
-              'Un botón ⬇ junto a cada título en las listas, las tarjetas y el reproductor guarda la canción en Descargas/Suno.',
-            ],
-            [
-              'Descifrado en el navegador',
-              'El clic reproduce la canción un momento, capta su licencia y descifra el audio en tu PC.',
-            ],
-            ['Listo o error', 'El botón pasa a ✓ cuando el archivo se guarda, o a ✗ con el error al pasar el ratón.'],
-            ['Idiomas', 'El nombre, la descripción y el texto emergente siguen el idioma de Chrome.'],
-          ],
-        },
-      ],
-    },
     'open-in-remote-repo': {
       tagline: 'Una extensión de VS Code que abre un archivo en GitHub, GitLab o Bitbucket.',
       lede: 'Un fork de Open in GitHub de Stanislav Sysoev. Abre o copia el enlace al archivo, su blame o su historial, con las líneas seleccionadas marcadas.',

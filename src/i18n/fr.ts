@@ -848,27 +848,6 @@ const fr: Catalog = {
         },
       ],
     },
-    'suno-download': {
-      tagline: 'Une extension Chrome qui enregistre vos chansons Suno en fichiers audio.',
-      lede: 'Un bouton ⬇ se place à côté de chaque titre sur suno.com. Un clic déchiffre la chanson dans le navigateur et l’enregistre dans Téléchargements/Suno.',
-      links: [],
-      groups: [
-        {
-          features: [
-            [
-              'Bouton de téléchargement sur chaque chanson',
-              'Un bouton ⬇ à côté de chaque titre dans les listes, sur les cartes et dans le lecteur enregistre la chanson dans Téléchargements/Suno.',
-            ],
-            [
-              'Déchiffré dans le navigateur',
-              'Le clic lance la chanson un instant, capte sa licence et déchiffre le flux sur votre PC.',
-            ],
-            ['Réussi ou échoué', 'Le bouton devient ✓ quand le fichier est enregistré, ou ✗ avec l’erreur au survol.'],
-            ['Langues', 'Le nom, la description et l’infobulle suivent la langue de Chrome.'],
-          ],
-        },
-      ],
-    },
     'open-in-remote-repo': {
       tagline: 'Une extension VS Code qui ouvre un fichier sur GitHub, GitLab ou Bitbucket.',
       lede: 'Un fork de Open in GitHub de Stanislav Sysoev. Il ouvre ou copie le lien vers le fichier, son blame ou son historique, avec les lignes choisies marquées.',

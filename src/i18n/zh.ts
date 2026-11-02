@@ -551,21 +551,6 @@ const zh: Catalog = {
         },
       ],
     },
-    'suno-download': {
-      tagline: '一个 Chrome 扩展，把你在 Suno 的歌曲保存为音频文件。',
-      lede: 'suno.com 上每首歌的标题旁都有一个 ⬇ 按钮。点一下，浏览器就会解密这首歌并保存到 下载/Suno。',
-      links: [],
-      groups: [
-        {
-          features: [
-            ['每首歌的下载按钮', '列表、歌曲卡片和播放栏中每个标题旁的 ⬇ 按钮会把歌曲保存到 下载/Suno。'],
-            ['在浏览器中解密', '点击后歌曲短暂播放，扩展拿到它的许可证，在你的电脑上解密音频流。'],
-            ['成功或失败', '文件保存后按钮变为 ✓，失败时变为 ✗，悬停可看到错误。'],
-            ['语言', '名称、描述和按钮提示跟随 Chrome 的语言。'],
-          ],
-        },
-      ],
-    },
     'open-in-remote-repo': {
       tagline: '一个在 GitHub、GitLab 或 Bitbucket 上打开文件的 VS Code 扩展。',
       lede: '基于 Stanislav Sysoev 的 Open in GitHub 分叉而来。它可以打开或复制文件、blame 或历史的链接，并标出选中的行。',

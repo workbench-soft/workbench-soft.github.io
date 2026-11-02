@@ -736,27 +736,6 @@ const nb: Catalog = {
         },
       ],
     },
-    'suno-download': {
-      tagline: 'En Chrome-utvidelse som lagrer Suno-sangene dine som lydfiler.',
-      lede: 'En ⬇-knapp står ved hver sangtittel på suno.com. Ett klikk dekrypterer sangen i nettleseren og lagrer den i Nedlastinger/Suno.',
-      links: [],
-      groups: [
-        {
-          features: [
-            [
-              'Nedlastingsknapp på hver sang',
-              'En ⬇-knapp ved hver tittel i listene, på sangkort og i avspillingslinjen lagrer sangen i Nedlastinger/Suno.',
-            ],
-            [
-              'Dekryptert i nettleseren',
-              'Klikket spiller sangen et øyeblikk, fanger lisensen og dekrypterer strømmen på PC-en din.',
-            ],
-            ['Ferdig eller feil', 'Knappen blir ✓ når filen er lagret, eller ✗ med feilen når du holder musen over.'],
-            ['Språk', 'Navnet, beskrivelsen og hjelpeteksten følger språket i Chrome.'],
-          ],
-        },
-      ],
-    },
     'open-in-remote-repo': {
       tagline: 'En VS Code-utvidelse som åpner en fil på GitHub, GitLab eller Bitbucket.',
       lede: 'En fork av Open in GitHub av Stanislav Sysoev. Den åpner eller kopierer lenken til filen, blame eller historikken, med de valgte linjene markert.',

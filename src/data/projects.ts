@@ -1114,38 +1114,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 'suno-download',
-    kind: 'tool',
-    repo: 'suno-download',
-    hue: 320,
-    code: 'SNO',
-    name: 'Suno Download',
-    tagline: 'A Chrome extension that saves your Suno songs as audio files.',
-    lede: 'A ⬇ button sits beside each song title on suno.com. One click decrypts the song in the browser and saves it to Downloads/Suno.',
-    platforms: ['Chrome'],
-    stack: ['TypeScript', 'Chrome Extensions API', 'WebCrypto', 'Vite'],
-    links: [],
-    groups: [
-      {
-        features: [
-          {
-            name: 'Download button on each song',
-            text: 'A ⬇ button beside each title in your lists, on song cards and in the playbar saves the song to Downloads/Suno.',
-          },
-          {
-            name: 'Decrypted in the browser',
-            text: 'The click plays the song for a moment, picks up its licence and decrypts the stream on your PC.',
-          },
-          {
-            name: 'Done or failed',
-            text: 'The button turns to ✓ when the file is saved, or to ✗ with the error on hover.',
-          },
-          { name: 'Languages', text: 'The name, the description and the hover text follow the Chrome language.' },
-        ],
-      },
-    ],
-  },
-  {
     id: 'open-in-remote-repo',
     kind: 'tool',
     repo: 'vscode-open-in-github',
