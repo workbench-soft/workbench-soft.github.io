@@ -296,6 +296,10 @@ const de: Catalog = {
               'Fahrtenbuch',
               'Fahrten und Spaziergänge zeichnen sich selbst auf. Jede Fahrt zeigt gefahrene und gelaufene Kilometer getrennt. Jede Route zeigt Ihr Tempo an jedem Blitzer, grün oder rot. Das Tempo bleibt auf Ihrem Handy.',
             ],
+            [
+              'Fahrtstatistik',
+              'Schnitt und Spitze, der Anteil der Fahrt über dem Limit und um wie viel, die Blitzer, an denen Sie zu schnell waren, und die Zeit im Stau. Ein Marker auf der Karte zeigt jeden Stau.',
+            ],
             ['Fahrt teilen', 'Ein Link zeigt die Route in jedem Browser. „Teilen beenden“ löscht sie vom Server.'],
             ['Strecke', 'Große Ziffern zeigen die Kilometer der aktuellen Fahrt und die Summe des Tages.'],
             [

@@ -222,6 +222,10 @@ export const projects: Project[] = [
             text: 'Drives and walks record on their own. Each trip gives the km driven and the km walked apart. Each route shows your speed at each camera, green or red. The speeds stay on your phone.',
           },
           {
+            name: 'Trip stats',
+            text: 'Average and top speed, the share of the drive over the limit and by how much, the cameras you passed too fast, and the time lost in traffic jams. A marker on the map shows each jam.',
+          },
+          {
             name: 'Share a trip',
             text: 'A link shows the route in any browser. Stop sharing removes it from the server.',
           },

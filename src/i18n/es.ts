@@ -294,6 +294,10 @@ const es: Catalog = {
               'Trayectos en coche y paseos se graban solos. Cada viaje separa los km en coche y los km a pie. Cada ruta muestra tu velocidad en cada radar, en verde o rojo. La velocidad se queda en tu teléfono.',
             ],
             [
+              'Datos del viaje',
+              'Velocidad media y máxima, la parte del viaje por encima del límite y por cuánto, los radares que pasaste rápido y el tiempo perdido en atascos. Un marcador en el mapa muestra cada atasco.',
+            ],
+            [
               'Compartir un viaje',
               'Un enlace muestra la ruta en cualquier navegador. Dejar de compartir la borra del servidor.',
             ],
