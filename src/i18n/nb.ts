@@ -811,7 +811,10 @@ const nb: Catalog = {
         {
           features: [
             ['Enkel og Pro', 'En glassbryter øverst velger modus. En ny installasjon åpner i Enkel.'],
-            ['Enkel modus', 'Objektivknapper over en zoomglidebryter, så Lys, Varme og Farge.'],
+            [
+              'Enkel modus',
+              'Objektivknapper over en zoomglidebryter, så Lys, Varme og Farge. Modusene ligger øverst, så utløseren står alene under tommelen.',
+            ],
             ['Natt', 'Telefonen bygger bildet av flere bilder mens en linje fylles.'],
             ['Lang eksponering', 'Gjør bevegelse uskarp: silkevann, lysspor, en folkemengde som blekner.'],
             ['Panorama', 'Et bredt bilde fra en langsom vending, satt sammen på telefonen.'],

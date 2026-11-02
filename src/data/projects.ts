@@ -255,7 +255,10 @@ export const projects: Project[] = [
       {
         features: [
           { name: 'Simple and Pro', text: 'A glass switch at the top picks the mode. A new install opens in Simple.' },
-          { name: 'Simple mode', text: 'Lens pills over a zoom slider, then Light, Warmth and Color sliders.' },
+          {
+            name: 'Simple mode',
+            text: 'Lens pills over a zoom slider, then Light, Warmth and Color sliders. The modes sit up top, so the shutter stands alone under the thumb.',
+          },
           { name: 'Night', text: 'The phone builds the photo from several frames while a bar shows.' },
           { name: 'Long exposure', text: 'Blurs what moves: silky water, light trails, a crowd that fades.' },
           { name: 'Panorama', text: 'A wide photo from a slow turn, stitched on the phone.' },

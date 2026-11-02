@@ -895,7 +895,10 @@ const de: Catalog = {
         {
           features: [
             ['Einfach und Pro', 'Ein Glasschalter oben wählt den Modus. Eine neue Installation startet einfach.'],
-            ['Einfacher Modus', 'Objektivknöpfe über einem Zoomregler, dann Regler für Licht, Wärme und Farbe.'],
+            [
+              'Einfacher Modus',
+              'Objektivknöpfe über einem Zoomregler, dann Regler für Licht, Wärme und Farbe. Die Modi sitzen oben, so steht der Auslöser allein unter dem Daumen.',
+            ],
             ['Nacht', 'Das Telefon baut das Foto aus mehreren Bildern, während ein Balken läuft.'],
             ['Langzeitbelichtung', 'Verwischt Bewegung: seidiges Wasser, Lichtspuren, eine verblassende Menge.'],
             ['Panorama', 'Ein breites Foto aus einer langsamen Drehung, auf dem Telefon zusammengesetzt.'],

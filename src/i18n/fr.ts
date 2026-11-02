@@ -935,7 +935,10 @@ const fr: Catalog = {
               'Simple et Pro',
               "Un bouton en verre en haut choisit le mode. Une nouvelle installation s'ouvre en simple.",
             ],
-            ['Mode simple', "Des pastilles d'objectif sur un curseur de zoom, puis Lumière, Chaleur et Couleur."],
+            [
+              'Mode simple',
+              "Des pastilles d'objectif sur un curseur de zoom, puis Lumière, Chaleur et Couleur. Les modes sont en haut, et le déclencheur reste seul sous le pouce.",
+            ],
             ['Nuit', "Le téléphone compose la photo à partir de plusieurs images pendant qu'une barre avance."],
             ['Pose longue', "Floute ce qui bouge : eau soyeuse, traînées de phares, foule qui s'efface."],
             ['Panorama', "Une photo large d'un lent pivot, assemblée sur le téléphone."],
