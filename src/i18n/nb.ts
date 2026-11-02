@@ -857,6 +857,11 @@ const nb: Catalog = {
               'Objektivknapper over en zoomglidebryter, så Lys, Varme og Farge. Modusene ligger øverst, så utløseren står alene under tommelen.',
             ],
             ['Natt', 'Telefonen bygger bildet av flere bilder mens en linje fylles.'],
+            [
+              'Astro',
+              'Nattehimmelen på frihånd: skarpe stjerner, Melkeveien og en mørk himmel i stedet for grå eller oransje.',
+            ],
+            ['Måne', 'Zoomer til 10x og eksponerer for månen, så havene og kraterne vises i stedet for en hvit flekk.'],
             ['Lang eksponering', 'Gjør bevegelse uskarp: silkevann, lysspor, en folkemengde som blekner.'],
             [
               'Portrett',

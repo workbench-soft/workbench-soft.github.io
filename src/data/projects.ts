@@ -268,6 +268,14 @@ export const projects: Project[] = [
             text: 'Lens pills over a zoom slider, then Light, Warmth and Color sliders. The modes sit up top, so the shutter stands alone under the thumb.',
           },
           { name: 'Night', text: 'The phone builds the photo from several frames while a bar shows.' },
+          {
+            name: 'Astro',
+            text: 'A night sky held in the hand: sharp stars, the Milky Way, and a dark sky in place of a grey or orange one.',
+          },
+          {
+            name: 'Moon',
+            text: 'Zooms to 10x and exposes for the moon, so its seas and craters show in place of a white blob.',
+          },
           { name: 'Long exposure', text: 'Blurs what moves: silky water, light trails, a crowd that fades.' },
           {
             name: 'Portrait',

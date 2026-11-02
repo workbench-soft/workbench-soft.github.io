@@ -987,6 +987,14 @@ const fr: Catalog = {
               "Des pastilles d'objectif sur un curseur de zoom, puis Lumière, Chaleur et Couleur. Les modes sont en haut, et le déclencheur reste seul sous le pouce.",
             ],
             ['Nuit', "Le téléphone compose la photo à partir de plusieurs images pendant qu'une barre avance."],
+            [
+              'Astro',
+              'Le ciel nocturne à main levée : étoiles nettes, Voie lactée et ciel sombre au lieu de gris ou orange.',
+            ],
+            [
+              'Lune',
+              'Zoom 10x et exposition pour la Lune : les mers et les cratères apparaissent, pas une tache blanche.',
+            ],
             ['Pose longue', "Floute ce qui bouge : eau soyeuse, traînées de phares, foule qui s'efface."],
             [
               'Portrait',
