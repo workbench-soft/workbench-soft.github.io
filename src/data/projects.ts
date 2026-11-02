@@ -1262,6 +1262,7 @@ export const projects: Project[] = [
           { name: 'Rotate secrets', text: 'Renews the CI secrets and keys, app by app.' },
           { name: 'Workflow rules', text: 'A spec first, a merge right away, a batch test later.' },
           { name: 'Releases', text: 'A dated release for each green push to main.' },
+          { name: 'Feature queue', text: 'Sessions on one app take turns on shared files, and one release follows.' },
         ],
       },
     ],

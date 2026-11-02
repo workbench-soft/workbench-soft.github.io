@@ -772,6 +772,7 @@ const nb: Catalog = {
             ['Forny hemmeligheter', 'Fornyer CI-hemmeligheter og nøkler, app for app.'],
             ['Arbeidsregler', 'Først en spesifikasjon, flett med en gang, test samlet senere.'],
             ['Utgivelser', 'En datert utgivelse for hver grønne push til main.'],
+            ['Funksjonskø', 'Økter på samme app bytter på delte filer, og det kommer én utgivelse til slutt.'],
           ],
         },
       ],

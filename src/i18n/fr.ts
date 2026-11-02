@@ -887,6 +887,7 @@ const fr: Catalog = {
             ['Renouveler les secrets', 'Renouvelle les secrets de CI et les clés, app par app.'],
             ['Règles de travail', 'Une spec d’abord, une fusion tout de suite, un test groupé ensuite.'],
             ['Releases', 'Une release datée pour chaque push vert sur main.'],
+            ['File des fonctionnalités', 'Les sessions sur une même app se relaient sur les fichiers partagés, puis une seule version sort.'],
           ],
         },
       ],
