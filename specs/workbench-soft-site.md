@@ -222,3 +222,18 @@ The studio needed one public site for its apps and their installers.
   - **`src/components/ProjectPanel.astro`** the icon and the strip, through `astro:assets` `<Image>`.
   - **`src/i18n/`** the group names, the screenshot alt text and the 3 new projects, in each catalog.
 - **Limits** the email works once Cloudflare Email Routing forwards it, a step in `TODO.md`. Apps that only run on a phone or a desktop and have no screenshots in their repo show none yet.
+
+#### 2026-11-02 A Games menu and shorter feature lists
+
+- **Why** the owner found no way to the games from the header, and the feature cards of each project took too much room.
+- **What the visitor gets**
+  - **Games menu** a Games item in the header opens a list: all games, Guess the drawing, Drawing telephone, Clue duel, and the Workbench Games panel below. It stays in the header on a phone too.
+  - **Games in Projects** the Workbench Games panel links to each game, beside the link to all of them.
+  - **Short features** each feature is one line, its name then its text, in two columns. A project shows its first 6, and a button opens the rest. Search opens them when it jumps to a hidden one.
+- **Changes**
+  - **`src/data/projects.ts`** the games project gets a link per game. The Nav reads these links, so the menu and the panel stay the same list.
+  - **`src/components/Nav.astro`** the Games menu, built like the language menu.
+  - **`src/components/ProjectPanel.astro`** the one line features and the Show all button.
+  - **`src/components/Palette.astro`** a jump to a hidden feature opens its project's list first.
+  - **`src/i18n/`** the menu and button labels and the game link names, in each catalog.
+- **Docs** `docs/features.md`, `docs/user-flows.md`, `CHANGELOG.md`.
