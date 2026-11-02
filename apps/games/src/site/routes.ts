@@ -17,5 +17,8 @@ export const ROUTES: Record<PageKey, Record<Lang, string>> = {
 
 export const GAMES: Mode[] = ['guess', 'telephone', 'duel'];
 
+/** A picture for each game, so a child who can't read knows the game by sight. */
+export const GAME_EMOJI: Record<Mode, string> = { guess: '🎨', telephone: '📞', duel: '💡' };
+
 /** A file in public/, under the base path. */
 export const asset = (path: string) => `${BASE}${path}`;

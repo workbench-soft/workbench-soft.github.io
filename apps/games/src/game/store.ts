@@ -32,7 +32,7 @@ const CLOSE_FATAL: Record<number, ErrorKey> = { 4001: 'full', 4002: 'kicked', 40
 
 let socket: WebSocket | null = null;
 let retry = 0;
-let identity = { name: '', color: '' };
+let identity = { name: '', color: '', avatar: '' };
 
 export function serverNow(): number {
   return Date.now() + clockOffset.value;
@@ -75,8 +75,8 @@ function handle(msg: ServerMsg): void {
   }
 }
 
-export function connect(code: string, name: string, color: string): void {
-  identity = { name, color };
+export function connect(code: string, name: string, color: string, avatar = ''): void {
+  identity = { name, color, avatar };
   const ws = new WebSocket(socketUrl(code));
   socket = ws;
   status.value = retry ? 'lost' : 'connecting';
@@ -91,6 +91,7 @@ export function connect(code: string, name: string, color: string): void {
         token: token(),
         name: identity.name,
         color: identity.color,
+        avatar: identity.avatar || undefined,
         lang: lang.value,
       } satisfies ClientMsg),
     );
@@ -114,6 +115,6 @@ export function connect(code: string, name: string, color: string): void {
     }
     status.value = 'lost';
     retry++;
-    setTimeout(() => connect(code, identity.name, identity.color), Math.min(5000, 500 * 2 ** retry));
+    setTimeout(() => connect(code, identity.name, identity.color, identity.avatar), Math.min(5000, 500 * 2 ** retry));
   });
 }

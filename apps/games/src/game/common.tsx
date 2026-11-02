@@ -15,23 +15,49 @@ export function useSecondsLeft(deadline: number): number {
   return Math.max(0, Math.ceil((deadline - serverNow()) / 1000));
 }
 
+/**
+ * A circle that empties as the time runs out, so a child who can't read numbers still sees it.
+ * The number shows inside only outside kids mode.
+ */
 export function Timer({ deadline }: { deadline: number }) {
   const left = useSecondsLeft(deadline);
+  const total = useRef({ deadline, max: left });
+  if (total.current.deadline !== deadline) total.current = { deadline, max: left };
+  total.current.max = Math.max(total.current.max, left, 1);
+  const share = left / total.current.max;
+  const kids = room.value?.settings.kids ?? false;
   return (
-    <span class={`timer${left <= 10 ? ' timer-low' : ''}`} role="timer" aria-live="off">
-      {left}
+    <span
+      class={`timer${share <= 0.2 ? ' timer-low' : ''}`}
+      style={{ '--share': `${Math.round(share * 360)}deg` }}
+      role="timer"
+      aria-label={String(left)}
+      aria-live="off"
+    >
+      <span>{kids ? '' : left}</span>
     </span>
   );
 }
 
-export function Avatar({ player, size = 32 }: { player: Pick<PlayerView, 'name' | 'color'>; size?: number }) {
+export function Avatar({
+  player,
+  size = 32,
+}: {
+  player: Pick<PlayerView, 'name' | 'color' | 'avatar'>;
+  size?: number;
+}) {
   return (
     <span
       class="avatar"
-      style={{ background: player.color, width: `${size}px`, height: `${size}px` }}
+      style={{
+        background: player.color,
+        width: `${size}px`,
+        height: `${size}px`,
+        fontSize: player.avatar ? `${Math.round(size * 0.6)}px` : undefined,
+      }}
       aria-hidden="true"
     >
-      {player.name.slice(0, 1).toUpperCase()}
+      {player.avatar ?? player.name.slice(0, 1).toUpperCase()}
     </span>
   );
 }
@@ -56,7 +82,11 @@ export function PlayerList({ mark, scores = true }: ListProps) {
           {mark?.(p) && <span class="player-mark">{mark(p)}</span>}
           {scores && <span class="player-score">{p.score}</span>}
           {isHost && p.id !== view.you && view.phase === 'lobby' && (
-            <button type="button" class="link-btn" onClick={() => send({ t: 'kick', id: p.id })}>
+            <button
+              type="button"
+              class="link-btn"
+              onClick={() => confirm(t('kickAsk', { name: p.name })) && send({ t: 'kick', id: p.id })}
+            >
               {t('kick')}
             </button>
           )}
