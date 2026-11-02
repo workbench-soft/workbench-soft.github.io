@@ -216,7 +216,7 @@ score, since the browser keeps a secret token.
     optional, and an empty name takes the animal's name. The animal shows as
     the avatar.
   - **Words** kids mode draws from a list of words that each have an emoji,
-    in English and Russian. The artist sees the emoji next to each choice and
+    in English and Russian, without the host's own words. The artist sees the emoji next to each choice and
     a speaker button that reads the word with the browser's speech.
   - **Guessing** in kids mode each guesser gets 4 picture cards, the word and
     3 others. A tap guesses. A wrong card greys out and costs 100 points of
@@ -225,7 +225,8 @@ score, since the browser keeps a secret token.
     hints. Every timer becomes a circle that empties, with the number inside
     only outside kids mode.
   - **Joy** a right guess plays a short chime and confetti for the guesser.
-    The turn end and the results show stars in kids mode in place of points.
+    The turn end shows stars in kids mode in place of points, and the
+    results give the top three a cup and two medals.
     The turn end panel sits low and see through, so the drawing stays in
     sight.
   - **Lobby** one big Play button at the top of the game card. Each game card

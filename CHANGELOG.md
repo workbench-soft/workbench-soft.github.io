@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Games** kids mode, on by default: tap an animal to join, picture words read aloud, guesses by tapping a picture, ring timers, confetti and stars. The lobby puts Play first, and the trash, the logo and Remove ask before they act.
 - **Shuttrix Portrait** the page says the blur keeps what you tap sharp, near or far, a person or a thing.
 - **Shuttrix, Sky Altar** each lists its new Clock: the time on the camera and over the sky.
 - **SpotTheCam** Camera warnings say on the lock screen when the camera stands on the other side of the road.

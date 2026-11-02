@@ -8,6 +8,14 @@
 
 Spec: [party-games](../../../specs/party-games.md).
 
+## Kids mode
+
+- **For the person** a child who can't read or type still plays. A tap on an animal joins, words come with a picture and a speaker button, guessers tap 1 of 4 pictures, timers are rings that empty, and a right guess plays a chime with confetti and stars.
+- **Where** "For little ones" in the lobby, on by default. The microphone beside the text fields and the "How to play" pictures show in both modes.
+- **Limits** picture words exist for guess the drawing only, 80 in English and Russian. Kids mode guess skips the host's own words. Speech and the microphone need the browser's support, and the microphone hides where it is missing.
+
+Spec: [party-games](../../../specs/party-games.md).
+
 ## Guess the drawing
 
 - **For the person** draw a word, guess the others' drawings, race for points.
@@ -34,7 +42,7 @@ Spec: [party-games](../../../specs/party-games.md).
 
 ## Drawing tools
 
-- **For the person** pen, eraser, fill, 20 colors, 4 sizes, undo with Ctrl+Z, clear.
+- **For the person** pen, eraser, fill, 20 colors and 4 sizes, or 12 big colors and 3 sizes in kids mode, undo with Ctrl+Z, clear on a second tap.
 - **Where** under the canvas when it is your turn to draw.
 - **Limits** a drawing holds up to 40,000 points.
 
@@ -43,7 +51,7 @@ Spec: [party-games](../../../specs/party-games.md).
 ## Languages
 
 - **For the person** every page and the room work in English and Russian.
-- **Where** the language link in the header, and the EN/RU button in the room.
+- **Where** the language link in the header, and the EN/RU button in the room, shown in the lobby only.
 
 Spec: [party-games](../../../specs/party-games.md).
 
