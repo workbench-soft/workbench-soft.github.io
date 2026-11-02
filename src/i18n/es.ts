@@ -161,7 +161,10 @@ const es: Catalog = {
               'Enlaces de álbum',
               'Las fotos elegidas se convierten en un enlace. La otra persona abre el álbum en un navegador, sin app ni cuenta.',
             ],
-            ['Memories en el navegador', 'El NAS sirve la app a los ordenadores del tailnet, con todas las fotos y el mismo orden y edición que en el móvil.'],
+            [
+              'Memories en el navegador',
+              'El NAS sirve la app a los ordenadores del tailnet, con todas las fotos y el mismo orden y edición que en el móvil.',
+            ],
             [
               'Organizar',
               'Tarjetas por pasos ordenan las fotos del teléfono, las mueven a carpetas por fecha en el NAS y liberan el teléfono.',
@@ -275,7 +278,7 @@ const es: Catalog = {
             ],
             [
               'Registro de viajes',
-              'Trayectos en coche y paseos se graban solos. Cada ruta muestra tu velocidad en cada radar, en verde o rojo.',
+              'Trayectos en coche y paseos se graban solos. Cada ruta muestra tu velocidad en cada radar, en verde o rojo. La velocidad se queda en tu teléfono.',
             ],
             [
               'Compartir un viaje',
@@ -839,7 +842,10 @@ const es: Catalog = {
             ['Renovar secretos', 'Renueva los secretos de CI y las claves, app por app.'],
             ['Reglas de trabajo', 'Primero una spec, fusión enseguida, prueba en lote después.'],
             ['Releases', 'Una release con fecha por cada push verde a main.'],
-            ['Cola de funciones', 'Las sesiones de una app se turnan en los archivos compartidos y sale una sola versión.'],
+            [
+              'Cola de funciones',
+              'Las sesiones de una app se turnan en los archivos compartidos y sale una sola versión.',
+            ],
           ],
         },
       ],
@@ -892,11 +898,17 @@ const es: Catalog = {
             ['Retrato', 'Las personas quedan nítidas y el fondo se suaviza. Un deslizador ajusta el desenfoque.'],
             ['Panorama', 'Una foto ancha de un giro lento, unida en el teléfono.'],
             ['Cámara lenta', 'Un vídeo a 120 o 240 fotogramas por segundo que se reproduce ralentizado.'],
-            ['Time-lapse', 'Un fotograma cada medio segundo, reproducido 15 veces más rápido: nubes, atardeceres, multitudes.'],
+            [
+              'Time-lapse',
+              'Un fotograma cada medio segundo, reproducido 15 veces más rápido: nubes, atardeceres, multitudes.',
+            ],
             ['Objetivos', 'Un botón por cada objetivo del teléfono sobre una escala de zoom.'],
             ['Enfoque', 'AF-C sigue un sujeto en movimiento y las caras. Un toque enfoca un punto.'],
             ['Balance de blancos', 'Auto, preajustes o kelvin en un dial.'],
-            ['Exposición', 'ISO y obturador, cada uno auto o manual en tercios de paso. AJUSTE fija ambos para la escena.'],
+            [
+              'Exposición',
+              'ISO y obturador, cada uno auto o manual en tercios de paso. AJUSTE fija ambos para la escena.',
+            ],
             ['Color', 'Una sola saturación para el dial COLOR y el deslizador Color.'],
             ['Foto, vídeo y flash', 'La foto es el fotograma en pantalla al tocar. Mantener graba.'],
             ['Lugar y cámara', 'Cada toma guarda dónde y cómo se hizo, en etiquetas EXIF.'],

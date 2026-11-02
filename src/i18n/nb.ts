@@ -161,7 +161,10 @@ const nb: Catalog = {
               'Albumlenker',
               'Valgte bilder blir en lenke. Den andre personen åpner albumet i en nettleser, uten app eller konto.',
             ],
-            ['Memories i nettleseren', 'NAS-en gir appen til datamaskiner i tailnet, med alle bildene og samme sortering og redigering som på telefonen.'],
+            [
+              'Memories i nettleseren',
+              'NAS-en gir appen til datamaskiner i tailnet, med alle bildene og samme sortering og redigering som på telefonen.',
+            ],
             [
               'Rydd',
               'Trinnkort sorterer bildene på mobilen, flytter dem til daterte mapper på NAS-en og frigjør plass på mobilen.',
@@ -254,7 +257,7 @@ const nb: Catalog = {
             ],
             [
               'Kjørelogg',
-              'Kjøreturer og gåturer registreres av seg selv. Hver rute viser farten din ved hvert kamera, grønt eller rødt.',
+              'Kjøreturer og gåturer registreres av seg selv. Hver rute viser farten din ved hvert kamera, grønt eller rødt. Farten blir på telefonen din.',
             ],
             [
               'Del en tur',
@@ -826,11 +829,17 @@ const nb: Catalog = {
             ['Portrett', 'Personer blir skarpe og bakgrunnen myk. En glidebryter setter uskarpheten.'],
             ['Panorama', 'Et bredt bilde fra en langsom vending, satt sammen på telefonen.'],
             ['Sakte film', 'En video i 120 eller 240 bilder i sekundet som spilles av langsomt.'],
-            ['Tidsforløp', 'Ett bilde hvert halve sekund, spilt av 15 ganger raskere: skyer, solnedganger, folkemengder.'],
+            [
+              'Tidsforløp',
+              'Ett bilde hvert halve sekund, spilt av 15 ganger raskere: skyer, solnedganger, folkemengder.',
+            ],
             ['Objektiver', 'En knapp per objektiv på telefonen, over én zoomskala.'],
             ['Fokus', 'AF-C følger et motiv i bevegelse og ansikter. Et trykk fokuserer på et punkt.'],
             ['Hvitbalanse', 'Auto, forvalg eller kelvin på et hjul.'],
-            ['Eksponering', 'ISO og lukker, hver auto eller manuelt i tredjedels trinn. TILPASS stiller begge for scenen.'],
+            [
+              'Eksponering',
+              'ISO og lukker, hver auto eller manuelt i tredjedels trinn. TILPASS stiller begge for scenen.',
+            ],
             ['Farge', 'Én metning for COLOR-hjulet og Farge-glidebryteren.'],
             ['Foto, video og blits', 'Bildet er rammen på skjermen ved berøring. Hold for å filme.'],
             ['Sted og kameradata', 'Hvert bilde bærer hvor og hvordan det ble tatt, som EXIF-tagger.'],

@@ -164,7 +164,10 @@ const de: Catalog = {
               'Album-Links',
               'Gewählte Fotos werden zu einem Link. Die andere Person öffnet das Album im Browser, ohne App und ohne Konto.',
             ],
-            ['Memories im Browser', 'Das NAS liefert die App an Computer im Tailnet, mit allen Fotos und demselben Sortieren und Bearbeiten wie am Handy.'],
+            [
+              'Memories im Browser',
+              'Das NAS liefert die App an Computer im Tailnet, mit allen Fotos und demselben Sortieren und Bearbeiten wie am Handy.',
+            ],
             [
               'Ordnen',
               'Schrittkarten sortieren die Fotos auf dem Handy, verschieben sie in Datumsordner auf dem NAS und machen das Handy frei.',
@@ -278,7 +281,7 @@ const de: Catalog = {
             ],
             [
               'Fahrtenbuch',
-              'Fahrten und Spaziergänge zeichnen sich selbst auf. Jede Route zeigt Ihr Tempo an jedem Blitzer, grün oder rot.',
+              'Fahrten und Spaziergänge zeichnen sich selbst auf. Jede Route zeigt Ihr Tempo an jedem Blitzer, grün oder rot. Das Tempo bleibt auf Ihrem Handy.',
             ],
             ['Fahrt teilen', 'Ein Link zeigt die Route in jedem Browser. „Teilen beenden“ löscht sie vom Server.'],
             ['Strecke', 'Große Ziffern zeigen die Kilometer der aktuellen Fahrt und die Summe des Tages.'],
@@ -854,7 +857,10 @@ const de: Catalog = {
             ['Secrets erneuern', 'Erneuert CI-Secrets und Schlüssel, App für App.'],
             ['Arbeitsregeln', 'Erst eine Spec, sofort mergen, später gesammelt testen.'],
             ['Releases', 'Ein datiertes Release für jeden grünen Push auf main.'],
-            ['Feature-Warteschlange', 'Sitzungen an einer App wechseln sich bei gemeinsamen Dateien ab, danach folgt ein Release.'],
+            [
+              'Feature-Warteschlange',
+              'Sitzungen an einer App wechseln sich bei gemeinsamen Dateien ab, danach folgt ein Release.',
+            ],
           ],
         },
       ],
@@ -910,11 +916,17 @@ const de: Catalog = {
             ['Porträt', 'Personen bleiben scharf, der Hintergrund wird weich. Ein Regler stellt die Unschärfe ein.'],
             ['Panorama', 'Ein breites Foto aus einer langsamen Drehung, auf dem Telefon zusammengesetzt.'],
             ['Zeitlupe', 'Ein Video mit 120 oder 240 Bildern pro Sekunde, das verlangsamt abspielt.'],
-            ['Zeitraffer', 'Ein Bild pro halbe Sekunde, 15-mal schneller abgespielt: Wolken, Sonnenuntergänge, Menschenmengen.'],
+            [
+              'Zeitraffer',
+              'Ein Bild pro halbe Sekunde, 15-mal schneller abgespielt: Wolken, Sonnenuntergänge, Menschenmengen.',
+            ],
             ['Objektive', 'Ein Knopf pro Objektiv des Telefons über einer Zoomskala.'],
             ['Fokus', 'AF-C folgt bewegten Motiven und Gesichtern. Ein Tipp fokussiert einen Punkt.'],
             ['Weißabgleich', 'Auto, Voreinstellungen oder Kelvin auf einem Rad.'],
-            ['Belichtung', 'ISO und Verschluss, jeweils auto oder manuell in Drittelstufen. AUTO stellt beide für die Szene ein.'],
+            [
+              'Belichtung',
+              'ISO und Verschluss, jeweils auto oder manuell in Drittelstufen. AUTO stellt beide für die Szene ein.',
+            ],
             ['Farbe', 'Ein Sättigungswert für das COLOR-Rad und den Farbregler.'],
             ['Foto, Video und Blitz', 'Das Foto ist das Bild auf dem Schirm im Moment der Berührung. Halten filmt.'],
             ['Ort- und Kameradaten', 'Jede Aufnahme trägt Ort und Einstellungen als EXIF-Tags.'],

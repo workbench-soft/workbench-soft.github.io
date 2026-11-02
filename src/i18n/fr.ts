@@ -168,7 +168,10 @@ const fr: Catalog = {
               'Liens d’album',
               'Les photos choisies deviennent un lien. L’autre personne ouvre l’album dans un navigateur, sans app ni compte.',
             ],
-            ['Memories dans le navigateur', 'Le NAS sert l’app aux ordinateurs du tailnet, avec toutes les photos, le tri et la retouche comme sur le téléphone.'],
+            [
+              'Memories dans le navigateur',
+              'Le NAS sert l’app aux ordinateurs du tailnet, avec toutes les photos, le tri et la retouche comme sur le téléphone.',
+            ],
             [
               'Ranger',
               'Des cartes étape par étape trient les photos du téléphone, les déplacent dans des dossiers datés sur le NAS et libèrent le téléphone.',
@@ -279,7 +282,7 @@ const fr: Catalog = {
             ],
             [
               'Journal de trajets',
-              'Trajets et marches s’enregistrent seuls. Chaque parcours montre votre vitesse à chaque radar, en vert ou en rouge.',
+              'Trajets et marches s’enregistrent seuls. Chaque parcours montre votre vitesse à chaque radar, en vert ou en rouge. Vos vitesses restent sur votre téléphone.',
             ],
             [
               'Partager un trajet',
@@ -888,7 +891,10 @@ const fr: Catalog = {
             ['Renouveler les secrets', 'Renouvelle les secrets de CI et les clés, app par app.'],
             ['Règles de travail', 'Une spec d’abord, une fusion tout de suite, un test groupé ensuite.'],
             ['Releases', 'Une release datée pour chaque push vert sur main.'],
-            ['File des fonctionnalités', 'Les sessions sur une même app se relaient sur les fichiers partagés, puis une seule version sort.'],
+            [
+              'File des fonctionnalités',
+              'Les sessions sur une même app se relaient sur les fichiers partagés, puis une seule version sort.',
+            ],
           ],
         },
       ],
@@ -954,7 +960,10 @@ const fr: Catalog = {
             ['Objectifs', 'Une pastille par objectif du téléphone, sur une seule échelle de zoom.'],
             ['Mise au point', "L'AF-C suit un sujet en mouvement et les visages. Un appui vise un point."],
             ['Balance des blancs', 'Auto, préréglages ou kelvins sur une molette.'],
-            ['Exposition', 'ISO et vitesse, chacun auto ou manuel par tiers de valeur. AJUST règle les deux pour la scène.'],
+            [
+              'Exposition',
+              'ISO et vitesse, chacun auto ou manuel par tiers de valeur. AJUST règle les deux pour la scène.',
+            ],
             ['Couleur', 'Une seule saturation pour la molette COLOR et le curseur Couleur.'],
             ['Photo, vidéo et flash', "La photo est l'image à l'écran au toucher. Un appui long filme."],
             ['Lieu et réglages', 'Chaque prise garde où et comment elle a été faite, en balises EXIF.'],
