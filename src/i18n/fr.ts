@@ -295,7 +295,7 @@ const fr: Catalog = {
             ],
             [
               'Journal de trajets',
-              'Trajets et marches s’enregistrent seuls. Chaque parcours montre votre vitesse à chaque radar, en vert ou en rouge. Vos vitesses restent sur votre téléphone.',
+              'Trajets et marches s’enregistrent seuls. Chaque trajet sépare les km en voiture et les km à pied. Chaque parcours montre votre vitesse à chaque radar, en vert ou en rouge. Vos vitesses restent sur votre téléphone.',
             ],
             [
               'Partager un trajet',

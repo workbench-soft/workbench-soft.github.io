@@ -270,7 +270,7 @@ const nb: Catalog = {
             ],
             [
               'Kjørelogg',
-              'Kjøreturer og gåturer registreres av seg selv. Hver rute viser farten din ved hvert kamera, grønt eller rødt. Farten blir på telefonen din.',
+              'Kjøreturer og gåturer registreres av seg selv. Hver tur viser kjørte og gåtte kilometer hver for seg. Hver rute viser farten din ved hvert kamera, grønt eller rødt. Farten blir på telefonen din.',
             ],
             [
               'Del en tur',
