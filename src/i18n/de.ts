@@ -906,6 +906,8 @@ const de: Catalog = {
             ['Nacht', 'Das Telefon baut das Foto aus mehreren Bildern, während ein Balken läuft.'],
             ['Langzeitbelichtung', 'Verwischt Bewegung: seidiges Wasser, Lichtspuren, eine verblassende Menge.'],
             ['Panorama', 'Ein breites Foto aus einer langsamen Drehung, auf dem Telefon zusammengesetzt.'],
+            ['Zeitlupe', 'Ein Video mit 120 oder 240 Bildern pro Sekunde, das verlangsamt abspielt.'],
+            ['Zeitraffer', 'Ein Bild pro halbe Sekunde, 15-mal schneller abgespielt: Wolken, Sonnenuntergänge, Menschenmengen.'],
             ['Objektive', 'Ein Knopf pro Objektiv des Telefons über einer Zoomskala.'],
             ['Fokus', 'AF-C folgt bewegten Motiven und Gesichtern. Ein Tipp fokussiert einen Punkt.'],
             ['Weißabgleich', 'Auto, Voreinstellungen oder Kelvin auf einem Rad.'],

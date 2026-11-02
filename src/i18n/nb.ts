@@ -822,6 +822,8 @@ const nb: Catalog = {
             ['Natt', 'Telefonen bygger bildet av flere bilder mens en linje fylles.'],
             ['Lang eksponering', 'Gjør bevegelse uskarp: silkevann, lysspor, en folkemengde som blekner.'],
             ['Panorama', 'Et bredt bilde fra en langsom vending, satt sammen på telefonen.'],
+            ['Sakte film', 'En video i 120 eller 240 bilder i sekundet som spilles av langsomt.'],
+            ['Tidsforløp', 'Ett bilde hvert halve sekund, spilt av 15 ganger raskere: skyer, solnedganger, folkemengder.'],
             ['Objektiver', 'En knapp per objektiv på telefonen, over én zoomskala.'],
             ['Fokus', 'AF-C følger et motiv i bevegelse og ansikter. Et trykk fokuserer på et punkt.'],
             ['Hvitbalanse', 'Auto, forvalg eller kelvin på et hjul.'],

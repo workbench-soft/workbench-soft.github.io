@@ -888,6 +888,8 @@ const es: Catalog = {
             ['Noche', 'El teléfono crea la foto con varios fotogramas mientras avanza una barra.'],
             ['Exposición larga', 'Difumina lo que se mueve: agua sedosa, estelas de luz, una multitud que se borra.'],
             ['Panorama', 'Una foto ancha de un giro lento, unida en el teléfono.'],
+            ['Cámara lenta', 'Un vídeo a 120 o 240 fotogramas por segundo que se reproduce ralentizado.'],
+            ['Time-lapse', 'Un fotograma cada medio segundo, reproducido 15 veces más rápido: nubes, atardeceres, multitudes.'],
             ['Objetivos', 'Un botón por cada objetivo del teléfono sobre una escala de zoom.'],
             ['Enfoque', 'AF-C sigue un sujeto en movimiento y las caras. Un toque enfoca un punto.'],
             ['Balance de blancos', 'Auto, preajustes o kelvin en un dial.'],
