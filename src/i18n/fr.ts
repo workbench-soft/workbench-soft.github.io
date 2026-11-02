@@ -1062,7 +1062,10 @@ const fr: Catalog = {
               "L'image de la caméra reste sombre. Ses étoiles scintillent avec une traînée d'étincelles et brillent d'or quand elles collent au ciel.",
             ],
             ['Thèmes des cultures', '13 cultures, de la Grèce et Rome aux Incas, à Sumer et à l’âge de pierre.'],
-            ['Musique ambient', 'Une boucle lente monte à l’ouverture. Un toucher la coupe.'],
+            [
+              'Musique ambient',
+              'La chanson au violon « L’Exode des Mondes » tourne sous le ciel. Coupez-la, ou jouez votre propre fichier audio.',
+            ],
             ['Publicités et retrait', 'Les pubs restent hors du ciel. Un achat unique de $2.99 les retire.'],
             ['Langues de l’app', 'Les écrans et les noms des constellations en 9 langues.'],
           ],

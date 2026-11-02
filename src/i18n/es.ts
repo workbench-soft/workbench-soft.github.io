@@ -1004,7 +1004,10 @@ const es: Catalog = {
               'La imagen de la cámara queda tenue. Sus estrellas titilan con una estela de chispas y brillan en oro cuando coinciden con el cielo.',
             ],
             ['Temas de culturas', '13 culturas, de Grecia y Roma a los incas, Sumeria y la Edad de Piedra.'],
-            ['Música ambient', 'Un bucle lento entra al abrir. Un toque lo silencia.'],
+            [
+              'Música ambient',
+              'La canción de violín «L’Exode des Mondes» suena bajo el cielo. Apágala o pon tu propio archivo de audio.',
+            ],
             ['Anuncios y quitarlos', 'Los anuncios no tapan el cielo. Una compra única de $2.99 los quita.'],
             ['Idiomas de la app', 'Las pantallas y los nombres de las constelaciones en 9 idiomas.'],
           ],

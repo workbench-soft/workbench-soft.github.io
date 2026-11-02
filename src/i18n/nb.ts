@@ -929,7 +929,10 @@ const nb: Catalog = {
               'Kamerabildet holdes dempet. Stjernene i det blinker med et spor av gnister og lyser gull når de stemmer med himmelen.',
             ],
             ['Kulturtemaer', '13 kulturer, fra Hellas og Roma til inkaene, Sumer og steinalderen.'],
-            ['Ambient-musikk', 'En rolig sløyfe toner inn når appen åpnes. Ett trykk demper den.'],
+            [
+              'Ambient-musikk',
+              'Fiolinsangen «L’Exode des Mondes» går under himmelen. Slå den av, eller spill din egen lydfil.',
+            ],
             ['Reklame og reklamefritt', 'Reklamen holder seg unna himmelen. Et engangskjøp på $2.99 fjerner den.'],
             ['Appspråk', 'Skjermene og navnene på stjernebildene på 9 språk.'],
           ],
