@@ -20,33 +20,35 @@ flowchart LR
 1. The client opens <https://workbench-soft.com> and reads the hero.
 2. The client opens Services and picks the kind of work they need.
 3. A project chip on the card jumps to a project that shows that work.
-4. The client reads the features, then presses Start a project or Write an email.
-5. The mail app opens with the subject filled in.
+4. The client reads the features, then presses Start a project or Order an app in the corner.
+5. The page scrolls to the order form at the bottom.
 
 ```mermaid
 flowchart LR
   hero["Hero"] --> services["Services"]
   services --> chip["Project chip"] --> panel["Project panel"]
   hero --> work["See the work"] --> panel
-  panel --> contact["Contact"] --> mail["Mail app with the subject"]
-  hero --> start["Start a project"] --> mail
+  panel --> order["Order an app button"] --> form["Order form"]
+  hero --> start["Start a project"] --> form
 ```
 
-## A visitor sends feedback
+## A client sends an order
 
-1. The visitor presses Feedback in the corner, the footer link, or opens a `#feedback` link.
-2. The dialog opens with the cursor in the message box.
-3. The visitor types the message and, for a reply, an email.
-4. Send, or `Ctrl+Enter`, posts it. The dialog says it reached the studio, or gives the email address on a failure.
+1. The client presses Order an app in the corner, Start a project, Contact, or opens a `#order` link.
+2. The page scrolls to the form at the bottom with the cursor in the message box. The corner button hides.
+3. The client says what to build, gives an email for the reply and, if they want, a name.
+4. Send the order, or `Ctrl+Enter`, posts it from the site. A line says it reached the studio, or gives the email address on a failure.
+5. A client who prefers their own mail app presses the address under the form, or Copy.
 
 ```mermaid
 flowchart LR
-  any["Any point of any page"] --> button["Feedback button"] --> dialog["Feedback dialog"]
-  footer["Footer link"] --> dialog
-  link["#feedback link"] --> dialog
-  dialog --> send["Send"]
+  any["Any point of the page"] --> button["Order an app button"] --> form["Order form"]
+  hero["Start a project"] --> form
+  link["#order or #feedback link"] --> form
+  form --> send["Send the order"]
   send -->|ok| thanks["Thanks line"]
   send -->|failed| mail["Email address to write to"]
+  form --> alt["Address under the form"] --> app["Own mail app"]
 ```
 
 ## A visitor finds a feature

@@ -8,7 +8,6 @@ import Projects from "../components/Projects.astro";
 import Process from "../components/Process.astro";
 import Contact from "../components/Contact.astro";
 import Palette from "../components/Palette.astro";
-import Feedback from "../components/Feedback.astro";
 import { email } from "../data/studio";
 import { projects } from "../data/projects";
 import { defaultLang, langOf, locales } from "../i18n/locales";
@@ -40,13 +39,11 @@ const names = projects.filter((p) => p.kind === "app").map((p) => p.name);
       <span>
         <a href="https://github.com/workbench-soft/workbench-soft.github.io/releases">{t.footer.releases}</a> ·
         <a href="/memories-mobile/privacy-policy.html">{t.footer.privacy}</a> ·
-        <a href="#feedback" data-feedback>{t.feedback.open}</a> ·
         <a href={`mailto:${email}`}>{email}</a>
       </span>
     </div>
   </footer>
   <Palette />
-  <Feedback />
 </Base>
 
 <script>

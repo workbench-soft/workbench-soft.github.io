@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Order form** the Contact section takes orders right on the page, and the corner button turned from Feedback into Order an app, which scrolls to it. Email stays as a backup line.
 - **Reddit Desk and Tripforge** Reddit Desk lists Steps on top, and the Tripforge feature is named To Tickalot, as in the apps' docs.
 
 - **Site Sources** the card shows the popup with its progress bar and the one zip it saves.
