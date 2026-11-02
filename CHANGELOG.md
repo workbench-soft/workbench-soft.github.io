@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Memories** Memories in the browser joins the features, and the platforms list Web.
 - **Shuttrix** Slow motion and Time lapse join the features.
 - **Agent Skills, private** a Feature queue feature: sessions on one app take turns on shared files, and one release follows.
 

@@ -168,6 +168,7 @@ const fr: Catalog = {
               'Liens d’album',
               'Les photos choisies deviennent un lien. L’autre personne ouvre l’album dans un navigateur, sans app ni compte.',
             ],
+            ['Memories dans le navigateur', 'Le NAS sert l’app aux ordinateurs du tailnet, avec toutes les photos, le tri et la retouche comme sur le téléphone.'],
             [
               'Ranger',
               'Des cartes étape par étape trient les photos du téléphone, les déplacent dans des dossiers datés sur le NAS et libèrent le téléphone.',
