@@ -608,24 +608,6 @@ const ko: Catalog = {
         },
       ],
     },
-    'suno-download': {
-      tagline: 'Suno 노래를 오디오 파일로 저장하는 Chrome 확장 프로그램입니다.',
-      lede: 'suno.com의 노래 제목마다 옆에 ⬇ 버튼이 붙습니다. 한 번 누르면 브라우저에서 노래를 복호화해 다운로드/Suno에 저장합니다.',
-      links: [],
-      groups: [
-        {
-          features: [
-            [
-              '노래마다 다운로드 버튼',
-              '목록, 노래 카드, 재생 바의 제목 옆 ⬇ 버튼이 노래를 다운로드/Suno에 저장합니다.',
-            ],
-            ['브라우저에서 복호화', '클릭하면 노래를 잠깐 재생해 라이선스를 받고, PC에서 스트림을 복호화합니다.'],
-            ['성공 또는 실패', '파일이 저장되면 버튼이 ✓로, 실패하면 ✗로 바뀌고 마우스를 올리면 오류가 보입니다.'],
-            ['언어', '이름, 설명, 버튼 도움말은 Chrome 언어를 따릅니다.'],
-          ],
-        },
-      ],
-    },
     'open-in-remote-repo': {
       tagline: '파일을 GitHub, GitLab, Bitbucket에서 여는 VS Code 확장.',
       lede: 'Stanislav Sysoev의 Open in GitHub를 포크했습니다. 파일, 그 blame, 기록의 링크를 선택한 줄을 표시해 열거나 복사합니다.',

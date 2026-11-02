@@ -823,30 +823,6 @@ const de: Catalog = {
         },
       ],
     },
-    'suno-download': {
-      tagline: 'Eine Chrome-Erweiterung, die Songs von Suno als Audiodateien speichert.',
-      lede: 'Neben jedem Songtitel auf suno.com sitzt ein ⬇-Knopf. Ein Klick entschlüsselt den Song im Browser und speichert ihn unter Downloads/Suno.',
-      links: [],
-      groups: [
-        {
-          features: [
-            [
-              'Download-Knopf an jedem Song',
-              'Ein ⬇-Knopf neben jedem Titel in den Listen, auf Songkarten und in der Abspielleiste speichert den Song unter Downloads/Suno.',
-            ],
-            [
-              'Im Browser entschlüsselt',
-              'Der Klick spielt den Song kurz an, fängt seine Lizenz ab und entschlüsselt den Stream auf dem eigenen PC.',
-            ],
-            [
-              'Fertig oder Fehler',
-              'Der Knopf wird zu ✓, wenn die Datei gespeichert ist, oder zu ✗ mit dem Fehler beim Darüberfahren.',
-            ],
-            ['Sprachen', 'Name, Beschreibung und Hinweistext folgen der Chrome-Sprache.'],
-          ],
-        },
-      ],
-    },
     'open-in-remote-repo': {
       tagline: 'Eine VS-Code-Erweiterung, die eine Datei auf GitHub, GitLab oder Bitbucket öffnet.',
       lede: 'Ein Fork von Open in GitHub von Stanislav Sysoev. Sie öffnet oder kopiert den Link zur Datei, ihrem Blame oder ihrem Verlauf, mit markierten Zeilen.',
