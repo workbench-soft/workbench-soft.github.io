@@ -219,7 +219,7 @@ export const projects: Project[] = [
           },
           {
             name: 'Trip log',
-            text: 'Drives and walks record on their own. Each route shows your speed at each camera, green or red.',
+            text: 'Drives and walks record on their own. Each route shows your speed at each camera, green or red. The speeds stay on your phone.',
           },
           {
             name: 'Share a trip',
@@ -276,7 +276,10 @@ export const projects: Project[] = [
           { name: 'Lenses', text: 'A chip per lens the phone has, over one zoom scale.' },
           { name: 'Focus', text: 'AF-C follows a moving subject and faces. A tap focuses on a point.' },
           { name: 'White balance', text: 'Auto, presets or kelvin on a dial.' },
-          { name: 'Exposure', text: 'ISO and shutter, each auto or manual in third stops. FIT sets both for the scene.' },
+          {
+            name: 'Exposure',
+            text: 'ISO and shutter, each auto or manual in third stops. FIT sets both for the scene.',
+          },
           { name: 'Color', text: 'One saturation value for the COLOR dial and the Color slider.' },
           {
             name: 'Photo, video and flash',
