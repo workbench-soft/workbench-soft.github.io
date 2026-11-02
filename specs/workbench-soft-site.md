@@ -277,3 +277,12 @@ The studio needed one public site for its apps and their installers.
 - **Changes**
   - **`src/data/projects.ts`** a `client` kind in `kinds`, and the entry with `repo: 'alina-photo'`.
   - **`src/i18n/`** the section label and the entry in each catalog.
+
+#### 2026-11-03 Shuttrix privacy policy
+
+- **Why** AdMob won't save the Shuttrix GDPR message without a privacy policy URL, and the Play listing needs one too.
+- **What the visitor gets** <https://workbench-soft.com/shuttrix/privacy-policy>: photos, videos and their GPS tags stay on the phone, no data goes to the developer, the AdMob banner in the gallery, the consent form in the EEA, the UK and Switzerland, and "Ad privacy choices" in Settings.
+- **Changes**
+  - **`shuttrix/`** a Jekyll folder built like `memories-mobile/`: `_config.yml`, a plain layout, the analytics include and `privacy-policy.md`.
+  - **`.github/workflows/pages.yml`** a Jekyll step builds it into `_site/shuttrix`.
+  - **Docs** `README.md`, `docs/architecture.md`, `CHANGELOG.md`.
