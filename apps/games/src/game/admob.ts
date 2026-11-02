@@ -49,8 +49,8 @@ async function resyncBanner(): Promise<void> {
 }
 
 /** The Show test ads box on the developer's phone. */
-export function setDevAdsShown(shown: boolean): void {
-  saveDevAdsShown(shown);
+export function setDevAdsShown(on: boolean): void {
+  saveDevAdsShown(on);
   void resyncBanner();
 }
 
