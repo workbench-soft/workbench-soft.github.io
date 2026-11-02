@@ -54,6 +54,7 @@ const fr: Catalog = {
       kinds: {
         app: 'Apps pour tous',
         tool: 'Outils pour développeurs',
+        client: 'Développement pour les clients',
         internal: 'Outils internes du studio',
         archive: 'Archives',
       },
@@ -767,6 +768,29 @@ const fr: Catalog = {
             ],
             ['Versions', 'Chaque push sur main qui passe les contrôles devient une version datée avec ses notes.'],
             ['Se met à jour seul', 'Le PC installe chaque version quelques minutes après la fusion.'],
+          ],
+        },
+      ],
+    },
+    'alina-photo': {
+      tagline: 'Portfolio et réservation pour une photographe de famille à Sydney.',
+      lede: 'Un site pour Alina, photographe de famille et de grossesse. Les clients parcourent ses galeries, réservent une séance sur place à une heure libre et reçoivent leurs photos par un lien privé.',
+      links: [],
+      groups: [
+        {
+          features: [
+            ['Portfolio', 'Des galeries par type de séance, avec une vue plein écran et le balayage.'],
+            ['Réservation', 'Choisir une séance, un jour et une heure libre. Les heures dorées portent un soleil.'],
+            ['Questions', 'Un court formulaire pour qui n’est pas prêt à réserver, avec réponse par e-mail.'],
+            [
+              'Administration',
+              'Connexion par lien e-mail, envoi et retouche des photos, confirmation des réservations, horaires et formules.',
+            ],
+            [
+              'Synchronisation du calendrier',
+              'Les créneaux occupés de Google Agenda bloquent les réservations, et un flux montre chaque réservation.',
+            ],
+            ['Galeries clients', 'Un lien privé avec des épreuves filigranées, puis tous les originaux en un ZIP.'],
           ],
         },
       ],

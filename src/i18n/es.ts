@@ -53,6 +53,7 @@ const es: Catalog = {
       kinds: {
         app: 'Apps para personas',
         tool: 'Herramientas para desarrolladores',
+        client: 'Desarrollo para clientes',
         internal: 'Herramientas internas del estudio',
         archive: 'Archivo',
       },
@@ -727,6 +728,32 @@ const es: Catalog = {
             ],
             ['Versiones', 'Cada push a main que pasa las comprobaciones recibe una versión con fecha y notas.'],
             ['Se actualiza solo', 'El PC instala cada versión minutos después del merge.'],
+          ],
+        },
+      ],
+    },
+    'alina-photo': {
+      tagline: 'Portafolio y reservas para una fotógrafa familiar en Sídney.',
+      lede: 'Un sitio para Alina, fotógrafa de familias y embarazo. Los clientes ven sus galerías, reservan una sesión en exteriores a una hora libre y reciben sus fotos por un enlace privado.',
+      links: [],
+      groups: [
+        {
+          features: [
+            ['Portafolio', 'Galerías por tipo de sesión con vista a pantalla completa y deslizamiento.'],
+            ['Reservas', 'Elegir una sesión, un día y una hora libre. Las horas doradas llevan un sol.'],
+            ['Preguntas', 'Un formulario breve para quien aún no quiere reservar, con respuesta por correo.'],
+            [
+              'Administración',
+              'Acceso con enlace por correo, subir y editar fotos, confirmar reservas, horarios y paquetes.',
+            ],
+            [
+              'Sincronización del calendario',
+              'Las horas ocupadas en Google Calendar bloquean reservas, y un feed muestra cada reserva.',
+            ],
+            [
+              'Galerías de clientes',
+              'Un enlace privado con pruebas con marca de agua y luego todos los originales en un ZIP.',
+            ],
           ],
         },
       ],

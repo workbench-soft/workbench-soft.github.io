@@ -53,6 +53,7 @@ const nb: Catalog = {
       kinds: {
         app: 'Apper for folk',
         tool: 'Verktøy for utviklere',
+        client: 'Utvikling for kunder',
         internal: 'Interne verktøy i studioet',
         archive: 'Arkiv',
       },
@@ -670,6 +671,26 @@ const nb: Catalog = {
             ['Skyløpere først', 'Jobber bygger på gratis skyløpere så lenge minuttene varer, så på denne PC-en.'],
             ['Utgivelser', 'Hver push til main som består sjekkene, blir en datert utgivelse med notater.'],
             ['Oppdaterer seg selv', 'PC-en installerer hver utgivelse noen minutter etter sammenslåingen.'],
+          ],
+        },
+      ],
+    },
+    'alina-photo': {
+      tagline: 'Portefølje og booking for en familiefotograf i Sydney.',
+      lede: 'Et nettsted for Alina, fotograf for familier og gravide. Kundene ser galleriene hennes, booker en fotografering på stedet til en ledig tid og får bildene sine via en privat lenke.',
+      links: [],
+      groups: [
+        {
+          features: [
+            ['Portefølje', 'Gallerier etter type fotografering, med fullskjermvisning og sveip.'],
+            ['Booking', 'Velg fotografering, dag og ledig tid. Tider i den gylne timen har en sol.'],
+            ['Spørsmål', 'Et kort skjema for dem som ikke er klare til å booke, med svar på e-post.'],
+            [
+              'Administrasjon',
+              'Innlogging med lenke på e-post, last opp og rediger bilder, bekreft bookinger, tider og pakker.',
+            ],
+            ['Kalendersynk', 'Opptatte tider i Google Kalender stenger booking, og en feed viser hver booking.'],
+            ['Kundegallerier', 'En privat lenke med prøvebilder med vannmerke, deretter alle originalene som ZIP.'],
           ],
         },
       ],

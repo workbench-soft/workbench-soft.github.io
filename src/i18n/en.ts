@@ -52,6 +52,7 @@ export const en = {
     kinds: {
       app: 'Apps for people',
       tool: 'Tools for developers',
+      client: 'Development for clients',
       internal: 'Internal studio tools',
       archive: 'Archive',
     },
