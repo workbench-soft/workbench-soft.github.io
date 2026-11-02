@@ -76,6 +76,18 @@ const es: Catalog = {
       project: 'Proyecto',
       feature: 'Función',
     },
+    feedback: {
+      open: 'Opinión',
+      title: 'Dile al estudio lo que piensas',
+      intro: 'Un error, una idea o una pregunta sobre cualquier app. Basta una línea.',
+      message: 'Mensaje',
+      email: 'Email para responderte, si quieres respuesta',
+      send: 'Enviar',
+      sending: 'Enviando…',
+      sent: 'Gracias, el mensaje llegó al estudio.',
+      failed: 'El mensaje no se envió. Escribe a {email}.',
+      close: 'Cerrar',
+    },
     footer: {
       noAds: 'Este sitio no muestra anuncios.',
       releases: 'Versiones',

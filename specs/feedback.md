@@ -39,8 +39,10 @@
 
 ## Limits
 
-- **Activation** FormSubmit holds the first post until someone presses the
-  link in its activation mail to `hello@workbench-soft.com`.
+- **Activation** FormSubmit holds the first post from each site address,
+  such as `https://workbench-soft.com/`, until someone presses Activate Form
+  in its mail to `hello@workbench-soft.com`. A post from `localhost` asks for
+  its own activation.
 - **Third party** the message passes through FormSubmit's servers.
 - **Main site only** the Games, Langflip, Memories and Media Organizer pages
   keep their own layouts. They MAY link to `/#feedback`.
@@ -55,4 +57,5 @@
   renders it and gets a footer link. Each catalog gets a `feedback` block.
 - **Steps** this spec, then the component and the catalogs, then the docs.
 - **Docs** `docs/features.md` gets a Feedback heading, `docs/user-flows.md`
-  a flow, `CHANGELOG.md` a line, and the studio entry on the site lists it.
+  a flow, and `CHANGELOG.md` a line. The site has no project entry of its own, so
+  `projects.ts` stays as it is.

@@ -32,6 +32,23 @@ flowchart LR
   hero --> start["Start a project"] --> mail
 ```
 
+## A visitor sends feedback
+
+1. The visitor presses Feedback in the corner, the footer link, or opens a `#feedback` link.
+2. The dialog opens with the cursor in the message box.
+3. The visitor types the message and, for a reply, an email.
+4. Send, or `Ctrl+Enter`, posts it. The dialog says it reached the studio, or gives the email address on a failure.
+
+```mermaid
+flowchart LR
+  any["Any point of any page"] --> button["Feedback button"] --> dialog["Feedback dialog"]
+  footer["Footer link"] --> dialog
+  link["#feedback link"] --> dialog
+  dialog --> send["Send"]
+  send -->|ok| thanks["Thanks line"]
+  send -->|failed| mail["Email address to write to"]
+```
+
 ## A visitor finds a feature
 
 1. The visitor presses `Ctrl+K` or `/`.
