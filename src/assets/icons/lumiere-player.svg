@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><title>Stained glass: a play triangle cut into bright panes</title>
+<rect width="256" height="256" rx="56" fill="#111"/>
+<path d="M76 44V212L216 128Z" fill="#111"/>
+<path d="M84 58 84 128 140 92z" fill="#22d3ee"/><path d="M84 128 140 92 140 164z" fill="#ff2bd6"/>
+<path d="M84 128 84 198 140 164z" fill="#facc15"/><path d="M140 92 140 164 200 128z" fill="#a855f7"/>
+<path d="M84 58V198L200 128ZM84 128 140 92V164ZM140 92 84 58M140 164 84 198" fill="none" stroke="#111" stroke-width="10" stroke-linejoin="round"/></svg>
