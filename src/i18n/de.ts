@@ -272,6 +272,10 @@ const de: Catalog = {
             ],
             ['Zu schnell', '„Sie fahren 72. Bitte langsamer.“ Nur nahe Blitzern oder auf jeder Straße.'],
             [
+              'Laute Warnungen',
+              'Volle Lautstärke aus dem Handylautsprecher, auch lautlos oder mit Bluetooth. Jeder Teil hat einen Schalter.',
+            ],
+            [
               'Fahrtenbuch',
               'Fahrten und Spaziergänge zeichnen sich selbst auf. Jede Route zeigt Ihr Tempo an jedem Blitzer, grün oder rot.',
             ],
