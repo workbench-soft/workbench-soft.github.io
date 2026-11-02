@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><title>Vintage badge: mountains and an anvil in a round forge stamp</title>
+<rect width="256" height="256" rx="56" fill="#f5ecd7"/>
+<circle cx="128" cy="128" r="110" fill="#2b4a3a"/><circle cx="128" cy="128" r="96" fill="none" stroke="#f5ecd7" stroke-width="6"/>
+<g transform="translate(26 10) scale(.8)"><path d="M64 130 108 60 132 94 160 46 206 130Z" fill="#d9a441"/><path d="M108 60 122 82 112 78 100 88zM160 46 178 78 166 72 152 82z" fill="#f5ecd7"/><path d="M28 130H210V156H176Q160 160 158 176V188H186V212H70V188H98V176Q96 160 80 158Q50 152 28 130Z" fill="#f5ecd7"/></g></svg>

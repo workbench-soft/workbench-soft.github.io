@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **App icons** Tripforge shows its badge of peaks on an anvil, and Lumiere Player gets its stained glass play mark in place of the letter tile.
+
 - **Sky Altar** lists Camera stars: a dim camera, stars on it that twinkle with sparks, and a gold flash when they match the sky.
 - **Songfactory** lists Cleanup of AI artifacts: the build cleans each song and keeps the original.
 - **Order form** the Contact section takes orders right on the page, and the corner button turned from Feedback into Order an app, which scrolls to it. Email stays as a backup line.
