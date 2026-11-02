@@ -46,7 +46,13 @@ const fr: Catalog = {
       features: 'Fonctions',
       platforms: 'Plateformes',
       stack: 'Technologies',
-      kinds: { app: 'Apps', tool: 'Outils pour développeurs', archive: 'Archives' },
+      shot: 'Écran {n} de {name}',
+      kinds: {
+        app: 'Apps pour tous',
+        tool: 'Outils pour développeurs',
+        internal: 'Outils internes du studio',
+        archive: 'Archives',
+      },
     },
     process: {
       title: 'De la première spécification au store',
@@ -812,6 +818,88 @@ const fr: Catalog = {
             ['Main ou master d’abord', 'Les liens pointent vers une branche qui contient déjà le fichier.'],
             ['Hôtes et URL personnalisées', 'GitHub, serveurs GitHub, GitLab, Bitbucket et Bitbucket Server.'],
             ['Langues', "Commandes, réglages et messages suivent la langue d'affichage de VS Code."],
+          ],
+        },
+      ],
+    },
+    archon: {
+      tagline: 'Le lanceur du studio qui confie le travail aux agents de code.',
+      lede: 'Archon réunit tout le dossier de travail dans une fenêtre. Il ouvre chaque app sur le téléphone ou le PC, confie des tâches à Claude Code dans une console par dépôt et montre ce qui tourne en ce moment.',
+      links: [],
+      groups: [
+        {
+          title: 'Sur chaque page',
+          features: [
+            ['Demander à Archon', 'Une commande dite ou tapée choisit l’outil et ouvre son onglet.'],
+            ['Bande des tâches', 'Chaque tâche en cours, avec le temps écoulé et le temps restant.'],
+          ],
+        },
+        {
+          title: 'Chaque jour',
+          features: [
+            ['Apps', 'Installer, mettre à jour et ouvrir chaque app sur le téléphone, la TV ou le PC.'],
+            ['Pubs sur ce téléphone', 'Cache les pubs ou montre des pubs de test, dans toutes les apps ou une seule.'],
+            ['À faire', 'Les points ouverts de chaque TODO.md partent vers un agent en un clic.'],
+            ['Sessions', 'Les sessions d’agent arrêtées trop tôt reprennent d’une case cochée.'],
+          ],
+        },
+        {
+          title: 'Dépôts',
+          features: [
+            ['Agents', 'Cochez des dépôts, choisissez une tâche comme un audit, chacun reçoit une console.'],
+            ['Docs', 'Le README, les docs et les specs de chaque dépôt, avec les schémas dessinés.'],
+            ['Règles', 'Les règles que lit chaque agent, et les manques de chaque dépôt.'],
+            ['Branches', 'Chaque branche et worktree, à garder, fusionner ou supprimer.'],
+            ['Paquets', 'Chaque paquet avec sa dernière version, mis à jour par un agent.'],
+          ],
+        },
+        {
+          title: 'Services et réglages',
+          features: [
+            ['CI, Reddit et Memories', 'Les pages de la CI, de Reddit Desk et de l’indexeur du NAS en onglets.'],
+            ['Chansons', 'Construit et publie les vidéos de songfactory, avec la progression.'],
+            ['Voix', 'Choisit la voix de chaque agent.'],
+            ['Clés', 'L’âge de chaque secret de CI, et son renouvellement par un agent.'],
+          ],
+        },
+      ],
+    },
+    'agent-skills-private': {
+      tagline: 'Les règles et skills de l’organisation, par-dessus Agent Skills.',
+      lede: 'Les skills liés à l’organisation workbench-soft. Ils déplacent des dépôts, installent la CI, renouvellent les secrets et font que chaque session d’agent planifie, livre et rend compte de la même façon.',
+      links: [],
+      groups: [
+        {
+          features: [
+            [
+              'Déplacer un dépôt',
+              'Déplace un dépôt dans l’organisation et le rend privé, avec une CI qui reste gratuite.',
+            ],
+            [
+              'CI et releases pour chaque dépôt',
+              'Vérifie Checks et Release dans chaque dépôt et ajoute ceux qui manquent.',
+            ],
+            ['Réécrire un dépôt', 'Nouveaux noms, dossiers et docs, pour le même comportement.'],
+            ['Renouveler les secrets', 'Renouvelle les secrets de CI et les clés, app par app.'],
+            ['Règles de travail', 'Une spec d’abord, une fusion tout de suite, un test groupé ensuite.'],
+            ['Releases', 'Une release datée pour chaque push vert sur main.'],
+          ],
+        },
+      ],
+    },
+    'memories-demo-webdav': {
+      tagline: 'Un NAS d’exemple avec des photos pour la revue Google Play.',
+      lede: 'Un serveur WebDAV avec des photos d’exemple, pour qu’un relecteur Google Play se connecte à Memories sans NAS à lui. Il tourne comme Cloudflare Worker sur l’offre gratuite.',
+      links: [],
+      groups: [
+        {
+          features: [
+            [
+              'Bibliothèque d’exemple',
+              '42 photos et 2 vidéos de 2015 à 2025, certaines avec des repères sur la carte.',
+            ],
+            ['Connexion', 'Un identifiant de relecteur, comme le demande un vrai NAS.'],
+            ['Envois et tri', 'Envois et déplacements marchent, une tâche de nuit les efface.'],
           ],
         },
       ],

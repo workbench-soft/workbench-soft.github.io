@@ -45,7 +45,13 @@ const es: Catalog = {
       features: 'Funciones',
       platforms: 'Plataformas',
       stack: 'Tecnologías',
-      kinds: { app: 'Apps', tool: 'Herramientas para desarrolladores', archive: 'Archivo' },
+      shot: 'Pantalla {n} de {name}',
+      kinds: {
+        app: 'Apps para personas',
+        tool: 'Herramientas para desarrolladores',
+        internal: 'Herramientas internas del estudio',
+        archive: 'Archivo',
+      },
     },
     process: {
       title: 'De la primera especificación a la tienda',
@@ -766,6 +772,82 @@ const es: Catalog = {
             ['Primero main o master', 'Los enlaces apuntan a una rama que ya tiene el archivo.'],
             ['Hosts y URL propias', 'GitHub, servidores de GitHub, GitLab, Bitbucket y Bitbucket Server.'],
             ['Idiomas', 'Comandos, ajustes y mensajes siguen el idioma de VS Code.'],
+          ],
+        },
+      ],
+    },
+    archon: {
+      tagline: 'El lanzador del estudio que reparte el trabajo entre agentes de código.',
+      lede: 'Archon reúne toda la carpeta de trabajo en una ventana. Abre cada app en el teléfono o el PC, da tareas a Claude Code en una consola por repo y muestra lo que corre ahora mismo.',
+      links: [],
+      groups: [
+        {
+          title: 'En cada página',
+          features: [
+            ['Pregunta a Archon', 'Una orden dicha o escrita elige la herramienta y abre su pestaña.'],
+            ['Barra de tareas', 'Cada tarea en curso, con el tiempo pasado y el que falta.'],
+          ],
+        },
+        {
+          title: 'Cada día',
+          features: [
+            ['Apps', 'Instalar, actualizar y abrir cada app en el teléfono, la TV o el PC.'],
+            [
+              'Anuncios en este teléfono',
+              'Oculta los anuncios o muestra anuncios de prueba, en todas las apps o en una.',
+            ],
+            ['Pendientes', 'Los puntos abiertos de cada TODO.md van a un agente con un clic.'],
+            ['Sesiones', 'Las sesiones de agente que pararon antes de tiempo siguen con una marca.'],
+          ],
+        },
+        {
+          title: 'Repos',
+          features: [
+            ['Agentes', 'Marca repos, elige una tarea como una auditoría y cada uno recibe una consola.'],
+            ['Docs', 'El README, docs y specs de cada repo, con los diagramas dibujados.'],
+            ['Reglas', 'Las reglas que lee cada agente y lo que le falta a cada repo.'],
+            ['Ramas', 'Cada rama y worktree, para conservar, fusionar o borrar.'],
+            ['Paquetes', 'Cada paquete con su versión más nueva, actualizado por un agente.'],
+          ],
+        },
+        {
+          title: 'Servicios y ajustes',
+          features: [
+            ['CI, Reddit y Memories', 'Las páginas de la CI, Reddit Desk y el indexador del NAS en pestañas.'],
+            ['Canciones', 'Crea y publica los vídeos de songfactory, con su progreso.'],
+            ['Voces', 'Elige la voz con la que habla cada agente.'],
+            ['Claves', 'La edad de cada secreto de CI y su renovación con un agente.'],
+          ],
+        },
+      ],
+    },
+    'agent-skills-private': {
+      tagline: 'Las reglas y skills de la organización sobre Agent Skills.',
+      lede: 'Los skills ligados a la organización workbench-soft. Mueven repos, configuran la CI, renuevan secretos y hacen que cada sesión de agente planifique, publique e informe igual.',
+      links: [],
+      groups: [
+        {
+          features: [
+            ['Mover un repo', 'Mueve un repo a la organización y lo hace privado, con la CI aún gratis.'],
+            ['CI y releases para cada repo', 'Revisa Checks y Release en cada repo y añade los que faltan.'],
+            ['Reescribir un repo', 'Nombres, carpetas y docs nuevos, con el mismo comportamiento.'],
+            ['Renovar secretos', 'Renueva los secretos de CI y las claves, app por app.'],
+            ['Reglas de trabajo', 'Primero una spec, fusión enseguida, prueba en lote después.'],
+            ['Releases', 'Una release con fecha por cada push verde a main.'],
+          ],
+        },
+      ],
+    },
+    'memories-demo-webdav': {
+      tagline: 'Un NAS de ejemplo con fotos para la revisión de Google Play.',
+      lede: 'Un servidor WebDAV con fotos de ejemplo, para que un revisor de Google Play entre en Memories sin un NAS propio. Corre como Cloudflare Worker en el plan gratuito.',
+      links: [],
+      groups: [
+        {
+          features: [
+            ['Biblioteca de ejemplo', '42 fotos y 2 vídeos de 2015 a 2025, algunos con marcas en el mapa.'],
+            ['Inicio de sesión', 'Un usuario de revisor, como lo pide un NAS real.'],
+            ['Subidas y orden', 'Subir y mover funciona, y una tarea nocturna lo limpia.'],
           ],
         },
       ],

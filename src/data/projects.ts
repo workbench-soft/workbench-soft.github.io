@@ -1,6 +1,6 @@
 // Each project's text comes from its repo: docs/features.md and the README.
 
-export type Kind = 'app' | 'tool' | 'archive';
+export type Kind = 'app' | 'tool' | 'internal' | 'archive';
 
 export interface Feature {
   name: string;
@@ -31,7 +31,7 @@ export interface Project {
 }
 
 /** The order of the filter chips and the groups. Their labels sit in src/i18n/. */
-export const kinds: Kind[] = ['app', 'tool', 'archive'];
+export const kinds: Kind[] = ['app', 'tool', 'internal', 'archive'];
 
 export const projects: Project[] = [
   {
@@ -918,96 +918,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 'reddit-desk',
-    kind: 'tool',
-    repo: 'reddit-desk',
-    hue: 20,
-    code: 'RDK',
-    name: 'Reddit Desk',
-    tagline: 'Drafts Reddit comments about a repo and types them into Chrome.',
-    lede: 'A Windows app for the taskbar. Pick a repo, press Find, and Claude Code drafts a comment for each thread the repo can answer. Open a card and Chrome gets the draft, ready to post by hand.',
-    platforms: ['Windows'],
-    stack: ['Tauri', 'Rust', 'React', 'Claude Code'],
-    links: [],
-    groups: [
-      {
-        features: [
-          { name: 'Repo picker', text: 'A dropdown lists each git folder under the root.' },
-          { name: 'Subreddits', text: 'Claude reads the repo and fills in the subs that fit it.' },
-          { name: 'Find threads', text: 'Claude Code finds threads the repo can answer and drafts a comment.' },
-          { name: 'Cards', text: 'Each card shows the sub, the thread title and the draft to edit.' },
-          { name: 'Open in Chrome', text: 'Chrome opens the thread with the comment typed in, ready to post.' },
-          { name: 'Posts tab', text: 'Drafts posts that promote the picked repos in fitting subs.' },
-          { name: 'Screenshots and videos', text: "Each post lists media from the repo's screenshots folder." },
-          { name: 'Open a post', text: "Chrome opens the sub's submit page with the post filled in." },
-          { name: 'Ban risk', text: 'A line rates the next post, and each card rates its sub.' },
-          { name: 'Tester post', text: 'A post that asks for testers of an Android app, from a list of apps.' },
-          { name: 'Inside Archon', text: 'The Reddit tab of Archon shows this window in a frame.' },
-          { name: 'Info button', text: 'The i button explains the Reddit setup.' },
-          { name: 'Language', text: "Settings has a language dropdown: the system's or one of 9." },
-          { name: 'Done list', text: 'Each posted and skipped thread with its date.' },
-        ],
-      },
-    ],
-  },
-  {
-    id: 'songfactory',
-    kind: 'tool',
-    repo: 'songfactory',
-    hue: 330,
-    code: 'SGF',
-    name: 'Songfactory',
-    tagline: 'Turns a folder of songs into a long looping YouTube video and uploads it.',
-    lede: 'Songfactory joins the songs of one theme over a looping background clip, writes the chapters and the thumbnail, and uploads the video on a schedule. Claude writes the text, and ComfyUI can draw the background.',
-    platforms: ['Windows'],
-    stack: ['ffmpeg', 'Python', 'ComfyUI', 'YouTube API'],
-    links: [],
-    groups: [
-      {
-        features: [
-          { name: 'Install and check the setup', text: 'One script installs the tools, and a doctor checks them.' },
-          {
-            name: 'Long video from a playlist',
-            text: 'The songs of a theme folder join with a crossfade over a looping clip.',
-          },
-          { name: 'Seamless loop', text: 'The clip plays forward then backward, so a jump at the end goes away.' },
-          {
-            name: 'Chapters and thumbnail',
-            text: 'The description lists each song with its start time, and a thumbnail gets made.',
-          },
-          { name: 'Scheduled upload', text: 'One command uploads with the AI label and a publish time.' },
-          { name: 'Text from Claude', text: 'Claude writes the YouTube title and description from the songs.' },
-          {
-            name: 'Background from ComfyUI',
-            text: 'A prompt in the theme file makes ComfyUI draw the background clip.',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: 'speed-camera-location-scraper',
-    kind: 'tool',
-    repo: 'speed-camera-location-scraper',
-    hue: 40,
-    code: 'SCS',
-    name: 'Speed Camera Scraper',
-    tagline: 'Merges the Australian speed camera lists into one CSV.',
-    lede: 'The scraper opens each state page of the camera lists, saves each camera file and merges them into one CSV, a row per camera with its state. SpotTheCam reads its camera sites from it.',
-    platforms: ['Windows', 'macOS'],
-    stack: ['Node', 'Playwright', 'Python'],
-    links: [],
-    groups: [
-      {
-        features: [
-          { name: 'Scan the state pages', text: 'Opens each state page and saves each camera file it lists.' },
-          { name: 'One CSV of cameras', text: 'A row per camera with its state, for SpotTheCam.' },
-          { name: 'Checks and releases', text: 'Each push to main is checked and becomes a dated release.' },
-        ],
-      },
-    ],
-  },
-  {
     id: 'local-ci',
     kind: 'tool',
     repo: 'local-ci',
@@ -1033,32 +943,6 @@ export const projects: Project[] = [
           },
           { name: 'Releases', text: 'Each push to main that passes the checks gets a dated release with notes.' },
           { name: 'Updates by themselves', text: 'The PC installs each release within minutes of the merge.' },
-        ],
-      },
-    ],
-  },
-  {
-    id: 'ci',
-    kind: 'tool',
-    repo: 'ci',
-    hue: 225,
-    code: 'CI',
-    name: 'ci',
-    tagline: 'Shared GitHub Actions steps for each repo.',
-    lede: 'One fix here reaches each repo on its next run.',
-    platforms: ['GitHub Actions'],
-    stack: ['YAML', 'mise', 'pnpm', 'Dependabot'],
-    links: [],
-    groups: [
-      {
-        features: [
-          { name: 'Setup step', text: 'Installs the tools a repo pins in mise, then its packages from the lockfile.' },
-          { name: 'Dependabot details', text: 'Stores the update type of each Dependabot PR for the merge job.' },
-          {
-            name: 'Dependabot auto merge',
-            text: 'Merges a Dependabot PR once each check passes. A major update waits for a person.',
-          },
-          { name: 'Releases', text: 'Each push to main that passes the checks gets a dated release with notes.' },
         ],
       },
     ],
@@ -1150,6 +1034,221 @@ export const projects: Project[] = [
           { name: 'Main or master first', text: 'Links point at a branch that already holds the file.' },
           { name: 'Hosts and mapped URLs', text: 'GitHub, GitHub servers, GitLab, Bitbucket and Bitbucket Server.' },
           { name: 'Languages', text: 'Commands, settings and messages follow the VS Code display language.' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'ci',
+    kind: 'internal',
+    repo: 'ci',
+    hue: 225,
+    code: 'CI',
+    name: 'ci',
+    tagline: 'Shared GitHub Actions steps for each repo.',
+    lede: 'One fix here reaches each repo on its next run.',
+    platforms: ['GitHub Actions'],
+    stack: ['YAML', 'mise', 'pnpm', 'Dependabot'],
+    links: [],
+    groups: [
+      {
+        features: [
+          { name: 'Setup step', text: 'Installs the tools a repo pins in mise, then its packages from the lockfile.' },
+          { name: 'Dependabot details', text: 'Stores the update type of each Dependabot PR for the merge job.' },
+          {
+            name: 'Dependabot auto merge',
+            text: 'Merges a Dependabot PR once each check passes. A major update waits for a person.',
+          },
+          { name: 'Releases', text: 'Each push to main that passes the checks gets a dated release with notes.' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'reddit-desk',
+    kind: 'internal',
+    repo: 'reddit-desk',
+    hue: 20,
+    code: 'RDK',
+    name: 'Reddit Desk',
+    tagline: 'Drafts Reddit comments about a repo and types them into Chrome.',
+    lede: 'A Windows app for the taskbar. Pick a repo, press Find, and Claude Code drafts a comment for each thread the repo can answer. Open a card and Chrome gets the draft, ready to post by hand.',
+    platforms: ['Windows'],
+    stack: ['Tauri', 'Rust', 'React', 'Claude Code'],
+    links: [],
+    groups: [
+      {
+        features: [
+          { name: 'Repo picker', text: 'A dropdown lists each git folder under the root.' },
+          { name: 'Subreddits', text: 'Claude reads the repo and fills in the subs that fit it.' },
+          { name: 'Find threads', text: 'Claude Code finds threads the repo can answer and drafts a comment.' },
+          { name: 'Cards', text: 'Each card shows the sub, the thread title and the draft to edit.' },
+          { name: 'Open in Chrome', text: 'Chrome opens the thread with the comment typed in, ready to post.' },
+          { name: 'Posts tab', text: 'Drafts posts that promote the picked repos in fitting subs.' },
+          { name: 'Screenshots and videos', text: "Each post lists media from the repo's screenshots folder." },
+          { name: 'Open a post', text: "Chrome opens the sub's submit page with the post filled in." },
+          { name: 'Ban risk', text: 'A line rates the next post, and each card rates its sub.' },
+          { name: 'Tester post', text: 'A post that asks for testers of an Android app, from a list of apps.' },
+          { name: 'Inside Archon', text: 'The Reddit tab of Archon shows this window in a frame.' },
+          { name: 'Info button', text: 'The i button explains the Reddit setup.' },
+          { name: 'Language', text: "Settings has a language dropdown: the system's or one of 9." },
+          { name: 'Done list', text: 'Each posted and skipped thread with its date.' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'songfactory',
+    kind: 'internal',
+    repo: 'songfactory',
+    hue: 330,
+    code: 'SGF',
+    name: 'Songfactory',
+    tagline: 'Turns a folder of songs into a long looping YouTube video and uploads it.',
+    lede: 'Songfactory joins the songs of one theme over a looping background clip, writes the chapters and the thumbnail, and uploads the video on a schedule. Claude writes the text, and ComfyUI can draw the background.',
+    platforms: ['Windows'],
+    stack: ['ffmpeg', 'Python', 'ComfyUI', 'YouTube API'],
+    links: [],
+    groups: [
+      {
+        features: [
+          { name: 'Install and check the setup', text: 'One script installs the tools, and a doctor checks them.' },
+          {
+            name: 'Long video from a playlist',
+            text: 'The songs of a theme folder join with a crossfade over a looping clip.',
+          },
+          { name: 'Seamless loop', text: 'The clip plays forward then backward, so a jump at the end goes away.' },
+          {
+            name: 'Chapters and thumbnail',
+            text: 'The description lists each song with its start time, and a thumbnail gets made.',
+          },
+          { name: 'Scheduled upload', text: 'One command uploads with the AI label and a publish time.' },
+          { name: 'Text from Claude', text: 'Claude writes the YouTube title and description from the songs.' },
+          {
+            name: 'Background from ComfyUI',
+            text: 'A prompt in the theme file makes ComfyUI draw the background clip.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'speed-camera-location-scraper',
+    kind: 'internal',
+    repo: 'speed-camera-location-scraper',
+    hue: 40,
+    code: 'SCS',
+    name: 'Speed Camera Scraper',
+    tagline: 'Merges the Australian speed camera lists into one CSV.',
+    lede: 'The scraper opens each state page of the camera lists, saves each camera file and merges them into one CSV, a row per camera with its state. SpotTheCam reads its camera sites from it.',
+    platforms: ['Windows', 'macOS'],
+    stack: ['Node', 'Playwright', 'Python'],
+    links: [],
+    groups: [
+      {
+        features: [
+          { name: 'Scan the state pages', text: 'Opens each state page and saves each camera file it lists.' },
+          { name: 'One CSV of cameras', text: 'A row per camera with its state, for SpotTheCam.' },
+          { name: 'Checks and releases', text: 'Each push to main is checked and becomes a dated release.' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'archon',
+    kind: 'internal',
+    hue: 190,
+    code: 'ARC',
+    name: 'Archon',
+    tagline: 'The studio launcher that hands work to coding agents.',
+    lede: 'Archon is one window for the whole workspace. It opens each app on the phone or the PC, gives tasks to Claude Code in a console per repo, and shows what runs right now.',
+    platforms: ['Windows', 'Web'],
+    stack: ['TypeScript', 'Node', 'adb', 'Claude Code'],
+    links: [],
+    groups: [
+      {
+        title: 'On every page',
+        features: [
+          { name: 'Ask Archon', text: 'A spoken or typed command picks the tool and opens its tab.' },
+          { name: 'Runs strip', text: 'Each run in flight, with the time so far and the time left.' },
+        ],
+      },
+      {
+        title: 'Every day',
+        features: [
+          { name: 'Apps', text: 'Install, update and open each app on the phone, the TV or the PC.' },
+          { name: 'Ads on this phone', text: 'Hides the ads or shows test ads, in every app or one.' },
+          { name: 'To do', text: 'The open items of each TODO.md, sent to an agent in one press.' },
+          { name: 'Sessions', text: 'Agent sessions that stopped early, resumed with one tick.' },
+        ],
+      },
+      {
+        title: 'Repos',
+        features: [
+          { name: 'Agents', text: 'Tick repos, pick a task such as an audit, and each gets a console.' },
+          { name: 'Docs', text: 'The README, docs and specs of each repo, with the diagrams drawn.' },
+          { name: 'Rules', text: 'The rules every agent reads, and the gaps each repo has.' },
+          { name: 'Branches', text: 'Each branch and worktree, with keep, merge or delete.' },
+          { name: 'Packages', text: 'Each package with its newest version, updated by an agent.' },
+        ],
+      },
+      {
+        title: 'Services and settings',
+        features: [
+          { name: 'CI, Reddit and Memories', text: 'The pages of the CI, Reddit Desk and the NAS indexer in tabs.' },
+          { name: 'Songs', text: 'Builds and publishes the songfactory videos, with progress.' },
+          { name: 'Voices', text: 'Picks the voice each agent speaks with.' },
+          { name: 'Keys', text: 'The age of each CI secret, and a renewal through an agent.' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'agent-skills-private',
+    kind: 'internal',
+    repo: 'agent-skills-private',
+    hue: 280,
+    code: 'ASP',
+    name: 'Agent Skills, private',
+    tagline: 'The org rules and skills on top of Agent Skills.',
+    lede: 'The skills tied to the workbench-soft org. They move repos, set up CI, rotate secrets, and make each agent session plan, ship and report the same way.',
+    platforms: ['Windows', 'macOS'],
+    stack: ['Markdown', 'Shell', 'Claude Code', 'Codex'],
+    links: [],
+    groups: [
+      {
+        features: [
+          { name: 'Move a repo', text: 'Moves a repo to the org and makes it private, with free CI kept.' },
+          {
+            name: 'CI and releases for every repo',
+            text: 'Checks each repo for Checks and Release, and adds the missing ones.',
+          },
+          { name: 'Rewrite a repo', text: 'New names, folders and docs, with the same behaviour.' },
+          { name: 'Rotate secrets', text: 'Renews the CI secrets and keys, app by app.' },
+          { name: 'Workflow rules', text: 'A spec first, a merge right away, a batch test later.' },
+          { name: 'Releases', text: 'A dated release for each green push to main.' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'memories-demo-webdav',
+    kind: 'internal',
+    repo: 'memories-demo-webdav',
+    hue: 215,
+    code: 'DAV',
+    name: 'Memories demo NAS',
+    tagline: 'A sample photo NAS for the Google Play review.',
+    lede: 'A WebDAV server with sample photos, so a Google Play reviewer can sign in to Memories without a NAS of their own. It runs as a Cloudflare Worker on the free plan.',
+    platforms: ['Cloudflare'],
+    stack: ['TypeScript', 'Cloudflare Workers', 'Durable Objects', 'WebDAV'],
+    links: [],
+    groups: [
+      {
+        features: [
+          { name: 'Sample library', text: '42 photos and 2 videos from 2015 to 2025, some with map pins.' },
+          { name: 'Sign in', text: 'One reviewer login, the way a real NAS asks for it.' },
+          { name: 'Uploads and sorting', text: 'Uploads and moves work, and a nightly job clears them.' },
         ],
       },
     ],

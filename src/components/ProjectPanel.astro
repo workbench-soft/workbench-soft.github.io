@@ -1,5 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import type { Project } from "../data/projects";
+import { iconOf, shotsOf } from "../data/media";
 import { langOf } from "../i18n/locales";
 import { ui } from "../i18n";
 
@@ -11,12 +13,17 @@ interface Props {
 const { project: p, number } = Astro.props;
 const t = ui(langOf(Astro.currentLocale)).projects;
 const no = String(number).padStart(2, "0");
+const icon = iconOf(p.id);
+const shots = shotsOf(p.id);
 ---
 
 <article class="proj" id={p.id} data-kind={p.kind} style={`--hue: ${p.hue}`}>
   <div class="meta">
     <div class="code">{no} / {p.code}</div>
-    <h3>{p.name}</h3>
+    <div class="head">
+      {icon ? <Image class="icon" src={icon} alt="" width={64} height={64} densities={[1, 2]} /> : <span class="icon mono" aria-hidden="true">{p.code}</span>}
+      <h3>{p.name}</h3>
+    </div>
     <p class="tag">{p.tagline}</p>
     <dl>
       <div><dt>{t.platforms}</dt><dd>{p.platforms.map((x) => <span>{x}</span>)}</dd></div>
@@ -32,6 +39,19 @@ const no = String(number).padStart(2, "0");
   </div>
   <div>
     <p class="lede">{p.lede}</p>
+    {
+      shots.length > 0 && (
+        <ul class="shots">
+          {shots.map((s, i) => (
+            <li>
+              <a href={s.src} target="_blank" rel="noopener">
+                <Image src={s} alt={t.shot.replace("{n}", String(i + 1)).replace("{name}", p.name)} height={300} densities={[1, 2]} loading="lazy" />
+              </a>
+            </li>
+          ))}
+        </ul>
+      )
+    }
     <ul class="feats">
       {
         p.groups.map((g) => (
@@ -68,7 +88,15 @@ const no = String(number).padStart(2, "0");
   }
   .code { display: flex; align-items: center; gap: 10px; font: 500 12px var(--mono); letter-spacing: 0.12em; color: var(--acc); }
   .code::before { content: ""; width: 10px; height: 10px; border-radius: 3px; background: var(--acc); box-shadow: 0 0 16px var(--acc); }
-  h3 { font-size: clamp(1.9rem, 3.4vw, 2.6rem); letter-spacing: -0.035em; line-height: 1; margin: 16px 0 12px; }
+  .head { display: flex; align-items: center; gap: 14px; margin: 16px 0 12px; }
+  .icon { flex: none; width: 56px; height: 56px; border-radius: 14px; box-shadow: 0 0 0 1px var(--line), 0 8px 24px var(--glow); }
+  .mono { display: grid; place-items: center; font: 600 13px var(--mono); letter-spacing: 0.06em; color: var(--acc); background: var(--acc-a); }
+  h3 { font-size: clamp(1.9rem, 3.4vw, 2.6rem); letter-spacing: -0.035em; line-height: 1; margin: 0; }
+  .shots { list-style: none; margin: 0 0 24px; padding: 0 0 10px; display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; }
+  .shots li { flex: none; scroll-snap-align: start; }
+  .shots img { display: block; height: 300px; width: auto; border-radius: 12px; border: 1px solid var(--line); transition: border-color 0.2s; }
+  .shots a:hover img { border-color: var(--acc); }
+  @media (max-width: 640px) { .shots img { height: 240px; } }
   .tag { color: var(--soft); margin: 0 0 22px; font-size: 1.05rem; }
   dl { margin: 0 0 22px; display: grid; gap: 12px; }
   dt { font: 500 10.5px var(--mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--dim); margin-bottom: 4px; }

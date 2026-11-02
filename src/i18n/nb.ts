@@ -45,7 +45,13 @@ const nb: Catalog = {
       features: 'Funksjoner',
       platforms: 'Plattformer',
       stack: 'Teknologi',
-      kinds: { app: 'Apper', tool: 'Utviklerverktøy', archive: 'Arkiv' },
+      shot: 'Skjerm {n} av {name}',
+      kinds: {
+        app: 'Apper for folk',
+        tool: 'Verktøy for utviklere',
+        internal: 'Interne verktøy i studioet',
+        archive: 'Arkiv',
+      },
     },
     process: {
       title: 'Fra første spesifikasjon til butikken',
@@ -703,6 +709,79 @@ const nb: Catalog = {
             ['Main eller master først', 'Lenkene peker på en gren som allerede har filen.'],
             ['Verter og tilordnede URL-er', 'GitHub, GitHub-servere, GitLab, Bitbucket og Bitbucket Server.'],
             ['Språk', 'Kommandoer, innstillinger og meldinger følger visningsspråket i VS Code.'],
+          ],
+        },
+      ],
+    },
+    archon: {
+      tagline: 'Studioets oppstarter som gir arbeid til kodeagenter.',
+      lede: 'Archon samler hele arbeidsmappen i ett vindu. Den åpner hver app på telefonen eller PC-en, gir Claude Code oppgaver i en konsoll per repo og viser hva som kjører akkurat nå.',
+      links: [],
+      groups: [
+        {
+          title: 'På hver side',
+          features: [
+            ['Spør Archon', 'En talt eller skrevet kommando velger verktøyet og åpner fanen.'],
+            ['Kjørelinje', 'Hver jobb som kjører, med tid brukt og tid igjen.'],
+          ],
+        },
+        {
+          title: 'Hver dag',
+          features: [
+            ['Apper', 'Installer, oppdater og åpne hver app på telefonen, TV-en eller PC-en.'],
+            ['Reklame på denne telefonen', 'Skjuler reklamen eller viser testreklame, i alle apper eller én.'],
+            ['Gjøremål', 'De åpne punktene i hver TODO.md går til en agent med ett trykk.'],
+            ['Økter', 'Agentøkter som stoppet for tidlig, fortsetter med ett kryss.'],
+          ],
+        },
+        {
+          title: 'Repoer',
+          features: [
+            ['Agenter', 'Kryss av repoer, velg en oppgave som en revisjon, og hvert får en konsoll.'],
+            ['Dokumenter', 'README, docs og spesifikasjoner for hvert repo, med diagrammene tegnet.'],
+            ['Regler', 'Reglene hver agent leser, og hullene i hvert repo.'],
+            ['Grener', 'Hver gren og worktree, med behold, flett eller slett.'],
+            ['Pakker', 'Hver pakke med nyeste versjon, oppdatert av en agent.'],
+          ],
+        },
+        {
+          title: 'Tjenester og innstillinger',
+          features: [
+            ['CI, Reddit og Memories', 'Sidene til CI, Reddit Desk og NAS-indekseren i faner.'],
+            ['Sanger', 'Bygger og publiserer songfactory-videoene, med fremdrift.'],
+            ['Stemmer', 'Velger stemmen hver agent snakker med.'],
+            ['Nøkler', 'Alderen til hver CI-hemmelighet, og fornyelse gjennom en agent.'],
+          ],
+        },
+      ],
+    },
+    'agent-skills-private': {
+      tagline: 'Organisasjonens regler og ferdigheter oppå Agent Skills.',
+      lede: 'Ferdighetene knyttet til organisasjonen workbench-soft. De flytter repoer, setter opp CI, fornyer hemmeligheter og får hver agentøkt til å planlegge, levere og rapportere likt.',
+      links: [],
+      groups: [
+        {
+          features: [
+            ['Flytt et repo', 'Flytter et repo til organisasjonen og gjør det privat, med gratis CI beholdt.'],
+            ['CI og utgivelser for hvert repo', 'Sjekker Checks og Release i hvert repo og legger til de som mangler.'],
+            ['Skriv om et repo', 'Nye navn, mapper og dokumenter, med samme oppførsel.'],
+            ['Forny hemmeligheter', 'Fornyer CI-hemmeligheter og nøkler, app for app.'],
+            ['Arbeidsregler', 'Først en spesifikasjon, flett med en gang, test samlet senere.'],
+            ['Utgivelser', 'En datert utgivelse for hver grønne push til main.'],
+          ],
+        },
+      ],
+    },
+    'memories-demo-webdav': {
+      tagline: 'En eksempel-NAS med bilder til Google Play-gjennomgangen.',
+      lede: 'En WebDAV-server med eksempelbilder, så en Google Play-kontrollør kan logge inn i Memories uten egen NAS. Den kjører som Cloudflare Worker på gratisplanen.',
+      links: [],
+      groups: [
+        {
+          features: [
+            ['Eksempelbibliotek', '42 bilder og 2 videoer fra 2015 til 2025, noen med kartnåler.'],
+            ['Innlogging', 'Én kontrollørinnlogging, slik en ekte NAS spør etter den.'],
+            ['Opplasting og sortering', 'Opplasting og flytting virker, og en nattlig jobb rydder.'],
           ],
         },
       ],
