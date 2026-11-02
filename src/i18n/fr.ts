@@ -830,19 +830,23 @@ const fr: Catalog = {
       ],
     },
     'site-sources': {
-      tagline: "Une extension Chrome qui enregistre les sources de n'importe quelle page en un clic.",
-      lede: "Un clic sur l'icône, et la page, chaque fichier chargé et le code d'origine de ses source maps arrivent dans un dossier de Téléchargements.",
+      tagline: "Une extension Chrome qui enregistre les sources de n'importe quelle page dans un seul zip.",
+      lede: "Appuyez sur Télécharger dans sa fenêtre et regardez la barre avancer. La page, chaque fichier chargé et le code d'origine des source maps arrivent dans un zip dans Téléchargements.",
       links: [],
       groups: [
         {
           features: [
             [
-              'Enregistrer en un clic',
-              'Le HTML en direct et chaque script, style, image et police, dans les dossiers du serveur.',
+              'Télécharger depuis la fenêtre',
+              "L'icône ouvre une fenêtre avec le site et un bouton Télécharger. Le travail continue quand elle se ferme.",
             ],
+            [
+              'Barre de progression',
+              'Compte les fichiers trouvés, puis se remplit avec 12 sur 40 téléchargés et les échecs.',
+            ],
+            ['Un seul zip', 'Le HTML en direct et chaque script, style, image et police, rangés comme sur le serveur.'],
             ["Sources d'origine", 'Chaque source map avec son code rend les fichiers .ts, .tsx ou .vue.'],
-            ['Badge et titre', 'Le badge compte les fichiers, le titre nomme le dossier.'],
-            ['Langues', 'Le nom et les titres suivent la langue de Chrome.'],
+            ['Langues', 'La fenêtre suit la langue de Chrome.'],
           ],
         },
       ],

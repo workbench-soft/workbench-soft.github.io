@@ -1065,8 +1065,8 @@ export const projects: Project[] = [
     hue: 215,
     code: 'SRC',
     name: 'Site Sources',
-    tagline: 'A Chrome extension that saves the sources of any page with one click.',
-    lede: 'Click its icon and the page, every file it loaded and the original code from its source maps land in a folder under Downloads.',
+    tagline: 'A Chrome extension that saves the sources of any page as one zip.',
+    lede: 'Press Download in its popup and watch the bar fill. The page, every file it loaded and the original code from its source maps land in one zip under Downloads.',
     platforms: ['Chrome'],
     stack: ['TypeScript', 'Chrome Extensions API', 'Vite'],
     links: [],
@@ -1074,12 +1074,16 @@ export const projects: Project[] = [
       {
         features: [
           {
-            name: 'Save on click',
-            text: 'The live HTML and each script, style, image and font, laid out as on the server.',
+            name: 'Download from the popup',
+            text: 'The icon opens a popup with the site and a Download button. It keeps going when the popup closes.',
           },
+          {
+            name: 'Progress bar',
+            text: 'Counts the files it finds, then fills with 12 of 40 downloaded and the ones that failed.',
+          },
+          { name: 'One zip', text: 'The live HTML and each script, style, image and font, laid out as on the server.' },
           { name: 'Original sources', text: 'Each source map with its code gives back the .ts, .tsx or .vue files.' },
-          { name: 'Badge and title', text: 'The badge counts the files, and the title names the folder.' },
-          { name: 'Languages', text: 'The name and the titles follow the Chrome language.' },
+          { name: 'Languages', text: 'The popup follows the Chrome language.' },
         ],
       },
     ],

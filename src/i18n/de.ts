@@ -802,19 +802,26 @@ const de: Catalog = {
       ],
     },
     'site-sources': {
-      tagline: 'Eine Chrome-Erweiterung, die die Quellen jeder Seite mit einem Klick speichert.',
-      lede: 'Ein Klick auf das Symbol legt die Seite, jede geladene Datei und den Originalcode aus ihren Source Maps in einen Ordner unter Downloads.',
+      tagline: 'Eine Chrome-Erweiterung, die die Quellen jeder Seite als ein ZIP speichert.',
+      lede: 'Im Popup auf Herunterladen drücken und dem Balken zusehen. Die Seite, jede geladene Datei und der Originalcode aus den Source Maps landen in einem ZIP unter Downloads.',
       links: [],
       groups: [
         {
           features: [
             [
-              'Speichern per Klick',
-              'Das aktuelle HTML und jedes Skript, Stylesheet, Bild und jede Schrift, in den Ordnern des Servers.',
+              'Download aus dem Popup',
+              'Das Symbol öffnet ein Popup mit der Website und einem Download-Knopf. Es läuft weiter, wenn das Popup schließt.',
+            ],
+            [
+              'Fortschrittsbalken',
+              'Zählt die gefundenen Dateien und füllt sich dann mit 12 von 40 heruntergeladen und den Fehlschlägen.',
+            ],
+            [
+              'Ein ZIP',
+              'Das aktuelle HTML und jedes Skript, Stylesheet, Bild und jede Schrift, wie auf dem Server abgelegt.',
             ],
             ['Originalquellen', 'Jede Source Map mit Code liefert die .ts-, .tsx- oder .vue-Dateien zurück.'],
-            ['Badge und Titel', 'Das Badge zählt die Dateien, der Titel nennt den Ordner.'],
-            ['Sprachen', 'Name und Titel folgen der Sprache von Chrome.'],
+            ['Sprachen', 'Das Popup folgt der Sprache von Chrome.'],
           ],
         },
       ],

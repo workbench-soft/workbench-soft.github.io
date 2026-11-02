@@ -721,16 +721,20 @@ const nb: Catalog = {
       ],
     },
     'site-sources': {
-      tagline: 'En Chrome-utvidelse som lagrer kildene til enhver side med ett klikk.',
-      lede: 'Klikk på ikonet, så havner siden, hver fil den lastet og originalkoden fra kildekartene i en mappe under Nedlastinger.',
+      tagline: 'En Chrome-utvidelse som lagrer kildene til enhver side som én zip.',
+      lede: 'Trykk Last ned i vinduet og se linjen fylles. Siden, hver fil den lastet og originalkoden fra kildekartene havner i én zip under Nedlastinger.',
       links: [],
       groups: [
         {
           features: [
-            ['Lagre med ett klikk', 'Gjeldende HTML og hvert skript, stilark, bilde og skrift, i serverens mapper.'],
+            [
+              'Last ned fra vinduet',
+              'Ikonet åpner et vindu med nettstedet og en Last ned-knapp. Det fortsetter når vinduet lukkes.',
+            ],
+            ['Fremdriftslinje', 'Teller filene den finner, og fylles så med 12 av 40 lastet ned og de som feilet.'],
+            ['Én zip', 'Gjeldende HTML og hvert skript, stilark, bilde og skrift, ordnet som på serveren.'],
             ['Originalkilder', 'Hvert kildekart med kode gir tilbake .ts-, .tsx- eller .vue-filene.'],
-            ['Merke og tittel', 'Merket teller filene, og tittelen viser mappen.'],
-            ['Språk', 'Navnet og titlene følger språket i Chrome.'],
+            ['Språk', 'Vinduet følger språket i Chrome.'],
           ],
         },
       ],
