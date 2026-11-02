@@ -22,7 +22,6 @@ Work left in the code:
 
 ## app-audit
 
-- [ ] Check that the first Pages run on main after the audit PR deploys <https://workbench-soft.github.io> (pages.yml now pins actions and splits permissions per job).
 - [ ] Try a room in the Android and iOS apps once they build: a mistyped code shows "This room link is broken", and the room reconnects after the phone sleeps.
 - Left: self-host the Google Fonts of the home page. It saves a third-party request and an IP sent to Google, and adds font files plus a design check.
 - Left: one pnpm version and one workspace for the root, apps/games and apps/edge. It is a tooling migration across 3 lockfiles.
