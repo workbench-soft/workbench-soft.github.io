@@ -1179,6 +1179,10 @@ const fr: Catalog = {
           features: [
             ['Installer et vérifier', 'Un script installe les outils, et un contrôle les vérifie.'],
             ["Longue vidéo d'une playlist", "Les chansons d'un dossier s'enchaînent en fondu sur un clip en boucle."],
+            [
+              'Nettoyage des artefacts IA',
+              'Le build retire le souffle, l’éclat métallique et le grondement des chansons et garde les originaux.',
+            ],
             ['Boucle sans raccord', "Le clip joue à l'endroit puis à l'envers, et le saut de la fin disparaît."],
             [
               'Chapitres et miniature',
