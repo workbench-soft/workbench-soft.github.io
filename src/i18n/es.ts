@@ -937,7 +937,7 @@ const es: Catalog = {
               'Time-lapse',
               'Un fotograma cada medio segundo, reproducido 15 veces más rápido: nubes, atardeceres, multitudes.',
             ],
-            ['Objetivos', 'Un botón por cada objetivo del teléfono sobre una escala de zoom.'],
+            ['Objetivos', 'Un botón por cada objetivo del teléfono sobre una escala de zoom. En el selfie, el zoom se ajusta a las personas del encuadre.'],
             ['Enfoque', 'AF-C sigue un sujeto en movimiento y las caras. Un toque enfoca un punto.'],
             ['Balance de blancos', 'Auto, preajustes o kelvin en un dial.'],
             [
