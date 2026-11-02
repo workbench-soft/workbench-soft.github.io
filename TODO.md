@@ -1,5 +1,10 @@
 # TODO
 
+## feat-feedback: the feedback form
+
+- [ ] **Activate FormSubmit** in the workbench.soft@gmail.com inbox, open the mail "Action Required: Activate FormSubmit on https://workbench-soft.com/" from 2026-11-02 and press ACTIVATE FORM. Until then each post from the Feedback form shows the "failed to send" line. The auto mode check blocked the agent from opening the link.
+- [ ] **Delete the test mails** "Feedback from workbench-soft.com" and "Activate FormSubmit on http://localhost:4391/" from 2026-11-02 can go.
+
 ## site-groups-icons-shots: studio email, groups, icons, screenshots
 
 - [ ] **Shuttrix shots** the app crashes at start on an emulator (`CameraSession` reads a null ML Kit barcode scanner, seen 2026-11-02 on an x86_64 build), so it has no shots. Fix the crash in `memories/apps/shuttrix`, run the `demo-media` skill there, then copy 2 to 4 shots to `src/assets/shots/shuttrix/`.
