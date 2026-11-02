@@ -853,6 +853,7 @@ const de: Catalog = {
             ['Secrets erneuern', 'Erneuert CI-Secrets und Schlüssel, App für App.'],
             ['Arbeitsregeln', 'Erst eine Spec, sofort mergen, später gesammelt testen.'],
             ['Releases', 'Ein datiertes Release für jeden grünen Push auf main.'],
+            ['Feature-Warteschlange', 'Sitzungen an einer App wechseln sich bei gemeinsamen Dateien ab, danach folgt ein Release.'],
           ],
         },
       ],

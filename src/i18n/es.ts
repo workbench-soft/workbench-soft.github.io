@@ -838,6 +838,7 @@ const es: Catalog = {
             ['Renovar secretos', 'Renueva los secretos de CI y las claves, app por app.'],
             ['Reglas de trabajo', 'Primero una spec, fusión enseguida, prueba en lote después.'],
             ['Releases', 'Una release con fecha por cada push verde a main.'],
+            ['Cola de funciones', 'Las sesiones de una app se turnan en los archivos compartidos y sale una sola versión.'],
           ],
         },
       ],
