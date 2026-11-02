@@ -958,7 +958,7 @@ const de: Catalog = {
               'Zeitraffer',
               'Ein Bild pro halbe Sekunde, 15-mal schneller abgespielt: Wolken, Sonnenuntergänge, Menschenmengen.',
             ],
-            ['Objektive', 'Ein Knopf pro Objektiv des Telefons über einer Zoomskala.'],
+            ['Objektive', 'Ein Knopf pro Objektiv des Telefons über einer Zoomskala. Beim Selfie passt sich der Zoom an die Personen im Bild an.'],
             ['Fokus', 'AF-C folgt bewegten Motiven und Gesichtern. Ein Tipp fokussiert einen Punkt.'],
             ['Weißabgleich', 'Auto, Voreinstellungen oder Kelvin auf einem Rad.'],
             [

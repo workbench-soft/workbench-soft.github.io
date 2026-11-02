@@ -865,7 +865,7 @@ const nb: Catalog = {
               'Tidsforløp',
               'Ett bilde hvert halve sekund, spilt av 15 ganger raskere: skyer, solnedganger, folkemengder.',
             ],
-            ['Objektiver', 'En knapp per objektiv på telefonen, over én zoomskala.'],
+            ['Objektiver', 'En knapp per objektiv på telefonen, over én zoomskala. En selfie zoomer etter personene i bildet.'],
             ['Fokus', 'AF-C følger et motiv i bevegelse og ansikter. Et trykk fokuserer på et punkt.'],
             ['Hvitbalanse', 'Auto, forvalg eller kelvin på et hjul.'],
             [

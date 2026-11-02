@@ -273,7 +273,7 @@ export const projects: Project[] = [
           { name: 'Panorama', text: 'A wide photo from a slow turn, stitched on the phone.' },
           { name: 'Slow motion', text: 'A video at 120 or 240 frames a second that plays back slowed.' },
           { name: 'Time lapse', text: 'A frame each half second, played 15 times faster: clouds, sunsets, crowds.' },
-          { name: 'Lenses', text: 'A chip per lens the phone has, over one zoom scale.' },
+          { name: 'Lenses', text: 'A chip per lens the phone has, over one zoom scale. A selfie zooms to fit the people in the frame.' },
           { name: 'Focus', text: 'AF-C follows a moving subject and faces. A tap focuses on a point.' },
           { name: 'White balance', text: 'Auto, presets or kelvin on a dial.' },
           {
