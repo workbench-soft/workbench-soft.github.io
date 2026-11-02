@@ -882,6 +882,7 @@ const nb: Catalog = {
             ['Bilde- og videostørrelse', 'Innstillingene velger størrelsen på bilder og video.'],
             ['Forbedre bilder', 'Dypere svart, lysere skygger, livligere farger og litt skarphet.'],
             ['QR-koder', 'En kode i forhåndsvisningen får klammer og en knapp for å åpne den.'],
+            ['Klokke', 'Klokkeslettet øverst til venstre, der telefonens klokke pleier å stå, unna knappene.'],
             ['Galleri', 'Bildene i rutenett og fullskjerm, med zoom ved klyp og dobbelttrykk.'],
             ['Rett opp og roter', 'EDIT i visningen retter opp og snur et bilde.'],
             ['Hurtigstart', 'To trykk på av/på-knappen åpner Shuttrix, også over låseskjermen.'],
@@ -927,6 +928,7 @@ const nb: Catalog = {
               'Himmelvisning',
               'Stjerner, solen, månen, planetene og 88 stjernebilder over kameraet, eller snudd med hånden.',
             ],
+            ['Klokke', 'En rolig klokke med dato øverst på himmelen, i temaets skrift. Den dempes sammen med knappene.'],
             [
               'Kamerastjerner',
               'Kamerabildet holdes dempet. Stjernene i det blinker med et spor av gnister og lyser gull når de stemmer med himmelen.',

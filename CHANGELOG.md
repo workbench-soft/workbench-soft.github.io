@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Shuttrix, Sky Altar** each lists its new Clock: the time on the camera and over the sky.
 - **SpotTheCam** Camera warnings say on the lock screen when the camera stands on the other side of the road.
 - **Shuttrix** Lenses says a selfie zooms to fit the people in the frame.
 - **Sky Altar** Ambient music names the violin song, the off switch and the own audio file.

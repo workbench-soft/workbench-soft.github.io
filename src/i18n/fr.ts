@@ -1012,6 +1012,7 @@ const fr: Catalog = {
               'Des noirs plus profonds, des ombres relevées, des couleurs plus vives, un peu de netteté.',
             ],
             ['Codes QR', "Un code dans l'aperçu reçoit un cadre et une pastille pour l'ouvrir."],
+            ['Horloge', 'L’heure en haut à gauche, à la place de l’horloge du téléphone, loin des commandes.'],
             ['Galerie', 'Les prises en grille et en plein écran, avec zoom au pincement et double appui.'],
             ['Redresser et pivoter', 'EDIT dans la visionneuse redresse et tourne une photo.'],
             ['Démarrage rapide', "Deux appuis sur le bouton marche ouvrent Shuttrix, même sur l'écran verrouillé."],
@@ -1060,6 +1061,7 @@ const fr: Catalog = {
               'Vue du ciel',
               'Étoiles, Soleil, Lune, planètes et 88 constellations sur la caméra, ou tournées à la main.',
             ],
+            ['Horloge', 'Une horloge discrète avec la date en haut du ciel, dans la police du thème. Elle pâlit avec les boutons.'],
             [
               'Étoiles de la caméra',
               "L'image de la caméra reste sombre. Ses étoiles scintillent avec une traînée d'étincelles et brillent d'or quand elles collent au ciel.",
