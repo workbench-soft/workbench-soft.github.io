@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **Shuttrix privacy policy** at <https://workbench-soft.com/shuttrix/privacy-policy>: photos and place tags stay on the phone, the AdMob banner in the gallery and the consent form.
+
 - **Development for clients** a new section on the projects list. Its first card is Alina Photography: portfolio, booking, questions, admin, calendar sync and client galleries.
 
 - **Shuttrix** Exposure says a slow shutter shows a big "Hold still".

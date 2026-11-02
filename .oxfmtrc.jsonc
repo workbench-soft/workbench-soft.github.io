@@ -1,7 +1,7 @@
 {
   "singleQuote": true,
   "printWidth": 120,
-  // Generated types, icon drafts and the static pages copied from other repos.
+  // Generated types, icon drafts, the Jekyll folders and the static pages copied from other repos.
   "ignorePatterns": [
     "**/pnpm-lock.yaml",
     "apps/games/worker/worker-configuration.d.ts",
@@ -9,5 +9,6 @@
     "langflip/",
     "media-organizer/",
     "memories-mobile/",
+    "shuttrix/",
   ],
 }
