@@ -875,7 +875,7 @@ const es: Catalog = {
     },
     shuttrix: {
       tagline: 'Una cámara con los diales de una réflex y un modo simple de grandes deslizadores.',
-      lede: 'Shuttrix es una cámara Android con 2 modos. El modo simple tiene grandes deslizadores con Noche, Exposición larga y Panorama, y Pro pone objetivo, enfoque, balance de blancos, ISO y obturador en diales.',
+      lede: 'Shuttrix es una cámara Android con 2 modos. El modo simple tiene grandes deslizadores con Noche, Retrato, Exposición larga y Panorama, y Pro pone objetivo, enfoque, balance de blancos, ISO y obturador en diales.',
       links: [],
       groups: [
         {
@@ -887,6 +887,7 @@ const es: Catalog = {
             ],
             ['Noche', 'El teléfono crea la foto con varios fotogramas mientras avanza una barra.'],
             ['Exposición larga', 'Difumina lo que se mueve: agua sedosa, estelas de luz, una multitud que se borra.'],
+            ['Retrato', 'Las personas quedan nítidas y el fondo se suaviza. Un deslizador ajusta el desenfoque.'],
             ['Panorama', 'Una foto ancha de un giro lento, unida en el teléfono.'],
             ['Objetivos', 'Un botón por cada objetivo del teléfono sobre una escala de zoom.'],
             ['Enfoque', 'AF-C sigue un sujeto en movimiento y las caras. Un toque enfoca un punto.'],

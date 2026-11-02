@@ -809,7 +809,7 @@ const nb: Catalog = {
     },
     shuttrix: {
       tagline: 'Et kamera med hjulene til et speilrefleks, og en enkel modus med store glidebrytere.',
-      lede: 'Shuttrix er et Android-kamera med 2 moduser. Enkel modus har store glidebrytere med Natt, Lang eksponering og Panorama, og Pro legger objektiv, fokus, hvitbalanse, ISO og lukker på hjul.',
+      lede: 'Shuttrix er et Android-kamera med 2 moduser. Enkel modus har store glidebrytere med Natt, Portrett, Lang eksponering og Panorama, og Pro legger objektiv, fokus, hvitbalanse, ISO og lukker på hjul.',
       links: [],
       groups: [
         {
@@ -821,6 +821,7 @@ const nb: Catalog = {
             ],
             ['Natt', 'Telefonen bygger bildet av flere bilder mens en linje fylles.'],
             ['Lang eksponering', 'Gjør bevegelse uskarp: silkevann, lysspor, en folkemengde som blekner.'],
+            ['Portrett', 'Personer blir skarpe og bakgrunnen myk. En glidebryter setter uskarpheten.'],
             ['Panorama', 'Et bredt bilde fra en langsom vending, satt sammen på telefonen.'],
             ['Objektiver', 'En knapp per objektiv på telefonen, over én zoomskala.'],
             ['Fokus', 'AF-C følger et motiv i bevegelse og ansikter. Et trykk fokuserer på et punkt.'],
