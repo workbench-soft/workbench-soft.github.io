@@ -950,6 +950,14 @@ const de: Catalog = {
               'Objektivknöpfe über einem Zoomregler, dann Regler für Licht, Wärme und Farbe. Die Modi sitzen oben, so steht der Auslöser allein unter dem Daumen.',
             ],
             ['Nacht', 'Das Telefon baut das Foto aus mehreren Bildern, während ein Balken läuft.'],
+            [
+              'Astro',
+              'Der Nachthimmel aus der Hand: scharfe Sterne, die Milchstraße und ein dunkler Himmel statt Grau oder Orange.',
+            ],
+            [
+              'Mond',
+              'Zoomt auf 10x und belichtet für den Mond, so zeigen sich Meere und Krater statt eines weißen Flecks.',
+            ],
             ['Langzeitbelichtung', 'Verwischt Bewegung: seidiges Wasser, Lichtspuren, eine verblassende Menge.'],
             [
               'Porträt',

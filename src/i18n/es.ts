@@ -929,6 +929,11 @@ const es: Catalog = {
               'Botones de objetivo sobre un deslizador de zoom, luego Luz, Calidez y Color. Los modos van arriba, y el disparador queda solo bajo el pulgar.',
             ],
             ['Noche', 'El teléfono crea la foto con varios fotogramas mientras avanza una barra.'],
+            [
+              'Astro',
+              'El cielo nocturno a pulso: estrellas nítidas, la Vía Láctea y un cielo oscuro en vez de gris o naranja.',
+            ],
+            ['Luna', 'Zoom a 10x y exposición para la Luna: se ven sus mares y cráteres, no una mancha blanca.'],
             ['Exposición larga', 'Difumina lo que se mueve: agua sedosa, estelas de luz, una multitud que se borra.'],
             [
               'Retrato',
