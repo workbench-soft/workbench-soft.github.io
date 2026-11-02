@@ -294,7 +294,7 @@ const de: Catalog = {
             ],
             [
               'Fahrtenbuch',
-              'Fahrten und Spaziergänge zeichnen sich selbst auf. Jede Route zeigt Ihr Tempo an jedem Blitzer, grün oder rot. Das Tempo bleibt auf Ihrem Handy.',
+              'Fahrten und Spaziergänge zeichnen sich selbst auf. Jede Fahrt zeigt gefahrene und gelaufene Kilometer getrennt. Jede Route zeigt Ihr Tempo an jedem Blitzer, grün oder rot. Das Tempo bleibt auf Ihrem Handy.',
             ],
             ['Fahrt teilen', 'Ein Link zeigt die Route in jedem Browser. „Teilen beenden“ löscht sie vom Server.'],
             ['Strecke', 'Große Ziffern zeigen die Kilometer der aktuellen Fahrt und die Summe des Tages.'],

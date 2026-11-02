@@ -219,7 +219,7 @@ export const projects: Project[] = [
           },
           {
             name: 'Trip log',
-            text: 'Drives and walks record on their own. Each route shows your speed at each camera, green or red. The speeds stay on your phone.',
+            text: 'Drives and walks record on their own. Each trip gives the km driven and the km walked apart. Each route shows your speed at each camera, green or red. The speeds stay on your phone.',
           },
           {
             name: 'Share a trip',

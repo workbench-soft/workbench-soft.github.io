@@ -291,7 +291,7 @@ const es: Catalog = {
             ],
             [
               'Registro de viajes',
-              'Trayectos en coche y paseos se graban solos. Cada ruta muestra tu velocidad en cada radar, en verde o rojo. La velocidad se queda en tu teléfono.',
+              'Trayectos en coche y paseos se graban solos. Cada viaje separa los km en coche y los km a pie. Cada ruta muestra tu velocidad en cada radar, en verde o rojo. La velocidad se queda en tu teléfono.',
             ],
             [
               'Compartir un viaje',
