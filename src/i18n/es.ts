@@ -579,10 +579,17 @@ const es: Catalog = {
         {
           features: [
             ['Salas por enlace', 'Un enlace reúne de 2 a 12 amigos en la misma sala.'],
+            [
+              'Modo niños',
+              'También juega un niño que no sabe leer: toca un animal para entrar, toca una imagen para adivinar, escucha cada palabra en voz alta.',
+            ],
             ['Adivina el dibujo', 'Dibuja una palabra, adivina los dibujos de los demás, suma puntos.'],
             ['Teléfono dibujado', 'Una frase se convierte en dibujos y vuelve, y el álbum muestra cómo cambió.'],
             ['Duelo de pistas', 'Un juego de palabras por equipos donde cada pista es pública y robar da puntos.'],
-            ['Herramientas de dibujo', 'Lápiz, goma, relleno, 20 colores, 4 tamaños y deshacer.'],
+            [
+              'Herramientas de dibujo',
+              'Lápiz, goma, relleno, 20 colores, 4 tamaños y deshacer, con colores grandes para dedos pequeños.',
+            ],
             ['Idiomas', 'Las páginas y las salas funcionan en inglés y en ruso.'],
             ['Anuncios', 'Los juegos siguen gratis, con un banner en las páginas, la sala y los resultados.'],
             ['Apps para Android e iOS', 'Los mismos juegos como app instalada.'],

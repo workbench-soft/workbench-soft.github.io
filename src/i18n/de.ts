@@ -576,13 +576,20 @@ const de: Catalog = {
         {
           features: [
             ['Räume per Link', 'Ein Link bringt 2 bis 12 Freunde in denselben Raum.'],
+            [
+              'Kindermodus',
+              'Auch ein Kind, das nicht lesen kann, spielt mit: ein Tier antippen zum Beitreten, ein Bild antippen zum Raten, jedes Wort vorgelesen hören.',
+            ],
             ['Zeichnung raten', 'Zeichne ein Wort, rate die Zeichnungen der anderen, sammle Punkte.'],
             [
               'Zeichen-Stille-Post',
               'Ein Satz wird zu Zeichnungen und zurück, und das Album zeigt, wie er sich verändert hat.',
             ],
             ['Hinweis-Duell', 'Ein Wortspiel in Teams, bei dem jeder Hinweis offen liegt und Klauen sich lohnt.'],
-            ['Zeichenwerkzeuge', 'Stift, Radierer, Füllen, 20 Farben, 4 Größen und Rückgängig.'],
+            [
+              'Zeichenwerkzeuge',
+              'Stift, Radierer, Füllen, 20 Farben, 4 Größen und Rückgängig, mit großen Farben für kleine Finger.',
+            ],
             ['Sprachen', 'Die Seiten und die Räume gibt es auf Englisch und Russisch.'],
             [
               'Werbung',

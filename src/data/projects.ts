@@ -823,13 +823,20 @@ export const projects: Project[] = [
       {
         features: [
           { name: 'Rooms by link', text: 'One link brings 2 to 12 friends into the same room.' },
+          {
+            name: 'Kids mode',
+            text: 'A child who can’t read plays too: tap an animal to join, guess by tapping a picture, hear each word read aloud.',
+          },
           { name: 'Guess the drawing', text: "Draw a word, guess the others' drawings, race for points." },
           {
             name: 'Drawing telephone',
             text: 'A phrase turns into drawings and back, and the album shows how it changed.',
           },
           { name: 'Clue duel', text: 'A team word game where every clue is public and stealing pays.' },
-          { name: 'Drawing tools', text: 'Pen, eraser, fill, 20 colours, 4 sizes and undo.' },
+          {
+            name: 'Drawing tools',
+            text: 'Pen, eraser, fill, 20 colours, 4 sizes and undo, with big colours for small fingers.',
+          },
           { name: 'Languages', text: 'The pages and the rooms work in English and Russian.' },
           { name: 'Ads', text: 'The games stay free, with a banner on the content pages, the lobby and the results.' },
           { name: 'Android and iOS apps', text: 'The same games as an installed app.' },
