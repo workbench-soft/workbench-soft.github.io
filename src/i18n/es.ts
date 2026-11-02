@@ -989,7 +989,7 @@ const es: Catalog = {
               'Objetivos',
               'Un botón por cada objetivo del teléfono sobre una escala de zoom. En el selfie, el zoom se ajusta a las personas del encuadre.',
             ],
-            ['Enfoque', 'AF-C sigue un sujeto en movimiento y las caras. Un toque enfoca un punto.'],
+            ['Enfoque', 'AF-C sigue un sujeto en movimiento y las caras. Un toque enfoca un punto, y la retícula se arrastra.'],
             ['Balance de blancos', 'Auto, preajustes o kelvin en un dial.'],
             [
               'Exposición',

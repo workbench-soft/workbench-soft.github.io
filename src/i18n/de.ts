@@ -1010,7 +1010,7 @@ const de: Catalog = {
               'Objektive',
               'Ein Knopf pro Objektiv des Telefons über einer Zoomskala. Beim Selfie passt sich der Zoom an die Personen im Bild an.',
             ],
-            ['Fokus', 'AF-C folgt bewegten Motiven und Gesichtern. Ein Tipp fokussiert einen Punkt.'],
+            ['Fokus', 'AF-C folgt bewegten Motiven und Gesichtern. Ein Tipp fokussiert einen Punkt, und das Fokusfeld lässt sich ziehen.'],
             ['Weißabgleich', 'Auto, Voreinstellungen oder Kelvin auf einem Rad.'],
             [
               'Belichtung',
