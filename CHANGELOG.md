@@ -1,8 +1,8 @@
 # Changelog
 
 ## Unreleased
-- **Shuttrix Astro and Moon** the page lists the night sky held in the hand and the moon at 10x, in every language.
 
+- **Shuttrix Astro and Moon** the page lists the night sky held in the hand and the moon at 10x, in every language.
 - **Shuttrix Ads** the page lists one banner under the gallery grid, with the camera and the viewer clear.
 - **Shuttrix Auto tune** the page says a tap on the preview sets Light, Warmth and Color too.
 - **SpotTheCam** the Trip log says each trip gives the km driven and the km walked apart.
