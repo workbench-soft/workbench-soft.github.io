@@ -1025,7 +1025,10 @@ const de: Catalog = {
               'Das Kamerabild bleibt gedämpft. Sterne darauf funkeln mit einer Funkenspur und leuchten golden auf, wenn sie zum Himmel passen.',
             ],
             ['Kulturthemen', '13 Kulturen, von Griechenland und Rom bis zu den Inka, Sumer und der Steinzeit.'],
-            ['Ambient-Musik', 'Eine ruhige Schleife blendet beim Start ein. Ein Tippen schaltet sie stumm.'],
+            [
+              'Ambient-Musik',
+              'Das Geigenlied „L’Exode des Mondes“ läuft unter dem Himmel. Schalte es aus oder spiele eine eigene Audiodatei.',
+            ],
             ['Werbung und Werbefreiheit', 'Werbung bleibt vom Himmel fern. Ein Kauf für $2.99 entfernt sie.'],
             ['App-Sprachen', 'Die Ansichten und die Sternbildnamen in 9 Sprachen.'],
           ],

@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Sky Altar** Ambient music names the violin song, the off switch and the own audio file.
 - **Games apps** the developer's phone gets a Show test ads box in the lobby, to show or hide the test banner right in the app.
 - **App icons** Tripforge shows its badge of peaks on an anvil, and Lumiere Player gets its stained glass play mark in place of the letter tile.
 

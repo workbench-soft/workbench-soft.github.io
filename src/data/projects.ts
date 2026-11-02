@@ -591,7 +591,10 @@ export const projects: Project[] = [
             text: 'The camera picture stays dim. Stars it sees twinkle with a trail of sparks and flash gold when they match the sky.',
           },
           { name: 'Culture themes', text: '13 cultures, from Greece and Rome to the Inca, Sumer and the Stone Age.' },
-          { name: 'Ambient music', text: 'A slow loop fades in on open. One tap mutes it.' },
+          {
+            name: 'Ambient music',
+            text: 'The violin song “L’Exode des Mondes” loops under the sky. Turn it off, or play your own audio file instead.',
+          },
           { name: 'Ads and Remove ads', text: 'Ads stay off the sky. A one time $2.99 purchase removes them.' },
           { name: 'App languages', text: 'The screens and the constellation names in 9 languages.' },
         ],
