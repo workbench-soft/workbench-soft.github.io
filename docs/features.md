@@ -63,6 +63,14 @@ Spec: [workbench-soft-site](../specs/workbench-soft-site.md).
 
 Spec: [workbench-soft-site](../specs/workbench-soft-site.md).
 
+## Feedback
+
+- **What it does** a form for a bug, an idea or a question, with an optional email for a reply. It goes to the studio inbox.
+- **Where** the Feedback button in the bottom right corner of every page, the Feedback link in the footer, and any `#feedback` link.
+- **Limits** the main site only. FormSubmit carries the message, and the first post from a new address waits for its activation mail.
+
+Spec: [feedback](../specs/feedback.md).
+
 ## Motion and access
 
 - **Scroll** blocks rise in as they enter the screen, and a bar at the top shows how far the page has scrolled.

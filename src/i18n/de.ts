@@ -76,6 +76,18 @@ const de: Catalog = {
       project: 'Projekt',
       feature: 'Funktion',
     },
+    feedback: {
+      open: 'Feedback',
+      title: 'Sagen Sie dem Studio Ihre Meinung',
+      intro: 'Ein Fehler, eine Idee oder eine Frage zu einer App. Eine Zeile reicht.',
+      message: 'Nachricht',
+      email: 'E-Mail für eine Antwort, falls gewünscht',
+      send: 'Senden',
+      sending: 'Wird gesendet…',
+      sent: 'Danke, die Nachricht ist beim Studio angekommen.',
+      failed: 'Die Nachricht ging nicht raus. Schreiben Sie an {email}.',
+      close: 'Schließen',
+    },
     footer: {
       noAds: 'Diese Seite zeigt keine Werbung.',
       releases: 'Releases',

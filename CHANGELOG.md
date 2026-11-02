@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Feedback** a Feedback button in the corner of every page opens a short form that mails the studio. The footer and `#feedback` links open it too.
 - **Site Sources** joins the tools: a Chrome extension that saves a page, its files and the original sources from its source maps with one click.
 - **Games menu** Games in the header lists each party game and the Workbench Games panel, which now links to each game.
 - **Features** one line each in two columns, the first 6 shown and the rest behind Show all.

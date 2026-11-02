@@ -74,6 +74,18 @@ export const en = {
     project: 'Project',
     feature: 'Feature',
   },
+  feedback: {
+    open: 'Feedback',
+    title: 'Tell the studio what you think',
+    intro: 'A bug, an idea or a question about any app. One line is enough.',
+    message: 'Message',
+    email: 'Email for a reply, if you want one',
+    send: 'Send',
+    sending: 'Sending…',
+    sent: 'Thanks, it reached the studio.',
+    failed: 'The message failed to send. Write to {email} instead.',
+    close: 'Close',
+  },
   footer: {
     noAds: 'This site shows no ads.',
     releases: 'Releases',

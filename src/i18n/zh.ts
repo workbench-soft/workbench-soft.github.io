@@ -68,6 +68,18 @@ const zh: Catalog = {
       project: '项目',
       feature: '功能',
     },
+    feedback: {
+      open: '反馈',
+      title: '告诉工作室你的想法',
+      intro: '任何应用的问题、想法或疑问，一句话就够。',
+      message: '留言',
+      email: '需要回复的话，留下邮箱',
+      send: '发送',
+      sending: '正在发送…',
+      sent: '谢谢，消息已送达工作室。',
+      failed: '发送失败。请写信到 {email}。',
+      close: '关闭',
+    },
     footer: {
       noAds: '本站不展示广告。',
       releases: '发布版本',

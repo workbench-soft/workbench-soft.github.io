@@ -71,6 +71,18 @@ const ko: Catalog = {
       project: '프로젝트',
       feature: '기능',
     },
+    feedback: {
+      open: '피드백',
+      title: '스튜디오에 의견을 들려주세요',
+      intro: '어떤 앱의 버그, 아이디어, 질문이든 좋습니다. 한 줄이면 충분합니다.',
+      message: '메시지',
+      email: '답장을 원하면 이메일',
+      send: '보내기',
+      sending: '보내는 중…',
+      sent: '감사합니다. 스튜디오에 전달되었습니다.',
+      failed: '전송에 실패했습니다. {email}로 메일을 보내 주세요.',
+      close: '닫기',
+    },
     footer: {
       noAds: '이 사이트에는 광고가 없습니다.',
       releases: '릴리스',

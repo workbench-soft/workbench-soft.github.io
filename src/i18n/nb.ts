@@ -76,6 +76,18 @@ const nb: Catalog = {
       project: 'Prosjekt',
       feature: 'Funksjon',
     },
+    feedback: {
+      open: 'Tilbakemelding',
+      title: 'Si fra til studioet hva du mener',
+      intro: 'En feil, en idé eller et spørsmål om en app. Én linje holder.',
+      message: 'Melding',
+      email: 'E-post for svar, om du vil ha et',
+      send: 'Send',
+      sending: 'Sender…',
+      sent: 'Takk, meldingen kom fram til studioet.',
+      failed: 'Meldingen ble ikke sendt. Skriv til {email}.',
+      close: 'Lukk',
+    },
     footer: {
       noAds: 'Dette nettstedet viser ingen annonser.',
       releases: 'Utgivelser',

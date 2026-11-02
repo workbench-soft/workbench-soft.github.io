@@ -75,6 +75,18 @@ const ja: Catalog = {
       project: 'プロジェクト',
       feature: '機能',
     },
+    feedback: {
+      open: 'フィードバック',
+      title: 'ご意見をお聞かせください',
+      intro: 'どのアプリのバグ、アイデア、質問でも。一行で十分です。',
+      message: 'メッセージ',
+      email: '返信が必要ならメールアドレス',
+      send: '送信',
+      sending: '送信中…',
+      sent: 'ありがとうございます。スタジオに届きました。',
+      failed: '送信できませんでした。{email} にメールしてください。',
+      close: '閉じる',
+    },
     footer: {
       noAds: 'このサイトに広告はありません。',
       releases: 'リリース',
