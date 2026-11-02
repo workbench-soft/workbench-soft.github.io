@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { CHOOSE_TIME, TURN_END_TIME } from './guess.ts';
+import { CHOOSE_TIME, KIDS_CHOOSE_TIME, KIDS_DRAW_TIME, TURN_END_TIME, WRONG_COST } from './guess.ts';
+import { pictureOf } from '../words/kids.ts';
 import { HOST_GRACE, EMPTY_TTL, MAX_SEATS, Room } from './room.ts';
 import { GRACE, STEP_TIMES } from './telephone.ts';
 import { CLUE_TIME, PICK_TIME, REVEAL_TIME } from './duel.ts';
@@ -83,10 +84,10 @@ describe('room', () => {
   });
 });
 
-function startGuess() {
+function startGuess(kids = false) {
   const t = makeRoom();
   t.join(['a', 'b', 'c']);
-  t.room.message('a', { t: 'settings', settings: { rounds: 1, drawTime: 60 } }, 0);
+  t.room.message('a', { t: 'settings', settings: { rounds: 1, drawTime: 60, kids } }, 0);
   t.room.message('a', { t: 'start' }, 0);
   const drawer = t.room.guess!.drawerId;
   const others = ['a', 'b', 'c'].filter((id) => id !== drawer);
@@ -174,6 +175,53 @@ describe('guess the drawing', () => {
     }
     room.alarm(now + TURN_END_TIME);
     expect(view(drawer).phase).toBe('gameEnd');
+  });
+});
+
+describe('kids mode', () => {
+  it('is on in a new room', () => {
+    const { view, join } = makeRoom();
+    join(['a']);
+    expect(view('a').settings.kids).toBe(true);
+  });
+
+  it('deals picture words, waits longer and gives the guessers 4 pictures to tap', () => {
+    const { view, drawer, others, room } = startGuess(true);
+    expect(view(drawer).guess!.choices!.every((w) => pictureOf(w))).toBe(true);
+    expect(view(drawer).guess!.deadline).toBe(KIDS_CHOOSE_TIME);
+    room.message(drawer, { t: 'pick', index: 0 }, 0);
+    expect(view(drawer).guess!.deadline).toBe(KIDS_DRAW_TIME * 1000);
+    expect(view(drawer).guess!.options).toBeNull();
+    const options = view(others[0]).guess!.options!;
+    expect(options).toHaveLength(4);
+    expect(options).toContain(room.guess!.word);
+    expect(new Set(options).size).toBe(4);
+    expect(room.guess!.hintAt).toEqual([]);
+  });
+
+  it('greys out a wrong tap, scores the right one lower, and hides the pictures after it', () => {
+    const { view, drawer, others, room } = startGuess(true);
+    room.message(drawer, { t: 'pick', index: 0 }, 0);
+    const options = view(others[0]).guess!.options!;
+    const right = options.indexOf(room.guess!.word);
+    const wrong = (right + 1) % 4;
+    room.message(others[0], { t: 'tap', index: wrong }, 1000);
+    expect(view(others[0]).guess!.wrong).toEqual([wrong]);
+    expect(view(others[1]).guess!.wrong).toEqual([]);
+    room.message(others[0], { t: 'tap', index: right }, 1000);
+    room.message(others[1], { t: 'tap', index: right }, 1000);
+    const gains = view(drawer).guess!.gains!;
+    expect(gains[others[1]] - gains[others[0]]).toBe(WRONG_COST);
+    expect(view(drawer).phase).toBe('turnEnd');
+  });
+
+  it('takes the animal as the name of a player who typed none', () => {
+    const { room, view } = makeRoom();
+    room.connect('kid', '', '#000000', 'ru', 0, '🐰');
+    room.connect('cheat', '', '#000000', 'en', 0, '<b>');
+    const players = view('kid').players;
+    expect(players[0]).toMatchObject({ name: 'Зайка', avatar: '🐰' });
+    expect(players[1]).toMatchObject({ name: 'Player', avatar: undefined });
   });
 });
 

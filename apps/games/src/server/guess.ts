@@ -8,6 +8,12 @@ export const CHOOSE_TIME = 15_000;
 export const TURN_END_TIME = 6_000;
 /** Points per guesser that the artist gets. */
 export const ARTIST_POINTS = 60;
+/** Kids mode gives a small child longer to pick and to draw. */
+export const KIDS_CHOOSE_TIME = 30_000;
+export const KIDS_DRAW_TIME = 120;
+/** Kids mode: a wrong picture costs this much of the guess. */
+export const WRONG_COST = 100;
+const OPTIONS = 4;
 
 type Stage = 'choosing' | 'drawing' | 'turnEnd';
 
@@ -29,6 +35,10 @@ export class GuessGame {
   guessed = new Map<string, number>();
   gains: Record<string, number> | null = null;
   used: string[] = [];
+  /** Kids mode: the word and 3 others, as pictures to tap. */
+  options: string[] = [];
+  /** Kids mode: the options each guesser tapped wrong. */
+  wrong = new Map<string, number[]>();
 
   constructor(private room: Room) {}
 
@@ -45,6 +55,8 @@ export class GuessGame {
       // A name such as "length" would read a property of the list in place of a word.
       const word = Number.isInteger(msg.index) ? this.choices[msg.index] : undefined;
       if (word) this.beginDrawing(word, now);
+    } else if (msg.t === 'tap' && Number.isInteger(msg.index)) {
+      this.tap(id, msg.index, now);
     } else if (msg.t === 'draw' && id === this.drawerId && this.stage === 'drawing' && Array.isArray(msg.ops)) {
       const ok = msg.ops.slice(0, 200).filter((op) => this.room.drawing.apply(op));
       if (!ok.length) return;
@@ -67,12 +79,7 @@ export class GuessGame {
       return true;
     }
     if (guess === answer) {
-      const left = Math.max(0, this.deadline - now);
-      const points = Math.round(100 + (400 * left) / this.turnTime);
-      this.guessed.set(player.id, points);
-      this.room.sys('guessed', player.name);
-      this.room.changed();
-      if (this.everyoneGuessed()) this.endTurn(now);
+      this.award(player.id, now);
       return true;
     }
     if (isClose(guess, answer)) {
@@ -81,6 +88,27 @@ export class GuessGame {
       return true;
     }
     return false;
+  }
+
+  private tap(id: string, index: number, now: number): void {
+    if (this.stage !== 'drawing' || !this.options.length || id === this.drawerId || this.guessed.has(id)) return;
+    const pick = this.options[index];
+    if (pick === undefined) return;
+    if (pick === this.word) return this.award(id, now);
+    const wrong = this.wrong.get(id) ?? [];
+    if (!wrong.includes(index)) this.wrong.set(id, [...wrong, index]);
+    this.room.changed();
+  }
+
+  /** A right guess: points for speed, less each wrong picture tapped before it. */
+  private award(id: string, now: number): void {
+    const left = Math.max(0, this.deadline - now);
+    const misses = this.wrong.get(id)?.length ?? 0;
+    const points = Math.max(50, Math.round(100 + (400 * left) / this.turnTime) - misses * WRONG_COST);
+    this.guessed.set(id, points);
+    this.room.sys('guessed', this.room.name(id));
+    this.room.changed();
+    if (this.everyoneGuessed()) this.endTurn(now);
   }
 
   alarm(now: number): void {
@@ -127,6 +155,8 @@ export class GuessGame {
       word: showWord ? this.word : null,
       hint: this.stage === 'drawing' ? maskWord(this.word, this.hintPos.slice(0, shown)) : '',
       gains: this.stage === 'turnEnd' ? this.gains : null,
+      options: this.stage === 'drawing' && !isDrawer && !this.guessed.has(id) && this.options.length ? this.options : null,
+      wrong: this.wrong.get(id) ?? [],
     };
   }
 
@@ -154,8 +184,11 @@ export class GuessGame {
       this.turn = 0;
     }
     this.drawerId = this.order[this.turn];
-    const pool = wordsFor(room.settings).filter((w) => !this.used.includes(w));
-    this.choices = sample(pool.length >= 3 ? pool : wordsFor(room.settings), 3, room.random);
+    const words = wordsFor(room.settings, room.settings.kids);
+    const pool = words.filter((w) => !this.used.includes(w));
+    this.choices = sample(pool.length >= 3 ? pool : words, 3, room.random);
+    this.options = [];
+    this.wrong.clear();
     this.word = '';
     this.guessed.clear();
     this.gains = null;
@@ -163,7 +196,7 @@ export class GuessGame {
     this.hintPos = [];
     this.hintsShown = 0;
     this.stage = 'choosing';
-    this.deadline = now + CHOOSE_TIME;
+    this.deadline = now + (room.settings.kids ? KIDS_CHOOSE_TIME : CHOOSE_TIME);
     room.drawing.clear();
     room.dirty.canvas = true;
     room.broadcast({ t: 'canvas', actions: [] });
@@ -175,9 +208,19 @@ export class GuessGame {
     this.word = word;
     this.used.push(word);
     this.stage = 'drawing';
-    this.turnTime = room.settings.drawTime * 1000;
+    const kids = room.settings.kids;
+    this.turnTime = (kids ? KIDS_DRAW_TIME : room.settings.drawTime) * 1000;
     this.deadline = now + this.turnTime;
-    if (room.settings.hints) {
+    if (kids) {
+      const decoys = sample(
+        wordsFor(room.settings, true).filter((w) => w !== word),
+        OPTIONS - 1,
+        room.random,
+      );
+      this.options = shuffle([word, ...decoys], room.random);
+    }
+    // Letters mean nothing to a child who can't read, so kids mode shows the pictures instead.
+    if (room.settings.hints && !kids) {
       const letters = letterPositions(word);
       const count = Math.min(3, Math.floor(letters.length / 3));
       this.hintPos = shuffle(letters, room.random).slice(0, count);
@@ -208,14 +251,15 @@ export class GuessGame {
   }
 
   toJSON() {
-    const { room: _room, guessed, ...rest } = this;
-    return { ...rest, guessed: [...guessed] };
+    const { room: _room, guessed, wrong, ...rest } = this;
+    return { ...rest, guessed: [...guessed], wrong: [...wrong] };
   }
 
   static restore(room: Room, data: ReturnType<GuessGame['toJSON']>): GuessGame {
-    const { guessed, ...rest } = data;
+    const { guessed, wrong, ...rest } = data;
     const game = Object.assign(new GuessGame(room), rest);
     game.guessed = new Map(guessed);
+    game.wrong = new Map(wrong ?? []);
     return game;
   }
 }

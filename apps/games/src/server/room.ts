@@ -18,6 +18,7 @@ import {
   type Team,
   type TeleEntry,
 } from '../shared/protocol.ts';
+import { avatarName, isAvatar } from '../shared/avatars.ts';
 import { DuelGame } from './duel.ts';
 import { GuessGame } from './guess.ts';
 import { TelephoneGame } from './telephone.ts';
@@ -30,6 +31,7 @@ export type Player = {
   score: number;
   online: boolean;
   team: Team | null;
+  avatar?: string;
 };
 
 /** How the room reaches the sockets. The Durable Object gives the real one, tests a fake. */
@@ -75,7 +77,7 @@ export class Room {
 
   // Events from the Durable Object. Each one ends with flush(), which sends the new state.
 
-  connect(id: string, name: string, color: string, lang: Lang, now: number): boolean {
+  connect(id: string, name: string, color: string, lang: Lang, now: number, avatar?: unknown): boolean {
     if (this.banned.has(id)) {
       this.out.close(id, 'kicked');
       return false;
@@ -85,7 +87,9 @@ export class Room {
       this.out.close(id, 'full');
       return false;
     }
-    const cleanName = name.trim().replace(/\s+/g, ' ').slice(0, MAX_NAME) || 'Player';
+    const animal = isAvatar(avatar) ? avatar : undefined;
+    // A child who can't type joins with an animal, and the animal's name stands in.
+    const cleanName = name.trim().replace(/\s+/g, ' ').slice(0, MAX_NAME) || (animal && avatarName(animal, lang)) || 'Player';
     if (!player) {
       if (this.players.size >= MAX_SEATS) this.dropNewestOffline();
       if (this.players.size === 0) this.settings.wordLang = lang;
@@ -96,12 +100,14 @@ export class Room {
         score: 0,
         online: true,
         team: this.smallerTeam(),
+        avatar: animal,
       };
       this.players.set(id, player);
       this.sys('joined', player.name);
     } else {
       player.name = cleanName;
       if (isColor(color)) player.color = color;
+      player.avatar = animal;
       player.online = true;
     }
     this.emptySince = null;
@@ -158,6 +164,7 @@ export class Room {
         if (host && this.phase === 'lobby') this.shuffleTeams();
         break;
       case 'pick':
+      case 'tap':
       case 'draw':
         this.guess?.message(id, msg, now);
         break;
@@ -264,6 +271,7 @@ export class Room {
         score: p.score,
         online: p.online,
         team: p.team,
+        avatar: p.avatar,
         guessed: this.guess?.hasGuessed(p.id) ?? false,
         done: this.tele?.isDone(p.id) ?? false,
       })),
@@ -365,6 +373,7 @@ export class Room {
     if (typeof next.drawTime === 'number' && DRAW_TIME_OPTIONS.includes(next.drawTime)) s.drawTime = next.drawTime;
     if (next.wordLang === 'en' || next.wordLang === 'ru') s.wordLang = next.wordLang;
     if (typeof next.hints === 'boolean') s.hints = next.hints;
+    if (typeof next.kids === 'boolean') s.kids = next.kids;
     if (typeof next.customOnly === 'boolean') s.customOnly = next.customOnly;
     if (typeof next.customWords === 'string') s.customWords = next.customWords.slice(0, 5000);
     if (next.speed === 'fast' || next.speed === 'normal' || next.speed === 'slow') s.speed = next.speed;
