@@ -866,6 +866,25 @@ const nb: Catalog = {
         },
       ],
     },
+    skyaltar: {
+      tagline: 'Nattehimmelen gjennom telefonen, tegnet i stilen til gamle kulturer.',
+      lede: 'Løft telefonen, og Sky Altar viser stjernene, månen, planetene og stjernebildene bak den. Hvert tema tegner dem slik Hellas, vikingene, mayaene eller det gamle Kina kunne ha gjort, med rolig ambient-musikk.',
+      links: [],
+      groups: [
+        {
+          features: [
+            [
+              'Himmelvisning',
+              'Stjerner, solen, månen, planetene og 88 stjernebilder over kameraet, eller snudd med hånden.',
+            ],
+            ['Kulturtemaer', '13 kulturer, fra Hellas og Roma til inkaene, Sumer og steinalderen.'],
+            ['Ambient-musikk', 'En rolig sløyfe toner inn når appen åpnes. Ett trykk demper den.'],
+            ['Reklame og reklamefritt', 'Reklamen holder seg unna himmelen. Et engangskjøp på $2.99 fjerner den.'],
+            ['Appspråk', 'Skjermene og navnene på stjernebildene på 9 språk.'],
+          ],
+        },
+      ],
+    },
     memoire: {
       tagline: 'Lær engelske eller russiske ord i korte runder, rett før du glemmer dem.',
       lede: 'Memoire lærer russisktalende engelsk og engelsktalende russisk. Noen ganger om dagen viser den korte runder med kort, rett før et ord glipper.',

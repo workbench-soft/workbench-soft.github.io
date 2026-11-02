@@ -953,6 +953,25 @@ const de: Catalog = {
         },
       ],
     },
+    skyaltar: {
+      tagline: 'Der Nachthimmel durchs Telefon, gezeichnet im Stil alter Kulturen.',
+      lede: 'Halte das Telefon hoch, und Sky Altar zeigt die Sterne, den Mond, die Planeten und die Sternbilder dahinter. Jedes Thema zeichnet sie, wie Griechenland, die Wikinger, die Maya oder das alte China es hätten tun können, mit ruhiger Ambient-Musik.',
+      links: [],
+      groups: [
+        {
+          features: [
+            [
+              'Himmelsansicht',
+              'Sterne, Sonne, Mond, Planeten und 88 Sternbilder über der Kamera oder von Hand gedreht.',
+            ],
+            ['Kulturthemen', '13 Kulturen, von Griechenland und Rom bis zu den Inka, Sumer und der Steinzeit.'],
+            ['Ambient-Musik', 'Eine ruhige Schleife blendet beim Start ein. Ein Tippen schaltet sie stumm.'],
+            ['Werbung und Werbefreiheit', 'Werbung bleibt vom Himmel fern. Ein Kauf für $2.99 entfernt sie.'],
+            ['App-Sprachen', 'Die Ansichten und die Sternbildnamen in 9 Sprachen.'],
+          ],
+        },
+      ],
+    },
     memoire: {
       tagline: 'Englische oder russische Wörter in kurzen Runden lernen, kurz bevor man sie vergisst.',
       lede: 'Memoire bringt Russischsprachigen Englisch und Englischsprachigen Russisch bei. Ein paar Mal am Tag zeigt es kurze Kartenrunden, kurz bevor ein Wort verloren geht.',
