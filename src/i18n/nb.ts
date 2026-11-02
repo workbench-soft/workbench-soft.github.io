@@ -901,6 +901,7 @@ const nb: Catalog = {
               'Portrett',
               'Det du trykker på blir skarpt, nært eller 10 m unna, person eller ting. Resten blir mykt, og en glidebryter setter uskarpheten.',
             ],
+            ['Makro', 'En bille eller en dråpe fra 2 til 3 cm, så stor som telefonen tillater, med bildebredden i mm.'],
             ['Panorama', 'Et bredt bilde fra en langsom vending, satt sammen på telefonen.'],
             ['Sakte film', 'En video i 120 eller 240 bilder i sekundet som spilles av langsomt.'],
             [

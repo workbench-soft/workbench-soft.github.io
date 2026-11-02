@@ -979,6 +979,7 @@ const es: Catalog = {
               'Retrato',
               'Lo que tocas queda nítido, cerca o a 10 m, persona u objeto. El resto se suaviza y un deslizador ajusta el desenfoque.',
             ],
+            ['Macro', 'Un insecto o una gota a 2 o 3 cm, tan grande como lo permite el teléfono, con el ancho del encuadre en mm.'],
             ['Panorama', 'Una foto ancha de un giro lento, unida en el teléfono.'],
             ['Cámara lenta', 'Un vídeo a 120 o 240 fotogramas por segundo que se reproduce ralentizado.'],
             [
