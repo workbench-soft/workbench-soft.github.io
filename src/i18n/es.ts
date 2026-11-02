@@ -897,7 +897,7 @@ const es: Catalog = {
     'property-trends': {
       tagline: 'Barrios de Australia coloreados por su precio medio de vivienda, con el historial.',
       lede: 'Un mapa de barrios de Australia, cada uno coloreado por su precio medio de venta, con un gráfico de cómo cambió. Usa datos públicos abiertos.',
-      links: [],
+      links: ['Abrir el mapa'],
       groups: [
         {
           features: [

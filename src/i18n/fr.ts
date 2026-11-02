@@ -946,7 +946,7 @@ const fr: Catalog = {
     'property-trends': {
       tagline: "Les banlieues australiennes colorées selon le prix médian, avec l'historique.",
       lede: 'Une carte des banlieues australiennes, chacune colorée selon son prix de vente médian, avec un graphique de son évolution. Elle repose sur des données publiques ouvertes.',
-      links: [],
+      links: ['Ouvrir la carte'],
       groups: [
         {
           features: [

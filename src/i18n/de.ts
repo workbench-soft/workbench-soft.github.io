@@ -912,7 +912,7 @@ const de: Catalog = {
     'property-trends': {
       tagline: 'Australische Vororte, gefärbt nach dem mittleren Immobilienpreis, mit Verlauf.',
       lede: 'Eine Karte australischer Vororte, jeder nach seinem mittleren Verkaufspreis gefärbt, mit einem Diagramm des Verlaufs. Sie nutzt offene Behördendaten.',
-      links: [],
+      links: ['Karte öffnen'],
       groups: [
         {
           features: [

@@ -642,7 +642,7 @@ const zh: Catalog = {
     'property-trends': {
       tagline: '按房价中位数上色的澳大利亚郊区，附历史走势。',
       lede: '澳大利亚郊区地图，按成交价中位数上色，并有走势图。数据来自政府开放数据。',
-      links: [],
+      links: ['打开地图'],
       groups: [
         {
           features: [

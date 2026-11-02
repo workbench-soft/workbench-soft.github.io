@@ -698,7 +698,7 @@ export const projects: Project[] = [
     lede: 'A map of Australian suburbs, each coloured by its median sale price, with a chart of how that median moved. It runs on open government data.',
     platforms: ['Web'],
     stack: ['React', 'MapLibre', 'Open data'],
-    links: [],
+    links: [{ href: '/property-trends/', label: 'Open the map' }],
     groups: [
       {
         features: [

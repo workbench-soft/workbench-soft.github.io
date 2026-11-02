@@ -734,7 +734,7 @@ const ja: Catalog = {
     'property-trends': {
       tagline: '住宅価格の中央値で色分けしたオーストラリアの郊外と、その推移。',
       lede: 'オーストラリアの郊外を売買価格の中央値で色分けし、その推移をグラフにした地図。政府の公開データで動きます。',
-      links: [],
+      links: ['地図を開く'],
       groups: [
         {
           features: [

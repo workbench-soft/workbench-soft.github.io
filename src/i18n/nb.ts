@@ -825,7 +825,7 @@ const nb: Catalog = {
     'property-trends': {
       tagline: 'Australske forsteder farget etter medianprisen på bolig, med historikk.',
       lede: 'Et kart over australske forsteder, hver farget etter medianprisen, med et diagram over utviklingen. Det bygger på åpne offentlige data.',
-      links: [],
+      links: ['Åpne kartet'],
       groups: [
         {
           features: [

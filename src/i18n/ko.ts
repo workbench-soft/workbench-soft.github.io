@@ -693,7 +693,7 @@ const ko: Catalog = {
     'property-trends': {
       tagline: '주택 가격 중앙값으로 색칠한 호주 교외와 그 추이.',
       lede: '호주 교외를 매매가 중앙값으로 색칠하고 그 추이를 그래프로 보여 주는 지도입니다. 정부 공개 데이터로 돌아갑니다.',
-      links: [],
+      links: ['지도 열기'],
       groups: [
         {
           features: [

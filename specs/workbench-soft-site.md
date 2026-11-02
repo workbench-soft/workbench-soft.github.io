@@ -194,3 +194,17 @@ The studio needed one public site for its apps and their installers.
 - **Changes** each project in `src/data/projects.ts` names its `repo`, the clone that holds its `docs/features.md`. Each heading there is now a feature name or a group title of the project. Shuttrix, Farnear, Memoire, Lumiere Player, Property Trends, Tripforge, Reddit Desk, Songfactory and Speed Camera Scraper get entries. The 8 other catalogs get each new line.
 - **Check** `mise run feature-check` in the workspace folder lists each heading the site lacks.
 - **Docs** `README.md`, `CHANGELOG.md`, `docs/features.md`.
+
+#### 2026-11-02 Property Trends under /property-trends/
+
+- **Why** Property Trends, a private repo, needs a free public host for its
+  web build and about 100 MB of open data. Cloudflare R2 needs a card, so
+  the app joins this site.
+- **Changes**
+  - **`pages.yml`** a step after the home page downloads the newest
+    `property-trends-web-v*` release and unpacks it into
+    `_site/property-trends/`. No release means no folder.
+  - **Releases** `mise run deploy:web` in `property-trends` publishes them
+    and starts this workflow. It keeps the last 3.
+- **Limits** GitHub Pages caps the whole site at 1 GB.
+- **Docs** `README.md`, `CHANGELOG.md`.
