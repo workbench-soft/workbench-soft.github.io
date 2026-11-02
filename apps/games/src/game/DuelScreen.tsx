@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'preact/hooks';
 import { TEAMS, type Team } from '../shared/protocol.ts';
 import { Avatar, Timer } from './common.tsx';
+import { MicButton } from './kids.tsx';
 import { t } from './i18n.ts';
 import { clueError, room, send } from './store.ts';
 
@@ -83,6 +84,8 @@ export function DuelScreen() {
                 aria-pressed={ownPicks.includes(i)}
                 onClick={() => send({ t: 'toggle', index: i })}
               >
+                {/* A star marks a secret word, so color alone doesn't carry it. */}
+                {cardClass(i).includes('target-') && <span aria-label="★">⭐ </span>}
                 {word}
               </button>
             ))}
@@ -105,6 +108,7 @@ export function DuelScreen() {
                 onInput={(e) => setClue(e.currentTarget.value)}
                 autofocus
               />
+              <MicButton onText={(heard) => setClue(heard.trim().split(' ')[0] ?? '')} />
               <button type="submit" class="btn">
                 {t('send')}
               </button>

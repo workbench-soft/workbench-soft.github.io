@@ -89,7 +89,8 @@ export class Room {
     }
     const animal = isAvatar(avatar) ? avatar : undefined;
     // A child who can't type joins with an animal, and the animal's name stands in.
-    const cleanName = name.trim().replace(/\s+/g, ' ').slice(0, MAX_NAME) || (animal && avatarName(animal, lang)) || 'Player';
+    const cleanName =
+      name.trim().replace(/\s+/g, ' ').slice(0, MAX_NAME) || (animal && avatarName(animal, lang)) || 'Player';
     if (!player) {
       if (this.players.size >= MAX_SEATS) this.dropNewestOffline();
       if (this.players.size === 0) this.settings.wordLang = lang;

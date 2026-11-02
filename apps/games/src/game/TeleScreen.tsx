@@ -5,6 +5,7 @@ import { MAX_PHRASE, type TeleEntry } from '../shared/protocol.ts';
 import { randomPrompt } from '../words/prompts.ts';
 import { Board, Picture } from '../drawing/Board.tsx';
 import { AdSlot, Avatar, Timer, useSecondsLeft } from './common.tsx';
+import { MicButton } from './kids.tsx';
 import { lang, t } from './i18n.ts';
 import { album, room, send, task } from './store.ts';
 
@@ -96,6 +97,7 @@ function Task() {
               onInput={(e) => setText(e.currentTarget.value)}
               autofocus
             />
+            <MicButton onText={setText} />
             <button type="button" class="btn btn-ghost" onClick={() => setText(randomPrompt(lang.value))}>
               {t('idea')}
             </button>
@@ -110,7 +112,7 @@ function Task() {
           <h2 class="task-prompt">
             {t('draw')}: <strong>{prompt?.text || t('skipped')}</strong>
           </h2>
-          <Board drawing={local.current} version={localVersion} editable key={tele.step} />
+          <Board drawing={local.current} version={localVersion} editable simple={view.settings.kids} key={tele.step} />
           <button type="button" class="btn btn-big" onClick={submit}>
             {t('done')}
           </button>
@@ -138,6 +140,7 @@ function Task() {
               aria-label={t('describe')}
               onInput={(e) => setText(e.currentTarget.value)}
             />
+            <MicButton onText={setText} />
             <button type="submit" class="btn">
               {t('done')}
             </button>
@@ -154,7 +157,7 @@ export function TeleScreen() {
   return (
     <div class="play play-narrow">
       <header class="play-bar">
-        <span class="muted">{t('stepOf', { a: tele.step + 1, b: tele.steps })}</span>
+        <span class="muted nowrap">{t('stepOf', { a: tele.step + 1, b: tele.steps })}</span>
         <strong>{t('telephone')}</strong>
         <Timer deadline={tele.deadline} />
       </header>

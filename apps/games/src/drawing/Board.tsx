@@ -10,6 +10,24 @@ type Tool = 'pen' | 'eraser' | 'fill';
 const SEND_EVERY = 80;
 /** Points closer than this to the last one get dropped. */
 const MIN_STEP = 1.5;
+/** Kids mode keeps the bright colors and the thicker brushes, each big enough for a small finger. */
+const SIMPLE_COLORS = [
+  '#000000',
+  '#7f7f7f',
+  '#e53935',
+  '#fb8c00',
+  '#fdd835',
+  '#43a047',
+  '#1e88e5',
+  '#82b1ff',
+  '#8e24aa',
+  '#f06292',
+  '#6d4c41',
+  '#00acc1',
+];
+const SIMPLE_SIZES = SIZES.slice(1);
+/** The trash wipes the drawing only on a second tap within this time. */
+const CLEAR_WINDOW = 3000;
 
 type Props = {
   drawing: Drawing;
@@ -18,11 +36,13 @@ type Props = {
   editable?: boolean;
   /** Gets the ops to send. Without it the drawing stays in this browser, as in drawing telephone. */
   onOps?: (ops: Op[]) => void;
+  /** Kids mode: fewer, bigger colors and brushes. */
+  simple?: boolean;
 };
 
 let strokeIds = Math.floor(Math.random() * 1e6);
 
-export function Board({ drawing, version, editable = false, onOps }: Props) {
+export function Board({ drawing, version, editable = false, onOps, simple = false }: Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const painter = useRef<Painter | null>(null);
   const [tool, setTool] = useState<Tool>('pen');
@@ -31,6 +51,15 @@ export function Board({ drawing, version, editable = false, onOps }: Props) {
   const stroke = useRef<{ id: number; x: number; y: number } | null>(null);
   const outbox = useRef<Op[]>([]);
   const frame = useRef(0);
+  const [clearArmed, setClearArmed] = useState(false);
+  const colors = simple ? SIMPLE_COLORS : COLORS;
+  const sizes = simple ? SIMPLE_SIZES : SIZES;
+
+  useEffect(() => {
+    if (!clearArmed) return;
+    const timer = setTimeout(() => setClearArmed(false), CLEAR_WINDOW);
+    return () => clearTimeout(timer);
+  }, [clearArmed]);
 
   const repaint = () => {
     if (frame.current) return;
@@ -125,7 +154,7 @@ export function Board({ drawing, version, editable = false, onOps }: Props) {
   });
 
   return (
-    <div class={`board${editable ? ' board-edit' : ''}`}>
+    <div class={`board${editable ? ' board-edit' : ''}${simple ? ' board-simple' : ''}`}>
       <canvas
         ref={canvasRef}
         class={`board-canvas tool-${tool}`}
@@ -151,7 +180,7 @@ export function Board({ drawing, version, editable = false, onOps }: Props) {
             ))}
           </div>
           <div class="tool-group">
-            {SIZES.map((s) => (
+            {sizes.map((s) => (
               <button
                 type="button"
                 class={`icon-btn${size === s ? ' on' : ''}`}
@@ -164,7 +193,7 @@ export function Board({ drawing, version, editable = false, onOps }: Props) {
             ))}
           </div>
           <div class="swatches" aria-label={t('color')}>
-            {COLORS.map((c) => (
+            {colors.map((c) => (
               <button
                 type="button"
                 class={`swatch${color === c ? ' on' : ''}`}
@@ -189,13 +218,19 @@ export function Board({ drawing, version, editable = false, onOps }: Props) {
             </button>
             <button
               type="button"
-              class="icon-btn"
-              title={t('clear')}
-              aria-label={t('clear')}
-              onClick={() => emit({ k: 'x' })}
+              class={`icon-btn${clearArmed ? ' icon-btn-danger' : ''}`}
+              title={clearArmed ? t('clearAgain') : t('clear')}
+              aria-label={clearArmed ? t('clearAgain') : t('clear')}
+              onClick={() => {
+                // A stray tap on the trash must not wipe a child's drawing, so it takes two.
+                if (!clearArmed) return setClearArmed(true);
+                setClearArmed(false);
+                emit({ k: 'x' });
+              }}
             >
               <Icon name="clear" />
             </button>
+            {clearArmed && <span class="clear-ask">{t('clearAgain')}</span>}
           </div>
         </div>
       )}

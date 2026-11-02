@@ -155,7 +155,8 @@ export class GuessGame {
       word: showWord ? this.word : null,
       hint: this.stage === 'drawing' ? maskWord(this.word, this.hintPos.slice(0, shown)) : '',
       gains: this.stage === 'turnEnd' ? this.gains : null,
-      options: this.stage === 'drawing' && !isDrawer && !this.guessed.has(id) && this.options.length ? this.options : null,
+      options:
+        this.stage === 'drawing' && !isDrawer && !this.guessed.has(id) && this.options.length ? this.options : null,
       wrong: this.wrong.get(id) ?? [],
     };
   }

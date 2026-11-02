@@ -75,8 +75,8 @@ const en: SiteText = {
     stepsTitle: 'How it works',
     steps: [
       'Press “Create a room”. The room gets its own link.',
-      'Send the link to friends in any chat. They open it and type a name.',
-      'Pick a game in the lobby and press Start.',
+      'Send the link to friends in any chat. They open it and tap an animal.',
+      'Pick a game in the lobby and press Play.',
     ],
     faq: [
       {
@@ -223,8 +223,8 @@ const ru: SiteText = {
     stepsTitle: 'Как это работает',
     steps: [
       'Нажмите «Создать комнату». У комнаты будет своя ссылка.',
-      'Отправьте ссылку друзьям в любом чате. Они откроют её и введут имя.',
-      'Выберите игру в лобби и нажмите «Начать».',
+      'Отправьте ссылку друзьям в любом чате. Они откроют её и нажмут на зверька.',
+      'Выберите игру в лобби и нажмите «Играть».',
     ],
     faq: [
       {

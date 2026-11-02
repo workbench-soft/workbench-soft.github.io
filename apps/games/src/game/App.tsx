@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'preact/hooks';
 import { COLORS } from '../shared/canvas.ts';
+import { AVATARS } from '../shared/avatars.ts';
 import { MAX_NAME, type Mode } from '../shared/protocol.ts';
 import { syncBanner } from './admob.ts';
 import { DuelScreen } from './DuelScreen.tsx';
@@ -17,53 +18,42 @@ const AVATAR_COLORS = COLORS.filter(
   (c) => !['#ffffff', '#c3c3c3', '#fff59d', '#d7ccc8', '#ffd180', '#b9f6ca'].includes(c),
 );
 
+const randomColor = () => AVATAR_COLORS[Math.floor(Math.random() * AVATAR_COLORS.length)];
+
+/** A tap on an animal joins. A child who can't type needs nothing else, and the name stays optional. */
 function JoinForm({ onJoin }: { onJoin: () => void }) {
   const [name, setName] = useState(load('name') ?? '');
-  const [color, setColor] = useState(
-    () => load('color') ?? AVATAR_COLORS[Math.floor(Math.random() * AVATAR_COLORS.length)],
-  );
+  const join = (avatar: string) => {
+    save('name', name.trim());
+    save('avatar', avatar);
+    if (!load('color')) save('color', randomColor());
+    onJoin();
+  };
   return (
     <form
       class="card join"
       onSubmit={(e) => {
         e.preventDefault();
-        const clean = name.trim();
-        if (!clean) return;
-        save('name', clean);
-        save('color', color);
-        onJoin();
+        if (name.trim()) join(load('avatar') ?? AVATARS[0].emoji);
       }}
     >
-      <h1>{t('join')}</h1>
+      <h1>{t('pickAnimal')}</h1>
+      <div class="animals">
+        {AVATARS.map((a) => (
+          <button type="button" class="animal" aria-label={a[lang.value]} onClick={() => join(a.emoji)}>
+            <span aria-hidden="true">{a.emoji}</span>
+          </button>
+        ))}
+      </div>
       <label class="field">
-        <span>{t('yourName')}</span>
-        <input
-          value={name}
-          maxLength={MAX_NAME}
-          onInput={(e) => setName(e.currentTarget.value)}
-          autofocus
-          required
-          autocomplete="off"
-        />
+        <span>{t('nameOptional')}</span>
+        <input value={name} maxLength={MAX_NAME} onInput={(e) => setName(e.currentTarget.value)} autocomplete="off" />
       </label>
-      <fieldset class="field">
-        <legend>{t('pickColor')}</legend>
-        <div class="swatches">
-          {AVATAR_COLORS.map((c) => (
-            <button
-              type="button"
-              class={`swatch${c === color ? ' on' : ''}`}
-              style={{ background: c }}
-              aria-label={c}
-              aria-pressed={c === color}
-              onClick={() => setColor(c)}
-            />
-          ))}
-        </div>
-      </fieldset>
-      <button type="submit" class="btn btn-big">
-        {t('join')}
-      </button>
+      {name.trim() && (
+        <button type="submit" class="btn btn-big">
+          {t('join')}
+        </button>
+      )}
     </form>
   );
 }
@@ -91,11 +81,11 @@ function Screen() {
 
 export function App() {
   const code = codeFromLocation();
-  // A player who gave a name before goes straight in.
-  const [joined, setJoined] = useState(() => Boolean(code && load('name')));
+  // A player who joined before goes straight in.
+  const [joined, setJoined] = useState(() => Boolean(code && (load('avatar') || load('name'))));
   // The join form saves the name and the color first, so both ways in read them here.
   useEffect(() => {
-    if (joined && code) connect(code, load('name') ?? '', load('color') ?? AVATAR_COLORS[0]);
+    if (joined && code) connect(code, load('name') ?? '', load('color') ?? AVATAR_COLORS[0], load('avatar') ?? '');
   }, [joined, code]);
   const phase = room.value?.phase;
   const albumDone = room.value?.album?.done ?? false;
@@ -126,7 +116,12 @@ export function App() {
   return (
     <>
       <header class="site-header">
-        <a class="logo" href={home}>
+        <a
+          class="logo"
+          href={home}
+          // A stray tap on the logo must not throw a child out of a game.
+          onClick={(e) => joined && phase && phase !== 'lobby' && !confirm(t('leaveRoom')) && e.preventDefault()}
+        >
           <img src={asset('/favicon.svg')} width="28" height="28" alt="" />
           <span>{t('appName')}</span>
         </a>
@@ -136,13 +131,15 @@ export function App() {
               {t('room')} <b>{code}</b>
             </span>
           )}
-          <button
-            type="button"
-            class="btn btn-ghost btn-small"
-            onClick={() => setLang(lang.value === 'ru' ? 'en' : 'ru')}
-          >
-            {lang.value === 'ru' ? 'EN' : 'RU'}
-          </button>
+          {(!phase || phase === 'lobby') && (
+            <button
+              type="button"
+              class="btn btn-ghost btn-small"
+              onClick={() => setLang(lang.value === 'ru' ? 'en' : 'ru')}
+            >
+              {lang.value === 'ru' ? 'EN' : 'RU'}
+            </button>
+          )}
         </div>
       </header>
       {status.value === 'lost' && !fatal.value && <p class="banner">{t('reconnecting')}</p>}
