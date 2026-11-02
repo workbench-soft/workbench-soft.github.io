@@ -41,8 +41,8 @@ Spec: [workbench-soft-site](../specs/workbench-soft-site.md).
 ## Sites menu
 
 - **What it does** opens any site the studio hosts, ours and our clients'.
-- **Where** Sites in the header, beside Games. It lists each project site by the project name, then Our clients with Aspiration Style, the site of Maria Shilova.
-- **Limits** a project shows when its first link is a page we host. Client sites sit in `clientSites` of `src/data/studio.ts`. Alina Photography joins once its site is live.
+- **Where** Sites in the header, beside Games. It lists each project site by the project name, then Our clients with Aspiration Style, the site of Maria Shilova, and Alina Photography.
+- **Limits** a project shows when its first link is a page we host. Client sites sit in `clientSites` of `src/data/studio.ts`.
 
 Spec: [workbench-soft-site](../specs/workbench-soft-site.md).
 

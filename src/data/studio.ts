@@ -2,7 +2,10 @@ export const email = 'hello@workbench-soft.com';
 export const mailto = (subject: string) => `mailto:${email}?subject=${encodeURIComponent(subject)}`;
 
 /** Sites we build and host for clients. Each carries the client's brand, so it stays off the project list. */
-export const clientSites = [{ name: 'Aspiration Style', href: 'https://aspirationstyle.ru' }];
+export const clientSites = [
+  { name: 'Aspiration Style', href: 'https://aspirationstyle.ru' },
+  { name: 'Alina Photography', href: 'https://alina-photo.memories-demo-webdav.workers.dev' },
+];
 
 /** Platforms a person installs or opens an app on. Tool hosts such as VS Code stay out of the count. */
 export const devicePlatforms = ['Android', 'iPhone', 'Web', 'Windows', 'macOS', 'Linux'];

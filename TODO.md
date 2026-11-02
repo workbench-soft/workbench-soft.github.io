@@ -37,4 +37,4 @@ Work left in the code:
 
 ## header-sites: Sites menu in the header
 
-- [ ] **Alina Photography** once `mise run deploy` in `alina-photo` puts the Worker live, add its address to `clientSites` in `src/data/studio.ts`.
+- [ ] **Alina Photography** once Alina has her own domain, swap the Worker address in `clientSites` of `src/data/studio.ts` for it.
