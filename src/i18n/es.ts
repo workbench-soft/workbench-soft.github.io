@@ -891,7 +891,7 @@ const es: Catalog = {
             ['Objetivos', 'Un botón por cada objetivo del teléfono sobre una escala de zoom.'],
             ['Enfoque', 'AF-C sigue un sujeto en movimiento y las caras. Un toque enfoca un punto.'],
             ['Balance de blancos', 'Auto, preajustes o kelvin en un dial.'],
-            ['Exposición', 'ISO y obturador, cada uno auto o manual en tercios de paso.'],
+            ['Exposición', 'ISO y obturador, cada uno auto o manual en tercios de paso. AJUSTE fija ambos para la escena.'],
             ['Color', 'Una sola saturación para el dial COLOR y el deslizador Color.'],
             ['Foto, vídeo y flash', 'La foto es el fotograma en pantalla al tocar. Mantener graba.'],
             ['Lugar y cámara', 'Cada toma guarda dónde y cómo se hizo, en etiquetas EXIF.'],

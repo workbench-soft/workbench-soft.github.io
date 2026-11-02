@@ -825,7 +825,7 @@ const nb: Catalog = {
             ['Objektiver', 'En knapp per objektiv på telefonen, over én zoomskala.'],
             ['Fokus', 'AF-C følger et motiv i bevegelse og ansikter. Et trykk fokuserer på et punkt.'],
             ['Hvitbalanse', 'Auto, forvalg eller kelvin på et hjul.'],
-            ['Eksponering', 'ISO og lukker, hver auto eller manuelt i tredjedels trinn.'],
+            ['Eksponering', 'ISO og lukker, hver auto eller manuelt i tredjedels trinn. TILPASS stiller begge for scenen.'],
             ['Farge', 'Én metning for COLOR-hjulet og Farge-glidebryteren.'],
             ['Foto, video og blits', 'Bildet er rammen på skjermen ved berøring. Hold for å filme.'],
             ['Sted og kameradata', 'Hvert bilde bærer hvor og hvordan det ble tatt, som EXIF-tagger.'],

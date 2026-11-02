@@ -269,7 +269,7 @@ export const projects: Project[] = [
           { name: 'Lenses', text: 'A chip per lens the phone has, over one zoom scale.' },
           { name: 'Focus', text: 'AF-C follows a moving subject and faces. A tap focuses on a point.' },
           { name: 'White balance', text: 'Auto, presets or kelvin on a dial.' },
-          { name: 'Exposure', text: 'ISO and shutter, each auto or manual in third stops.' },
+          { name: 'Exposure', text: 'ISO and shutter, each auto or manual in third stops. FIT sets both for the scene.' },
           { name: 'Color', text: 'One saturation value for the COLOR dial and the Color slider.' },
           {
             name: 'Photo, video and flash',

@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Shuttrix** the Exposure feature names the FIT button that sets ISO and shutter for the scene.
 - **Sky Altar** a new app entry: the night sky through the phone in the style of 13 old cultures, with ambient music.
 
 - **Names** the Tick-a-Lot entry and the Tripforge link to it spell the app Tick-a-Lot.

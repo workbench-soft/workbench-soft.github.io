@@ -949,7 +949,7 @@ const fr: Catalog = {
             ['Objectifs', 'Une pastille par objectif du téléphone, sur une seule échelle de zoom.'],
             ['Mise au point', "L'AF-C suit un sujet en mouvement et les visages. Un appui vise un point."],
             ['Balance des blancs', 'Auto, préréglages ou kelvins sur une molette.'],
-            ['Exposition', 'ISO et vitesse, chacun auto ou manuel par tiers de valeur.'],
+            ['Exposition', 'ISO et vitesse, chacun auto ou manuel par tiers de valeur. AJUST règle les deux pour la scène.'],
             ['Couleur', 'Une seule saturation pour la molette COLOR et le curseur Couleur.'],
             ['Photo, vidéo et flash', "La photo est l'image à l'écran au toucher. Un appui long filme."],
             ['Lieu et réglages', 'Chaque prise garde où et comment elle a été faite, en balises EXIF.'],
