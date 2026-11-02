@@ -1081,6 +1081,7 @@ const nb: Catalog = {
           features: [
             ['Spør', 'Skriv stedene, en omtrentlig dato, hvor lenge og hvem som skal.'],
             ['Fly', 'De billigste tur-retur-flyene rundt datoen, med billigere datoer ved siden av.'],
+            ['Steder', 'Toppstedene og de hemmelige perlene i hver by etter interessene dine, med hake og lenke.'],
             ['Til Tick-a-Lot', 'Ett trykk gjør reisen om til Tick-a-Lot-lister: severdigheter og pakking.'],
             ['Innstillinger', 'Språket: telefonens, eller ett av de 9.'],
           ],

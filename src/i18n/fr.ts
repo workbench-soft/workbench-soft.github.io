@@ -1230,6 +1230,10 @@ const fr: Catalog = {
           features: [
             ['Demander', 'Tapez les lieux, une date approximative, la durée et qui part.'],
             ['Vols', 'Les allers-retours les moins chers autour de la date, avec des dates moins chères à côté.'],
+            [
+              'Lieux',
+              'Les incontournables et les lieux secrets de chaque ville selon tes centres d’intérêt, avec une coche et un lien.',
+            ],
             ['Vers Tick-a-Lot', 'Un appui transforme le voyage en listes Tick-a-Lot : visites et bagages.'],
             ['Réglages', "La langue : celle du téléphone ou l'une des 9."],
           ],

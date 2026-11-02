@@ -882,6 +882,10 @@ export const projects: Project[] = [
         features: [
           { name: 'Ask', text: 'Type the places, a rough date, how long and who goes.' },
           { name: 'Flights', text: 'The cheapest round trips around the asked date, with cheaper dates beside.' },
+          {
+            name: 'Places',
+            text: 'The top sights and the secret spots of each city, filtered by your interests, each with a tick and a link.',
+          },
           { name: 'To Tickalot', text: 'One tap turns the trip into Tick-a-Lot lists: sights and packing.' },
           { name: 'Settings', text: "The language: the phone's, or one of the 9." },
         ],
