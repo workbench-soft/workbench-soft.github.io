@@ -1057,6 +1057,10 @@ const fr: Catalog = {
               'Vue du ciel',
               'Étoiles, Soleil, Lune, planètes et 88 constellations sur la caméra, ou tournées à la main.',
             ],
+            [
+              'Étoiles de la caméra',
+              "L'image de la caméra reste sombre. Ses étoiles scintillent avec une traînée d'étincelles et brillent d'or quand elles collent au ciel.",
+            ],
             ['Thèmes des cultures', '13 cultures, de la Grèce et Rome aux Incas, à Sumer et à l’âge de pierre.'],
             ['Musique ambient', 'Une boucle lente monte à l’ouverture. Un toucher la coupe.'],
             ['Publicités et retrait', 'Les pubs restent hors du ciel. Un achat unique de $2.99 les retire.'],
