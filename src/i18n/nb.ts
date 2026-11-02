@@ -892,7 +892,7 @@ const nb: Catalog = {
             ['Hvitbalanse', 'Auto, forvalg eller kelvin på et hjul.'],
             [
               'Eksponering',
-              'ISO og lukker, hver auto eller manuelt i tredjedels trinn. TILPASS stiller begge for scenen.',
+              'ISO og lukker, hver auto eller manuelt i tredjedels trinn. TILPASS stiller begge for scenen. Ved lang lukkertid vises «Hold stille» stort.',
             ],
             [
               'Autojustering',

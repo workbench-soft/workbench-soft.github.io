@@ -988,7 +988,7 @@ const de: Catalog = {
             ['Weißabgleich', 'Auto, Voreinstellungen oder Kelvin auf einem Rad.'],
             [
               'Belichtung',
-              'ISO und Verschluss, jeweils auto oder manuell in Drittelstufen. AUTO stellt beide für die Szene ein.',
+              'ISO und Verschluss, jeweils auto oder manuell in Drittelstufen. AUTO stellt beide für die Szene ein. Bei langer Belichtung erscheint groß „Stillhalten“.',
             ],
             [
               'Auto-Abstimmung',

@@ -296,7 +296,7 @@ export const projects: Project[] = [
           { name: 'White balance', text: 'Auto, presets or kelvin on a dial.' },
           {
             name: 'Exposure',
-            text: 'ISO and shutter, each auto or manual in third stops. FIT sets both for the scene.',
+            text: 'ISO and shutter, each auto or manual in third stops. FIT sets both for the scene. A slow shutter shows a big "Hold still".',
           },
           {
             name: 'Auto tune',
