@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **ServoHop** a Site text and guides line in the features, in 9 languages: the home page explains the map in words, and guides cover fuel pricing, each state scheme, the grades and EV charging.
 - **Lumiere Player** runs on Android phones too, in 9 languages: touch on a phone, panel buttons and sponsor skip. The stack line says Android Views in place of Jetpack Compose.
 - **Alina Photography** under Our clients in the Sites menu, at its Worker address.
 - **Shuttrix Macro** a Macro line in the Shuttrix features, in 9 languages: a bug or a drop from 2 to 3 cm with the frame width in mm.

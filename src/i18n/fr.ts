@@ -526,6 +526,10 @@ const fr: Catalog = {
             ],
             ['Pages pour la recherche', 'Une page par État, quartier et station, avec données structurées et sitemap.'],
             [
+              'Textes et guides du site',
+              'La page d’accueil explique la carte en mots, et des guides expliquent les prix, le dispositif de chaque État, les carburants et la recharge.',
+            ],
+            [
               'Mise à jour auto',
               'L’APK vérifie GitHub au lancement et à chaque retour, et montre le téléchargement dans l’en-tête.',
             ],

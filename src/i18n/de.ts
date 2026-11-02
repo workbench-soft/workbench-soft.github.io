@@ -507,6 +507,10 @@ const de: Catalog = {
               'Eine Seite für jeden Bundesstaat, jeden Vorort und jede Tankstelle, mit strukturierten Daten und einer Sitemap.',
             ],
             [
+              'Texte und Ratgeber',
+              'Die Startseite erklärt die Karte in Worten, und Ratgeber erklären Spritpreise, das Schema jedes Bundesstaats, die Sorten und das Laden von E-Autos.',
+            ],
+            [
               'Selbst-Update',
               'Das APK prüft GitHub beim Start und bei jeder Rückkehr und zeigt den Download in der Kopfzeile.',
             ],

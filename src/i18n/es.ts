@@ -510,6 +510,10 @@ const es: Catalog = {
               'Una página por estado, barrio y gasolinera, con datos estructurados y un sitemap.',
             ],
             [
+              'Textos y guías del sitio',
+              'La portada explica el mapa con palabras, y las guías explican los precios, el sistema de cada estado, los tipos de gasolina y la carga eléctrica.',
+            ],
+            [
               'Actualización automática',
               'El APK revisa GitHub al abrir y en cada regreso, y muestra la descarga en la cabecera.',
             ],
