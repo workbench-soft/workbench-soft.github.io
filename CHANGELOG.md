@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **SpotTheCam** the Android app lists Trip stats: speeds, time over the limit, cameras passed too fast and time lost in traffic jams.
 - **Games** kids mode, on by default: tap an animal to join, picture words read aloud, guesses by tapping a picture, ring timers, confetti and stars. The lobby puts Play first, and the trash, the logo and Remove ask before they act.
 - **Shuttrix Astro and Moon** the page lists the night sky held in the hand and the moon at 10x, in every language.
 - **Shuttrix Ads** the page lists one banner under the gallery grid, with the camera and the viewer clear.

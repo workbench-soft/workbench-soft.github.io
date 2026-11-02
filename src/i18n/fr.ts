@@ -298,6 +298,10 @@ const fr: Catalog = {
               'Trajets et marches s’enregistrent seuls. Chaque trajet sépare les km en voiture et les km à pied. Chaque parcours montre votre vitesse à chaque radar, en vert ou en rouge. Vos vitesses restent sur votre téléphone.',
             ],
             [
+              'Statistiques du trajet',
+              'Vitesse moyenne et maximale, la part du trajet au-dessus de la limite et de combien, les radars passés trop vite et le temps perdu dans les bouchons. Un repère sur la carte montre chaque bouchon.',
+            ],
+            [
               'Partager un trajet',
               'Un lien montre le parcours dans tout navigateur. Arrêter le partage le supprime du serveur.',
             ],

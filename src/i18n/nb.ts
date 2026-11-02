@@ -273,6 +273,10 @@ const nb: Catalog = {
               'Kjøreturer og gåturer registreres av seg selv. Hver tur viser kjørte og gåtte kilometer hver for seg. Hver rute viser farten din ved hvert kamera, grønt eller rødt. Farten blir på telefonen din.',
             ],
             [
+              'Turstatistikk',
+              'Snittfart og toppfart, hvor mye av kjøringen som gikk over grensen og hvor mye, fotoboksene du passerte for fort, og tiden tapt i kø. En markør på kartet viser hver kø.',
+            ],
+            [
               'Del en tur',
               'En lenke viser ruten i hvilken som helst nettleser. Stopp deling fjerner den fra serveren.',
             ],
