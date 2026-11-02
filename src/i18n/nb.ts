@@ -858,7 +858,7 @@ const nb: Catalog = {
             ],
             ['Natt', 'Telefonen bygger bildet av flere bilder mens en linje fylles.'],
             ['Lang eksponering', 'Gjør bevegelse uskarp: silkevann, lysspor, en folkemengde som blekner.'],
-            ['Portrett', 'Personer blir skarpe og bakgrunnen myk. En glidebryter setter uskarpheten.'],
+            ['Portrett', 'Det du trykker på blir skarpt, nært eller 10 m unna, person eller ting. Resten blir mykt, og en glidebryter setter uskarpheten.'],
             ['Panorama', 'Et bredt bilde fra en langsom vending, satt sammen på telefonen.'],
             ['Sakte film', 'En video i 120 eller 240 bilder i sekundet som spilles av langsomt.'],
             [

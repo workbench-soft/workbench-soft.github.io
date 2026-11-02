@@ -988,7 +988,7 @@ const fr: Catalog = {
             ],
             ['Nuit', "Le téléphone compose la photo à partir de plusieurs images pendant qu'une barre avance."],
             ['Pose longue', "Floute ce qui bouge : eau soyeuse, traînées de phares, foule qui s'efface."],
-            ['Portrait', 'Les personnes restent nettes et le fond devient doux. Un curseur règle le flou.'],
+            ['Portrait', 'Ce que vous touchez reste net, proche ou à 10 m, personne ou objet. Le reste devient doux, un curseur règle le flou.'],
             ['Panorama', "Une photo large d'un lent pivot, assemblée sur le téléphone."],
             ['Ralenti', 'Une vidéo à 120 ou 240 images par seconde, lue au ralenti.'],
             ['Accéléré', 'Une image chaque demi-seconde, lue 15 fois plus vite : nuages, couchers de soleil, foules.'],

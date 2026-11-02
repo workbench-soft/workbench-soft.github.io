@@ -269,7 +269,7 @@ export const projects: Project[] = [
           },
           { name: 'Night', text: 'The phone builds the photo from several frames while a bar shows.' },
           { name: 'Long exposure', text: 'Blurs what moves: silky water, light trails, a crowd that fades.' },
-          { name: 'Portrait', text: 'People stay sharp and the background goes soft. A slider sets the blur.' },
+          { name: 'Portrait', text: 'What you tap stays sharp, near or 10 m away, a person or a thing. The rest goes soft, and a slider sets the blur.' },
           { name: 'Panorama', text: 'A wide photo from a slow turn, stitched on the phone.' },
           { name: 'Slow motion', text: 'A video at 120 or 240 frames a second that plays back slowed.' },
           { name: 'Time lapse', text: 'A frame each half second, played 15 times faster: clouds, sunsets, crowds.' },
