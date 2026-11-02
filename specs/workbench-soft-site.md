@@ -258,3 +258,11 @@ The studio needed one public site for its apps and their installers.
 - **Changes**
   - **`src/data/projects.ts`** the entry after Site Sources, with `repo: 'suno-download'`.
   - **`src/i18n/`** the entry in each of the 8 other catalogs.
+
+#### 2026-11-02 Suno Download leaves the site
+
+- **Why** the owner asked to keep the Suno Download extension off workbench-soft.com.
+- **What the visitor gets** the tools list without the Suno Download card.
+- **Changes**
+  - **`src/data/projects.ts`** and **`src/i18n/`** drop the `suno-download` entry.
+  - **`feature-check`** the workspace repo lists `suno-download` in `skip`, so the check asks for no card.
