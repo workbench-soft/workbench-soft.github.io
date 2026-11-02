@@ -208,3 +208,17 @@ The studio needed one public site for its apps and their installers.
     and starts this workflow. It keeps the last 3.
 - **Limits** GitHub Pages caps the whole site at 1 GB.
 - **Docs** `README.md`, `CHANGELOG.md`.
+
+#### 2026-11-02 Groups, icons, screenshots and the studio email
+
+- **Why** the owner asked for the studio email on the domain, the projects split by who they serve, internal tools such as Archon described too, and each app shown with its icon and screenshots.
+- **What the visitor gets**
+  - **Groups** apps for people, tools for developers, internal studio tools and the archive. The kind `internal` holds ci, Reddit Desk, Songfactory, the camera scraper, Archon, Agent Skills private and the Memories demo NAS.
+  - **Icon** beside the project name, from the app's own icon in its repo. A project without one shows its code on a tile.
+  - **Screenshots** a strip under the lede, from the repo's screenshots or store images, the Memories site, or a capture of the live web app.
+  - **Email** `hello@workbench-soft.com` in place of the Gmail address, on every page of this repo.
+- **Changes**
+  - **`src/data/media.ts`** new: finds each project's icon and screenshots by id through `import.meta.glob`, so `projects.ts` stays plain data that `feature-check` reads.
+  - **`src/components/ProjectPanel.astro`** the icon and the strip, through `astro:assets` `<Image>`.
+  - **`src/i18n/`** the group names, the screenshot alt text and the 3 new projects, in each catalog.
+- **Limits** the email works once Cloudflare Email Routing forwards it, a step in `TODO.md`. Apps that only run on a phone or a desktop and have no screenshots in their repo show none yet.
