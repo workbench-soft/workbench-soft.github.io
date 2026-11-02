@@ -943,6 +943,7 @@ const es: Catalog = {
               'Exposición',
               'ISO y obturador, cada uno auto o manual en tercios de paso. AJUSTE fija ambos para la escena.',
             ],
+            ['Ajuste automático', 'Un botón en el modo simple ajusta Luz, Calidez y Color a la escena.'],
             ['Color', 'Una sola saturación para el dial COLOR y el deslizador Color.'],
             ['Foto, vídeo y flash', 'La foto es el fotograma en pantalla al tocar. Mantener graba.'],
             ['Lugar y cámara', 'Cada toma guarda dónde y cómo se hizo, en etiquetas EXIF.'],

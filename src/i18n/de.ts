@@ -961,6 +961,7 @@ const de: Catalog = {
               'Belichtung',
               'ISO und Verschluss, jeweils auto oder manuell in Drittelstufen. AUTO stellt beide für die Szene ein.',
             ],
+            ['Auto-Abstimmung', 'Ein Knopf im einfachen Modus stellt Licht, Wärme und Farbe auf die Szene ein.'],
             ['Farbe', 'Ein Sättigungswert für das COLOR-Rad und den Farbregler.'],
             ['Foto, Video und Blitz', 'Das Foto ist das Bild auf dem Schirm im Moment der Berührung. Halten filmt.'],
             ['Ort- und Kameradaten', 'Jede Aufnahme trägt Ort und Einstellungen als EXIF-Tags.'],

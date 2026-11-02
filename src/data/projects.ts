@@ -280,6 +280,7 @@ export const projects: Project[] = [
             name: 'Exposure',
             text: 'ISO and shutter, each auto or manual in third stops. FIT sets both for the scene.',
           },
+          { name: 'Auto tune', text: 'One button in Simple mode sets Light, Warmth and Color for the scene.' },
           { name: 'Color', text: 'One saturation value for the COLOR dial and the Color slider.' },
           {
             name: 'Photo, video and flash',
