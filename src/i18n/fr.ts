@@ -432,7 +432,7 @@ const fr: Catalog = {
               "Chaque champ s'enregistre seul, un appui coche, et une suppression propose Annuler.",
             ],
             ['Langues', "Une liste partagée s'ouvre dans la langue du téléphone qui l'ouvre."],
-            ['Tickalot dans la recherche', "Des guides et une page d'accueil mènent de la recherche à l'app."],
+            ['Tick-a-Lot dans la recherche', "Des guides et une page d'accueil mènent de la recherche à l'app."],
           ],
         },
       ],
@@ -1066,7 +1066,7 @@ const fr: Catalog = {
           features: [
             ['Demander', 'Tapez les lieux, une date approximative, la durée et qui part.'],
             ['Vols', 'Les allers-retours les moins chers autour de la date, avec des dates moins chères à côté.'],
-            ['Vers Tickalot', 'Un appui transforme le voyage en listes Tickalot : visites et bagages.'],
+            ['Vers Tick-a-Lot', 'Un appui transforme le voyage en listes Tick-a-Lot : visites et bagages.'],
             ['Réglages', "La langue : celle du téléphone ou l'une des 9."],
           ],
         },

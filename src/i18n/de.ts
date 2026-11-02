@@ -416,7 +416,7 @@ const de: Catalog = {
               'Jedes Feld speichert sich selbst, ein Tipp hakt ab, Löschen lässt sich rückgängig machen.',
             ],
             ['Sprachen', 'Eine geteilte Liste öffnet sich in der Sprache des Telefons, das sie öffnet.'],
-            ['Tickalot in der Suche', 'Ratgeber und eine Startseite führen Leute aus der Suche zur App.'],
+            ['Tick-a-Lot in der Suche', 'Ratgeber und eine Startseite führen Leute aus der Suche zur App.'],
           ],
         },
       ],
@@ -1023,7 +1023,7 @@ const de: Catalog = {
           features: [
             ['Fragen', 'Orte, ein grobes Datum, die Dauer und wer mitfährt eingeben.'],
             ['Flüge', 'Die günstigsten Hin- und Rückflüge um das Datum, mit günstigeren Daten daneben.'],
-            ['Zu Tickalot', 'Ein Tipp macht aus der Reise Tickalot-Listen: Sehenswertes und Packen.'],
+            ['Zu Tick-a-Lot', 'Ein Tipp macht aus der Reise Tick-a-Lot-Listen: Sehenswertes und Packen.'],
             ['Einstellungen', 'Die Sprache: die des Telefons oder eine der 9.'],
           ],
         },

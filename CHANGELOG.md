@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **Names** the Tick-a-Lot entry and the Tripforge link to it spell the app Tick-a-Lot.
+
 - **Screenshots** Memoire, Tripforge, Lumiere Player, Langflip, Media Organizer, Archon, Reddit Desk, Songfactory and local-ci show a strip of screenshots in their panels.
 - **Shuttrix** its entry points at `memories/apps/shuttrix`, where the camera now lives.
 
