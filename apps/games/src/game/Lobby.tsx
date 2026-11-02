@@ -1,7 +1,7 @@
 import { useState } from 'preact/hooks';
 import { DRAW_TIME_OPTIONS, ROUND_OPTIONS, TEAMS, type Mode, type Settings, type Speed } from '../shared/protocol.ts';
 import { Chat } from './Chat.tsx';
-import { AdSlot, Avatar, PlayerList } from './common.tsx';
+import { AdSlot, Avatar, DevAdsSwitch, PlayerList } from './common.tsx';
 import { t } from './i18n.ts';
 import { roomLink } from './platform.ts';
 import { room, send } from './store.ts';
@@ -205,6 +205,7 @@ export function Lobby() {
           </div>
         </section>
         <AdSlot />
+        <DevAdsSwitch />
       </div>
       <aside class="lobby-side">
         <section class="card">

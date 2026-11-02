@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Games apps** the developer's phone gets a Show test ads box in the lobby, to show or hide the test banner right in the app.
 - **App icons** Tripforge shows its badge of peaks on an anvil, and Lumiere Player gets its stained glass play mark in place of the letter tile.
 
 - **Sky Altar** lists Camera stars: a dim camera, stars on it that twinkle with sparks, and a gold flash when they match the sky.

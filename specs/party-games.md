@@ -174,3 +174,23 @@ score, since the browser keeps a secret token.
 - **Steps** this entry, then the domain, then the link, then the docs.
 - **Docs** `README.md`, `apps/games/README.md`, `apps/games/docs/`,
   `apps/edge/README.md`, `docs/architecture.md`, `CHANGELOG.md`, `TODO.md`.
+
+### 2026-11-02 Show test ads switch on the developer's phone
+
+- **Why** the developer wants to hide and show the ads right in the app, as
+  the other Workbench Soft apps do. Until now only `mise run dev-phone --
+  --ads on` could bring the test banner back.
+- **How** the lobby gets a "Show test ads" box, only in the app and only on a
+  phone that got the developer key. The same rules as before decide who sees
+  it: the key link of `dev-phone` marks the phone. Ticking the box shows
+  Google's test banner, clearing it hides the banner. The link's `&ads=1` and
+  `&ads=0` still set it.
+- **Changes**
+  - `apps/games/src/game/dev-device.ts` keeps both flags in signals, so the
+    box and the banner follow a link that lands while the app runs.
+  - `apps/games/src/game/admob.ts` gets `setDevAdsShown`, which saves the
+    choice and brings the banner back or drops it.
+  - `apps/games/src/game/Lobby.tsx` shows the box under the settings.
+  - `apps/games/src/game/i18n.ts` the label in English and Russian.
+- **Steps** this entry, then the code with its test, then the docs.
+- **Docs** `apps/games/docs/features.md`, `CHANGELOG.md`.

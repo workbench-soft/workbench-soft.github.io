@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'preact/hooks';
 import type { PlayerView } from '../shared/protocol.ts';
+import { setDevAdsShown } from './admob.ts';
+import { devAdsShown, isDevDevice } from './dev-device.ts';
 import { t } from './i18n.ts';
 import { isNative } from './platform.ts';
 import { room, send, serverNow } from './store.ts';
@@ -101,5 +103,16 @@ export function AdSlot() {
         data-full-width-responsive="true"
       />
     </div>
+  );
+}
+
+/** The developer's phone only, in the app. Brings Google's test banner back or hides it. */
+export function DevAdsSwitch() {
+  if (!isNative() || !isDevDevice()) return null;
+  return (
+    <label class="check dev-ads">
+      <input type="checkbox" checked={devAdsShown()} onChange={(e) => setDevAdsShown(e.currentTarget.checked)} />
+      {t('devAds')}
+    </label>
   );
 }
