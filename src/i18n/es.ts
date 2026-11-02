@@ -890,6 +890,8 @@ const es: Catalog = {
             ['Exposición larga', 'Difumina lo que se mueve: agua sedosa, estelas de luz, una multitud que se borra.'],
             ['Retrato', 'Las personas quedan nítidas y el fondo se suaviza. Un deslizador ajusta el desenfoque.'],
             ['Panorama', 'Una foto ancha de un giro lento, unida en el teléfono.'],
+            ['Cámara lenta', 'Un vídeo a 120 o 240 fotogramas por segundo que se reproduce ralentizado.'],
+            ['Time-lapse', 'Un fotograma cada medio segundo, reproducido 15 veces más rápido: nubes, atardeceres, multitudes.'],
             ['Objetivos', 'Un botón por cada objetivo del teléfono sobre una escala de zoom.'],
             ['Enfoque', 'AF-C sigue un sujeto en movimiento y las caras. Un toque enfoca un punto.'],
             ['Balance de blancos', 'Auto, preajustes o kelvin en un dial.'],

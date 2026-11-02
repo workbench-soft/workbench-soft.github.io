@@ -948,6 +948,8 @@ const fr: Catalog = {
             ['Pose longue', "Floute ce qui bouge : eau soyeuse, traînées de phares, foule qui s'efface."],
             ['Portrait', 'Les personnes restent nettes et le fond devient doux. Un curseur règle le flou.'],
             ['Panorama', "Une photo large d'un lent pivot, assemblée sur le téléphone."],
+            ['Ralenti', 'Une vidéo à 120 ou 240 images par seconde, lue au ralenti.'],
+            ['Accéléré', 'Une image chaque demi-seconde, lue 15 fois plus vite : nuages, couchers de soleil, foules.'],
             ['Objectifs', 'Une pastille par objectif du téléphone, sur une seule échelle de zoom.'],
             ['Mise au point', "L'AF-C suit un sujet en mouvement et les visages. Un appui vise un point."],
             ['Balance des blancs', 'Auto, préréglages ou kelvins sur une molette.'],
