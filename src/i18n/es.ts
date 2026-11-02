@@ -877,7 +877,10 @@ const es: Catalog = {
         {
           features: [
             ['Simple y Pro', 'Un interruptor de cristal arriba elige el modo. Una instalación nueva abre en simple.'],
-            ['Modo simple', 'Botones de objetivo sobre un deslizador de zoom, luego Luz, Calidez y Color.'],
+            [
+              'Modo simple',
+              'Botones de objetivo sobre un deslizador de zoom, luego Luz, Calidez y Color. Los modos van arriba, y el disparador queda solo bajo el pulgar.',
+            ],
             ['Noche', 'El teléfono crea la foto con varios fotogramas mientras avanza una barra.'],
             ['Exposición larga', 'Difumina lo que se mueve: agua sedosa, estelas de luz, una multitud que se borra.'],
             ['Panorama', 'Una foto ancha de un giro lento, unida en el teléfono.'],
