@@ -987,6 +987,10 @@ const nb: Catalog = {
             ],
             ['Reklame og reklamefritt', 'Reklamen holder seg unna himmelen. Et engangskjøp på $2.99 fjerner den.'],
             ['Appspråk', 'Skjermene og navnene på stjernebildene på 9 språk.'],
+            [
+              'Oppdateringer fra GitHub',
+              'Android-appen finner en ny versjon og installerer den. Innstillinger har «Se etter oppdateringer».',
+            ],
           ],
         },
       ],

@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Sky Altar** lists Updates from GitHub: the Android app finds a new version and has Check for updates in Settings.
 - **Shuttrix privacy policy** at <https://workbench-soft.com/shuttrix/privacy-policy>: photos and place tags stay on the phone, the AdMob banner in the gallery and the consent form.
 
 - **Development for clients** a new section on the projects list. Its first card is Alina Photography: portfolio, booking, questions, admin, calendar sync and client galleries.
