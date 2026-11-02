@@ -1,9 +1,5 @@
 # TODO
 
-## feat-feedback: the order form
-
-- [ ] **Delete the test mails** in the `workbench.soft@gmail.com` inbox, search `from:formsubmit`, tick all 5 mails from 2026-11-02 and 2026-11-03 and press Delete. They are 2 "Feedback from workbench-soft.com" tests, 1 "Order from workbench-soft.com" test and 2 "Activate FormSubmit" mails. The auto mode check blocked the agent from moving them to Trash.
-
 ## site-groups-icons-shots: studio email, groups, icons, screenshots
 
 - [ ] **Shuttrix shots** the app crashes at start on an emulator (`CameraSession` reads a null ML Kit barcode scanner, seen 2026-11-02 on an x86_64 build), so it has no shots. Fix the crash in `memories/apps/shuttrix`, run the `demo-media` skill there, then copy 2 to 4 shots to `src/assets/shots/shuttrix/`.
