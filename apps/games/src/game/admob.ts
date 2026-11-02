@@ -1,5 +1,5 @@
 // AdMob in the Android and iOS apps. Debug builds, missing IDs and the developer's phone get Google's test ads.
-import { devAdsShown, isDevDevice, openDevLink } from './dev-device.ts';
+import { devAdsShown, isDevDevice, openDevLink, saveDevAdsShown } from './dev-device.ts';
 
 const TEST_BANNER = {
   android: 'ca-app-pub-3940256099942544/6300978111',
@@ -36,14 +36,22 @@ function readDevLinks(): Promise<void> {
     const launch = await App.getLaunchUrl();
     if (launch) await openDevLink(launch.url);
     await App.addListener('appUrlOpen', ({ url }) => {
-      void openDevLink(url).then(async (isDevLink) => {
-        if (!isDevLink) return;
-        await syncBanner(false);
-        await syncBanner(wanted);
-      });
+      void openDevLink(url).then((isDevLink) => isDevLink && resyncBanner());
     });
   })().catch(() => undefined);
   return devLinks;
+}
+
+// Drops the banner, so the next one picks the unit for the developer's phone.
+async function resyncBanner(): Promise<void> {
+  await syncBanner(false);
+  await syncBanner(wanted);
+}
+
+/** The Show test ads box on the developer's phone. */
+export function setDevAdsShown(shown: boolean): void {
+  saveDevAdsShown(shown);
+  void resyncBanner();
 }
 
 export async function syncBanner(visible: boolean): Promise<void> {

@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { devAdsShown, isDevDevice, openDevLink } from './dev-device.ts';
+import { devAdsShown, isDevDevice, openDevLink, saveDevAdsShown } from './dev-device.ts';
 
 const HASH = 'f1409a2e54292e9bc0fd291ae65d31fe329fa4dac945a7f168610cf82b03328d';
 const store = new Map<string, string>();
@@ -25,14 +25,23 @@ describe('developer phone link', () => {
     expect(isDevDevice()).toBe(false);
   });
 
+  // The flags live in signals for the whole file, so the wrong key goes before the right one.
+  it('ignores a wrong key', async () => {
+    expect(await openDevLink('workbenchsoft-dev://unlock?key=wrong&ads=1')).toBe(true);
+    expect(isDevDevice()).toBe(false);
+  });
+
   it('marks the phone and sets test ads on the right key', async () => {
     expect(await openDevLink('workbenchsoft-dev://unlock?key=right&ads=1')).toBe(true);
     expect(isDevDevice()).toBe(true);
     expect(devAdsShown()).toBe(true);
   });
 
-  it('ignores a wrong key', async () => {
-    expect(await openDevLink('workbenchsoft-dev://unlock?key=wrong&ads=1')).toBe(true);
-    expect(isDevDevice()).toBe(false);
+  it('keeps the Show test ads box across launches', () => {
+    saveDevAdsShown(false);
+    expect(devAdsShown()).toBe(false);
+    expect(store.get('wg-devAdsShown')).toBe('0');
+    saveDevAdsShown(true);
+    expect(store.get('wg-devAdsShown')).toBe('1');
   });
 });

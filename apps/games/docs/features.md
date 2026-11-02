@@ -52,7 +52,7 @@ Spec: [party-games](../../../specs/party-games.md).
 - **For the person** the games stay free. A banner sits on the content pages, in the lobby and on the results.
 - **Where** AdSense on the site, AdMob in the apps.
 - **Limits** no ad shows while someone draws or guesses.
-- **Developer's phone** the apps hide the banner on a phone that got the developer key from `mise run dev-phone` in the `workspace` repo. `--ads on` brings Google's test banner, `--ads off` hides it again.
+- **Developer's phone** the apps hide the banner on a phone that got the developer key from `mise run dev-phone` in the `workspace` repo. There the lobby shows "Show test ads (developer phone)": ticked, Google's test banner comes back, cleared, it hides again. `--ads on` and `--ads off` set the same box.
 
 Spec: [party-games](../../../specs/party-games.md).
 
