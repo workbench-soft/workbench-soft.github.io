@@ -817,6 +817,24 @@ const fr: Catalog = {
         },
       ],
     },
+    'site-sources': {
+      tagline: "Une extension Chrome qui enregistre les sources de n'importe quelle page en un clic.",
+      lede: "Un clic sur l'icône, et la page, chaque fichier chargé et le code d'origine de ses source maps arrivent dans un dossier de Téléchargements.",
+      links: [],
+      groups: [
+        {
+          features: [
+            [
+              'Enregistrer en un clic',
+              'Le HTML en direct et chaque script, style, image et police, dans les dossiers du serveur.',
+            ],
+            ["Sources d'origine", 'Chaque source map avec son code rend les fichiers .ts, .tsx ou .vue.'],
+            ['Badge et titre', 'Le badge compte les fichiers, le titre nomme le dossier.'],
+            ['Langues', 'Le nom et les titres suivent la langue de Chrome.'],
+          ],
+        },
+      ],
+    },
     'open-in-remote-repo': {
       tagline: 'Une extension VS Code qui ouvre un fichier sur GitHub, GitLab ou Bitbucket.',
       lede: 'Un fork de Open in GitHub de Stanislav Sysoev. Il ouvre ou copie le lien vers le fichier, son blame ou son historique, avec les lignes choisies marquées.',

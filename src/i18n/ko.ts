@@ -577,6 +577,21 @@ const ko: Catalog = {
         },
       ],
     },
+    'site-sources': {
+      tagline: '어떤 페이지의 소스든 한 번의 클릭으로 저장하는 Chrome 확장 프로그램.',
+      lede: '아이콘을 클릭하면 페이지, 불러온 모든 파일, source map의 원본 코드가 다운로드 폴더에 저장됩니다.',
+      links: [],
+      groups: [
+        {
+          features: [
+            ['클릭으로 저장', '현재 HTML과 모든 스크립트, 스타일, 이미지, 글꼴을 서버의 폴더 구조대로 저장합니다.'],
+            ['원본 소스', '코드가 담긴 source map마다 .ts, .tsx, .vue 파일을 되살립니다.'],
+            ['배지와 제목', '배지는 파일 수를, 제목은 폴더를 알려 줍니다.'],
+            ['언어', '이름과 제목은 Chrome 언어를 따릅니다.'],
+          ],
+        },
+      ],
+    },
     'open-in-remote-repo': {
       tagline: '파일을 GitHub, GitLab, Bitbucket에서 여는 VS Code 확장.',
       lede: 'Stanislav Sysoev의 Open in GitHub를 포크했습니다. 파일, 그 blame, 기록의 링크를 선택한 줄을 표시해 열거나 복사합니다.',

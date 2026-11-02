@@ -789,6 +789,24 @@ const de: Catalog = {
         },
       ],
     },
+    'site-sources': {
+      tagline: 'Eine Chrome-Erweiterung, die die Quellen jeder Seite mit einem Klick speichert.',
+      lede: 'Ein Klick auf das Symbol legt die Seite, jede geladene Datei und den Originalcode aus ihren Source Maps in einen Ordner unter Downloads.',
+      links: [],
+      groups: [
+        {
+          features: [
+            [
+              'Speichern per Klick',
+              'Das aktuelle HTML und jedes Skript, Stylesheet, Bild und jede Schrift, in den Ordnern des Servers.',
+            ],
+            ['Originalquellen', 'Jede Source Map mit Code liefert die .ts-, .tsx- oder .vue-Dateien zurück.'],
+            ['Badge und Titel', 'Das Badge zählt die Dateien, der Titel nennt den Ordner.'],
+            ['Sprachen', 'Name und Titel folgen der Sprache von Chrome.'],
+          ],
+        },
+      ],
+    },
     'open-in-remote-repo': {
       tagline: 'Eine VS-Code-Erweiterung, die eine Datei auf GitHub, GitLab oder Bitbucket öffnet.',
       lede: 'Ein Fork von Open in GitHub von Stanislav Sysoev. Sie öffnet oder kopiert den Link zur Datei, ihrem Blame oder ihrem Verlauf, mit markierten Zeilen.',

@@ -523,6 +523,21 @@ const zh: Catalog = {
         },
       ],
     },
+    'site-sources': {
+      tagline: '一键保存任意网页源文件的 Chrome 扩展。',
+      lede: '点击图标，页面、它加载的每个文件以及 source map 中的原始代码都会存入“下载”中的一个文件夹。',
+      links: [],
+      groups: [
+        {
+          features: [
+            ['一键保存', '当前 HTML 以及每个脚本、样式、图片和字体，按服务器的目录存放。'],
+            ['原始源码', '每个带代码的 source map 都会还原出 .ts、.tsx 或 .vue 文件。'],
+            ['徽标和提示', '徽标显示文件数，提示写出文件夹。'],
+            ['语言', '名称和提示跟随 Chrome 的语言。'],
+          ],
+        },
+      ],
+    },
     'open-in-remote-repo': {
       tagline: '一个在 GitHub、GitLab 或 Bitbucket 上打开文件的 VS Code 扩展。',
       lede: '基于 Stanislav Sysoev 的 Open in GitHub 分叉而来。它可以打开或复制文件、blame 或历史的链接，并标出选中的行。',

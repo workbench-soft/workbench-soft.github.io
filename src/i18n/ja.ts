@@ -626,6 +626,21 @@ const ja: Catalog = {
         },
       ],
     },
+    'site-sources': {
+      tagline: 'どのページのソースもワンクリックで保存する Chrome 拡張機能。',
+      lede: 'アイコンをクリックすると、ページ、読み込まれた全ファイル、source map の元コードがダウンロード内のフォルダに保存されます。',
+      links: [],
+      groups: [
+        {
+          features: [
+            ['クリックで保存', '今の HTML と、スクリプト、スタイル、画像、フォントをサーバーと同じフォルダ構成で。'],
+            ['元のソース', 'コード入りの source map から .ts、.tsx、.vue ファイルを取り出します。'],
+            ['バッジとタイトル', 'バッジがファイル数を、タイトルが保存先フォルダを示します。'],
+            ['言語', '名前とタイトルは Chrome の言語に従います。'],
+          ],
+        },
+      ],
+    },
     'open-in-remote-repo': {
       tagline: 'ファイルを GitHub、GitLab、Bitbucket で開く VS Code 拡張機能。',
       lede: 'Stanislav Sysoev 氏の Open in GitHub のフォークです。ファイル、その blame、履歴へのリンクを、選択した行に印を付けて開くかコピーします。',
