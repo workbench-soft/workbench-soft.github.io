@@ -292,5 +292,5 @@ The studio needed one public site for its apps and their installers.
 - **Why** the owner asked for a link in the header to each site the studio hosts, with the sites of Maria and Alina under "Our clients".
 - **What the visitor gets** a Sites menu beside Games. It lists each project whose first link is a page we host, by the project's name, then an "Our clients" group with Aspiration Style, the site of Maria Shilova at `aspirationstyle.ru`.
 - **Data** `src/components/Nav.astro` takes the project sites from `projectsIn()`: a first link that starts with `/` or `https://`, minus GitHub, the VS Code Marketplace and the games, which keep their own menu. Client sites sit in `clientSites` of `src/data/studio.ts`, since a client's site is the client's brand. Farnear gets its `farnear.workbench-soft.com` link.
-- **Limits** Alina Photography joins the group once its Worker is live: it has no address yet.
+- **Alina** Alina Photography joins the group at `alina-photo.memories-demo-webdav.workers.dev`, its Worker address until she has her own domain.
 - **Docs** `docs/features.md`, `CHANGELOG.md`, `TODO.md`.

@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Alina Photography** under Our clients in the Sites menu, at its Worker address.
 - **Shuttrix Macro** a Macro line in the Shuttrix features, in 9 languages: a bug or a drop from 2 to 3 cm with the frame width in mm.
 - **Shuttrix focus** the Focus line says a drag of the reticle moves the point, as the app does since its focus reach change.
 - **Sites menu** in the header: each site we host, then Our clients with Aspiration Style. Farnear links to farnear.workbench-soft.com.
