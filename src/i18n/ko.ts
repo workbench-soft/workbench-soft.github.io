@@ -18,6 +18,8 @@ const ko: Catalog = {
       searchLabel: '프로젝트와 기능 검색',
       language: '언어',
       skip: '프로젝트로 건너뛰기',
+      games: '게임',
+      gamesPanel: '게임 소개',
     },
     hero: {
       status: '클라이언트 프로젝트 받는 중',
@@ -46,6 +48,8 @@ const ko: Catalog = {
       platforms: '플랫폼',
       stack: '기술 스택',
       shot: '{name} 화면 {n}',
+      more: '{n}개 모두 보기',
+      less: '접기',
       kinds: { app: '사람을 위한 앱', tool: '개발자를 위한 도구', internal: '스튜디오 내부 도구', archive: '보관함' },
     },
     process: {
@@ -408,7 +412,7 @@ const ko: Catalog = {
     games: {
       tagline: '브라우저에서 즐기는 파티 게임: 그리고, 맞히고, 힌트를 주세요.',
       lede: 'Workbench Games는 친구와 함께하는 파티 게임 3종입니다. 한 사람이 방을 만들어 링크를 보내면, 나머지는 계정 없이 브라우저로 들어옵니다.',
-      links: ['플레이'],
+      links: ['모든 게임', '그림 맞히기', '그림 전달 게임', '힌트 대결'],
       groups: [
         {
           features: [

@@ -17,6 +17,8 @@ const zh: Catalog = {
       searchLabel: '搜索项目和功能',
       language: '语言',
       skip: '跳到项目',
+      games: '游戏',
+      gamesPanel: '关于游戏',
     },
     hero: {
       status: '承接客户项目',
@@ -44,6 +46,8 @@ const zh: Catalog = {
       platforms: '平台',
       stack: '技术栈',
       shot: '{name} 的第 {n} 张截图',
+      more: '显示全部 {n} 项',
+      less: '收起',
       kinds: { app: '面向用户的应用', tool: '面向开发者的工具', internal: '工作室内部工具', archive: '归档' },
     },
     process: {
@@ -354,7 +358,7 @@ const zh: Catalog = {
     games: {
       tagline: '浏览器里的聚会游戏：画画、猜词、给提示。',
       lede: 'Workbench Games 是三款朋友聚会游戏。一个人创建房间并发出链接，其他人在浏览器里直接加入，无需注册。',
-      links: ['开始玩'],
+      links: ['全部游戏', '你画我猜', '画画传话', '提示对决'],
       groups: [
         {
           features: [

@@ -46,6 +46,29 @@ flowchart LR
   list --> none["No match"] --> type
 ```
 
+## A visitor opens a game
+
+1. The visitor presses Games in the header.
+2. The list shows all games, each game, and About the games.
+3. A game opens on games.workbench-soft.com. About the games scrolls to the Workbench Games panel.
+
+```mermaid
+flowchart LR
+  games["Games in the header"] --> list["Games list"]
+  list -->|a game| play["Game page on games.workbench-soft.com"]
+  list -->|About the games| panel["Workbench Games panel"]
+```
+
+## A visitor reads more features
+
+1. A project shows its first 6 features, one line each.
+2. Show all opens the rest. Show fewer folds them again.
+
+```mermaid
+flowchart LR
+  panel["Project panel"] --> six["First 6 features"] --> more["Show all"] --> all["Every feature"] --> less["Show fewer"] --> six
+```
+
 ## A visitor filters the projects
 
 1. The visitor opens Projects.

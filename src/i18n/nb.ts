@@ -18,6 +18,8 @@ const nb: Catalog = {
       searchLabel: 'Søk i prosjekter og funksjoner',
       language: 'Språk',
       skip: 'Gå til prosjektene',
+      games: 'Spill',
+      gamesPanel: 'Om spillene',
     },
     hero: {
       status: 'Åpen for kundeprosjekter',
@@ -46,6 +48,8 @@ const nb: Catalog = {
       platforms: 'Plattformer',
       stack: 'Teknologi',
       shot: 'Skjerm {n} av {name}',
+      more: 'Vis alle {n}',
+      less: 'Vis færre',
       kinds: {
         app: 'Apper for folk',
         tool: 'Verktøy for utviklere',
@@ -497,7 +501,7 @@ const nb: Catalog = {
     games: {
       tagline: 'Selskapsspill i nettleseren: tegn, gjett og gi hint.',
       lede: 'Workbench Games er tre selskapsspill for venner. Én lager et rom og sender lenken, og de andre blir med i nettleseren uten konto.',
-      links: ['Spill nå'],
+      links: ['Alle spillene', 'Gjett tegningen', 'Tegnetelefon', 'Hintduell'],
       groups: [
         {
           features: [

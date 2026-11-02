@@ -18,6 +18,8 @@ const es: Catalog = {
       searchLabel: 'Buscar proyectos y funciones',
       language: 'Idioma',
       skip: 'Ir a los proyectos',
+      games: 'Juegos',
+      gamesPanel: 'Sobre los juegos',
     },
     hero: {
       status: 'Abiertos a proyectos de clientes',
@@ -46,6 +48,8 @@ const es: Catalog = {
       platforms: 'Plataformas',
       stack: 'Tecnologías',
       shot: 'Pantalla {n} de {name}',
+      more: 'Ver los {n}',
+      less: 'Ver menos',
       kinds: {
         app: 'Apps para personas',
         tool: 'Herramientas para desarrolladores',
@@ -557,7 +561,7 @@ const es: Catalog = {
     games: {
       tagline: 'Juegos de fiesta en el navegador: dibuja, adivina y da pistas.',
       lede: 'Workbench Games son tres juegos de fiesta para amigos. Una persona crea una sala y envía el enlace, y los demás entran desde el navegador, sin cuenta.',
-      links: ['Jugar'],
+      links: ['Todos los juegos', 'Adivina el dibujo', 'Teléfono dibujado', 'Duelo de pistas'],
       groups: [
         {
           features: [
