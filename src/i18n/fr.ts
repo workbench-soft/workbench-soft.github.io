@@ -848,6 +848,27 @@ const fr: Catalog = {
         },
       ],
     },
+    'suno-download': {
+      tagline: 'Une extension Chrome qui enregistre vos chansons Suno en fichiers audio.',
+      lede: 'Un bouton ⬇ se place à côté de chaque titre sur suno.com. Un clic déchiffre la chanson dans le navigateur et l’enregistre dans Téléchargements/Suno.',
+      links: [],
+      groups: [
+        {
+          features: [
+            [
+              'Bouton de téléchargement sur chaque chanson',
+              'Un bouton ⬇ à côté de chaque titre dans les listes, sur les cartes et dans le lecteur enregistre la chanson dans Téléchargements/Suno.',
+            ],
+            [
+              'Déchiffré dans le navigateur',
+              'Le clic lance la chanson un instant, capte sa licence et déchiffre le flux sur votre PC.',
+            ],
+            ['Réussi ou échoué', 'Le bouton devient ✓ quand le fichier est enregistré, ou ✗ avec l’erreur au survol.'],
+            ['Langues', 'Le nom, la description et l’infobulle suivent la langue de Chrome.'],
+          ],
+        },
+      ],
+    },
     'open-in-remote-repo': {
       tagline: 'Une extension VS Code qui ouvre un fichier sur GitHub, GitLab ou Bitbucket.',
       lede: 'Un fork de Open in GitHub de Stanislav Sysoev. Il ouvre ou copie le lien vers le fichier, son blame ou son historique, avec les lignes choisies marquées.',
@@ -988,7 +1009,10 @@ const fr: Catalog = {
             ],
             ['Nuit', "Le téléphone compose la photo à partir de plusieurs images pendant qu'une barre avance."],
             ['Pose longue', "Floute ce qui bouge : eau soyeuse, traînées de phares, foule qui s'efface."],
-            ['Portrait', 'Ce que vous touchez reste net, proche ou à 10 m, personne ou objet. Le reste devient doux, un curseur règle le flou.'],
+            [
+              'Portrait',
+              'Ce que vous touchez reste net, proche ou à 10 m, personne ou objet. Le reste devient doux, un curseur règle le flou.',
+            ],
             ['Panorama', "Une photo large d'un lent pivot, assemblée sur le téléphone."],
             ['Ralenti', 'Une vidéo à 120 ou 240 images par seconde, lue au ralenti.'],
             ['Accéléré', 'Une image chaque demi-seconde, lue 15 fois plus vite : nuages, couchers de soleil, foules.'],
@@ -1061,7 +1085,10 @@ const fr: Catalog = {
               'Vue du ciel',
               'Étoiles, Soleil, Lune, planètes et 88 constellations sur la caméra, ou tournées à la main.',
             ],
-            ['Horloge', 'Une horloge discrète avec la date en haut du ciel, dans la police du thème. Elle pâlit avec les boutons.'],
+            [
+              'Horloge',
+              'Une horloge discrète avec la date en haut du ciel, dans la police du thème. Elle pâlit avec les boutons.',
+            ],
             [
               'Étoiles de la caméra',
               "L'image de la caméra reste sombre. Ses étoiles scintillent avec une traînée d'étincelles et brillent d'or quand elles collent au ciel.",

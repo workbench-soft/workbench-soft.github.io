@@ -736,6 +736,27 @@ const nb: Catalog = {
         },
       ],
     },
+    'suno-download': {
+      tagline: 'En Chrome-utvidelse som lagrer Suno-sangene dine som lydfiler.',
+      lede: 'En ⬇-knapp står ved hver sangtittel på suno.com. Ett klikk dekrypterer sangen i nettleseren og lagrer den i Nedlastinger/Suno.',
+      links: [],
+      groups: [
+        {
+          features: [
+            [
+              'Nedlastingsknapp på hver sang',
+              'En ⬇-knapp ved hver tittel i listene, på sangkort og i avspillingslinjen lagrer sangen i Nedlastinger/Suno.',
+            ],
+            [
+              'Dekryptert i nettleseren',
+              'Klikket spiller sangen et øyeblikk, fanger lisensen og dekrypterer strømmen på PC-en din.',
+            ],
+            ['Ferdig eller feil', 'Knappen blir ✓ når filen er lagret, eller ✗ med feilen når du holder musen over.'],
+            ['Språk', 'Navnet, beskrivelsen og hjelpeteksten følger språket i Chrome.'],
+          ],
+        },
+      ],
+    },
     'open-in-remote-repo': {
       tagline: 'En VS Code-utvidelse som åpner en fil på GitHub, GitLab eller Bitbucket.',
       lede: 'En fork av Open in GitHub av Stanislav Sysoev. Den åpner eller kopierer lenken til filen, blame eller historikken, med de valgte linjene markert.',
@@ -858,7 +879,10 @@ const nb: Catalog = {
             ],
             ['Natt', 'Telefonen bygger bildet av flere bilder mens en linje fylles.'],
             ['Lang eksponering', 'Gjør bevegelse uskarp: silkevann, lysspor, en folkemengde som blekner.'],
-            ['Portrett', 'Det du trykker på blir skarpt, nært eller 10 m unna, person eller ting. Resten blir mykt, og en glidebryter setter uskarpheten.'],
+            [
+              'Portrett',
+              'Det du trykker på blir skarpt, nært eller 10 m unna, person eller ting. Resten blir mykt, og en glidebryter setter uskarpheten.',
+            ],
             ['Panorama', 'Et bredt bilde fra en langsom vending, satt sammen på telefonen.'],
             ['Sakte film', 'En video i 120 eller 240 bilder i sekundet som spilles av langsomt.'],
             [
@@ -928,7 +952,10 @@ const nb: Catalog = {
               'Himmelvisning',
               'Stjerner, solen, månen, planetene og 88 stjernebilder over kameraet, eller snudd med hånden.',
             ],
-            ['Klokke', 'En rolig klokke med dato øverst på himmelen, i temaets skrift. Den dempes sammen med knappene.'],
+            [
+              'Klokke',
+              'En rolig klokke med dato øverst på himmelen, i temaets skrift. Den dempes sammen med knappene.',
+            ],
             [
               'Kamerastjerner',
               'Kamerabildet holdes dempet. Stjernene i det blinker med et spor av gnister og lyser gull når de stemmer med himmelen.',
