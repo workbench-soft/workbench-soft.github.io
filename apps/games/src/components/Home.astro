@@ -3,7 +3,7 @@ import Page from '../layouts/Page.astro';
 import CreateRoom from './CreateRoom.astro';
 import AdSlot from './AdSlot.astro';
 import type { Lang } from '../shared/protocol.ts';
-import { GAMES, ROUTES } from '../site/routes.ts';
+import { GAME_EMOJI, GAMES, ROUTES } from '../site/routes.ts';
 import { TEXT } from '../site/text.ts';
 
 type Props = { lang: Lang };
@@ -44,7 +44,9 @@ const jsonLd = [
     {
       GAMES.map((g) => (
         <a class={`game-card game-${g}`} href={ROUTES[g][lang]}>
-          <span class="game-art" aria-hidden="true" />
+          <span class="game-art" aria-hidden="true">
+            {GAME_EMOJI[g]}
+          </span>
           <h2>{text.games[g].h1}</h2>
           <p>{text.games[g].lead}</p>
           <span class="muted">

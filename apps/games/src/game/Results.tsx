@@ -19,7 +19,7 @@ export function Results() {
           <ol class="podium">
             {ranked.map((p, i) => (
               <li class={i === 0 ? 'first' : ''}>
-                <span class="place">{i + 1}</span>
+                <span class="place">{['🏆', '🥈', '🥉'][i] ?? i + 1}</span>
                 <Avatar player={p} />
                 <span class="player-name">{p.name}</span>
                 <b>{t('points', { n: p.score })}</b>

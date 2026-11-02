@@ -6,21 +6,21 @@
 flowchart LR
   A[/games/ or a game page/] --> B[Create a room]
   B --> C[/games/r/CODE/]
-  C --> D{Name saved?}
-  D -- no --> E[Type a name, pick a color]
+  C --> D{Joined before?}
+  D -- no --> E[Tap an animal, a name optional]
   D -- yes --> F[Lobby]
   E --> F
 ```
 
 1. The person opens `/games/`, `/games/ru/` or a game page.
 2. They press "Create a room". The page makes a 6 letter code and opens `/games/r/CODE`.
-3. The first visit asks for a name and a color. Later visits go straight in.
+3. The first visit shows 12 animals. A tap on one joins, and a typed name is optional. Later visits go straight in.
 4. The lobby shows the invite link with Copy and Share buttons.
 
 ## Join by link or code
 
 1. A friend opens the link from a chat. Or they type the code on `/games/` under "Have a room code?".
-2. They type a name and land in the lobby. The host sees them in the player list.
+2. They tap an animal and land in the lobby. The host sees them in the player list.
 
 ## Guess the drawing
 
@@ -28,6 +28,9 @@ flowchart LR
 flowchart LR
   L[Lobby] -->|host starts| C[Artist picks a word]
   C --> D[Artist draws, others guess]
+  D -->|kids mode| P[Guessers tap 1 of 4 pictures]
+  P -->|wrong| P
+  P -->|right| T
   D -->|all guessed or time up| T[The word and the points]
   T -->|more turns| C
   T -->|last turn| R[Results]
@@ -35,12 +38,13 @@ flowchart LR
   R -->|lobby| L
 ```
 
-1. The host picks "Guess the drawing", the rounds and the drawing time, then presses Start.
-2. The artist sees 3 words and picks one within 15 seconds.
-3. The artist draws with the pen, the eraser and the fill. The others type guesses in the chat.
-4. A right guess earns points and hides the word from the chat. A near guess shows "close" to its writer.
-5. The turn ends when everyone guessed or the time ran out. The word and the points show for 6 seconds.
-6. After the last round the results list the players by score.
+1. The host picks "Guess the drawing" and presses Play. "For little ones" is on unless the host clears it.
+2. The artist sees 3 words, each with a picture and a speaker button, and picks one within 15 seconds, or 30 in kids mode.
+3. The artist draws with the pen, the eraser and the fill. In kids mode the page reads the word aloud and the guessers tap one of 4 pictures. A wrong picture greys out. The chat takes typed guesses in both modes.
+4. A right guess plays a chime and confetti for the guesser.
+5. A right guess earns points and hides the word from the chat. A near guess shows "close" to its writer.
+6. The turn ends when everyone guessed or the time ran out. The word and the points, or stars in kids mode, show for 6 seconds.
+7. After the last round the results list the players by score.
 
 ## Drawing telephone
 

@@ -32,6 +32,8 @@ export type Settings = {
   customWords: string;
   customOnly: boolean;
   speed: Speed;
+  /** Kids mode: picture words, tap guesses, longer turns, no letter hints. */
+  kids: boolean;
 };
 
 export const DEFAULT_SETTINGS: Settings = {
@@ -43,6 +45,7 @@ export const DEFAULT_SETTINGS: Settings = {
   customWords: '',
   customOnly: false,
   speed: 'normal',
+  kids: true,
 };
 
 export const ROUND_OPTIONS = [1, 2, 3, 4, 5, 6, 8, 10];
@@ -60,6 +63,8 @@ export type PlayerView = {
   done: boolean;
   /** The clue duel team. */
   team: Team | null;
+  /** The animal the player tapped to join. */
+  avatar?: string;
 };
 
 export type DuelView = {
@@ -94,6 +99,10 @@ export type GuessView = {
   hint: string;
   /** Points each player got this turn, shown when the turn ends. */
   gains: Record<string, number> | null;
+  /** Kids mode: 4 picture words to tap, for a guesser who hasn't guessed yet. */
+  options?: string[] | null;
+  /** Positions of `options` this player tapped wrong. */
+  wrong?: number[];
 };
 
 export type TeleView = {
@@ -157,11 +166,13 @@ export type ChatMsg =
 
 export type ClientMsg =
   /** `v` is the client's PROTOCOL. Clients from before it send none, which counts as 1. */
-  | { t: 'hello'; v?: number; token: string; name: string; color: string; lang: Lang }
+  | { t: 'hello'; v?: number; token: string; name: string; color: string; lang: Lang; avatar?: string }
   | { t: 'chat'; text: string }
   | { t: 'settings'; settings: Partial<Settings> }
   | { t: 'start' }
   | { t: 'pick'; index: number }
+  /** Kids mode: a guess by tapping one of the options. */
+  | { t: 'tap'; index: number }
   | { t: 'draw'; ops: Op[] }
   | { t: 'submit'; text?: string; actions?: Action[] }
   | { t: 'next' }

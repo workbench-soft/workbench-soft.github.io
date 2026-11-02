@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'preact/hooks';
 import { MAX_CHAT } from '../shared/protocol.ts';
 import { chatText, t } from './i18n.ts';
+import { MicButton } from './kids.tsx';
 import { chats, send } from './store.ts';
 
 export function Chat({ placeholder, disabled = false }: { placeholder?: string; disabled?: boolean }) {
@@ -45,6 +46,7 @@ export function Chat({ placeholder, disabled = false }: { placeholder?: string; 
           autocomplete="off"
           enterkeyhint="send"
         />
+        {!disabled && <MicButton onText={(heard) => setText(heard)} />}
         <button type="submit" class="btn" disabled={disabled}>
           {t('send')}
         </button>

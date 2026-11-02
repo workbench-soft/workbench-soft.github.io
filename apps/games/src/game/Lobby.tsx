@@ -1,7 +1,9 @@
 import { useState } from 'preact/hooks';
 import { DRAW_TIME_OPTIONS, ROUND_OPTIONS, TEAMS, type Mode, type Settings, type Speed } from '../shared/protocol.ts';
 import { Chat } from './Chat.tsx';
+import { GAME_EMOJI } from '../site/routes.ts';
 import { AdSlot, Avatar, DevAdsSwitch, PlayerList } from './common.tsx';
+import { HowTo } from './kids.tsx';
 import { t } from './i18n.ts';
 import { roomLink } from './platform.ts';
 import { room, send } from './store.ts';
@@ -64,70 +66,72 @@ const set = (settings: Partial<Settings>) => send({ t: 'settings', settings });
 function SettingsForm({ s, host }: { s: Settings; host: boolean }) {
   const [words, setWords] = useState(s.customWords);
   return (
-    <fieldset class="settings" disabled={!host}>
-      <legend>{t('settings')}</legend>
-      {s.mode !== 'telephone' && (
-        <Field label={t('rounds')}>
-          <select value={s.rounds} onChange={(e) => set({ rounds: Number(e.currentTarget.value) })}>
-            {ROUND_OPTIONS.map((n) => (
-              <option value={n}>{n}</option>
-            ))}
-          </select>
-        </Field>
-      )}
-      {s.mode === 'guess' && (
-        <Field label={t('drawTime')}>
-          <select value={s.drawTime} onChange={(e) => set({ drawTime: Number(e.currentTarget.value) })}>
-            {DRAW_TIME_OPTIONS.map((n) => (
-              <option value={n}>{t('seconds', { n })}</option>
-            ))}
-          </select>
-        </Field>
-      )}
-      {s.mode === 'telephone' && (
-        <Field label={t('speed')}>
-          <select value={s.speed} onChange={(e) => set({ speed: e.currentTarget.value as Speed })}>
-            {(['fast', 'normal', 'slow'] as Speed[]).map((v) => (
-              <option value={v}>{t(v)}</option>
-            ))}
-          </select>
-        </Field>
-      )}
-      <Field label={t('wordLang')}>
-        <select value={s.wordLang} onChange={(e) => set({ wordLang: e.currentTarget.value as Settings['wordLang'] })}>
-          <option value="en">English</option>
-          <option value="ru">Русский</option>
-        </select>
-      </Field>
-      {s.mode === 'guess' && (
-        <label class="check">
-          <input type="checkbox" checked={s.hints} onChange={(e) => set({ hints: e.currentTarget.checked })} />
-          {t('hints')}
-        </label>
-      )}
-      {s.mode !== 'telephone' && (
-        <>
-          <Field label={t('customWords')}>
-            <textarea
-              rows={2}
-              value={host ? words : s.customWords}
-              maxLength={5000}
-              placeholder={t('customWordsHint')}
-              onInput={(e) => setWords(e.currentTarget.value)}
-              onBlur={() => set({ customWords: words })}
-            />
+    <details class="settings-fold">
+      <summary>⚙️ {t('settings')}</summary>
+      <fieldset class="settings" disabled={!host}>
+        {s.mode !== 'telephone' && (
+          <Field label={t('rounds')}>
+            <select value={s.rounds} onChange={(e) => set({ rounds: Number(e.currentTarget.value) })}>
+              {ROUND_OPTIONS.map((n) => (
+                <option value={n}>{n}</option>
+              ))}
+            </select>
           </Field>
+        )}
+        {s.mode === 'guess' && !s.kids && (
+          <Field label={t('drawTime')}>
+            <select value={s.drawTime} onChange={(e) => set({ drawTime: Number(e.currentTarget.value) })}>
+              {DRAW_TIME_OPTIONS.map((n) => (
+                <option value={n}>{t('seconds', { n })}</option>
+              ))}
+            </select>
+          </Field>
+        )}
+        {s.mode === 'telephone' && (
+          <Field label={t('speed')}>
+            <select value={s.speed} onChange={(e) => set({ speed: e.currentTarget.value as Speed })}>
+              {(['fast', 'normal', 'slow'] as Speed[]).map((v) => (
+                <option value={v}>{t(v)}</option>
+              ))}
+            </select>
+          </Field>
+        )}
+        <Field label={t('wordLang')}>
+          <select value={s.wordLang} onChange={(e) => set({ wordLang: e.currentTarget.value as Settings['wordLang'] })}>
+            <option value="en">English</option>
+            <option value="ru">Русский</option>
+          </select>
+        </Field>
+        {s.mode === 'guess' && !s.kids && (
           <label class="check">
-            <input
-              type="checkbox"
-              checked={s.customOnly}
-              onChange={(e) => set({ customOnly: e.currentTarget.checked })}
-            />
-            {t('customOnly')}
+            <input type="checkbox" checked={s.hints} onChange={(e) => set({ hints: e.currentTarget.checked })} />
+            {t('hints')}
           </label>
-        </>
-      )}
-    </fieldset>
+        )}
+        {s.mode !== 'telephone' && !(s.mode === 'guess' && s.kids) && (
+          <>
+            <Field label={t('customWords')}>
+              <textarea
+                rows={2}
+                value={host ? words : s.customWords}
+                maxLength={5000}
+                placeholder={t('customWordsHint')}
+                onInput={(e) => setWords(e.currentTarget.value)}
+                onBlur={() => set({ customWords: words })}
+              />
+            </Field>
+            <label class="check">
+              <input
+                type="checkbox"
+                checked={s.customOnly}
+                onChange={(e) => set({ customOnly: e.currentTarget.checked })}
+              />
+              {t('customOnly')}
+            </label>
+          </>
+        )}
+      </fieldset>
+    </details>
   );
 }
 
@@ -184,25 +188,46 @@ export function Lobby() {
                 aria-pressed={s.mode === mode}
                 class={`mode mode-${mode}${s.mode === mode ? ' on' : ''}`}
                 disabled={!host}
+                title={t(`${mode}Short`)}
                 onClick={() => send({ t: 'settings', settings: { mode } })}
               >
+                <span class="mode-pic" aria-hidden="true">
+                  {GAME_EMOJI[mode]}
+                </span>
                 <strong>{t(mode)}</strong>
-                <span>{t(`${mode}Short`)}</span>
+                {mode === 'duel' && <small class="tag">{t('age8')}</small>}
               </button>
             ))}
           </div>
-          <SettingsForm s={s} host={host} key={s.mode} />
+          <HowTo mode={s.mode} kids={s.kids} />
+          <label class="check kids-switch">
+            <input
+              type="checkbox"
+              checked={s.kids}
+              disabled={!host}
+              onChange={(e) => set({ kids: e.currentTarget.checked })}
+            />
+            <span>
+              👶 <b>{t('kids')}</b> <small class="muted">{t('kidsHint')}</small>
+            </span>
+          </label>
           {s.mode === 'duel' && <Teams host={host} />}
           <div class="start">
             {host ? (
-              <button type="button" class="btn btn-big" disabled={!enough} onClick={() => send({ t: 'start' })}>
-                {t('start')}
+              <button
+                type="button"
+                class="btn btn-big btn-play"
+                disabled={!enough}
+                onClick={() => send({ t: 'start' })}
+              >
+                ▶ {t('start')}
               </button>
             ) : (
-              <p class="muted">{t('waitHost')}</p>
+              <p class="wait-host">⏳ {t('waitHost')}</p>
             )}
             {!enough && <p class="muted">{t('needPlayers', { n: NEED[s.mode] })}</p>}
           </div>
+          <SettingsForm s={s} host={host} key={s.mode} />
         </section>
         <AdSlot />
         <DevAdsSwitch />

@@ -13,6 +13,12 @@
 - **Clue duel** two teams share a board of 12 words. Each team's clue giver
   sees 2 secret words and gives a one word clue. Both clues are public, so a
   team may pick the other team's words for a point each.
+- **Kids mode** on by default, so a child who can't read or type still
+  plays. A tap on an animal joins the room. Each word has a picture and a
+  speaker button that reads it aloud. Guessers tap one of 4 pictures in place
+  of typing. Timers show as a shrinking circle, and a right guess plays a
+  sound with confetti. The host turns it off under "For little ones" in the
+  lobby.
 - **Free** no account, no install, no payment. A banner sits on the content
   pages, in the lobby and on the results screen. The game screens stay clear
   while someone plays.
@@ -27,7 +33,8 @@ They copy no existing product.
 
 1. A person opens `/games/` or `/games/ru/` and presses "Create a room".
 2. The page makes a 6 letter code and opens `/games/r/<code>`.
-3. The room page asks for a name once and keeps it in the browser.
+3. The room page shows a row of animals. A tap on one joins, and the browser
+   keeps the pick. A name is optional.
 4. The first person in the room is the host. The host picks the game and its
    settings, then presses Start.
 5. A game ends on the results screen. The host goes back to the lobby, and the
@@ -194,3 +201,64 @@ score, since the browser keeps a secret token.
   - `apps/games/src/game/i18n.ts` the label in English and Russian.
 - **Steps** this entry, then the code with its test, then the docs.
 - **Docs** `apps/games/docs/features.md`, `CHANGELOG.md`.
+
+### 2026-11-02 Kids mode: simple enough for a toddler
+
+- **Why** the owner wants every game simple and clear even for a small child.
+  A UX audit on a 390 px phone found that all three games need reading and
+  typing: the name to join, guesses in the chat, phrases and clues. The lobby
+  puts Start below 9 settings, the timers are bare numbers, the colors are
+  26 px, the trash wipes the drawing in one tap, and the logo, the language
+  button and Remove leave or kick in one tap.
+- **How** a room setting `kids`, on by default and shown at the top of the
+  lobby as "For little ones".
+  - **Join** a grid of 12 animals. A tap joins at once. The name field is
+    optional, and an empty name takes the animal's name. The animal shows as
+    the avatar.
+  - **Words** kids mode draws from a list of words that each have an emoji,
+    in English and Russian, without the host's own words. The artist sees the emoji next to each choice and
+    a speaker button that reads the word with the browser's speech.
+  - **Guessing** in kids mode each guesser gets 4 picture cards, the word and
+    3 others. A tap guesses. A wrong card greys out and costs 100 points of
+    that guess. Typing in the chat still works.
+  - **Time** kids mode gives 30 s to pick and 120 s to draw, with no letter
+    hints. Every timer becomes a circle that empties, with the number inside
+    only outside kids mode.
+  - **Joy** a right guess plays a short chime and confetti for the guesser.
+    The turn end shows stars in kids mode in place of points, and the
+    results give the top three a cup and two medals.
+    The turn end panel sits low and see through, so the drawing stays in
+    sight.
+  - **Lobby** one big Play button at the top of the game card. Each game card
+    gets a picture and a three-step "How to play" row with a speaker button.
+    The other settings fold under "Settings". Guests see a large waiting
+    message.
+  - **Drawing** 12 colors at 40 px, 3 sizes, 48 px tool buttons. The trash
+    asks for a second tap within 3 seconds.
+  - **Voice** chat, telephone and duel text fields get a microphone button
+    where the browser has speech recognition.
+  - **Safety** the logo asks before it leaves a running room, the language
+    button shows only in the lobby, and Remove asks before it kicks.
+  - **Telephone** the album says "wrote", "drew", "described" in the past
+    tense, and the step counter stays on one line.
+  - **Clue duel** the card says "8+", and secret words get a thick border and
+    a star, so color alone doesn't carry them.
+  - **Home** each game card shows a big picture.
+- **Protocol** `kids` joins the settings, `avatar` joins `hello` and the
+  player view, `options` and `wrong` join the guess view, and `tap` is a
+  new client message. All are optional, so old app installs keep working and
+  type their guesses. `PROTOCOL` stays 1.
+- **Changes**
+  - `apps/games/src/words/kids.ts` the picture words.
+  - `apps/games/src/shared/` the protocol fields, the avatar list.
+  - `apps/games/src/server/guess.ts`, `room.ts` kids words, times, tap
+    guesses, avatars, with tests.
+  - `apps/games/src/game/` join grid, lobby, timer, guess cards, confetti,
+    speech, microphone, confirmations, telephone and duel fixes.
+  - `apps/games/src/drawing/Board.tsx` the toolbar.
+  - `apps/games/src/styles/global.css` sizes and the new parts.
+  - `apps/games/src/components/Home.astro` game pictures.
+- **Steps** this entry, then the server with tests, then the room app, then
+  the docs.
+- **Docs** `apps/games/docs/features.md`, `apps/games/docs/user-flows.md`,
+  `CHANGELOG.md`.

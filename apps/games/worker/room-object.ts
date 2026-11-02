@@ -80,7 +80,7 @@ export class RoomObject extends DurableObject<Env> {
       const v = Number.isInteger(msg.v) ? Number(msg.v) : 1;
       ws.serializeAttachment({ id, v } satisfies Attachment);
       const lang: Lang = msg.lang === 'ru' ? 'ru' : 'en';
-      room.connect(id, String(msg.name ?? ''), String(msg.color ?? ''), lang, now);
+      room.connect(id, String(msg.name ?? ''), String(msg.color ?? ''), lang, now, msg.avatar);
     } else if (attachment) {
       room.message(attachment.id, msg, now);
     }
