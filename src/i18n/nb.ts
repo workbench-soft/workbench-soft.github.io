@@ -462,6 +462,10 @@ const nb: Catalog = {
             ],
             ['Søkesider', 'En side for hver delstat, forstad og stasjon, med strukturerte data og et nettstedskart.'],
             [
+              'Tekst og guider på nettstedet',
+              'Startsiden forklarer kartet med ord, og guider forklarer drivstoffpriser, hver delstats ordning, kvalitetene og lading av elbil.',
+            ],
+            [
               'Selvoppdatering',
               'APK-en sjekker GitHub ved oppstart og hver gang du kommer tilbake, og viser nedlastingen i toppfeltet.',
             ],

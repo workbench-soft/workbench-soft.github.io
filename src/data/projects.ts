@@ -711,6 +711,10 @@ export const projects: Project[] = [
             text: 'A page for each state, suburb and servo, with structured data and a sitemap.',
           },
           {
+            name: 'Site text and guides',
+            text: 'A home page that explains the map in words, and guides on fuel pricing, each state scheme, the grades and EV charging.',
+          },
+          {
             name: 'Self-update from GitHub',
             text: 'The APK checks GitHub on start and on each return, and shows the download in the header.',
           },
