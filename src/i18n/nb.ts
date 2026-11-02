@@ -519,10 +519,17 @@ const nb: Catalog = {
         {
           features: [
             ['Rom med lenke', 'Én lenke samler 2 til 12 venner i samme rom.'],
+            [
+              'Barnemodus',
+              'Også et barn som ikke kan lese, spiller: trykk på et dyr for å bli med, trykk på et bilde for å gjette, hør hvert ord lest høyt.',
+            ],
             ['Gjett tegningen', 'Tegn et ord, gjett de andres tegninger, kjemp om poeng.'],
             ['Tegnetelefon', 'En setning blir til tegninger og tilbake, og albumet viser hvordan den endret seg.'],
             ['Hintduell', 'Et ordspill i lag der hvert hint er åpent og det lønner seg å stjele.'],
-            ['Tegneverktøy', 'Penn, viskelær, fyll, 20 farger, 4 størrelser og angre.'],
+            [
+              'Tegneverktøy',
+              'Penn, viskelær, fyll, 20 farger, 4 størrelser og angre, med store farger for små fingre.',
+            ],
             ['Språk', 'Sidene og rommene fungerer på engelsk og russisk.'],
             ['Reklame', 'Spillene er gratis, med et banner på sidene, i lobbyen og på resultatene.'],
             ['Apper for Android og iOS', 'De samme spillene som en installert app.'],

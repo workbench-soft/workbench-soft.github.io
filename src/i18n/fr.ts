@@ -598,13 +598,20 @@ const fr: Catalog = {
         {
           features: [
             ['Salons par lien', 'Un lien réunit de 2 à 12 amis dans le même salon.'],
+            [
+              'Mode enfants',
+              'Un enfant qui ne sait pas lire joue aussi : toucher un animal pour entrer, toucher une image pour deviner, entendre chaque mot lu à voix haute.',
+            ],
             ['Devine le dessin', 'Dessine un mot, devine les dessins des autres, marque des points.'],
             [
               'Téléphone dessiné',
               "Une phrase devient des dessins puis revient, et l'album montre comment elle a changé.",
             ],
             ["Duel d'indices", 'Un jeu de mots en équipes où chaque indice est public et où voler rapporte.'],
-            ['Outils de dessin', 'Crayon, gomme, remplissage, 20 couleurs, 4 tailles et annulation.'],
+            [
+              'Outils de dessin',
+              'Crayon, gomme, remplissage, 20 couleurs, 4 tailles et annulation, avec de grandes couleurs pour les petits doigts.',
+            ],
             ['Langues', 'Les pages et les salons sont en anglais et en russe.'],
             ['Publicité', 'Les jeux restent gratuits, avec une bannière sur les pages, le salon et les résultats.'],
             ['Apps Android et iOS', 'Les mêmes jeux dans une app installée.'],
