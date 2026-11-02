@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **Sky Altar** a new app entry: the night sky through the phone in the style of 13 old cultures, with ambient music.
+
 - **Names** the Tick-a-Lot entry and the Tripforge link to it spell the app Tick-a-Lot.
 
 - **Screenshots** Memoire, Tripforge, Lumiere Player, Langflip, Media Organizer, Archon, Reddit Desk, Songfactory and local-ci show a strip of screenshots in their panels.

@@ -996,6 +996,25 @@ const fr: Catalog = {
         },
       ],
     },
+    skyaltar: {
+      tagline: 'Le ciel nocturne à travers le téléphone, dessiné dans le style des cultures anciennes.',
+      lede: 'Levez le téléphone et Sky Altar montre les étoiles, la Lune, les planètes et les constellations derrière lui. Chaque thème les dessine comme la Grèce, les Vikings, les Mayas ou la Chine ancienne auraient pu le faire, sur une musique ambient lente.',
+      links: [],
+      groups: [
+        {
+          features: [
+            [
+              'Vue du ciel',
+              'Étoiles, Soleil, Lune, planètes et 88 constellations sur la caméra, ou tournées à la main.',
+            ],
+            ['Thèmes des cultures', '13 cultures, de la Grèce et Rome aux Incas, à Sumer et à l’âge de pierre.'],
+            ['Musique ambient', 'Une boucle lente monte à l’ouverture. Un toucher la coupe.'],
+            ['Publicités et retrait', 'Les pubs restent hors du ciel. Un achat unique de $2.99 les retire.'],
+            ['Langues de l’app', 'Les écrans et les noms des constellations en 9 langues.'],
+          ],
+        },
+      ],
+    },
     memoire: {
       tagline: 'Apprendre des mots anglais ou russes par petites séries, juste avant de les oublier.',
       lede: "Memoire apprend l'anglais aux russophones et le russe aux anglophones. Quelques fois par jour, il montre de courtes séries de cartes, juste avant qu'un mot s'échappe.",

@@ -557,6 +557,33 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: 'skyaltar',
+    kind: 'app',
+    repo: 'skyaltar',
+    hue: 255,
+    code: 'SKY',
+    name: 'Sky Altar',
+    tagline: 'The night sky through the phone, drawn in the style of old cultures.',
+    lede: 'Hold the phone up and Sky Altar shows the stars, the Moon, the planets and the constellations behind it. Each theme draws them the way Greece, the Vikings, the Maya or Ancient China might have, with slow ambient music under it.',
+    platforms: ['Android', 'Web'],
+    stack: ['Expo', 'React Native', 'Skia', 'Astronomy Engine'],
+    links: [],
+    groups: [
+      {
+        features: [
+          {
+            name: 'Sky view',
+            text: 'Stars, the Sun, the Moon, the planets and 88 constellations over the camera, or turned by hand.',
+          },
+          { name: 'Culture themes', text: '13 cultures, from Greece and Rome to the Inca, Sumer and the Stone Age.' },
+          { name: 'Ambient music', text: 'A slow loop fades in on open. One tap mutes it.' },
+          { name: 'Ads and Remove ads', text: 'Ads stay off the sky. A one time $2.99 purchase removes them.' },
+          { name: 'App languages', text: 'The screens and the constellation names in 9 languages.' },
+        ],
+      },
+    ],
+  },
+  {
     id: 'lumiere-player',
     kind: 'app',
     repo: 'lumiere-player',
