@@ -771,6 +771,24 @@ const es: Catalog = {
         },
       ],
     },
+    'site-sources': {
+      tagline: 'Una extensión de Chrome que guarda las fuentes de cualquier página con un clic.',
+      lede: 'Un clic en el icono y la página, cada archivo que cargó y el código original de sus source maps van a una carpeta en Descargas.',
+      links: [],
+      groups: [
+        {
+          features: [
+            [
+              'Guardar con un clic',
+              'El HTML en vivo y cada script, estilo, imagen y fuente, en las carpetas del servidor.',
+            ],
+            ['Fuentes originales', 'Cada source map con código devuelve los archivos .ts, .tsx o .vue.'],
+            ['Insignia y título', 'La insignia cuenta los archivos y el título nombra la carpeta.'],
+            ['Idiomas', 'El nombre y los títulos siguen el idioma de Chrome.'],
+          ],
+        },
+      ],
+    },
     'open-in-remote-repo': {
       tagline: 'Una extensión de VS Code que abre un archivo en GitHub, GitLab o Bitbucket.',
       lede: 'Un fork de Open in GitHub de Stanislav Sysoev. Abre o copia el enlace al archivo, su blame o su historial, con las líneas seleccionadas marcadas.',

@@ -1058,6 +1058,32 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: 'site-sources',
+    kind: 'tool',
+    repo: 'chrome-site-sources',
+    hue: 215,
+    code: 'SRC',
+    name: 'Site Sources',
+    tagline: 'A Chrome extension that saves the sources of any page with one click.',
+    lede: 'Click its icon and the page, every file it loaded and the original code from its source maps land in a folder under Downloads.',
+    platforms: ['Chrome'],
+    stack: ['TypeScript', 'Chrome Extensions API', 'Vite'],
+    links: [],
+    groups: [
+      {
+        features: [
+          {
+            name: 'Save on click',
+            text: 'The live HTML and each script, style, image and font, laid out as on the server.',
+          },
+          { name: 'Original sources', text: 'Each source map with its code gives back the .ts, .tsx or .vue files.' },
+          { name: 'Badge and title', text: 'The badge counts the files, and the title names the folder.' },
+          { name: 'Languages', text: 'The name and the titles follow the Chrome language.' },
+        ],
+      },
+    ],
+  },
+  {
     id: 'open-in-remote-repo',
     kind: 'tool',
     repo: 'vscode-open-in-github',

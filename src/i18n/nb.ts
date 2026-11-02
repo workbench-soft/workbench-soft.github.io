@@ -708,6 +708,21 @@ const nb: Catalog = {
         },
       ],
     },
+    'site-sources': {
+      tagline: 'En Chrome-utvidelse som lagrer kildene til enhver side med ett klikk.',
+      lede: 'Klikk på ikonet, så havner siden, hver fil den lastet og originalkoden fra kildekartene i en mappe under Nedlastinger.',
+      links: [],
+      groups: [
+        {
+          features: [
+            ['Lagre med ett klikk', 'Gjeldende HTML og hvert skript, stilark, bilde og skrift, i serverens mapper.'],
+            ['Originalkilder', 'Hvert kildekart med kode gir tilbake .ts-, .tsx- eller .vue-filene.'],
+            ['Merke og tittel', 'Merket teller filene, og tittelen viser mappen.'],
+            ['Språk', 'Navnet og titlene følger språket i Chrome.'],
+          ],
+        },
+      ],
+    },
     'open-in-remote-repo': {
       tagline: 'En VS Code-utvidelse som åpner en fil på GitHub, GitLab eller Bitbucket.',
       lede: 'En fork av Open in GitHub av Stanislav Sysoev. Den åpner eller kopierer lenken til filen, blame eller historikken, med de valgte linjene markert.',
