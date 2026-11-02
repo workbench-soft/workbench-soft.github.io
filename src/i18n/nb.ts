@@ -1043,6 +1043,10 @@ const nb: Catalog = {
           features: [
             ['Installer og sjekk', 'Ett skript installerer verktøyene, og en sjekk tester dem.'],
             ['Lang video fra en spilleliste', 'Sangene i en temamappe glir over i hverandre over et klipp i loop.'],
+            [
+              'Rensing av KI-spor',
+              'Bygget fjerner sus, metallisk glans og brumming fra sangene og beholder originalene.',
+            ],
             ['Sømløs loop', 'Klippet spilles forlengs og så baklengs, så hoppet på slutten forsvinner.'],
             ['Kapitler og miniatyrbilde', 'Beskrivelsen lister hver sang med starttid, og et miniatyrbilde lages.'],
             ['Planlagt opplasting', 'Én kommando laster opp med KI-merke og publiseringstid.'],

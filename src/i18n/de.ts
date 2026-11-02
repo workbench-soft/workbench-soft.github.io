@@ -1145,6 +1145,10 @@ const de: Catalog = {
               'Langes Video aus einer Playlist',
               'Die Songs eines Themenordners gehen mit Überblendung über einem Loop-Clip ineinander.',
             ],
+            [
+              'Bereinigung von KI-Artefakten',
+              'Der Build nimmt Rauschen, metallischen Glanz und Brummen aus den Songs und behält die Originale.',
+            ],
             ['Nahtlose Schleife', 'Der Clip läuft vor und zurück, so verschwindet der Sprung am Ende.'],
             [
               'Kapitel und Vorschaubild',

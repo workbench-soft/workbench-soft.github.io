@@ -1201,6 +1201,10 @@ export const projects: Project[] = [
             name: 'Long video from a playlist',
             text: 'The songs of a theme folder join with a crossfade over a looping clip.',
           },
+          {
+            name: 'Cleanup of AI artifacts',
+            text: 'The build takes hiss, metallic shimmer and rumble out of the songs and keeps the originals.',
+          },
           { name: 'Seamless loop', text: 'The clip plays forward then backward, so a jump at the end goes away.' },
           {
             name: 'Chapters and thumbnail',
