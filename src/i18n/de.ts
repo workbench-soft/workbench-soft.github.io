@@ -20,6 +20,8 @@ const de: Catalog = {
       skip: 'Zu den Projekten springen',
       games: 'Spiele',
       gamesPanel: 'Über die Spiele',
+      sites: 'Websites',
+      clients: 'Unsere Kunden',
     },
     hero: {
       status: 'Offen für Kundenprojekte',
@@ -1037,7 +1039,7 @@ const de: Catalog = {
     farnear: {
       tagline: 'Videoanrufe über eine Grenze, die die üblichen Apps sperrt, mit einer Tafel zum Zeichnen.',
       lede: 'Farnear ruft die Familie über einen Link an, ohne Konto. Das Video geht direkt zwischen den Leuten, und der Anruf probiert mehrere Wege, bis einer durchkommt.',
-      links: [],
+      links: ['farnear.workbench-soft.com'],
       groups: [
         {
           features: [

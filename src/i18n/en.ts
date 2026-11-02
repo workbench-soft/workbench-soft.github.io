@@ -19,6 +19,8 @@ export const en = {
     skip: 'Skip to the projects',
     games: 'Games',
     gamesPanel: 'About the games',
+    sites: 'Sites',
+    clients: 'Our clients',
   },
   hero: {
     status: 'Open for client projects',

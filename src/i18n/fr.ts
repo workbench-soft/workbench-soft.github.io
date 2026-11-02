@@ -20,6 +20,8 @@ const fr: Catalog = {
       skip: 'Aller aux projets',
       games: 'Jeux',
       gamesPanel: 'À propos des jeux',
+      sites: 'Sites',
+      clients: 'Nos clients',
     },
     hero: {
       status: 'Ouvert aux projets clients',
@@ -1074,7 +1076,7 @@ const fr: Catalog = {
     farnear: {
       tagline: 'Des appels vidéo à travers une frontière qui bloque les apps habituelles, avec un tableau à dessin.',
       lede: "Farnear appelle la famille par un lien, sans compte. La vidéo passe directement entre les participants, et l'appel essaie plusieurs chemins jusqu'à ce qu'un passe.",
-      links: [],
+      links: ['farnear.workbench-soft.com'],
       groups: [
         {
           features: [

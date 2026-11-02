@@ -20,6 +20,8 @@ const ko: Catalog = {
       skip: '프로젝트로 건너뛰기',
       games: '게임',
       gamesPanel: '게임 소개',
+      sites: '사이트',
+      clients: '고객사',
     },
     hero: {
       status: '클라이언트 프로젝트 받는 중',
@@ -797,7 +799,7 @@ const ko: Catalog = {
     farnear: {
       tagline: '흔한 앱이 막힌 국경 너머로 하는 영상 통화, 그림판도 있습니다.',
       lede: 'Farnear는 계정 없이 링크로 가족에게 전화합니다. 영상은 사람들 사이를 바로 오가고, 통화는 통할 때까지 여러 경로를 시도합니다.',
-      links: [],
+      links: ['farnear.workbench-soft.com'],
       groups: [
         {
           features: [

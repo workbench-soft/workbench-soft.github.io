@@ -526,7 +526,7 @@ export const projects: Project[] = [
     lede: 'Farnear calls family through a link, with no account. The video goes straight between the people on the call, and the call tries several paths until one gets through.',
     platforms: ['Web', 'Android', 'iOS'],
     stack: ['Expo', 'React Native', 'WebRTC', 'Cloudflare Workers'],
-    links: [],
+    links: [{ href: 'https://farnear.workbench-soft.com', label: 'farnear.workbench-soft.com' }],
     groups: [
       {
         features: [
