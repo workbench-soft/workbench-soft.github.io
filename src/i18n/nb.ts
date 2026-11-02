@@ -20,6 +20,8 @@ const nb: Catalog = {
       skip: 'Gå til prosjektene',
       games: 'Spill',
       gamesPanel: 'Om spillene',
+      sites: 'Nettsteder',
+      clients: 'Våre kunder',
     },
     hero: {
       status: 'Åpen for kundeprosjekter',
@@ -938,7 +940,7 @@ const nb: Catalog = {
     farnear: {
       tagline: 'Videosamtaler over en grense som blokkerer de vanlige appene, med en tavle å tegne på.',
       lede: 'Farnear ringer familien via en lenke, uten konto. Videoen går rett mellom deltakerne, og samtalen prøver flere veier til én kommer gjennom.',
-      links: [],
+      links: ['farnear.workbench-soft.com'],
       groups: [
         {
           features: [

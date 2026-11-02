@@ -19,6 +19,8 @@ const zh: Catalog = {
       skip: '跳到项目',
       games: '游戏',
       gamesPanel: '关于游戏',
+      sites: '网站',
+      clients: '我们的客户',
     },
     hero: {
       status: '承接客户项目',
@@ -728,7 +730,7 @@ const zh: Catalog = {
     farnear: {
       tagline: '跨越屏蔽常用应用的边境的视频通话，带一块可以画画的白板。',
       lede: 'Farnear 通过链接给家人打电话，无需账号。视频在通话者之间直连，通话会尝试多条路径直到接通。',
-      links: [],
+      links: ['farnear.workbench-soft.com'],
       groups: [
         {
           features: [

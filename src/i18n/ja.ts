@@ -20,6 +20,8 @@ const ja: Catalog = {
       skip: 'プロジェクトへ移動',
       games: 'ゲーム',
       gamesPanel: 'ゲームについて',
+      sites: 'サイト',
+      clients: 'クライアント',
     },
     hero: {
       status: 'クライアント案件を受付中',
@@ -844,7 +846,7 @@ const ja: Catalog = {
     farnear: {
       tagline: 'いつものアプリが使えない国境を越えるビデオ通話。描けるボードつき。',
       lede: 'Farnear はリンクで家族に電話します。アカウントは不要です。映像は参加者の間を直接流れ、つながるまで複数の経路を試します。',
-      links: [],
+      links: ['farnear.workbench-soft.com'],
       groups: [
         {
           features: [
