@@ -998,6 +998,7 @@ const fr: Catalog = {
               'Exposition',
               'ISO et vitesse, chacun auto ou manuel par tiers de valeur. AJUST règle les deux pour la scène.',
             ],
+            ['Réglage auto', 'Un bouton du mode simple règle Lumière, Chaleur et Couleur pour la scène.'],
             ['Couleur', 'Une seule saturation pour la molette COLOR et le curseur Couleur.'],
             ['Photo, vidéo et flash', "La photo est l'image à l'écran au toucher. Un appui long filme."],
             ['Lieu et réglages', 'Chaque prise garde où et comment elle a été faite, en balises EXIF.'],

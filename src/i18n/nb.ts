@@ -871,6 +871,7 @@ const nb: Catalog = {
               'Eksponering',
               'ISO og lukker, hver auto eller manuelt i tredjedels trinn. TILPASS stiller begge for scenen.',
             ],
+            ['Autojustering', 'Én knapp i enkel modus stiller Lys, Varme og Farge for motivet.'],
             ['Farge', 'Én metning for COLOR-hjulet og Farge-glidebryteren.'],
             ['Foto, video og blits', 'Bildet er rammen på skjermen ved berøring. Hold for å filme.'],
             ['Sted og kameradata', 'Hvert bilde bærer hvor og hvordan det ble tatt, som EXIF-tagger.'],
