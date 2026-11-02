@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **Development for clients** a new section on the projects list. Its first card is Alina Photography: portfolio, booking, questions, admin, calendar sync and client galleries.
+
 - **Shuttrix** Exposure says a slow shutter shows a big "Hold still".
 - **Workbench Games** the page lists Kids mode, and Drawing tools mentions the big colours.
 - **SpotTheCam** the Android app lists Trip stats: speeds, time over the limit, cameras passed too fast and time lost in traffic jams.

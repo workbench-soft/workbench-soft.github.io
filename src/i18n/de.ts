@@ -53,6 +53,7 @@ const de: Catalog = {
       kinds: {
         app: 'Apps für Menschen',
         tool: 'Werkzeuge für Entwickler',
+        client: 'Entwicklung für Kunden',
         internal: 'Interne Werkzeuge des Studios',
         archive: 'Archiv',
       },
@@ -745,6 +746,29 @@ const de: Catalog = {
             ],
             ['Releases', 'Jeder Push auf main, der die Prüfungen besteht, wird ein datiertes Release mit Notizen.'],
             ['Aktualisiert sich selbst', 'Der PC installiert jedes Release wenige Minuten nach dem Merge.'],
+          ],
+        },
+      ],
+    },
+    'alina-photo': {
+      tagline: 'Portfolio und Buchung für eine Familienfotografin in Sydney.',
+      lede: 'Eine Website für Alina, Fotografin für Familien und Schwangerschaft. Kunden sehen ihre Galerien, buchen ein Shooting vor Ort zu einer freien Zeit und bekommen ihre Fotos über einen privaten Link.',
+      links: [],
+      groups: [
+        {
+          features: [
+            ['Portfolio', 'Galerien nach Shooting-Art mit Vollbildansicht und Wischen.'],
+            ['Buchung', 'Shooting, Tag und freie Zeit wählen. Zeiten zur goldenen Stunde tragen eine Sonne.'],
+            ['Fragen', 'Ein kurzes Formular für alle, die noch nicht buchen wollen, mit Antwort per E-Mail.'],
+            [
+              'Verwaltung',
+              'Anmeldung per E-Mail-Link, Fotos hochladen und bearbeiten, Buchungen bestätigen, Zeiten und Pakete.',
+            ],
+            [
+              'Kalenderabgleich',
+              'Belegte Zeiten im Google Kalender sperren Buchungen, und ein Feed zeigt jede Buchung.',
+            ],
+            ['Kundengalerien', 'Ein privater Link mit Probefotos unter Wasserzeichen, danach alle Originale als ZIP.'],
           ],
         },
       ],

@@ -1,6 +1,6 @@
 // Each project's text comes from its repo: docs/features.md and the README.
 
-export type Kind = 'app' | 'tool' | 'internal' | 'archive';
+export type Kind = 'app' | 'tool' | 'client' | 'internal' | 'archive';
 
 export interface Feature {
   name: string;
@@ -31,7 +31,7 @@ export interface Project {
 }
 
 /** The order of the filter chips and the groups. Their labels sit in src/i18n/. */
-export const kinds: Kind[] = ['app', 'tool', 'internal', 'archive'];
+export const kinds: Kind[] = ['app', 'tool', 'client', 'internal', 'archive'];
 
 export const projects: Project[] = [
   {
@@ -1161,6 +1161,37 @@ export const projects: Project[] = [
           { name: 'Main or master first', text: 'Links point at a branch that already holds the file.' },
           { name: 'Hosts and mapped URLs', text: 'GitHub, GitHub servers, GitLab, Bitbucket and Bitbucket Server.' },
           { name: 'Languages', text: 'Commands, settings and messages follow the VS Code display language.' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'alina-photo',
+    kind: 'client',
+    repo: 'alina-photo',
+    hue: 40,
+    code: 'ALN',
+    name: 'Alina Photography',
+    tagline: 'Portfolio and booking site for a family photographer in Sydney.',
+    lede: 'A site for Alina, a family and maternity photographer. Clients browse her galleries, book an on-location session at a free time and get their photos through a private link.',
+    platforms: ['Web'],
+    stack: ['Astro', 'Rust', 'Cloudflare Workers', 'D1', 'R2'],
+    links: [],
+    groups: [
+      {
+        features: [
+          { name: 'Portfolio', text: 'Galleries by session type, with a full screen viewer and swipe.' },
+          { name: 'Booking', text: 'Pick a session, a day and a free time. Golden hour times carry a sun.' },
+          { name: 'Questions', text: 'A short form for people not ready to book, answered by email.' },
+          {
+            name: 'Admin',
+            text: 'Sign in by email link, upload and edit photos, confirm bookings, set hours and packages.',
+          },
+          {
+            name: 'Calendar sync',
+            text: 'Busy times in Google Calendar block booking times, and a feed shows every booking.',
+          },
+          { name: 'Client galleries', text: 'A private link with watermarked proofs, then every original as one zip.' },
         ],
       },
     ],
