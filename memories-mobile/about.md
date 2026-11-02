@@ -14,5 +14,5 @@ Cloud photo services show "on this day" memories for photos kept in their cloud.
 
 ## Get in touch
 
-- **Email, bugs and ideas** [workbench.soft@gmail.com](mailto:workbench.soft@gmail.com)
+- **Email, bugs and ideas** [hello@workbench-soft.com](mailto:hello@workbench-soft.com)
 - **Support the work** [GitHub Sponsors](https://github.com/sponsors/oleg-chibikov)

@@ -4,7 +4,7 @@ export type InfoKey = 'privacy' | 'about';
 type Info = { title: string; description: string; sections: { h?: string; p: string[] }[] };
 
 // Cloudflare Email Routing forwards it once the domain is set up.
-const CONTACT = 'workbench.soft@gmail.com';
+const CONTACT = 'hello@workbench-soft.com';
 
 export const INFO: Record<InfoKey, Record<Lang, Info>> = {
   privacy: {

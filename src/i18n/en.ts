@@ -44,7 +44,13 @@ export const en = {
     features: 'Features',
     platforms: 'Platforms',
     stack: 'Stack',
-    kinds: { app: 'Apps', tool: 'Developer tools', archive: 'Archive' },
+    shot: 'Screen {n} of {name}',
+    kinds: {
+      app: 'Apps for people',
+      tool: 'Tools for developers',
+      internal: 'Internal studio tools',
+      archive: 'Archive',
+    },
   },
   process: {
     title: 'From the first spec to the store',

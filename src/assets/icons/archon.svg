@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <title>Circuit: an arch etched as a circuit board, wired to a cyan eye</title>
+  <defs><radialGradient id="i"><stop offset="0" stop-color="#a5f3fc"/><stop offset="1" stop-color="#06b6d4"/></radialGradient></defs>
+  <rect width="256" height="256" rx="44" fill="#04131a"/>
+  <path d="M40 232V116a88 88 0 0 1 176 0v116h-44V116a44 44 0 0 0-88 0v116z" fill="#0b3b3a" stroke="#2dd4bf" stroke-width="7" stroke-linejoin="round"/>
+  <g fill="none" stroke="#5eead4" stroke-width="5" stroke-linecap="round">
+    <path d="M62 222V116a66 66 0 0 1 132 0v106"/>
+    <path d="M84 180h8M164 180h8"/>
+  </g>
+  <g fill="#04131a" stroke="#5eead4" stroke-width="5">
+    <circle cx="62" cy="222" r="7"/><circle cx="194" cy="222" r="7"/><circle cx="128" cy="50" r="8"/>
+    <circle cx="81" cy="69" r="6"/><circle cx="175" cy="69" r="6"/>
+  </g>
+  <path d="M92 180q36-34 72 0q-36 34-72 0z" fill="#04131a" stroke="#22d3ee" stroke-width="6" stroke-linejoin="round"/>
+  <circle cx="128" cy="180" r="15" fill="url(#i)"/>
+  <circle cx="128" cy="180" r="6" fill="#04131a"/>
+</svg>

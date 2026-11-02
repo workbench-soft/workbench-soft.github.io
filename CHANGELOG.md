@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- **Groups** projects sit under apps for people, tools for developers, internal studio tools and the archive. Archon, Agent Skills private and the Memories demo NAS join the internal tools.
+- **Icons and screenshots** each project panel shows the app icon and a strip of screenshots.
+- **Email** the site, the Memories pages, the Langflip page and the games name `hello@workbench-soft.com`.
 - **Projects** each heading of each repo's `docs/features.md` shows on the site, in all 9 languages. Shuttrix, Farnear, Memoire, Lumiere Player, Property Trends, Tripforge, Reddit Desk, Songfactory and Speed Camera Scraper get their own entries.
 - **Docs** each heading of `docs/features.md` links its spec.
 - **Property Trends** the suburb price map opens at <https://workbench-soft.com/property-trends/>, unpacked from its newest release.

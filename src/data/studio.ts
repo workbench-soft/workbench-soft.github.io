@@ -1,4 +1,4 @@
-export const email = 'workbench.soft@gmail.com';
+export const email = 'hello@workbench-soft.com';
 export const mailto = (subject: string) => `mailto:${email}?subject=${encodeURIComponent(subject)}`;
 
 /** Platforms a person installs or opens an app on. Tool hosts such as VS Code stay out of the count. */
