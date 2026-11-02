@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Screenshots** Memoire, Tripforge, Lumiere Player, Langflip, Media Organizer, Archon, Reddit Desk, Songfactory and local-ci show a strip of screenshots in their panels.
 - **Shuttrix** its entry points at `memories/apps/shuttrix`, where the camera now lives.
 
 - **SpotTheCam** the Android app lists Loud warnings: full volume from the phone speaker, also in silent mode or with Bluetooth on.

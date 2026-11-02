@@ -2,7 +2,8 @@
 
 ## site-groups-icons-shots: studio email, groups, icons, screenshots
 
-- [ ] **Screenshots** Shuttrix, Farnear, Memoire, Lumiere Player, Tripforge, Langflip, Media Organizer, Archon and the tools have none on the site. Run the `demo-media` skill in each repo, then copy the shots to `src/assets/shots/<id>/`.
+- [ ] **Shuttrix shots** the app crashes at start on an emulator (`CameraSession` reads a null ML Kit barcode scanner, seen 2026-11-02 on an x86_64 build), so it has no shots. Fix the crash in `memories/apps/shuttrix`, run the `demo-media` skill there, then copy 2 to 4 shots to `src/assets/shots/shuttrix/`.
+- [ ] **Farnear shots** Farnear has no code yet. Run the `demo-media` skill once its web app runs, then copy the shots to `src/assets/shots/farnear/`.
 
 ## feat/games: party games at games.workbench-soft.com/games
 
