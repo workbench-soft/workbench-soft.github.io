@@ -4,9 +4,9 @@ The features of <https://workbench-soft.com>. The Memories site and the Langflip
 
 ## Hero
 
-- **What it does** names the studio and what it builds, with a button that starts an email and counts of projects, features and platforms.
+- **What it does** names the studio and what it builds, with a button that starts an email and counts of projects, features, lines of code and platforms.
 - **Where** the top of the home page. A WebGL2 shader draws a moving grid terrain behind the text, and the pointer tilts it.
-- **Limits** a browser without WebGL2 shows a still gradient. The terrain stops while the hero is off screen and under reduced motion.
+- **Limits** a browser without WebGL2 shows a still gradient. The terrain stops while the hero is off screen and under reduced motion. The lines of code change only when someone runs `mise run code-lines` and commits the result.
 
 Spec: [workbench-soft-site](../specs/workbench-soft-site.md).
 

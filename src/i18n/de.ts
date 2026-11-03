@@ -31,6 +31,7 @@ const de: Catalog = {
       work: 'Arbeiten ansehen',
       projects: 'Projekte',
       features: 'Funktionen ausgeliefert',
+      code: 'Zeilen Code',
       platforms: 'Plattformen',
       ads: 'Werbung auf dieser Seite',
     },

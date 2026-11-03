@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Lines of code** a fifth number in the hero: the non-blank source lines git tracks across the studio repos, 345,413 today. `mise run code-lines` counts them again.
 - **Sky Altar astrology** the astrology section in Russian, German, French, Spanish, Chinese, Japanese, Korean and Norwegian, and an Astrology guide link on the Sky Altar card of the home page.
 - **Sky Altar astrology** the house articles follow whole sign houses as the app does, the Today page shows the Sun's sign in ice blue and your sign in rose, and the privacy policy covers the birth details and the Open-Meteo city search.
 - **Sky Altar astrology** 88 articles in 9 languages at /skyaltar/astrology/ on the signs, planets, houses, aspects, compatibility, the Chinese zodiac and numerology, a Today page with the Sun and Moon signs and a tip per sign, and marked ad slots. The site serves /ads.txt.

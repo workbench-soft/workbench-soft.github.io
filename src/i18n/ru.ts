@@ -31,6 +31,7 @@ const ru: Catalog = {
       work: 'Смотреть работы',
       projects: 'Проектов',
       features: 'Функций выпущено',
+      code: 'Строк кода',
       platforms: 'Платформ',
       ads: 'Рекламы на сайте',
     },

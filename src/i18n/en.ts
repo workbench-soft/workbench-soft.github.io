@@ -30,6 +30,7 @@ export const en = {
     work: 'See the work',
     projects: 'Projects',
     features: 'Features shipped',
+    code: 'Lines of code',
     platforms: 'Platforms',
     ads: 'Ads on this site',
   },

@@ -30,6 +30,7 @@ const zh: Catalog = {
       work: '查看作品',
       projects: '项目',
       features: '已上线功能',
+      code: '代码行数',
       platforms: '平台',
       ads: '本站广告',
     },

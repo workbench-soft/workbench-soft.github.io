@@ -31,6 +31,7 @@ const nb: Catalog = {
       work: 'Se arbeidet',
       projects: 'Prosjekter',
       features: 'Funksjoner levert',
+      code: 'Kodelinjer',
       platforms: 'Plattformer',
       ads: 'Annonser på dette nettstedet',
     },
