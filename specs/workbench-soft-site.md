@@ -325,3 +325,18 @@ The studio needed one public site for its apps and their installers.
 - **Why** the owner wants the scraper off the site. It's an internal helper for SpotTheCam, as the Content rule above already says.
 - **Changes** the `speed-camera-location-scraper` entry leaves `src/data/projects.ts` and the 8 other catalogs in `src/i18n/`.
 - **Kept** its lines still count in the hero's lines of code, since the scraper is studio code.
+
+### 2026-11-03 Maria's site in clients, folding groups, open source marks
+
+- **Why** the owner wants the site of Maria Shilova listed under Development for clients, last in the group, each group to fold, Internal studio tools folded at first, and each open source project marked with a link to its public repo.
+- **What the visitor gets**
+  - **Aspiration Style** a panel after Alina Photography: portfolio, order form, admin, fonts and the AI generator, with a link to `aspirationstyle.ru`. Its code sits in a private repo, so it carries no open source mark.
+  - **Folding groups** a click on a group title folds or opens it. Internal studio tools starts folded. A chip, an index link or a palette pick opens the group of its project.
+  - **Open source** a mark next to the project code and a Source code link to the public GitHub repo: Agent Skills, Local CI, Git aliases, GH Review Notify, Open in Remote Repo, Langflip, Workbench Games and Media Organizer.
+- **Changes**
+  - **`src/data/projects.ts`** the `aspirationstyle` entry, and a `source` field with the public repo URL.
+  - **`src/components/Projects.astro`** each group is a `<details>`, open unless it's `internal`.
+  - **`src/components/ProjectPanel.astro`** the open source mark and the Source code link.
+  - **`src/components/Palette.astro`** a pick inside a folded group opens it.
+  - **`src/i18n/`** the Aspiration Style text and the `openSource` and `source` labels in 9 languages.
+- **Docs** `docs/features.md`, `CHANGELOG.md`.
