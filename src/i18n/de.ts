@@ -1174,6 +1174,10 @@ const de: Catalog = {
               'Telefonlautsprecher',
               'Auf dem Telefon kommt das Video in voller Lautstärke aus dem Lautsprecher, auch mit Bluetooth. Bluetooth und Systemlautstärke lassen sich einschalten.',
             ],
+            [
+              'Aussehen',
+              'Ein ruhiges, dunkles Design im Stil von Google TV, ein weißer Fokus und ein Player, der aufs Telefon passt.',
+            ],
           ],
         },
       ],

@@ -1215,6 +1215,10 @@ const fr: Catalog = {
               'Les vidéos enregistrées avec yt-dlp sautent leurs segments sponsorisés SponsorBlock.',
             ],
             [
+              'Apparence',
+              'Un look sombre et calme façon Google TV, un focus blanc et un lecteur qui tient sur le téléphone.',
+            ],
+            [
               'Haut-parleur du téléphone',
               'Sur le téléphone, la vidéo sort du haut-parleur à plein volume, même avec le Bluetooth. Bluetooth et volume du système s’activent dans les réglages.',
             ],

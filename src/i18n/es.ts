@@ -1159,6 +1159,10 @@ const es: Catalog = {
               'Los vídeos guardados con yt-dlp omiten sus segmentos patrocinados de SponsorBlock.',
             ],
             [
+              'Aspecto',
+              'Un aspecto oscuro y tranquilo al estilo de Google TV, un foco blanco y un reproductor que cabe en el teléfono.',
+            ],
+            [
               'Altavoz del teléfono',
               'En el teléfono el vídeo suena por el altavoz al máximo, también con Bluetooth. Bluetooth y el volumen del sistema se activan en Ajustes.',
             ],
