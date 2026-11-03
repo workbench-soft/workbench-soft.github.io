@@ -30,3 +30,7 @@ run = "pnpm format"
 [tasks.test]
 description = "Check that each language catalog matches English"
 run = "pnpm test"
+
+[tasks.code-lines]
+description = "Count the lines of code in every repo clone beside this one into src/data/code-lines.json"
+run = "node scripts/code-lines.ts"

@@ -31,6 +31,7 @@ const es: Catalog = {
       work: 'Ver el trabajo',
       projects: 'Proyectos',
       features: 'Funciones lanzadas',
+      code: 'Líneas de código',
       platforms: 'Plataformas',
       ads: 'Anuncios en este sitio',
     },

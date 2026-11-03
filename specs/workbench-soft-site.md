@@ -316,5 +316,6 @@ The studio needed one public site for its apps and their installers.
 - **Changes**
   - **`scripts/code-lines.ts`** reads the sibling clones and writes `src/data/code-lines.json`. `mise run code-lines` runs it on the PC, since CI has none of the private clones.
   - **`src/components/Hero.astro`** the fifth stat and locale grouping in the roll up.
-  - **`src/i18n/`** `hero.lines` label in 9 languages.
+  - **`src/i18n/`** `hero.code` label in 9 languages.
+  - **Docs** `docs/features.md`, `docs/architecture.md`, `CHANGELOG.md`.
 - **Limits** the number changes only when someone runs `mise run code-lines` and commits the JSON.

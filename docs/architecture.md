@@ -38,7 +38,7 @@ flowchart LR
 - **Components** one Astro file per block: `Nav`, `Hero`, `Marquee`, `Services`, `Projects` with `ProjectPanel`, `Process`, `Contact` and `Palette`.
 - **Scripts** each component bundles its own TypeScript. `field.ts` draws the hero terrain. The palette builds its index from the rendered panels, so it finds what the page shows.
 - **Styles** `src/styles/global.css` holds the colours, buttons and the reveal. Each component keeps its own scoped styles.
-- **Counts** the hero counts come from the data at build time, so the HTML holds them before any script runs.
+- **Counts** the hero counts come from the data at build time, so the HTML holds them before any script runs. The lines of code come from `src/data/code-lines.json`, which `scripts/code-lines.ts` writes from the repo clones beside this one with `git grep`.
 
 ## A visit
 

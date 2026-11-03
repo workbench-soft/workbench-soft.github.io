@@ -31,6 +31,7 @@ const fr: Catalog = {
       work: 'Voir les réalisations',
       projects: 'Projets',
       features: 'Fonctions livrées',
+      code: 'Lignes de code',
       platforms: 'Plateformes',
       ads: 'Pubs sur ce site',
     },

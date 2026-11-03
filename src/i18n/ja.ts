@@ -31,6 +31,7 @@ const ja: Catalog = {
       work: '実績を見る',
       projects: 'プロジェクト',
       features: 'リリースした機能',
+      code: 'コード行数',
       platforms: 'プラットフォーム',
       ads: 'このサイトの広告',
     },

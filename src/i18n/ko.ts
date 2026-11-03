@@ -31,6 +31,7 @@ const ko: Catalog = {
       work: '작업 보기',
       projects: '프로젝트',
       features: '출시한 기능',
+      code: '코드 줄 수',
       platforms: '플랫폼',
       ads: '이 사이트의 광고',
     },
