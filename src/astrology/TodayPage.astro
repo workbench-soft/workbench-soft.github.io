@@ -1,0 +1,118 @@
+---
+// Today's Sun and Moon signs and a tip per sign. The browser works out the date, so the static page stays current.
+import type { Lang } from "../i18n/locales";
+import AdSlot from "./AdSlot.astro";
+import Shell from "./Shell.astro";
+import { href, langsOf, text } from "./paths";
+import { signs } from "./topics";
+
+const { lang } = Astro.props as { lang: Lang };
+const t = text(lang);
+const langs = await langsOf();
+const glyphs = ["♈", "♉", "♊", "♋", "♌", "♍", "♎", "♏", "♐", "♑", "♒", "♓"];
+const data = { tips: t.tips, focus: signs.map((s) => t.focus[s]), names: signs.map((s) => t.signs[s]), sun: t.today.sun, moon: t.today.moon };
+---
+
+<Shell lang={lang} title={`${t.today.title} | Sky Altar`} description={t.today.description} id="today" langs={langs}>
+  <h1>{t.today.title}</h1>
+  <p class="lede">{t.today.lede}</p>
+  <noscript><p>{t.today.noscript}</p></noscript>
+  <p class="now"><span class="sun" data-sun></span> <span class="moon" data-moon></span></p>
+  <label class="pick">
+    {t.today.pick}
+    <select data-pick>
+      <option value="">{t.today.none}</option>
+      {signs.map((s, i) => <option value={i}>{glyphs[i]} {t.signs[s]}</option>)}
+    </select>
+  </label>
+  <p class="legend">
+    <span class="sw sun"></span>{t.today.legendSun}
+    <span class="sw moon"></span>{t.today.legendMoon}
+    <span class="sw yours"></span>{t.today.legendYours}
+  </p>
+  <h2>{t.today.tipsTitle}</h2>
+  <ol class="signs">
+    {
+      signs.map((s, i) => (
+        <li class="card" data-sign={i}>
+          <img src={`/skyaltar/astrology/zodiac/${s}.webp`} alt="" width="512" height="512" loading="lazy" />
+          <h3>
+            <a href={href(lang, `signs/${s}`)}>
+              {glyphs[i]} {t.signs[s]}
+            </a>
+          </h3>
+          <p data-tip />
+        </li>
+      ))
+    }
+  </ol>
+  <AdSlot lang={lang} name="today-end" />
+  <p>{t.today.how}</p>
+  <script type="application/json" id="today-data" set:html={JSON.stringify(data)} />
+</Shell>
+
+<script>
+  import { dayNumber, moonLongitude, pick, signAt, sunLongitude } from "./sky";
+
+  const data = JSON.parse(document.getElementById("today-data")!.textContent!);
+  const now = new Date();
+  const sun = signAt(sunLongitude(now));
+  const moon = signAt(moonLongitude(now));
+  const day = dayNumber(now);
+  document.querySelector("[data-sun]")!.textContent = `☉ ${data.sun.replace("{sign}", data.names[sun])}`;
+  document.querySelector("[data-moon]")!.textContent = `☽ ${data.moon.replace("{sign}", data.names[moon])}`;
+
+  const cards = [...document.querySelectorAll<HTMLElement>("[data-sign]")];
+  for (const card of cards) {
+    const i = Number(card.dataset.sign);
+    const p = pick(day, i, data.tips.length, data.focus[i].length);
+    card.querySelector("[data-tip]")!.textContent = `${data.focus[i][p.focus]} ${data.tips[p.tip]}`;
+    card.classList.toggle("is-sun", i === sun);
+    card.classList.toggle("is-moon", i === moon);
+  }
+
+  // The reader's sign stays on this device only.
+  const select = document.querySelector<HTMLSelectElement>("[data-pick]")!;
+  const mark = (value: string) => {
+    for (const card of cards) card.classList.toggle("is-yours", card.dataset.sign === value);
+    const list = document.querySelector(".signs")!;
+    const mine = cards.find((c) => c.dataset.sign === value);
+    if (mine) list.prepend(mine);
+    else cards.forEach((c) => list.append(c));
+  };
+  try {
+    select.value = localStorage.getItem("skyaltar.sign") ?? "";
+  } catch {}
+  mark(select.value);
+  select.addEventListener("change", () => {
+    try {
+      localStorage.setItem("skyaltar.sign", select.value);
+    } catch {}
+    mark(select.value);
+  });
+</script>
+
+<style>
+  .now { display: flex; flex-wrap: wrap; gap: 10px 24px; font-size: 20px; font-weight: 600; }
+  .now .sun { color: #ffd27a; }
+  .now .moon { color: #dfe6ff; }
+  .pick { display: flex; align-items: center; gap: 12px; margin: 18px 0; color: var(--soft); }
+  .pick select { font: inherit; padding: 8px 12px; border-radius: 10px; background: var(--bg-3); color: var(--text); border: 1px solid var(--line-2); }
+  .legend { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; font-size: 14px !important; }
+  .sw { display: inline-block; width: 14px; height: 14px; border-radius: 4px; margin-left: 8px; }
+  .sw.sun { background: #ffd27a; }
+  .sw.moon { background: #dfe6ff; }
+  .sw.yours { background: var(--violet); }
+  .signs { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; }
+  .card { position: relative; padding: 14px 16px; border-radius: 14px; border: 1px solid var(--line); background: var(--bg-2); overflow: hidden; }
+  .card img { position: absolute; right: -24px; top: -16px; width: 120px; height: 120px; opacity: 0.35; mix-blend-mode: screen; }
+  .card h3 { margin: 0 0 6px !important; position: relative; }
+  .card h3 a { color: var(--text) !important; text-decoration: none; }
+  .card p { position: relative; margin: 0; font-size: 15px !important; }
+  .card.is-moon { border-color: #dfe6ff; box-shadow: 0 0 0 1px #dfe6ff inset; }
+  .card.is-sun { border-color: #ffd27a; box-shadow: 0 0 24px rgb(255 210 122 / 0.35), 0 0 0 1px #ffd27a inset; }
+  .card.is-sun img, .card.is-moon img, .card.is-yours img { opacity: 0.8; }
+  .card.is-yours { grid-column: 1 / -1; border: 2px solid var(--violet); background: linear-gradient(135deg, rgb(169 139 255 / 0.22), var(--bg-2)); }
+  .card.is-yours img { width: 180px; height: 180px; }
+  .card.is-yours p { font-size: 18px !important; color: var(--text) !important; max-width: 70%; }
+</style>

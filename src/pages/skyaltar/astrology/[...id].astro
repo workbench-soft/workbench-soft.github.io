@@ -1,0 +1,11 @@
+---
+import { getCollection } from "astro:content";
+import ArticlePage from "../../../astrology/ArticlePage.astro";
+
+export async function getStaticPaths() {
+  const all = await getCollection("astrology", (e) => e.id.startsWith("en/"));
+  return all.map((entry) => ({ params: { id: entry.id.slice(3) }, props: { entry } }));
+}
+---
+
+<ArticlePage lang="en" entry={Astro.props.entry} />

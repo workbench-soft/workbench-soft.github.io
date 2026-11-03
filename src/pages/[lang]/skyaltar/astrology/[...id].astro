@@ -1,0 +1,16 @@
+---
+import { getCollection } from "astro:content";
+import ArticlePage from "../../../../astrology/ArticlePage.astro";
+import { catalogs } from "../../../../astrology/i18n";
+import { isLang, type Lang } from "../../../../i18n/locales";
+
+export async function getStaticPaths() {
+  const all = await getCollection("astrology", (e) => !e.id.startsWith("en/"));
+  return all.flatMap((entry) => {
+    const [lang, ...id] = entry.id.split("/");
+    return isLang(lang) && catalogs[lang] ? [{ params: { lang, id: id.join("/") }, props: { entry } }] : [];
+  });
+}
+---
+
+<ArticlePage lang={Astro.params.lang as Lang} entry={Astro.props.entry} />

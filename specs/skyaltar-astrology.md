@@ -19,20 +19,20 @@ Each article says once that astrology is a cultural tradition and entertainment,
 
 - **URL scheme** English sits under `/skyaltar/astrology/`, each other language under `/<lang>/skyaltar/astrology/`. The paths below stay the same in each language:
 
-| Group            | Path                                      | Slugs                                                                      |
-| ---------------- | ----------------------------------------- | -------------------------------------------------------------------------- |
-| Index            | `/skyaltar/astrology/`                    |                                                                            |
-| Today            | `/skyaltar/astrology/today/`              |                                                                            |
-| Signs            | `/skyaltar/astrology/signs/<sign>/`       | `aries` to `pisces`                                                        |
-| Basics           | `/skyaltar/astrology/basics/<slug>/`      | `sun-sign`, `moon-sign`, `rising-sign`, `natal-chart`                      |
-| Planets          | `/skyaltar/astrology/planets/<planet>/`   | `sun`, `moon`, `mercury` to `pluto`                                        |
-| Houses           | `/skyaltar/astrology/houses/<n>/`         | `1` to `12`, Placidus                                                      |
-| Aspects          | `/skyaltar/astrology/aspects/<aspect>/`   | `conjunction`, `sextile`, `square`, `trine`, `opposition`                  |
-| Elements         | `/skyaltar/astrology/elements/<element>/` | `fire`, `earth`, `air`, `water`                                            |
-| Modalities       | `/skyaltar/astrology/modalities/<mode>/`  | `cardinal`, `fixed`, `mutable`                                             |
-| Compatibility    | `/skyaltar/astrology/compatibility/<sign>/` | one hub per sign, each pair at `#<other sign>`                           |
-| Chinese zodiac   | `/skyaltar/astrology/chinese-zodiac/<animal>/` | `overview`, `rat` to `pig`                                          |
-| Numerology       | `/skyaltar/astrology/numerology/<n>/`     | `overview`, `1` to `9`, `11`, `22`, `33`                                   |
+| Group          | Path                                           | Slugs                                                     |
+| -------------- | ---------------------------------------------- | --------------------------------------------------------- |
+| Index          | `/skyaltar/astrology/`                         |                                                           |
+| Today          | `/skyaltar/astrology/today/`                   |                                                           |
+| Signs          | `/skyaltar/astrology/signs/<sign>/`            | `aries` to `pisces`                                       |
+| Basics         | `/skyaltar/astrology/basics/<slug>/`           | `sun-sign`, `moon-sign`, `rising-sign`, `natal-chart`     |
+| Planets        | `/skyaltar/astrology/planets/<planet>/`        | `sun`, `moon`, `mercury` to `pluto`                       |
+| Houses         | `/skyaltar/astrology/houses/<n>/`              | `1` to `12`, Placidus                                     |
+| Aspects        | `/skyaltar/astrology/aspects/<aspect>/`        | `conjunction`, `sextile`, `square`, `trine`, `opposition` |
+| Elements       | `/skyaltar/astrology/elements/<element>/`      | `fire`, `earth`, `air`, `water`                           |
+| Modalities     | `/skyaltar/astrology/modalities/<mode>/`       | `cardinal`, `fixed`, `mutable`                            |
+| Compatibility  | `/skyaltar/astrology/compatibility/<sign>/`    | one hub per sign, each pair at `#<other sign>`            |
+| Chinese zodiac | `/skyaltar/astrology/chinese-zodiac/<animal>/` | `overview`, `rat` to `pig`                                |
+| Numerology     | `/skyaltar/astrology/numerology/<n>/`          | `overview`, `1` to `9`, `11`, `22`, `33`                  |
 
 - **Articles** Markdown files in an Astro content collection, `src/content/astrology/<lang>/<group>/<slug>.md`, with `title` and `description` in the front matter.
 - **Topics** `src/astrology/topics.ts` lists each article and its links: a sign names its element, modality, ruling planet and compatibility hub. The related links come from there, in the reader's language.

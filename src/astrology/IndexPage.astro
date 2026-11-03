@@ -1,0 +1,65 @@
+---
+import type { Lang } from "../i18n/locales";
+import AdSlot from "./AdSlot.astro";
+import Shell from "./Shell.astro";
+import { articles, href, langsOf, text } from "./paths";
+import { groups, type Group } from "./topics";
+
+const { lang } = Astro.props as { lang: Lang };
+const t = text(lang);
+const all = await articles(lang);
+const langs = await langsOf();
+const list = (Object.keys(groups) as Group[]).map((g) => ({
+  group: g,
+  items: groups[g].flatMap((s) => {
+    const a = all.get(`${g}/${s}`);
+    return a ? [{ id: `${g}/${s}`, title: a.data.title }] : [];
+  }),
+}));
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: t.index.title,
+    description: t.index.description,
+    inLanguage: lang,
+    url: new URL(href(lang), Astro.site).href,
+  },
+];
+---
+
+<Shell lang={lang} title={`${t.index.title} | Sky Altar`} description={t.index.description} langs={langs} schema={schema}>
+  <h1>{t.index.title}</h1>
+  <p class="lede">{t.index.lede}</p>
+  {t.index.intro.map((p) => <p>{p}</p>)}
+  <a class="today-card" href={href(lang, "today")}>
+    <strong>{t.nav.today}</strong>
+    <span>{t.index.today}</span>
+  </a>
+  {
+    list.map(({ group, items }, i) => (
+      <>
+        {i === 2 && <AdSlot lang={lang} name="index-middle" />}
+        <section id={group}>
+          <h2>{t.groups[group].title}</h2>
+          <p>{t.groups[group].text}</p>
+          <ul class="toc">
+            {items.map((a) => (
+              <li>
+                <a href={href(lang, a.id)}>{a.title}</a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      </>
+    ))
+  }
+</Shell>
+
+<style>
+  .today-card { display: block; margin: 28px 0; padding: 18px 22px; border-radius: 14px; border: 1px solid var(--line-2); background: rgb(255 210 120 / 0.08); text-decoration: none; }
+  .today-card strong { display: block; color: #ffd27a; font-size: 20px; }
+  .today-card span { color: var(--soft); }
+  .toc { columns: 2 220px; padding-left: 20px; }
+  .toc li { break-inside: avoid; margin-bottom: 4px; }
+</style>

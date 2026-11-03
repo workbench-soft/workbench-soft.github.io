@@ -1,0 +1,98 @@
+---
+// The frame of each astrology page: the header with the languages, the app card and the footer.
+import Base from "../layouts/Base.astro";
+import { names, tags, type Lang } from "../i18n/locales";
+import { apkUrl, appUrl, href, root, text } from "./paths";
+
+interface Props {
+  lang: Lang;
+  title: string;
+  description: string;
+  /** The page id under the section, such as signs/aries, or today. Empty for the index. */
+  id?: string;
+  langs: readonly Lang[];
+  type?: "website" | "article";
+  schema?: object[];
+}
+
+const { lang, title, description, id = "", langs, type, schema } = Astro.props;
+const t = text(lang);
+---
+
+<Base title={title} description={description} path={`${root}${id ? `${id}/` : ""}`} langs={langs} type={type} schema={schema}>
+  <meta slot="head" name="google-adsense-account" content="ca-pub-8598703460892343" />
+  <a class="skip" href="#main">{t.nav.skip}</a>
+  <header class="top">
+    <div class="wrap bar">
+      <a class="brand" href={lang === "en" ? "/" : `/${lang}/`}>{t.nav.home}</a>
+      <nav aria-label={t.section}>
+        <a href={href(lang)}>{t.nav.index}</a>
+        <a href={href(lang, "today")}>{t.nav.today}</a>
+      </nav>
+      <details class="langs">
+        <summary>{names[lang]}</summary>
+        <ul>
+          {
+            langs.map((l) => (
+              <li>
+                <a href={href(l, id)} hreflang={tags[l]} lang={tags[l]} aria-current={l === lang ? "page" : undefined}>
+                  {names[l]}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="wrap astro-page">
+    <slot />
+    <aside class="app">
+      <h2>{t.app.title}</h2>
+      <p>{t.app.text}</p>
+      <p class="buttons">
+        <a class="btn" href={appUrl}>{t.app.play}</a>
+        <a class="btn ghost" href={apkUrl}>{t.app.apk}</a>
+      </p>
+    </aside>
+    <p class="note">{t.note}</p>
+  </main>
+  <footer class="wrap foot">
+    <span>© {new Date().getFullYear()} Workbench Soft · Sky Altar</span>
+    <a href="/skyaltar/privacy-policy">{t.nav.privacy}</a>
+  </footer>
+</Base>
+
+<style is:global>
+  .skip { position: absolute; left: -999px; }
+  .skip:focus { left: 16px; top: 16px; z-index: 10; background: var(--bg-3); padding: 8px 12px; }
+  .astro-page, .top .wrap, .foot { max-width: 820px; margin: 0 auto; padding: 0 var(--gutter); }
+  .top { border-bottom: 1px solid var(--line); background: rgb(4 6 11 / 0.8); position: sticky; top: 0; z-index: 5; backdrop-filter: blur(8px); }
+  .bar { display: flex; align-items: center; gap: 20px; min-height: 56px; }
+  .bar a { color: var(--soft); text-decoration: none; font-weight: 500; }
+  .bar a:hover { color: var(--text); }
+  .brand { font-family: var(--mono); letter-spacing: 0.04em; color: var(--text) !important; }
+  .bar nav { display: flex; gap: 16px; margin-right: auto; }
+  .langs { position: relative; font-size: 14px; }
+  .langs summary { cursor: pointer; color: var(--muted); list-style: none; }
+  .langs ul { position: absolute; right: 0; margin: 8px 0 0; padding: 8px; list-style: none; background: var(--bg-3); border: 1px solid var(--line-2); border-radius: 10px; min-width: 160px; }
+  .langs li a { display: block; padding: 6px 10px; border-radius: 6px; }
+  .langs li a[aria-current] { color: var(--cyan); }
+  .astro-page { padding-top: 40px; padding-bottom: 40px; }
+  .astro-page h1 { font-size: clamp(30px, 5vw, 44px); line-height: 1.12; margin: 8px 0 14px; }
+  .astro-page h2 { font-size: 24px; margin: 40px 0 12px; }
+  .astro-page h3 { font-size: 19px; margin: 28px 0 8px; }
+  .astro-page p, .astro-page li { color: var(--soft); font-size: 17px; line-height: 1.7; }
+  .astro-page a { color: var(--cyan); }
+  .lede { font-size: 20px !important; color: var(--text) !important; }
+  .crumbs { font: 500 13px var(--mono); color: var(--dim); }
+  .crumbs a { color: var(--muted); text-decoration: none; }
+  .app { margin: 48px 0 24px; padding: 24px; border: 1px solid var(--line-2); border-radius: 16px; background: linear-gradient(135deg, rgb(169 139 255 / 0.12), rgb(92 242 255 / 0.06)); }
+  .app h2 { margin-top: 0 !important; }
+  .buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn { display: inline-block; padding: 10px 18px; border-radius: 999px; background: var(--cyan); color: var(--bg) !important; text-decoration: none; font-weight: 600; }
+  .btn.ghost { background: transparent; color: var(--cyan) !important; border: 1px solid var(--cyan); }
+  .note { font-size: 14px !important; color: var(--muted) !important; border-left: 3px solid var(--violet); padding-left: 12px; }
+  .foot { display: flex; justify-content: space-between; gap: 16px; padding-top: 24px; padding-bottom: 40px; border-top: 1px solid var(--line); color: var(--dim); font: 500 12px var(--mono); }
+  .foot a { color: var(--muted); }
+</style>

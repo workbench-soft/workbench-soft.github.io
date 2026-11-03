@@ -1,0 +1,46 @@
+---
+// A marked AdSense slot between sections, below the first screen. It stays an empty marker until the
+// ad unit exists, and its script loads only when the slot nears the screen.
+import type { Lang } from "../i18n/locales";
+import { text } from "./paths";
+
+const { lang, name } = Astro.props as { lang: Lang; name: string };
+const client = import.meta.env.PUBLIC_ADSENSE_CLIENT;
+const slot = import.meta.env.PUBLIC_ADSENSE_SLOT_ARTICLE;
+---
+
+<div class="ad-slot" data-ad-slot-name={name}>
+  {
+    client && slot && (
+      <>
+        <span class="ad-label">{text(lang).ad}</span>
+        <ins class="adsbygoogle" style="display:block" data-ad-client={client} data-ad-slot={slot} data-ad-format="auto" data-full-width-responsive="true" />
+      </>
+    )
+  }
+</div>
+
+<script define:vars={{ client }}>
+  const slots = document.querySelectorAll(".ad-slot .adsbygoogle");
+  if (client && slots.length) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (!entries.some((e) => e.isIntersecting)) return;
+        io.disconnect();
+        const s = document.createElement("script");
+        s.async = true;
+        s.crossOrigin = "anonymous";
+        s.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${client}`;
+        document.head.append(s);
+        for (const _ of slots) (window.adsbygoogle = window.adsbygoogle || []).push({});
+      },
+      { rootMargin: "400px" },
+    );
+    for (const el of slots) io.observe(el);
+  }
+</script>
+
+<style>
+  .ad-slot:has(ins) { margin: 36px 0; min-height: 120px; }
+  .ad-label { display: block; font: 500 11px var(--mono); color: var(--dim); text-transform: uppercase; letter-spacing: 0.08em; }
+</style>
