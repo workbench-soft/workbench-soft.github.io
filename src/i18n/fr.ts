@@ -1236,6 +1236,10 @@ const fr: Catalog = {
             ],
             ['Vers Tick-a-Lot', 'Un appui transforme le voyage en listes Tick-a-Lot : visites et bagages.'],
             ['Réglages', "La langue : celle du téléphone ou l'une des 9."],
+            [
+              'Pub',
+              'De la pub sur Android, jusqu’à un achat unique qui la retire. Aucune pub à côté des liens de réservation.',
+            ],
           ],
         },
       ],

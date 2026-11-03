@@ -888,6 +888,10 @@ export const projects: Project[] = [
           },
           { name: 'To Tickalot', text: 'One tap turns the trip into Tick-a-Lot lists: sights and packing.' },
           { name: 'Settings', text: "The language: the phone's, or one of the 9." },
+          {
+            name: 'Ads',
+            text: 'Android ads until a one time purchase removes them. The booking links stay clear of ads.',
+          },
         ],
       },
     ],

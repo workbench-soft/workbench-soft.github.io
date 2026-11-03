@@ -1084,6 +1084,7 @@ const nb: Catalog = {
             ['Steder', 'Toppstedene og de hemmelige perlene i hver by etter interessene dine, med hake og lenke.'],
             ['Til Tick-a-Lot', 'Ett trykk gjør reisen om til Tick-a-Lot-lister: severdigheter og pakking.'],
             ['Innstillinger', 'Språket: telefonens, eller ett av de 9.'],
+            ['Reklame', 'Reklame på Android til et engangskjøp fjerner den. Ingen reklame ved bestillingslenkene.'],
           ],
         },
       ],
