@@ -480,6 +480,10 @@ const es: Catalog = {
             ['Claro y oscuro', 'Sigue al teléfono, o una opción fija.'],
             ['Anuncios', 'Un banner en la pantalla principal, tras el consentimiento en Europa.'],
             ['Quitar anuncios', 'Una compra única oculta el banner en cada teléfono de la cuenta.'],
+            [
+              'Sonido fuerte por el altavoz',
+              'Las respuestas y grabaciones suenan por el altavoz del teléfono a todo volumen. Los ajustes activan Bluetooth o el volumen del teléfono.',
+            ],
           ],
         },
       ],

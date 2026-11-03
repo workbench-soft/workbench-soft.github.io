@@ -474,6 +474,10 @@ const de: Catalog = {
             ['Hell und dunkel', 'Folgt dem Handy oder einer festen Wahl.'],
             ['Werbung', 'Ein Banner auf dem Startbildschirm, nach Zustimmung in Europa.'],
             ['Werbung entfernen', 'Ein einmaliger Kauf blendet das Banner auf jedem Telefon des Kontos aus.'],
+            [
+              'Laut aus dem Telefonlautsprecher',
+              'Antworten und Aufnahmen spielen in voller Lautstärke über den Telefonlautsprecher. In den Einstellungen lassen sich Bluetooth oder die Telefonlautstärke einschalten.',
+            ],
           ],
         },
       ],

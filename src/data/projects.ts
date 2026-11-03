@@ -518,6 +518,10 @@ export const projects: Project[] = [
           { name: 'Light and dark theme', text: 'Follows the phone, or a fixed choice.' },
           { name: 'Ads', text: 'One banner on the home screen, after consent in Europe.' },
           { name: 'Remove ads', text: 'A one time purchase hides the banner on each phone of the account.' },
+          {
+            name: 'Loud sound from the phone speaker',
+            text: 'Replies and recordings play from the phone speaker at full volume. Settings turn on Bluetooth or the phone volume.',
+          },
         ],
       },
     ],
