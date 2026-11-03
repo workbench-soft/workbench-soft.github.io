@@ -10,6 +10,9 @@ on:
   pull_request:
     paths-ignore: ['apps/**']
   workflow_dispatch:
+  # A property-trends web release starts a deploy, so its token needs no Actions write.
+  release:
+    types: [published]
 
 # Each job gets only what it needs. The deploy alone may write to Pages.
 permissions:
@@ -17,11 +20,13 @@ permissions:
 
 # Main keeps one group, so a pull request can't cancel a deploy.
 concurrency:
-  group: pages-${{ github.ref }}
+  group: pages-${{ github.event_name == 'release' && 'refs/heads/main' || github.ref }}
   cancel-in-progress: true
 
 jobs:
   build:
+    # Each app releases here, and only the property-trends web build changes the site.
+    if: github.event_name != 'release' || startsWith(github.event.release.tag_name, 'property-trends-web-')
     runs-on: ubuntu-latest
     permissions:
       contents: read
