@@ -1195,6 +1195,10 @@ const de: Catalog = {
             ],
             ['Zu Tick-a-Lot', 'Ein Tipp macht aus der Reise Tick-a-Lot-Listen: Sehenswertes und Packen.'],
             ['Einstellungen', 'Die Sprache: die des Telefons oder eine der 9.'],
+            [
+              'Werbung',
+              'Werbung auf Android, bis ein einmaliger Kauf sie entfernt. Neben den Buchungslinks steht keine Werbung.',
+            ],
           ],
         },
       ],

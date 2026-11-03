@@ -1186,6 +1186,10 @@ const es: Catalog = {
             ],
             ['A Tick-a-Lot', 'Un toque convierte el viaje en listas de Tick-a-Lot: lugares y equipaje.'],
             ['Ajustes', 'El idioma: el del teléfono o uno de los 9.'],
+            [
+              'Anuncios',
+              'Anuncios en Android hasta que una compra única los quita. Junto a los enlaces de reserva no hay anuncios.',
+            ],
           ],
         },
       ],
