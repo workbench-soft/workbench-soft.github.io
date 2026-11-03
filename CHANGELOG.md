@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Spot the Cam** Loud warnings name the two switches in Settings: Bluetooth and the system volume, in 9 languages.
 - **Langflip** the feature list names Update from GitHub: a check once a day and an update after a click, in 9 languages.
 - **SongFactory Enhance a song** in 8 more languages, so the Pages build passes the catalog check again.
 
