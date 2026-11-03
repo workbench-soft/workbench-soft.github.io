@@ -340,3 +340,11 @@ The studio needed one public site for its apps and their installers.
   - **`src/components/Palette.astro`** a pick inside a folded group opens it.
   - **`src/i18n/`** the Aspiration Style text and the `openSource` and `source` labels in 9 languages.
 - **Docs** `docs/features.md`, `CHANGELOG.md`.
+
+#### 2026-11-03 Tripforge in the Sites menu
+
+- **Why** the Tripforge web app went live at `https://tripforge.workbench-soft.com` on 2026-11-03, so the Sites menu lists it.
+- **Changes**
+  - **`src/data/projects.ts`** the `tripforge` entry gets its first link, `tripforge.workbench-soft.com`. The Sites menu picks it up, since the link is a page we host.
+  - **`src/i18n/`** the same link label in the 8 other catalogs.
+- **Docs** `CHANGELOG.md`.

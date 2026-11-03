@@ -1282,7 +1282,7 @@ const fr: Catalog = {
     tripforge: {
       tagline: 'Tout un voyage en quelques mots : vols, itinéraire, hôtels et voiture, avec les prix.',
       lede: "Tripforge planifie un voyage à partir des lieux, d'une date approximative et du groupe. La réponse est un plan chiffré avec vols, itinéraire, hôtels et voiture, et des dates moins chères autour.",
-      links: [],
+      links: ['tripforge.workbench-soft.com'],
       groups: [
         {
           features: [

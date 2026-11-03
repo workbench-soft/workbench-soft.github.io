@@ -956,7 +956,7 @@ const ko: Catalog = {
     tripforge: {
       tagline: '몇 마디로 여행 전체를: 항공, 경로, 호텔, 차량을 가격과 함께.',
       lede: 'Tripforge는 장소, 대략적인 날짜, 일행으로 여행을 짭니다. 답은 항공, 경로, 호텔, 차량의 가격이 붙은 계획과 근처의 더 싼 날짜입니다.',
-      links: [],
+      links: ['tripforge.workbench-soft.com'],
       groups: [
         {
           features: [
