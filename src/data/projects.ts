@@ -620,7 +620,7 @@ export const projects: Project[] = [
     lede: 'Hold the phone up and Sky Altar shows the stars, the Moon, the planets and the constellations behind it. Each theme draws them the way Greece, the Vikings, the Maya or Ancient China might have, with slow ambient music under it.',
     platforms: ['Android', 'Web'],
     stack: ['Expo', 'React Native', 'Skia', 'Astronomy Engine'],
-    links: [],
+    links: [{ href: '/skyaltar/astrology/', label: 'Astrology guide' }],
     groups: [
       {
         features: [

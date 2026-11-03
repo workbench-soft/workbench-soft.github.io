@@ -1127,7 +1127,7 @@ const fr: Catalog = {
     skyaltar: {
       tagline: 'Le ciel nocturne à travers le téléphone, dessiné dans le style des cultures anciennes.',
       lede: 'Levez le téléphone et Sky Altar montre les étoiles, la Lune, les planètes et les constellations derrière lui. Chaque thème les dessine comme la Grèce, les Vikings, les Mayas ou la Chine ancienne auraient pu le faire, sur une musique ambient lente.',
-      links: [],
+      links: ['Guide d’astrologie'],
       groups: [
         {
           features: [

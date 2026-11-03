@@ -2,8 +2,9 @@
 
 ## Unreleased
 
+- **Sky Altar astrology** the astrology section in Russian, German, French, Spanish, Chinese, Japanese, Korean and Norwegian, and an Astrology guide link on the Sky Altar card of the home page.
 - **Sky Altar astrology** the house articles follow whole sign houses as the app does, the Today page shows the Sun's sign in ice blue and your sign in rose, and the privacy policy covers the birth details and the Open-Meteo city search.
-- **Sky Altar astrology** 90 articles at /skyaltar/astrology/ on the signs, planets, houses, aspects, compatibility, the Chinese zodiac and numerology, a Today page with the Sun and Moon signs and a tip per sign, and marked ad slots. The site serves /ads.txt.
+- **Sky Altar astrology** 88 articles in 9 languages at /skyaltar/astrology/ on the signs, planets, houses, aspects, compatibility, the Chinese zodiac and numerology, a Today page with the Sun and Moon signs and a tip per sign, and marked ad slots. The site serves /ads.txt.
 - **Spot the Cam** Loud warnings name the two switches in Settings: Bluetooth and the system volume, in 9 languages.
 - **Langflip** the feature list names Update from GitHub: a check once a day and an update after a click, in 9 languages.
 - **SongFactory Enhance a song** in 8 more languages, so the Pages build passes the catalog check again.

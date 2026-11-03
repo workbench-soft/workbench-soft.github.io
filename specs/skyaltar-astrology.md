@@ -76,3 +76,12 @@ Each article says once that astrology is a cultural tradition and entertainment,
   - `src/astrology/TodayPage.astro`, `src/astrology/IndexPage.astro` the Sun's sign in ice blue, the reader's sign in rose.
   - `skyaltar/privacy-policy.md` the birth details stay on the phone, the birth city goes to Open-Meteo, and the astrology pages of this site.
 - **Docs** `docs/features.md`, `CHANGELOG.md`.
+
+### 2026-11-03 The other 8 languages and the home page link
+
+- **Why** the section must reach readers in the 9 languages the apps ship, and the home page should lead to it.
+- **Changes**
+  - `src/astrology/i18n/<code>.ts`, `src/content/astrology/<code>/` the 88 articles and the labels in ru, de, fr, es, zh, ja, ko and nb, one PR per language.
+  - `src/data/projects.ts`, `src/i18n/*.ts` an Astrology guide link on the Sky Altar card in each language.
+  - `src/i18n/index.ts` the link opens the guide in the reader's language.
+- **Docs** `CHANGELOG.md`.

@@ -835,7 +835,7 @@ const ko: Catalog = {
     skyaltar: {
       tagline: '휴대폰으로 보는 밤하늘, 고대 문명의 화풍으로.',
       lede: '휴대폰을 들면 Sky Altar가 그 뒤의 별, 달, 행성, 별자리를 보여 줍니다. 테마마다 그리스, 바이킹, 마야, 고대 중국이 그렸을 법한 모습으로 그리고, 잔잔한 앰비언트 음악이 흐릅니다.',
-      links: [],
+      links: ['점성술 가이드'],
       groups: [
         {
           features: [
