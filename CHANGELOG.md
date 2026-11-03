@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Screenshots** ServoHop shows its priced map on a computer and a phone, KeepPad a list of sorted notes and an open note, Lumiere Player its calm look, and SongFactory the Enhance compare page first.
 - **Workbench Games ads** the Android release build shows real AdMob ads from the app "Workbench Games". Debug builds, iOS and the developer's phone keep Google's test ads.
 - **Farnear** the Ads line names ads around a call, none during one, and the A$2.99 purchase, in 9 languages. The stack names React, Vite and Kotlin in place of Expo.
 - **Shuttrix Remove ads** the Ads line says a one time purchase removes the gallery banner, in 9 languages.
