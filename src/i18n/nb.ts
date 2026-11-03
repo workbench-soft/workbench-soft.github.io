@@ -982,7 +982,7 @@ const nb: Catalog = {
     skyaltar: {
       tagline: 'Nattehimmelen gjennom telefonen, tegnet i stilen til gamle kulturer.',
       lede: 'Løft telefonen, og Sky Altar viser stjernene, månen, planetene og stjernebildene bak den. Hvert tema tegner dem slik Hellas, vikingene, mayaene eller det gamle Kina kunne ha gjort, med rolig ambient-musikk.',
-      links: [],
+      links: ['Astrologiguide'],
       groups: [
         {
           features: [

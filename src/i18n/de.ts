@@ -1087,7 +1087,7 @@ const de: Catalog = {
     skyaltar: {
       tagline: 'Der Nachthimmel durchs Telefon, gezeichnet im Stil alter Kulturen.',
       lede: 'Halte das Telefon hoch, und Sky Altar zeigt die Sterne, den Mond, die Planeten und die Sternbilder dahinter. Jedes Thema zeichnet sie, wie Griechenland, die Wikinger, die Maya oder das alte China es hätten tun können, mit ruhiger Ambient-Musik.',
-      links: [],
+      links: ['Astrologie-Ratgeber'],
       groups: [
         {
           features: [

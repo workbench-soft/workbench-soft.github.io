@@ -754,7 +754,7 @@ const zh: Catalog = {
     skyaltar: {
       tagline: '透过手机看夜空，以古老文明的风格绘制。',
       lede: '举起手机，Sky Altar 会显示手机后方的星星、月亮、行星和星座。每个主题都以古希腊、维京、玛雅或古代中国可能的方式描绘它们，并配有舒缓的氛围音乐。',
-      links: [],
+      links: ['占星指南'],
       groups: [
         {
           features: [

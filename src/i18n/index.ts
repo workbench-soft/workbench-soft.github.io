@@ -25,7 +25,11 @@ export function projectsIn(lang: Lang): Project[] {
       ...p,
       tagline: t.tagline,
       lede: t.lede,
-      links: p.links.map((l, i) => ({ ...l, label: t.links[i] })),
+      // A link into the astrology section opens it in the same language.
+      links: p.links.map((l, i) => ({
+        href: l.href.startsWith('/skyaltar/astrology/') ? `/${lang}${l.href}` : l.href,
+        label: t.links[i],
+      })),
       groups: t.groups.map((g) => ({ title: g.title, features: g.features.map(([name, text]) => ({ name, text })) })),
     };
   });
