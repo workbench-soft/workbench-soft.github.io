@@ -1309,6 +1309,10 @@ export const projects: Project[] = [
             name: 'Cleanup of AI artifacts',
             text: 'The build takes hiss, metallic shimmer and rumble out of the songs and keeps the originals.',
           },
+          {
+            name: 'Enhance a song',
+            text: 'One command cleans any song, puts back the band a lossy encoder cut off, and shows both spectrograms.',
+          },
           { name: 'Seamless loop', text: 'The clip plays forward then backward, so a jump at the end goes away.' },
           {
             name: 'Chapters and thumbnail',
