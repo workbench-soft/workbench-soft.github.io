@@ -1286,20 +1286,6 @@ const de: Catalog = {
         },
       ],
     },
-    'speed-camera-location-scraper': {
-      tagline: 'Führt die australischen Blitzerlisten in einer CSV zusammen.',
-      lede: 'Der Scraper öffnet jede Staatsseite der Listen, speichert jede Kameradatei und führt sie in einer CSV zusammen, eine Zeile pro Kamera mit Staat. SpotTheCam liest daraus seine Kamerastandorte.',
-      links: [],
-      groups: [
-        {
-          features: [
-            ['Staatsseiten scannen', 'Öffnet jede Staatsseite und speichert jede Kameradatei.'],
-            ['Eine CSV der Kameras', 'Eine Zeile pro Kamera mit Staat, für SpotTheCam.'],
-            ['Prüfungen und Releases', 'Jeder Push auf main wird geprüft und zum datierten Release.'],
-          ],
-        },
-      ],
-    },
   },
 };
 
