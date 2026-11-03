@@ -1090,6 +1090,10 @@ const es: Catalog = {
               'Anuncios y quitarlos',
               'Anuncios alrededor de la llamada, ninguno durante ella. Una compra de A$2.99 los quita en las salas del comprador.',
             ],
+            [
+              'Farnear Pro',
+              'Una compra de A$5.99 en Android abre la pizarra, las clases y compartir para toda la sala, y quita los anuncios.',
+            ],
             ['Idiomas', 'En 9 idiomas, según el teléfono o el navegador.'],
           ],
         },

@@ -1003,6 +1003,10 @@ const nb: Catalog = {
               'Reklame og fjerning',
               'Reklame rundt samtalen, ingen under den. Ett kjøp for A$2.99 fjerner den i kjøperens rom.',
             ],
+            [
+              'Farnear Pro',
+              'Ett kjøp til A$5.99 på Android åpner tavla, timene og deling for hele rommet, og fjerner reklamen.',
+            ],
             ['Språk', 'På 9 språk, etter telefonen eller nettleseren.'],
           ],
         },

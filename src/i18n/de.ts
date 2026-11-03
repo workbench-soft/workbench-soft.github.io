@@ -1111,6 +1111,10 @@ const de: Catalog = {
               'Werbung und entfernen',
               'Werbung rund um den Anruf, keine während des Anrufs. Ein Kauf für A$2.99 entfernt sie in den Räumen des Käufers.',
             ],
+            [
+              'Farnear Pro',
+              'Ein Kauf für A$5.99 unter Android öffnet Tafel, Unterricht und Teilen für den ganzen Raum und entfernt die Werbung.',
+            ],
             ['Sprachen', 'In 9 Sprachen, nach der Sprache von Telefon oder Browser.'],
           ],
         },
