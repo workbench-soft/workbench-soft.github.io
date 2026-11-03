@@ -667,6 +667,10 @@ const fr: Catalog = {
             ['Installer sous Windows', "Un double clic sur Langflip.cmd le compile et l'installe pour l'utilisateur."],
             ['Menu de la barre', "Un clic droit sur l'icône ouvre le menu."],
             ['Journal des décisions', 'Un fichier journal dit ce que Langflip a décidé pour chaque mot, et pourquoi.'],
+            [
+              'Mise à jour depuis GitHub',
+              'Cherche une nouvelle version une fois par jour et se met à jour en un clic.',
+            ],
           ],
         },
       ],

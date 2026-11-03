@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Langflip** the feature list names Update from GitHub: a check once a day and an update after a click, in 9 languages.
 - **SongFactory Enhance a song** in 8 more languages, so the Pages build passes the catalog check again.
 
 - **Screenshots** ServoHop shows its priced map on a computer and a phone, KeepPad a list of sorted notes and an open note, Lumiere Player its calm look, and SongFactory the Enhance compare page first.

@@ -636,6 +636,7 @@ const es: Catalog = {
             ['Instalar en Windows', 'Un doble clic en Langflip.cmd lo compila e instala para el usuario.'],
             ['Menú de la bandeja', 'Un clic derecho en el icono abre el menú.'],
             ['Registro de decisiones', 'Un archivo de registro dice qué decidió Langflip para cada palabra y por qué.'],
+            ['Actualización desde GitHub', 'Busca una versión nueva una vez al día y se actualiza con un clic.'],
           ],
         },
       ],

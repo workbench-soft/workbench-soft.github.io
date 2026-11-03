@@ -576,6 +576,7 @@ const nb: Catalog = {
             ['Installer på Windows', 'Et dobbeltklikk på Langflip.cmd bygger og installerer for brukeren.'],
             ['Systemstatusfeltmeny', 'Et høyreklikk på ikonet åpner menyen.'],
             ['Beslutningslogg', 'En loggfil viser hva Langflip bestemte for hvert ord, og hvorfor.'],
+            ['Oppdatering fra GitHub', 'Ser etter en ny versjon én gang om dagen og oppdaterer seg med ett klikk.'],
           ],
         },
       ],

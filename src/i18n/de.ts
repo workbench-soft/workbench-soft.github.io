@@ -648,6 +648,10 @@ const de: Catalog = {
             ],
             ['Tray-Menü', 'Ein Rechtsklick auf das Symbol öffnet das Menü.'],
             ['Entscheidungsprotokoll', 'Eine Logdatei zeigt, was Langflip für jedes Wort entschied und warum.'],
+            [
+              'Update von GitHub',
+              'Sucht einmal am Tag nach einer neuen Version und aktualisiert sich nach einem Klick.',
+            ],
           ],
         },
       ],
