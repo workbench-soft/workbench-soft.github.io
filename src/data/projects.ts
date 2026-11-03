@@ -528,6 +528,14 @@ export const projects: Project[] = [
             name: 'Loud sound from the phone speaker',
             text: 'Replies and recordings play from the phone speaker at full volume. Settings turn on Bluetooth or the phone volume.',
           },
+          {
+            name: 'Notes about a person go to Memories',
+            text: 'A note that opens with the name of someone in Memories goes to their journal on the home NAS.',
+          },
+          {
+            name: 'KeepPad Pro',
+            text: 'A one time purchase opens new share links, sending to other apps and to Memories, and hides the ads.',
+          },
         ],
       },
     ],
