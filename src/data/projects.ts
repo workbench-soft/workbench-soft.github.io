@@ -683,6 +683,10 @@ export const projects: Project[] = [
             name: 'Phone speaker',
             text: 'On a phone the video plays from the speaker at full volume, also with Bluetooth. Bluetooth and the system volume turn on in Settings.',
           },
+          {
+            name: 'Look',
+            text: 'A calm dark look in the style of Google TV, a white focus pill, and a player that fits a phone.',
+          },
         ],
       },
     ],

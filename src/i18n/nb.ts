@@ -1066,6 +1066,10 @@ const nb: Catalog = {
               'Telefonhøyttaler',
               'På telefonen spilles videoen fra høyttaleren på full styrke, også med Bluetooth. Bluetooth og systemvolum slås på i innstillingene.',
             ],
+            [
+              'Utseende',
+              'Et rolig, mørkt utseende i Google TV-stil, hvitt fokus og en spiller som passer på telefonen.',
+            ],
           ],
         },
       ],
