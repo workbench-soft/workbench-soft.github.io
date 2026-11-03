@@ -1235,7 +1235,7 @@ const de: Catalog = {
     tripforge: {
       tagline: 'Eine ganze Reise aus ein paar Worten: Flüge, Route, Hotels und Auto, mit Preisen.',
       lede: 'Tripforge plant eine Reise aus den Orten, einem groben Datum und der Gruppe. Heraus kommt ein Plan mit Preisen für Flüge, Route, Hotels und Auto, dazu günstigere Daten in der Nähe.',
-      links: [],
+      links: ['tripforge.workbench-soft.com'],
       groups: [
         {
           features: [

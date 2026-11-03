@@ -860,7 +860,7 @@ const zh: Catalog = {
     tripforge: {
       tagline: '几句话规划整趟旅行：机票、路线、酒店和租车，都有价格。',
       lede: 'Tripforge 根据地点、大致日期和同行人员规划旅行，给出带价格的方案：机票、路线、酒店和租车，还有附近更便宜的日期。',
-      links: [],
+      links: ['tripforge.workbench-soft.com'],
       groups: [
         {
           features: [

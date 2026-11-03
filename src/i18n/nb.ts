@@ -1121,7 +1121,7 @@ const nb: Catalog = {
     tripforge: {
       tagline: 'En hel reise fra noen få ord: fly, rute, hotell og bil, med priser.',
       lede: 'Tripforge planlegger en reise ut fra stedene, en omtrentlig dato og gruppen. Svaret er en priset plan med fly, rute, hotell og bil, og billigere datoer rundt.',
-      links: [],
+      links: ['tripforge.workbench-soft.com'],
       groups: [
         {
           features: [

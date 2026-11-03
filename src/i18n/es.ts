@@ -1223,7 +1223,7 @@ const es: Catalog = {
     tripforge: {
       tagline: 'Un viaje entero en pocas palabras: vuelos, ruta, hoteles y coche, con precios.',
       lede: 'Tripforge planea un viaje con los lugares, una fecha aproximada y el grupo. La respuesta es un plan con precios de vuelos, ruta, hoteles y coche, y fechas cercanas más baratas.',
-      links: [],
+      links: ['tripforge.workbench-soft.com'],
       groups: [
         {
           features: [

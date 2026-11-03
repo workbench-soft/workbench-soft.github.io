@@ -896,7 +896,7 @@ export const projects: Project[] = [
     lede: 'Tripforge plans a trip from the places, a rough date and the group. The answer is a priced plan with flights, a route, hotels and a car, and cheaper dates nearby.',
     platforms: ['Web', 'Android'],
     stack: ['Expo', 'React Native', 'Cloudflare Workers'],
-    links: [],
+    links: [{ href: 'https://tripforge.workbench-soft.com', label: 'tripforge.workbench-soft.com' }],
     groups: [
       {
         features: [

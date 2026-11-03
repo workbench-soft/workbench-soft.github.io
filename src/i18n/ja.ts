@@ -1006,7 +1006,7 @@ const ja: Catalog = {
     tripforge: {
       tagline: '数語で旅全体を：航空券、ルート、ホテル、車、すべて値段つき。',
       lede: 'Tripforge は場所、だいたいの日付、メンバーから旅を組みます。答えは航空券・ルート・ホテル・車の値段つきプランと、近くの安い日付です。',
-      links: [],
+      links: ['tripforge.workbench-soft.com'],
       groups: [
         {
           features: [
