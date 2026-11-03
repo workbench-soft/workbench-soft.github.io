@@ -1178,6 +1178,8 @@ const fr: Catalog = {
             ['Pratique orale', "Un chat sur une scène comme un café ou un entretien, au niveau de l'élève."],
             ['Synchro entre appareils', 'Les mêmes cartes sur téléphone, tablette et navigateur, liées par un code.'],
             ["Widget d'accueil", 'Le nombre de mots en attente et un mot avec son sens.'],
+            ['Publicités et suppression', 'Une bannière et une pub plein écran sur Android. Un achat unique les retire.'],
+            ['Son', 'Les mots sortent du haut-parleur du téléphone à plein volume. Les réglages permettent le Bluetooth ou le volume du système.'],
           ],
         },
       ],

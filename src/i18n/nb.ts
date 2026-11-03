@@ -1033,6 +1033,8 @@ const nb: Catalog = {
             ['Samtaleøving', 'En chat om en scene som en kafé eller et jobbintervju, på elevens nivå.'],
             ['Synk mellom enheter', 'De samme kortene på telefon, nettbrett og nettleser, koblet med en kode.'],
             ['Widget på startskjermen', 'Antall ventende ord og ett ord med betydningen.'],
+            ['Annonser og fjern annonser', 'Et banner og en fullskjermsannonse på Android. Ett kjøp fjerner dem.'],
+            ['Lyd', 'Ordene spilles fra telefonhøyttaleren på full styrke. Innstillingene lar deg bruke Bluetooth eller systemvolumet.'],
           ],
         },
       ],

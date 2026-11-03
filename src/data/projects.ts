@@ -600,6 +600,11 @@ export const projects: Project[] = [
             text: 'The same cards on a phone, a tablet and a browser, paired by a code.',
           },
           { name: 'Home screen widget', text: 'The number of waiting words and one word with its meaning.' },
+          { name: 'Ads and Remove ads', text: 'A banner and a full screen ad on Android. One payment removes them.' },
+          {
+            name: 'Sound',
+            text: 'Words play from the phone speaker at full volume. Settings can let them use Bluetooth or the system volume.',
+          },
         ],
       },
     ],
