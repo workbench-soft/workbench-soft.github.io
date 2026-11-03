@@ -1268,20 +1268,6 @@ const es: Catalog = {
         },
       ],
     },
-    'speed-camera-location-scraper': {
-      tagline: 'Une las listas de radares de Australia en un solo CSV.',
-      lede: 'El scraper abre la página de cada estado, guarda cada archivo de cámaras y los une en un CSV, una fila por cámara con su estado. SpotTheCam lee de ahí sus ubicaciones.',
-      links: [],
-      groups: [
-        {
-          features: [
-            ['Recorrer las páginas de estados', 'Abre la página de cada estado y guarda cada archivo de cámaras.'],
-            ['Un CSV de cámaras', 'Una fila por cámara con su estado, para SpotTheCam.'],
-            ['Comprobaciones y versiones', 'Cada push a main se comprueba y se vuelve una versión con fecha.'],
-          ],
-        },
-      ],
-    },
   },
 };
 

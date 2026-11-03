@@ -319,3 +319,9 @@ The studio needed one public site for its apps and their installers.
   - **`src/i18n/`** `hero.code` label in 9 languages.
   - **Docs** `docs/features.md`, `docs/architecture.md`, `CHANGELOG.md`.
 - **Limits** the number changes only when someone runs `mise run code-lines` and commits the JSON.
+
+#### 2026-11-03 Speed Camera Scraper off the projects list
+
+- **Why** the owner wants the scraper off the site. It's an internal helper for SpotTheCam, as the Content rule above already says.
+- **Changes** the `speed-camera-location-scraper` entry leaves `src/data/projects.ts` and the 8 other catalogs in `src/i18n/`.
+- **Kept** its lines still count in the hero's lines of code, since the scraper is studio code.

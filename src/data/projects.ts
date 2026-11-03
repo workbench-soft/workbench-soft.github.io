@@ -1347,28 +1347,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 'speed-camera-location-scraper',
-    kind: 'internal',
-    repo: 'speed-camera-location-scraper',
-    hue: 40,
-    code: 'SCS',
-    name: 'Speed Camera Scraper',
-    tagline: 'Merges the Australian speed camera lists into one CSV.',
-    lede: 'The scraper opens each state page of the camera lists, saves each camera file and merges them into one CSV, a row per camera with its state. SpotTheCam reads its camera sites from it.',
-    platforms: ['Windows', 'macOS'],
-    stack: ['Node', 'Playwright', 'Python'],
-    links: [],
-    groups: [
-      {
-        features: [
-          { name: 'Scan the state pages', text: 'Opens each state page and saves each camera file it lists.' },
-          { name: 'One CSV of cameras', text: 'A row per camera with its state, for SpotTheCam.' },
-          { name: 'Checks and releases', text: 'Each push to main is checked and becomes a dated release.' },
-        ],
-      },
-    ],
-  },
-  {
     id: 'archon',
     kind: 'internal',
     hue: 190,

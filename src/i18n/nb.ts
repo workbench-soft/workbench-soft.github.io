@@ -1163,20 +1163,6 @@ const nb: Catalog = {
         },
       ],
     },
-    'speed-camera-location-scraper': {
-      tagline: 'Slår sammen de australske fotoboks-listene til én CSV.',
-      lede: 'Skraperen åpner hver delstatsside, lagrer hver kamerafil og slår dem sammen til én CSV, en rad per kamera med delstat. SpotTheCam leser kamerastedene derfra.',
-      links: [],
-      groups: [
-        {
-          features: [
-            ['Skann delstatssidene', 'Åpner hver delstatsside og lagrer hver kamerafil.'],
-            ['Én CSV med kameraer', 'En rad per kamera med delstat, for SpotTheCam.'],
-            ['Sjekker og utgivelser', 'Hver push til main sjekkes og blir en datert utgivelse.'],
-          ],
-        },
-      ],
-    },
   },
 };
 

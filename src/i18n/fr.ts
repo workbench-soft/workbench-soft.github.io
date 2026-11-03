@@ -1327,20 +1327,6 @@ const fr: Catalog = {
         },
       ],
     },
-    'speed-camera-location-scraper': {
-      tagline: 'Fusionne les listes de radars australiens en un seul CSV.',
-      lede: "Le scraper ouvre chaque page d'État, enregistre chaque fichier de radars et les fusionne en un CSV, une ligne par radar avec son État. SpotTheCam y lit ses emplacements.",
-      links: [],
-      groups: [
-        {
-          features: [
-            ["Parcourir les pages d'État", "Ouvre chaque page d'État et enregistre chaque fichier de radars."],
-            ['Un CSV des radars', 'Une ligne par radar avec son État, pour SpotTheCam.'],
-            ['Contrôles et versions', 'Chaque push sur main est vérifié et devient une version datée.'],
-          ],
-        },
-      ],
-    },
   },
 };
 
