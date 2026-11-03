@@ -438,6 +438,10 @@ const nb: Catalog = {
             ['Lyst og mørkt', 'Følger mobilen, eller et fast valg.'],
             ['Reklame', 'Ett banner på startskjermen, etter samtykke i Europa.'],
             ['Fjern reklame', 'Et engangskjøp skjuler banneret på hver telefon på kontoen.'],
+            [
+              'Høy lyd fra telefonhøyttaleren',
+              'Svar og opptak spilles fra telefonhøyttaleren på fullt volum. Innstillingene slår på Bluetooth eller telefonvolumet.',
+            ],
           ],
         },
       ],

@@ -496,6 +496,10 @@ const fr: Catalog = {
             ['Clair et sombre', 'Suit le téléphone, ou un choix fixe.'],
             ['Publicité', "Une bannière sur l'accueil, après accord en Europe."],
             ['Retirer la pub', 'Un achat unique masque la bannière sur chaque téléphone du compte.'],
+            [
+              'Son fort par le haut-parleur',
+              'Les réponses et les enregistrements passent par le haut-parleur du téléphone à plein volume. Les réglages activent le Bluetooth ou le volume du téléphone.',
+            ],
           ],
         },
       ],
