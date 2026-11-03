@@ -303,3 +303,18 @@ The studio needed one public site for its apps and their installers.
   - **`skyaltar/`** a Jekyll folder built like `shuttrix/`: `_config.yml`, the plain layout, the analytics include and `privacy-policy.md`.
   - **`.github/workflows/pages.yml`** a Jekyll step builds it into `_site/skyaltar`, next to the Astro project page at `/skyaltar/`.
   - **Docs** `README.md`, `docs/architecture.md`, `CHANGELOG.md`.
+
+#### 2026-11-03 Lines of code in the hero
+
+- **Why** the owner wants the site to show, for fun, how many lines of code the studio's programs hold.
+- **What the visitor gets** a fifth number under the hero, "Lines of code", that rolls up like the others, with the digits grouped the way the page's language writes them.
+- **How it counts**
+  - **Repos** each repo of the workspace `repos.json`, minus built copies and moved code: `aspirationstyle-site`, `farnear-site`, `media-organizer`, `shuttrix`, `workbench-soft`.
+  - **Files** the files git tracks at `HEAD` of each clone, by source extension: TypeScript, JavaScript, Astro, Rust, Kotlin, Java, Swift, C#, Python, shell, PowerShell, CSS, HTML, SQL and shaders.
+  - **Left out** vendored and built code (`vendor/`, `binaries/`, `dist/`, `generated/`, `*.min.*`), the generated `worker-configuration.d.ts`, and blank lines.
+  - **Tool** `git grep -cI` per repo, so no new tool joins the stack. tokei counted untracked vendored ExifTool files and gave 1 million.
+- **Changes**
+  - **`scripts/code-lines.ts`** reads the sibling clones and writes `src/data/code-lines.json`. `mise run code-lines` runs it on the PC, since CI has none of the private clones.
+  - **`src/components/Hero.astro`** the fifth stat and locale grouping in the roll up.
+  - **`src/i18n/`** `hero.lines` label in 9 languages.
+- **Limits** the number changes only when someone runs `mise run code-lines` and commits the JSON.
