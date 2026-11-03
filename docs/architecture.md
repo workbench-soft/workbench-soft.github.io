@@ -56,7 +56,8 @@ sequenceDiagram
 
 ## Deploy
 
-1. A push to `main` starts [pages.yml](../.github/workflows/pages.yml).
+1. A push to `main` or a published `property-trends-web-*` release starts
+   [pages.yml](../.github/workflows/pages.yml).
 2. mise installs node and pnpm from `mise.toml`, then pnpm installs the packages.
 3. `mise run lint`, `mise run test` and `mise run check` check the code, then `mise run build` writes `dist/`.
 4. Jekyll builds the Memories site into `_site/memories-mobile` the Shuttrix privacy policy into `_site/shuttrix` and the Sky Altar privacy policy into `_site/skyaltar`.
