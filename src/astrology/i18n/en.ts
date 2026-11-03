@@ -176,3 +176,5 @@ export const en = {
     ],
   },
 };
+
+export const ui = en;
