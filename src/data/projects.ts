@@ -705,6 +705,10 @@ export const projects: Project[] = [
             name: 'Voice commands',
             text: 'Say Hey Lumi, play and a song, in English or Russian, with the phone locked.',
           },
+          {
+            name: 'Lumiere Pro',
+            text: 'One payment unlocks the voice commands and Hey Lumi, and hides the ads.',
+          },
         ],
       },
     ],

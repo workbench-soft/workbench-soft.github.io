@@ -1228,6 +1228,7 @@ const es: Catalog = {
               'Alquileres',
               'Cada código postal de NSW, QLD, SA y TAS coloreado por el alquiler semanal medio de los nuevos contratos.',
             ],
+            ['Lumiere Pro', 'Un solo pago desbloquea los comandos de voz y Hey Lumi, y quita los anuncios.'],
             ['Instalar desde el navegador', 'La versión web se instala como app con su propio icono.'],
           ],
         },

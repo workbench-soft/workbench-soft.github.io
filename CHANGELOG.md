@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Lumiere Player** the card lists Lumiere Pro, the one-time purchase for voice commands and no ads, in 9 languages.
 - **Consdr** the card lists If you leave your job: the payout figure on a leave date and four ways out of the lease, in 9 languages.
 
 - **Lumiere Player** the card lists the music library, the music player and voice commands with Hey Lumi, in 9 languages.

@@ -1237,6 +1237,7 @@ const de: Catalog = {
               'Mieten',
               'Jede Postleitzahl in NSW, QLD, SA und TAS nach der mittleren Wochenmiete neuer Verträge gefärbt.',
             ],
+            ['Lumiere Pro', 'Ein Kauf schaltet Sprachbefehle und Hey Lumi frei und entfernt die Werbung.'],
             ['Aus dem Browser installieren', 'Die Web-Version installiert sich als App mit eigenem Symbol.'],
           ],
         },
