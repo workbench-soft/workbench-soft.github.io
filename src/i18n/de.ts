@@ -572,6 +572,10 @@ const de: Catalog = {
               'Welche Leasingdauer am wenigsten kostet',
               'Dasselbe Auto über 1 bis 5 Jahre, die günstigste Dauer markiert.',
             ],
+            [
+              'Wenn Sie kündigen',
+              'Ein Kündigungsdatum zeigt die Ablösesumme und vier Wege aus dem Leasing, jeweils mit Geld aus eigener Tasche und dem Verlust.',
+            ],
             ['Sprache', 'Der Rechner in 9 Sprachen, Beträge in australischen Dollar.'],
             ['Werbung', 'AdSense-Blöcke auf der Seite und ein AdMob-Banner in der Android-App.'],
             [
