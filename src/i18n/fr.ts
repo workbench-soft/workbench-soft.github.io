@@ -1253,6 +1253,15 @@ const fr: Catalog = {
               'Haut-parleur du téléphone',
               'Sur le téléphone, la vidéo sort du haut-parleur à plein volume, même avec le Bluetooth. Bluetooth et volume du système s’activent dans les réglages.',
             ],
+            [
+              'Bibliothèque musicale',
+              "Les dossiers du téléphone, de l'USB et du NAS dans une seule bibliothèque, analysée en arrière-plan.",
+            ],
+            [
+              'Lecteur de musique',
+              "Artistes, albums, titres et dossiers, file d'attente, aléatoire et répétition, téléphone verrouillé.",
+            ],
+            ['Commandes vocales', 'Dites Hey Lumi, play et un titre, en anglais ou en russe, téléphone verrouillé.'],
           ],
         },
       ],

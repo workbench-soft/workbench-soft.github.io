@@ -1194,6 +1194,15 @@ const es: Catalog = {
               'Altavoz del teléfono',
               'En el teléfono el vídeo suena por el altavoz al máximo, también con Bluetooth. Bluetooth y el volumen del sistema se activan en Ajustes.',
             ],
+            [
+              'Biblioteca de música',
+              'Carpetas del móvil, USB y NAS en una sola biblioteca, analizada en segundo plano.',
+            ],
+            [
+              'Reproductor de música',
+              'Artistas, álbumes, canciones y carpetas, cola, aleatorio y repetición, con el móvil bloqueado.',
+            ],
+            ['Comandos de voz', 'Di Hey Lumi, play y una canción, en inglés o ruso, con el móvil bloqueado.'],
           ],
         },
       ],
