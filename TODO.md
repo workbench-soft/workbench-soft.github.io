@@ -9,8 +9,7 @@
 
 The games run at <https://games.workbench-soft.com/games/>. Accounts and purchases, in this order:
 
-- [ ] Apply for AdSense at <https://adsense.google.com> with workbench-soft.com. After approval make 2 display units and set the repo variables `ADSENSE_CLIENT`, `ADSENSE_SLOT_PAGE`, `ADSENSE_SLOT_ROOM`. Publish the consent message under Privacy and messaging.
-- [ ] Add the Android and the iOS app "Workbench Games" at <https://apps.admob.com> with a banner unit each. Put the Android app id into the Gradle property `admobAppId`, the iOS app id into `GADApplicationIdentifier` in `apps/games/ios/App/App/Info.plist`, and the units into `PUBLIC_ADMOB_BANNER_ANDROID` and `PUBLIC_ADMOB_BANNER_IOS`.
+- [ ] Add the iOS app "Workbench Games" at <https://apps.admob.com> with a banner unit. Put its app id into `GADApplicationIdentifier` in `apps/games/ios/App/App/Info.plist` and its unit into `REAL_BANNER.ios` in `apps/games/src/game/ad-unit.ts`. The Android app is done, see `## ads-setup`.
 - [ ] Open a Google Play developer account at <https://play.google.com/console/signup> (25 USD once), then run the `play-release` skill for `com.workbenchsoft.games`.
 - [ ] Join the Apple Developer Program at <https://developer.apple.com/programs/enroll/> (99 USD a year). Without a Mac, build the iOS app on Codemagic, whose free plan gives 500 macOS minutes a month: <https://codemagic.io/signup>.
 - [ ] Add games.workbench-soft.com to Google Search Console at <https://search.google.com/search-console> and to Bing at <https://www.bing.com/webmasters>, then submit `https://games.workbench-soft.com/games/sitemap-index.xml`. The `seo-setup` skill walks through it.
@@ -19,6 +18,17 @@ Work left in the code:
 
 - [ ] Test the Android app on a phone: the pages under `/games/` load from local files, the room connects to games.workbench-soft.com, the banner shows in the lobby.
 - [ ] Open room links in the apps: Android App Links with `/.well-known/assetlinks.json` and iOS Universal Links with `apple-app-site-association`, once the signing keys exist.
+
+## ads-setup
+
+Workbench Games, `com.workbenchsoft.games`. Release builds of the Android app use the real AdMob app `ca-app-pub-8598703460892343~1509665312` and its banner since 2026-11-03.
+
+- [ ] **Play app** finish creating "Workbench Games" in <https://play.google.com/console>. Set its website to `https://workbench-soft.com`, which serves `app-ads.txt` (`games.workbench-soft.com/app-ads.txt` gives 404).
+- [ ] **First AAB** build a signed release AAB of `apps/games/android` and upload it to internal testing through the `play-release` skill.
+- [ ] **GDPR message** publish the consent message for "Workbench Games" at <https://apps.admob.com>, Privacy and messaging, European regulations.
+- [ ] **Play declarations** in Play Console, App content: Ads "Yes", then Data safety with the AdMob answers (device or other IDs, collected and shared for advertising). The `ads-setup` skill has them in `references/play-declarations.md`.
+- [ ] **Remove ads** the app has no `remove_ads` purchase yet, unlike `tickalot/src/ads/remove-ads-purchase.ts`. Plan it in `specs/party-games.md` and build it once the Play app exists.
+- [ ] **AdSense** apply with workbench-soft.com at <https://adsense.google.com> (not a site there yet). After approval make 2 display units for games.workbench-soft.com and set the repo variables `ADSENSE_CLIENT`, `ADSENSE_SLOT_PAGE`, `ADSENSE_SLOT_ROOM`.
 
 ## app-audit
 
