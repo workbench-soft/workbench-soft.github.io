@@ -98,7 +98,7 @@ Spec: [workbench-soft-site](../specs/workbench-soft-site.md).
 ## Sky Altar astrology
 
 - **What it does** articles on the 12 zodiac signs, the Sun, Moon and rising signs, the planets, the 12 houses, the major aspects, the elements and modalities, compatibility for each sign, the Chinese zodiac and numerology. Each one links to the Sky Altar app and to related articles.
-- **Today** `/skyaltar/astrology/today/` works out the Sun's and the Moon's signs in the browser, highlights them in gold and silver, keeps the reader's own sign in violet at the top, and gives each sign a tip that changes each day.
+- **Today** `/skyaltar/astrology/today/` works out the Sun's and the Moon's signs in the browser, highlights the Sun's sign in ice blue and the Moon's in silver, keeps the reader's own sign in rose at the top, the same colours the Sky Altar sky uses, and gives each sign a tip that changes each day.
 - **Where** `/skyaltar/astrology/` in English and `/<code>/skyaltar/astrology/` in the other languages.
 - **Ads** marked AdSense slots before the 3rd section and after the article. They stay empty until `PUBLIC_ADSENSE_CLIENT` and `PUBLIC_ADSENSE_SLOT_ARTICLE` are set.
 - **Limits** each page says astrology is a cultural tradition, not a science, and gives no medical, money or life advice.

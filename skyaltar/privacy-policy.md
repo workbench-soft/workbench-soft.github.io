@@ -18,6 +18,10 @@ The ads come from Google AdMob, which collects the data listed under
 
 - **Settings** such as the theme, the language, the music and the ads
   choices stay in the app's storage on the phone.
+- **Birth details** for the astrology drawer: the name, date, time and
+  place of birth you type for yourself and for the people you add. They
+  stay in the app's storage on the phone, and the app works out the chart,
+  the horoscope, the Chinese zodiac and the numbers on the phone.
 - **Purchase** "Remove ads" is a Google Play purchase. Google Play keeps
   the record, and the app asks Google Play for it on each start.
 
@@ -37,11 +41,15 @@ The ads come from Google AdMob, which collects the data listed under
 
 - **Google AdMob**, to load the ads. See "Ads" below.
 - **Google Play**, to sell "Remove ads" and check that you bought it.
+- **Open-Meteo geocoding**, when you type a birth city, to find its
+  position and time zone. The app sends only the city name you type. See
+  the [Open-Meteo terms](https://open-meteo.com/en/terms). The birth date,
+  time and name stay on the phone.
 - **GitHub**, in the version from workbench-soft.com only, to look for a
   newer version and download it. GitHub sees the request like any web
   request. The version from Google Play doesn't make this check.
 
-The app sends no picture or position to the developer.
+The app sends no picture, position or birth details to the developer.
 
 ## Ads
 
@@ -71,7 +79,7 @@ The app has no analytics of its own and no user accounts.
 ## Deleting your data
 
 Uninstall the app, or clear its storage in Android Settings, Apps, Sky
-Altar, Storage. Either removes the settings. Google Play keeps the record
+Altar, Storage. Either removes the settings and the birth details. Google Play keeps the record
 of "Remove ads", so it comes back after a reinstall.
 
 ## Children
@@ -82,7 +90,10 @@ data from them.
 ## This website
 
 This website counts visits with Cloudflare Web Analytics. It sets no
-cookies and keeps no data that tells one visitor from another. Read the
+cookies and keeps no data that tells one visitor from another. The
+astrology pages may show Google AdSense ads, which use cookies as Google
+explains at <https://policies.google.com/technologies/partner-sites>. The
+Today page keeps the sign you pick in your browser's storage only. Read the
 [Cloudflare privacy policy](https://www.cloudflare.com/privacypolicy/).
 The app sends no data to Cloudflare.
 

@@ -8,7 +8,7 @@ export const en = {
     lede: 'The zodiac, the planets and the old stories people read in the sky, explained in plain words.',
     intro: [
       'People have looked for meaning in the sky for thousands of years. Babylonian priests tracked the planets, Greek writers gave the signs their characters, and Chinese calendars gave each year an animal. Those traditions still shape how millions of people talk about themselves today.',
-      'These pages follow Western tropical astrology with Placidus houses and the five major aspects, the same system the Sky Altar app uses. Each article covers one idea and links to the next.',
+      'These pages follow Western tropical astrology with whole sign houses and the five major aspects, the same system the Sky Altar app uses. Each article covers one idea and links to the next.',
     ],
     today: 'See which signs the Sun and the Moon are in today, with a tip for your sign.',
   },

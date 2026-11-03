@@ -25,7 +25,7 @@ Four points frame each chart. The Ascendant, or rising sign, is the sign on the 
 There are several ways to draw a chart. These articles and the Sky Altar app follow the most common Western approach:
 
 - **Tropical zodiac** the signs start at the March equinox, so Aries 0 degrees is the point where the Sun crosses the celestial equator each spring.
-- **Placidus houses** the most widely used house system, which divides the sky by time as each degree of the zodiac rises.
+- **Whole sign houses** the oldest house system: the rising sign is the first house, the next sign the second, and so on. Placidus, which divides the sky by time, is a popular modern alternative.
 - **Major aspects** the conjunction, sextile, square, trine and opposition, the angles astrologers have used since ancient Greece.
 
 Indian Vedic astrology uses the sidereal zodiac, tied to the fixed stars, and its signs fall about 24 degrees earlier. Neither choice is more correct as a tradition. They are two different ways to tell the story.

@@ -26,7 +26,7 @@ Each article says once that astrology is a cultural tradition and entertainment,
 | Signs          | `/skyaltar/astrology/signs/<sign>/`            | `aries` to `pisces`                                       |
 | Basics         | `/skyaltar/astrology/basics/<slug>/`           | `sun-sign`, `moon-sign`, `rising-sign`, `natal-chart`     |
 | Planets        | `/skyaltar/astrology/planets/<planet>/`        | `sun`, `moon`, `mercury` to `pluto`                       |
-| Houses         | `/skyaltar/astrology/houses/<n>/`              | `1` to `12`, Placidus                                     |
+| Houses         | `/skyaltar/astrology/houses/<n>/`              | `1` to `12`, whole sign                                   |
 | Aspects        | `/skyaltar/astrology/aspects/<aspect>/`        | `conjunction`, `sextile`, `square`, `trine`, `opposition` |
 | Elements       | `/skyaltar/astrology/elements/<element>/`      | `fire`, `earth`, `air`, `water`                           |
 | Modalities     | `/skyaltar/astrology/modalities/<mode>/`       | `cardinal`, `fixed`, `mutable`                            |
@@ -45,7 +45,7 @@ Each article says once that astrology is a cultural tradition and entertainment,
 
 ## Limits
 
-- **Tradition** the articles follow tropical Western astrology with Placidus houses and the 5 major aspects, as the Sky Altar app does. Sidereal and Vedic systems get a mention only.
+- **Tradition** the articles follow tropical Western astrology with whole sign houses and the 5 major aspects, as the Sky Altar app does. Sidereal and Vedic systems get a mention only.
 - **Today page** shows the Sun and Moon signs only. A full sky for today stays in the app.
 - **Ads** the slots stay empty until AdSense approves the site and an ad unit exists.
 
@@ -67,3 +67,12 @@ Each article says once that astrology is a cultural tradition and entertainment,
   3. The articles in the other 8 languages.
   4. Docs: `README.md`, `docs/features.md`, `docs/user-flows.md`, `docs/architecture.md`.
 - **Docs** `README.md`, `docs/features.md`, `docs/user-flows.md`, `docs/architecture.md`, `CHANGELOG.md`, `TODO.md`.
+
+### 2026-11-03 Whole sign houses, the app's colours and the privacy policy
+
+- **Why** the Sky Altar app shipped its astrology drawer with whole sign houses, today's sign in ice blue and the person's sign in rose (skyaltar#32). The site must match. The app also sends the typed birth city to the Open-Meteo geocoder, which the privacy policy must name.
+- **Changes**
+  - `src/content/astrology/en/` the house articles, the natal chart and the rising sign describe whole sign houses, with Placidus as the modern alternative.
+  - `src/astrology/TodayPage.astro`, `src/astrology/IndexPage.astro` the Sun's sign in ice blue, the reader's sign in rose.
+  - `skyaltar/privacy-policy.md` the birth details stay on the phone, the birth city goes to Open-Meteo, and the astrology pages of this site.
+- **Docs** `docs/features.md`, `CHANGELOG.md`.
