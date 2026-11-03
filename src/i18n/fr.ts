@@ -1286,6 +1286,10 @@ const fr: Catalog = {
               'Nettoyage des artefacts IA',
               'Le build retire le souffle, l’éclat métallique et le grondement des chansons et garde les originaux.',
             ],
+            [
+              'Améliorer une chanson',
+              'Une commande nettoie n’importe quelle chanson, rend la bande coupée par un encodeur avec perte et montre les deux spectrogrammes.',
+            ],
             ['Boucle sans raccord', "Le clip joue à l'endroit puis à l'envers, et le saut de la fin disparaît."],
             [
               'Chapitres et miniature',

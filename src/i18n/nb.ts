@@ -1131,6 +1131,10 @@ const nb: Catalog = {
               'Rensing av KI-spor',
               'Bygget fjerner sus, metallisk glans og brumming fra sangene og beholder originalene.',
             ],
+            [
+              'Forbedre en sang',
+              'Én kommando renser hvilken som helst sang, legger tilbake båndet en tapsbasert koder skar bort, og viser begge spektrogrammene.',
+            ],
             ['Sømløs loop', 'Klippet spilles forlengs og så baklengs, så hoppet på slutten forsvinner.'],
             ['Kapitler og miniatyrbilde', 'Beskrivelsen lister hver sang med starttid, og et miniatyrbilde lages.'],
             ['Planlagt opplasting', 'Én kommando laster opp med KI-merke og publiseringstid.'],
