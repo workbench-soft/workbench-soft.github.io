@@ -48,6 +48,8 @@ AdMob, which collects the data listed under "Ads".
 ## Network connections the app makes
 
 - **Google AdMob**, to load the banner in the gallery. See "Ads" below.
+- **Google Play**, to sell "Remove ads" and check that your Google
+  account owns it. See "Remove ads" below.
 - **The share sheet**, when you share a photo, sends it to the app you
   pick.
 
@@ -71,6 +73,17 @@ opened over the lock screen shows none either.
   Settings, Privacy, Ads resets or deletes the advertising ID.
 - **No photo data** goes to Google. The ads code sees no photo, video or
   GPS tag.
+
+## Remove ads
+
+"Remove ads" is a one time purchase in Settings or above the gallery
+banner. It turns the banner off on each phone signed in to the same
+Google account.
+
+- **Payment** Google Play takes the payment. The developer gets no card
+  details, name or email from it.
+- **Check** when you open the gallery, the app asks Google Play whether
+  your account owns "Remove ads". The answer stays on the phone.
 
 ## Analytics, accounts
 

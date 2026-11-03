@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Shuttrix privacy policy** a Remove ads section: Google Play takes the payment, and the app asks Google Play whether the account owns the purchase.
 - **ServoHop** a Site text and guides line in the features, in 9 languages: the home page explains the map in words, and guides cover fuel pricing, each state scheme, the grades and EV charging.
 - **Lumiere Player** runs on Android phones too, in 9 languages: touch on a phone, panel buttons and sponsor skip. The stack line says Android Views in place of Jetpack Compose.
 - **Alina Photography** under Our clients in the Sites menu, at its Worker address.
