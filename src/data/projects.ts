@@ -567,6 +567,10 @@ export const projects: Project[] = [
             name: 'Ads and remove ads',
             text: "Ads around a call, none during one. One A$2.99 purchase removes them for the buyer's rooms.",
           },
+          {
+            name: 'Farnear Pro',
+            text: 'One A$5.99 purchase on Android opens the board, lessons and sharing for the whole room, and hides the ads.',
+          },
           { name: 'Languages', text: 'The app in 9 languages, following the phone or browser.' },
         ],
       },
@@ -1359,7 +1363,10 @@ export const projects: Project[] = [
           { name: 'Find threads', text: 'Claude Code finds threads the repo can answer and drafts a comment.' },
           { name: 'Steps on top', text: 'Three steps on top say who does what, and the waiting one lights up.' },
           { name: 'Cards', text: 'Each card shows the sub, the thread title and the draft to edit.' },
-          { name: 'Open in Chrome', text: 'Chrome opens the thread with the comment on the clipboard, ready to paste.' },
+          {
+            name: 'Open in Chrome',
+            text: 'Chrome opens the thread with the comment on the clipboard, ready to paste.',
+          },
           { name: 'Post it for me', text: 'The app types the comment in its own Chrome window and presses Save.' },
           { name: 'Posts tab', text: 'Drafts posts that promote the picked repos in fitting subs.' },
           { name: 'Screenshots and videos', text: "Each post lists media from the repo's screenshots folder." },

@@ -1154,6 +1154,10 @@ const fr: Catalog = {
               'Pub et retrait',
               'Des pubs autour de l’appel, aucune pendant. Un achat de A$2.99 les retire des salons de l’acheteur.',
             ],
+            [
+              'Farnear Pro',
+              'Un achat de A$5.99 sur Android ouvre le tableau, les cours et le partage à toute la salle, et retire les pubs.',
+            ],
             ['Langues', 'En 9 langues, selon le téléphone ou le navigateur.'],
           ],
         },
