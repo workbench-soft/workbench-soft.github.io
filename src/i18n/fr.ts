@@ -1287,6 +1287,7 @@ const fr: Catalog = {
               'Loyers',
               'Chaque code postal de NSW, QLD, SA et TAS coloré selon le loyer hebdomadaire médian des nouveaux baux.',
             ],
+            ['Lumiere Pro', 'Un seul achat débloque les commandes vocales et Hey Lumi, et retire la pub.'],
             ['Installer depuis le navigateur', "La version web s'installe comme une app avec son icône."],
           ],
         },

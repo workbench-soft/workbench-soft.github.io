@@ -1181,6 +1181,7 @@ const nb: Catalog = {
               'Rensing av KI-spor',
               'Bygget fjerner sus, metallisk glans og brumming fra sangene og beholder originalene.',
             ],
+            ['Lumiere Pro', 'Ett kjøp låser opp talekommandoer og Hey Lumi og fjerner reklamen.'],
             [
               'Forbedre en sang',
               'Én kommando renser hvilken som helst sang, legger tilbake båndet en tapsbasert koder skar bort, og viser begge spektrogrammene.',
