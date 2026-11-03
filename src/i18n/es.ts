@@ -1233,6 +1233,10 @@ const es: Catalog = {
               'Limpieza de artefactos de IA',
               'La compilación quita el siseo, el brillo metálico y el zumbido de las canciones y guarda los originales.',
             ],
+            [
+              'Mejorar una canción',
+              'Un comando limpia cualquier canción, devuelve la banda que cortó un códec con pérdida y muestra los dos espectrogramas.',
+            ],
             ['Bucle sin cortes', 'El clip va hacia delante y hacia atrás, y el salto del final desaparece.'],
             ['Capítulos y miniatura', 'La descripción lista cada canción con su inicio y se crea una miniatura.'],
             ['Subida programada', 'Un comando sube con la etiqueta de IA y una hora de publicación.'],

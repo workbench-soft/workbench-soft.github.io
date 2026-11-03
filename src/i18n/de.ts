@@ -1245,6 +1245,10 @@ const de: Catalog = {
               'Bereinigung von KI-Artefakten',
               'Der Build nimmt Rauschen, metallischen Glanz und Brummen aus den Songs und behält die Originale.',
             ],
+            [
+              'Song verbessern',
+              'Ein Befehl säubert jeden Song, holt das Band zurück, das ein verlustbehafteter Encoder abgeschnitten hat, und zeigt beide Spektrogramme.',
+            ],
             ['Nahtlose Schleife', 'Der Clip läuft vor und zurück, so verschwindet der Sprung am Ende.'],
             [
               'Kapitel und Vorschaubild',
