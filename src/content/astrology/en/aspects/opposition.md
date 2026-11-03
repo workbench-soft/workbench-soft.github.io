@@ -14,7 +14,7 @@ description: "What an opposition is in astrology, the 180 degree angle, which si
 
 An opposition forms when two planets sit on opposite sides of the zodiac, six signs apart. Astrologers read it as a see-saw. The two planets face each other directly, each pulling the person toward its own side. The challenge is to find a balance that honours both.
 
-Oppositions are often linked with other people. Because we tend to own one side of the see-saw and see the other in those around us, oppositions often play out in relationships. A person with a strong opposition may meet the other side of themselves in a partner, a boss or a rival. Over time, many learn to hold both ends.
+Oppositions are often linked with other people. Because we tend to own one side of the see-saw and see the other in those around us, oppositions often play out in relationships. A person with a strong opposition may meet the other side of themselves in a partner, a boss or a rival. Over time, many learn to hold both ends of the see-saw at once, and the opposition turns into a gift for seeing both sides.
 
 ## Which signs face each other
 
