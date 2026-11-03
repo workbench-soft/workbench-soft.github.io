@@ -487,6 +487,14 @@ const es: Catalog = {
               'Sonido fuerte por el altavoz',
               'Las respuestas y grabaciones suenan por el altavoz del teléfono a todo volumen. Los ajustes activan Bluetooth o el volumen del teléfono.',
             ],
+            [
+              'Las notas sobre una persona van a Memories',
+              'Una nota que empieza con el nombre de alguien de Memories va a su diario en el NAS de casa.',
+            ],
+            [
+              'KeepPad Pro',
+              'Una compra única abre los enlaces nuevos, el envío a otras apps y a Memories, y quita los anuncios.',
+            ],
           ],
         },
       ],

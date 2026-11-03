@@ -503,6 +503,14 @@ const fr: Catalog = {
               'Son fort par le haut-parleur',
               'Les réponses et les enregistrements passent par le haut-parleur du téléphone à plein volume. Les réglages activent le Bluetooth ou le volume du téléphone.',
             ],
+            [
+              'Les notes sur une personne vont dans Memories',
+              'Une note qui commence par le nom d’une personne de Memories rejoint son journal sur le NAS de la maison.',
+            ],
+            [
+              'KeepPad Pro',
+              'Un achat unique ouvre les nouveaux liens, l’envoi vers d’autres apps et vers Memories, et retire les pubs.',
+            ],
           ],
         },
       ],

@@ -445,6 +445,11 @@ const nb: Catalog = {
               'Høy lyd fra telefonhøyttaleren',
               'Svar og opptak spilles fra telefonhøyttaleren på fullt volum. Innstillingene slår på Bluetooth eller telefonvolumet.',
             ],
+            [
+              'Notater om en person går til Memories',
+              'Et notat som starter med navnet til noen i Memories, havner i dagboken deres på NAS-en hjemme.',
+            ],
+            ['KeepPad Pro', 'Ett kjøp åpner nye lenker, sending til andre apper og til Memories, og fjerner reklamen.'],
           ],
         },
       ],

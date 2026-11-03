@@ -481,6 +481,14 @@ const de: Catalog = {
               'Laut aus dem Telefonlautsprecher',
               'Antworten und Aufnahmen spielen in voller Lautstärke über den Telefonlautsprecher. In den Einstellungen lassen sich Bluetooth oder die Telefonlautstärke einschalten.',
             ],
+            [
+              'Notizen über eine Person gehen an Memories',
+              'Eine Notiz, die mit dem Namen einer Person aus Memories beginnt, landet in ihrem Tagebuch auf dem NAS zu Hause.',
+            ],
+            [
+              'KeepPad Pro',
+              'Ein einmaliger Kauf öffnet neue Links, das Senden an andere Apps und an Memories, und entfernt die Werbung.',
+            ],
           ],
         },
       ],
