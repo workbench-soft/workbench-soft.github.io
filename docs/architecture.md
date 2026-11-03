@@ -4,13 +4,14 @@ The repo serves <https://workbench-soft.com> from GitHub Pages. The site has no 
 
 ## Parts
 
-| Part           | Folder                      | Built by            |
-| -------------- | --------------------------- | ------------------- |
-| Home page      | `src/`                      | Astro, into `dist/` |
-| Memories site  | `memories-mobile/`          | Jekyll              |
-| Shuttrix pages | `shuttrix/`                 | Jekyll              |
-| Langflip page  | `langflip/`                 | copied as is        |
-| Root files     | `app-ads.txt`, `robots.txt` | copied as is        |
+| Part            | Folder                      | Built by            |
+| --------------- | --------------------------- | ------------------- |
+| Home page       | `src/`                      | Astro, into `dist/` |
+| Memories site   | `memories-mobile/`          | Jekyll              |
+| Shuttrix pages  | `shuttrix/`                 | Jekyll              |
+| Sky Altar pages | `skyaltar/`                 | Jekyll              |
+| Langflip page   | `langflip/`                 | copied as is        |
+| Root files      | `app-ads.txt`, `robots.txt` | copied as is        |
 
 ```mermaid
 flowchart LR
@@ -19,7 +20,7 @@ flowchart LR
   components --> pages["src/pages/[...lang].astro<br/>/ and /code/"]
   scripts["src/scripts/field.ts<br/>WebGL2 shader"] --> components
   pages --> astro["astro build"] --> dist["dist/"]
-  jekyll["memories-mobile/, shuttrix/"] --> jb["Jekyll build"] --> site["_site/"]
+  jekyll["memories-mobile/, shuttrix/, skyaltar/"] --> jb["Jekyll build"] --> site["_site/"]
   dist --> site
   root["langflip/, app-ads.txt, robots.txt"] --> site
   site --> pages_["GitHub Pages"]
@@ -57,7 +58,7 @@ sequenceDiagram
 1. A push to `main` starts [pages.yml](../.github/workflows/pages.yml).
 2. mise installs node and pnpm from `mise.toml`, then pnpm installs the packages.
 3. `mise run lint`, `mise run test` and `mise run check` check the code, then `mise run build` writes `dist/`.
-4. Jekyll builds the Memories site into `_site/memories-mobile` and the Shuttrix privacy policy into `_site/shuttrix`.
+4. Jekyll builds the Memories site into `_site/memories-mobile` the Shuttrix privacy policy into `_site/shuttrix` and the Sky Altar privacy policy into `_site/skyaltar`.
 5. The job copies `dist/`, `langflip/` and the root files into `_site/` and publishes it.
 
 A pull request runs steps 2 to 4 and the copy, then stops before the publish.

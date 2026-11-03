@@ -1,0 +1,16 @@
+title: Sky Altar
+description: >-
+  The night sky over the camera, drawn in the style of old cultures. The
+  camera picture and your position stay on the phone.
+url: https://workbench-soft.com
+baseurl: /skyaltar
+lang: en
+author: Oleg Chibikov
+theme: jekyll-theme-primer
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Counts site visits without cookies. The token is public on every page.
+cloudflare_analytics_token: 4dd25be2f0c940afbcb9dd447dc41154
