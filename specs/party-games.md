@@ -262,3 +262,30 @@ score, since the browser keeps a secret token.
   the docs.
 - **Docs** `apps/games/docs/features.md`, `apps/games/docs/user-flows.md`,
   `CHANGELOG.md`.
+
+### 2026-11-03 Real AdMob IDs in the Android app
+
+- **Why** the AdMob app "Workbench Games" and its banner "Games lobby banner"
+  now exist on publisher `pub-8598703460892343`. Store builds still showed
+  Google's test ads.
+- **How** the IDs are public, so they sit in the code as defaults. A release
+  build of the Android app gets the real App ID
+  `ca-app-pub-8598703460892343~1509665312` and the real banner
+  `ca-app-pub-8598703460892343/4481644716`. A debug build gets Google's test
+  App ID and test banner. The page reads the build type from
+  `window.Capacitor.DEBUG`, which Capacitor sets for a debuggable build. The
+  developer's phone keeps the test banner in every build. iOS stays on
+  Google's test IDs until it has its own AdMob app.
+- **Override** `-PadmobAppId` and `PUBLIC_ADMOB_BANNER_ANDROID` still win
+  over the defaults.
+- **Changes**
+  - `apps/games/android/app/build.gradle` the real App ID for release, the
+    test one for debug.
+  - `apps/games/src/game/ad-unit.ts` new, picks the banner unit, with a test.
+  - `apps/games/src/game/admob.ts` uses it.
+  - `apps/games/android/app/src/main/AndroidManifest.xml` the comment.
+- **Left** a `remove_ads` purchase like the other studio apps, the GDPR
+  message, the Play declarations and AdSense for the site, in `TODO.md`.
+- **Steps** this entry, then the code with its test, then the docs.
+- **Docs** `apps/games/README.md`, `apps/games/docs/features.md`,
+  `CHANGELOG.md`, `TODO.md`.
