@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Screenshots** ServoHop shows its priced map on a computer and a phone, KeepPad a list of sorted notes and an open note, Lumiere Player its calm look, and SongFactory the Enhance compare page first.
 - **Farnear** the Ads line names ads around a call, none during one, and the A$2.99 purchase, in 9 languages. The stack names React, Vite and Kotlin in place of Expo.
 - **Shuttrix Remove ads** the Ads line says a one time purchase removes the gallery banner, in 9 languages.
 - **Sky Altar privacy policy** at <https://workbench-soft.com/skyaltar/privacy-policy>: the camera picture and the position stay on the phone, the AdMob ads with the Google partner sites link, the consent form and Remove ads.
