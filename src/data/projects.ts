@@ -318,6 +318,10 @@ export const projects: Project[] = [
           },
           { name: 'Place and camera tags', text: 'Each shot carries where and how it was taken, as EXIF tags.' },
           { name: 'Photo and video size', text: 'Settings pick the photo and video size.' },
+          {
+            name: 'Multi-frame photo',
+            text: 'A plain photo merges 6 quick frames into one, with half the noise and crisper edges.',
+          },
           { name: 'Enhance photos', text: 'Deeper blacks, lifted shadows, livelier colour and a touch of sharpness.' },
           { name: 'QR codes', text: 'A code in the preview gets brackets and a pill to open it.' },
           {
