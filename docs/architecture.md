@@ -11,6 +11,7 @@ The repo serves <https://workbench-soft.com> from GitHub Pages. The site has no 
 | Shuttrix pages  | `shuttrix/`                 | Jekyll              |
 | Sky Altar pages | `skyaltar/`                 | Jekyll              |
 | Langflip page   | `langflip/`                 | copied as is        |
+| Astrology pages | `src/content/astrology/`    | Astro, into `dist/` |
 | Root files      | `app-ads.txt`, `robots.txt` | copied as is        |
 
 ```mermaid
@@ -146,6 +147,16 @@ Each choice below names what the repo picked, what it costs and what lost. The m
   - **i18next with react-i18next** the org pick for TypeScript apps. No source records why it lost. The page has no React, and Astro writes a static page per language with no library in the browser.
   - **One URL that switches language in the browser** search engines would index one language only.
 - **Cost to undo** medium. Every component reads its text from the catalogs.
+
+### Sky Altar astrology: Markdown in an Astro content collection
+
+- **Picked** an Astro content collection, `src/content/astrology/<lang>/<group>/<slug>.md`, built by `src/pages/skyaltar/astrology/` and `src/pages/[lang]/skyaltar/astrology/` through `src/astrology/ArticlePage.astro`.
+- **Why** the articles need the site's 9 language routing, `hreflang` alternates and the sitemap, which the Astro build already has. Markdown keeps each article a plain file a translator can edit. Links inside an article are relative, `../../signs/leo/`, so the same text works under each language prefix.
+- **Trade-off** about 800 Markdown files. A Vitest test checks that each language holds each article and that each English article has 500 words or more.
+- **Rejected**
+  - **Jekyll beside `skyaltar/privacy-policy.md`** Jekyll in this repo has no language routing or shared layout with the Astro site.
+  - **Articles in the TypeScript catalogs** long prose in TypeScript strings is hard to edit and to review.
+- **Cost to undo** low. The Markdown files move to any static builder.
 
 ### Memories site: Jekyll as before
 

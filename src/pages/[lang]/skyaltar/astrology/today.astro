@@ -1,0 +1,11 @@
+---
+import TodayPage from "../../../../astrology/TodayPage.astro";
+import { langsOf } from "../../../../astrology/paths";
+import type { Lang } from "../../../../i18n/locales";
+
+export async function getStaticPaths() {
+  return (await langsOf()).filter((l) => l !== "en").map((lang) => ({ params: { lang } }));
+}
+---
+
+<TodayPage lang={Astro.params.lang as Lang} />

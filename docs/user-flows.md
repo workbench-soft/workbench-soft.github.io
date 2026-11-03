@@ -102,3 +102,18 @@ flowchart LR
   chip -->|Archive| archive["Archived panels"]
   chip -->|All| all["Every panel"]
 ```
+
+## A reader looks up their sign
+
+1. A search result or the Sky Altar app opens an article, such as `/skyaltar/astrology/signs/leo/`.
+2. The reader reads it and follows a related article or the compatibility page.
+3. The Today page shows today's Sun and Moon signs and a tip for the reader's sign.
+4. The app card leads to Google Play or the APK.
+
+```mermaid
+flowchart LR
+  search["Search or the app"] --> article["Article"]
+  article --> related["Related article"] --> article
+  article --> today["Today page"] --> pick["Pick your sign"] --> tip["Tip for today"]
+  article --> app["Google Play or APK"]
+```

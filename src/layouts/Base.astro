@@ -1,15 +1,23 @@
 ---
 import "../styles/global.css";
 import { email } from "../data/studio";
-import { langOf, locales, ogLocales, pathOf, tags } from "../i18n/locales";
+import { langOf, locales, ogLocales, tags, type Lang } from "../i18n/locales";
 import { ui } from "../i18n";
 
 interface Props {
   title: string;
   description: string;
+  /** The page path without the language prefix, such as /skyaltar/astrology/. */
+  path?: string;
+  /** The languages the page exists in, for the hreflang links. */
+  langs?: readonly Lang[];
+  type?: "website" | "article";
+  /** More JSON-LD blocks, such as an Article. */
+  schema?: object[];
 }
 
-const { title, description } = Astro.props;
+const { title, description, path = "/", langs = locales, type = "website", schema = [] } = Astro.props;
+const at = (l: Lang) => new URL(l === "en" ? path : `/${l}${path}`, Astro.site);
 const lang = langOf(Astro.currentLocale);
 const url = new URL(Astro.url.pathname, Astro.site);
 const org = {
@@ -30,16 +38,16 @@ const org = {
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={url} />
-    {locales.map((l) => <link rel="alternate" hreflang={tags[l]} href={new URL(pathOf(l), Astro.site)} />)}
-    <link rel="alternate" hreflang="x-default" href={new URL("/", Astro.site)} />
+    {langs.map((l) => <link rel="alternate" hreflang={tags[l]} href={at(l)} />)}
+    <link rel="alternate" hreflang="x-default" href={at("en")} />
     <meta name="theme-color" content="#04060b" />
     <meta name="generator" content={Astro.generator} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={type} />
     <meta property="og:url" content={url} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:locale" content={ogLocales[lang]} />
-    {locales.filter((l) => l !== lang).map((l) => <meta property="og:locale:alternate" content={ogLocales[l]} />)}
+    {langs.filter((l) => l !== lang).map((l) => <meta property="og:locale:alternate" content={ogLocales[l]} />)}
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -50,6 +58,8 @@ const org = {
       rel="stylesheet"
     />
     <script type="application/ld+json" set:html={JSON.stringify(org)} />
+    {schema.map((s) => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}
+    <slot name="head" />
   </head>
   <body>
     <div class="progress" aria-hidden="true"></div>

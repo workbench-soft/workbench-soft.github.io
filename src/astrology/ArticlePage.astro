@@ -1,0 +1,92 @@
+---
+import type { Lang } from "../i18n/locales";
+import AdSlot from "./AdSlot.astro";
+import Shell from "./Shell.astro";
+import { articles, href, langsOf, text, type Article } from "./paths";
+import { related, signs, type Group, type Sign } from "./topics";
+
+const { lang, entry } = Astro.props as { lang: Lang; entry: Article };
+const id = entry.id.slice(lang.length + 1);
+const group = id.split("/")[0] as Group;
+const t = text(lang);
+const all = await articles(lang);
+const links = related(id).flatMap((r) => (all.has(r) ? [{ id: r, title: all.get(r)!.data.title }] : []));
+const langs = await langsOf(id);
+const { title, description } = entry.data;
+const url = new URL(href(lang, id), Astro.site).href;
+const slug = id.split("/")[1] as Sign;
+const sign = (group === "signs" || group === "compatibility") && signs.includes(slug) ? slug : undefined;
+const image = sign ? `/skyaltar/astrology/zodiac/${sign}.webp` : "/skyaltar/astrology/cover.png";
+
+// The ad slot goes before the 3rd section, so the first screen holds only the article.
+const html = entry.rendered?.html ?? "";
+const cuts = [...html.matchAll(/<h2[\s>]/g)].map((m) => m.index);
+const cut = cuts[2] ?? cuts.at(-1) ?? html.length;
+const parts = [html.slice(0, cut), html.slice(cut)];
+
+const org = { "@type": "Organization", name: "Workbench Soft", url: Astro.site?.href };
+const crumbs = [
+  [t.section, href(lang)],
+  [t.groups[group].title, `${href(lang)}#${group}`],
+  [title, href(lang, id)],
+];
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description,
+    inLanguage: lang,
+    mainEntityOfPage: url,
+    image: new URL(image, Astro.site).href,
+    datePublished: "2026-11-03",
+    dateModified: "2026-11-03",
+    author: org,
+    publisher: org,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: crumbs.map(([name, path], i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name,
+      item: new URL(path, Astro.site).href,
+    })),
+  },
+];
+---
+
+<Shell lang={lang} title={`${title} | Sky Altar`} description={description} id={id} langs={langs} type="article" schema={schema}>
+  <p class="crumbs">
+    <a href={crumbs[0][1]}>{crumbs[0][0]}</a> / <a href={crumbs[1][1]}>{crumbs[1][0]}</a>
+  </p>
+  <article>
+    <h1>{title}</h1>
+    <p class="lede">{description}</p>
+    {sign && <img class="figure" src={image} alt={t.signs[sign]} width="512" height="512" />}
+    <Fragment set:html={parts[0]} />
+    <AdSlot lang={lang} name="article-middle" />
+    <Fragment set:html={parts[1]} />
+  </article>
+  <AdSlot lang={lang} name="article-end" />
+  {
+    links.length > 0 && (
+      <section class="related">
+        <h2>{t.related}</h2>
+        <ul>
+          {links.map((l) => (
+            <li>
+              <a href={href(lang, l.id)}>{l.title}</a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+</Shell>
+
+<style>
+  .related ul { padding-left: 20px; }
+  .figure { display: block; width: min(320px, 70%); height: auto; margin: 8px auto 0; mix-blend-mode: screen; }
+</style>

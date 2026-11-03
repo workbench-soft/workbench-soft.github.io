@@ -31,6 +31,10 @@ jobs:
       - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
       - uses: jdx/mise-action@6be3c7ed4c21d4f76b208d351d95aac273ebb76d # v5.2.4
       - name: Build the home page
+        # The astrology ad slots stay empty until both repo variables exist.
+        env:
+          PUBLIC_ADSENSE_CLIENT: ${{ vars.ADSENSE_CLIENT }}
+          PUBLIC_ADSENSE_SLOT_ARTICLE: ${{ vars.ADSENSE_SLOT_ARTICLE }}
         run: |
           mise x -- pnpm install --frozen-lockfile
           mise run lint
@@ -57,6 +61,8 @@ jobs:
         run: |
           sudo cp -r dist/. _site/
           sudo cp app-ads.txt robots.txt _site/
+          # AdSense reads /ads.txt. It holds the same publisher line as app-ads.txt.
+          sudo cp app-ads.txt _site/ads.txt
           sudo cp -r langflip _site/
       # property-trends publishes its web build with its data as a release here. The newest one goes under /property-trends/.
       - name: Add Property Trends

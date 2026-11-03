@@ -1,0 +1,11 @@
+---
+import IndexPage from "../../../../astrology/IndexPage.astro";
+import { langsOf } from "../../../../astrology/paths";
+import type { Lang } from "../../../../i18n/locales";
+
+export async function getStaticPaths() {
+  return (await langsOf()).filter((l) => l !== "en").map((lang) => ({ params: { lang } }));
+}
+---
+
+<IndexPage lang={Astro.params.lang as Lang} />
