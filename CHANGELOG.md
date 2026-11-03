@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Sky Altar astrology** 90 articles at /skyaltar/astrology/ on the signs, planets, houses, aspects, compatibility, the Chinese zodiac and numerology, a Today page with the Sun and Moon signs and a tip per sign, and marked ad slots. The site serves /ads.txt.
 - **Spot the Cam** Loud warnings name the two switches in Settings: Bluetooth and the system volume, in 9 languages.
 - **Langflip** the feature list names Update from GitHub: a check once a day and an update after a click, in 9 languages.
 - **SongFactory Enhance a song** in 8 more languages, so the Pages build passes the catalog check again.

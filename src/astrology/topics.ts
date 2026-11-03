@@ -58,7 +58,7 @@ export const elementOf = (i: number) => elements[i % 4];
 export const modalityOf = (i: number) => modalities[i % 3];
 
 const around = (group: Group, slug: string) => {
-  const list = groups[group];
+  const list: string[] = groups[group];
   const i = list.indexOf(slug);
   return [list[(i + list.length - 1) % list.length], list[(i + 1) % list.length]].map((s) => `${group}/${s}`);
 };

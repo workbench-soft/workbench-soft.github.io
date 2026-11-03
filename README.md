@@ -7,6 +7,7 @@ Public files for the Workbench Soft apps. The code sits in private repos in this
 - **Site** <https://workbench-soft.com>, built by [pages.yml](.github/workflows/pages.yml) on each push to main. `www` and the old <https://workbench-soft.github.io> send each path there. [docs/architecture.md](docs/architecture.md#domain) has the DNS setup.
 - **Memories site** sits in [memories-mobile/](memories-mobile/), a Jekyll site with its own `_config.yml`.
 - **Shuttrix privacy policy** sits in [shuttrix/](shuttrix/), a Jekyll folder like the Memories one. It serves <https://workbench-soft.com/shuttrix/privacy-policy>.
+- **Sky Altar astrology** articles on the signs, planets, houses, aspects, compatibility, the Chinese zodiac and numerology sit at <https://workbench-soft.com/skyaltar/astrology/>, with a Today page. They are Markdown in [src/content/astrology/](src/content/astrology/), one folder per language, and the only part of the site with ad slots. [specs/skyaltar-astrology.md](specs/skyaltar-astrology.md) has the paths the app links to.
 - **Sky Altar privacy policy** sits in [skyaltar/](skyaltar/), a Jekyll folder like the Shuttrix one. It serves <https://workbench-soft.com/skyaltar/privacy-policy>.
 - **Property Trends** its web build and data sit at <https://workbench-soft.com/property-trends/>. The private repo publishes them as a `property-trends-web-v*` release here, and `pages.yml` unpacks the newest one.
 - **app-ads.txt** lists the AdMob publisher for apps whose Play listing points at this site.

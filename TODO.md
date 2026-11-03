@@ -47,3 +47,10 @@ Workbench Games, `com.workbenchsoft.games`. Release builds of the Android app us
 ## header-sites: Sites menu in the header
 
 - [ ] **Alina Photography** once Alina has her own domain, swap the Worker address in `clientSites` of `src/data/studio.ts` for it.
+
+## skyaltar-astrology: astrology articles for AdSense
+
+- [ ] **Add the site** in AdSense at <https://adsense.google.com>, Sites, add `workbench-soft.com`. The pages already carry the `google-adsense-account` meta tag and `/ads.txt`, so pick the meta tag or ads.txt check, then press Request review.
+- [ ] **Consent message** publish a GDPR message for `workbench-soft.com` in AdSense, Privacy and messaging, European regulations.
+- [ ] **Ad unit** once AdSense approves the site, make a display ad unit and set the repo variables `ADSENSE_CLIENT` (`ca-pub-8598703460892343`, shared with the games) and `ADSENSE_SLOT_ARTICLE` at <https://github.com/workbench-soft/workbench-soft.github.io/settings/variables/actions>. The Pages build reads them.
+- [ ] **Search Console** submit `https://workbench-soft.com/sitemap-index.xml` again at <https://search.google.com/search-console> so the new pages get crawled.
