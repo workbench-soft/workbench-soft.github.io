@@ -28,12 +28,12 @@ mise run deploy
 
 The `Games` workflow deploys on each push to main once the repo has `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`. The build reads these variables:
 
-| Variable                                                 | What it sets                                                                         |
-| -------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| `PUBLIC_SITE_URL`                                        | The site the pages and the apps point at. Default `https://games.workbench-soft.com` |
-| `PUBLIC_ADSENSE_CLIENT`                                  | `ca-pub-…` for the site banners                                                      |
-| `PUBLIC_ADSENSE_SLOT_PAGE`, `PUBLIC_ADSENSE_SLOT_ROOM`   | The banner units on the pages and in the room                                        |
-| `PUBLIC_ADMOB_BANNER_ANDROID`, `PUBLIC_ADMOB_BANNER_IOS` | The AdMob banner units. Without them the apps show test ads                          |
+| Variable                                                 | What it sets                                                                          |
+| -------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `PUBLIC_SITE_URL`                                        | The site the pages and the apps point at. Default `https://games.workbench-soft.com`  |
+| `PUBLIC_ADSENSE_CLIENT`                                  | `ca-pub-…` for the site banners                                                       |
+| `PUBLIC_ADSENSE_SLOT_PAGE`, `PUBLIC_ADSENSE_SLOT_ROOM`   | The banner units on the pages and in the room                                         |
+| `PUBLIC_ADMOB_BANNER_ANDROID`, `PUBLIC_ADMOB_BANNER_IOS` | Override the AdMob banner units. Android defaults to the real unit, iOS to a test one |
 
 ## Android and iOS
 
@@ -44,3 +44,5 @@ mise run app:android
 - **Android** builds the web files, copies them into `android/`, then opens Android Studio.
 - **iOS** `mise run app:ios` does the same for `ios/`. Building it needs Xcode on a Mac or a cloud Mac.
 - **Icons** `pnpm icons` draws the PNG icons and the share image from SVG.
+- **Ads** a release build of the Android app uses the AdMob app `ca-app-pub-8598703460892343~1509665312` and the banner `ca-app-pub-8598703460892343/4481644716`. Debug builds, iOS and the developer's phone use Google's test IDs.
+- **Before the store** the first AAB, the AdMob GDPR message, the Play ads and Data safety answers and a Remove ads purchase are still open. The `## ads-setup` section of the root `TODO.md` lists them.

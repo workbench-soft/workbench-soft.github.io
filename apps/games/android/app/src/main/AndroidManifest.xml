@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <!-- AdMob app id from build.gradle. Builds without ADMOB_APP_ID use Google's test app. -->
+        <!-- AdMob app id from build.gradle: the real app in release builds, Google's test app in debug builds. -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="${admobAppId}" />

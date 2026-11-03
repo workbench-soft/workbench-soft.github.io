@@ -1,15 +1,6 @@
-// AdMob in the Android and iOS apps. Debug builds, missing IDs and the developer's phone get Google's test ads.
+// AdMob in the Android and iOS apps. Debug builds and the developer's phone get Google's test ads.
+import { bannerUnit, isDebugBuild, TEST_BANNER } from './ad-unit.ts';
 import { devAdsShown, isDevDevice, openDevLink, saveDevAdsShown } from './dev-device.ts';
-
-const TEST_BANNER = {
-  android: 'ca-app-pub-3940256099942544/6300978111',
-  ios: 'ca-app-pub-3940256099942544/2934735716',
-};
-
-const BANNER = {
-  android: import.meta.env.PUBLIC_ADMOB_BANNER_ANDROID as string | undefined,
-  ios: import.meta.env.PUBLIC_ADMOB_BANNER_IOS as string | undefined,
-};
 
 let ready: Promise<typeof import('@capacitor-community/admob')> | null = null;
 let devLinks: Promise<void> | null = null;
@@ -67,7 +58,7 @@ export async function syncBanner(visible: boolean): Promise<void> {
       (globalThis as { Capacitor?: { getPlatform(): string } }).Capacitor?.getPlatform() === 'ios' ? 'ios' : 'android';
     if (show && !shown) {
       shown = true;
-      const id = (!import.meta.env.DEV && !dev && BANNER[platform]) || TEST_BANNER[platform];
+      const id = bannerUnit(platform, import.meta.env.DEV || isDebugBuild() || dev);
       await mod.AdMob.showBanner({
         adId: id,
         adSize: mod.BannerAdSize.ADAPTIVE_BANNER,
