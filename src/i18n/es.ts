@@ -1123,8 +1123,14 @@ const es: Catalog = {
               'Las mismas tarjetas en teléfono, tableta y navegador, emparejadas con un código.',
             ],
             ['Widget de inicio', 'El número de palabras pendientes y una palabra con su significado.'],
-            ['Anuncios y quitar anuncios', 'Un banner y un anuncio a pantalla completa en Android. Una compra única los quita.'],
-            ['Sonido', 'Las palabras suenan por el altavoz del teléfono a todo volumen. Los ajustes permiten Bluetooth o el volumen del sistema.'],
+            [
+              'Anuncios y quitar anuncios',
+              'Un banner y un anuncio a pantalla completa en Android. Una compra única los quita.',
+            ],
+            [
+              'Sonido',
+              'Las palabras suenan por el altavoz del teléfono a todo volumen. Los ajustes permiten Bluetooth o el volumen del sistema.',
+            ],
           ],
         },
       ],
@@ -1151,6 +1157,10 @@ const es: Catalog = {
             [
               'Omitir patrocinios',
               'Los vídeos guardados con yt-dlp omiten sus segmentos patrocinados de SponsorBlock.',
+            ],
+            [
+              'Altavoz del teléfono',
+              'En el teléfono el vídeo suena por el altavoz al máximo, también con Bluetooth. Bluetooth y el volumen del sistema se activan en Ajustes.',
             ],
           ],
         },

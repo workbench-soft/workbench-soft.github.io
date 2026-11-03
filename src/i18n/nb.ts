@@ -1034,7 +1034,10 @@ const nb: Catalog = {
             ['Synk mellom enheter', 'De samme kortene på telefon, nettbrett og nettleser, koblet med en kode.'],
             ['Widget på startskjermen', 'Antall ventende ord og ett ord med betydningen.'],
             ['Annonser og fjern annonser', 'Et banner og en fullskjermsannonse på Android. Ett kjøp fjerner dem.'],
-            ['Lyd', 'Ordene spilles fra telefonhøyttaleren på full styrke. Innstillingene lar deg bruke Bluetooth eller systemvolumet.'],
+            [
+              'Lyd',
+              'Ordene spilles fra telefonhøyttaleren på full styrke. Innstillingene lar deg bruke Bluetooth eller systemvolumet.',
+            ],
           ],
         },
       ],
@@ -1059,6 +1062,10 @@ const nb: Catalog = {
             ],
             ['Spillerknapper', 'Velg hvilke knapper spilleren viser, også bildeforhold.'],
             ['Hopp over sponsorer', 'Videoer lagret med yt-dlp hopper over SponsorBlock-sponsordelene.'],
+            [
+              'Telefonhøyttaler',
+              'På telefonen spilles videoen fra høyttaleren på full styrke, også med Bluetooth. Bluetooth og systemvolum slås på i innstillingene.',
+            ],
           ],
         },
       ],

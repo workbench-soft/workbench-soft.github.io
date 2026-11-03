@@ -1138,8 +1138,14 @@ const de: Catalog = {
             ['Gesprächsübung', 'Ein Chat zu einer Szene wie Café oder Vorstellungsgespräch, auf dem eigenen Niveau.'],
             ['Abgleich zwischen Geräten', 'Dieselben Karten auf Telefon, Tablet und Browser, per Code gekoppelt.'],
             ['Widget auf dem Startbildschirm', 'Die Zahl wartender Wörter und ein Wort mit Bedeutung.'],
-            ['Werbung und Werbung entfernen', 'Ein Banner und eine Vollbildanzeige auf Android. Ein einmaliger Kauf entfernt sie.'],
-            ['Ton', 'Wörter kommen in voller Lautstärke aus dem Telefonlautsprecher. Die Einstellungen erlauben Bluetooth oder die Systemlautstärke.'],
+            [
+              'Werbung und Werbung entfernen',
+              'Ein Banner und eine Vollbildanzeige auf Android. Ein einmaliger Kauf entfernt sie.',
+            ],
+            [
+              'Ton',
+              'Wörter kommen in voller Lautstärke aus dem Telefonlautsprecher. Die Einstellungen erlauben Bluetooth oder die Systemlautstärke.',
+            ],
           ],
         },
       ],
@@ -1164,6 +1170,10 @@ const de: Catalog = {
             ],
             ['Player-Tasten', 'Die Tasten des Players selbst wählen, auch das Seitenverhältnis.'],
             ['Sponsoren überspringen', 'Mit yt-dlp gespeicherte Videos überspringen ihre SponsorBlock-Abschnitte.'],
+            [
+              'Telefonlautsprecher',
+              'Auf dem Telefon kommt das Video in voller Lautstärke aus dem Lautsprecher, auch mit Bluetooth. Bluetooth und Systemlautstärke lassen sich einschalten.',
+            ],
           ],
         },
       ],

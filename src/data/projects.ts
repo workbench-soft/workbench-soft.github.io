@@ -679,6 +679,10 @@ export const projects: Project[] = [
           },
           { name: 'Panel buttons', text: 'Pick the buttons the player shows, aspect ratio included.' },
           { name: 'Sponsor skip', text: 'Videos saved with yt-dlp skip their SponsorBlock sponsor segments.' },
+          {
+            name: 'Phone speaker',
+            text: 'On a phone the video plays from the speaker at full volume, also with Bluetooth. Bluetooth and the system volume turn on in Settings.',
+          },
         ],
       },
     ],
