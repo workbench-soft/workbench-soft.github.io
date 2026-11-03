@@ -42,10 +42,10 @@ const [before, after] = t.projects.intro.split("{key}");
     <div class="list">
       {
         kinds.map((k) => (
-          <div class="group" data-kind={k}>
-            <h3 class="group-title">{t.projects.kinds[k]}</h3>
+          <details class="group" data-kind={k} open={k !== "internal"}>
+            <summary class="group-title">{t.projects.kinds[k]}</summary>
             {numbered.filter(({ p }) => p.kind === k).map(({ p, n }) => <ProjectPanel project={p} number={n} />)}
-          </div>
+          </details>
         ))
       }
     </div>
@@ -60,9 +60,22 @@ const [before, after] = t.projects.intro.split("{key}");
   function filter(kind: string) {
     for (const c of chips) c.setAttribute("aria-pressed", String(c.dataset.filter === kind));
     for (const el of filtered) el.hidden = kind !== "all" && el.dataset.kind !== kind;
+    if (kind !== "all") document.querySelector<HTMLDetailsElement>(`details.group[data-kind="${kind}"]`)!.open = true;
+  }
+
+  // A link to a project in a folded group opens the group first.
+  function reveal() {
+    const el = location.hash ? document.getElementById(location.hash.slice(1)) : null;
+    const group = el?.closest<HTMLDetailsElement>("details.group");
+    if (el && group && !group.open) {
+      group.open = true;
+      el.scrollIntoView();
+    }
   }
 
   for (const c of chips) c.addEventListener("click", () => filter(c.dataset.filter!));
+  addEventListener("hashchange", reveal);
+  reveal();
   addEventListener("show-all-projects", () => filter("all"));
 </script>
 
@@ -115,5 +128,9 @@ const [before, after] = t.projects.intro.split("{key}");
   .index i { font: normal 500 11px var(--mono); color: var(--dim); }
   .index em { margin-left: auto; font: normal 500 11px var(--mono); color: var(--acc); }
   .list { container: projects / inline-size; }
-  .group-title { margin: 56px 0 0; font: 500 12px var(--mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+  .group-title { margin: 56px 0 0; padding-bottom: 12px; cursor: pointer; list-style: none; display: flex; align-items: center; gap: 10px; font: 500 12px var(--mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); transition: color 0.2s; }
+  .group-title::-webkit-details-marker { display: none; }
+  .group-title::before { content: "▸"; transition: rotate 0.2s var(--ease); }
+  .group[open] > .group-title::before { rotate: 90deg; }
+  .group-title:hover { color: var(--text); }
 </style>

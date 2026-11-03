@@ -53,6 +53,8 @@ const de: Catalog = {
       shot: 'Bildschirm {n} von {name}',
       more: 'Alle {n} zeigen',
       less: 'Weniger zeigen',
+      openSource: 'Open Source',
+      source: 'Quellcode',
       kinds: {
         app: 'Apps für Menschen',
         tool: 'Werkzeuge für Entwickler',
@@ -784,6 +786,31 @@ const de: Catalog = {
               'Belegte Zeiten im Google Kalender sperren Buchungen, und ein Feed zeigt jede Buchung.',
             ],
             ['Kundengalerien', 'Ein privater Link mit Probefotos unter Wasserzeichen, danach alle Originale als ZIP.'],
+          ],
+        },
+      ],
+    },
+    aspirationstyle: {
+      tagline: 'Portfolio- und Auftragsseite für eine Innenarchitektin.',
+      lede: 'Die Seite von Maria Shilova, Innenarchitektin. Besucher sehen ihre Interieurs und bestellen ein Design, und Maria pflegt die Galerien und zeichnet Interieurs mit KI in ihrem eigenen Admin-Bereich.',
+      links: ['aspirationstyle.ru'],
+      groups: [
+        {
+          features: [
+            ['Portfolio', 'Galerien mit Interieurs, Objekten, Materialien und Dekor, mit Filter und Vollbildansicht.'],
+            [
+              'Design bestellen',
+              'Ein Formular auf der Startseite, in jeder Galerie und unter Kontakt schickt die Anfrage per E-Mail an Maria.',
+            ],
+            ['Admin', 'Maria meldet sich mit einem Code aus einer E-Mail an und fügt Galerien, Fotos und Texte hinzu.'],
+            [
+              'Schriften',
+              'Sie wählt die Schrift für Überschriften und Text aus 10 freien Schriften mit Kyrillisch oder lädt eine eigene hoch.',
+            ],
+            [
+              'KI-Generator',
+              'Zeichnet ein Interieur aus einer Anfrage auf Russisch, einem Stil und einem Foto des Raums.',
+            ],
           ],
         },
       ],

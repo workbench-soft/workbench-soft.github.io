@@ -53,6 +53,8 @@ const es: Catalog = {
       shot: 'Pantalla {n} de {name}',
       more: 'Ver los {n}',
       less: 'Ver menos',
+      openSource: 'Código abierto',
+      source: 'Código fuente',
       kinds: {
         app: 'Apps para personas',
         tool: 'Herramientas para desarrolladores',
@@ -765,6 +767,31 @@ const es: Catalog = {
             [
               'Galerías de clientes',
               'Un enlace privado con pruebas con marca de agua y luego todos los originales en un ZIP.',
+            ],
+          ],
+        },
+      ],
+    },
+    aspirationstyle: {
+      tagline: 'Sitio de portafolio y pedidos para una diseñadora de interiores.',
+      lede: 'El sitio de Maria Shilova, diseñadora de interiores. Los visitantes ven sus interiores y piden un diseño, y Maria gestiona las galerías y dibuja interiores con IA en su propio panel.',
+      links: ['aspirationstyle.ru'],
+      groups: [
+        {
+          features: [
+            [
+              'Portafolio',
+              'Galerías de interiores, objetos, materiales y decoración, con filtro y vista a pantalla completa.',
+            ],
+            [
+              'Pedir un diseño',
+              'Un formulario en la portada, cada galería y Contacto envía la solicitud a Maria por correo.',
+            ],
+            ['Panel', 'Maria entra con un código que recibe por correo y añade galerías, fotos y textos.'],
+            ['Fuentes', 'Elige la fuente de títulos y de texto entre 10 fuentes libres con cirílico, o sube la suya.'],
+            [
+              'Generador con IA',
+              'Dibuja un interior a partir de una petición en ruso, un estilo y una foto de la habitación.',
             ],
           ],
         },

@@ -53,6 +53,8 @@ const nb: Catalog = {
       shot: 'Skjerm {n} av {name}',
       more: 'Vis alle {n}',
       less: 'Vis færre',
+      openSource: 'Åpen kildekode',
+      source: 'Kildekode',
       kinds: {
         app: 'Apper for folk',
         tool: 'Verktøy for utviklere',
@@ -703,6 +705,28 @@ const nb: Catalog = {
             ],
             ['Kalendersynk', 'Opptatte tider i Google Kalender stenger booking, og en feed viser hver booking.'],
             ['Kundegallerier', 'En privat lenke med prøvebilder med vannmerke, deretter alle originalene som ZIP.'],
+          ],
+        },
+      ],
+    },
+    aspirationstyle: {
+      tagline: 'Portefølje- og bestillingsside for en interiørdesigner.',
+      lede: 'Siden til Maria Shilova, interiørdesigner. Besøkende ser interiørene hennes og bestiller et design, og Maria styrer galleriene og tegner interiører med KI i sin egen admin.',
+      links: ['aspirationstyle.ru'],
+      groups: [
+        {
+          features: [
+            ['Portefølje', 'Gallerier med interiør, objekter, materialer og dekor, med filter og fullskjermvisning.'],
+            [
+              'Bestill et design',
+              'Et skjema på forsiden, i hvert galleri og under Kontakt sender forespørselen til Maria på e-post.',
+            ],
+            ['Admin', 'Maria logger inn med en kode fra en e-post og legger til gallerier, bilder og tekster.'],
+            [
+              'Skrifter',
+              'Hun velger skrift for overskrifter og tekst blant 10 gratis skrifter med kyrillisk, eller laster opp sin egen.',
+            ],
+            ['KI-generator', 'Tegner et interiør ut fra en forespørsel på russisk, en stil og et bilde av rommet.'],
           ],
         },
       ],

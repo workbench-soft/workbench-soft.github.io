@@ -52,6 +52,8 @@ export const en = {
     shot: 'Screen {n} of {name}',
     more: 'Show all {n}',
     less: 'Show fewer',
+    openSource: 'Open source',
+    source: 'Source code',
     kinds: {
       app: 'Apps for people',
       tool: 'Tools for developers',
