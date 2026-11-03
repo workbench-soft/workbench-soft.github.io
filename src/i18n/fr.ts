@@ -594,6 +594,10 @@ const fr: Catalog = {
               'Quelle durée de leasing coûte le moins',
               'La même voiture sur 1 à 5 ans, la durée la moins chère marquée.',
             ],
+            [
+              'Si vous quittez votre emploi',
+              'Une date de départ donne le montant de rachat et quatre façons de sortir du leasing, chacune avec ce que vous payez et la perte.',
+            ],
             ['Langue', 'Le calculateur en 9 langues, les montants en dollars australiens.'],
             ['Publicité', "Des blocs AdSense sur le site et une bannière AdMob dans l'app Android."],
             [

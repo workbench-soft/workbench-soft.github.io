@@ -575,6 +575,10 @@ const es: Catalog = {
             ['Tema de color', 'Auto, claro u oscuro.'],
             ['Quitar anuncios', 'Una compra única en la app de Android.'],
             ['Qué plazo de leasing cuesta menos', 'El mismo coche de 1 a 5 años, con el plazo más barato marcado.'],
+            [
+              'Si deja su trabajo',
+              'Una fecha de salida muestra el importe de cancelación y cuatro salidas del leasing, cada una con lo que paga de su bolsillo y la pérdida.',
+            ],
             ['Idioma', 'La calculadora en 9 idiomas, con importes en dólares australianos.'],
             ['Anuncios', 'Bloques de AdSense en la web y un banner de AdMob en la app Android.'],
             [

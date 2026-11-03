@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **Consdr** the card lists If you leave your job: the payout figure on a leave date and four ways out of the lease, in 9 languages.
+
 - **Lumiere Player** the card lists the music library, the music player and voice commands with Hey Lumi, in 9 languages.
 
 - **Tripforge** the Sites menu and the Tripforge card link to the web app at <https://tripforge.workbench-soft.com>.

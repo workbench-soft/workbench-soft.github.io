@@ -811,6 +811,10 @@ export const projects: Project[] = [
             name: 'Which lease term costs least',
             text: 'The same car over 1 to 5 years, with the cheapest term marked.',
           },
+          {
+            name: 'If you leave your job',
+            text: 'Pick a leave date to see the payout figure and four ways out of the lease, each with the cash from your pocket and the loss.',
+          },
           { name: 'Language', text: 'The calculator in 9 languages, with money in Australian dollars.' },
           { name: 'Ads', text: 'AdSense blocks on the site and an AdMob banner in the Android app.' },
           {

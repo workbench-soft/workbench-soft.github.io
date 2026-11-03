@@ -518,6 +518,10 @@ const nb: Catalog = {
             ['Fargetema', 'Auto, lyst eller mørkt.'],
             ['Fjern annonser', 'Et engangskjøp i Android-appen.'],
             ['Hvilken leieperiode koster minst', 'Samme bil over 1 til 5 år, med den billigste perioden merket.'],
+            [
+              'Hvis du slutter i jobben',
+              'En sluttdato viser innfrielsesbeløpet og fire veier ut av leasingen, hver med beløpet fra egen lomme og tapet.',
+            ],
             ['Språk', 'Kalkulatoren på 9 språk, med beløp i australske dollar.'],
             ['Reklame', 'AdSense-blokker på nettstedet og et AdMob-banner i Android-appen.'],
             ['Ingen reklame på utviklerens telefon', 'Hvert bygg skjuler banneret på en telefon med utviklernøkkelen.'],
