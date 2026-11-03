@@ -937,7 +937,7 @@ const nb: Catalog = {
             ['QR-koder', 'En kode i forhåndsvisningen får klammer og en knapp for å åpne den.'],
             ['Klokke', 'Klokkeslettet øverst til venstre, der telefonens klokke pleier å stå, unna knappene.'],
             ['Galleri', 'Bildene i rutenett og fullskjerm, med zoom ved klyp og dobbelttrykk.'],
-            ['Reklame', 'Ett banner under gallerirutenettet. Kameraet og visningen er uten reklame.'],
+            ['Reklame', 'Ett banner under gallerirutenettet. Et engangskjøp fjerner det.'],
             ['Rett opp og roter', 'EDIT i visningen retter opp og snur et bilde.'],
             ['Hurtigstart', 'To trykk på av/på-knappen åpner Shuttrix, også over låseskjermen.'],
             ['Språk', 'På 9 språk, etter telefonen eller nettleseren.'],

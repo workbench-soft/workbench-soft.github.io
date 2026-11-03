@@ -323,7 +323,7 @@ export const projects: Project[] = [
             text: 'The time in the top left corner, where the phone clock sits, out of the controls’ way.',
           },
           { name: 'Gallery', text: 'The shots in a grid and full screen, with pinch and double tap zoom.' },
-          { name: 'Ads', text: 'One banner under the gallery grid. The camera and the viewer stay clear.' },
+          { name: 'Ads', text: 'One banner under the gallery grid. A one time purchase removes it.' },
           { name: 'Straighten and rotate', text: 'EDIT in the viewer levels and turns a photo.' },
           { name: 'Quick start', text: 'A double press of the power button opens Shuttrix, over the lock screen too.' },
           { name: 'Languages', text: 'The app in 9 languages, following the phone or browser.' },

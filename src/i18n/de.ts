@@ -1039,7 +1039,7 @@ const de: Catalog = {
             ['QR-Codes', 'Ein Code in der Vorschau bekommt Klammern und einen Knopf zum Öffnen.'],
             ['Uhr', 'Die Uhrzeit oben links, wo sonst die Uhr des Telefons steht, abseits der Tasten.'],
             ['Galerie', 'Die Aufnahmen im Raster und im Vollbild, mit Zoom per Zwicken und Doppeltipp.'],
-            ['Werbung', 'Ein Banner unter dem Galerieraster. Kamera und Ansicht bleiben frei.'],
+            ['Werbung', 'Ein Banner unter dem Galerieraster. Ein einmaliger Kauf entfernt es.'],
             ['Begradigen und drehen', 'EDIT in der Ansicht richtet ein Foto aus und dreht es.'],
             ['Schnellstart', 'Zweimal die Ein-Taste öffnet Shuttrix, auch über dem Sperrbildschirm.'],
             ['Sprachen', 'In 9 Sprachen, nach der Sprache von Telefon oder Browser.'],

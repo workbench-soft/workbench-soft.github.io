@@ -1021,7 +1021,7 @@ const es: Catalog = {
               'La hora arriba a la izquierda, donde suele estar el reloj del teléfono, lejos de los controles.',
             ],
             ['Galería', 'Las tomas en cuadrícula y a pantalla completa, con zoom al pellizcar y doble toque.'],
-            ['Anuncios', 'Un banner bajo la cuadrícula de la galería. La cámara y el visor quedan libres.'],
+            ['Anuncios', 'Un banner bajo la cuadrícula de la galería. Una compra única lo quita.'],
             ['Enderezar y girar', 'EDIT en el visor nivela y gira una foto.'],
             [
               'Inicio rápido',

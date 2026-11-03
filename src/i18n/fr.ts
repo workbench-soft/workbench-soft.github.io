@@ -1076,7 +1076,7 @@ const fr: Catalog = {
             ['Codes QR', "Un code dans l'aperçu reçoit un cadre et une pastille pour l'ouvrir."],
             ['Horloge', 'L’heure en haut à gauche, à la place de l’horloge du téléphone, loin des commandes.'],
             ['Galerie', 'Les prises en grille et en plein écran, avec zoom au pincement et double appui.'],
-            ['Publicités', 'Une bannière sous la grille de la galerie. La caméra et la visionneuse restent libres.'],
+            ['Publicités', 'Une bannière sous la grille de la galerie. Un achat unique la retire.'],
             ['Redresser et pivoter', 'EDIT dans la visionneuse redresse et tourne une photo.'],
             ['Démarrage rapide', "Deux appuis sur le bouton marche ouvrent Shuttrix, même sur l'écran verrouillé."],
             ['Langues', 'En 9 langues, selon le téléphone ou le navigateur.'],
