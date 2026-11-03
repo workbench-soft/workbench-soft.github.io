@@ -20,7 +20,7 @@ Some astrologers compare the Sun to the person, the Moon to the inner life and t
 
 ## The rising sign and the houses
 
-The Ascendant marks the start of the first house. From there the twelve houses go round the chart. So the rising sign decides which signs rule which areas of life. With Aries rising, Libra sits on the seventh house of partners. With Cancer rising, Capricorn sits on the seventh house. That gives each rising sign its own pattern.
+In the whole sign houses Sky Altar uses, the rising sign becomes the first house. The next sign is the second house, and so on round the chart. So the rising sign decides which signs rule which areas of life. With Aries rising, Libra sits on the seventh house of partners. With Cancer rising, Capricorn sits on the seventh house. That gives each rising sign its own pattern.
 
 The planet that rules the rising sign is called the chart ruler. With Leo rising, the Sun is the chart ruler. With Gemini rising, Mercury is. Astrologers look closely at the sign and house of the chart ruler.
 

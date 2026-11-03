@@ -94,15 +94,15 @@ const data = { tips: t.tips, focus: signs.map((s) => t.focus[s]), names: signs.m
 
 <style>
   .now { display: flex; flex-wrap: wrap; gap: 10px 24px; font-size: 20px; font-weight: 600; }
-  .now .sun { color: #ffd27a; }
+  .now .sun { color: #8fe3ff; }
   .now .moon { color: #dfe6ff; }
   .pick { display: flex; align-items: center; gap: 12px; margin: 18px 0; color: var(--soft); }
   .pick select { font: inherit; padding: 8px 12px; border-radius: 10px; background: var(--bg-3); color: var(--text); border: 1px solid var(--line-2); }
   .legend { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; font-size: 14px !important; }
   .sw { display: inline-block; width: 14px; height: 14px; border-radius: 4px; margin-left: 8px; }
-  .sw.sun { background: #ffd27a; }
+  .sw.sun { background: #8fe3ff; }
   .sw.moon { background: #dfe6ff; }
-  .sw.yours { background: var(--violet); }
+  .sw.yours { background: #ff8fb8; }
   .signs { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; }
   .card { position: relative; padding: 14px 16px; border-radius: 14px; border: 1px solid var(--line); background: var(--bg-2); overflow: hidden; }
   .card img { position: absolute; right: -24px; top: -16px; width: 120px; height: 120px; opacity: 0.35; mix-blend-mode: screen; }
@@ -110,9 +110,9 @@ const data = { tips: t.tips, focus: signs.map((s) => t.focus[s]), names: signs.m
   .card h3 a { color: var(--text) !important; text-decoration: none; }
   .card p { position: relative; margin: 0; font-size: 15px !important; }
   .card.is-moon { border-color: #dfe6ff; box-shadow: 0 0 0 1px #dfe6ff inset; }
-  .card.is-sun { border-color: #ffd27a; box-shadow: 0 0 24px rgb(255 210 122 / 0.35), 0 0 0 1px #ffd27a inset; }
+  .card.is-sun { border-color: #8fe3ff; box-shadow: 0 0 24px rgb(143 227 255 / 0.4), 0 0 0 1px #8fe3ff inset; }
   .card.is-sun img, .card.is-moon img, .card.is-yours img { opacity: 0.8; }
-  .card.is-yours { grid-column: 1 / -1; border: 2px solid var(--violet); background: linear-gradient(135deg, rgb(169 139 255 / 0.22), var(--bg-2)); }
+  .card.is-yours { grid-column: 1 / -1; border: 2px solid #ff8fb8; background: linear-gradient(135deg, rgb(255 143 184 / 0.2), var(--bg-2)); }
   .card.is-yours img { width: 180px; height: 180px; }
   .card.is-yours p { font-size: 18px !important; color: var(--text) !important; max-width: 70%; }
 </style>
