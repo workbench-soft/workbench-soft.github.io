@@ -689,6 +689,18 @@ export const projects: Project[] = [
             name: 'Look',
             text: 'A calm dark look in the style of Google TV, a white focus pill, and a player that fits a phone.',
           },
+          {
+            name: 'Music library',
+            text: 'Phone, USB and NAS folders in one music library, scanned in the background.',
+          },
+          {
+            name: 'Music player',
+            text: 'Artists, albums, songs and folders, a queue, shuffle and repeat, with the phone locked.',
+          },
+          {
+            name: 'Voice commands',
+            text: 'Say Hey Lumi, play and a song, in English or Russian, with the phone locked.',
+          },
         ],
       },
     ],

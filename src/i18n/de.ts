@@ -1206,6 +1206,12 @@ const de: Catalog = {
               'Aussehen',
               'Ein ruhiges, dunkles Design im Stil von Google TV, ein weißer Fokus und ein Player, der aufs Telefon passt.',
             ],
+            ['Musikbibliothek', 'Ordner auf Handy, USB und NAS in einer Mediathek, im Hintergrund durchsucht.'],
+            [
+              'Musikplayer',
+              'Künstler, Alben, Titel und Ordner, Warteschlange, Zufall und Wiederholen, auch bei gesperrtem Handy.',
+            ],
+            ['Sprachbefehle', 'Sag Hey Lumi, play und einen Titel, auf Englisch oder Russisch, bei gesperrtem Handy.'],
           ],
         },
       ],
