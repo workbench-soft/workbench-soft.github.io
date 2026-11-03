@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Sky Altar privacy policy** at <https://workbench-soft.com/skyaltar/privacy-policy>: the camera picture and the position stay on the phone, the AdMob ads with the Google partner sites link, the consent form and Remove ads.
 - **Tripforge** an Ads line in the features, in 9 languages: Android ads until a one time purchase removes them, none beside the booking links.
 - **Shuttrix privacy policy** a Remove ads section: Google Play takes the payment, and the app asks Google Play whether the account owns the purchase.
 - **ServoHop** a Site text and guides line in the features, in 9 languages: the home page explains the map in words, and guides cover fuel pricing, each state scheme, the grades and EV charging.

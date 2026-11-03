@@ -294,3 +294,12 @@ The studio needed one public site for its apps and their installers.
 - **Data** `src/components/Nav.astro` takes the project sites from `projectsIn()`: a first link that starts with `/` or `https://`, minus GitHub, the VS Code Marketplace and the games, which keep their own menu. Client sites sit in `clientSites` of `src/data/studio.ts`, since a client's site is the client's brand. Farnear gets its `farnear.workbench-soft.com` link.
 - **Alina** Alina Photography joins the group at `alina-photo.memories-demo-webdav.workers.dev`, its Worker address until she has her own domain.
 - **Docs** `docs/features.md`, `CHANGELOG.md`, `TODO.md`.
+
+#### 2026-11-03 Sky Altar privacy policy
+
+- **Why** Sky Altar now shows real AdMob ads. The AdMob GDPR message and the Play listing need a privacy policy URL.
+- **What the visitor gets** <https://workbench-soft.com/skyaltar/privacy-policy>: the camera picture, the position and the settings stay on the phone, the AdMob banner and the full screen ad, the cookies and IDs Google uses with the partner sites link, the consent form in the EEA, the UK and Switzerland, and "Ad privacy choices" in Settings.
+- **Changes**
+  - **`skyaltar/`** a Jekyll folder built like `shuttrix/`: `_config.yml`, the plain layout, the analytics include and `privacy-policy.md`.
+  - **`.github/workflows/pages.yml`** a Jekyll step builds it into `_site/skyaltar`, next to the Astro project page at `/skyaltar/`.
+  - **Docs** `README.md`, `docs/architecture.md`, `CHANGELOG.md`.
