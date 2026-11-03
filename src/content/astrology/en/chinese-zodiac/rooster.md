@@ -1,5 +1,5 @@
 ---
-title: "The Rooster in the Chinese zodiac: honest, proud and hard working"
+title: 'The Rooster in the Chinese zodiac: honest, proud and hard working'
 description: "Rooster years, traits, strengths, love and work style, the Rooster's place in the Great Race, the five kinds of Rooster, and its best matches."
 ---
 

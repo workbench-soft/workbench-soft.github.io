@@ -1,13 +1,13 @@
 ---
-title: "Venus in astrology: love, beauty and values"
-description: "What Venus means in a birth chart, the signs it rules, how Venus reads in each element and house, and the bright morning and evening star."
+title: 'Venus in astrology: love, beauty and values'
+description: 'What Venus means in a birth chart, the signs it rules, how Venus reads in each element and house, and the bright morning and evening star.'
 ---
 
 ## Venus in short
 
 - **Rules** Taurus and Libra.
 - **Symbol** a circle above a small cross: ♀.
-- **Cycle** about one year around the zodiac, never more than 47 degrees from the Sun.
+- **Cycle** about one year around the zodiac, at most 47 degrees from the Sun.
 - **Key words** love, attraction, beauty, pleasure, harmony, money and values.
 
 ## What Venus stands for

@@ -1,5 +1,5 @@
 ---
-title: "The Sun in astrology: identity, vitality and purpose"
+title: 'The Sun in astrology: identity, vitality and purpose'
 description: "What the Sun means in a birth chart, the sign it rules, how it reads in each element and house, and the real Sun's path across the zodiac."
 ---
 

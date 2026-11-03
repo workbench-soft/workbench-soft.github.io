@@ -1,5 +1,5 @@
 ---
-title: "The Pig in the Chinese zodiac: generous, warm and sincere"
+title: 'The Pig in the Chinese zodiac: generous, warm and sincere'
 description: "Pig years, traits, strengths, love and work style, the Pig's place in the Great Race, the five kinds of Pig, and its best matches."
 ---
 
@@ -23,7 +23,7 @@ In Chinese culture the pig stands for wealth, comfort and plenty. A family with 
 
 People born in a Pig year are often described as generous, kind and sincere. They enjoy good food, good company and the pleasures of life. Many are honest, trusting and slow to judge others. They work hard and like to share what they earn.
 
-Pigs are peaceful. They avoid conflict and forgive easily. They are often the friend who brings snacks, remembers birthdays and makes everyone feel welcome.
+Pigs are peaceful. They avoid conflict and forgive easily. They are often the friend who brings snacks, remembers birthdays and makes each guest feel welcome.
 
 ## Strengths
 

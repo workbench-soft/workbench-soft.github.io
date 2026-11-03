@@ -1,6 +1,6 @@
 ---
-title: "What a natal chart is and how to read one"
-description: "A birth chart maps the sky at the moment you were born. Learn its parts: signs, planets, houses and aspects, and the order to read them in."
+title: 'What a natal chart is and how to read one'
+description: 'A birth chart maps the sky at the moment you were born. Learn its parts: signs, planets, houses and aspects, and the order to read them in.'
 ---
 
 ## A map of one moment in the sky

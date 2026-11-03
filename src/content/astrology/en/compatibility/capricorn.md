@@ -1,6 +1,6 @@
 ---
-title: "Capricorn compatibility: how the Sea Goat gets on with every sign"
-description: "Capricorn in love and friendship with each of the 12 signs, grouped by element, with the strengths and the lessons of each pairing."
+title: 'Capricorn compatibility: how the Sea Goat gets on with every sign'
+description: 'Capricorn in love and friendship with each of the 12 signs, grouped by element, with the strengths and the lessons of each pairing.'
 ---
 
 ## What Capricorn looks for

@@ -1,6 +1,6 @@
 ---
-title: "Gemini compatibility: how the Twins get on with every sign"
-description: "Gemini in love and friendship with each of the 12 signs, grouped by element, with the strengths and the lessons of each pairing."
+title: 'Gemini compatibility: how the Twins get on with every sign'
+description: 'Gemini in love and friendship with each of the 12 signs, grouped by element, with the strengths and the lessons of each pairing.'
 ---
 
 ## What Gemini looks for
@@ -35,7 +35,7 @@ Opposite signs and natural partners in curiosity. Gemini gathers facts, Sagittar
 
 ### Gemini and Taurus
 
-Gemini wants to try everything, Taurus wants to enjoy one thing slowly. The Bull can find the Twins scattered, and the Twins can find the Bull stubborn. With humour, Gemini gains a calm home and Taurus gains a lively spark.
+Gemini wants to try a bit of each thing, Taurus wants to enjoy one thing slowly. The Bull can find the Twins scattered, and the Twins can find the Bull stubborn. With humour, Gemini gains a calm home and Taurus gains a lively spark.
 
 <a id="virgo"></a>
 
@@ -55,7 +55,7 @@ A careful match. Capricorn plans for the long term, Gemini lives in the moment. 
 
 ### Gemini and Gemini
 
-Two Geminis make a playful, talkative couple who rarely get bored. They understand each other's need for freedom and change. The risk is that nobody handles the boring jobs. A shared calendar can save this fun pairing.
+Two Geminis make a playful, talkative couple who rarely get bored. They understand each other's need for freedom and change. The risk is that the boring jobs pile up. A shared calendar can save this fun pairing.
 
 <a id="libra"></a>
 

@@ -1,6 +1,6 @@
 ---
-title: "Aquarius: the Water Bearer, the original air sign"
-description: "Aquarius traits, strengths, love and work style, the myth of Ganymede, and what Aquarius means as a Sun, Moon or rising sign."
+title: 'Aquarius: the Water Bearer, the original air sign'
+description: 'Aquarius traits, strengths, love and work style, the myth of Ganymede, and what Aquarius means as a Sun, Moon or rising sign.'
 ---
 
 ## Aquarius at a glance
@@ -14,7 +14,7 @@ description: "Aquarius traits, strengths, love and work style, the myth of Ganym
 
 ## The character of Aquarius
 
-Aquarius falls in the depth of the northern winter, when people gather indoors and think about the year ahead. Astrologers read the sign as the mind of the group: friendship, ideas, progress and the future. Despite its name, Aquarius is an air sign. The water it pours is often read as knowledge shared with everyone.
+Aquarius falls in the depth of the northern winter, when people gather indoors and think about the year ahead. Astrologers read the sign as the mind of the group: friendship, ideas, progress and the future. Despite its name, Aquarius is an air sign. The water it pours is often read as knowledge shared with all people.
 
 People with strong Aquarius placements are often described as original, friendly and independent. They care about fairness and about society as a whole. They like new tech, odd hobbies and people who think differently. They can be warm to a crowd and still keep a little distance in private.
 

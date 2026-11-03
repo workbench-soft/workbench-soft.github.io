@@ -1,6 +1,6 @@
 ---
-title: "The mutable signs: Gemini, Virgo, Sagittarius and Pisces"
-description: "What the mutable modality means in astrology, why these four signs close each season, how they differ by element, and mutable energy in a chart."
+title: 'The mutable signs: Gemini, Virgo, Sagittarius and Pisces'
+description: 'What the mutable modality means in astrology, why these four signs close each season, how they differ by element, and mutable energy in a chart.'
 ---
 
 ## Mutable in short

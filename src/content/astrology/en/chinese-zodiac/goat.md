@@ -1,5 +1,5 @@
 ---
-title: "The Goat in the Chinese zodiac: gentle, creative and calm"
+title: 'The Goat in the Chinese zodiac: gentle, creative and calm'
 description: "Goat years, also called Sheep or Ram, traits, strengths, love and work style, the Goat's place in the Great Race, and its best matches."
 ---
 

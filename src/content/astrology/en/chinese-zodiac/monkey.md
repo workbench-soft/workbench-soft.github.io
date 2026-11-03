@@ -1,6 +1,6 @@
 ---
-title: "The Monkey in the Chinese zodiac: clever, playful and curious"
-description: "Monkey years, traits, strengths, love and work style, the Monkey King of legend, the five kinds of Monkey, and its best matches."
+title: 'The Monkey in the Chinese zodiac: clever, playful and curious'
+description: 'Monkey years, traits, strengths, love and work style, the Monkey King of legend, the five kinds of Monkey, and its best matches.'
 ---
 
 ## The Monkey at a glance

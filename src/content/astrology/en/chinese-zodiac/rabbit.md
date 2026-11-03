@@ -1,5 +1,5 @@
 ---
-title: "The Rabbit in the Chinese zodiac: gentle, elegant and kind"
+title: 'The Rabbit in the Chinese zodiac: gentle, elegant and kind'
 description: "Rabbit years, traits, strengths, love and work style, the Rabbit's place in the Great Race, the five kinds of Rabbit, and its best matches."
 ---
 

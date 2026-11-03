@@ -1,13 +1,13 @@
 ---
-title: "Mercury in astrology: mind, speech and learning"
-description: "What Mercury means in a birth chart, the signs it rules, Mercury retrograde explained calmly, and how Mercury reads in each element and house."
+title: 'Mercury in astrology: mind, speech and learning'
+description: 'What Mercury means in a birth chart, the signs it rules, Mercury retrograde explained calmly, and how Mercury reads in each element and house.'
 ---
 
 ## Mercury in short
 
 - **Rules** Gemini and Virgo.
 - **Symbol** a circle on a cross with two small horns: ☿.
-- **Cycle** about one year around the zodiac, never more than 28 degrees from the Sun.
+- **Cycle** about one year around the zodiac, at most 28 degrees from the Sun.
 - **Key words** thinking, talking, writing, learning, trade, travel.
 
 ## What Mercury stands for
@@ -39,7 +39,7 @@ Astrologers read these periods as a time to review, revise and reconnect. Popula
 
 ## The real Mercury in the sky
 
-Mercury is the hardest of the bright planets to see. It hangs low near the horizon just after sunset or before sunrise, and only for a few weeks at a time. Copernicus is said to have regretted that he never saw it. The Sky Altar app shows where Mercury sits even when the Sun's glare hides it.
+Mercury is the hardest of the bright planets to see. It hangs low near the horizon just after sunset or before sunrise, and only for a few weeks at a time. Copernicus is said to have regretted that he did not once see it. The Sky Altar app shows where Mercury sits even when the Sun's glare hides it.
 
 ## Myths of Mercury
 

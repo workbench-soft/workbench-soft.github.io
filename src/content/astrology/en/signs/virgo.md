@@ -1,6 +1,6 @@
 ---
-title: "Virgo: the Maiden, the careful earth sign"
-description: "Virgo traits, strengths, love and work style, the myth of Astraea and Demeter, and what Virgo means as a Sun, Moon or rising sign."
+title: 'Virgo: the Maiden, the careful earth sign'
+description: 'Virgo traits, strengths, love and work style, the myth of Astraea and Demeter, and what Virgo means as a Sun, Moon or rising sign.'
 ---
 
 ## Virgo at a glance

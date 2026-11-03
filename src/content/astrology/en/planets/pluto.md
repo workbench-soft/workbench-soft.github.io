@@ -1,6 +1,6 @@
 ---
-title: "Pluto in astrology: power, depth and transformation"
-description: "What Pluto means in a birth chart, why it rules Scorpio, the Pluto generations, how it reads in each house, and the dwarf planet at the edge of the solar system."
+title: 'Pluto in astrology: power, depth and transformation'
+description: 'What Pluto means in a birth chart, why it rules Scorpio, the Pluto generations, how it reads in each house, and the dwarf planet at the edge of the solar system.'
 ---
 
 ## Pluto in short

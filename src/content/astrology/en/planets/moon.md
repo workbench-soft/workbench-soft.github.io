@@ -1,6 +1,6 @@
 ---
-title: "The Moon in astrology: emotions, memory and home"
-description: "What the Moon means in a birth chart, the sign it rules, its phases, how it reads in each element and house, and where to see it in the sky."
+title: 'The Moon in astrology: emotions, memory and home'
+description: 'What the Moon means in a birth chart, the sign it rules, its phases, how it reads in each element and house, and where to see it in the sky.'
 ---
 
 ## The Moon in short

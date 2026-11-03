@@ -1,6 +1,6 @@
 ---
-title: "The earth signs: Taurus, Virgo and Capricorn"
-description: "What the earth element means in astrology, how Taurus, Virgo and Capricorn share and differ, earth in a chart, and how earth gets on with the other elements."
+title: 'The earth signs: Taurus, Virgo and Capricorn'
+description: 'What the earth element means in astrology, how Taurus, Virgo and Capricorn share and differ, earth in a chart, and how earth gets on with the other elements.'
 ---
 
 ## Earth in short

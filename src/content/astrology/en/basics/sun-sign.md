@@ -1,6 +1,6 @@
 ---
-title: "Your Sun sign: the core of the birth chart"
-description: "What the Sun sign means in astrology, how it is worked out, why the dates shift a little each year, and how it fits with the rest of a chart."
+title: 'Your Sun sign: the core of the birth chart'
+description: 'What the Sun sign means in astrology, how it is worked out, why the dates shift a little each year, and how it fits with the rest of a chart.'
 ---
 
 ## The sign most people know

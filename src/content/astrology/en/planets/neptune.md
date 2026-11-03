@@ -1,6 +1,6 @@
 ---
-title: "Neptune in astrology: dreams, intuition and compassion"
-description: "What Neptune means in a birth chart, why it rules Pisces, the Neptune generations, how it reads in each house, and the blue planet found by maths."
+title: 'Neptune in astrology: dreams, intuition and compassion'
+description: 'What Neptune means in a birth chart, why it rules Pisces, the Neptune generations, how it reads in each house, and the blue planet found by maths.'
 ---
 
 ## Neptune in short

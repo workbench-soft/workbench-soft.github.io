@@ -1,6 +1,6 @@
 ---
-title: "Cancer: the Crab, the caring water sign"
-description: "Cancer traits, strengths, love and work style, the crab of the Hercules myth, and what Cancer means as a Sun, Moon or rising sign."
+title: 'Cancer: the Crab, the caring water sign'
+description: 'Cancer traits, strengths, love and work style, the crab of the Hercules myth, and what Cancer means as a Sun, Moon or rising sign.'
 ---
 
 ## Cancer at a glance

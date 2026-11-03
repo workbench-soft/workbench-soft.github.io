@@ -1,5 +1,5 @@
 ---
-title: "The Dragon in the Chinese zodiac: confident, lucky and bold"
+title: 'The Dragon in the Chinese zodiac: confident, lucky and bold'
 description: "Dragon years, traits, strengths, love and work style, the Dragon's place in the Great Race, the five kinds of Dragon, and its best matches."
 ---
 
@@ -15,7 +15,7 @@ description: "Dragon years, traits, strengths, love and work style, the Dragon's
 
 ## The Dragon in the Great Race
 
-Everyone expected the Dragon, who could fly, to win. It arrived fifth. When the Jade Emperor asked why, the Dragon said it had stopped to make rain for a village whose crops were dying, and then blew a helpful breath to push the struggling Rabbit to shore. The Emperor was moved by its kindness.
+The other animals expected the Dragon, who could fly, to win. It arrived fifth. When the Jade Emperor asked why, the Dragon said it had stopped to make rain for a village whose crops were dying, and then blew a helpful breath to push the struggling Rabbit to shore. The Emperor was moved by its kindness.
 
 The Dragon is the only mythical animal in the cycle. In China it brings rain, rules rivers and seas and stands for power, luck and wisdom. For centuries it was the emblem of the emperor. Unlike the fire breathing dragons of European tales, the Chinese dragon is mostly a friendly force.
 

@@ -1,6 +1,6 @@
 ---
-title: "Leo compatibility: how the Lion gets on with every sign"
-description: "Leo in love and friendship with each of the 12 signs, grouped by element, with the strengths and the lessons of each pairing."
+title: 'Leo compatibility: how the Lion gets on with every sign'
+description: 'Leo in love and friendship with each of the 12 signs, grouped by element, with the strengths and the lessons of each pairing.'
 ---
 
 ## What Leo looks for

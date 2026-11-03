@@ -1,6 +1,6 @@
 ---
-title: "Jupiter in astrology: growth, wisdom and luck"
-description: "What Jupiter means in a birth chart, the signs it rules, the Jupiter return, how Jupiter reads in each element and house, and the giant planet in the sky."
+title: 'Jupiter in astrology: growth, wisdom and luck'
+description: 'What Jupiter means in a birth chart, the signs it rules, the Jupiter return, how Jupiter reads in each element and house, and the giant planet in the sky.'
 ---
 
 ## Jupiter in short

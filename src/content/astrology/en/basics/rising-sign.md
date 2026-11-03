@@ -1,6 +1,6 @@
 ---
-title: "Your rising sign: the Ascendant and first impressions"
-description: "What the rising sign or Ascendant means, why it needs an exact birth time, how it sets up the houses, and a short guide to each rising sign."
+title: 'Your rising sign: the Ascendant and first impressions'
+description: 'What the rising sign or Ascendant means, why it needs an exact birth time, how it sets up the houses, and a short guide to each rising sign.'
 ---
 
 ## The sign on the horizon

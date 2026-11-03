@@ -1,6 +1,6 @@
 ---
-title: "The square: tension that builds strength"
-description: "What a square is in astrology, the 90 degree angle, which signs it links, how it reads for different planets, and why astrologers value it."
+title: 'The square: tension that builds strength'
+description: 'What a square is in astrology, the 90 degree angle, which signs it links, how it reads for different planets, and why astrologers value it.'
 ---
 
 ## The square in short

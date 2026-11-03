@@ -1,6 +1,6 @@
 ---
-title: "The opposition: balance between two sides"
-description: "What an opposition is in astrology, the 180 degree angle, which signs face each other, how it reads for different planets, and the full Moon."
+title: 'The opposition: balance between two sides'
+description: 'What an opposition is in astrology, the 180 degree angle, which signs face each other, how it reads for different planets, and the full Moon.'
 ---
 
 ## The opposition in short

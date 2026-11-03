@@ -1,6 +1,6 @@
 ---
-title: "Aries compatibility: how the Ram gets on with every sign"
-description: "Aries in love and friendship with each of the 12 signs, grouped by element, with the strengths and the lessons of each pairing."
+title: 'Aries compatibility: how the Ram gets on with every sign'
+description: 'Aries in love and friendship with each of the 12 signs, grouped by element, with the strengths and the lessons of each pairing.'
 ---
 
 ## What Aries looks for

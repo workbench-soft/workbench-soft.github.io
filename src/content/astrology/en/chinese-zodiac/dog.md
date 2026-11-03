@@ -1,5 +1,5 @@
 ---
-title: "The Dog in the Chinese zodiac: loyal, fair and protective"
+title: 'The Dog in the Chinese zodiac: loyal, fair and protective'
 description: "Dog years, traits, strengths, love and work style, the Dog's place in the Great Race, the five kinds of Dog, and its best matches."
 ---
 
@@ -42,7 +42,7 @@ In love the Dog is faithful, caring and protective. It wants a partner it can tr
 
 ## The Dog at work
 
-Dogs do well in work that helps or protects others: law, policing, social work, teaching, medicine, nursing, charity and community roles. They are trusted team members who keep everyone on track.
+Dogs do well in work that helps or protects others: law, policing, social work, teaching, medicine, nursing, charity and community roles. They are trusted team members who keep the whole team on track.
 
 ## The five kinds of Dog
 

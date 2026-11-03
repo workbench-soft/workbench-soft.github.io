@@ -1,6 +1,6 @@
 ---
-title: "Libra: the Scales, the fair air sign"
-description: "Libra traits, strengths, love and work style, the scales of justice in myth, and what Libra means as a Sun, Moon or rising sign."
+title: 'Libra: the Scales, the fair air sign'
+description: 'Libra traits, strengths, love and work style, the scales of justice in myth, and what Libra means as a Sun, Moon or rising sign.'
 ---
 
 ## Libra at a glance

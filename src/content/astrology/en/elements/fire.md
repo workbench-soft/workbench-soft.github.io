@@ -1,6 +1,6 @@
 ---
-title: "The fire signs: Aries, Leo and Sagittarius"
-description: "What the fire element means in astrology, how Aries, Leo and Sagittarius share and differ, fire in a chart, and how fire gets on with the other elements."
+title: 'The fire signs: Aries, Leo and Sagittarius'
+description: 'What the fire element means in astrology, how Aries, Leo and Sagittarius share and differ, fire in a chart, and how fire gets on with the other elements.'
 ---
 
 ## Fire in short

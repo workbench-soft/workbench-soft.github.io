@@ -1,5 +1,5 @@
 ---
-title: "The Snake in the Chinese zodiac: wise, calm and intuitive"
+title: 'The Snake in the Chinese zodiac: wise, calm and intuitive'
 description: "Snake years, traits, strengths, love and work style, the Snake's place in the Great Race, the five kinds of Snake, and its best matches."
 ---
 

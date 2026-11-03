@@ -1,6 +1,6 @@
 ---
-title: "The sextile: friendly chances between planets"
-description: "What a sextile is in astrology, the 60 degree angle, which signs it links, how it reads for different planets, and how it differs from a trine."
+title: 'The sextile: friendly chances between planets'
+description: 'What a sextile is in astrology, the 60 degree angle, which signs it links, how it reads for different planets, and how it differs from a trine.'
 ---
 
 ## The sextile in short

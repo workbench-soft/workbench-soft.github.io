@@ -1,6 +1,6 @@
 ---
-title: "The Chinese zodiac: 12 animals, 5 elements and the lunar year"
-description: "How the Chinese zodiac works: the 12 animals and the Great Race, the five elements and the 60 year cycle, yin and yang, and how to find your animal."
+title: 'The Chinese zodiac: 12 animals, 5 elements and the lunar year'
+description: 'How the Chinese zodiac works: the 12 animals and the Great Race, the five elements and the 60 year cycle, yin and yang, and how to find your animal.'
 ---
 
 ## A calendar of animals

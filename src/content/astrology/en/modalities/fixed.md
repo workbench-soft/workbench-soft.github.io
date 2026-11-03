@@ -1,6 +1,6 @@
 ---
-title: "The fixed signs: Taurus, Leo, Scorpio and Aquarius"
-description: "What the fixed modality means in astrology, why these four signs sit in the middle of each season, how they differ by element, and fixed energy in a chart."
+title: 'The fixed signs: Taurus, Leo, Scorpio and Aquarius'
+description: 'What the fixed modality means in astrology, why these four signs sit in the middle of each season, how they differ by element, and fixed energy in a chart.'
 ---
 
 ## Fixed in short

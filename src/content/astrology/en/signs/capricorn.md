@@ -1,6 +1,6 @@
 ---
-title: "Capricorn: the Sea Goat, the patient earth sign"
-description: "Capricorn traits, strengths, love and work style, the myth of the sea goat Pan, and what Capricorn means as a Sun, Moon or rising sign."
+title: 'Capricorn: the Sea Goat, the patient earth sign'
+description: 'Capricorn traits, strengths, love and work style, the myth of the sea goat Pan, and what Capricorn means as a Sun, Moon or rising sign.'
 ---
 
 ## Capricorn at a glance

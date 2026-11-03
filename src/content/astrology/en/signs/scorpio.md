@@ -1,6 +1,6 @@
 ---
-title: "Scorpio: the Scorpion, the intense water sign"
-description: "Scorpio traits, strengths, love and work style, the myth of Orion and the scorpion, and what Scorpio means as a Sun, Moon or rising sign."
+title: 'Scorpio: the Scorpion, the intense water sign'
+description: 'Scorpio traits, strengths, love and work style, the myth of Orion and the scorpion, and what Scorpio means as a Sun, Moon or rising sign.'
 ---
 
 ## Scorpio at a glance

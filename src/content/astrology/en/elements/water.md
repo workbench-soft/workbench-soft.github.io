@@ -1,6 +1,6 @@
 ---
-title: "The water signs: Cancer, Scorpio and Pisces"
-description: "What the water element means in astrology, how Cancer, Scorpio and Pisces share and differ, water in a chart, and how water gets on with the other elements."
+title: 'The water signs: Cancer, Scorpio and Pisces'
+description: 'What the water element means in astrology, how Cancer, Scorpio and Pisces share and differ, water in a chart, and how water gets on with the other elements.'
 ---
 
 ## Water in short
@@ -14,7 +14,7 @@ description: "What the water element means in astrology, how Cancer, Scorpio and
 
 Astrologers took the four elements from Greek philosophy and gave each sign one in a repeating order: fire, earth, air, water. Water comes fourth, at Cancer, and closes each cycle of four. The three water signs sit 120 degrees apart and form a triangle.
 
-All three water signs are creatures that live in or near water: the Crab, the Scorpion, which old sources sometimes linked with the marsh, and the Fishes. Astrologers read water as the element of everything that flows below the surface.
+All three water signs are creatures that live in or near water: the Crab, the Scorpion, which old sources sometimes linked with the marsh, and the Fishes. Astrologers read water as the element of all that flows below the surface.
 
 ## What water stands for
 

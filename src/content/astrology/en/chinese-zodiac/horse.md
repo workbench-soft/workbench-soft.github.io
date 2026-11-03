@@ -1,5 +1,5 @@
 ---
-title: "The Horse in the Chinese zodiac: free, lively and warm"
+title: 'The Horse in the Chinese zodiac: free, lively and warm'
 description: "Horse years, including the Fire Horse of 2026, traits, strengths, love and work style, the Horse's place in the Great Race, and its best matches."
 ---
 
@@ -23,7 +23,7 @@ In China the horse stands for speed, freedom, travel and success. A popular wish
 
 People born in a Horse year are often described as energetic, cheerful and independent. They love movement, travel and new experiences. Many are popular, warm and quick to laugh. They speak their minds and like to be on the go.
 
-Horses value freedom above almost everything. They work hard when a task excites them and dislike being tied down by dull routine or strict rules.
+Horses value freedom above almost all else. They work hard when a task excites them and dislike being tied down by dull routine or strict rules.
 
 ## Strengths
 

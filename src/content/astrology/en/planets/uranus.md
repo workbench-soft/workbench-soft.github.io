@@ -1,6 +1,6 @@
 ---
-title: "Uranus in astrology: change, freedom and surprise"
-description: "What Uranus means in a birth chart, why it rules Aquarius, the Uranus generations, how it reads in each house, and the sideways planet in the sky."
+title: 'Uranus in astrology: change, freedom and surprise'
+description: 'What Uranus means in a birth chart, why it rules Aquarius, the Uranus generations, how it reads in each house, and the sideways planet in the sky.'
 ---
 
 ## Uranus in short

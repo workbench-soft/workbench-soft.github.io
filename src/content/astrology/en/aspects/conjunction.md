@@ -1,6 +1,6 @@
 ---
-title: "The conjunction: when two planets join forces"
-description: "What a conjunction is in astrology, the orb astrologers allow, how it reads for each pair of planets, and where to see conjunctions in the real sky."
+title: 'The conjunction: when two planets join forces'
+description: 'What a conjunction is in astrology, the orb astrologers allow, how it reads for each pair of planets, and where to see conjunctions in the real sky.'
 ---
 
 ## The conjunction in short

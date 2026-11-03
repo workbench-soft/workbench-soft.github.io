@@ -1,6 +1,6 @@
 ---
-title: "The air signs: Gemini, Libra and Aquarius"
-description: "What the air element means in astrology, how Gemini, Libra and Aquarius share and differ, air in a chart, and how air gets on with the other elements."
+title: 'The air signs: Gemini, Libra and Aquarius'
+description: 'What the air element means in astrology, how Gemini, Libra and Aquarius share and differ, air in a chart, and how air gets on with the other elements.'
 ---
 
 ## Air in short

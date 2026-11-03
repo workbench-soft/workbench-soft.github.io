@@ -1,6 +1,6 @@
 ---
-title: "Libra compatibility: how the Scales get on with every sign"
-description: "Libra in love and friendship with each of the 12 signs, grouped by element, with the strengths and the lessons of each pairing."
+title: 'Libra compatibility: how the Scales get on with every sign'
+description: 'Libra in love and friendship with each of the 12 signs, grouped by element, with the strengths and the lessons of each pairing.'
 ---
 
 ## What Libra looks for

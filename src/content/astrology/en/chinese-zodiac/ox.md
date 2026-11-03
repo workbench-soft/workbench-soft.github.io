@@ -1,5 +1,5 @@
 ---
-title: "The Ox in the Chinese zodiac: patient, strong and dependable"
+title: 'The Ox in the Chinese zodiac: patient, strong and dependable'
 description: "Ox years, traits, strengths, love and work style, the Ox's place in the Great Race, the five kinds of Ox, and its best matches."
 ---
 

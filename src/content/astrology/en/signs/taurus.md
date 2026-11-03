@@ -1,6 +1,6 @@
 ---
-title: "Taurus: the Bull, the steady earth sign"
-description: "Taurus traits, strengths, love and work style, the myth of Zeus as a white bull, and what Taurus means as a Sun, Moon or rising sign."
+title: 'Taurus: the Bull, the steady earth sign'
+description: 'Taurus traits, strengths, love and work style, the myth of Zeus as a white bull, and what Taurus means as a Sun, Moon or rising sign.'
 ---
 
 ## Taurus at a glance

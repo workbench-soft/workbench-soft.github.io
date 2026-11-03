@@ -1,6 +1,6 @@
 ---
-title: "The trine: natural harmony and gifts"
-description: "What a trine is in astrology, the 120 degree angle, which signs it links, how it reads for different planets, and the grand trine pattern."
+title: 'The trine: natural harmony and gifts'
+description: 'What a trine is in astrology, the 120 degree angle, which signs it links, how it reads for different planets, and the grand trine pattern.'
 ---
 
 ## The trine in short

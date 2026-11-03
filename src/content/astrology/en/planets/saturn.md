@@ -1,6 +1,6 @@
 ---
-title: "Saturn in astrology: time, structure and maturity"
-description: "What Saturn means in a birth chart, the signs it rules, the Saturn return around age 29, how Saturn reads in each element and house, and the ringed planet."
+title: 'Saturn in astrology: time, structure and maturity'
+description: 'What Saturn means in a birth chart, the signs it rules, the Saturn return around age 29, how Saturn reads in each element and house, and the ringed planet.'
 ---
 
 ## Saturn in short

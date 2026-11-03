@@ -1,6 +1,6 @@
 ---
-title: "Mars in astrology: drive, courage and desire"
-description: "What Mars means in a birth chart, the signs it rules, how Mars reads in each element and house, and the red planet in the real sky."
+title: 'Mars in astrology: drive, courage and desire'
+description: 'What Mars means in a birth chart, the signs it rules, how Mars reads in each element and house, and the red planet in the real sky.'
 ---
 
 ## Mars in short
@@ -41,7 +41,7 @@ Every two years or so, Mars appears to move backwards for about ten weeks. Earth
 
 ## The real Mars in the sky
 
-Mars shines with a clear orange red light, easy to tell apart from the white stars. At its closest it outshines everything except Venus, the Moon and Jupiter. Its colour comes from iron rich dust on its surface. Its two small moons are named Phobos and Deimos, fear and dread, after the sons of the war god. The Sky Altar app marks Mars over your camera wherever it is in the zodiac.
+Mars shines with a clear orange red light, easy to tell apart from the white stars. At its closest it outshines all but Venus, the Moon and Jupiter. Its colour comes from iron rich dust on its surface. Its two small moons are named Phobos and Deimos, fear and dread, after the sons of the war god. The Sky Altar app marks Mars over your camera wherever it is in the zodiac.
 
 ## Myths of Mars
 

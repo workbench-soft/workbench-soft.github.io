@@ -1,6 +1,6 @@
 ---
-title: "Your Moon sign: feelings, needs and comfort"
-description: "What the Moon sign means in astrology, why you need a birth time to be sure of it, and a short guide to the Moon in each of the 12 signs."
+title: 'Your Moon sign: feelings, needs and comfort'
+description: 'What the Moon sign means in astrology, why you need a birth time to be sure of it, and a short guide to the Moon in each of the 12 signs.'
 ---
 
 ## The inner side of the chart

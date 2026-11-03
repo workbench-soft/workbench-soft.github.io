@@ -1,6 +1,6 @@
 ---
-title: "Scorpio compatibility: how the Scorpion gets on with every sign"
-description: "Scorpio in love and friendship with each of the 12 signs, grouped by element, with the strengths and the lessons of each pairing."
+title: 'Scorpio compatibility: how the Scorpion gets on with every sign'
+description: 'Scorpio in love and friendship with each of the 12 signs, grouped by element, with the strengths and the lessons of each pairing.'
 ---
 
 ## What Scorpio looks for

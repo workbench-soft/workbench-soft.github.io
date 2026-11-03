@@ -1,6 +1,6 @@
 ---
-title: "Pisces compatibility: how the Fishes get on with every sign"
-description: "Pisces in love and friendship with each of the 12 signs, grouped by element, with the strengths and the lessons of each pairing."
+title: 'Pisces compatibility: how the Fishes get on with every sign'
+description: 'Pisces in love and friendship with each of the 12 signs, grouped by element, with the strengths and the lessons of each pairing.'
 ---
 
 ## What Pisces looks for
@@ -67,7 +67,7 @@ A romantic, artistic pair. Both love beauty and kindness. Libra brings grace, Pi
 
 ### Pisces and Aquarius
 
-Neighbours with ideals. Aquarius thinks about a better world, Pisces feels for everyone in it. They can share causes and creative work. Aquarius should show its warmth, and Pisces should share its needs clearly.
+Neighbours with ideals. Aquarius thinks about a better world, Pisces feels for the people in it. They can share causes and creative work. Aquarius should show its warmth, and Pisces should share its needs clearly.
 
 ## Pisces and the water signs
 

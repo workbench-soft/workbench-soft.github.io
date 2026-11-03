@@ -1,5 +1,5 @@
 ---
-title: "The Rat in the Chinese zodiac: clever, quick and resourceful"
+title: 'The Rat in the Chinese zodiac: clever, quick and resourceful'
 description: "Rat years, traits, strengths, love and work style, the Rat's place in the Great Race, the five kinds of Rat, and its best matches."
 ---
 

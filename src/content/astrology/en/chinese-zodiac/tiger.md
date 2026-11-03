@@ -1,5 +1,5 @@
 ---
-title: "The Tiger in the Chinese zodiac: brave, bold and generous"
+title: 'The Tiger in the Chinese zodiac: brave, bold and generous'
 description: "Tiger years, traits, strengths, love and work style, the Tiger's place in the Great Race, the five kinds of Tiger, and its best matches."
 ---
 

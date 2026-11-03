@@ -1,6 +1,6 @@
 ---
-title: "Leo: the Lion, the warm fire sign"
-description: "Leo traits, strengths, love and work style, the myth of the Nemean lion, and what Leo means as a Sun, Moon or rising sign."
+title: 'Leo: the Lion, the warm fire sign'
+description: 'Leo traits, strengths, love and work style, the myth of the Nemean lion, and what Leo means as a Sun, Moon or rising sign.'
 ---
 
 ## Leo at a glance

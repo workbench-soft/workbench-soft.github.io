@@ -1,6 +1,6 @@
 ---
-title: "Virgo compatibility: how the Maiden gets on with every sign"
-description: "Virgo in love and friendship with each of the 12 signs, grouped by element, with the strengths and the lessons of each pairing."
+title: 'Virgo compatibility: how the Maiden gets on with every sign'
+description: 'Virgo in love and friendship with each of the 12 signs, grouped by element, with the strengths and the lessons of each pairing.'
 ---
 
 ## What Virgo looks for

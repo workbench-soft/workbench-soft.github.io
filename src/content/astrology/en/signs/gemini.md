@@ -1,6 +1,6 @@
 ---
-title: "Gemini: the Twins, the curious air sign"
-description: "Gemini traits, strengths, love and work style, the myth of Castor and Pollux, and what Gemini means as a Sun, Moon or rising sign."
+title: 'Gemini: the Twins, the curious air sign'
+description: 'Gemini traits, strengths, love and work style, the myth of Castor and Pollux, and what Gemini means as a Sun, Moon or rising sign.'
 ---
 
 ## Gemini at a glance

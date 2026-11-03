@@ -1,6 +1,6 @@
 ---
-title: "The cardinal signs: Aries, Cancer, Libra and Capricorn"
-description: "What the cardinal modality means in astrology, why these four signs start the seasons, how they differ by element, and cardinal energy in a chart."
+title: 'The cardinal signs: Aries, Cancer, Libra and Capricorn'
+description: 'What the cardinal modality means in astrology, why these four signs start the seasons, how they differ by element, and cardinal energy in a chart.'
 ---
 
 ## Cardinal in short

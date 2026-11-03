@@ -1,6 +1,6 @@
 ---
-title: "Taurus compatibility: how the Bull gets on with every sign"
-description: "Taurus in love and friendship with each of the 12 signs, grouped by element, with the strengths and the lessons of each pairing."
+title: 'Taurus compatibility: how the Bull gets on with every sign'
+description: 'Taurus in love and friendship with each of the 12 signs, grouped by element, with the strengths and the lessons of each pairing.'
 ---
 
 ## What Taurus looks for

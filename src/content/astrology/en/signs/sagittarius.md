@@ -1,6 +1,6 @@
 ---
-title: "Sagittarius: the Archer, the free fire sign"
-description: "Sagittarius traits, strengths, love and work style, the myth of the wise centaur Chiron, and what Sagittarius means as a Sun, Moon or rising sign."
+title: 'Sagittarius: the Archer, the free fire sign'
+description: 'Sagittarius traits, strengths, love and work style, the myth of the wise centaur Chiron, and what Sagittarius means as a Sun, Moon or rising sign.'
 ---
 
 ## Sagittarius at a glance

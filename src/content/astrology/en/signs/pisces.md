@@ -1,6 +1,6 @@
 ---
-title: "Pisces: the Fishes, the dreamy water sign"
-description: "Pisces traits, strengths, love and work style, the myth of Aphrodite and Eros, and what Pisces means as a Sun, Moon or rising sign."
+title: 'Pisces: the Fishes, the dreamy water sign'
+description: 'Pisces traits, strengths, love and work style, the myth of Aphrodite and Eros, and what Pisces means as a Sun, Moon or rising sign.'
 ---
 
 ## Pisces at a glance
@@ -14,7 +14,7 @@ description: "Pisces traits, strengths, love and work style, the myth of Aphrodi
 
 ## The character of Pisces
 
-Pisces closes the zodiac year, just before the spring equinox. Winter melts into spring, and the boundaries between seasons blur. Astrologers read the last sign as the place where everything flows together: dreams, imagination, compassion and the sense that we are all connected.
+Pisces closes the zodiac year, just before the spring equinox. Winter melts into spring, and the boundaries between seasons blur. Astrologers read the last sign as the place where all things flow together: dreams, imagination, compassion and the sense that we are all connected.
 
 People with strong Pisces placements are often described as gentle, imaginative and kind. They feel other people's moods as if they were their own. Music, art, film, water and quiet places speak to them. Many have a rich inner world and a strong sense of something larger than themselves.
 
@@ -49,4 +49,4 @@ The constellation Pisces is faint and wide, shaped like a large V with a small r
 
 ## Pisces in your chart
 
-A Pisces Moon feels everything deeply and needs quiet time to recharge. A Pisces rising often looks soft, dreamy and kind. The twelfth house of rest and the unseen shares the Fishes' themes. Read more about [Neptune](../../planets/neptune/), the [twelfth house](../../houses/12/) and the [water element](../../elements/water/).
+A Pisces Moon feels deeply and needs quiet time to recharge. A Pisces rising often looks soft, dreamy and kind. The twelfth house of rest and the unseen shares the Fishes' themes. Read more about [Neptune](../../planets/neptune/), the [twelfth house](../../houses/12/) and the [water element](../../elements/water/).
