@@ -97,6 +97,8 @@ const t = ui(langOf(Astro.currentLocale));
   function go(it: Item) {
     dlg.close();
     if (it.el.closest("[hidden]")) dispatchEvent(new Event("show-all-projects"));
+    const group = it.el.closest<HTMLDetailsElement>("details.group");
+    if (group) group.open = true;
     if (it.el.closest("[data-clip]") && it.el.matches(".extra")) it.el.closest(".proj")!.querySelector<HTMLButtonElement>(".more")!.click();
     it.el.scrollIntoView({ behavior: still ? "auto" : "smooth", block: "center" });
     it.el.classList.remove("flash");

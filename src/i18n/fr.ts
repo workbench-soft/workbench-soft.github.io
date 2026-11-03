@@ -54,6 +54,8 @@ const fr: Catalog = {
       shot: 'Écran {n} de {name}',
       more: 'Tout afficher ({n})',
       less: 'Afficher moins',
+      openSource: 'Open source',
+      source: 'Code source',
       kinds: {
         app: 'Apps pour tous',
         tool: 'Outils pour développeurs',
@@ -806,6 +808,34 @@ const fr: Catalog = {
               'Les créneaux occupés de Google Agenda bloquent les réservations, et un flux montre chaque réservation.',
             ],
             ['Galeries clients', 'Un lien privé avec des épreuves filigranées, puis tous les originaux en un ZIP.'],
+          ],
+        },
+      ],
+    },
+    aspirationstyle: {
+      tagline: 'Site portfolio et de commande pour une architecte d’intérieur.',
+      lede: 'Le site de Maria Shilova, architecte d’intérieur. Les visiteurs parcourent ses intérieurs et commandent un projet, et Maria gère les galeries et dessine des intérieurs avec l’IA dans son propre espace admin.',
+      links: ['aspirationstyle.ru'],
+      groups: [
+        {
+          features: [
+            [
+              'Portfolio',
+              'Galeries d’intérieurs, d’objets, de matériaux et de décor, avec un filtre et une vue plein écran.',
+            ],
+            [
+              'Commander un projet',
+              'Un formulaire sur l’accueil, chaque galerie et Contacts envoie la demande à Maria par e-mail.',
+            ],
+            ['Admin', 'Maria se connecte avec un code reçu par e-mail et ajoute galeries, photos et textes.'],
+            [
+              'Polices',
+              'Elle choisit la police des titres et du texte parmi 10 polices libres avec le cyrillique, ou importe la sienne.',
+            ],
+            [
+              'Générateur IA',
+              'Dessine un intérieur à partir d’une demande en russe, d’un style et d’une photo de la pièce.',
+            ],
           ],
         },
       ],

@@ -22,11 +22,13 @@ Spec: [workbench-soft-site](../specs/workbench-soft-site.md).
 
 - **What it does** gives each project a panel: its icon, what it does, its screenshots, the platforms, the stack, links and each of its features.
 - **Where** the Projects link in the header. The index above the panels jumps to a project and shows its feature count.
-- **Groups** the panels sit in 4 groups: apps for people, tools for developers, internal studio tools such as Archon, and the archive. Chips show one group or all.
+- **Groups** the panels sit in 5 groups: apps for people, tools for developers, development for clients such as Aspiration Style, the site of Maria Shilova, internal studio tools such as Archon, and the archive. Chips show one group or all.
+- **Folding** a click on a group title folds or opens it. Internal studio tools starts folded, and a chip, an index link or a search pick opens the group of its project.
+- **Open source** a project with a public repo carries an Open source mark and a Source code link to that repo.
 - **Screenshots** a strip under the text scrolls sideways. A click opens the full image.
 - **Features** one line each, the name then the text, in two columns. The first 6 show, and Show all opens the rest.
 - **Source** each project lists the headings of its repo's `docs/features.md`, as a feature or a group title.
-- **Limits** links go to the public sites, the install pages and the releases page. The code repos are private. A project with no icon shows its code on a tile, and one with no screenshots shows none.
+- **Limits** links go to the public sites, the install pages and the releases page. The other code repos are private. A project with no icon shows its code on a tile, and one with no screenshots shows none.
 
 Spec: [workbench-soft-site](../specs/workbench-soft-site.md).
 

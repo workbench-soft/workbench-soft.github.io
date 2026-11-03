@@ -18,6 +18,8 @@ export interface Project {
   kind: Kind;
   /** The clone, and the folder in it, that holds docs/features.md and specs/. */
   repo?: string;
+  /** The public GitHub repo of an open source project. */
+  source?: string;
   /** OKLCH hue of the project's accent colour. */
   hue: number;
   code: string;
@@ -843,6 +845,7 @@ export const projects: Project[] = [
   {
     id: 'games',
     kind: 'app',
+    source: 'https://github.com/workbench-soft/workbench-soft.github.io/tree/main/apps/games',
     repo: 'workbench-soft.github.io/apps/games',
     hue: 130,
     code: 'GAM',
@@ -916,6 +919,7 @@ export const projects: Project[] = [
   {
     id: 'langflip',
     kind: 'app',
+    source: 'https://github.com/workbench-soft/langflip',
     repo: 'langflip',
     hue: 345,
     code: 'LFP',
@@ -973,6 +977,7 @@ export const projects: Project[] = [
   {
     id: 'media-organizer',
     kind: 'app',
+    source: 'https://github.com/workbench-soft/workbench-soft.github.io/tree/main/media-organizer',
     hue: 185,
     code: 'MOR',
     name: 'Media Organizer',
@@ -1007,6 +1012,7 @@ export const projects: Project[] = [
   {
     id: 'agent-skills',
     kind: 'tool',
+    source: 'https://github.com/workbench-soft/agent-skills',
     repo: 'agent-skills',
     hue: 170,
     code: 'SKL',
@@ -1064,6 +1070,7 @@ export const projects: Project[] = [
   {
     id: 'local-ci',
     kind: 'tool',
+    source: 'https://github.com/workbench-soft/local-ci',
     repo: 'local-ci',
     hue: 55,
     code: 'LCI',
@@ -1094,6 +1101,7 @@ export const projects: Project[] = [
   {
     id: 'git-aliases',
     kind: 'tool',
+    source: 'https://github.com/workbench-soft/git-aliases',
     repo: 'git-aliases',
     hue: 15,
     code: 'GIT',
@@ -1123,6 +1131,7 @@ export const projects: Project[] = [
   {
     id: 'gh-review-notify',
     kind: 'tool',
+    source: 'https://github.com/workbench-soft/gh-review-notify',
     repo: 'gh-review-notify',
     hue: 275,
     code: 'GRN',
@@ -1182,6 +1191,7 @@ export const projects: Project[] = [
   {
     id: 'open-in-remote-repo',
     kind: 'tool',
+    source: 'https://github.com/workbench-soft/vscode-open-in-github',
     repo: 'vscode-open-in-github',
     hue: 240,
     code: 'ORR',
@@ -1239,6 +1249,42 @@ export const projects: Project[] = [
             text: 'Busy times in Google Calendar block booking times, and a feed shows every booking.',
           },
           { name: 'Client galleries', text: 'A private link with watermarked proofs, then every original as one zip.' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'aspirationstyle',
+    kind: 'client',
+    repo: 'aspirationstyle',
+    hue: 15,
+    code: 'ASP',
+    name: 'Aspiration Style',
+    tagline: 'Portfolio and order site for an interior designer.',
+    lede: 'The site of Maria Shilova, an interior designer. Visitors browse her interiors and order a design, and Maria runs the galleries and draws interiors with AI in her own admin.',
+    platforms: ['Web'],
+    stack: ['Astro', 'Rust', 'Cloudflare Workers', 'Workers AI'],
+    links: [{ href: 'https://aspirationstyle.ru', label: 'aspirationstyle.ru' }],
+    groups: [
+      {
+        features: [
+          {
+            name: 'Portfolio',
+            text: 'Galleries of interiors, objects, materials and decor, with a filter and a full screen viewer.',
+          },
+          {
+            name: 'Order a design',
+            text: 'A form on the home page, each gallery and Contacts sends the request to Maria by email.',
+          },
+          { name: 'Admin', text: 'Maria signs in with a code from an email and adds galleries, photos and texts.' },
+          {
+            name: 'Fonts',
+            text: 'She picks the heading and text fonts from 10 free fonts with Cyrillic, or uploads her own.',
+          },
+          {
+            name: 'AI generator',
+            text: 'Draws an interior from a request in Russian, a style and a photo of the room.',
+          },
         ],
       },
     ],

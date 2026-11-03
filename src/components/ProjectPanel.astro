@@ -23,7 +23,7 @@ let n = 0;
 
 <article class="proj" id={p.id} data-kind={p.kind} style={`--hue: ${p.hue}`}>
   <div class="meta">
-    <div class="code">{no} / {p.code}</div>
+    <div class="code">{no} / {p.code}{p.source && <span class="oss">{t.openSource}</span>}</div>
     <div class="head">
       {icon ? <Image class="icon" src={icon} alt="" width={64} height={64} densities={[1, 2]} /> : <span class="icon mono" aria-hidden="true">{p.code}</span>}
       <h3>{p.name}</h3>
@@ -34,9 +34,10 @@ let n = 0;
       <div><dt>{t.stack}</dt><dd>{p.stack.map((x) => <span>{x}</span>)}</dd></div>
     </dl>
     {
-      p.links.length > 0 && (
+      (p.links.length > 0 || p.source) && (
         <div class="links">
           {p.links.map((l) => <a href={l.href}>{l.label} ↗</a>)}
+          {p.source && <a href={p.source}>{t.source} ↗</a>}
         </div>
       )
     }
@@ -110,6 +111,7 @@ let n = 0;
   }
   .code { display: flex; align-items: center; gap: 10px; font: 500 12px var(--mono); letter-spacing: 0.12em; color: var(--acc); }
   .code::before { content: ""; width: 10px; height: 10px; border-radius: 3px; background: var(--acc); box-shadow: 0 0 16px var(--acc); }
+  .oss { margin-left: 4px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--acc); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; }
   .head { display: flex; align-items: center; gap: 14px; margin: 16px 0 12px; }
   .icon { flex: none; width: 56px; height: 56px; border-radius: 14px; box-shadow: 0 0 0 1px var(--line), 0 8px 24px var(--glow); }
   .mono { display: grid; place-items: center; font: 600 13px var(--mono); letter-spacing: 0.06em; color: var(--acc); background: var(--acc-a); }
