@@ -1107,7 +1107,10 @@ const fr: Catalog = {
             ],
             ['Photo du téléphone', "L'appareil photographie une page et la pose sur le tableau."],
             ['Cours', 'Le prof fait défiler les diapos, les deux côtés dessinent, et un minuteur sonne avant la fin.'],
-            ['Pub et retrait', "Des pubs sur l'accueil et les guides. Un achat les retire des salles de l'acheteur."],
+            [
+              'Pub et retrait',
+              'Des pubs autour de l’appel, aucune pendant. Un achat de A$2.99 les retire des salons de l’acheteur.',
+            ],
             ['Langues', 'En 9 langues, selon le téléphone ou le navigateur.'],
           ],
         },

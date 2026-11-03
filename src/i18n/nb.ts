@@ -965,7 +965,10 @@ const nb: Catalog = {
             ],
             ['Bilde fra telefonen', 'Kameraet tar bilde av en side og legger den på tavlen.'],
             ['Timer', 'Læreren blar gjennom lysbilder, begge tegner, og en tidtaker ringer før slutten.'],
-            ['Reklame og fjerning', 'Reklame på forsiden og i guidene. Ett kjøp fjerner den i kjøperens rom.'],
+            [
+              'Reklame og fjerning',
+              'Reklame rundt samtalen, ingen under den. Ett kjøp for A$2.99 fjerner den i kjøperens rom.',
+            ],
             ['Språk', 'På 9 språk, etter telefonen eller nettleseren.'],
           ],
         },
