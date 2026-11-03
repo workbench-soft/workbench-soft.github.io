@@ -532,7 +532,7 @@ export const projects: Project[] = [
     tagline: 'Video calls across a border that blocks the usual apps, with a board to draw on.',
     lede: 'Farnear calls family through a link, with no account. The video goes straight between the people on the call, and the call tries several paths until one gets through.',
     platforms: ['Web', 'Android', 'iOS'],
-    stack: ['Expo', 'React Native', 'WebRTC', 'Cloudflare Workers'],
+    stack: ['React', 'Vite', 'WebRTC', 'Cloudflare Workers', 'Kotlin'],
     links: [{ href: 'https://farnear.workbench-soft.com', label: 'farnear.workbench-soft.com' }],
     groups: [
       {
@@ -555,7 +555,7 @@ export const projects: Project[] = [
           },
           {
             name: 'Ads and remove ads',
-            text: "Ads on the home page and guides. One purchase removes them for the buyer's rooms.",
+            text: "Ads around a call, none during one. One A$2.99 purchase removes them for the buyer's rooms.",
           },
           { name: 'Languages', text: 'The app in 9 languages, following the phone or browser.' },
         ],

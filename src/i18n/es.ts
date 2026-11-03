@@ -1051,7 +1051,7 @@ const es: Catalog = {
             ['Clases', 'El profesor pasa diapositivas, ambos dibujan y un temporizador suena antes del final.'],
             [
               'Anuncios y quitarlos',
-              'Anuncios en el inicio y las guías. Una compra los quita en las salas del comprador.',
+              'Anuncios alrededor de la llamada, ninguno durante ella. Una compra de A$2.99 los quita en las salas del comprador.',
             ],
             ['Idiomas', 'En 9 idiomas, según el teléfono o el navegador.'],
           ],

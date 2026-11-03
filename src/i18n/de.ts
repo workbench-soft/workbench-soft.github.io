@@ -1069,7 +1069,7 @@ const de: Catalog = {
             ['Unterricht', 'Die Lehrkraft geht Folien durch, beide Seiten zeichnen, ein Timer klingelt vor dem Ende.'],
             [
               'Werbung und entfernen',
-              'Werbung auf der Startseite und in Ratgebern. Ein Kauf entfernt sie in den Räumen des Käufers.',
+              'Werbung rund um den Anruf, keine während des Anrufs. Ein Kauf für A$2.99 entfernt sie in den Räumen des Käufers.',
             ],
             ['Sprachen', 'In 9 Sprachen, nach der Sprache von Telefon oder Browser.'],
           ],
