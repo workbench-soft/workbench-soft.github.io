@@ -295,6 +295,15 @@ The studio needed one public site for its apps and their installers.
 - **Alina** Alina Photography joins the group at `alina-photo.memories-demo-webdav.workers.dev`, its Worker address until she has her own domain.
 - **Docs** `docs/features.md`, `CHANGELOG.md`, `TODO.md`.
 
+#### 2026-11-04 Memoire privacy policy
+
+- **Why** Memoire goes to Google Play closed testing with AdMob ads, two one time purchases, Firebase sync and Gemini talk practice. Play Console, App content needs a privacy policy URL.
+- **What the visitor gets** <https://workbench-soft.com/memoire/privacy-policy>: cards and answers on the device, the word lookups, Gemini with the person's own key, the phone model download, Sync by pairing code, the AdMob ads with the partner sites link, the consent form, and the Google Play purchases.
+- **Changes**
+  - **`memoire/`** a Jekyll folder built like `lumiere/`.
+  - **`.github/workflows/pages.yml`** a Jekyll step builds it into `_site/memoire`.
+  - **Docs** `docs/architecture.md`, `README.md`, `CHANGELOG.md`.
+
 #### 2026-11-04 Lumiere Player privacy policy
 
 - **Why** Lumiere Player is on Google Play testing with an AdMob banner on phones, two one time purchases and a microphone for voice commands. Play Console, App content needs a privacy policy URL before the closed test.
