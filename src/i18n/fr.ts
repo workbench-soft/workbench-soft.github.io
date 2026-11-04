@@ -856,6 +856,22 @@ const fr: Catalog = {
         },
       ],
     },
+    'app-updater': {
+      tagline: 'Met à jour chaque app Workbench Soft du téléphone en un geste.',
+      lede: 'Une app Android liste chaque app Workbench Soft avec sa version installée et la plus récente, puis installe chaque nouvelle version via Shizuku sans confirmation.',
+      links: [],
+      groups: [
+        {
+          features: [
+            [
+              'Tout mettre à jour',
+              "Un geste télécharge et installe chaque nouvelle version, avec une barre par app et une pour l'ensemble. Annuler l'arrête.",
+            ],
+            ['Liste des apps', 'Chaque app indique si elle est à jour ou quelle version arrive.'],
+          ],
+        },
+      ],
+    },
     ci: {
       tagline: 'Des étapes GitHub Actions partagées pour chaque dépôt.',
       lede: 'Un correctif ici atteint chaque dépôt à sa prochaine exécution.',
@@ -1125,6 +1141,10 @@ const fr: Catalog = {
             ['Lieu et réglages', 'Chaque prise garde où et comment elle a été faite, en balises EXIF.'],
             ['Taille des photos et vidéos', 'Les réglages choisissent la taille des photos et des vidéos.'],
             [
+              'Photo multi-images',
+              'Une photo normale fusionne 6 images rapides en une, avec moitié moins de bruit et des bords plus nets.',
+            ],
+            [
               'Améliorer les photos',
               'Des noirs plus profonds, des ombres relevées, des couleurs plus vives, un peu de netteté.',
             ],
@@ -1241,7 +1261,10 @@ const fr: Catalog = {
               'Memoire Pro',
               'Un achat de A$5.99 sur Android ouvre la pratique de conversation, la synchro, le widget et les 14 thèmes, et retire les pubs.',
             ],
-            ['Mises à jour', 'L’APK de GitHub signale une nouvelle version de Memoire, la télécharge et ouvre l’installateur Android.'],
+            [
+              'Mises à jour',
+              'L’APK de GitHub signale une nouvelle version de Memoire, la télécharge et ouvre l’installateur Android.',
+            ],
           ],
         },
       ],
@@ -1287,6 +1310,7 @@ const fr: Catalog = {
               "Artistes, albums, titres et dossiers, file d'attente, aléatoire et répétition, téléphone verrouillé.",
             ],
             ['Commandes vocales', 'Dites Hey Lumi, play et un titre, en anglais ou en russe, téléphone verrouillé.'],
+            ['Lumiere Pro', 'Un seul achat débloque les commandes vocales et Hey Lumi, et retire la pub.'],
           ],
         },
       ],
@@ -1308,7 +1332,6 @@ const fr: Catalog = {
               'Loyers',
               'Chaque code postal de NSW, QLD, SA et TAS coloré selon le loyer hebdomadaire médian des nouveaux baux.',
             ],
-            ['Lumiere Pro', 'Un seul achat débloque les commandes vocales et Hey Lumi, et retire la pub.'],
             ['Installer depuis le navigateur', "La version web s'installe comme une app avec son icône."],
           ],
         },
@@ -1350,6 +1373,7 @@ const fr: Catalog = {
             ['Étapes en haut', 'Trois étapes en haut disent qui fait quoi, et celle qui attend s’allume.'],
             ['Cartes', 'Chaque carte montre le sub, le titre du fil et le brouillon à modifier.'],
             ['Ouvrir dans Chrome', 'Chrome ouvre le fil avec le commentaire saisi, prêt à publier.'],
+            ['Le publier pour moi', "L'app tape le commentaire dans sa propre fenêtre Chrome et appuie sur Save."],
             ['Onglet publications', 'Rédige des posts sur les dépôts choisis dans les subs qui conviennent.'],
             ['Captures et vidéos', 'Chaque post liste les médias du dossier de captures du dépôt.'],
             ['Ouvrir un post', 'Chrome ouvre la page de publication du sub avec le post rempli.'],

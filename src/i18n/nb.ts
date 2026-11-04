@@ -744,6 +744,22 @@ const nb: Catalog = {
         },
       ],
     },
+    'app-updater': {
+      tagline: 'Oppdaterer hver Workbench Soft-app på telefonen med ett trykk.',
+      lede: 'En Android-app som viser hver Workbench Soft-app med installert og nyeste versjon, og installerer hver nye utgivelse via Shizuku uten spørsmål.',
+      links: [],
+      groups: [
+        {
+          features: [
+            [
+              'Oppdater alle',
+              'Ett trykk laster ned og installerer hver nye utgivelse, med en linje per app og en for hele kjøringen. Avbryt stopper den.',
+            ],
+            ['Appliste', 'Hver app viser om den er oppdatert eller hvilken versjon som kommer.'],
+          ],
+        },
+      ],
+    },
     ci: {
       tagline: 'Delte GitHub Actions-trinn for hvert repo.',
       lede: 'Én retting her når hvert repo ved neste kjøring.',
@@ -976,6 +992,10 @@ const nb: Catalog = {
             ['Foto, video og blits', 'Bildet er rammen på skjermen ved berøring. Hold for å filme.'],
             ['Sted og kameradata', 'Hvert bilde bærer hvor og hvordan det ble tatt, som EXIF-tagger.'],
             ['Bilde- og videostørrelse', 'Innstillingene velger størrelsen på bilder og video.'],
+            [
+              'Flerbildefoto',
+              'Et vanlig foto slår sammen 6 raske bilder til ett, med halvparten så mye støy og skarpere kanter.',
+            ],
             ['Forbedre bilder', 'Dypere svart, lysere skygger, livligere farger og litt skarphet.'],
             ['QR-koder', 'En kode i forhåndsvisningen får klammer og en knapp for å åpne den.'],
             ['Klokke', 'Klokkeslettet øverst til venstre, der telefonens klokke pleier å stå, unna knappene.'],
@@ -1084,7 +1104,10 @@ const nb: Catalog = {
               'Memoire Pro',
               'Ett kjøp til A$5.99 på Android åpner samtaleøving, synk, widgeten og alle 14 emnene, og fjerner reklamen.',
             ],
-            ['Oppdateringer', 'APK-en fra GitHub sier fra når en ny Memoire er ute, laster den ned og åpner Android-installasjonen.'],
+            [
+              'Oppdateringer',
+              'APK-en fra GitHub sier fra når en ny Memoire er ute, laster den ned og åpner Android-installasjonen.',
+            ],
           ],
         },
       ],
@@ -1120,6 +1143,7 @@ const nb: Catalog = {
             ['Musikkbibliotek', 'Mapper på mobilen, USB og NAS i ett bibliotek, skannet i bakgrunnen.'],
             ['Musikkspiller', 'Artister, album, sanger og mapper, kø, tilfeldig og gjenta, også med låst mobil.'],
             ['Talekommandoer', 'Si Hey Lumi, play og en sang, på engelsk eller russisk, med låst mobil.'],
+            ['Lumiere Pro', 'Ett kjøp låser opp talekommandoer og Hey Lumi og fjerner reklamen.'],
           ],
         },
       ],
@@ -1173,6 +1197,7 @@ const nb: Catalog = {
             ['Steg øverst', 'Tre steg øverst sier hvem som gjør hva, og steget som venter lyser.'],
             ['Kort', 'Hvert kort viser sub, trådtittel og utkastet som kan redigeres.'],
             ['Åpne i Chrome', 'Chrome åpner tråden med kommentaren skrevet inn, klar til å postes.'],
+            ['Publiser for meg', 'Appen skriver kommentaren i sitt eget Chrome-vindu og trykker Save.'],
             ['Innlegg-fanen', 'Lager utkast til innlegg om valgte repoer i passende subs.'],
             ['Skjermbilder og videoer', 'Hvert innlegg lister medier fra repoets skjermbildemappe.'],
             ['Åpne et innlegg', 'Chrome åpner subens innsendingsside med innlegget fylt ut.'],
@@ -1199,7 +1224,6 @@ const nb: Catalog = {
               'Rensing av KI-spor',
               'Bygget fjerner sus, metallisk glans og brumming fra sangene og beholder originalene.',
             ],
-            ['Lumiere Pro', 'Ett kjøp låser opp talekommandoer og Hey Lumi og fjerner reklamen.'],
             [
               'Forbedre en sang',
               'Én kommando renser hvilken som helst sang, legger tilbake båndet en tapsbasert koder skar bort, og viser begge spektrogrammene.',

@@ -813,6 +813,22 @@ const es: Catalog = {
         },
       ],
     },
+    'app-updater': {
+      tagline: 'Actualiza cada app de Workbench Soft del teléfono con un toque.',
+      lede: 'Una app de Android lista cada app de Workbench Soft con su versión instalada y la más reciente, y luego instala cada versión nueva con Shizuku sin avisos.',
+      links: [],
+      groups: [
+        {
+          features: [
+            [
+              'Actualizar todo',
+              'Un toque descarga e instala cada versión nueva, con una barra por app y otra para todo. Cancelar lo detiene.',
+            ],
+            ['Lista de apps', 'Cada app muestra si está al día o qué versión sigue.'],
+          ],
+        },
+      ],
+    },
     ci: {
       tagline: 'Pasos compartidos de GitHub Actions para cada repo.',
       lede: 'Un arreglo aquí llega a cada repo en su siguiente ejecución.',
@@ -1063,6 +1079,10 @@ const es: Catalog = {
             ['Foto, vídeo y flash', 'La foto es el fotograma en pantalla al tocar. Mantener graba.'],
             ['Lugar y cámara', 'Cada toma guarda dónde y cómo se hizo, en etiquetas EXIF.'],
             ['Tamaño de foto y vídeo', 'Los ajustes eligen el tamaño de foto y vídeo.'],
+            [
+              'Foto multifotograma',
+              'Una foto normal une 6 fotogramas rápidos en uno, con la mitad de ruido y bordes más nítidos.',
+            ],
             ['Mejorar fotos', 'Negros más profundos, sombras más claras, color más vivo y algo de nitidez.'],
             ['Códigos QR', 'Un código en la vista previa recibe un marco y un botón para abrirlo.'],
             [
@@ -1183,7 +1203,10 @@ const es: Catalog = {
               'Memoire Pro',
               'Una compra de A$5.99 en Android abre la práctica de conversación, la sincronización, el widget y los 14 temas, y quita los anuncios.',
             ],
-            ['Actualizaciones', 'El APK de GitHub avisa cuando sale una nueva versión de Memoire, la descarga y abre el instalador de Android.'],
+            [
+              'Actualizaciones',
+              'El APK de GitHub avisa cuando sale una nueva versión de Memoire, la descarga y abre el instalador de Android.',
+            ],
           ],
         },
       ],
@@ -1228,6 +1251,7 @@ const es: Catalog = {
               'Artistas, álbumes, canciones y carpetas, cola, aleatorio y repetición, con el móvil bloqueado.',
             ],
             ['Comandos de voz', 'Di Hey Lumi, play y una canción, en inglés o ruso, con el móvil bloqueado.'],
+            ['Lumiere Pro', 'Un solo pago desbloquea los comandos de voz y Hey Lumi, y quita los anuncios.'],
           ],
         },
       ],
@@ -1249,7 +1273,6 @@ const es: Catalog = {
               'Alquileres',
               'Cada código postal de NSW, QLD, SA y TAS coloreado por el alquiler semanal medio de los nuevos contratos.',
             ],
-            ['Lumiere Pro', 'Un solo pago desbloquea los comandos de voz y Hey Lumi, y quita los anuncios.'],
             ['Instalar desde el navegador', 'La versión web se instala como app con su propio icono.'],
           ],
         },
@@ -1291,6 +1314,7 @@ const es: Catalog = {
             ['Pasos arriba', 'Tres pasos arriba dicen quién hace qué, y el que espera se ilumina.'],
             ['Tarjetas', 'Cada tarjeta muestra el sub, el título del hilo y el borrador editable.'],
             ['Abrir en Chrome', 'Chrome abre el hilo con el comentario escrito, listo para publicar.'],
+            ['Publicarlo por mí', 'La app escribe el comentario en su propia ventana de Chrome y pulsa Save.'],
             ['Pestaña de posts', 'Redacta posts sobre los repos elegidos en los subs adecuados.'],
             ['Capturas y vídeos', 'Cada post lista medios de la carpeta de capturas del repo.'],
             ['Abrir un post', 'Chrome abre la página de envío del sub con el post relleno.'],

@@ -1335,6 +1335,30 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: 'app-updater',
+    kind: 'internal',
+    repo: 'app-updater',
+    hue: 290,
+    code: 'UPD',
+    name: 'WBS Updater',
+    tagline: 'Updates every Workbench Soft app on the phone in one tap.',
+    lede: 'An Android app that lists each Workbench Soft app with its installed and newest version, then installs each new release through Shizuku with no prompts.',
+    platforms: ['Android'],
+    stack: ['Kotlin', 'Shizuku', 'GitHub Releases'],
+    links: [],
+    groups: [
+      {
+        features: [
+          {
+            name: 'Update all',
+            text: 'One tap downloads and installs each new release, with a bar per app and one for the run. Cancel stops it.',
+          },
+          { name: 'App list', text: 'Each app shows whether it is up to date or which version comes next.' },
+        ],
+      },
+    ],
+  },
+  {
     id: 'ci',
     kind: 'internal',
     repo: 'ci',
