@@ -1,0 +1,16 @@
+title: Lumiere Player
+description: >-
+  Video and music player for Google TV and Android phones. Your files, positions
+  and settings stay on your device.
+url: https://workbench-soft.com
+baseurl: /lumiere
+lang: en
+author: Oleg Chibikov
+theme: jekyll-theme-primer
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Counts site visits without cookies. The token is public on every page.
+cloudflare_analytics_token: 4dd25be2f0c940afbcb9dd447dc41154
