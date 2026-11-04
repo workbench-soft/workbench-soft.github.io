@@ -415,7 +415,10 @@ export const projects: Project[] = [
             name: 'Screen layout',
             text: 'The fretboard takes the whole screen, and the panels float over its corners.',
           },
-          { name: 'Play panel', text: 'Plays what is loaded, steps through it, shuffles songs and saves them.' },
+          {
+            name: 'Play panel',
+            text: 'Plays what is loaded, steps through it, shuffles songs and saves them. Swipe left on the current chord panel for the next chord, or right for the previous chord on a touch screen.',
+          },
           { name: 'Easy and Pro mode', text: 'Easy plays only the chords of a song, so a beginner strums along.' },
           { name: 'Song links', text: 'One menu searches the open song on chord, tab, video and lyrics sites.' },
           { name: 'Built-in songs admin', text: 'The owner adds and removes the built-in songs on an admin page.' },

@@ -314,7 +314,7 @@ const nb: Catalog = {
     },
     'guitar-upscale': {
       tagline: 'En gitar du spiller i nettleseren.',
-      lede: 'Guitar Upscale viser skalaer og akkorder på et virtuelt gripebrett, tar opp looper og lagrer dem som MIDI. Den redigerer sanger tone for tone, viser dem som tabulatur og installeres på startskjermen.',
+      lede: 'Guitar Upscale viser skalaer og akkorder på et virtuelt gripebrett, tar opp looper og lagrer dem som MIDI. Den redigerer sanger tone for tone, viser dem som tabulatur og installeres på startskjermen. Sveip til venstre på akkordpanelet på berøringsskjermen for neste akkord, eller til høyre for forrige.',
       links: ['guitar-upscale.com'],
       groups: [
         {

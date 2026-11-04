@@ -278,7 +278,7 @@ const ko: Catalog = {
     },
     'guitar-upscale': {
       tagline: '브라우저에서 연주하는 기타.',
-      lede: 'Guitar Upscale은 가상 지판에 스케일과 코드를 보여 주고, 루프를 녹음해 MIDI로 저장합니다. 곡을 음표 단위로 편집하고, 타브 악보로 보여 주며, 홈 화면에 설치됩니다.',
+      lede: 'Guitar Upscale은 가상 지판에 스케일과 코드를 보여 주고, 루프를 녹음해 MIDI로 저장합니다. 곡을 음표 단위로 편집하고, 타브 악보로 보여 주며, 홈 화면에 설치됩니다. 터치 화면의 코드 패널에서 왼쪽으로 밀면 다음 코드로, 오른쪽으로 밀면 이전 코드로 이동합니다.',
       links: ['guitar-upscale.com'],
       groups: [
         {
