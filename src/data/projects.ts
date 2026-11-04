@@ -627,6 +627,10 @@ export const projects: Project[] = [
             name: 'Sound',
             text: 'Words play from the phone speaker at full volume. Settings can let them use Bluetooth or the system volume.',
           },
+          {
+            name: 'Memoire Pro',
+            text: 'One A$5.99 purchase on Android opens talk practice, sync, the widget and all 14 topics, and hides the ads.',
+          },
         ],
       },
     ],
