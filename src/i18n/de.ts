@@ -1194,6 +1194,10 @@ const de: Catalog = {
               'Ton',
               'Wörter kommen in voller Lautstärke aus dem Telefonlautsprecher. Die Einstellungen erlauben Bluetooth oder die Systemlautstärke.',
             ],
+            [
+              'Memoire Pro',
+              'Ein Kauf für A$5.99 auf Android schaltet Sprechübungen, Sync, das Widget und alle 14 Themen frei und blendet die Werbung aus.',
+            ],
           ],
         },
       ],

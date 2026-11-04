@@ -1080,6 +1080,10 @@ const nb: Catalog = {
               'Lyd',
               'Ordene spilles fra telefonhøyttaleren på full styrke. Innstillingene lar deg bruke Bluetooth eller systemvolumet.',
             ],
+            [
+              'Memoire Pro',
+              'Ett kjøp til A$5.99 på Android åpner samtaleøving, synk, widgeten og alle 14 emnene, og fjerner reklamen.',
+            ],
           ],
         },
       ],

@@ -1179,6 +1179,10 @@ const es: Catalog = {
               'Sonido',
               'Las palabras suenan por el altavoz del teléfono a todo volumen. Los ajustes permiten Bluetooth o el volumen del sistema.',
             ],
+            [
+              'Memoire Pro',
+              'Una compra de A$5.99 en Android abre la práctica de conversación, la sincronización, el widget y los 14 temas, y quita los anuncios.',
+            ],
           ],
         },
       ],
