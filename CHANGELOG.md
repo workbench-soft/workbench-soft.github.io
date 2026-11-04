@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Memoire** the card lists Updates, the update check of the GitHub APK, in 9 languages.
 - **Memoire** the card lists Memoire Pro, the one time purchase for talk practice, sync, the widget, all topics and no ads, in 9 languages.
 - **Memories** the card lists Memories Pro, the one time purchase for People, album links, NAS duplicates, Edit, Draw and no ads, in 9 languages.
 - **Farnear** the card lists Farnear Pro, the one time purchase for the board, lessons, sharing and no ads, in 9 languages.

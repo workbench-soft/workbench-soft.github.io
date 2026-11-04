@@ -1198,6 +1198,7 @@ const de: Catalog = {
               'Memoire Pro',
               'Ein Kauf für A$5.99 auf Android schaltet Sprechübungen, Sync, das Widget und alle 14 Themen frei und blendet die Werbung aus.',
             ],
+            ['Updates', 'Die APK von GitHub meldet eine neue Memoire, lädt sie herunter und öffnet den Android-Installer.'],
           ],
         },
       ],

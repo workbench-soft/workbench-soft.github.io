@@ -1241,6 +1241,7 @@ const fr: Catalog = {
               'Memoire Pro',
               'Un achat de A$5.99 sur Android ouvre la pratique de conversation, la synchro, le widget et les 14 thèmes, et retire les pubs.',
             ],
+            ['Mises à jour', 'L’APK de GitHub signale une nouvelle version de Memoire, la télécharge et ouvre l’installateur Android.'],
           ],
         },
       ],

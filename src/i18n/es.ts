@@ -1183,6 +1183,7 @@ const es: Catalog = {
               'Memoire Pro',
               'Una compra de A$5.99 en Android abre la práctica de conversación, la sincronización, el widget y los 14 temas, y quita los anuncios.',
             ],
+            ['Actualizaciones', 'El APK de GitHub avisa cuando sale una nueva versión de Memoire, la descarga y abre el instalador de Android.'],
           ],
         },
       ],
