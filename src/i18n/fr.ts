@@ -228,6 +228,10 @@ const fr: Catalog = {
               'Un achat unique sur Google Play masque les pubs sur chaque téléphone avec le même compte Google.',
             ],
             [
+              'Memories Pro',
+              'Un achat de A$7.99 sur Android ouvre les personnes, les liens d’album, les doublons du NAS, l’édition et le dessin, et retire les pubs.',
+            ],
+            [
               'Tri sur ordinateur',
               "L'app de bureau range un dossier dans les mêmes dossiers par année, lieu et jours que le téléphone.",
             ],

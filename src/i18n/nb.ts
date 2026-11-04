@@ -212,6 +212,10 @@ const nb: Catalog = {
             ['Lyst og mørkt', 'Følger mobilen, eller et fast valg i innstillingene.'],
             ['Fjern annonser', 'Et engangskjøp på Google Play skjuler annonsene på hver mobil med samme Google-konto.'],
             [
+              'Memories Pro',
+              'Ett kjøp til A$7.99 på Android åpner personer, albumlenker, NAS-duplikater, Rediger og Tegn, og fjerner reklamen.',
+            ],
+            [
               'Sortering på PC',
               'Skrivebordsappen sorterer en mappe i de samme mappene for år, sted og dager som telefonen.',
             ],

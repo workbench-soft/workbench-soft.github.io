@@ -224,6 +224,10 @@ const es: Catalog = {
               'Una compra única en Google Play oculta los anuncios en cada teléfono con la misma cuenta de Google.',
             ],
             [
+              'Memories Pro',
+              'Una compra de A$7.99 en Android abre las personas, los enlaces de álbum, los duplicados del NAS, Editar y Dibujar, y quita los anuncios.',
+            ],
+            [
               'Ordenador de escritorio',
               'La app de escritorio ordena una carpeta en las mismas carpetas de año, lugar y días que el teléfono.',
             ],

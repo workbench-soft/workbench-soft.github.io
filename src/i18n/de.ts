@@ -224,6 +224,10 @@ const de: Catalog = {
               'Ein einmaliger Kauf bei Google Play blendet die Werbung auf jedem Handy mit demselben Google-Konto aus.',
             ],
             [
+              'Memories Pro',
+              'Ein Kauf für A$7.99 auf Android schaltet Personen, Album-Links, NAS-Duplikate, Bearbeiten und Zeichnen frei und blendet die Werbung aus.',
+            ],
+            [
               'Sortierer am Computer',
               'Die Desktop-App sortiert einen Ordner in dieselben Jahr-, Ort- und Tagesordner wie das Telefon.',
             ],
