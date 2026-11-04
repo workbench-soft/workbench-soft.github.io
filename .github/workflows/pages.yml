@@ -71,6 +71,11 @@ jobs:
         with:
           source: ./lumiere
           destination: ./_site/lumiere
+      - name: Build the Memoire pages
+        uses: actions/jekyll-build-pages@44a6e6beabd48582f863aeeb6cb2151cc1716697 # v1.0.13
+        with:
+          source: ./memoire
+          destination: ./_site/memoire
       # The Jekyll step runs in a container as root, so _site belongs to root.
       - name: Add the home page and the root files
         run: |

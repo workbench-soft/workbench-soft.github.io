@@ -1,0 +1,16 @@
+title: Memoire
+description: >-
+  Vocabulary trainer for English and Russian words. Your cards, answers and
+  settings stay on your device.
+url: https://workbench-soft.com
+baseurl: /memoire
+lang: en
+author: Oleg Chibikov
+theme: jekyll-theme-primer
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Counts site visits without cookies. The token is public on every page.
+cloudflare_analytics_token: 4dd25be2f0c940afbcb9dd447dc41154
