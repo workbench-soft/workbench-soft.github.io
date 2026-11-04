@@ -134,6 +134,10 @@ export const projects: Project[] = [
             text: 'A one time Google Play purchase hides the ads on each phone with the same Google account.',
           },
           {
+            name: 'Memories Pro',
+            text: 'One A$7.99 purchase on Android opens People, album links, NAS duplicates, Edit and Draw, and hides the ads.',
+          },
+          {
             name: 'Desktop sorter',
             text: 'The desktop app sorts a folder into the same year, place and day folders as the phone.',
           },
