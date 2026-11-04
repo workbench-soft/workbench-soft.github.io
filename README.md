@@ -11,6 +11,7 @@ Public files for the Workbench Soft apps. The code sits in private repos in this
 - **Sky Altar privacy policy** sits in [skyaltar/](skyaltar/), a Jekyll folder like the Shuttrix one. It serves <https://workbench-soft.com/skyaltar/privacy-policy>.
 - **Tripforge privacy policy** sits in [tripforge/](tripforge/), a Jekyll folder like the Sky Altar one. It serves <https://workbench-soft.com/tripforge/privacy-policy>.
 - **Lumiere Player privacy policy** sits in [lumiere/](lumiere/), a Jekyll folder like the Tripforge one. It serves <https://workbench-soft.com/lumiere/privacy-policy>.
+- **Memoire privacy policy** sits in [memoire/](memoire/), a Jekyll folder like the Lumiere one. It serves <https://workbench-soft.com/memoire/privacy-policy>.
 - **Property Trends** its web build and data sit at <https://workbench-soft.com/property-trends/>. The private repo publishes them as a `property-trends-web-v*` release here. That release starts `pages.yml`, which unpacks the newest one.
 - **app-ads.txt** lists the AdMob publisher for apps whose Play listing points at this site.
 

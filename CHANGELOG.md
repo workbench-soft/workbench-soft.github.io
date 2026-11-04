@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Memoire** a privacy policy at <https://workbench-soft.com/memoire/privacy-policy> for Google Play.
 - **Lumiere Player** a privacy policy at <https://workbench-soft.com/lumiere/privacy-policy> for Google Play.
 - **Memoire** the card lists Updates, the update check of the GitHub APK, in 9 languages.
 - **Memoire** the card lists Memoire Pro, the one time purchase for talk practice, sync, the widget, all topics and no ads, in 9 languages.
