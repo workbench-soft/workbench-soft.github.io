@@ -831,6 +831,22 @@ const de: Catalog = {
         },
       ],
     },
+    'app-updater': {
+      tagline: 'Aktualisiert jede Workbench Soft App auf dem Handy mit einem Tipp.',
+      lede: 'Eine Android-App listet jede Workbench Soft App mit installierter und neuester Version und installiert jedes neue Release über Shizuku ohne Rückfragen.',
+      links: [],
+      groups: [
+        {
+          features: [
+            [
+              'Alle aktualisieren',
+              'Ein Tipp lädt und installiert jedes neue Release, mit einem Balken pro App und einem für den Lauf. Abbrechen stoppt ihn.',
+            ],
+            ['App-Liste', 'Jede App zeigt, ob sie aktuell ist oder welche Version als Nächstes kommt.'],
+          ],
+        },
+      ],
+    },
     ci: {
       tagline: 'Gemeinsame GitHub-Actions-Schritte für jedes Repo.',
       lede: 'Eine Korrektur hier erreicht jedes Repo bei seinem nächsten Lauf.',
@@ -1087,6 +1103,10 @@ const de: Catalog = {
             ['Foto, Video und Blitz', 'Das Foto ist das Bild auf dem Schirm im Moment der Berührung. Halten filmt.'],
             ['Ort- und Kameradaten', 'Jede Aufnahme trägt Ort und Einstellungen als EXIF-Tags.'],
             ['Foto- und Videogröße', 'Die Einstellungen wählen die Größe von Foto und Video.'],
+            [
+              'Mehrbild-Foto',
+              'Ein normales Foto fügt 6 schnelle Bilder zu einem zusammen, mit halb so viel Rauschen und schärferen Kanten.',
+            ],
             ['Fotos verbessern', 'Tieferes Schwarz, hellere Schatten, lebendigere Farben und etwas Schärfe.'],
             ['QR-Codes', 'Ein Code in der Vorschau bekommt Klammern und einen Knopf zum Öffnen.'],
             ['Uhr', 'Die Uhrzeit oben links, wo sonst die Uhr des Telefons steht, abseits der Tasten.'],
@@ -1198,7 +1218,10 @@ const de: Catalog = {
               'Memoire Pro',
               'Ein Kauf für A$5.99 auf Android schaltet Sprechübungen, Sync, das Widget und alle 14 Themen frei und blendet die Werbung aus.',
             ],
-            ['Updates', 'Die APK von GitHub meldet eine neue Memoire, lädt sie herunter und öffnet den Android-Installer.'],
+            [
+              'Updates',
+              'Die APK von GitHub meldet eine neue Memoire, lädt sie herunter und öffnet den Android-Installer.',
+            ],
           ],
         },
       ],
@@ -1237,6 +1260,7 @@ const de: Catalog = {
               'Künstler, Alben, Titel und Ordner, Warteschlange, Zufall und Wiederholen, auch bei gesperrtem Handy.',
             ],
             ['Sprachbefehle', 'Sag Hey Lumi, play und einen Titel, auf Englisch oder Russisch, bei gesperrtem Handy.'],
+            ['Lumiere Pro', 'Ein Kauf schaltet Sprachbefehle und Hey Lumi frei und entfernt die Werbung.'],
           ],
         },
       ],
@@ -1258,7 +1282,6 @@ const de: Catalog = {
               'Mieten',
               'Jede Postleitzahl in NSW, QLD, SA und TAS nach der mittleren Wochenmiete neuer Verträge gefärbt.',
             ],
-            ['Lumiere Pro', 'Ein Kauf schaltet Sprachbefehle und Hey Lumi frei und entfernt die Werbung.'],
             ['Aus dem Browser installieren', 'Die Web-Version installiert sich als App mit eigenem Symbol.'],
           ],
         },
@@ -1300,6 +1323,7 @@ const de: Catalog = {
             ['Schritte oben', 'Drei Schritte oben sagen, wer was tut, und der wartende leuchtet.'],
             ['Karten', 'Jede Karte zeigt Sub, Threadtitel und den Entwurf zum Bearbeiten.'],
             ['In Chrome öffnen', 'Chrome öffnet den Thread mit eingetipptem Kommentar, bereit zum Posten.'],
+            ['Für mich posten', 'Die App tippt den Kommentar in ihr eigenes Chrome-Fenster und drückt Save.'],
             ['Beiträge-Tab', 'Entwirft Beiträge über die gewählten Repos in passenden Subs.'],
             ['Screenshots und Videos', 'Jeder Beitrag nennt Medien aus dem Screenshot-Ordner des Repos.'],
             ['Beitrag öffnen', 'Chrome öffnet die Einreichseite des Subs mit ausgefülltem Beitrag.'],
