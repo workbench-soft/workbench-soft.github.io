@@ -10,6 +10,7 @@ The repo serves <https://workbench-soft.com> from GitHub Pages. The site has no 
 | Memories site   | `memories-mobile/`          | Jekyll              |
 | Shuttrix pages  | `shuttrix/`                 | Jekyll              |
 | Sky Altar pages | `skyaltar/`                 | Jekyll              |
+| Tripforge pages | `tripforge/`                | Jekyll              |
 | Langflip page   | `langflip/`                 | copied as is        |
 | Astrology pages | `src/content/astrology/`    | Astro, into `dist/` |
 | Root files      | `app-ads.txt`, `robots.txt` | copied as is        |
@@ -21,7 +22,7 @@ flowchart LR
   components --> pages["src/pages/[...lang].astro<br/>/ and /code/"]
   scripts["src/scripts/field.ts<br/>WebGL2 shader"] --> components
   pages --> astro["astro build"] --> dist["dist/"]
-  jekyll["memories-mobile/, shuttrix/, skyaltar/"] --> jb["Jekyll build"] --> site["_site/"]
+  jekyll["memories-mobile/, shuttrix/, skyaltar/, tripforge/"] --> jb["Jekyll build"] --> site["_site/"]
   dist --> site
   root["langflip/, app-ads.txt, robots.txt"] --> site
   site --> pages_["GitHub Pages"]
@@ -60,7 +61,7 @@ sequenceDiagram
    [pages.yml](../.github/workflows/pages.yml).
 2. mise installs node and pnpm from `mise.toml`, then pnpm installs the packages.
 3. `mise run lint`, `mise run test` and `mise run check` check the code, then `mise run build` writes `dist/`.
-4. Jekyll builds the Memories site into `_site/memories-mobile` the Shuttrix privacy policy into `_site/shuttrix` and the Sky Altar privacy policy into `_site/skyaltar`.
+4. Jekyll builds the Memories site into `_site/memories-mobile` the Shuttrix privacy policy into `_site/shuttrix` the Sky Altar privacy policy into `_site/skyaltar` and the Tripforge privacy policy into `_site/tripforge`.
 5. The job copies `dist/`, `langflip/` and the root files into `_site/` and publishes it.
 
 A pull request runs steps 2 to 4 and the copy, then stops before the publish.
