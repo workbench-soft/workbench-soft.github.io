@@ -295,6 +295,15 @@ The studio needed one public site for its apps and their installers.
 - **Alina** Alina Photography joins the group at `alina-photo.memories-demo-webdav.workers.dev`, its Worker address until she has her own domain.
 - **Docs** `docs/features.md`, `CHANGELOG.md`, `TODO.md`.
 
+#### 2026-11-04 Lumiere Player privacy policy
+
+- **Why** Lumiere Player is on Google Play testing with an AdMob banner on phones, two one time purchases and a microphone for voice commands. Play Console, App content needs a privacy policy URL before the closed test.
+- **What the visitor gets** <https://workbench-soft.com/lumiere/privacy-policy>: positions, NAS logins, the music library and settings on the device, the microphone for the mic button and Hey Lumi, the SponsorBlock hash prefix, the AdMob banner with the partner sites link, the consent form, and the Google Play purchases.
+- **Changes**
+  - **`lumiere/`** a Jekyll folder built like `tripforge/`: `_config.yml`, the plain layout, the analytics include and `privacy-policy.md`.
+  - **`.github/workflows/pages.yml`** a Jekyll step builds it into `_site/lumiere`.
+  - **Docs** `docs/architecture.md`, `CHANGELOG.md`.
+
 #### 2026-11-04 Tripforge privacy policy
 
 - **Why** Tripforge is on Google Play testing with AdMob ads and two one time purchases. The Play listing, App content and the AdMob GDPR message need a privacy policy URL.
