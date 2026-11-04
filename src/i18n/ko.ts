@@ -919,6 +919,7 @@ const ko: Catalog = {
               'Memoire Pro',
               'Android에서 A$5.99 한 번 구매로 대화 연습, 동기화, 위젯, 14개 주제 전체를 쓰고 광고도 사라집니다.',
             ],
+            ['업데이트', 'GitHub의 APK는 새 Memoire가 나오면 알려 주고, 내려받아 Android 설치 프로그램을 엽니다.'],
           ],
         },
       ],

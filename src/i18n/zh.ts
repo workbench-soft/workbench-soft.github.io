@@ -823,6 +823,7 @@ const zh: Catalog = {
               'Memoire Pro',
               '在 Android 上一次购买 A$5.99，即可使用对话练习、同步、小组件和全部 14 个主题，并去除广告。',
             ],
+            ['更新', 'GitHub 上的 APK 会在 Memoire 有新版本时提醒你，下载后打开 Android 安装程序。'],
           ],
         },
       ],

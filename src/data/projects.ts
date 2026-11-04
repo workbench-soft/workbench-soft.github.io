@@ -631,6 +631,7 @@ export const projects: Project[] = [
             name: 'Memoire Pro',
             text: 'One A$5.99 purchase on Android opens talk practice, sync, the widget and all 14 topics, and hides the ads.',
           },
+          { name: 'Updates', text: 'The APK from GitHub says when a newer Memoire is out and installs it.' },
         ],
       },
     ],
