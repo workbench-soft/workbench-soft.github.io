@@ -827,25 +827,6 @@ const ja: Catalog = {
         },
       ],
     },
-    'wbs-updater': {
-      tagline: 'スマホの Workbench Soft アプリをすべて最新リリースにします。',
-      lede: 'スタジオのスマホ向けのネイティブ Android アプリです。公開リリースリポジトリを読んで Workbench Soft アプリごとの状態を一覧にし、「すべて更新」が Shizuku 経由で確認なしにインストールします。',
-      links: [],
-      groups: [
-        {
-          features: [
-            [
-              'すべて更新',
-              'ワンタップで、遅れているアプリを1つずつダウンロードしてインストールします。全体の進行はバーで示します。',
-            ],
-            [
-              'アプリ一覧',
-              '各アプリの状態:最新、前のバージョンから次への更新、または最新リリース。開くたび、戻るたびに一覧が埋まり、下に引くと埋め直します。',
-            ],
-          ],
-        },
-      ],
-    },
     'memories-demo-webdav': {
       tagline: 'Google Play 審査用のサンプル写真 NAS。',
       lede: 'サンプル写真入りの WebDAV サーバーです。Google Play の審査担当者が自分の NAS なしで Memories にログインできます。無料プランの Cloudflare Worker で動きます。',

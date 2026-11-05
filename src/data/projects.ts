@@ -1558,33 +1558,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 'wbs-updater',
-    kind: 'internal',
-    repo: 'app-updater',
-    hue: 145,
-    code: 'UPD',
-    name: 'WBS Updater',
-    tagline: 'Brings every Workbench Soft app on the phone to its newest release.',
-    lede: 'A native Android app for the studio phone. It reads the public releases repo and lists each Workbench Soft app with its state, and Update all installs each one through Shizuku with no prompt.',
-    platforms: ['Android'],
-    stack: ['Kotlin', 'Shizuku', 'GitHub API'],
-    links: [],
-    groups: [
-      {
-        features: [
-          {
-            name: 'Update all',
-            text: 'One tap downloads and installs each app that lags behind, one at a time, with a bar for the whole run.',
-          },
-          {
-            name: 'App list',
-            text: 'Each app with its state: up to date, an update from one version to the next, or the newest release. The list fills on each open and each return to the app, and a pull down refills it.',
-          },
-        ],
-      },
-    ],
-  },
-  {
     id: 'memories-demo-webdav',
     kind: 'internal',
     repo: 'memories-demo-webdav',

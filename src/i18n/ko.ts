@@ -786,22 +786,6 @@ const ko: Catalog = {
         },
       ],
     },
-    'wbs-updater': {
-      tagline: '휴대전화의 모든 Workbench Soft 앱을 최신 릴리스로 가져옵니다.',
-      lede: '스튜디오 휴대전화용 네이티브 Android 앱입니다. 공개 릴리스 저장소를 읽어 각 Workbench Soft 앱의 상태를 목록으로 보여주고, 모두 업데이트가 Shizuku로 확인 없이 설치합니다.',
-      links: [],
-      groups: [
-        {
-          features: [
-            ['모두 업데이트', '한 번 누르면 뒤처진 앱을 하나씩 내려받아 설치하고, 전체 진행은 막대로 보여 줍니다.'],
-            [
-              '앱 목록',
-              '각 앱의 상태: 최신, 이전 버전에서 다음 버전으로의 업데이트, 또는 최신 릴리스. 열 때와 돌아올 때 목록이 채워지고, 아래로 당기면 다시 채워집니다.',
-            ],
-          ],
-        },
-      ],
-    },
     'memories-demo-webdav': {
       tagline: 'Google Play 심사용 예시 사진 NAS.',
       lede: '예시 사진이 담긴 WebDAV 서버로, Google Play 심사자가 자기 NAS 없이 Memories에 로그인할 수 있습니다. 무료 요금제의 Cloudflare Worker로 돌아갑니다.',
