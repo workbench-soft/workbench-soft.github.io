@@ -44,9 +44,6 @@ jobs:
     if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && vars.CLOUDFLARE_ACCOUNT_ID != ''
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    concurrency:
-      group: games-deploy
-      cancel-in-progress: true
     env:
       CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
       CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
