@@ -268,7 +268,10 @@ const nb: Catalog = {
         {
           title: 'Android-app',
           features: [
-            ['Fartsmerke', 'Farten din ved siden av veiens grense. Merket blir rødt over grensen.'],
+            [
+              'Fartsmerke',
+              'Fart og fartsgrense vises i bilen. Tog- og flydeteksjon demper veimeldingene. Veier merket med mph bruker miles per time på skjermen og i stemmen.',
+            ],
             [
               'Kameravarsler',
               'Et pip omtrent 20 sekunder før, så «Fartskamera forut. Grense 60.» Det når også låseskjermen og viser når kameraet står på den andre siden av veien.',

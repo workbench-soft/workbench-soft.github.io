@@ -288,7 +288,7 @@ const es: Catalog = {
           features: [
             [
               'Indicador de velocidad',
-              'Tu velocidad junto al límite de la vía. El indicador se pone rojo al superarlo.',
+              'La velocidad y el límite aparecen al ir en coche. La detección de tren y avión silencia los avisos de carretera. Las vías marcadas en mph usan millas por hora en pantalla y por voz.',
             ],
             [
               'Avisos de radar',
