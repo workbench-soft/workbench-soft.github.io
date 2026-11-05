@@ -824,6 +824,11 @@ const es: Catalog = {
               'Actualizar todo',
               'Un toque descarga e instala cada versión nueva, con una barra por app y otra para todo. Cancelar lo detiene.',
             ],
+            [
+              'Autoactualización',
+              'WBS Updater publica sus propias versiones, se instala al final de cada pasada y el teléfono vuelve a abrirlo con la versión nueva.',
+            ],
+            ['Actualizar una app', 'Un botón Actualizar junto a cada fila lleva solo esa app a su última versión.'],
             ['Lista de apps', 'Cada app muestra si está al día o qué versión sigue.'],
           ],
         },
