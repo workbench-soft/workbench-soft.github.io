@@ -352,8 +352,8 @@ const nb: Catalog = {
             ],
             ['MIDI-eksport', 'Filer lastes ned, eller sendes ut gjennom delingsmenyen.'],
             [
-              'Betalte nivåer',
-              'Pålogging med Patreon eller et kjøp på Google Play låser opp verktøyene Explorer og Composer.',
+              'Guitar Upscale Pro',
+              'Ett kjøp på Google Play åpner opptak, looper, sangopplasting og søk og temaer på Android, og fjerner reklame. På nettet er alle funksjoner åpne.',
             ],
             [
               'Installasjon og uten nett',

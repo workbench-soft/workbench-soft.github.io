@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **Guitar Upscale Pro** the card now describes the one-time Android purchase and the open web features in 9 languages.
+
 - **Guitar Upscale** the project describes touch swipes to the previous and next chord in 9 languages.
 
 - **Memoire** a privacy policy at <https://workbench-soft.com/memoire/privacy-policy> for Google Play.

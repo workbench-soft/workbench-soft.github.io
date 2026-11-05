@@ -385,8 +385,8 @@ const de: Catalog = {
             ],
             ['MIDI-Export', 'Dateien werden heruntergeladen oder gehen über das Teilen-Menü hinaus.'],
             [
-              'Bezahlstufen',
-              'Anmeldung über Patreon oder ein Kauf bei Google Play schalten die Werkzeuge Explorer und Composer frei.',
+              'Guitar Upscale Pro',
+              'Ein Kauf bei Google Play öffnet Aufnahme, Looper, Songimport und Suche sowie Designs in der Android-App und entfernt Werbung. Im Web sind alle Funktionen offen.',
             ],
             [
               'Installation und offline',
