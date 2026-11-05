@@ -1,5 +1,9 @@
 # TODO
 
+## Playback chord fingering site cleanup (2026-11-05)
+
+- [ ] Remove the clean, merged worktree at `$env:WBS_ROOT\workbench-soft.github.io-playback-grips` and its branches after this session. Automatic approval review blocked recursive folder deletion. Run in PowerShell: `git -C "$env:WBS_ROOT\workbench-soft.github.io" worktree remove "$env:WBS_ROOT\workbench-soft.github.io-playback-grips"; git -C "$env:WBS_ROOT\workbench-soft.github.io" branch -D codex/playback-grips-site codex/playback-grip-cleanup-note; git -C "$env:WBS_ROOT\workbench-soft.github.io" push origin --delete codex/playback-grips-site codex/playback-grip-cleanup-note`.
+
 ## site-groups-icons-shots: studio email, groups, icons, screenshots
 
 - [ ] **Shuttrix shots** the app crashes at start on an emulator (`CameraSession` reads a null ML Kit barcode scanner, seen 2026-11-02 on an x86_64 build), so it has no shots. Fix the crash in `memories/apps/shuttrix`, run the `demo-media` skill there, then copy 2 to 4 shots to `src/assets/shots/shuttrix/`.
