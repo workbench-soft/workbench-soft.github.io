@@ -213,7 +213,10 @@ export const projects: Project[] = [
       {
         title: 'Android app',
         features: [
-          { name: 'Speed badge', text: "Your speed beside the road's limit. The badge turns red above it." },
+          {
+            name: 'Speed badge',
+            text: 'Speed and limit appear in a car. Rail and flight checks silence road calls. Roads tagged in mph use miles per hour on screen and in speech.',
+          },
           {
             name: 'Camera warnings',
             text: 'A beep about 20 seconds ahead, then "Speed camera ahead. Limit 60." It reaches the lock screen too, and names a camera on the other side of the road.',

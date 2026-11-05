@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **SpotTheCam** the project describes road travel checks and local speed units in 9 languages.
+
 - **Guitar Upscale** the project describes playback fingering diagrams for the current guitar settings in 9 languages.
 
 - **Guitar Upscale Pro** the card now describes the one-time Android purchase and the open web features in 9 languages.

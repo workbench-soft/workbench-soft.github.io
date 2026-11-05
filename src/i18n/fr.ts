@@ -290,7 +290,10 @@ const fr: Catalog = {
         {
           title: 'App Android',
           features: [
-            ['Badge de vitesse', 'Votre vitesse à côté de la limite de la route. Le badge passe au rouge au-dessus.'],
+            [
+              'Badge de vitesse',
+              'La vitesse et la limite apparaissent en voiture. La détection du train et de l’avion coupe les annonces routières. Les routes indiquées en mph gardent les miles par heure à l’écran et à la voix.',
+            ],
             [
               'Alertes radar',
               'Un bip environ 20 secondes avant, puis « Radar devant. Limite 60. » Il arrive aussi sur l’écran verrouillé et signale un radar de l’autre côté de la route.',

@@ -292,7 +292,10 @@ const de: Catalog = {
         {
           title: 'Android-App',
           features: [
-            ['Tempoanzeige', 'Ihr Tempo neben dem Limit der Straße. Darüber wird die Anzeige rot.'],
+            [
+              'Tempoanzeige',
+              'Tempo und Limit erscheinen nur im Auto. Bahn- und Flugerkennung schaltet Straßenansagen stumm. Bei Straßen mit mph nutzen Anzeige und Stimme Meilen pro Stunde.',
+            ],
             [
               'Blitzerwarnungen',
               'Ein Ton etwa 20 Sekunden vorher, dann „Blitzer voraus. Limit 60.“ Auch auf dem Sperrbildschirm, mit einem Hinweis auf Blitzer auf der anderen Straßenseite.',
