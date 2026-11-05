@@ -335,7 +335,7 @@ const de: Catalog = {
     },
     'guitar-upscale': {
       tagline: 'Eine Gitarre, die Sie im Browser spielen.',
-      lede: 'Guitar Upscale zeigt Skalen und Akkorde auf einem virtuellen Griffbrett, nimmt Loops auf und speichert sie als MIDI. Es bearbeitet Songs Note für Note, zeigt sie als Tabulatur und installiert sich auf dem Startbildschirm.',
+      lede: 'Guitar Upscale zeigt Skalen und Akkorde auf einem virtuellen Griffbrett, nimmt Loops auf und speichert sie als MIDI. Es bearbeitet Songs Note für Note, zeigt sie als Tabulatur und installiert sich auf dem Startbildschirm. Auf dem Touchscreen springt ein Wisch nach links im Akkordpanel zum nächsten Akkord, nach rechts zum vorherigen.',
       links: ['guitar-upscale.com'],
       groups: [
         {

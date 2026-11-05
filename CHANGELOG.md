@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **Guitar Upscale** the project describes touch swipes to the previous and next chord in 9 languages.
+
 - **Memoire** a privacy policy at <https://workbench-soft.com/memoire/privacy-policy> for Google Play.
 - **Lumiere Player** a privacy policy at <https://workbench-soft.com/lumiere/privacy-policy> for Google Play.
 - **Memoire** the card lists Updates, the update check of the GitHub APK, in 9 languages.

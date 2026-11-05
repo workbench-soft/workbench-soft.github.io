@@ -242,7 +242,7 @@ const zh: Catalog = {
     },
     'guitar-upscale': {
       tagline: '一把在浏览器里弹的吉他。',
-      lede: 'Guitar Upscale 在虚拟指板上显示音阶和和弦，录制循环并保存为 MIDI。它能逐音符编辑歌曲，以六线谱显示，并可安装到主屏幕。',
+      lede: 'Guitar Upscale 在虚拟指板上显示音阶和和弦，录制循环并保存为 MIDI。它能逐音符编辑歌曲，以六线谱显示，并可安装到主屏幕。 在触摸屏的和弦面板上向左滑动跳到下一个和弦，向右滑动回到上一个和弦。',
       links: ['guitar-upscale.com'],
       groups: [
         {
