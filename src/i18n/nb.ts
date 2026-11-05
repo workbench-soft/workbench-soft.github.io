@@ -699,7 +699,10 @@ const nb: Catalog = {
             ['Startknapp', 'Et dobbeltklikk starter siste versjon av CI-en.'],
             ['CI-statusside', 'En lokal side viser runneren og jobbene med ett blikk.'],
             ['Skyløpere først', 'Jobber bygger på gratis skyløpere så lenge minuttene varer, så på denne PC-en.'],
-            ['Utgivelser', 'Hver push til main som består sjekkene, blir en datert utgivelse med notater.'],
+            [
+              'Utgivelser',
+              'Start en app-utgivelse i CI, bygg støttede Android-APK-er lokalt fra nyeste main, og installer publiserte eller lokale APK-er på en tilkoblet telefon med ADB.',
+            ],
             ['Oppdaterer seg selv', 'PC-en installerer hver utgivelse noen minutter etter sammenslåingen.'],
           ],
         },

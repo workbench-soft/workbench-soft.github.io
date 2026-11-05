@@ -756,7 +756,10 @@ const es: Catalog = {
               'Primero runners en la nube',
               'Los trabajos van en runners gratis en la nube mientras duran los minutos, luego en este PC.',
             ],
-            ['Versiones', 'Cada push a main que pasa las comprobaciones recibe una versión con fecha y notas.'],
+            [
+              'Versiones',
+              'Inicia una versión de la app en CI, compila localmente APK de Android compatibles desde el último main e instala APK publicados o locales en un teléfono conectado mediante ADB.',
+            ],
             ['Se actualiza solo', 'El PC instala cada versión minutos después del merge.'],
           ],
         },

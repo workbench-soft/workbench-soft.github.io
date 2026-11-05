@@ -802,7 +802,10 @@ const fr: Catalog = {
               "Runners cloud d'abord",
               "Les jobs tournent sur des runners cloud gratuits tant qu'il reste des minutes, puis sur ce PC.",
             ],
-            ['Versions', 'Chaque push sur main qui passe les contrôles devient une version datée avec ses notes.'],
+            [
+              'Versions',
+              'Lancez une release d’app sur la CI, compilez localement les APK Android pris en charge depuis le dernier main et installez les APK publiés ou locaux sur un téléphone connecté avec ADB.',
+            ],
             ['Se met à jour seul', 'Le PC installe chaque version quelques minutes après la fusion.'],
           ],
         },
