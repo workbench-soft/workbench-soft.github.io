@@ -1,5 +1,6 @@
 CHANGELOG.md merge=union
 TODO.md merge=union
+README.md merge=union
 docs/features.md merge=union
 docs/user-flows.md merge=union
 src/i18n/*.ts merge=union

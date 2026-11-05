@@ -913,6 +913,25 @@ const nb: Catalog = {
         },
       ],
     },
+    'wbs-updater': {
+      tagline: 'Tar hver Workbench Soft-app på telefonen til nyeste utgivelse.',
+      lede: 'En ren Android-app for studioets telefon. Den leser det offentlige utgivelsesrepoet og lister hver Workbench Soft-app med sin status, og Oppdater alle installerer hver av dem gjennom Shizuku uten spørsmål.',
+      links: [],
+      groups: [
+        {
+          features: [
+            [
+              'Oppdater alle',
+              'Et trykk laster ned og installerer hver app som henger etter, én om gangen, med en fremdriftslinje for hele jobben.',
+            ],
+            [
+              'Appliste',
+              'Hver app med sin status: oppdatert, en oppdatering fra én versjon til den neste, eller nyeste utgivelse. Listen fylles ved hver åpning og hver tilbakekomst, og et nedtrekk fyller den på nytt.',
+            ],
+          ],
+        },
+      ],
+    },
     'memories-demo-webdav': {
       tagline: 'En eksempel-NAS med bilder til Google Play-gjennomgangen.',
       lede: 'En WebDAV-server med eksempelbilder, så en Google Play-kontrollør kan logge inn i Memories uten egen NAS. Den kjører som Cloudflare Worker på gratisplanen.',

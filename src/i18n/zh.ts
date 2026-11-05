@@ -706,6 +706,22 @@ const zh: Catalog = {
         },
       ],
     },
+    'wbs-updater': {
+      tagline: '把手机上的每个 Workbench Soft 应用更新到最新版本。',
+      lede: '工作室手机上的原生 Android 应用。它读取公开的发布仓库，列出每个 Workbench Soft 应用的状态，「全部更新」通过 Shizuku 无提示地安装每一个。',
+      links: [],
+      groups: [
+        {
+          features: [
+            ['全部更新', '一次点按会逐个下载并安装落后的应用，整次运行有一条进度条。'],
+            [
+              '应用列表',
+              '每个应用及其状态：已是最新、从一个版本到下一版本的更新，或最新版本。每次打开和返回都会填充列表，下拉会重新填充。',
+            ],
+          ],
+        },
+      ],
+    },
     'memories-demo-webdav': {
       tagline: '供 Google Play 审核使用的示例照片 NAS。',
       lede: '一个带示例照片的 WebDAV 服务器，让 Google Play 审核员无需自己的 NAS 就能登录 Memories。它以 Cloudflare Worker 运行在免费套餐上。',
