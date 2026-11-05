@@ -845,6 +845,14 @@ const de: Catalog = {
               'Alle aktualisieren',
               'Ein Tipp lädt und installiert jedes neue Release, mit einem Balken pro App und einem für den Lauf. Abbrechen stoppt ihn.',
             ],
+            [
+              'Selbst aktualisieren',
+              'WBS Updater bringt seine eigenen Releases heraus, installiert sich am Ende eines Laufs, und das Handy öffnet es mit der neuen Version.',
+            ],
+            [
+              'Eine App aktualisieren',
+              'Eine Aktualisieren-Schaltfläche neben jeder Zeile bringt nur diese App auf ihr neuestes Release.',
+            ],
             ['App-Liste', 'Jede App zeigt, ob sie aktuell ist oder welche Version als Nächstes kommt.'],
           ],
         },

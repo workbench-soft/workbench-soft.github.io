@@ -870,6 +870,11 @@ const fr: Catalog = {
               'Tout mettre à jour',
               "Un geste télécharge et installe chaque nouvelle version, avec une barre par app et une pour l'ensemble. Annuler l'arrête.",
             ],
+            [
+              'Se met à jour lui-même',
+              "WBS Updater publie ses propres versions, s'installe en dernier de la passe et le téléphone le rouvre sur la version nouvelle.",
+            ],
+            ['Mettre à jour une app', 'Un bouton Mettre à jour à côté de chaque ligne ne met à jour que cette app.'],
             ['Liste des apps', 'Chaque app indique si elle est à jour ou quelle version arrive.'],
           ],
         },

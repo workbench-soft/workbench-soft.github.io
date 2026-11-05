@@ -758,6 +758,11 @@ const nb: Catalog = {
               'Oppdater alle',
               'Ett trykk laster ned og installerer hver nye utgivelse, med en linje per app og en for hele kjøringen. Avbryt stopper den.',
             ],
+            [
+              'Egen oppdatering',
+              'WBS Updater gir ut sine egne utgivelser, installerer seg selv sist i en runde, og telefonen åpner den på nytt med den nye versjonen.',
+            ],
+            ['Oppdater én app', 'En Oppdater-knapp ved siden av hver rad bringer bare den appen til nyeste utgivelse.'],
             ['Appliste', 'Hver app viser om den er oppdatert eller hvilken versjon som kommer.'],
           ],
         },

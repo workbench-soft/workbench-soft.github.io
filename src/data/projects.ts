@@ -1359,6 +1359,14 @@ export const projects: Project[] = [
             name: 'Update all',
             text: 'One tap downloads and installs each new release, with a bar per app and one for the run. Cancel stops it.',
           },
+          {
+            name: 'Self update',
+            text: 'WBS Updater ships its own releases, installs itself last in a run, and the phone reopens it on the new version.',
+          },
+          {
+            name: 'Update one app',
+            text: 'An Update button beside each row brings only that app to its newest release.',
+          },
           { name: 'App list', text: 'Each app shows whether it is up to date or which version comes next.' },
         ],
       },
