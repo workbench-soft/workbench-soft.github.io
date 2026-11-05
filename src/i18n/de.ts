@@ -780,7 +780,10 @@ const de: Catalog = {
               'Zuerst Cloud-Runner',
               'Jobs bauen auf kostenlosen Cloud-Runnern, solange die Minuten reichen, dann auf diesem PC.',
             ],
-            ['Releases', 'Jeder Push auf main, der die Prüfungen besteht, wird ein datiertes Release mit Notizen.'],
+            [
+              'Releases',
+              'App-Releases in CI starten, unterstützte Android-APKs lokal aus dem neuesten main bauen und veröffentlichte oder lokale APKs per ADB auf einem verbundenen Smartphone installieren.',
+            ],
             ['Aktualisiert sich selbst', 'Der PC installiert jedes Release wenige Minuten nach dem Merge.'],
           ],
         },

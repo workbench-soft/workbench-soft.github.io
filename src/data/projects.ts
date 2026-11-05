@@ -1143,7 +1143,10 @@ export const projects: Project[] = [
             name: 'Cloud runners first',
             text: 'Jobs build on free cloud runners while their minutes last, then on this PC.',
           },
-          { name: 'Releases', text: 'Each push to main that passes the checks gets a dated release with notes.' },
+          {
+            name: 'Releases',
+            text: 'Start an app release on CI, build supported Android APKs from the latest main locally, and install published or local APKs on a connected phone over ADB.',
+          },
           { name: 'Updates by themselves', text: 'The PC installs each release within minutes of the merge.' },
         ],
       },
