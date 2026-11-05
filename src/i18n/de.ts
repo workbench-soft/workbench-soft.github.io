@@ -242,7 +242,10 @@ const de: Catalog = {
               'Ein Album über ein Kind öffnet sich als Sammelbuch, ein Kapitel pro Lebensjahr.',
             ],
             ['Foto drehen', 'Ein liegendes Foto wird in der Datei auf dem NAS aufgerichtet.'],
-            ['Foto bearbeiten', "Memories und Shuttrix nutzen denselben Editor zum Zuschneiden, Drehen, Zeichnen und Beschriften. Auf Android ersetzt Speichern JPEG, PNG oder WebP; Kopie speichern behält die Quelle. Der Browser lädt eine Kopie herunter."],
+            [
+              'Foto bearbeiten',
+              'Memories und Shuttrix nutzen denselben Editor zum Zuschneiden, Drehen, Zeichnen und Beschriften. Auf Android ersetzt Speichern JPEG, PNG oder WebP; Kopie speichern behält die Quelle. Der Browser lädt eine Kopie herunter.',
+            ],
             ['Neues Bild malen', 'Der Pinsel in Heute öffnet ein leeres Blatt mit allen Werkzeugen.'],
             ['Fotos auf dem Telefon', 'Telefonfotos erscheinen in jedem Raster, und Ordnen lädt sie aufs NAS.'],
             ['Einstellungen', 'Eine Zeile pro Bereich mit seinem Wert: Erinnerungen, Galerie, NAS, Zuhause.'],
@@ -251,9 +254,12 @@ const de: Catalog = {
               'Paare mit gleicher Aufnahmezeit und Größe nebeneinander, um die Kopie zu löschen.',
             ],
             ['Updates', 'Der Build außerhalb eines Stores findet, lädt und installiert seine neue Version.'],
-          
-["Licht, Unschärfe und Schriften","Belichtung von −6 bis +6 EV, Farbton, Schatten und Lichter. Elliptische Hintergrundunschärfe und Tilt-Shift mit einstellbarem scharfem Bereich. Beschriftungen bieten serifenlose, Serifenschrift und Monospace. Aufnahmeparameter bleiben ausgeschlossen."],
-],
+
+            [
+              'Licht, Unschärfe und Schriften',
+              'Belichtung von −6 bis +6 EV, Farbton, Schatten und Lichter. Elliptische Hintergrundunschärfe und Tilt-Shift mit einstellbarem scharfem Bereich. Beschriftungen bieten serifenlose, Serifenschrift und Monospace. Aufnahmeparameter bleiben ausgeschlossen.',
+            ],
+          ],
         },
       ],
     },
@@ -1109,31 +1115,46 @@ const de: Catalog = {
             ['Weißabgleich', 'Auto, Voreinstellungen oder Kelvin auf einem Rad.'],
             [
               'Belichtung',
-              "ISO und Belichtungszeit automatisch oder manuell. Licht und EV nutzen den gesamten Korrekturbereich der Kamera. Auto belichtet dunkle Szenen stärker unter.",
+              'ISO und Belichtungszeit automatisch oder manuell. Licht und EV nutzen den gesamten Korrekturbereich der Kamera. Auto belichtet dunkle Szenen stärker unter.',
             ],
             [
               'Auto-Abstimmung',
               'Ein Knopf im einfachen Modus oder ein Tippen aufs Bild stellt Licht, Wärme und Farbe auf die Szene ein.',
             ],
             ['Farbe', 'Ein Sättigungswert für das COLOR-Rad und den Farbregler.'],
-            ['Foto, Video und Blitz', "Normales Foto löst bei Berührung ohne zusätzliche Fokuswartezeit oder spätere Bildserie aus. Blitz, RAW und Hardware-Fallback können später aufnehmen. Halten startet Video."],
+            [
+              'Foto, Video und Blitz',
+              'Normales Foto löst bei Berührung ohne zusätzliche Fokuswartezeit oder spätere Bildserie aus. Blitz, RAW und Hardware-Fallback können später aufnehmen. Halten startet Video.',
+            ],
             ['Ort- und Kameradaten', 'Jede Aufnahme trägt Ort und Einstellungen als EXIF-Tags.'],
             ['Foto- und Videogröße', 'Die Einstellungen wählen die Größe von Foto und Video.'],
             [
               'Mehrbild-Foto',
               'Ein normales Foto fügt 6 schnelle Bilder zu einem zusammen, mit halb so viel Rauschen und schärferen Kanten.',
             ],
-            ['Fotos verbessern', "Enhance verstärkt Farben, Schärfe und Schatten. Ohne Enhance nutzen unterstützte normale Kameras eine feste sRGB-Kurve. Nachtmodus und andere Kameras behalten ihre Verarbeitung."],
+            [
+              'Fotos verbessern',
+              'Enhance verstärkt Farben, Schärfe und Schatten. Ohne Enhance nutzen unterstützte normale Kameras eine feste sRGB-Kurve. Nachtmodus und andere Kameras behalten ihre Verarbeitung.',
+            ],
             ['QR-Codes', 'Ein Code in der Vorschau bekommt Klammern und einen Knopf zum Öffnen.'],
             ['Uhr', 'Die Uhrzeit oben links, wo sonst die Uhr des Telefons steht, abseits der Tasten.'],
-            ['Galerie', "Ausgewählte Fotos und Videos gemeinsam teilen. Das Kamera-Vorschaubild wird nach Löschungen in der Galerie aktualisiert."],
+            [
+              'Galerie',
+              'Ausgewählte Fotos und Videos gemeinsam teilen. Das Kamera-Vorschaubild wird nach Löschungen in der Galerie aktualisiert.',
+            ],
             ['Werbung', 'Ein Banner unter dem Galerieraster. Ein einmaliger Kauf entfernt es.'],
-            ['Begradigen und drehen', "Memories und Shuttrix nutzen denselben Editor zum Zuschneiden, Drehen, Zeichnen und Beschriften. Auf Android ersetzt Speichern JPEG, PNG oder WebP; Kopie speichern behält die Quelle. Der Browser lädt eine Kopie herunter."],
+            [
+              'Begradigen und drehen',
+              'Memories und Shuttrix nutzen denselben Editor zum Zuschneiden, Drehen, Zeichnen und Beschriften. Auf Android ersetzt Speichern JPEG, PNG oder WebP; Kopie speichern behält die Quelle. Der Browser lädt eine Kopie herunter.',
+            ],
             ['Schnellstart', 'Zweimal die Ein-Taste öffnet Shuttrix, auch über dem Sperrbildschirm.'],
             ['Sprachen', 'In 9 Sprachen, nach der Sprache von Telefon oder Browser.'],
-          
-["Licht, Unschärfe und Schriften","Belichtung von −6 bis +6 EV, Farbton, Schatten und Lichter. Elliptische Hintergrundunschärfe und Tilt-Shift mit einstellbarem scharfem Bereich. Beschriftungen bieten serifenlose, Serifenschrift und Monospace. Aufnahmeparameter bleiben ausgeschlossen."],
-],
+
+            [
+              'Licht, Unschärfe und Schriften',
+              'Belichtung von −6 bis +6 EV, Farbton, Schatten und Lichter. Elliptische Hintergrundunschärfe und Tilt-Shift mit einstellbarem scharfem Bereich. Beschriftungen bieten serifenlose, Serifenschrift und Monospace. Aufnahmeparameter bleiben ausgeschlossen.',
+            ],
+          ],
         },
       ],
     },

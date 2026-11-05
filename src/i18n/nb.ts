@@ -224,7 +224,10 @@ const nb: Catalog = {
             ['Side for indeksering', 'En side på NAS-en viser hvor langt ansiktsmotoren og indeksereren har kommet.'],
             ['Album om en person', 'Et album om ett barn åpnes som en utklippsbok, ett kapittel per leveår.'],
             ['Snu et bilde', 'Et bilde som ligger på siden, rettes opp i filen på NAS-en.'],
-            ['Rediger et bilde', "Memories og Shuttrix deler beskjæring, rotering, tegning og bildetekst. På Android erstatter Lagre JPEG, PNG eller WebP; Lagre kopi beholder originalen. Nettleseren laster ned en kopi."],
+            [
+              'Rediger et bilde',
+              'Memories og Shuttrix deler beskjæring, rotering, tegning og bildetekst. På Android erstatter Lagre JPEG, PNG eller WebP; Lagre kopi beholder originalen. Nettleseren laster ned en kopi.',
+            ],
             ['Tegn et nytt bilde', 'Penselen i I dag åpner et blankt ark med alle verktøyene.'],
             ['Bilder på telefonen', 'Telefonbilder vises i hvert rutenett, og Rydd laster dem opp til NAS-en.'],
             ['Innstillinger', 'Én rad per del med verdien: påminnelser, galleri, NAS, hjem.'],
@@ -233,9 +236,12 @@ const nb: Catalog = {
               'Par med samme opptakstid og størrelse side om side, så den ekstra kopien kan fjernes.',
             ],
             ['Oppdateringer', 'Bygget utenfor en butikk finner, laster ned og installerer sin nye versjon.'],
-          
-["Lys, uskarphet og skrifter","Eksponering fra −6 til +6 EV, fargetone, skygger og høylys. Elliptisk bakgrunnsuskarphet og tilt-shift har justerbart skarpt område. Tekst tilbyr skrifter med og uten seriffer og fast bredde. Opptaksinnstillinger er utelatt."],
-],
+
+            [
+              'Lys, uskarphet og skrifter',
+              'Eksponering fra −6 til +6 EV, fargetone, skygger og høylys. Elliptisk bakgrunnsuskarphet og tilt-shift har justerbart skarpt område. Tekst tilbyr skrifter med og uten seriffer og fast bredde. Opptaksinnstillinger er utelatt.',
+            ],
+          ],
         },
       ],
     },
@@ -995,31 +1001,46 @@ const nb: Catalog = {
             ['Hvitbalanse', 'Auto, forvalg eller kelvin på et hjul.'],
             [
               'Eksponering',
-              "ISO og lukkertid automatisk eller manuelt. Lys og EV bruker hele kameraets kompensasjonsområde. Auto gjør mørke scener mørkere.",
+              'ISO og lukkertid automatisk eller manuelt. Lys og EV bruker hele kameraets kompensasjonsområde. Auto gjør mørke scener mørkere.',
             ],
             [
               'Autojustering',
               'Én knapp i enkel modus, eller et trykk på bildet, stiller Lys, Varme og Farge for motivet.',
             ],
             ['Farge', 'Én metning for COLOR-hjulet og Farge-glidebryteren.'],
-            ['Foto, video og blits', "Vanlig Foto utløses ved berøring uten ekstra fokusventing eller en senere bildeserie. Blits, RAW og maskinvarereserve kan ta bildet senere. Hold for video."],
+            [
+              'Foto, video og blits',
+              'Vanlig Foto utløses ved berøring uten ekstra fokusventing eller en senere bildeserie. Blits, RAW og maskinvarereserve kan ta bildet senere. Hold for video.',
+            ],
             ['Sted og kameradata', 'Hvert bilde bærer hvor og hvordan det ble tatt, som EXIF-tagger.'],
             ['Bilde- og videostørrelse', 'Innstillingene velger størrelsen på bilder og video.'],
             [
               'Flerbildefoto',
               'Et vanlig foto slår sammen 6 raske bilder til ett, med halvparten så mye støy og skarpere kanter.',
             ],
-            ['Forbedre bilder', "Enhance forsterker farger, skarphet og skygger. Av bruker en fast sRGB-kurve på støttede vanlige kameraer. Natt og andre kameraer beholder egen behandling."],
+            [
+              'Forbedre bilder',
+              'Enhance forsterker farger, skarphet og skygger. Av bruker en fast sRGB-kurve på støttede vanlige kameraer. Natt og andre kameraer beholder egen behandling.',
+            ],
             ['QR-koder', 'En kode i forhåndsvisningen får klammer og en knapp for å åpne den.'],
             ['Klokke', 'Klokkeslettet øverst til venstre, der telefonens klokke pleier å stå, unna knappene.'],
-            ['Galleri', "Del valgte bilder og videoer samlet. Kameraets miniatyr oppdateres etter sletting i galleriet."],
+            [
+              'Galleri',
+              'Del valgte bilder og videoer samlet. Kameraets miniatyr oppdateres etter sletting i galleriet.',
+            ],
             ['Reklame', 'Ett banner under gallerirutenettet. Et engangskjøp fjerner det.'],
-            ['Rett opp og roter', "Memories og Shuttrix deler beskjæring, rotering, tegning og bildetekst. På Android erstatter Lagre JPEG, PNG eller WebP; Lagre kopi beholder originalen. Nettleseren laster ned en kopi."],
+            [
+              'Rett opp og roter',
+              'Memories og Shuttrix deler beskjæring, rotering, tegning og bildetekst. På Android erstatter Lagre JPEG, PNG eller WebP; Lagre kopi beholder originalen. Nettleseren laster ned en kopi.',
+            ],
             ['Hurtigstart', 'To trykk på av/på-knappen åpner Shuttrix, også over låseskjermen.'],
             ['Språk', 'På 9 språk, etter telefonen eller nettleseren.'],
-          
-["Lys, uskarphet og skrifter","Eksponering fra −6 til +6 EV, fargetone, skygger og høylys. Elliptisk bakgrunnsuskarphet og tilt-shift har justerbart skarpt område. Tekst tilbyr skrifter med og uten seriffer og fast bredde. Opptaksinnstillinger er utelatt."],
-],
+
+            [
+              'Lys, uskarphet og skrifter',
+              'Eksponering fra −6 til +6 EV, fargetone, skygger og høylys. Elliptisk bakgrunnsuskarphet og tilt-shift har justerbart skarpt område. Tekst tilbyr skrifter med og uten seriffer og fast bredde. Opptaksinnstillinger er utelatt.',
+            ],
+          ],
         },
       ],
     },

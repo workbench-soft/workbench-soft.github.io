@@ -152,7 +152,10 @@ export const projects: Project[] = [
             text: 'An album about one child opens as a scrapbook, a chapter per year of age.',
           },
           { name: 'Turn a photo', text: 'A photo on its side gets stood up in the file on the NAS.' },
-          { name: 'Edit a photo', text: "The same editor in Memories and Shuttrix crops, rotates, draws and adds captions. On Android, Save replaces JPEG, PNG or WebP; Save copy keeps the source. The browser downloads a copy." },
+          {
+            name: 'Edit a photo',
+            text: 'The same editor in Memories and Shuttrix crops, rotates, draws and adds captions. On Android, Save replaces JPEG, PNG or WebP; Save copy keeps the source. The browser downloads a copy.',
+          },
           { name: 'Draw a new picture', text: 'The brush on Today opens a blank sheet with every editor tool.' },
           {
             name: 'Photos on the phone',
@@ -164,9 +167,12 @@ export const projects: Project[] = [
             text: 'Pairs with the same capture time and size, side by side, to drop the extra copy.',
           },
           { name: 'Updates', text: 'The build from outside a store finds, downloads and installs its new version.' },
-        
-{ name: "Light, blur and fonts", text: "Exposure from −6 to +6 EV, tint, shadows and highlights. Approximate ellipse background blur and tilt shift have an adjustable sharp area. Captions offer sans serif, serif and monospace fonts. Capture-only settings stay out." },
-],
+
+          {
+            name: 'Light, blur and fonts',
+            text: 'Exposure from −6 to +6 EV, tint, shadows and highlights. Approximate ellipse background blur and tilt shift have an adjustable sharp area. Captions offer sans serif, serif and monospace fonts. Capture-only settings stay out.',
+          },
+        ],
       },
     ],
   },
@@ -314,7 +320,7 @@ export const projects: Project[] = [
           { name: 'White balance', text: 'Auto, presets or kelvin on a dial.' },
           {
             name: 'Exposure',
-            text: "ISO and shutter can be automatic or manual. Light and EV expose the full hardware compensation range. Auto reduces exposure more in dark scenes.",
+            text: 'ISO and shutter can be automatic or manual. Light and EV expose the full hardware compensation range. Auto reduces exposure more in dark scenes.',
           },
           {
             name: 'Auto tune',
@@ -323,7 +329,7 @@ export const projects: Project[] = [
           { name: 'Color', text: 'One saturation value for the COLOR dial and the Color slider.' },
           {
             name: 'Photo, video and flash',
-            text: "Ordinary Photo fires on touch without an added focus wait or a later burst. Flash, RAW and hardware fallback can capture later. Hold to record.",
+            text: 'Ordinary Photo fires on touch without an added focus wait or a later burst. Flash, RAW and hardware fallback can capture later. Hold to record.',
           },
           { name: 'Place and camera tags', text: 'Each shot carries where and how it was taken, as EXIF tags.' },
           { name: 'Photo and video size', text: 'Settings pick the photo and video size.' },
@@ -331,20 +337,32 @@ export const projects: Project[] = [
             name: 'Multi-frame photo',
             text: 'A plain photo merges 6 quick frames into one, with half the noise and crisper edges.',
           },
-          { name: 'Enhance photos', text: "Enhance adds colour, sharpness and lifted shadows. With Enhance off, supported ordinary camera sessions use a fixed sRGB tone curve. Night and unsupported cameras keep their own processing." },
+          {
+            name: 'Enhance photos',
+            text: 'Enhance adds colour, sharpness and lifted shadows. With Enhance off, supported ordinary camera sessions use a fixed sRGB tone curve. Night and unsupported cameras keep their own processing.',
+          },
           { name: 'QR codes', text: 'A code in the preview gets brackets and a pill to open it.' },
           {
             name: 'Clock',
             text: 'The time in the top left corner, where the phone clock sits, out of the controls’ way.',
           },
-          { name: 'Gallery', text: "Select photos or videos and share them together. The camera thumbnail refreshes after gallery deletions." },
+          {
+            name: 'Gallery',
+            text: 'Select photos or videos and share them together. The camera thumbnail refreshes after gallery deletions.',
+          },
           { name: 'Ads', text: 'One banner under the gallery grid. A one time purchase removes it.' },
-          { name: 'Straighten and rotate', text: "The same editor in Memories and Shuttrix crops, rotates, draws and adds captions. On Android, Save replaces JPEG, PNG or WebP; Save copy keeps the source. The browser downloads a copy." },
+          {
+            name: 'Straighten and rotate',
+            text: 'The same editor in Memories and Shuttrix crops, rotates, draws and adds captions. On Android, Save replaces JPEG, PNG or WebP; Save copy keeps the source. The browser downloads a copy.',
+          },
           { name: 'Quick start', text: 'A double press of the power button opens Shuttrix, over the lock screen too.' },
           { name: 'Languages', text: 'The app in 9 languages, following the phone or browser.' },
-        
-{ name: "Light, blur and fonts", text: "Exposure from −6 to +6 EV, tint, shadows and highlights. Approximate ellipse background blur and tilt shift have an adjustable sharp area. Captions offer sans serif, serif and monospace fonts. Capture-only settings stay out." },
-],
+
+          {
+            name: 'Light, blur and fonts',
+            text: 'Exposure from −6 to +6 EV, tint, shadows and highlights. Approximate ellipse background blur and tilt shift have an adjustable sharp area. Captions offer sans serif, serif and monospace fonts. Capture-only settings stay out.',
+          },
+        ],
       },
     ],
   },

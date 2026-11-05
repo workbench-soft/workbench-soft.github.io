@@ -243,7 +243,10 @@ const fr: Catalog = {
             ],
             ['Albums sur une personne', "L'album d'un enfant s'ouvre comme un carnet, un chapitre par année d'âge."],
             ['Tourner une photo', 'Une photo couchée est redressée dans le fichier sur le NAS.'],
-            ['Modifier une photo', "Memories et Shuttrix partagent le recadrage, la rotation, le dessin et les légendes. Sur Android, Enregistrer remplace le JPEG, PNG ou WebP ; Enregistrer une copie garde la source. Le navigateur télécharge une copie."],
+            [
+              'Modifier une photo',
+              'Memories et Shuttrix partagent le recadrage, la rotation, le dessin et les légendes. Sur Android, Enregistrer remplace le JPEG, PNG ou WebP ; Enregistrer une copie garde la source. Le navigateur télécharge une copie.',
+            ],
             ['Dessiner une image', "Le pinceau d'Aujourd'hui ouvre une feuille vierge avec tous les outils."],
             [
               'Photos du téléphone',
@@ -252,9 +255,12 @@ const fr: Catalog = {
             ['Réglages', 'Une ligne par section avec sa valeur : rappels, galerie, NAS, maison.'],
             ['Doublons sur le NAS', 'Les paires de même heure et même taille, côte à côte, pour jeter la copie.'],
             ['Mises à jour', 'La version hors store trouve, télécharge et installe sa nouvelle version.'],
-          
-["Lumière, flou et polices","Exposition de −6 à +6 EV, teinte, ombres et hautes lumières. Flou de fond elliptique et effet de bascule avec zone nette réglable. Polices avec ou sans empattement et à chasse fixe. Les réglages de prise de vue sont exclus."],
-],
+
+            [
+              'Lumière, flou et polices',
+              'Exposition de −6 à +6 EV, teinte, ombres et hautes lumières. Flou de fond elliptique et effet de bascule avec zone nette réglable. Polices avec ou sans empattement et à chasse fixe. Les réglages de prise de vue sont exclus.',
+            ],
+          ],
         },
       ],
     },
@@ -1143,14 +1149,17 @@ const fr: Catalog = {
             ['Balance des blancs', 'Auto, préréglages ou kelvins sur une molette.'],
             [
               'Exposition',
-              "ISO et temps de pose automatiques ou manuels. Lumière et EV utilisent toute la plage de correction de la caméra. Auto assombrit davantage les scènes sombres.",
+              'ISO et temps de pose automatiques ou manuels. Lumière et EV utilisent toute la plage de correction de la caméra. Auto assombrit davantage les scènes sombres.',
             ],
             [
               'Réglage auto',
               'Un bouton du mode simple, ou un toucher sur l’aperçu, règle Lumière, Chaleur et Couleur pour la scène.',
             ],
             ['Couleur', 'Une seule saturation pour la molette COLOR et le curseur Couleur.'],
-            ['Photo, vidéo et flash', "Photo déclenche au toucher sans attente supplémentaire de mise au point ni rafale ultérieure. Flash, RAW et repli matériel peuvent capturer plus tard. Maintenir lance une vidéo."],
+            [
+              'Photo, vidéo et flash',
+              'Photo déclenche au toucher sans attente supplémentaire de mise au point ni rafale ultérieure. Flash, RAW et repli matériel peuvent capturer plus tard. Maintenir lance une vidéo.',
+            ],
             ['Lieu et réglages', 'Chaque prise garde où et comment elle a été faite, en balises EXIF.'],
             ['Taille des photos et vidéos', 'Les réglages choisissent la taille des photos et des vidéos.'],
             [
@@ -1159,18 +1168,27 @@ const fr: Catalog = {
             ],
             [
               'Améliorer les photos',
-              "Enhance renforce couleurs, netteté et ombres. Désactivé, il laisse une courbe sRGB fixe aux caméras ordinaires compatibles. Le mode Nuit et les autres caméras gardent leur traitement.",
+              'Enhance renforce couleurs, netteté et ombres. Désactivé, il laisse une courbe sRGB fixe aux caméras ordinaires compatibles. Le mode Nuit et les autres caméras gardent leur traitement.',
             ],
             ['Codes QR', "Un code dans l'aperçu reçoit un cadre et une pastille pour l'ouvrir."],
             ['Horloge', 'L’heure en haut à gauche, à la place de l’horloge du téléphone, loin des commandes.'],
-            ['Galerie', "Partager ensemble les photos et vidéos sélectionnées. La miniature de la caméra se recharge après une suppression dans la galerie."],
+            [
+              'Galerie',
+              'Partager ensemble les photos et vidéos sélectionnées. La miniature de la caméra se recharge après une suppression dans la galerie.',
+            ],
             ['Publicités', 'Une bannière sous la grille de la galerie. Un achat unique la retire.'],
-            ['Redresser et pivoter', "Memories et Shuttrix partagent le recadrage, la rotation, le dessin et les légendes. Sur Android, Enregistrer remplace le JPEG, PNG ou WebP ; Enregistrer une copie garde la source. Le navigateur télécharge une copie."],
+            [
+              'Redresser et pivoter',
+              'Memories et Shuttrix partagent le recadrage, la rotation, le dessin et les légendes. Sur Android, Enregistrer remplace le JPEG, PNG ou WebP ; Enregistrer une copie garde la source. Le navigateur télécharge une copie.',
+            ],
             ['Démarrage rapide', "Deux appuis sur le bouton marche ouvrent Shuttrix, même sur l'écran verrouillé."],
             ['Langues', 'En 9 langues, selon le téléphone ou le navigateur.'],
-          
-["Lumière, flou et polices","Exposition de −6 à +6 EV, teinte, ombres et hautes lumières. Flou de fond elliptique et effet de bascule avec zone nette réglable. Polices avec ou sans empattement et à chasse fixe. Les réglages de prise de vue sont exclus."],
-],
+
+            [
+              'Lumière, flou et polices',
+              'Exposition de −6 à +6 EV, teinte, ombres et hautes lumières. Flou de fond elliptique et effet de bascule avec zone nette réglable. Polices avec ou sans empattement et à chasse fixe. Les réglages de prise de vue sont exclus.',
+            ],
+          ],
         },
       ],
     },
