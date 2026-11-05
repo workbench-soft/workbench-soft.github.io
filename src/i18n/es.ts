@@ -335,7 +335,7 @@ const es: Catalog = {
     },
     'guitar-upscale': {
       tagline: 'Una guitarra que se toca en el navegador.',
-      lede: 'Guitar Upscale muestra escalas y acordes en un mástil virtual, graba loops y los guarda como MIDI. Edita canciones nota a nota, las muestra como tablatura y se instala en la pantalla de inicio. En la pantalla táctil, desliza a la izquierda en el panel de acordes para ir al siguiente acorde, o a la derecha para volver al anterior.',
+      lede: 'Guitar Upscale muestra escalas y acordes en un mástil virtual, graba loops y los guarda como MIDI. Edita canciones nota a nota, las muestra como tablatura y se instala en la pantalla de inicio. En la pantalla táctil, desliza a la izquierda en el panel de acordes para ir al siguiente acorde, o a la derecha para volver al anterior. Durante la reproducción, un pequeño diagrama sobre cada acorde muestra una postura cómoda según la escala, la afinación, la cejilla y el número de cuerdas elegidos.',
       links: ['guitar-upscale.com'],
       groups: [
         {
