@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **WBS Updater** the project joins the internal tools with Update all and the App list, in 9 languages.
+
 - **SpotTheCam** the project describes road travel checks and local speed units in 9 languages.
 
 - **Guitar Upscale** the project describes playback fingering diagrams for the current guitar settings in 9 languages.

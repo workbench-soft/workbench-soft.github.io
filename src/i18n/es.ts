@@ -994,6 +994,25 @@ const es: Catalog = {
         },
       ],
     },
+    'wbs-updater': {
+      tagline: 'Lleva cada app de Workbench Soft del teléfono a su última versión.',
+      lede: 'Una app Android nativa para el teléfono del estudio. Lee el repo público de versiones y lista cada app de Workbench Soft con su estado, y Actualizar todo instala cada una mediante Shizuku sin avisos.',
+      links: [],
+      groups: [
+        {
+          features: [
+            [
+              'Actualizar todo',
+              'Un toque descarga e instala una a una cada app desactualizada, con una barra para toda la ejecución.',
+            ],
+            [
+              'Lista de apps',
+              'Cada app con su estado: al día, una actualización de una versión a la siguiente o la más reciente. La lista se llena al abrir y al volver, y un tirón hacia abajo la vuelve a llenar.',
+            ],
+          ],
+        },
+      ],
+    },
     'memories-demo-webdav': {
       tagline: 'Un NAS de ejemplo con fotos para la revisión de Google Play.',
       lede: 'Un servidor WebDAV con fotos de ejemplo, para que un revisor de Google Play entre en Memories sin un NAS propio. Corre como Cloudflare Worker en el plan gratuito.',
