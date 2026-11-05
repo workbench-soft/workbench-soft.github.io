@@ -1193,35 +1193,40 @@ const fr: Catalog = {
       ],
     },
     farnear: {
-      tagline: 'Des appels vidéo à travers une frontière qui bloque les apps habituelles, avec un tableau à dessin.',
-      lede: "Farnear appelle la famille par un lien, sans compte. La vidéo passe directement entre les participants, et l'appel essaie plusieurs chemins jusqu'à ce qu'un passe.",
+      tagline: 'Des appels vidéo par-delà les frontières, avec un tableau pour les images et vidéos partagées.',
+      lede: 'Farnear relie la famille par un lien, sans compte. La personne qui crée l’appel rejoint tout de suite ; les invités choisissent leurs appareils.',
       links: ['farnear.workbench-soft.com'],
       groups: [
         {
           features: [
-            ['Appels par lien', "Un lien est la salle. Jusqu'à 4 personnes se voient et s'entendent."],
+            [
+              'Appels par lien',
+              'Un lien est la salle. La personne qui crée l’appel rejoint tout de suite. Les invités choisissent le micro, la caméra et la sortie audio.',
+            ],
             [
               'Salles enregistrées',
               'Un lien de salle enregistré sous un nom, comme Maman. Le même lien marche à chaque fois.',
             ],
             [
-              'Des appels qui essaient plusieurs chemins vers la Russie',
-              "D'abord en direct, puis par relais, et en dernier un collage à la main.",
+              'Appels vidéo directs',
+              'Le son et la vidéo passent en direct si les deux réseaux le permettent. Les relais sont prévus.',
             ],
-            ['Tableau', 'Tout le monde dessine sur une surface avec un stylo, un surligneur ou un laser.'],
             [
-              'Partager un écran, une image ou une vidéo',
-              'Le tableau montre une fenêtre, une image ou une vidéo, et chacun dessine dessus.',
+              'Tableau',
+              'Chacun dessine au stylo, au surligneur ou au laser qui s’efface. On peut effacer et annuler ses traits.',
             ],
-            ['Photo du téléphone', "L'appareil photographie une page et la pose sur le tableau."],
-            ['Cours', 'Le prof fait défiler les diapos, les deux côtés dessinent, et un minuteur sonne avant la fin.'],
+            [
+              'Partager une image ou une vidéo',
+              'Une personne charge une image ou une vidéo de 100 Mo maximum. Les autres la voient et dessinent dessus.',
+            ],
+            ['Cours', 'Les salles de cours avec diapos, dessin et minuteur sont prévues.'],
             [
               'Pub et retrait',
               'Des pubs autour de l’appel, aucune pendant. Un achat de A$2.99 les retire des salons de l’acheteur.',
             ],
             [
               'Farnear Pro',
-              'Un achat de A$5.99 sur Android ouvre le tableau, les cours et le partage à toute la salle, et retire les pubs.',
+              'Un achat de A$5.99 sur Android ouvre le tableau partagé et ses médias pour la salle, et retire les pubs.',
             ],
             ['Langues', 'En 9 langues, selon le téléphone ou le navigateur.'],
           ],

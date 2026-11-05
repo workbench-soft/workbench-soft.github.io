@@ -579,29 +579,34 @@ export const projects: Project[] = [
     hue: 160,
     code: 'FNR',
     name: 'Farnear',
-    tagline: 'Video calls across a border that blocks the usual apps, with a board to draw on.',
-    lede: 'Farnear calls family through a link, with no account. The video goes straight between the people on the call, and the call tries several paths until one gets through.',
+    tagline: 'Video calls across borders, with a board for shared images and video.',
+    lede: 'Farnear calls family through a link, with no account. Hosts connect at once; guests choose their devices, then connect.',
     platforms: ['Web', 'Android', 'iOS'],
     stack: ['React', 'Vite', 'WebRTC', 'Cloudflare Workers', 'Kotlin'],
     links: [{ href: 'https://farnear.workbench-soft.com', label: 'farnear.workbench-soft.com' }],
     groups: [
       {
         features: [
-          { name: 'Calls through a link', text: 'A link is the room. Up to 4 people see and hear each other.' },
+          {
+            name: 'Calls through a link',
+            text: 'A link is the room. The host joins at once; guests choose their mic, camera and speaker, then connect.',
+          },
           { name: 'Saved rooms', text: 'A room link saved under a name, such as Mum. The same link works every time.' },
           {
-            name: 'Calls that try several paths to Russia',
-            text: 'A direct path first, then relays, with a paste by hand as the last resort.',
+            name: 'Direct video calls',
+            text: 'Audio and video go peer to peer when both networks allow it. Relay support is planned.',
           },
-          { name: 'Board', text: 'Everyone draws on one surface with a pen, a highlighter or a laser.' },
           {
-            name: 'Share a screen, a picture or a video',
-            text: 'The board shows a window, a picture or a video, and everyone draws over it.',
+            name: 'Board',
+            text: 'Everyone draws with a pen, highlighter or fading laser. They can erase and undo their own work.',
           },
-          { name: 'Photo from the phone', text: 'The camera takes a photo of a page and puts it on the board.' },
+          {
+            name: 'Share an image or video',
+            text: 'One person loads an image or video up to 100 MB. Everyone sees it and draws over it.',
+          },
           {
             name: 'Lessons',
-            text: 'A teacher steps through slides, both sides draw, and a timer chimes before the end.',
+            text: 'Lesson rooms are planned, with slides, drawing and a timer.',
           },
           {
             name: 'Ads and remove ads',
@@ -609,7 +614,7 @@ export const projects: Project[] = [
           },
           {
             name: 'Farnear Pro',
-            text: 'One A$5.99 purchase on Android opens the board, lessons and sharing for the whole room, and hides the ads.',
+            text: 'One A$5.99 purchase on Android opens the shared board and media for the room, and removes ads.',
           },
           { name: 'Languages', text: 'The app in 9 languages, following the phone or browser.' },
         ],

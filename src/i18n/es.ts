@@ -1135,29 +1135,37 @@ const es: Catalog = {
       ],
     },
     farnear: {
-      tagline: 'Videollamadas a través de una frontera que bloquea las apps de siempre, con una pizarra para dibujar.',
-      lede: 'Farnear llama a la familia con un enlace, sin cuenta. El vídeo va directo entre las personas y la llamada prueba varias rutas hasta que una pasa.',
+      tagline: 'Videollamadas entre países, con una pizarra para compartir imágenes y vídeos.',
+      lede: 'Farnear conecta a la familia mediante un enlace, sin cuenta. Quien crea la sala entra al momento; las visitas eligen sus dispositivos.',
       links: ['farnear.workbench-soft.com'],
       groups: [
         {
           features: [
-            ['Llamadas por enlace', 'Un enlace es la sala. Hasta 4 personas se ven y se oyen.'],
-            ['Salas guardadas', 'Un enlace guardado con un nombre, como Mamá. El mismo enlace sirve siempre.'],
-            ['Llamadas que prueban varias rutas a Rusia', 'Primero directo, luego relés, y al final un pegado a mano.'],
-            ['Pizarra', 'Todos dibujan en una superficie con bolígrafo, rotulador o láser.'],
             [
-              'Compartir pantalla, imagen o vídeo',
-              'La pizarra muestra una ventana, una imagen o un vídeo y todos dibujan encima.',
+              'Llamadas por enlace',
+              'Un enlace es la sala. Quien la crea entra al momento. Las visitas eligen micrófono, cámara y altavoz.',
             ],
-            ['Foto del teléfono', 'La cámara fotografía una página y la pone en la pizarra.'],
-            ['Clases', 'El profesor pasa diapositivas, ambos dibujan y un temporizador suena antes del final.'],
+            ['Salas guardadas', 'Un enlace guardado con un nombre, como Mamá. El mismo enlace sirve siempre.'],
+            [
+              'Videollamadas directas',
+              'El sonido y el vídeo van directos si las dos redes lo permiten. Los relés están previstos.',
+            ],
+            [
+              'Pizarra',
+              'Todos dibujan con bolígrafo, rotulador o láser que se desvanece. También pueden borrar y deshacer sus trazos.',
+            ],
+            [
+              'Compartir una imagen o un vídeo',
+              'Una persona carga una imagen o un vídeo de hasta 100 MB. Los demás lo ven y dibujan encima.',
+            ],
+            ['Clases', 'Las salas de clase con diapositivas, dibujo y temporizador están previstas.'],
             [
               'Anuncios y quitarlos',
               'Anuncios alrededor de la llamada, ninguno durante ella. Una compra de A$2.99 los quita en las salas del comprador.',
             ],
             [
               'Farnear Pro',
-              'Una compra de A$5.99 en Android abre la pizarra, las clases y compartir para toda la sala, y quita los anuncios.',
+              'Una compra de A$5.99 en Android abre la pizarra compartida y sus archivos para la sala, y quita los anuncios.',
             ],
             ['Idiomas', 'En 9 idiomas, según el teléfono o el navegador.'],
           ],

@@ -1159,32 +1159,34 @@ const de: Catalog = {
       ],
     },
     farnear: {
-      tagline: 'Videoanrufe über eine Grenze, die die üblichen Apps sperrt, mit einer Tafel zum Zeichnen.',
-      lede: 'Farnear ruft die Familie über einen Link an, ohne Konto. Das Video geht direkt zwischen den Leuten, und der Anruf probiert mehrere Wege, bis einer durchkommt.',
+      tagline: 'Videoanrufe über Grenzen hinweg, mit einer Tafel für gemeinsame Bilder und Videos.',
+      lede: 'Farnear verbindet Familien per Link und ohne Konto. Ersteller treten sofort bei; Gäste wählen ihre Geräte.',
       links: ['farnear.workbench-soft.com'],
       groups: [
         {
           features: [
-            ['Anrufe per Link', 'Ein Link ist der Raum. Bis zu 4 Leute sehen und hören sich.'],
+            [
+              'Anrufe per Link',
+              'Ein Link ist der Raum. Der Ersteller tritt sofort bei. Gäste wählen Mikrofon, Kamera und Lautsprecher.',
+            ],
             ['Gespeicherte Räume', 'Ein Raumlink unter einem Namen wie Mama. Derselbe Link geht jedes Mal.'],
+            ['Direkte Videoanrufe', 'Ton und Video laufen direkt, wenn beide Netze es zulassen. Relais sind geplant.'],
             [
-              'Anrufe, die mehrere Wege nach Russland probieren',
-              'Erst direkt, dann über Relays, als Letztes ein Einfügen von Hand.',
+              'Tafel',
+              'Alle zeichnen mit Stift, Textmarker oder verblassendem Laser. Eigene Linien lassen sich löschen und rückgängig machen.',
             ],
-            ['Tafel', 'Alle zeichnen auf einer Fläche mit Stift, Marker oder Laser.'],
             [
-              'Bildschirm, Bild oder Video teilen',
-              'Die Tafel zeigt ein Fenster, ein Bild oder ein Video, alle zeichnen darüber.',
+              'Bild oder Video teilen',
+              'Eine Person lädt ein Bild oder Video bis 100 MB hoch. Alle sehen es und zeichnen darauf.',
             ],
-            ['Foto vom Telefon', 'Die Kamera fotografiert eine Seite und legt sie auf die Tafel.'],
-            ['Unterricht', 'Die Lehrkraft geht Folien durch, beide Seiten zeichnen, ein Timer klingelt vor dem Ende.'],
+            ['Unterricht', 'Unterrichtsräume mit Folien, Zeichnen und Timer sind geplant.'],
             [
               'Werbung und entfernen',
               'Werbung rund um den Anruf, keine während des Anrufs. Ein Kauf für A$2.99 entfernt sie in den Räumen des Käufers.',
             ],
             [
               'Farnear Pro',
-              'Ein Kauf für A$5.99 unter Android öffnet Tafel, Unterricht und Teilen für den ganzen Raum und entfernt die Werbung.',
+              'Ein Kauf für A$5.99 unter Android öffnet die gemeinsame Tafel mit Medien für den Raum und entfernt Werbung.',
             ],
             ['Sprachen', 'In 9 Sprachen, nach der Sprache von Telefon oder Browser.'],
           ],

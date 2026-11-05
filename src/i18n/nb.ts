@@ -1045,32 +1045,34 @@ const nb: Catalog = {
       ],
     },
     farnear: {
-      tagline: 'Videosamtaler over en grense som blokkerer de vanlige appene, med en tavle å tegne på.',
-      lede: 'Farnear ringer familien via en lenke, uten konto. Videoen går rett mellom deltakerne, og samtalen prøver flere veier til én kommer gjennom.',
+      tagline: 'Videosamtaler over landegrenser, med en tavle for delte bilder og videoer.',
+      lede: 'Farnear kobler familien sammen via en lenke, uten konto. Den som oppretter rommet kobles til med en gang; gjestene velger enheter.',
       links: ['farnear.workbench-soft.com'],
       groups: [
         {
           features: [
-            ['Samtaler via lenke', 'En lenke er rommet. Opptil 4 personer ser og hører hverandre.'],
+            [
+              'Samtaler via lenke',
+              'En lenke er rommet. Oppretteren kobles til med en gang. Gjestene velger mikrofon, kamera og høyttaler.',
+            ],
             ['Lagrede rom', 'En romlenke lagret under et navn, som Mamma. Samme lenke virker hver gang.'],
+            ['Direkte videosamtaler', 'Lyd og video går direkte når begge nettverk tillater det. Reléer er planlagt.'],
             [
-              'Samtaler som prøver flere veier til Russland',
-              'Først direkte, så via reléer, og til slutt lim inn for hånd.',
+              'Tavle',
+              'Alle tegner med penn, merkepenn eller en laser som viskes ut. Egne streker kan slettes og angres.',
             ],
-            ['Tavle', 'Alle tegner på én flate med penn, merkepenn eller laser.'],
             [
-              'Del en skjerm, et bilde eller en video',
-              'Tavlen viser et vindu, et bilde eller en video, og alle tegner oppå.',
+              'Del et bilde eller en video',
+              'Én person laster opp et bilde eller en video på opptil 100 MB. Alle ser det og tegner oppå.',
             ],
-            ['Bilde fra telefonen', 'Kameraet tar bilde av en side og legger den på tavlen.'],
-            ['Timer', 'Læreren blar gjennom lysbilder, begge tegner, og en tidtaker ringer før slutten.'],
+            ['Timer', 'Undervisningsrom med lysbilder, tegning og tidtaker er planlagt.'],
             [
               'Reklame og fjerning',
               'Reklame rundt samtalen, ingen under den. Ett kjøp for A$2.99 fjerner den i kjøperens rom.',
             ],
             [
               'Farnear Pro',
-              'Ett kjøp til A$5.99 på Android åpner tavla, timene og deling for hele rommet, og fjerner reklamen.',
+              'Ett kjøp til A$5.99 på Android åpner den delte tavla og mediene for rommet, og fjerner reklamen.',
             ],
             ['Språk', 'På 9 språk, etter telefonen eller nettleseren.'],
           ],
