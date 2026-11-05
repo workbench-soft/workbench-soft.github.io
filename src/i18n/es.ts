@@ -385,8 +385,8 @@ const es: Catalog = {
             ],
             ['Exportar MIDI', 'Los archivos se descargan, o salen por el menú de compartir.'],
             [
-              'Planes de pago',
-              'Iniciar sesión con Patreon o comprar en Google Play desbloquea las herramientas Explorer y Composer.',
+              'Guitar Upscale Pro',
+              'Una compra en Google Play desbloquea la grabación, el looper, la carga y búsqueda de canciones y los diseños en Android, y quita los anuncios. En la web están abiertas todas las funciones.',
             ],
             [
               'Instalación y sin conexión',

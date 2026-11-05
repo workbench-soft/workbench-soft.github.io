@@ -404,8 +404,8 @@ export const projects: Project[] = [
           },
           { name: 'MIDI export', text: 'Files download, or go out through the share sheet.' },
           {
-            name: 'Sign-in and paid tiers',
-            text: 'Patreon sign in or a Google Play purchase unlock the Explorer and Composer tools.',
+            name: 'Guitar Upscale Pro',
+            text: 'One Google Play purchase unlocks recording, the looper, song upload and search, and skins in the Android app, and removes ads. Every feature is open on the web.',
           },
           {
             name: 'Install and offline',
