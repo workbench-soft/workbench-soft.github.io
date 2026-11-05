@@ -339,7 +339,7 @@ const fr: Catalog = {
     },
     'guitar-upscale': {
       tagline: 'Une guitare qui se joue dans le navigateur.',
-      lede: 'Guitar Upscale montre gammes et accords sur un manche virtuel, enregistre des boucles et les sauve en MIDI. Il édite les morceaux note par note, les affiche en tablature et s’installe sur l’écran d’accueil. Sur écran tactile, balayez le panneau des accords vers la gauche pour passer au suivant, ou vers la droite pour revenir au précédent.',
+      lede: 'Guitar Upscale montre gammes et accords sur un manche virtuel, enregistre des boucles et les sauve en MIDI. Il édite les morceaux note par note, les affiche en tablature et s’installe sur l’écran d’accueil. Sur écran tactile, balayez le panneau des accords vers la gauche pour passer au suivant, ou vers la droite pour revenir au précédent. Pendant la lecture, un petit diagramme au-dessus de chaque accord montre un doigté confortable pour la gamme, l’accordage, le capodastre et le nombre de cordes choisis.',
       links: ['guitar-upscale.com'],
       groups: [
         {

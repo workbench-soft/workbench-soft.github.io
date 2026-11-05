@@ -349,7 +349,7 @@ export const projects: Project[] = [
     code: 'GUP',
     name: 'Guitar Upscale',
     tagline: 'A guitar you play in the browser.',
-    lede: 'Guitar Upscale shows scales and chords on a virtual fretboard, records loops and saves them as MIDI. It edits songs note by note, shows them as tab, and installs to the home screen.',
+    lede: 'Guitar Upscale shows scales and chords on a virtual fretboard, records loops and saves them as MIDI. It edits songs note by note, shows them as tab, and installs to the home screen. A compact fingering diagram above each playback chord shows a comfortable grip for the current scale, tuning, capo and string count.',
     platforms: ['Web', 'Android'],
     stack: ['Next.js', 'React', 'Web Audio', 'MIDI', 'Capacitor', 'Cloudflare'],
     links: [{ href: 'https://guitar-upscale.com', label: 'guitar-upscale.com' }],
