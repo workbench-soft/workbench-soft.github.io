@@ -1179,7 +1179,7 @@ const de: Catalog = {
               'Bild oder Video teilen',
               'Eine Person lädt ein Bild oder Video bis 100 MB hoch. Alle sehen es und zeichnen darauf.',
             ],
-            ['Unterricht', 'Unterrichtsräume mit Folien, Zeichnen und Timer sind geplant.'],
+            ['Unterricht (geplant)', 'Unterrichtsräume mit Folien, Zeichnen und Timer sind geplant.'],
             [
               'Werbung und entfernen',
               'Werbung rund um den Anruf, keine während des Anrufs. Ein Kauf für A$2.99 entfernt sie in den Räumen des Käufers.',
@@ -1187,6 +1187,10 @@ const de: Catalog = {
             [
               'Farnear Pro',
               'Ein Kauf für A$5.99 unter Android öffnet die gemeinsame Tafel mit Medien für den Raum und entfernt Werbung.',
+            ],
+            [
+              'Android-Verteilung',
+              'CI erstellt signierte APK- und AAB-Dateien für öffentliche Releases. Play-Uploads starten nach dem ersten Play-Console-Release und der Einrichtung.',
             ],
             ['Sprachen', 'In 9 Sprachen, nach der Sprache von Telefon oder Browser.'],
           ],

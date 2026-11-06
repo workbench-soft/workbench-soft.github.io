@@ -1065,7 +1065,7 @@ const nb: Catalog = {
               'Del et bilde eller en video',
               'Én person laster opp et bilde eller en video på opptil 100 MB. Alle ser det og tegner oppå.',
             ],
-            ['Timer', 'Undervisningsrom med lysbilder, tegning og tidtaker er planlagt.'],
+            ['Undervisning (planlagt)', 'Undervisningsrom med lysbilder, tegning og tidtaker er planlagt.'],
             [
               'Reklame og fjerning',
               'Reklame rundt samtalen, ingen under den. Ett kjøp for A$2.99 fjerner den i kjøperens rom.',
@@ -1073,6 +1073,10 @@ const nb: Catalog = {
             [
               'Farnear Pro',
               'Ett kjøp til A$5.99 på Android åpner den delte tavla og mediene for rommet, og fjerner reklamen.',
+            ],
+            [
+              'Android-distribusjon',
+              'CI bygger signerte APK- og AAB-filer for offentlige utgivelser. Opplasting til Play intern testing starter etter første utgivelse og oppsett i Play Console.',
             ],
             ['Språk', 'På 9 språk, etter telefonen eller nettleseren.'],
           ],

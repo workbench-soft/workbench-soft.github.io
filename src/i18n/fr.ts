@@ -1219,7 +1219,7 @@ const fr: Catalog = {
               'Partager une image ou une vidéo',
               'Une personne charge une image ou une vidéo de 100 Mo maximum. Les autres la voient et dessinent dessus.',
             ],
-            ['Cours', 'Les salles de cours avec diapos, dessin et minuteur sont prévues.'],
+            ['Cours (prévus)', 'Les salles de cours avec diapos, dessin et minuteur sont prévus.'],
             [
               'Pub et retrait',
               'Des pubs autour de l’appel, aucune pendant. Un achat de A$2.99 les retire des salons de l’acheteur.',
@@ -1227,6 +1227,10 @@ const fr: Catalog = {
             [
               'Farnear Pro',
               'Un achat de A$5.99 sur Android ouvre le tableau partagé et ses médias pour la salle, et retire les pubs.',
+            ],
+            [
+              'Distribution Android',
+              'CI crée des APK et AAB signés pour les versions publiques. Les envois sur le canal de test Play commencent après la première version et la configuration de Play Console.',
             ],
             ['Langues', 'En 9 langues, selon le téléphone ou le navigateur.'],
           ],
