@@ -605,7 +605,7 @@ export const projects: Project[] = [
             text: 'One person loads an image or video up to 100 MB. Everyone sees it and draws over it.',
           },
           {
-            name: 'Lessons',
+            name: 'Lessons (planned)',
             text: 'Lesson rooms are planned, with slides, drawing and a timer.',
           },
           {
@@ -615,6 +615,10 @@ export const projects: Project[] = [
           {
             name: 'Farnear Pro',
             text: 'One A$5.99 purchase on Android opens the shared board and media for the room, and removes ads.',
+          },
+          {
+            name: 'Android distribution',
+            text: 'CI builds signed APK and AAB files for public releases. Play internal testing uploads start after the first Play Console release and setup.',
           },
           { name: 'Languages', text: 'The app in 9 languages, following the phone or browser.' },
         ],

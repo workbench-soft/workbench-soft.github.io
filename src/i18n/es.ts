@@ -1158,7 +1158,7 @@ const es: Catalog = {
               'Compartir una imagen o un vídeo',
               'Una persona carga una imagen o un vídeo de hasta 100 MB. Los demás lo ven y dibujan encima.',
             ],
-            ['Clases', 'Las salas de clase con diapositivas, dibujo y temporizador están previstas.'],
+            ['Clases (previstas)', 'Las salas de clase con diapositivas, dibujo y temporizador están previstas.'],
             [
               'Anuncios y quitarlos',
               'Anuncios alrededor de la llamada, ninguno durante ella. Una compra de A$2.99 los quita en las salas del comprador.',
@@ -1166,6 +1166,10 @@ const es: Catalog = {
             [
               'Farnear Pro',
               'Una compra de A$5.99 en Android abre la pizarra compartida y sus archivos para la sala, y quita los anuncios.',
+            ],
+            [
+              'Distribución para Android',
+              'CI crea APK y AAB firmados para las versiones públicas. Las subidas a pruebas internas de Play empiezan tras la primera versión y configuración de Play Console.',
             ],
             ['Idiomas', 'En 9 idiomas, según el teléfono o el navegador.'],
           ],
