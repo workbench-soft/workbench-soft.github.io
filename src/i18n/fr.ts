@@ -92,11 +92,7 @@ const fr: Catalog = {
       project: 'Projet',
       feature: 'Fonction',
     },
-    footer: {
-      noAds: 'Ce site n’affiche aucune publicité.',
-      releases: 'Versions',
-      privacy: 'Confidentialité Memories',
-    },
+    footer: { noAds: 'Ce site n’affiche aucune publicité.', releases: 'Versions', privacy: 'Confidentialité Memories' },
     technologies: 'Technologies',
   },
   services: [
@@ -196,6 +192,10 @@ const fr: Catalog = {
               'Des cartes étape par étape trient les photos du téléphone, les déplacent dans des dossiers datés sur le NAS et libèrent le téléphone.',
             ],
             [
+              'Import depuis Google Photos',
+              'Choisissez des photos dans Google Photos, et l’app les télécharge dans DCIM pour qu’elles partent sur le NAS.',
+            ],
+            [
               'Trier sur le NAS',
               'Les fichiers choisis sur le NAS reçoivent leur nom et leur dossier datés, sur le NAS et dans l’index à la fois.',
             ],
@@ -236,6 +236,10 @@ const fr: Catalog = {
               "L'app de bureau range un dossier dans les mêmes dossiers par année, lieu et jours que le téléphone.",
             ],
             ['Archives', 'Chaque année et chaque mois avec le nombre de photos. Un appui ouvre tout le mois.'],
+            [
+              'Liste des voyages et carte des lieux',
+              'L’archive liste les voyages à l’étranger et les road trips, et place chaque photo GPS sur une carte, par année.',
+            ],
             ['Personnes', "Le NAS regroupe les visages des photos par personne, les personnes nommées d'abord."],
             [
               "Page d'avancement de l'index",
@@ -255,7 +259,6 @@ const fr: Catalog = {
             ['Réglages', 'Une ligne par section avec sa valeur : rappels, galerie, NAS, maison.'],
             ['Doublons sur le NAS', 'Les paires de même heure et même taille, côte à côte, pour jeter la copie.'],
             ['Mises à jour', 'La version hors store trouve, télécharge et installe sa nouvelle version.'],
-
             [
               'Lumière, flou et polices',
               'Exposition de −6 à +6 EV, teinte, ombres et hautes lumières. Flou de fond elliptique et effet de bascule avec zone nette réglable. Polices avec ou sans empattement et à chasse fixe. Les réglages de prise de vue sont exclus.',
@@ -307,16 +310,26 @@ const fr: Catalog = {
               'Un bip environ 20 secondes avant, puis « Radar devant. Limite 60. » Il arrive aussi sur l’écran verrouillé et signale un radar de l’autre côté de la route.',
             ],
             [
+              'Alertes toujours prêtes',
+              'Les alertes restent actives entre deux trajets et après un redémarrage de l’app par Android.',
+            ],
+            [
               'Au-dessus de la limite',
               '« Vous roulez à 72. Ralentissez. » Près des radars seulement, ou sur toute route.',
             ],
+            ['Zones scolaires', 'La limite suit les horaires de la zone et le calendrier scolaire de la NSW.'],
             [
               'Alertes fortes',
               'Volume maximal sur le haut-parleur du téléphone, même en silencieux ou avec le Bluetooth. Chaque partie a son interrupteur.',
             ],
+            ['Voix de l’auteur', 'Une voix Pro enregistrée avec la propre voix du créateur de l’app.'],
             [
               'Journal de trajets',
               'Trajets et marches s’enregistrent seuls. Chaque trajet sépare les km en voiture et les km à pied. Chaque parcours montre votre vitesse à chaque radar, en vert ou en rouge. Vos vitesses restent sur votre téléphone.',
+            ],
+            [
+              'Tracé selon la limite',
+              'La couleur du tracé montre votre vitesse face à la limite. Un appui montre la vitesse, la limite et la rue.',
             ],
             [
               'Statistiques du trajet',
@@ -339,6 +352,7 @@ const fr: Catalog = {
               'Hey Spot',
               '« Hey Spot, go to Bondi Beach, Manly and back. » Un modèle hors ligne sur le téléphone entend les mots d’activation.',
             ],
+            ['Hey Spot, je suis dans quelle rue ?', 'L’app annonce la rue et sa limite.'],
             ['Écran allumé', 'La carte reste allumée sur le tableau de bord tant que l’app est ouverte.'],
             [
               'Mise à jour auto',
@@ -388,7 +402,7 @@ const fr: Catalog = {
             ['Vue tablature', 'Une piste en tablature façon Guitar Pro, avec une tête de lecture qui suit le morceau.'],
             [
               'Grille d’accords',
-              'Les noms d’accords par mesure s’allument avec le morceau. Les paroles s’ouvrent sur Musixmatch.',
+              'Les noms d’accords dans des mesures qui s’allument avec la chanson. Collez des paroles avec accords, et elles se calent sur la chanson.',
             ],
             ['Import de morceaux', 'Les fichiers Guitar Pro et MIDI rejoignent votre liste.'],
             [
@@ -411,7 +425,10 @@ const fr: Catalog = {
               'Une PWA qui s’ouvre en plein écran en paysage. L’APK Android se met à jour seul.',
             ],
             ['Disposition', "Le manche prend tout l'écran, et les panneaux flottent sur ses coins."],
-            ['Panneau de lecture', 'Joue ce qui est chargé, avance pas à pas, mélange les morceaux et les enregistre.'],
+            [
+              'Panneau de lecture',
+              'Joue ce qui est chargé, avance pas à pas, mélange les morceaux et les enregistre. Le panneau d’accords montre un diagramme de doigté au-dessus de chaque accord. Un lien ?song=, ou une autre app comme Lumiere Player, ouvre une chanson.',
+            ],
             ['Modes Easy et Pro', "Easy ne joue que les accords, pour qu'un débutant gratte avec."],
             [
               'Liens du morceau',
@@ -467,6 +484,10 @@ const fr: Catalog = {
               'Publicité',
               'Un achat unique. Les personnes en Europe voient le formulaire de consentement avant toute pub.',
             ],
+            [
+              'Tick-a-Lot Pro',
+              'Un achat Google Play ouvre les bagages, les choses à voir, l’ordre du magasin et les prix, et masque les publicités.',
+            ],
             ['Les courses de la semaine à deux', "L'un prépare la liste, l'autre la coche en rentrant."],
             ['Morceaux à apprendre', "Une liste de morceaux à la guitare, les plus voulus d'abord."],
             [
@@ -486,7 +507,14 @@ const fr: Catalog = {
       groups: [
         {
           features: [
-            ['Hey Keep', 'Un mot d’activation que le téléphone écoute en arrière-plan. « Эй, Кип » marche aussi.'],
+            [
+              'Hey Keep',
+              'Un mot d’activation que le téléphone écoute en arrière-plan. « Эй, Кип » marche aussi. Les réponses parlent avec Maisie, une voix féminine, masculine ou celle de l’auteur, et Adapter à ma voix règle le mot d’éveil sur vous.',
+            ],
+            [
+              'Long enregistrement',
+              'Une note Hey Keep continue malgré les pauses et l’écran verrouillé jusqu’à ce que vous touchiez Stop. Un enregistrement coupé par Android est gardé comme note.',
+            ],
             [
               'Stop et continuer',
               '« Stop » termine la note aussitôt. « Hey Keep, continue » complète la note la plus récente.',
@@ -541,6 +569,7 @@ const fr: Catalog = {
               'Prix sur la carte',
               'Repères verts pour le tiers le moins cher, orange pour le milieu et rouges pour le plus cher.',
             ],
+            ['Votre position sur la carte', 'Un point bleu vous situe, avec une flèche qui tourne avec la boussole.'],
             [
               'Liste des stations',
               'Les stations visibles, les moins chères d’abord, avec enseigne, quartier et heure du dernier changement de prix.',
@@ -564,6 +593,7 @@ const fr: Catalog = {
               'L’APK vérifie GitHub au lancement et à chaque retour, et montre le téléchargement dans l’en-tête.',
             ],
             ['Retirer les pubs', 'Un achat unique sur Google Play, restauré sur un nouveau téléphone.'],
+            ['ServoHop Pro', 'Un achat masque les publicités et ouvre le graphique des prix sur 365 jours.'],
             ['Panneau carburant', 'Choisir essence, diesel, gaz ou bornes, AC lente ou DC rapide.'],
             ['Publicité', "Une bannière sous la liste : AdMob dans l'app, AdSense sur le site."],
             ['Langues', 'Les écrans existent en 9 langues et suivent le téléphone ou le navigateur.'],
@@ -740,49 +770,68 @@ const fr: Catalog = {
       groups: [
         {
           features: [
+            ['Style d’écriture', 'Un texte simple et court dans chaque réponse, commit et doc, sans le ton IA.'],
+            ['Revue de code', 'Une revue sur checklist, chaque remarque vérifiée dans le code.'],
             [
-              'Écriture simple',
-              'Des règles qui retirent le ton IA du chat, des commits, de la doc et des textes d’interface.',
+              'Angles de revue',
+              'Un sous-agent par angle, comme la sécurité ou les performances. Seules les trouvailles prouvées reviennent.',
+            ],
+            ['Pull requests', 'Descriptions de PR courtes avec schémas des parcours, et un commit par fil de revue.'],
+            ['Commentaires de revue', 'Chaque fil de revue reçoit un commit et une réponse avec son SHA.'],
+            [
+              'Du ticket au merge',
+              'Lit un ticket, le réalise dans son propre worktree, ouvre la PR et fait avancer le ticket.',
+            ],
+            [
+              'Audit d’app',
+              'Des relecteurs en parallèle par angle, comme la sécurité et la performance. Les remarques sûres sont corrigées.',
             ],
             [
               'Spécification d’abord',
               'Chaque fonction commence par une spécification dans le dépôt, et le travail la suit.',
             ],
+            ['Une page', 'D’abord le texte complet, puis un résumé d’un écran en tête.'],
+            ['Commandes via mise', 'Chaque commande passe par mise, avec les versions que fixe le dépôt.'],
+            ['Traductions', 'Chaque texte sort dans toutes les langues de l’app, dans le même changement.'],
+            ['Worktrees', 'Chaque changement a sa propre copie de travail, nettoyée après la fusion.'],
             [
-              'Du ticket au merge',
-              'Lit un ticket, le réalise dans son propre worktree, ouvre la PR et fait avancer le ticket.',
+              'JavaScript rapide',
+              'Moins d’allers-retours et un bundle plus léger, avec la règle et le coût de chaque trouvaille.',
             ],
-            ['Pull requests', 'Descriptions de PR courtes avec schémas des parcours, et un commit par fil de revue.'],
-            ['Revue de code', 'Une revue sur checklist, chaque remarque vérifiée dans le code.'],
+            ['Architecture', 'La plus petite structure en couches pour l’app, avec ses règles vérifiées en CI.'],
+            ['Monorepos', 'Apps et paquets dans un seul dépôt, avec des outils fixés et un seul schéma d’API.'],
             [
-              'Audit d’app',
-              'Des relecteurs en parallèle par angle, comme la sécurité et la performance. Les remarques sûres sont corrigées.',
+              'Remise à zéro de l’historique',
+              'Réduit l’historique à un nouveau commit initial, et garde un bundle en sauvegarde.',
             ],
-            ['Architecture et monorepos', 'Paquets en couches, contrats d’API partagés et CI par app.'],
-            ['Lancement', 'Référencement, AdMob et AdSense, publication Google Play et plan marketing en un passage.'],
+            ['Référencement', 'Search Console, Bing, un plan du site et des statistiques pour un site.'],
+            [
+              'Publicités',
+              'AdSense et AdMob, avec des pubs de test dans les builds de debug et le message de consentement.',
+            ],
+            ['Publication sur Google Play', 'Un bundle signé avec un nouveau code de version, publié en test interne.'],
+            ['Lancement en une fois', 'Référencement, publicités et publication sur Google Play, dans cet ordre.'],
+            [
+              'Marketing',
+              'Les premiers utilisateurs selon un budget : le message, un calendrier de lancement et les posts.',
+            ],
             ['Mises à jour dans l’app', 'Mise à jour auto pour les apps hors store, retirée du build Play.'],
-            [
-              'Entretien des dépôts',
-              'Worktrees, déménagements de dépôts, remise à zéro de l’historique et rotation des secrets.',
-            ],
             ['Noms et domaines', 'Vérifie un nom auprès des domaines, du registre des entreprises et des marques.'],
-            ['Voix', 'Joue chaque voix de synthèse vocale, pour qu’une personne en choisisse une.'],
             [
-              'Travail sur le code',
-              'Des skills pour traiter un ticket, ouvrir une PR, répondre aux revues et relire une PR.',
-            ],
-            [
-              'Mise en place',
-              "Des skills pour planifier l'architecture, monter un monorepo et lancer les commandes via mise.",
+              'Risques juridiques',
+              'Analyse les licences, les SDK de données et les règles des stores, et corrige les points sans risque.',
             ],
             ["Icônes d'app", '10 icônes dans des styles adaptés, un choix dans le chat, puis toutes les tailles.'],
-            [
-              'Captures de démo et médias du store',
-              'Des données de démo, des captures et des vidéos pour le README et le store.',
-            ],
+            ['Captures de démo', 'Données de démo, captures et courtes vidéos pour le README.'],
+            ['Médias des stores', 'Les mêmes captures, vidéo et icône sur Google Play, le site et les installeurs.'],
             [
               "Parcours complet d'une version",
               'Installe la dernière version, parcourt chaque flux principal et rend compte par flux.',
+            ],
+            ['Voix', 'Joue chaque voix de synthèse vocale, pour qu’une personne en choisisse une.'],
+            [
+              'Commentaires Reddit',
+              'Trouve les fils auxquels le dépôt peut répondre, rédige une réponse et la tape dans Chrome. La personne appuie sur Commenter.',
             ],
             [
               'Voix en fin de tour',
@@ -805,14 +854,21 @@ const fr: Catalog = {
             ['Préparation de Windows', 'Les mêmes outils via winget. Un deuxième passage saute ce qui est en place.'],
             ['Runner auto-hébergé', 'La machine exécute les jobs CI des dépôts de l’organisation.'],
             ['Bouton de démarrage', 'Un double clic lance la dernière version de la CI.'],
-            ['Page d’état CI', 'Une page locale montre le runner et les jobs d’un coup d’œil.'],
+            [
+              'Page d’état de la CI',
+              'Une page locale montre le runner et les tâches d’un coup d’œil, avec une barre de progression par release et la raison de chaque annulation.',
+            ],
+            [
+              'Annulation des builds',
+              'Le serveur de la page arrête un run remplacé et une release dont les Checks ont échoué. Le journal donne chaque cause.',
+            ],
             [
               "Runners cloud d'abord",
               "Les jobs tournent sur des runners cloud gratuits tant qu'il reste des minutes, puis sur ce PC.",
             ],
             [
-              'Versions',
-              'Lancez une release d’app sur la CI, compilez localement les APK Android pris en charge depuis le dernier main et installez les APK publiés ou locaux sur un téléphone connecté avec ADB.',
+              'Releases',
+              'Lancer la release d’une app sur la CI, construire des APK Android depuis le dernier main et les installer sur un téléphone branché. Install Dev ouvre aussi ses réglages développeur. Un nettoyage supprime, après confirmation, les vieux artefacts Actions et releases APK.',
             ],
             ['Se met à jour seul', 'Le PC installe chaque version quelques minutes après la fusion.'],
           ],
@@ -836,6 +892,10 @@ const fr: Catalog = {
             [
               'Synchronisation du calendrier',
               'Les créneaux occupés de Google Agenda bloquent les réservations, et un flux montre chaque réservation.',
+            ],
+            [
+              'Polices',
+              'Alina choisit les polices des titres, du texte et des libellés parmi 10 polices libres, ou importe les siennes.',
             ],
             ['Galeries clients', 'Un lien privé avec des épreuves filigranées, puis tous les originaux en un ZIP.'],
           ],
@@ -879,14 +939,33 @@ const fr: Catalog = {
           features: [
             [
               'Tout mettre à jour',
-              "Un geste télécharge et installe chaque nouvelle version, avec une barre par app et une pour l'ensemble. Annuler l'arrête.",
+              'Un appui met à jour en silence chaque app Workbench Soft installée via Shizuku, avec une barre par app. Annuler l’arrête.',
             ],
             [
               'Se met à jour lui-même',
               "WBS Updater publie ses propres versions, s'installe en dernier de la passe et le téléphone le rouvre sur la version nouvelle.",
             ],
-            ['Mettre à jour une app', 'Un bouton Mettre à jour à côté de chaque ligne ne met à jour que cette app.'],
-            ['Liste des apps', 'Chaque app indique si elle est à jour ou quelle version arrive.'],
+            [
+              'Mettre à jour une app',
+              'Un bouton Mettre à jour sur chaque carte passe seulement cette app à sa dernière release. Une carte en échec garde son bouton pour réessayer.',
+            ],
+            [
+              'Installer une app manquante',
+              'Une app publiée qui n’est pas encore sur le téléphone s’installe depuis sa carte.',
+            ],
+            [
+              'Liste des apps',
+              'Une carte par APK publié, rapproché des apps installées, mises à jour en tête. Un projet du studio sans APK reçoit un lien Ouvrir.',
+            ],
+            ['Liste enregistrée hors ligne', 'La dernière liste de releases s’affiche quand GitHub est injoignable.'],
+            [
+              'Configuration de Shizuku',
+              'Ouvre Google Play ou Shizuku pour chaque étape manquante, puis lance la mise à jour.',
+            ],
+            [
+              'Notes de version',
+              'Chaque carte montre les notes de version, ou les commits depuis la dernière release.',
+            ],
           ],
         },
       ],
@@ -1054,11 +1133,15 @@ const fr: Catalog = {
             ],
             [
               'CI et releases pour chaque dépôt',
-              'Vérifie Checks et Release dans chaque dépôt et ajoute ceux qui manquent.',
+              'Vérifie que chaque dépôt a Checks et Release, et ajoute ceux qui manquent. Une release se construit à côté de Checks et sort une fois qu’ils passent.',
             ],
             ['Réécrire un dépôt', 'Nouveaux noms, dossiers et docs, pour le même comportement.'],
             ['Renouveler les secrets', 'Renouvelle les secrets de CI et les clés, app par app.'],
             ['Règles de travail', 'Une spec d’abord, une fusion tout de suite, un test groupé ensuite.'],
+            [
+              'Passerelle MCP',
+              'Un serveur passerelle remplace les serveurs Google Play, GitHub, AdMob, AdSense et Reddit, et une session voit 7 outils au lieu de 238.',
+            ],
             ['Releases', 'Une release datée pour chaque push vert sur main.'],
             [
               'File des fonctionnalités',
@@ -1134,6 +1217,7 @@ const fr: Catalog = {
               'Portrait',
               'Ce que vous touchez reste net, proche ou à 10 m, personne ou objet. Le reste devient doux, un curseur règle le flou.',
             ],
+            ['Mini', 'Un effet maquette tilt shift en photo et en vidéo, avec le flou dans l’aperçu en direct.'],
             [
               'Macro',
               'Un insecte ou une goutte à 2 ou 3 cm, aussi grand que le téléphone le permet, avec la largeur du cadre en mm.',
@@ -1166,6 +1250,10 @@ const fr: Catalog = {
             ['Lieu et réglages', 'Chaque prise garde où et comment elle a été faite, en balises EXIF.'],
             ['Taille des photos et vidéos', 'Les réglages choisissent la taille des photos et des vidéos.'],
             [
+              'Format photo et originaux',
+              'WebP, JPEG, PNG ou RAW + JPEG, plus, au choix, l’original de l’appareil et une copie avec la seule couleur.',
+            ],
+            [
               'Photo multi-images',
               'Une photo normale fusionne 6 images rapides en une, avec moitié moins de bruit et des bords plus nets.',
             ],
@@ -1179,14 +1267,18 @@ const fr: Catalog = {
               'Galerie',
               'Partager ensemble les photos et vidéos sélectionnées. La miniature de la caméra se recharge après une suppression dans la galerie.',
             ],
+            [
+              'Plus',
+              'Un achat ouvre Astro, Lune, Pose longue, Macro, Mini, Ralenti et Accéléré, et masque les publicités.',
+            ],
             ['Publicités', 'Une bannière sous la grille de la galerie. Un achat unique la retire.'],
             [
-              'Redresser et pivoter',
-              'Memories et Shuttrix partagent le recadrage, la rotation, le dessin et les légendes. Sur Android, Enregistrer remplace le JPEG, PNG ou WebP ; Enregistrer une copie garde la source. Le navigateur télécharge une copie.',
+              'Retoucher les photos',
+              'L’éditeur partagé de Memories et Shuttrix recadre, pivote, dessine et ajoute des légendes. Enregistrer remplace le fichier, Enregistrer une copie écrit un nouveau JPEG.',
             ],
             ['Démarrage rapide', "Deux appuis sur le bouton marche ouvrent Shuttrix, même sur l'écran verrouillé."],
+            ['Mises à jour', 'Un build hors store récupère sa nouvelle version sur GitHub.'],
             ['Langues', 'En 9 langues, selon le téléphone ou le navigateur.'],
-
             [
               'Lumière, flou et polices',
               'Exposition de −6 à +6 EV, teinte, ombres et hautes lumières. Flou de fond elliptique et effet de bascule avec zone nette réglable. Polices avec ou sans empattement et à chasse fixe. Les réglages de prise de vue sont exclus.',
@@ -1206,13 +1298,18 @@ const fr: Catalog = {
               'Appels par lien',
               'Un lien est la salle. La personne qui crée l’appel rejoint tout de suite. Les invités choisissent le micro, la caméra et la sortie audio.',
             ],
+            ['Reprendre un appel coupé', 'Un appel coupé réessaie 3 fois, puis propose Réessayer.'],
+            [
+              'Relais pour réseaux bloqués',
+              'Cloudflare TURN prend le relais quand le chemin direct entre les réseaux échoue.',
+            ],
+            [
+              'Partager le lien d’appel',
+              'Copiez le lien, ou envoyez-le par Gmail, e-mail, WhatsApp, Telegram ou une autre app.',
+            ],
             [
               'Salles enregistrées',
               'Un lien de salle enregistré sous un nom, comme Maman. Le même lien marche à chaque fois.',
-            ],
-            [
-              'Appels vidéo directs',
-              'Le son et la vidéo passent en direct si les deux réseaux le permettent. Les relais sont prévus.',
             ],
             [
               'Tableau',
@@ -1232,10 +1329,11 @@ const fr: Catalog = {
               'Un achat de A$5.99 sur Android ouvre le tableau partagé et ses médias pour la salle, et retire les pubs.',
             ],
             [
-              'Distribution Android',
-              'CI crée des APK et AAB signés pour les versions publiques. Les envois sur le canal de test Play commencent après la première version et la configuration de Play Console.',
+              'App Android',
+              'L’app web dans une enveloppe Android, avec des releases APK et AAB signées et des versions datées.',
             ],
             ['Langues', 'En 9 langues, selon le téléphone ou le navigateur.'],
+            ['Icône de l’app', 'Un portail téléphone en néon, sur Android et sur le web.'],
           ],
         },
       ],
@@ -1261,14 +1359,26 @@ const fr: Catalog = {
             ],
             ['Thèmes des cultures', '13 cultures, de la Grèce et Rome aux Incas, à Sumer et à l’âge de pierre.'],
             [
-              'Musique ambient',
-              'La chanson au violon « L’Exode des Mondes » tourne sous le ciel. Coupez-la, ou jouez votre propre fichier audio.',
+              'Musique d’ambiance',
+              'La chanson « Sky Altar » de Lyrienne tourne en boucle sous le ciel. Coupez-la, ou jouez vos fichiers ou un dossier entier.',
             ],
             ['Publicités et retrait', 'Les pubs restent hors du ciel. Un achat unique de $2.99 les retire.'],
+            [
+              'Sky Altar Pro',
+              'Un achat de 4,99 A$ ouvre 11 cultures de plus, votre propre musique, et Aujourd’hui et Compatibilité dans Vos étoiles. Les publicités disparaissent.',
+            ],
             ['Langues de l’app', 'Les écrans et les noms des constellations en 9 langues.'],
             [
               'Mises à jour depuis GitHub',
               'L’app Android trouve une nouvelle version et l’installe. Les réglages ont « Rechercher des mises à jour ».',
+            ],
+            [
+              'Astrologie',
+              'Glissez depuis la gauche pour le thème natal, les conseils du jour et un score de compatibilité. Le signe du jour brille dans le ciel.',
+            ],
+            [
+              'Aller à une constellation',
+              'Cherchez une constellation par son nom, et le ciel tourne vers celle que vous touchez.',
             ],
           ],
         },
@@ -1296,7 +1406,7 @@ const fr: Catalog = {
             ["Widget d'accueil", 'Le nombre de mots en attente et un mot avec son sens.'],
             [
               'Publicités et suppression',
-              'Une bannière et une pub plein écran sur Android. Un achat unique les retire.',
+              'Une bannière et une pub plein écran sur Android. Un achat unique les retire. Une puce Retirer les pubs se trouve au-dessus de la bannière.',
             ],
             [
               'Son',
@@ -1352,7 +1462,7 @@ const fr: Catalog = {
             ],
             [
               'Lecteur de musique',
-              "Artistes, albums, titres et dossiers, file d'attente, aléatoire et répétition, téléphone verrouillé.",
+              'Artistes et Titres sont sur l’écran d’accueil, à côté des disques. La barre du lecteur reste sur chaque écran sauf la vidéo, avec un fil d’Ariane et un tri par artiste.',
             ],
             [
               'Livres audio',
@@ -1366,7 +1476,10 @@ const fr: Catalog = {
               'Version Google Play',
               "Google Play la met à jour, et les autorisations médias remplacent l'accès à tous les fichiers.",
             ],
-            ['Commandes vocales', 'Dites Hey Lumi, play et un titre, en anglais ou en russe, téléphone verrouillé.'],
+            [
+              'Commandes vocales',
+              'Dites Hey Lumi, puis play et un titre, ou volume 40, en anglais ou en russe, téléphone verrouillé. Une pulsation montre qu’il écoute.',
+            ],
             ['Lumiere Pro', 'Un seul achat débloque les commandes vocales et Hey Lumi, et retire la pub.'],
           ],
         },
@@ -1390,6 +1503,14 @@ const fr: Catalog = {
               'Chaque code postal de NSW, QLD, SA et TAS coloré selon le loyer hebdomadaire médian des nouveaux baux.',
             ],
             ['Installer depuis le navigateur', "La version web s'installe comme une app avec son icône."],
+            [
+              'Publicités et suppression',
+              'Une bannière AdMob sous la carte sur Android. Un achat unique de 2,99 A$ la retire. Le site web n’affiche aucune publicité.',
+            ],
+            [
+              'Property Trends Pro',
+              'Un achat de 5,99 A$ sur Android ouvre les loyers et tout l’historique des prix, et retire les publicités.',
+            ],
           ],
         },
       ],
@@ -1401,17 +1522,24 @@ const fr: Catalog = {
       groups: [
         {
           features: [
-            ['Demander', 'Tapez les lieux, une date approximative, la durée et qui part.'],
-            ['Vols', 'Les allers-retours les moins chers autour de la date, avec des dates moins chères à côté.'],
             [
-              'Lieux',
-              'Les incontournables et les lieux secrets de chaque ville selon tes centres d’intérêt, avec une coche et un lien.',
+              'Demander',
+              'Tapez les lieux, une date approximative, le nombre de nuits et qui part, ou ouvrez un lien de Tick-a-Lot.',
             ],
-            ['Vers Tick-a-Lot', 'Un appui transforme le voyage en listes Tick-a-Lot : visites et bagages.'],
-            ['Réglages', "La langue : celle du téléphone ou l'une des 9."],
             [
-              'Pub',
-              'De la pub sur Android, jusqu’à un achat unique qui la retire. Aucune pub à côté des liens de réservation.',
+              'Vols',
+              'Les allers-retours les moins chers autour de la date, un calendrier des prix et des liens vers Aviasales et Google Flights.',
+            ],
+            ['Lieux', 'Les incontournables et les coins secrets de chaque ville, filtrés par centres d’intérêt.'],
+            ['Vers Tickalot', 'Un appui envoie le voyage dans Tick-a-Lot, en liste de lieux et liste de bagages.'],
+            ['Réglages', 'La langue de l’app : celle du téléphone, ou l’une des 9.'],
+            [
+              'Publicités',
+              'Une bannière et une publicité plein écran sur Android. Un achat unique Retirer les pubs les masque.',
+            ],
+            [
+              'Tripforge Pro',
+              'Un achat sur Android donne des recherches illimitées, des dates décalées jusqu’à 30 jours, jusqu’à 50 voyages enregistrés et aucune publicité.',
             ],
           ],
         },
@@ -1438,6 +1566,10 @@ const fr: Catalog = {
             ['Post pour testeurs', "Un post qui cherche des testeurs pour une app Android d'une liste."],
             ['Dans Archon', "L'onglet Reddit d'Archon affiche cette fenêtre dans un cadre."],
             ['Bouton info', 'Le bouton i explique la configuration de Reddit.'],
+            [
+              'Mises à jour',
+              'L’app se met à jour seule depuis GitHub. Au démarrage et une fois par jour, elle propose Mettre à jour ou Plus tard, et n’installe que des builds signés.',
+            ],
             ['Langue', "Les réglages ont une liste : la langue du système ou l'une des 9."],
             ['Liste des faits', 'Chaque fil publié ou ignoré, avec sa date.'],
           ],
@@ -1481,6 +1613,38 @@ const fr: Catalog = {
             ['Mise en ligne planifiée', 'Une commande publie avec le label IA et une heure de sortie.'],
             ['Texte de Claude', 'Claude écrit le titre et la description YouTube à partir des chansons.'],
             ['Fond par ComfyUI', 'Un prompt dans le fichier du thème fait dessiner le fond par ComfyUI.'],
+          ],
+        },
+      ],
+    },
+    'disk-reorg': {
+      tagline: 'Trie, dédoublonne et archive les dossiers selon des règles.',
+      lede: 'disk-reorg déplace les fichiers vers un dossier de quarantaine et laisse chaque suppression au propriétaire. Les dossiers, les règles et les motifs protégés restent dans une config locale, hors de git.',
+      links: [],
+      groups: [
+        {
+          features: [
+            [
+              'Rapport de dossier',
+              'Un rapport Markdown des nombres, tailles, années, types de fichiers et copies probables.',
+            ],
+            [
+              'Doublons en quarantaine',
+              'Garde la copie la mieux rangée de chaque fichier et met le reste en quarantaine.',
+            ],
+            [
+              'Fichiers à jeter',
+              'Installeurs, torrents et vieux billets partent en quarantaine selon des règles. Des motifs protègent les noms importants.',
+            ],
+            [
+              'Tri par thème',
+              'Les fichiers vont dans des dossiers par thème selon des règles, le reste dans un dossier de repli.',
+            ],
+            ['Boîte mensuelle', 'Les éléments de Téléchargements de plus de 30 jours vont dans un dossier par mois.'],
+            [
+              'Plans, déplacements et annulation',
+              'Un essai à blanc écrit un plan modifiable, chaque déplacement va dans un journal, et l’annulation remet tout en place.',
+            ],
           ],
         },
       ],

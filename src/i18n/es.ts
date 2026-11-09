@@ -91,11 +91,7 @@ const es: Catalog = {
       project: 'Proyecto',
       feature: 'Función',
     },
-    footer: {
-      noAds: 'Este sitio no muestra anuncios.',
-      releases: 'Versiones',
-      privacy: 'Privacidad de Memories',
-    },
+    footer: { noAds: 'Este sitio no muestra anuncios.', releases: 'Versiones', privacy: 'Privacidad de Memories' },
     technologies: 'Tecnologías',
   },
   services: [
@@ -189,6 +185,10 @@ const es: Catalog = {
               'Tarjetas por pasos ordenan las fotos del teléfono, las mueven a carpetas por fecha en el NAS y liberan el teléfono.',
             ],
             [
+              'Importar de Google Fotos',
+              'Elige fotos en Google Fotos y la app las descarga en DCIM, desde donde suben al NAS.',
+            ],
+            [
               'Ordenar en el NAS',
               'Los archivos elegidos del NAS reciben su nombre y carpeta por fecha, en el NAS y en el índice a la vez.',
             ],
@@ -232,6 +232,10 @@ const es: Catalog = {
               'La app de escritorio ordena una carpeta en las mismas carpetas de año, lugar y días que el teléfono.',
             ],
             ['Archivo', 'Cada año y mes con el número de fotos. Un toque abre el mes entero.'],
+            [
+              'Lista de viajes y mapa de lugares',
+              'El archivo lista los viajes al extranjero y por carretera, y pone cada foto con GPS en un mapa, por año.',
+            ],
             ['Personas', 'El NAS agrupa las caras de las fotos por persona, primero las que tienen nombre.'],
             [
               'Página de progreso del índice',
@@ -248,7 +252,6 @@ const es: Catalog = {
             ['Ajustes', 'Una fila por sección con su valor: recordatorios, galería, NAS, casa.'],
             ['Duplicados en el NAS', 'Pares con la misma hora y tamaño, lado a lado, para quitar la copia.'],
             ['Actualizaciones', 'La versión fuera de la tienda encuentra, baja e instala su versión nueva.'],
-
             [
               'Luz, desenfoque y fuentes',
               'Exposición de −6 a +6 EV, matiz, sombras y luces. Desenfoque elíptico de fondo y efecto maqueta con zona nítida ajustable. Fuentes con remates, sin remates y monoespaciadas. No ofrece ajustes propios de la captura.',
@@ -302,14 +305,24 @@ const es: Catalog = {
               'Avisos de radar',
               'Un pitido unos 20 segundos antes, luego «Radar adelante. Límite 60». También llega a la pantalla de bloqueo y avisa de un radar al otro lado de la carretera.',
             ],
+            [
+              'Avisos siempre listos',
+              'Los avisos siguen activos entre viajes y después de que Android reinicie la app.',
+            ],
             ['Por encima del límite', '«Vas a 72. Reduce la velocidad». Solo cerca de radares, o en cualquier vía.'],
+            ['Zonas escolares', 'El límite sigue el horario de la zona y los trimestres escolares de NSW.'],
             [
               'Avisos fuertes',
               'Volumen máximo por el altavoz del teléfono, también en silencio o con Bluetooth. Cada parte tiene su interruptor.',
             ],
+            ['Voz del autor', 'Una voz Pro grabada con la voz del propio creador de la app.'],
             [
               'Registro de viajes',
               'Trayectos en coche y paseos se graban solos. Cada viaje separa los km en coche y los km a pie. Cada ruta muestra tu velocidad en cada radar, en verde o rojo. La velocidad se queda en tu teléfono.',
+            ],
+            [
+              'Línea del viaje según el límite',
+              'El color de la línea muestra tu velocidad frente al límite. Un toque muestra la velocidad, el límite y la calle.',
             ],
             [
               'Datos del viaje',
@@ -332,6 +345,7 @@ const es: Catalog = {
               'Hey Spot',
               '«Hey Spot, go to Bondi Beach, Manly and back». Un modelo sin conexión en el teléfono oye las palabras de activación.',
             ],
+            ['Hey Spot, ¿en qué calle estoy?', 'La app dice la calle y su límite.'],
             ['Pantalla encendida', 'El mapa sigue encendido en el salpicadero mientras la app está abierta.'],
             [
               'Actualización automática',
@@ -378,7 +392,7 @@ const es: Catalog = {
             ],
             [
               'Hoja de acordes',
-              'Nombres de acordes en compases que se iluminan con la canción. La letra se abre en Musixmatch.',
+              'Nombres de acordes en compases que se iluminan con la canción. Pega letra con acordes y se alinea con la canción.',
             ],
             ['Subir canciones', 'Los archivos Guitar Pro y MIDI se suman a tu lista.'],
             [
@@ -401,7 +415,10 @@ const es: Catalog = {
               'Una PWA que abre a pantalla completa en horizontal. El APK de Android se actualiza solo.',
             ],
             ['Distribución', 'El mástil ocupa toda la pantalla y los paneles flotan en sus esquinas.'],
-            ['Panel de reproducción', 'Toca lo cargado, avanza paso a paso, mezcla canciones y las guarda.'],
+            [
+              'Panel de reproducción',
+              'Toca lo cargado, avanza paso a paso, mezcla canciones y las guarda. El panel de acordes muestra un diagrama de digitación sobre cada acorde. Un enlace ?song=, u otra app como Lumiere Player, abre una canción.',
+            ],
             ['Modos Easy y Pro', 'Easy toca solo los acordes de la canción para que un principiante rasguee.'],
             ['Enlaces de la canción', 'Un menú busca la canción abierta en sitios de acordes, tabs, vídeo y letras.'],
             ['Admin de canciones', 'El dueño añade y quita las canciones integradas en una página de admin.'],
@@ -454,6 +471,10 @@ const es: Catalog = {
               'Anuncios',
               'Una compra única. Las personas en Europa ven el formulario de consentimiento antes de cualquier anuncio.',
             ],
+            [
+              'Tick-a-Lot Pro',
+              'Una compra en Google Play desbloquea Equipaje, Qué ver, el orden de la tienda y los precios, y oculta los anuncios.',
+            ],
             ['La compra semanal de dos', 'Uno prepara la lista y el otro la marca de camino a casa.'],
             ['Canciones por aprender', 'Una lista de canciones para la guitarra, las más deseadas primero.'],
             ['Cambiar y borrar', 'Cada campo se guarda solo, un toque marca y un borrado ofrece Deshacer.'],
@@ -472,7 +493,11 @@ const es: Catalog = {
           features: [
             [
               'Hey Keep',
-              'Una palabra de activación que el teléfono escucha en segundo plano. «Эй, Кип» también funciona.',
+              'Una palabra de activación que el teléfono escucha en segundo plano. «Эй, Кип» también funciona. Responde con Maisie, voz femenina, masculina o la del autor, y Ajustar a mi voz adapta la palabra de activación a ti.',
+            ],
+            [
+              'Grabación larga',
+              'Una nota de Hey Keep sigue pese a las pausas y la pantalla bloqueada hasta que tocas Detener. Una grabación que Android corta se guarda como nota.',
             ],
             ['Parar y seguir', '«Para» termina la nota al instante. «Hey Keep, sigue» añade a la nota más reciente.'],
             ['Grabar con botón', 'Las palabras aparecen en pantalla mientras hablas.'],
@@ -522,6 +547,7 @@ const es: Catalog = {
               'Precios en el mapa',
               'Marcadores verdes para el tercio más barato, ámbar para el medio y rojos para el más caro.',
             ],
+            ['Tu lugar en el mapa', 'Un punto azul te marca, con una flecha que gira con la brújula.'],
             [
               'Lista de gasolineras',
               'Las gasolineras a la vista, la más barata primero, con marca, barrio y cuándo cambió el precio.',
@@ -545,6 +571,7 @@ const es: Catalog = {
               'El APK revisa GitHub al abrir y en cada regreso, y muestra la descarga en la cabecera.',
             ],
             ['Quitar anuncios', 'Una compra única en Google Play, que se restaura en un teléfono nuevo.'],
+            ['ServoHop Pro', 'Una compra oculta los anuncios y abre el gráfico de precios de 365 días.'],
             ['Panel de combustible', 'Elige gasolina, diésel, gas o cargadores, AC lento o DC rápido.'],
             ['Anuncios', 'Un banner bajo la lista: AdMob en la app, AdSense en la web.'],
             ['Idiomas', 'Las pantallas vienen en 9 idiomas y siguen al teléfono o al navegador.'],
@@ -703,43 +730,71 @@ const es: Catalog = {
       groups: [
         {
           features: [
+            ['Estilo de escritura', 'Texto simple y corto en cada respuesta, commit y documento, sin tono de IA.'],
+            ['Revisión de código', 'Una revisión con lista de control, con cada hallazgo comprobado en el código.'],
             [
-              'Escritura clara',
-              'Reglas que quitan el tono de IA del chat, los commits, la documentación y los textos de la interfaz.',
+              'Enfoques de revisión',
+              'Un subagente por enfoque, como seguridad o rendimiento. Solo vuelven los hallazgos probados.',
+            ],
+            ['Pull requests', 'Descripciones de PR cortas con diagramas de flujo, y un commit por hilo de revisión.'],
+            ['Comentarios de revisión', 'Cada hilo de revisión recibe un commit y una respuesta con su SHA.'],
+            ['Del ticket al merge', 'Lee un ticket, lo construye en su propio worktree, abre la PR y mueve el ticket.'],
+            [
+              'Auditoría de la app',
+              'Revisores en paralelo por enfoque, como seguridad y rendimiento. Los hallazgos seguros se corrigen.',
             ],
             [
               'Primero la especificación',
               'Cada función empieza como una especificación en el repo, y el trabajo la sigue.',
             ],
-            ['Del ticket al merge', 'Lee un ticket, lo construye en su propio worktree, abre la PR y mueve el ticket.'],
-            ['Pull requests', 'Descripciones de PR cortas con diagramas de flujo, y un commit por hilo de revisión.'],
-            ['Revisión de código', 'Una revisión con lista de control, con cada hallazgo comprobado en el código.'],
+            ['Una página', 'Primero el texto completo, luego un resumen de una pantalla arriba.'],
+            ['Comandos con mise', 'Cada comando pasa por mise, con las versiones que fija el repo.'],
+            ['Traducciones', 'Cada texto sale en todos los idiomas de la app, en el mismo cambio.'],
+            ['Worktrees', 'Cada cambio tiene su propia copia de trabajo, que se limpia tras el merge.'],
             [
-              'Auditoría de la app',
-              'Revisores en paralelo por enfoque, como seguridad y rendimiento. Los hallazgos seguros se corrigen.',
+              'JavaScript rápido',
+              'Menos viajes de ida y vuelta y un bundle más pequeño, con la regla y el coste de cada hallazgo.',
             ],
-            ['Arquitectura y monorepos', 'Paquetes por capas, contratos de API compartidos y CI por app.'],
+            ['Arquitectura', 'La forma en capas más pequeña para la app, con sus reglas aplicadas en CI.'],
+            ['Monorepos', 'Apps y paquetes en un solo repo, con herramientas fijadas y un único esquema de API.'],
             [
-              'Lanzamiento',
-              'Configuración de búsqueda, AdMob y AdSense, lanzamiento en Google Play y un plan de marketing en una pasada.',
+              'Reinicio del historial',
+              'Comprime el historial en un commit inicial nuevo y guarda un bundle como copia.',
+            ],
+            ['Configurar la búsqueda', 'Search Console, Bing, un mapa del sitio y analítica para una web.'],
+            [
+              'Anuncios',
+              'AdSense y AdMob, con anuncios de prueba en los builds de depuración y el aviso de consentimiento.',
+            ],
+            [
+              'Publicar en Google Play',
+              'Un bundle firmado con un nuevo código de versión, publicado en pruebas internas.',
+            ],
+            ['Lanzamiento de una vez', 'Búsqueda, anuncios y publicación en Google Play, en ese orden.'],
+            [
+              'Marketing',
+              'Primeros usuarios según un presupuesto: el mensaje, un calendario de lanzamiento y las publicaciones.',
             ],
             [
               'Actualizaciones en la app',
               'Actualización automática para apps fuera de la tienda, excluida de la compilación de Play.',
             ],
-            ['Cuidado del repo', 'Worktrees, traslados de repos, reinicio del historial y rotación de secretos.'],
             ['Nombres y dominios', 'Comprueba un nombre frente a dominios, el registro de empresas y las marcas.'],
-            ['Voces', 'Reproduce cada voz de texto a voz, para que una persona elija una.'],
-            ['Trabajo con código', 'Skills para hacer un ticket, abrir un PR, responder revisiones y revisar un PR.'],
-            ['Puesta en marcha', 'Skills para planear la arquitectura, montar un monorepo y lanzar comandos con mise.'],
-            ['Iconos de app', '10 iconos en estilos que encajan, un selector en el chat y luego cada tamaño.'],
             [
-              'Capturas de demo y medios de tienda',
-              'Datos de demo, capturas y vídeos cortos para el README y la tienda.',
+              'Riesgos legales',
+              'Revisa licencias, SDK de datos y normas de las tiendas, y arregla los hallazgos seguros.',
             ],
+            ['Iconos de app', '10 iconos en estilos que encajan, un selector en el chat y luego cada tamaño.'],
+            ['Capturas de demo', 'Datos de demo, capturas y vídeos cortos para el README.'],
+            ['Medios de tienda', 'Las mismas capturas, vídeo e icono en Google Play, la web y los instaladores.'],
             [
               'Recorrido completo de una versión',
               'Instala la última versión, recorre cada flujo principal e informa por flujo.',
+            ],
+            ['Voces', 'Reproduce cada voz de texto a voz, para que una persona elija una.'],
+            [
+              'Comentarios en Reddit',
+              'Encuentra hilos que el repo puede responder, redacta una respuesta y la escribe en Chrome. La persona pulsa Comentar.',
             ],
             ['Voz al final del turno', 'Una frase corta en voz alta dice que el agente terminó, espera o pregunta.'],
             ['Instalación', 'Un clon enlazado a cada agente de la máquina. Un cambio llega a todos.'],
@@ -759,14 +814,21 @@ const es: Catalog = {
             ['Preparar Windows', 'Las mismas herramientas con winget. Una segunda pasada salta lo que ya está.'],
             ['Runner autoalojado', 'La máquina ejecuta los trabajos de CI de los repos de la organización.'],
             ['Botón de inicio', 'Un doble clic arranca la última versión de la CI.'],
-            ['Página de estado de CI', 'Una página local muestra el runner y los trabajos de un vistazo.'],
+            [
+              'Página de estado de CI',
+              'Una página local muestra el runner y los trabajos de un vistazo, con una barra de progreso por release y el motivo de cada cancelación.',
+            ],
+            [
+              'Cancelación de builds',
+              'El servidor de la página detiene una ejecución reemplazada y un release cuyos Checks fallaron. El registro nombra cada causa.',
+            ],
             [
               'Primero runners en la nube',
               'Los trabajos van en runners gratis en la nube mientras duran los minutos, luego en este PC.',
             ],
             [
-              'Versiones',
-              'Inicia una versión de la app en CI, compila localmente APK de Android compatibles desde el último main e instala APK publicados o locales en un teléfono conectado mediante ADB.',
+              'Releases',
+              'Lanza el release de una app en CI, construye APK de Android desde el último main e instálalos en un teléfono conectado. Install Dev además desbloquea sus ajustes de desarrollador. Una limpieza borra, tras confirmar, artefactos viejos de Actions y releases de APK.',
             ],
             ['Se actualiza solo', 'El PC instala cada versión minutos después del merge.'],
           ],
@@ -790,6 +852,10 @@ const es: Catalog = {
             [
               'Sincronización del calendario',
               'Las horas ocupadas en Google Calendar bloquean reservas, y un feed muestra cada reserva.',
+            ],
+            [
+              'Fuentes',
+              'Alina elige las fuentes de títulos, texto y etiquetas entre 10 fuentes libres, o sube las suyas.',
             ],
             [
               'Galerías de clientes',
@@ -833,14 +899,27 @@ const es: Catalog = {
           features: [
             [
               'Actualizar todo',
-              'Un toque descarga e instala cada versión nueva, con una barra por app y otra para todo. Cancelar lo detiene.',
+              'Un toque actualiza en silencio cada app de Workbench Soft instalada mediante Shizuku, con una barra por app. Cancelar lo detiene.',
             ],
             [
               'Autoactualización',
               'WBS Updater publica sus propias versiones, se instala al final de cada pasada y el teléfono vuelve a abrirlo con la versión nueva.',
             ],
-            ['Actualizar una app', 'Un botón Actualizar junto a cada fila lleva solo esa app a su última versión.'],
-            ['Lista de apps', 'Cada app muestra si está al día o qué versión sigue.'],
+            [
+              'Actualizar una app',
+              'Un botón Actualizar en cada tarjeta lleva solo esa app a su último release. Una tarjeta que falló conserva el botón para reintentar.',
+            ],
+            [
+              'Instalar una app que falta',
+              'Una app publicada que aún no está en el teléfono se instala desde su tarjeta.',
+            ],
+            [
+              'Lista de apps',
+              'Una tarjeta por APK publicado, cotejado con las apps instaladas, actualizaciones primero. Un proyecto del estudio sin APK recibe un enlace Abrir.',
+            ],
+            ['Lista guardada sin conexión', 'La última lista de releases aparece cuando GitHub no responde.'],
+            ['Configurar Shizuku', 'Abre Google Play o Shizuku en cada paso que falta y luego lanza la actualización.'],
+            ['Notas de versión', 'Cada tarjeta muestra las notas de versión o los commits desde el último release.'],
           ],
         },
       ],
@@ -1000,10 +1079,17 @@ const es: Catalog = {
         {
           features: [
             ['Mover un repo', 'Mueve un repo a la organización y lo hace privado, con la CI aún gratis.'],
-            ['CI y releases para cada repo', 'Revisa Checks y Release en cada repo y añade los que faltan.'],
+            [
+              'CI y releases para cada repo',
+              'Revisa que cada repo tenga Checks y Release, y añade los que faltan. Un release se construye junto a Checks y se publica cuando pasan.',
+            ],
             ['Reescribir un repo', 'Nombres, carpetas y docs nuevos, con el mismo comportamiento.'],
             ['Renovar secretos', 'Renueva los secretos de CI y las claves, app por app.'],
             ['Reglas de trabajo', 'Primero una spec, fusión enseguida, prueba en lote después.'],
+            [
+              'Pasarela MCP',
+              'Un servidor pasarela sustituye a los de Google Play, GitHub, AdMob, AdSense y Reddit, y una sesión ve 7 herramientas en lugar de 238.',
+            ],
             ['Releases', 'Una release con fecha por cada push verde a main.'],
             [
               'Cola de funciones',
@@ -1067,6 +1153,7 @@ const es: Catalog = {
               'Retrato',
               'Lo que tocas queda nítido, cerca o a 10 m, persona u objeto. El resto se suaviza y un deslizador ajusta el desenfoque.',
             ],
+            ['Mini', 'Un efecto maqueta tilt shift en fotos y vídeos, con el desenfoque ya en la vista previa.'],
             [
               'Macro',
               'Un insecto o una gota a 2 o 3 cm, tan grande como lo permite el teléfono, con el ancho del encuadre en mm.',
@@ -1102,6 +1189,10 @@ const es: Catalog = {
             ['Lugar y cámara', 'Cada toma guarda dónde y cómo se hizo, en etiquetas EXIF.'],
             ['Tamaño de foto y vídeo', 'Los ajustes eligen el tamaño de foto y vídeo.'],
             [
+              'Formato de foto y originales',
+              'WebP, JPEG, PNG o RAW + JPEG, y si quieres el original de la cámara y una copia solo con Color.',
+            ],
+            [
               'Foto multifotograma',
               'Una foto normal une 6 fotogramas rápidos en uno, con la mitad de ruido y bordes más nítidos.',
             ],
@@ -1118,17 +1209,21 @@ const es: Catalog = {
               'Galería',
               'Compartir juntas las fotos y vídeos seleccionados. La miniatura de la cámara se actualiza tras borrar en la galería.',
             ],
+            [
+              'Plus',
+              'Una compra abre Astro, Luna, Larga exposición, Macro, Mini, Cámara lenta y Timelapse, y oculta los anuncios.',
+            ],
             ['Anuncios', 'Un banner bajo la cuadrícula de la galería. Una compra única lo quita.'],
             [
-              'Enderezar y girar',
-              'Memories y Shuttrix comparten recorte, giro, dibujo y subtítulos. En Android, Guardar reemplaza el JPEG, PNG o WebP; Guardar copia conserva el original. El navegador descarga una copia.',
+              'Editar fotos',
+              'El editor compartido de Memories y Shuttrix recorta, gira, dibuja y añade textos. Guardar reemplaza el archivo y Guardar copia escribe un JPEG nuevo.',
             ],
             [
               'Inicio rápido',
               'Dos pulsaciones del botón de encendido abren Shuttrix, también sobre la pantalla bloqueada.',
             ],
+            ['Actualizaciones', 'Un build fuera de una tienda recibe su nueva versión desde GitHub.'],
             ['Idiomas', 'En 9 idiomas, según el teléfono o el navegador.'],
-
             [
               'Luz, desenfoque y fuentes',
               'Exposición de −6 a +6 EV, matiz, sombras y luces. Desenfoque elíptico de fondo y efecto maqueta con zona nítida ajustable. Fuentes con remates, sin remates y monoespaciadas. No ofrece ajustes propios de la captura.',
@@ -1148,11 +1243,13 @@ const es: Catalog = {
               'Llamadas por enlace',
               'Un enlace es la sala. Quien la crea entra al momento. Las visitas eligen micrófono, cámara y altavoz.',
             ],
-            ['Salas guardadas', 'Un enlace guardado con un nombre, como Mamá. El mismo enlace sirve siempre.'],
+            ['Recuperar una llamada caída', 'Una llamada caída reintenta 3 veces y luego ofrece Reintentar.'],
+            ['Relé para redes bloqueadas', 'Cloudflare TURN entra cuando falla la ruta directa entre las redes.'],
             [
-              'Videollamadas directas',
-              'El sonido y el vídeo van directos si las dos redes lo permiten. Los relés están previstos.',
+              'Compartir el enlace de la llamada',
+              'Copia el enlace o envíalo por Gmail, correo, WhatsApp, Telegram u otra app.',
             ],
+            ['Salas guardadas', 'Un enlace guardado con un nombre, como Mamá. El mismo enlace sirve siempre.'],
             [
               'Pizarra',
               'Todos dibujan con bolígrafo, rotulador o láser que se desvanece. También pueden borrar y deshacer sus trazos.',
@@ -1171,10 +1268,11 @@ const es: Catalog = {
               'Una compra de A$5.99 en Android abre la pizarra compartida y sus archivos para la sala, y quita los anuncios.',
             ],
             [
-              'Distribución para Android',
-              'CI crea APK y AAB firmados para las versiones públicas. Las subidas a pruebas internas de Play empiezan tras la primera versión y configuración de Play Console.',
+              'App de Android',
+              'La app web dentro de un contenedor Android, con releases APK y AAB firmados y versiones con fecha.',
             ],
             ['Idiomas', 'En 9 idiomas, según el teléfono o el navegador.'],
+            ['Icono de la app', 'Un portal telefónico de neón, en Android y en la web.'],
           ],
         },
       ],
@@ -1200,15 +1298,24 @@ const es: Catalog = {
             ],
             ['Temas de culturas', '13 culturas, de Grecia y Roma a los incas, Sumeria y la Edad de Piedra.'],
             [
-              'Música ambient',
-              'La canción de violín «L’Exode des Mondes» suena bajo el cielo. Apágala o pon tu propio archivo de audio.',
+              'Música ambiental',
+              'La canción «Sky Altar» de Lyrienne suena en bucle bajo el cielo. Apágala o pon tus propios archivos o una carpeta entera.',
             ],
             ['Anuncios y quitarlos', 'Los anuncios no tapan el cielo. Una compra única de $2.99 los quita.'],
+            [
+              'Sky Altar Pro',
+              'Una compra de A$4.99 desbloquea 11 culturas más, tu propia música, y Hoy y Compatibilidad en Tus estrellas. Oculta los anuncios.',
+            ],
             ['Idiomas de la app', 'Las pantallas y los nombres de las constelaciones en 9 idiomas.'],
             [
               'Actualizaciones desde GitHub',
               'La app de Android encuentra una versión nueva y la instala. Ajustes tiene «Buscar actualizaciones».',
             ],
+            [
+              'Astrología',
+              'Desliza desde la izquierda para la carta natal, consejos del día y una puntuación de compatibilidad. El signo del día brilla en el cielo.',
+            ],
+            ['Ir a una constelación', 'Busca una constelación por su nombre y el cielo gira hacia la que tocas.'],
           ],
         },
       ],
@@ -1241,7 +1348,7 @@ const es: Catalog = {
             ['Widget de inicio', 'El número de palabras pendientes y una palabra con su significado.'],
             [
               'Anuncios y quitar anuncios',
-              'Un banner y un anuncio a pantalla completa en Android. Una compra única los quita.',
+              'Un banner y un anuncio a pantalla completa en Android. Una compra única los quita. Encima del banner hay un botón Quitar anuncios.',
             ],
             [
               'Sonido',
@@ -1296,7 +1403,7 @@ const es: Catalog = {
             ],
             [
               'Reproductor de música',
-              'Artistas, álbumes, canciones y carpetas, cola, aleatorio y repetición, con el móvil bloqueado.',
+              'Artistas y Canciones están en la pantalla de inicio junto a las unidades. La barra del reproductor sigue en cada pantalla menos el vídeo, con ruta de navegación y orden por artista.',
             ],
             [
               'Audiolibros',
@@ -1310,7 +1417,10 @@ const es: Catalog = {
               'Versión de Google Play',
               'Google Play la actualiza, y los permisos de medios sustituyen el acceso a todos los archivos.',
             ],
-            ['Comandos de voz', 'Di Hey Lumi, play y una canción, en inglés o ruso, con el móvil bloqueado.'],
+            [
+              'Comandos de voz',
+              'Di Hey Lumi, luego play y una canción, o volume 40, en inglés o ruso, con el teléfono bloqueado. Un pulso muestra que escucha.',
+            ],
             ['Lumiere Pro', 'Un solo pago desbloquea los comandos de voz y Hey Lumi, y quita los anuncios.'],
           ],
         },
@@ -1334,6 +1444,14 @@ const es: Catalog = {
               'Cada código postal de NSW, QLD, SA y TAS coloreado por el alquiler semanal medio de los nuevos contratos.',
             ],
             ['Instalar desde el navegador', 'La versión web se instala como app con su propio icono.'],
+            [
+              'Anuncios y quitar anuncios',
+              'Un banner de AdMob bajo el mapa en Android. Una compra única de A$2.99 lo quita. La web no muestra anuncios.',
+            ],
+            [
+              'Property Trends Pro',
+              'Una compra de A$5.99 en Android desbloquea los alquileres y todo el historial de precios, y quita los anuncios.',
+            ],
           ],
         },
       ],
@@ -1345,17 +1463,24 @@ const es: Catalog = {
       groups: [
         {
           features: [
-            ['Preguntar', 'Escribe los lugares, una fecha aproximada, la duración y quién va.'],
-            ['Vuelos', 'Los vuelos de ida y vuelta más baratos cerca de la fecha, con fechas más baratas al lado.'],
             [
-              'Lugares',
-              'Los imprescindibles y los lugares secretos de cada ciudad según tus intereses, con una marca y un enlace.',
+              'Preguntar',
+              'Escribe los lugares, una fecha aproximada, las noches y quién va, o abre un enlace de Tick-a-Lot.',
             ],
-            ['A Tick-a-Lot', 'Un toque convierte el viaje en listas de Tick-a-Lot: lugares y equipaje.'],
-            ['Ajustes', 'El idioma: el del teléfono o uno de los 9.'],
+            [
+              'Vuelos',
+              'Los vuelos de ida y vuelta más baratos en torno a la fecha, un calendario de precios y enlaces a Aviasales y Google Flights.',
+            ],
+            ['Lugares', 'Los imprescindibles y los rincones secretos de cada ciudad, filtrados por intereses.'],
+            ['A Tickalot', 'Un toque envía el viaje a Tick-a-Lot como lista de lugares y lista de equipaje.'],
+            ['Ajustes', 'El idioma de la app: el del teléfono o uno de los 9.'],
             [
               'Anuncios',
-              'Anuncios en Android hasta que una compra única los quita. Junto a los enlaces de reserva no hay anuncios.',
+              'Un banner y un anuncio a pantalla completa en Android. Una compra única de Quitar anuncios los oculta.',
+            ],
+            [
+              'Tripforge Pro',
+              'Una compra en Android da búsquedas ilimitadas, fechas desplazadas hasta 30 días, hasta 50 viajes guardados y cero anuncios.',
             ],
           ],
         },
@@ -1382,6 +1507,10 @@ const es: Catalog = {
             ['Post de testers', 'Un post que pide testers para una app Android de una lista.'],
             ['Dentro de Archon', 'La pestaña Reddit de Archon muestra esta ventana en un marco.'],
             ['Botón de info', 'El botón i explica la configuración de Reddit.'],
+            [
+              'Actualizaciones',
+              'La app se actualiza sola desde GitHub. Al arrancar y una vez al día ofrece Actualizar o Más tarde, y solo instala builds firmados.',
+            ],
             ['Idioma', 'Los ajustes tienen una lista: el del sistema o uno de 9.'],
             ['Lista de hechos', 'Cada hilo publicado u omitido, con su fecha.'],
           ],
@@ -1419,6 +1548,38 @@ const es: Catalog = {
             ['Subida programada', 'Un comando sube con la etiqueta de IA y una hora de publicación.'],
             ['Texto de Claude', 'Claude escribe el título y la descripción de YouTube a partir de las canciones.'],
             ['Fondo con ComfyUI', 'Un prompt en el archivo del tema hace que ComfyUI dibuje el fondo.'],
+          ],
+        },
+      ],
+    },
+    'disk-reorg': {
+      tagline: 'Ordena, quita duplicados y archiva carpetas según reglas.',
+      lede: 'disk-reorg mueve archivos a una carpeta de cuarentena y deja cada borrado al dueño. Las carpetas, reglas y patrones protegidos quedan en una configuración local, fuera de git.',
+      links: [],
+      groups: [
+        {
+          features: [
+            [
+              'Informe de carpeta',
+              'Un informe en Markdown con cantidades, tamaños, años, tipos de archivo y posibles copias.',
+            ],
+            [
+              'Duplicados a cuarentena',
+              'Conserva la copia mejor ubicada de cada archivo y mueve el resto a cuarentena.',
+            ],
+            [
+              'Archivos prescindibles',
+              'Instaladores, torrents y billetes viejos van a cuarentena por reglas. Los patrones protegidos cuidan los nombres importantes.',
+            ],
+            [
+              'Ordenar por temas',
+              'Los archivos van a carpetas por tema según reglas, y el resto a una carpeta de reserva.',
+            ],
+            ['Bandeja mensual', 'Lo que lleva más de 30 días en Descargas pasa a una carpeta por mes.'],
+            [
+              'Planes, movimientos y deshacer',
+              'Una prueba en seco escribe un plan editable, cada movimiento queda en un registro y deshacer lo devuelve.',
+            ],
           ],
         },
       ],

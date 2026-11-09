@@ -188,6 +188,10 @@ const nb: Catalog = {
               'Rydd',
               'Trinnkort sorterer bildene på mobilen, flytter dem til daterte mapper på NAS-en og frigjør plass på mobilen.',
             ],
+            [
+              'Importer fra Google Foto',
+              'Velg bilder i Google Foto, så laster appen dem ned til DCIM, og derfra går de til NAS-en.',
+            ],
             ['Sorter på NAS-en', 'Valgte NAS-filer får dato i navn og mappe, på NAS-en og i indeksen samtidig.'],
             ['Visning', 'Bilder og videoer i fullskjerm, med sveip til neste. Videoer spilles rett fra NAS-en.'],
             ['Koble til NAS-en', 'Appen finner NAS-en på Wi-Fi. Én pålogging åpner bildemappen over WebDAV.'],
@@ -220,6 +224,10 @@ const nb: Catalog = {
               'Skrivebordsappen sorterer en mappe i de samme mappene for år, sted og dager som telefonen.',
             ],
             ['Arkiv', 'Hvert år og hver måned med antall bilder. Et trykk åpner hele måneden.'],
+            [
+              'Reiseliste og stedskart',
+              'Arkivet viser utenlandsreiser og bilturer, og tegner hvert bilde med GPS på ett kart, per år.',
+            ],
             ['Personer', 'NAS-en grupperer ansiktene i bildene etter person, navngitte først.'],
             ['Side for indeksering', 'En side på NAS-en viser hvor langt ansiktsmotoren og indeksereren har kommet.'],
             ['Album om en person', 'Et album om ett barn åpnes som en utklippsbok, ett kapittel per leveår.'],
@@ -236,7 +244,6 @@ const nb: Catalog = {
               'Par med samme opptakstid og størrelse side om side, så den ekstra kopien kan fjernes.',
             ],
             ['Oppdateringer', 'Bygget utenfor en butikk finner, laster ned og installerer sin nye versjon.'],
-
             [
               'Lys, uskarphet og skrifter',
               'Eksponering fra −6 til +6 EV, fargetone, skygger og høylys. Elliptisk bakgrunnsuskarphet og tilt-shift har justerbart skarpt område. Tekst tilbyr skrifter med og uten seriffer og fast bredde. Opptaksinnstillinger er utelatt.',
@@ -284,14 +291,21 @@ const nb: Catalog = {
               'Kameravarsler',
               'Et pip omtrent 20 sekunder før, så «Fartskamera forut. Grense 60.» Det når også låseskjermen og viser når kameraet står på den andre siden av veien.',
             ],
+            ['Varsler alltid klare', 'Varslene virker mellom turer og etter at Android starter appen på nytt.'],
             ['Over grensen', '«Du kjører i 72. Sett ned farten.» Bare nær kameraer, eller på alle veier.'],
+            ['Skolesoner', 'Fartsgrensen følger sonens tider og skoleterminene i NSW.'],
             [
               'Høye varsler',
               'Full lydstyrke fra telefonhøyttaleren, også i lydløs modus eller med Bluetooth. Hver del har en bryter.',
             ],
+            ['Forfatterens stemme', 'En Pro-stemme spilt inn med appskaperens egen stemme.'],
             [
               'Kjørelogg',
               'Kjøreturer og gåturer registreres av seg selv. Hver tur viser kjørte og gåtte kilometer hver for seg. Hver rute viser farten din ved hvert kamera, grønt eller rødt. Farten blir på telefonen din.',
+            ],
+            [
+              'Turlinje etter fartsgrense',
+              'Fargen på turlinjen viser farten mot fartsgrensen. Et trykk viser fart, fartsgrense og gate.',
             ],
             [
               'Turstatistikk',
@@ -314,6 +328,7 @@ const nb: Catalog = {
               'Hey Spot',
               '«Hey Spot, go to Bondi Beach, Manly and back.» En modell på mobilen hører vekkeordene uten nett.',
             ],
+            ['Hey Spot, hvilken gate er jeg i?', 'Appen sier gaten og fartsgrensen der.'],
             ['Skjermen holdes på', 'Kartet lyser på dashbordet så lenge appen er åpen.'],
             [
               'Selvoppdatering',
@@ -349,7 +364,10 @@ const nb: Catalog = {
             ['Kvantisering', 'Én lengde fra 1/1 til 1/64 setter rutenettet, opptaket og looperen, som i Cubase.'],
             ['Piano roll', 'Tegn, flytt, strekk, kopier og slett toner. Linjalen markerer vers, refreng, bro og solo.'],
             ['Tabulaturvisning', 'Et spor som tabulatur i Guitar Pro-stil, med en spillemarkør som følger sangen.'],
-            ['Akkordark', 'Akkordnavn i takter som lyser opp med sangen. Teksten åpnes på Musixmatch.'],
+            [
+              'Akkordark',
+              'Akkordnavn i takter som lyser opp med sangen. Lim inn tekst med akkorder, så stiller den seg etter sangen.',
+            ],
             ['Last opp sanger', 'Guitar Pro- og MIDI-filer legges til i sanglisten.'],
             [
               'Finn en sang på nettet',
@@ -371,7 +389,10 @@ const nb: Catalog = {
               'En PWA som åpnes i fullskjerm i liggende format. Android-APK-en oppdaterer seg selv.',
             ],
             ['Skjermoppsett', 'Gripebrettet fyller skjermen, og panelene flyter over hjørnene.'],
-            ['Avspillingspanel', 'Spiller det som er lastet, går steg for steg, stokker sanger og lagrer dem.'],
+            [
+              'Avspillingspanel',
+              'Spiller det som er lastet, går steg for steg, stokker sanger og lagrer dem. Akkordpanelet viser et grepsdiagram over hver akkord. En ?song=-lenke, eller en annen app som Lumiere Player, åpner en sang.',
+            ],
             ['Easy- og Pro-modus', 'Easy spiller bare akkordene, så en nybegynner kan klimpre med.'],
             ['Sanglenker', 'Én meny søker etter den åpne sangen på sider for akkorder, tabs, video og tekst.'],
             ['Admin for sanger', 'Eieren legger til og fjerner de innebygde sangene på en adminside.'],
@@ -412,6 +433,10 @@ const nb: Catalog = {
             ['Lyst og mørkt', 'Følger mobilen, eller et fast valg.'],
             ['Oppdateringer', 'APK-en tilbyr en nyere utgivelse med størrelsen og en advarsel ved mobildata.'],
             ['Reklame', 'Et engangskjøp. Folk i Europa ser samtykkeskjemaet før noen annonse.'],
+            [
+              'Tick-a-Lot Pro',
+              'Ett kjøp i Google Play låser opp Pakking, Ting å se, rekkefølgen i butikken og prisene, og skjuler reklamen.',
+            ],
             ['Ukehandelen for to', 'Én lager listen, den andre krysser av på vei hjem.'],
             ['Sanger å lære', 'En liste med sanger på gitar, de mest ønskede først.'],
             ['Endre og slette', 'Hvert felt lagres selv, et trykk krysser av, og sletting kan angres.'],
@@ -428,7 +453,14 @@ const nb: Catalog = {
       groups: [
         {
           features: [
-            ['Hey Keep', 'Et vekkeord mobilen lytter etter i bakgrunnen. «Эй, Кип» fungerer også.'],
+            [
+              'Hey Keep',
+              'Et vekkeord mobilen lytter etter i bakgrunnen. «Эй, Кип» fungerer også. Svarene kommer med Maisie, kvinne, mann eller forfatterens stemme, og Tilpass til min stemme stiller vekkeordet inn etter deg.',
+            ],
+            [
+              'Lang opptak',
+              'Et Hey Keep-notat fortsetter gjennom pauser og låst skjerm til du trykker Stopp. Et opptak Android avbryter, lagres som notat.',
+            ],
             [
               'Stopp og fortsett',
               '«Stopp» avslutter notatet med en gang. «Hey Keep, fortsett» legger til i det nyeste notatet.',
@@ -480,6 +512,7 @@ const nb: Catalog = {
               'Priser på kartet',
               'Grønne nåler for den billigste tredjedelen, gule for midten og røde for den dyreste.',
             ],
+            ['Din plass på kartet', 'En blå prikk viser deg, med en pil som snur seg etter kompasset.'],
             ['Stasjonsliste', 'Stasjonene i bildet, billigst først, med merke, forstad og når prisen endret seg.'],
             ['Prishistorikk', 'Dagssnittet over et bånd fra laveste til høyeste, for 30, 90 eller 365 dager.'],
             ['Meldinger fra sjåfører', 'Der det ikke finnes data fra delstaten, sender sjåfører prisen fra skiltet.'],
@@ -497,6 +530,7 @@ const nb: Catalog = {
               'APK-en sjekker GitHub ved oppstart og hver gang du kommer tilbake, og viser nedlastingen i toppfeltet.',
             ],
             ['Fjern annonser', 'Et engangskjøp på Google Play, som gjenopprettes på en ny mobil.'],
+            ['ServoHop Pro', 'Ett kjøp skjuler reklamen og åpner prisdiagrammet for 365 dager.'],
             ['Drivstoffpanel', 'Velg bensin, diesel, gass eller ladere, treg AC eller rask DC.'],
             ['Reklame', 'Ett banner under listen: AdMob i appen, AdSense på nettstedet.'],
             ['Språk', 'Skjermene finnes på 9 språk og følger telefonen eller nettleseren.'],
@@ -646,43 +680,59 @@ const nb: Catalog = {
       groups: [
         {
           features: [
+            ['Skrivestil', 'Enkel, kort tekst i hvert svar, hver commit og hvert dokument, uten AI-tone.'],
+            ['Kodegjennomgang', 'En gjennomgang etter sjekkliste, med hvert funn sjekket mot koden.'],
             [
-              'Enkelt språk',
-              'Regler som fjerner KI-tonen fra chat, commits, dokumentasjon og tekster i grensesnittet.',
+              'Gjennomgangsvinkler',
+              'Én subagent per vinkel, som sikkerhet eller ytelse. Bare beviste funn kommer tilbake.',
             ],
-            ['Spesifikasjon først', 'Hver funksjon starter som en spesifikasjon i repoet, og arbeidet følger den.'],
+            ['Pull requests', 'Korte PR-tekster med flytdiagrammer, og én commit per gjennomgangstråd.'],
+            ['Kommentarer i gjennomgang', 'Hver tråd i gjennomgangen får én commit og et svar med SHA-en.'],
             [
               'Fra sak til sammenslåing',
               'Leser en sak, bygger den i sitt eget worktree, åpner PR-en og flytter saken.',
             ],
-            ['Pull requests', 'Korte PR-tekster med flytdiagrammer, og én commit per gjennomgangstråd.'],
-            ['Kodegjennomgang', 'En gjennomgang etter sjekkliste, med hvert funn sjekket mot koden.'],
             [
               'Appgjennomgang',
               'Parallelle gjennomgåere per vinkel, som sikkerhet og ytelse. De trygge funnene blir rettet.',
             ],
-            ['Arkitektur og monorepoer', 'Pakker i lag, delte API-kontrakter og CI per app.'],
-            ['Lansering', 'Søkeoppsett, AdMob og AdSense, lansering på Google Play og en markedsplan i én kjøring.'],
+            ['Spesifikasjon først', 'Hver funksjon starter som en spesifikasjon i repoet, og arbeidet følger den.'],
+            ['Énsider', 'Først hele teksten, så et sammendrag på én skjerm øverst.'],
+            ['Kommandoer via mise', 'Hver kommando går via mise, med versjonene repoet låser.'],
+            ['Oversettelser', 'Hver tekst kommer på alle appens språk, i samme endring.'],
+            ['Worktrees', 'Hver endring får sin egen utsjekk, ryddet bort etter sammenslåingen.'],
+            ['Rask JavaScript', 'Færre rundturer og en mindre bunt, med regelen og kostnaden for hvert funn.'],
+            ['Arkitektur', 'Den minste lagdelte formen for appen, med reglene håndhevet i CI.'],
+            ['Monorepoer', 'Apper og pakker i ett repo, med låste verktøy og ett API-skjema.'],
+            [
+              'Nullstill historikken',
+              'Slår historikken sammen til én ny første commit, med en bunt tatt vare på som sikkerhetskopi.',
+            ],
+            ['Søkeoppsett', 'Search Console, Bing, et nettstedskart og statistikk for et nettsted.'],
+            ['Reklame', 'AdSense og AdMob, med testannonser i debug-bygg og samtykkemeldingen.'],
+            ['Google Play-release', 'En signert bunt med ny versjonskode, rullet ut til intern testing.'],
+            ['Lansering i én runde', 'Søkeoppsett, reklame og Google Play-release, i den rekkefølgen.'],
+            ['Markedsføring', 'De første brukerne ut fra et budsjett: budskapet, en lanseringskalender og innleggene.'],
             [
               'Oppdateringer i appen',
               'Selvoppdatering for apper installert utenfor butikken, utelatt fra Play-bygget.',
             ],
-            [
-              'Stell av repoer',
-              'Worktrees, flytting av repoer, nullstilling av historikk og rotering av hemmeligheter.',
-            ],
             ['Navn og domener', 'Sjekker et navn mot domener, foretaksregisteret og varemerker.'],
-            ['Stemmer', 'Spiller hver tekst-til-tale-stemme, så en person kan velge én.'],
-            ['Kodearbeid', 'Skills for å gjøre en sak, åpne en PR, svare på gjennomganger og gå gjennom en PR.'],
-            [
-              'Prosjektoppsett',
-              'Skills for å planlegge arkitektur, sette opp et monorepo og kjøre kommandoer via mise.',
-            ],
+            ['Juridisk risiko', 'Skanner lisenser, data-SDK-er og butikkregler, og fikser de trygge funnene.'],
             ['Appikoner', '10 ikoner i stiler som passer appen, et valg i chatten, så alle størrelser.'],
-            ['Demoskjermbilder og butikkmedier', 'Demodata, skjermbilder og korte videoer til README og butikken.'],
+            ['Demoskjermbilder', 'Demodata, skjermbilder og korte videoer til README.'],
+            [
+              'Butikkmedier',
+              'De samme skjermbildene, videoen og ikonet på Google Play, nettstedet og installasjonsprogrammene.',
+            ],
             [
               'Gjennomgang av en utgivelse',
               'Installerer den nyeste utgivelsen, går gjennom hver hovedflyt og melder per flyt.',
+            ],
+            ['Stemmer', 'Spiller hver tekst-til-tale-stemme, så en person kan velge én.'],
+            [
+              'Reddit-kommentarer',
+              'Finner tråder repoet kan svare på, skriver et utkast og taster det inn i Chrome. Personen trykker Kommenter.',
             ],
             ['Stemme ved slutten av en tur', 'En kort setning sier at agenten er ferdig, venter eller spør.'],
             ['Installasjon', 'Én klon lenket inn i hver agent på maskinen. En endring når alle.'],
@@ -705,11 +755,18 @@ const nb: Catalog = {
             ],
             ['Selvdriftet runner', 'Maskinen bygger CI-jobber for organisasjonens repoer.'],
             ['Startknapp', 'Et dobbeltklikk starter siste versjon av CI-en.'],
-            ['CI-statusside', 'En lokal side viser runneren og jobbene med ett blikk.'],
+            [
+              'CI-statusside',
+              'En lokal side viser runneren og jobbene med ett blikk, med en fremdriftslinje per release og grunnen til hver avbrytelse.',
+            ],
+            [
+              'Avbrutte bygg',
+              'Sideserveren stopper en erstattet kjøring og en release der Checks feilet. Loggen nevner hver årsak.',
+            ],
             ['Skyløpere først', 'Jobber bygger på gratis skyløpere så lenge minuttene varer, så på denne PC-en.'],
             [
-              'Utgivelser',
-              'Start en app-utgivelse i CI, bygg støttede Android-APK-er lokalt fra nyeste main, og installer publiserte eller lokale APK-er på en tilkoblet telefon med ADB.',
+              'Releaser',
+              'Start en app-release på CI, bygg Android-APK-er fra nyeste main og installer dem på en tilkoblet telefon. Install Dev låser også opp utviklerinnstillingene. En opprydding sletter gamle Actions-artefakter og APK-releaser etter en bekreftelse.',
             ],
             ['Oppdaterer seg selv', 'PC-en installerer hver utgivelse noen minutter etter sammenslåingen.'],
           ],
@@ -731,6 +788,10 @@ const nb: Catalog = {
               'Innlogging med lenke på e-post, last opp og rediger bilder, bekreft bookinger, tider og pakker.',
             ],
             ['Kalendersynk', 'Opptatte tider i Google Kalender stenger booking, og en feed viser hver booking.'],
+            [
+              'Skrifter',
+              'Alina velger skrift for overskrifter, tekst og etiketter blant 10 gratis skrifter, eller laster opp sine egne.',
+            ],
             ['Kundegallerier', 'En privat lenke med prøvebilder med vannmerke, deretter alle originalene som ZIP.'],
           ],
         },
@@ -767,14 +828,30 @@ const nb: Catalog = {
           features: [
             [
               'Oppdater alle',
-              'Ett trykk laster ned og installerer hver nye utgivelse, med en linje per app og en for hele kjøringen. Avbryt stopper den.',
+              'Ett trykk oppdaterer hver installerte Workbench Soft-app stille via Shizuku, med en linje per app. Avbryt stopper det.',
             ],
             [
               'Egen oppdatering',
               'WBS Updater gir ut sine egne utgivelser, installerer seg selv sist i en runde, og telefonen åpner den på nytt med den nye versjonen.',
             ],
-            ['Oppdater én app', 'En Oppdater-knapp ved siden av hver rad bringer bare den appen til nyeste utgivelse.'],
-            ['Appliste', 'Hver app viser om den er oppdatert eller hvilken versjon som kommer.'],
+            [
+              'Oppdater én app',
+              'En Oppdater-knapp på hvert kort tar bare den appen til nyeste release. Et kort som feilet beholder knappen for et nytt forsøk.',
+            ],
+            [
+              'Installer en app som mangler',
+              'En utgitt app som ikke er på telefonen ennå, installeres fra kortet sitt.',
+            ],
+            [
+              'Appliste',
+              'Ett kort per utgitt APK, koblet til de installerte appene, oppdateringer først. Et studioprosjekt uten APK får en Åpne-lenke.',
+            ],
+            ['Lagret liste uten nett', 'Den siste release-listen vises når GitHub ikke svarer.'],
+            [
+              'Oppsett av Shizuku',
+              'Åpner Google Play eller Shizuku for hvert steg som mangler, og kjører så oppdateringen.',
+            ],
+            ['Release-notater', 'Hvert kort viser release-notatene, eller commitene siden forrige release.'],
           ],
         },
       ],
@@ -922,10 +999,17 @@ const nb: Catalog = {
         {
           features: [
             ['Flytt et repo', 'Flytter et repo til organisasjonen og gjør det privat, med gratis CI beholdt.'],
-            ['CI og utgivelser for hvert repo', 'Sjekker Checks og Release i hvert repo og legger til de som mangler.'],
+            [
+              'CI og releaser for hvert repo',
+              'Sjekker at hvert repo har Checks og Release, og legger til det som mangler. En release bygges ved siden av Checks og publiseres når de består.',
+            ],
             ['Skriv om et repo', 'Nye navn, mapper og dokumenter, med samme oppførsel.'],
             ['Forny hemmeligheter', 'Fornyer CI-hemmeligheter og nøkler, app for app.'],
             ['Arbeidsregler', 'Først en spesifikasjon, flett med en gang, test samlet senere.'],
+            [
+              'MCP-gateway',
+              'Én gateway-server står for serverne til Google Play, GitHub, AdMob, AdSense og Reddit, så en økt viser 7 verktøy i stedet for 238.',
+            ],
             ['Utgivelser', 'En datert utgivelse for hver grønne push til main.'],
             ['Funksjonskø', 'Økter på samme app bytter på delte filer, og det kommer én utgivelse til slutt.'],
           ],
@@ -986,6 +1070,7 @@ const nb: Catalog = {
               'Portrett',
               'Det du trykker på blir skarpt, nært eller 10 m unna, person eller ting. Resten blir mykt, og en glidebryter setter uskarpheten.',
             ],
+            ['Mini', 'Et tilt shift-lekeuttrykk i bilder og video, med uskarpheten synlig i forhåndsvisningen.'],
             ['Makro', 'En bille eller en dråpe fra 2 til 3 cm, så stor som telefonen tillater, med bildebredden i mm.'],
             ['Panorama', 'Et bredt bilde fra en langsom vending, satt sammen på telefonen.'],
             ['Sakte film', 'En video i 120 eller 240 bilder i sekundet som spilles av langsomt.'],
@@ -1018,6 +1103,10 @@ const nb: Catalog = {
             ['Sted og kameradata', 'Hvert bilde bærer hvor og hvordan det ble tatt, som EXIF-tagger.'],
             ['Bilde- og videostørrelse', 'Innstillingene velger størrelsen på bilder og video.'],
             [
+              'Bildeformat og originaler',
+              'WebP, JPEG, PNG eller RAW + JPEG, og om du vil, kameraoriginalen og en kopi med bare farge.',
+            ],
+            [
               'Flerbildefoto',
               'Et vanlig foto slår sammen 6 raske bilder til ett, med halvparten så mye støy og skarpere kanter.',
             ],
@@ -1031,14 +1120,18 @@ const nb: Catalog = {
               'Galleri',
               'Del valgte bilder og videoer samlet. Kameraets miniatyr oppdateres etter sletting i galleriet.',
             ],
+            [
+              'Plus',
+              'Ett kjøp åpner Astro, Måne, Lang lukker, Makro, Mini, Sakte film og Tidsforløp, og skjuler reklamen.',
+            ],
             ['Reklame', 'Ett banner under gallerirutenettet. Et engangskjøp fjerner det.'],
             [
-              'Rett opp og roter',
-              'Memories og Shuttrix deler beskjæring, rotering, tegning og bildetekst. På Android erstatter Lagre JPEG, PNG eller WebP; Lagre kopi beholder originalen. Nettleseren laster ned en kopi.',
+              'Rediger bilder',
+              'Den felles editoren i Memories og Shuttrix beskjærer, roterer, tegner og legger til tekst. Lagre erstatter filen, og Lagre kopi skriver en ny JPEG.',
             ],
             ['Hurtigstart', 'To trykk på av/på-knappen åpner Shuttrix, også over låseskjermen.'],
+            ['Oppdateringer', 'Et bygg utenfor en butikk henter ny versjon fra GitHub.'],
             ['Språk', 'På 9 språk, etter telefonen eller nettleseren.'],
-
             [
               'Lys, uskarphet og skrifter',
               'Eksponering fra −6 til +6 EV, fargetone, skygger og høylys. Elliptisk bakgrunnsuskarphet og tilt-shift har justerbart skarpt område. Tekst tilbyr skrifter med og uten seriffer og fast bredde. Opptaksinnstillinger er utelatt.',
@@ -1058,8 +1151,13 @@ const nb: Catalog = {
               'Samtaler via lenke',
               'En lenke er rommet. Oppretteren kobles til med en gang. Gjestene velger mikrofon, kamera og høyttaler.',
             ],
+            ['Gjenopprett en brutt samtale', 'En brutt samtale prøver 3 ganger på nytt, og tilbyr så Prøv igjen.'],
+            ['Relé for blokkerte nett', 'Cloudflare TURN tar over når den direkte veien mellom nettene feiler.'],
+            [
+              'Del samtalelenken',
+              'Kopier lenken, eller send den med Gmail, e-post, WhatsApp, Telegram eller en annen app.',
+            ],
             ['Lagrede rom', 'En romlenke lagret under et navn, som Mamma. Samme lenke virker hver gang.'],
-            ['Direkte videosamtaler', 'Lyd og video går direkte når begge nettverk tillater det. Reléer er planlagt.'],
             [
               'Tavle',
               'Alle tegner med penn, merkepenn eller en laser som viskes ut. Egne streker kan slettes og angres.',
@@ -1077,11 +1175,9 @@ const nb: Catalog = {
               'Farnear Pro',
               'Ett kjøp til A$5.99 på Android åpner den delte tavla og mediene for rommet, og fjerner reklamen.',
             ],
-            [
-              'Android-distribusjon',
-              'CI bygger signerte APK- og AAB-filer for offentlige utgivelser. Opplasting til Play intern testing starter etter første utgivelse og oppsett i Play Console.',
-            ],
+            ['Android-app', 'Nettappen i et Android-skall, med signerte APK- og AAB-releaser og daterte versjoner.'],
             ['Språk', 'På 9 språk, etter telefonen eller nettleseren.'],
+            ['Appikon', 'En neonportal formet som en telefon, på Android og nettet.'],
           ],
         },
       ],
@@ -1107,15 +1203,24 @@ const nb: Catalog = {
             ],
             ['Kulturtemaer', '13 kulturer, fra Hellas og Roma til inkaene, Sumer og steinalderen.'],
             [
-              'Ambient-musikk',
-              'Fiolinsangen «L’Exode des Mondes» går under himmelen. Slå den av, eller spill din egen lydfil.',
+              'Bakgrunnsmusikk',
+              'Sangen «Sky Altar» av Lyrienne går i løkke under himmelen. Skru den av, eller spill egne filer eller en hel mappe.',
             ],
             ['Reklame og reklamefritt', 'Reklamen holder seg unna himmelen. Et engangskjøp på $2.99 fjerner den.'],
+            [
+              'Sky Altar Pro',
+              'Ett kjøp til A$4.99 låser opp 11 flere kulturer, egen musikk, og I dag og Match i Dine stjerner. Reklamen forsvinner.',
+            ],
             ['Appspråk', 'Skjermene og navnene på stjernebildene på 9 språk.'],
             [
               'Oppdateringer fra GitHub',
               'Android-appen finner en ny versjon og installerer den. Innstillinger har «Se etter oppdateringer».',
             ],
+            [
+              'Astrologi',
+              'Sveip inn fra venstre for fødselshoroskopet, dagens tips og en match-score. Dagens stjernetegn lyser på himmelen.',
+            ],
+            ['Gå til stjernebilde', 'Søk etter et stjernebilde på navn, og himmelen snur seg mot det du trykker på.'],
           ],
         },
       ],
@@ -1140,7 +1245,10 @@ const nb: Catalog = {
             ['Samtaleøving', 'En chat om en scene som en kafé eller et jobbintervju, på elevens nivå.'],
             ['Synk mellom enheter', 'De samme kortene på telefon, nettbrett og nettleser, koblet med en kode.'],
             ['Widget på startskjermen', 'Antall ventende ord og ett ord med betydningen.'],
-            ['Annonser og fjern annonser', 'Et banner og en fullskjermsannonse på Android. Ett kjøp fjerner dem.'],
+            [
+              'Annonser og fjern annonser',
+              'Et banner og en fullskjermsannonse på Android. Ett kjøp fjerner dem. En Fjern reklame-brikke ligger over banneret.',
+            ],
             [
               'Lyd',
               'Ordene spilles fra telefonhøyttaleren på full styrke. Innstillingene lar deg bruke Bluetooth eller systemvolumet.',
@@ -1186,7 +1294,10 @@ const nb: Catalog = {
               'Et rolig, mørkt utseende i Google TV-stil, hvitt fokus og en spiller som passer på telefonen.',
             ],
             ['Musikkbibliotek', 'Mapper på mobilen, USB og NAS i ett bibliotek, skannet i bakgrunnen.'],
-            ['Musikkspiller', 'Artister, album, sanger og mapper, kø, tilfeldig og gjenta, også med låst mobil.'],
+            [
+              'Musikkspiller',
+              'Artister og Sanger ligger på startskjermen ved siden av stasjonene. Spillerlinjen blir på hver skjerm unntatt video, med brødsmuler og sortering etter artist.',
+            ],
             [
               'Lydbøker',
               'Bokmapper etter forfatter, hver bok med omslag og fremdrift. En bok fortsetter der den stoppet, litt tidligere etter en pause.',
@@ -1196,7 +1307,10 @@ const nb: Catalog = {
               'Google Play-versjon',
               'Google Play oppdaterer den, og medietillatelser erstatter tilgang til alle filer.',
             ],
-            ['Talekommandoer', 'Si Hey Lumi, play og en sang, på engelsk eller russisk, med låst mobil.'],
+            [
+              'Talekommandoer',
+              'Si Hey Lumi, så play og en sang, eller volume 40, på engelsk eller russisk, også med låst telefon. En puls viser at den lytter.',
+            ],
             ['Lumiere Pro', 'Ett kjøp låser opp talekommandoer og Hey Lumi og fjerner reklamen.'],
           ],
         },
@@ -1217,6 +1331,14 @@ const nb: Catalog = {
             ['Språk', 'På 9 språk, etter telefonen eller nettleseren.'],
             ['Leie', 'Hvert postnummer i NSW, QLD, SA og TAS farget etter medianleien for nye leieavtaler per uke.'],
             ['Installer fra nettleseren', 'Nettversjonen installeres som en app med eget ikon.'],
+            [
+              'Reklame og fjern reklame',
+              'Ett AdMob-banner under kartet på Android. Et engangskjøp til A$2.99 fjerner det. Nettsiden viser ingen reklame.',
+            ],
+            [
+              'Property Trends Pro',
+              'Ett kjøp til A$5.99 på Android låser opp leie og hele prishistorikken, og fjerner reklamen.',
+            ],
           ],
         },
       ],
@@ -1228,12 +1350,22 @@ const nb: Catalog = {
       groups: [
         {
           features: [
-            ['Spør', 'Skriv stedene, en omtrentlig dato, hvor lenge og hvem som skal.'],
-            ['Fly', 'De billigste tur-retur-flyene rundt datoen, med billigere datoer ved siden av.'],
-            ['Steder', 'Toppstedene og de hemmelige perlene i hver by etter interessene dine, med hake og lenke.'],
-            ['Til Tick-a-Lot', 'Ett trykk gjør reisen om til Tick-a-Lot-lister: severdigheter og pakking.'],
-            ['Innstillinger', 'Språket: telefonens, eller ett av de 9.'],
-            ['Reklame', 'Reklame på Android til et engangskjøp fjerner den. Ingen reklame ved bestillingslenkene.'],
+            [
+              'Spør',
+              'Skriv stedene, en omtrentlig dato, antall netter og hvem som drar, eller åpne en lenke fra Tick-a-Lot.',
+            ],
+            [
+              'Fly',
+              'De billigste tur-retur-reisene rundt datoen, en priskalender og lenker til Aviasales og Google Flights.',
+            ],
+            ['Steder', 'De største severdighetene og de skjulte perlene i hver by, filtrert etter interesser.'],
+            ['Til Tickalot', 'Ett trykk sender turen til Tick-a-Lot som en liste over severdigheter og en pakkeliste.'],
+            ['Innstillinger', 'Appspråket: telefonens, eller ett av 9.'],
+            ['Reklame', 'Et banner og en fullskjermannonse på Android. Et engangskjøp av Fjern reklame skjuler dem.'],
+            [
+              'Tripforge Pro',
+              'Ett kjøp på Android gir ubegrensede søk, datoer flyttet opptil 30 dager, opptil 50 lagrede turer og ingen reklame.',
+            ],
           ],
         },
       ],
@@ -1259,6 +1391,10 @@ const nb: Catalog = {
             ['Testerinnlegg', 'Et innlegg som søker testere for en Android-app fra en liste.'],
             ['Inne i Archon', 'Reddit-fanen i Archon viser dette vinduet i en ramme.'],
             ['Infoknapp', 'i-knappen forklarer Reddit-oppsettet.'],
+            [
+              'Oppdateringer',
+              'Appen oppdaterer seg selv fra GitHub. Ved oppstart og én gang om dagen tilbyr den Oppdater eller Senere, og installerer bare signerte bygg.',
+            ],
             ['Språk', 'Innstillingene har en språkliste: systemets eller ett av 9.'],
             ['Ferdigliste', 'Hver postet og hoppet over tråd med dato.'],
           ],
@@ -1296,6 +1432,32 @@ const nb: Catalog = {
             ['Planlagt opplasting', 'Én kommando laster opp med KI-merke og publiseringstid.'],
             ['Tekst fra Claude', 'Claude skriver YouTube-tittel og beskrivelse ut fra sangene.'],
             ['Bakgrunn fra ComfyUI', 'En prompt i temafilen får ComfyUI til å tegne bakgrunnsklippet.'],
+          ],
+        },
+      ],
+    },
+    'disk-reorg': {
+      tagline: 'Sorterer, fjerner duplikater og arkiverer mapper etter regler.',
+      lede: 'disk-reorg flytter filer til en karantenemappe og overlater hver sletting til eieren. Mappene, reglene og beskyttede mønstre ligger i en lokal konfig, utenfor git.',
+      links: [],
+      groups: [
+        {
+          features: [
+            ['Mapperapport', 'En Markdown-rapport med antall, størrelser, år, filtyper og sannsynlige kopier.'],
+            [
+              'Duplikater til karantene',
+              'Beholder den best plasserte kopien av hver fil og flytter resten til karantene.',
+            ],
+            [
+              'Filer som kan slettes',
+              'Installasjonsfiler, torrenter og gamle billetter går til karantene etter regler. Beskyttede mønstre tar vare på viktige navn.',
+            ],
+            ['Sorter i emnemapper', 'Filene går i emnemapper etter regler, og resten i en reservemappe.'],
+            ['Månedlig innboks', 'Ting i Nedlastinger som er eldre enn 30 dager, flyttes til en mappe per måned.'],
+            [
+              'Planer, flytting og angre',
+              'En prøvekjøring skriver en plan du kan redigere, hver flytting havner i en logg, og angre legger alt tilbake.',
+            ],
           ],
         },
       ],
