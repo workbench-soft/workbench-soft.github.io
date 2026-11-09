@@ -2,7 +2,7 @@
 
 ## Playback chord fingering site cleanup (2026-11-05)
 
-- [ ] Remove the clean, merged worktree at `$env:WBS_ROOT\workbench-soft.github.io-playback-grips` and its branches after this session. Automatic approval review blocked recursive folder deletion. Run in PowerShell: `git -C "$env:WBS_ROOT\workbench-soft.github.io" worktree remove "$env:WBS_ROOT\workbench-soft.github.io-playback-grips"; git -C "$env:WBS_ROOT\workbench-soft.github.io" branch -D codex/playback-grips-site codex/playback-grip-cleanup-note; git -C "$env:WBS_ROOT\workbench-soft.github.io" push origin --delete codex/playback-grips-site codex/playback-grip-cleanup-note`.
+- [ ] Delete the merged branch `codex/playback-grips-site`, local and on GitHub. Its worktree is gone. Run in PowerShell: `git -C "$env:WBS_ROOT\workbench-soft.github.io" branch -D codex/playback-grips-site; git -C "$env:WBS_ROOT\workbench-soft.github.io" push origin --delete codex/playback-grips-site`.
 
 ## site-groups-icons-shots: studio email, groups, icons, screenshots
 

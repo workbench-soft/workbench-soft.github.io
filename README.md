@@ -72,6 +72,7 @@ Free party games live in [apps/games/](apps/games/) and run at <https://games.wo
 - **Checks and deploy** the [Games workflow](.github/workflows/games.yml) checks both apps on pull requests and deploys the games from main.
 - **Docs** [architecture](apps/games/docs/architecture.md), [user flows](apps/games/docs/user-flows.md), [features](apps/games/docs/features.md).
 
-## Build cancellation
+## Builds side by side
 
-LocalCI replaces a build only when a newer push starts the same workflow on the same branch for a different commit. Other products and workflows keep running. Cancellation history records the causing run, commit and PR before stopping a build.
+- **No cancel** each push runs its checks and build to the end, also when a newer push starts.
+- **Deploy queue** the Pages and Games deploys wait for each other. A Pages run of an older commit skips its deploy, since the newer run publishes the site.

@@ -2,9 +2,9 @@
 
 ## Unreleased
 
-- Describe the SongFactory audio workbench, workflow pipeline and per-song videos in 9 languages.
+- **CI** a `property-trends-web-*` release starts Pages on `main`, so the deploy passes the `github-pages` rule. Deploys queue again, and an older commit skips its deploy.
 
-- **Build cancellation** LocalCI records the cause and replaces only a different commit in the same workflow and branch.
+- Describe the SongFactory audio workbench, workflow pipeline and per-song videos in 9 languages.
 
 - **Shuttrix and Memories** describe the shared editor, save choices, lens effects and fonts in 9 languages. Shuttrix also describes sharing selected photos, shutter timing and exposure limits.
 
@@ -30,7 +30,6 @@
 - **Lumiere Player** the card lists the music library, the music player and voice commands with Hey Lumi, in 9 languages.
 
 - **Tripforge** the Sites menu and the Tripforge card link to the web app at <https://tripforge.workbench-soft.com>.
-- **CI** a published `property-trends-web-*` release starts Pages, so the Property Trends deploy needs no Actions write.
 - **Projects** Aspiration Style, the site of Maria Shilova, closes Development for clients. Each group folds on a click on its title, Internal studio tools starts folded, and open source projects carry a mark and a Source code link, in 9 languages.
 - **Projects** Speed Camera Scraper leaves the projects list, since it is an internal helper for SpotTheCam.
 - **Lines of code** a fifth number in the hero: the non-blank source lines git tracks across the studio repos, 345,413 today. `mise run code-lines` counts them again.

@@ -59,12 +59,12 @@ sequenceDiagram
 
 ## Deploy
 
-1. A push to `main` or a published `property-trends-web-*` release starts
-   [pages.yml](../.github/workflows/pages.yml).
+1. A push to `main` starts [pages.yml](../.github/workflows/pages.yml). A published `property-trends-web-*` release
+   starts it again on `main`, since the `github-pages` environment deploys only from `main`.
 2. mise installs node and pnpm from `mise.toml`, then pnpm installs the packages.
 3. `mise run lint`, `mise run test` and `mise run check` check the code, then `mise run build` writes `dist/`.
 4. Jekyll builds the Memories site into `_site/memories-mobile` the Shuttrix privacy policy into `_site/shuttrix` the Sky Altar privacy policy into `_site/skyaltar` the Tripforge privacy policy into `_site/tripforge` the Lumiere Player privacy policy into `_site/lumiere` and the Memoire privacy policy into `_site/memoire`.
-5. The job copies `dist/`, `langflip/` and the root files into `_site/` and publishes it.
+5. The job copies `dist/`, `langflip/` and the root files into `_site/` and publishes it, unless `main` moved on to a newer commit.
 
 A pull request runs steps 2 to 4 and the copy, then stops before the publish.
 
