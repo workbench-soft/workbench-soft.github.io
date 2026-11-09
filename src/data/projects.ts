@@ -96,6 +96,10 @@ export const projects: Project[] = [
             text: 'Step cards sort the photos on the phone, move them to dated folders on the NAS and free up the phone.',
           },
           {
+            name: 'Import from Google Photos',
+            text: 'Pick photos in Google Photos, and the app downloads them to DCIM, so they upload to the NAS.',
+          },
+          {
             name: 'Sort picked photos on the NAS',
             text: 'Picked NAS files get their dated name and folder, on the NAS and in the index at once.',
           },
@@ -142,6 +146,10 @@ export const projects: Project[] = [
             text: 'The desktop app sorts a folder into the same year, place and day folders as the phone.',
           },
           { name: 'Archive', text: 'Each year and month with a photo count. A tap opens the whole month.' },
+          {
+            name: 'Trip list and places map',
+            text: 'The Archive lists trips abroad and road trips, and draws each photo with GPS on one map, by year.',
+          },
           { name: 'People', text: 'The NAS groups the faces in the photos by person, named people first.' },
           {
             name: 'Indexing progress page',
@@ -167,7 +175,6 @@ export const projects: Project[] = [
             text: 'Pairs with the same capture time and size, side by side, to drop the extra copy.',
           },
           { name: 'Updates', text: 'The build from outside a store finds, downloads and installs its new version.' },
-
           {
             name: 'Light, blur and fonts',
             text: 'Exposure from −6 to +6 EV, tint, shadows and highlights. Approximate ellipse background blur and tilt shift have an adjustable sharp area. Captions offer sans serif, serif and monospace fonts. Capture-only settings stay out.',
@@ -229,14 +236,24 @@ export const projects: Project[] = [
             name: 'Camera warnings',
             text: 'A beep about 20 seconds ahead, then "Speed camera ahead. Limit 60." It reaches the lock screen too, and names a camera on the other side of the road.',
           },
+          {
+            name: 'Camera alerts stay ready',
+            text: 'Warnings keep working between drives and after Android restarts the app.',
+          },
           { name: 'Over the limit', text: '"You\'re doing 72. Slow down." Near cameras only, or on any road.' },
+          { name: 'School zones', text: 'The limit follows the zone hours and the NSW school terms.' },
           {
             name: 'Loud warnings',
             text: 'Full volume from the phone speaker, also in silent mode or with Bluetooth on. Each part has a switch.',
           },
+          { name: "Author's voice", text: 'A Pro voice recorded from the app maker’s own voice.' },
           {
             name: 'Trip log',
             text: 'Drives and walks record on their own. Each trip gives the km driven and the km walked apart. Each route shows your speed at each camera, green or red. The speeds stay on your phone.',
+          },
+          {
+            name: 'Trip line by limit',
+            text: 'The colour of the trip line shows your speed against the limit. A tap shows the speed, the limit and the street.',
           },
           {
             name: 'Trip stats',
@@ -259,6 +276,7 @@ export const projects: Project[] = [
             name: 'Hey Spot',
             text: '"Hey Spot, go to Bondi Beach, Manly and back." An offline model on the phone hears the wake words.',
           },
+          { name: 'Hey Spot, what street am I on?', text: 'The app speaks the street and its limit.' },
           { name: 'Screen stays on', text: 'The map stays lit on the dashboard while the app is open.' },
           {
             name: 'Self-update',
@@ -302,6 +320,7 @@ export const projects: Project[] = [
             name: 'Portrait',
             text: 'What you tap stays sharp, near or 10 m away, a person or a thing. The rest goes soft, and a slider sets the blur.',
           },
+          { name: 'Mini', text: 'A tilt shift toy look in photos and videos, with the blur in the live preview.' },
           {
             name: 'Macro',
             text: 'A bug or a drop from 2 to 3 cm, as large as the phone allows, with the frame width in mm.',
@@ -334,6 +353,10 @@ export const projects: Project[] = [
           { name: 'Place and camera tags', text: 'Each shot carries where and how it was taken, as EXIF tags.' },
           { name: 'Photo and video size', text: 'Settings pick the photo and video size.' },
           {
+            name: 'Photo format and originals',
+            text: 'WebP, JPEG, PNG or RAW + JPEG, plus the camera original and a Color-only copy if you want them.',
+          },
+          {
             name: 'Multi-frame photo',
             text: 'A plain photo merges 6 quick frames into one, with half the noise and crisper edges.',
           },
@@ -350,14 +373,18 @@ export const projects: Project[] = [
             name: 'Gallery',
             text: 'Select photos or videos and share them together. The camera thumbnail refreshes after gallery deletions.',
           },
+          {
+            name: 'Plus',
+            text: 'One purchase opens Astro, Moon, Long, Macro, Mini, Slo-mo and Lapse, and hides the ads.',
+          },
           { name: 'Ads', text: 'One banner under the gallery grid. A one time purchase removes it.' },
           {
-            name: 'Straighten and rotate',
-            text: 'The same editor in Memories and Shuttrix crops, rotates, draws and adds captions. On Android, Save replaces JPEG, PNG or WebP; Save copy keeps the source. The browser downloads a copy.',
+            name: 'Edit photos',
+            text: 'The shared editor of Memories and Shuttrix crops, rotates, draws and adds captions. Save replaces the file, and Save copy writes a new JPEG.',
           },
           { name: 'Quick start', text: 'A double press of the power button opens Shuttrix, over the lock screen too.' },
+          { name: 'Updates', text: 'A build from outside a store gets its new version from GitHub.' },
           { name: 'Languages', text: 'The app in 9 languages, following the phone or browser.' },
-
           {
             name: 'Light, blur and fonts',
             text: 'Exposure from −6 to +6 EV, tint, shadows and highlights. Approximate ellipse background blur and tilt shift have an adjustable sharp area. Captions offer sans serif, serif and monospace fonts. Capture-only settings stay out.',
@@ -411,7 +438,7 @@ export const projects: Project[] = [
           { name: 'Tab view', text: 'A track as Guitar Pro style tab, with a playhead that follows the song.' },
           {
             name: 'Chord sheet',
-            text: 'Chord names in bars that light up with the song. The words open on Musixmatch.',
+            text: 'Chord names in bars that light up with the song. Paste words with chords, and they line up with the song.',
           },
           { name: 'Song upload', text: 'Guitar Pro and MIDI files join your song list.' },
           {
@@ -442,7 +469,7 @@ export const projects: Project[] = [
           },
           {
             name: 'Play panel',
-            text: 'Plays what is loaded, steps through it, shuffles songs and saves them. Swipe left on the current chord panel for the next chord, or right for the previous chord on a touch screen.',
+            text: 'Plays what is loaded, steps through it, shuffles songs and saves them. Swipe left on the current chord panel for the next chord, or right for the previous chord on a touch screen. The chord panel shows a fingering diagram above each chord. A ?song= link, or another app such as Lumiere Player, opens a song.',
           },
           { name: 'Easy and Pro mode', text: 'Easy plays only the chords of a song, so a beginner strums along.' },
           { name: 'Song links', text: 'One menu searches the open song on chord, tab, video and lyrics sites.' },
@@ -504,6 +531,10 @@ export const projects: Project[] = [
           { name: 'Light and dark', text: 'Follows the phone, or a fixed choice.' },
           { name: 'Updates', text: 'The APK offers a newer release with its size and a warning on mobile data.' },
           { name: 'Ads', text: 'A one time purchase. People in Europe see the consent form before any ad.' },
+          {
+            name: 'Tick-a-Lot Pro',
+            text: 'One Google Play purchase unlocks Packing, Things to see, the store order and prices, and hides the ads.',
+          },
           { name: 'The weekly shop for two', text: 'One person sets up the list, the other ticks it on the way home.' },
           { name: 'Songs to learn', text: 'A list of songs to learn on the guitar, the most wanted first.' },
           {
@@ -531,7 +562,14 @@ export const projects: Project[] = [
     groups: [
       {
         features: [
-          { name: 'Hey Keep', text: 'A wake word the phone listens for in the background. "Эй, Кип" works too.' },
+          {
+            name: 'Hey Keep',
+            text: 'A wake word the phone listens for in the background. "Эй, Кип" works too. Replies come in Maisie, Female, Male or the Author’s voice, and Tune to my voice fits the wake word to you.',
+          },
+          {
+            name: 'Long recording',
+            text: 'A Hey Keep note goes on through pauses and a locked screen until you tap Stop. A recording Android cuts off is saved as a note.',
+          },
           {
             name: 'Stop and continue',
             text: '"Stop" ends the note at once. "Hey Keep, continue" adds to the newest note.',
@@ -591,11 +629,16 @@ export const projects: Project[] = [
             name: 'Calls through a link',
             text: 'A link is the room. The host joins at once; guests choose their mic, camera and speaker, then connect.',
           },
-          { name: 'Saved rooms', text: 'A room link saved under a name, such as Mum. The same link works every time.' },
+          { name: 'Recover a dropped call', text: 'A dropped call retries 3 times, then offers Try again.' },
           {
-            name: 'Direct video calls',
-            text: 'Audio and video go peer to peer when both networks allow it. Relay support is planned.',
+            name: 'Relay for blocked networks',
+            text: 'Cloudflare TURN steps in when a direct path between the networks fails.',
           },
+          {
+            name: 'Share the call link',
+            text: 'Copy the link, or send it by Gmail, email, WhatsApp, Telegram or another app.',
+          },
+          { name: 'Saved rooms', text: 'A room link saved under a name, such as Mum. The same link works every time.' },
           {
             name: 'Board',
             text: 'Everyone draws with a pen, highlighter or fading laser. They can erase and undo their own work.',
@@ -604,10 +647,7 @@ export const projects: Project[] = [
             name: 'Share an image or video',
             text: 'One person loads an image or video up to 100 MB. Everyone sees it and draws over it.',
           },
-          {
-            name: 'Lessons (planned)',
-            text: 'Lesson rooms are planned, with slides, drawing and a timer.',
-          },
+          { name: 'Lessons (planned)', text: 'Lesson rooms are planned, with slides, drawing and a timer.' },
           {
             name: 'Ads and remove ads',
             text: "Ads around a call, none during one. One A$2.99 purchase removes them for the buyer's rooms.",
@@ -617,10 +657,11 @@ export const projects: Project[] = [
             text: 'One A$5.99 purchase on Android opens the shared board and media for the room, and removes ads.',
           },
           {
-            name: 'Android distribution',
-            text: 'CI builds signed APK and AAB files for public releases. Play internal testing uploads start after the first Play Console release and setup.',
+            name: 'Android app',
+            text: 'The web app in an Android wrapper, with signed APK and AAB releases and dated versions.',
           },
           { name: 'Languages', text: 'The app in 9 languages, following the phone or browser.' },
+          { name: 'App icon', text: 'A neon phone portal, on Android and the web.' },
         ],
       },
     ],
@@ -659,7 +700,10 @@ export const projects: Project[] = [
             text: 'The same cards on a phone, a tablet and a browser, paired by a code.',
           },
           { name: 'Home screen widget', text: 'The number of waiting words and one word with its meaning.' },
-          { name: 'Ads and Remove ads', text: 'A banner and a full screen ad on Android. One payment removes them.' },
+          {
+            name: 'Ads and Remove ads',
+            text: 'A banner and a full screen ad on Android. One payment removes them. A Remove ads chip sits above the banner.',
+          },
           {
             name: 'Sound',
             text: 'Words play from the phone speaker at full volume. Settings can let them use Bluetooth or the system volume.',
@@ -703,13 +747,25 @@ export const projects: Project[] = [
           { name: 'Culture themes', text: '13 cultures, from Greece and Rome to the Inca, Sumer and the Stone Age.' },
           {
             name: 'Ambient music',
-            text: 'The violin song “L’Exode des Mondes” loops under the sky. Turn it off, or play your own audio file instead.',
+            text: 'The song “Sky Altar” by Lyrienne loops under the sky. Turn it off, or play your own files or a whole folder.',
           },
           { name: 'Ads and Remove ads', text: 'Ads stay off the sky. A one time $2.99 purchase removes them.' },
+          {
+            name: 'Sky Altar Pro',
+            text: 'One A$4.99 purchase unlocks 11 more cultures, your own music, and Today and Match in Your stars. It hides the ads.',
+          },
           { name: 'App languages', text: 'The screens and the constellation names in 9 languages.' },
           {
             name: 'Updates from GitHub',
             text: 'The Android app finds a new version and installs it. Settings has a Check for updates button.',
+          },
+          {
+            name: 'Astrology',
+            text: 'Swipe in from the left for the birth chart, tips for the day and a match score. Today’s zodiac sign glows on the sky.',
+          },
+          {
+            name: 'Constellation navigation',
+            text: 'Search a constellation by name, and the sky turns to the one you tap.',
           },
         ],
       },
@@ -757,7 +813,7 @@ export const projects: Project[] = [
           },
           {
             name: 'Music player',
-            text: 'Artists, albums, songs and folders, a queue, shuffle and repeat, with the phone locked.',
+            text: 'Artists and Songs sit on the home screen beside the drives. The player bar stays on each screen but video, with breadcrumbs and artist sort.',
           },
           {
             name: 'Audiobooks',
@@ -773,12 +829,9 @@ export const projects: Project[] = [
           },
           {
             name: 'Voice commands',
-            text: 'Say Hey Lumi, play and a song, in English or Russian, with the phone locked.',
+            text: 'Say Hey Lumi, then play and a song, or volume 40, in English or Russian, with the phone locked. A pulse shows it listens.',
           },
-          {
-            name: 'Lumiere Pro',
-            text: 'One payment unlocks the voice commands and Hey Lumi, and hides the ads.',
-          },
+          { name: 'Lumiere Pro', text: 'One payment unlocks the voice commands and Hey Lumi, and hides the ads.' },
         ],
       },
     ],
@@ -802,6 +855,7 @@ export const projects: Project[] = [
             name: 'Fuel prices on a map',
             text: 'Green pins for the cheapest third, amber for the middle and red for the dearest.',
           },
+          { name: 'Your place on the map', text: 'A blue dot marks you, with an arrow that turns with the compass.' },
           {
             name: 'Station list',
             text: 'The servos in view, cheapest first, with brand, suburb and when the price changed.',
@@ -828,6 +882,7 @@ export const projects: Project[] = [
             text: 'The APK checks GitHub on start and on each return, and shows the download in the header.',
           },
           { name: 'Remove ads', text: 'A one time Google Play purchase, restored on a new phone.' },
+          { name: 'ServoHop Pro', text: 'One purchase hides the ads and opens the 365 day price chart.' },
           { name: 'Fuel panel', text: 'Pick petrol, diesel, gas or chargers, slow AC or fast DC.' },
           { name: 'Ads', text: 'One banner under the list: AdMob in the app, AdSense on the site.' },
           { name: 'Languages', text: 'The screens come in 9 languages and follow the phone or browser.' },
@@ -932,6 +987,14 @@ export const projects: Project[] = [
             text: 'Each postcode of NSW, QLD, SA and TAS coloured by the median weekly rent of new leases.',
           },
           { name: 'Install from the browser', text: 'The web build installs as an app with its own icon.' },
+          {
+            name: 'Ads and Remove ads',
+            text: 'One AdMob banner below the map on Android. A one time A$2.99 purchase removes it. The website shows no ads.',
+          },
+          {
+            name: 'Property Trends Pro',
+            text: 'One A$5.99 purchase on Android unlocks Rents and the full price history, and removes the ads.',
+          },
         ],
       },
     ],
@@ -994,17 +1057,21 @@ export const projects: Project[] = [
     groups: [
       {
         features: [
-          { name: 'Ask', text: 'Type the places, a rough date, how long and who goes.' },
-          { name: 'Flights', text: 'The cheapest round trips around the asked date, with cheaper dates beside.' },
           {
-            name: 'Places',
-            text: 'The top sights and the secret spots of each city, filtered by your interests, each with a tick and a link.',
+            name: 'Ask',
+            text: 'Type the places, a rough date, the nights and who goes, or open a link from Tick-a-Lot.',
           },
-          { name: 'To Tickalot', text: 'One tap turns the trip into Tick-a-Lot lists: sights and packing.' },
-          { name: 'Settings', text: "The language: the phone's, or one of the 9." },
           {
-            name: 'Ads',
-            text: 'Android ads until a one time purchase removes them. The booking links stay clear of ads.',
+            name: 'Flights',
+            text: 'The cheapest round trips around the date, a fare calendar, and links to Aviasales and Google Flights.',
+          },
+          { name: 'Places', text: 'The top sights and the secret spots of each city, filtered by interest chips.' },
+          { name: 'To Tickalot', text: 'One tap sends the trip to Tick-a-Lot as a sights list and a packing list.' },
+          { name: 'Settings', text: 'The app language: the phone’s, or one of 9.' },
+          { name: 'Ads', text: 'A banner and a full screen ad on Android. A one time Remove ads purchase hides them.' },
+          {
+            name: 'Tripforge Pro',
+            text: 'One purchase on Android gives unlimited searches, dates shifted up to 30 days, up to 50 saved trips and no ads.',
           },
         ],
       },
@@ -1119,40 +1186,62 @@ export const projects: Project[] = [
     groups: [
       {
         features: [
-          { name: 'Writing', text: 'Rules that strip the AI tone from chat, commits, docs and UI copy.' },
-          { name: 'Specs first', text: 'Each feature starts as a spec in the repo, and the work follows it.' },
+          { name: 'Writing style', text: 'Plain, short text in each reply, commit and doc, without the AI tone.' },
+          { name: 'Code review', text: 'A review against a checklist, with each finding checked against the code.' },
+          {
+            name: 'Reviewer lenses',
+            text: 'One subagent per lens, such as security or performance. Only proven findings come back.',
+          },
+          { name: 'Pull requests', text: 'Short PR bodies with flow diagrams, and one commit per review thread.' },
+          { name: 'Review comments', text: 'Each review thread gets one commit and a reply with its SHA.' },
           {
             name: 'Ticket to merge',
             text: 'Reads a ticket, builds it in its own worktree, opens the PR and moves the ticket.',
           },
-          { name: 'Pull requests', text: 'Short PR bodies with flow diagrams, and one commit per review thread.' },
-          { name: 'Code review', text: 'A review against a checklist, with each finding checked against the code.' },
           {
             name: 'App audit',
             text: 'Parallel reviewers per lens, such as security and performance. The safe findings get fixed.',
           },
-          { name: 'Architecture and monorepos', text: 'Layered packages, shared API contracts and CI per app.' },
+          { name: 'Specs first', text: 'Each feature starts as a spec in the repo, and the work follows it.' },
+          { name: 'One-pager', text: 'The full text first, then a one screen summary on top.' },
+          { name: 'Commands through mise', text: 'Each command runs through mise, with the versions the repo pins.' },
+          { name: 'Translations', text: 'Each string ships in every language of the app, in the same change.' },
+          { name: 'Worktrees', text: 'Each change gets its own checkout, cleaned up after the merge.' },
           {
-            name: 'Launch and growth',
-            text: 'Search setup, AdMob and AdSense, Google Play release and a marketing plan in one run.',
+            name: 'Fast JavaScript',
+            text: 'Fewer round trips and a smaller bundle, with the rule and the cost of each finding.',
           },
+          { name: 'Architecture', text: 'The smallest layered shape for the app, with its rules enforced in CI.' },
+          { name: 'Monorepos', text: 'Apps and packages in one repo, with pinned tools and one API schema.' },
+          {
+            name: 'History reset',
+            text: 'Squashes the history into one fresh initial commit, with a bundle kept as a backup.',
+          },
+          { name: 'Search setup', text: 'Search Console, Bing, a sitemap and analytics for a site.' },
+          { name: 'Ads', text: 'AdSense and AdMob, with test ads in debug builds and the consent message.' },
+          {
+            name: 'Google Play release',
+            text: 'A signed bundle with a new version code, rolled out to internal testing.',
+          },
+          { name: 'Launch in one run', text: 'Search setup, ads and the Google Play release, in that order.' },
+          { name: 'Marketing', text: 'First users from a budget: the message, a launch calendar and the posts.' },
           { name: 'In-app updates', text: 'Self-update for sideloaded apps, left out of the Play build.' },
-          { name: 'Repo care', text: 'Worktrees, repo moves, history resets and secret rotation.' },
           { name: 'Names and domains', text: 'Checks a name against domains, the business register and trade marks.' },
-          { name: 'Hear and pick a voice', text: 'Plays each text to speech voice, so a person can pick one.' },
-          { name: 'Code work', text: 'Skills to do a ticket, open a PR, answer review threads and review a PR.' },
-          {
-            name: 'Project setup',
-            text: 'Skills to plan an architecture, set up a monorepo and run commands through mise.',
-          },
+          { name: 'Legal risks', text: 'Scans licences, data SDKs and store policy, and fixes the safe findings.' },
           { name: 'App icons', text: '10 icons in styles that fit the app, a picker in the chat, then every size.' },
+          { name: 'Demo screenshots', text: 'Demo data, screenshots and short videos for the README.' },
           {
-            name: 'Demo screenshots and store media',
-            text: 'Demo data, screenshots and short videos for the README and the store.',
+            name: 'Store media',
+            text: 'The same screenshots, video and icon on Google Play, the site and the installers.',
           },
           {
             name: 'End to end walk of a release',
             text: 'Installs the newest release, walks each main flow and reports per flow.',
+          },
+          { name: 'Hear and pick a voice', text: 'Plays each text to speech voice, so a person can pick one.' },
+          {
+            name: 'Reddit comments',
+            text: 'Finds threads the repo can answer, drafts a reply and types it into Chrome. The person presses Comment.',
           },
           { name: 'Voice at the end of a turn', text: 'A short spoken line says the agent is done, waits or asks.' },
           { name: 'Install', text: 'One clone linked into each agent on the machine. An edit reaches all of them.' },
@@ -1181,14 +1270,21 @@ export const projects: Project[] = [
           { name: 'Windows setup', text: 'The same tools through winget. A second run skips what is in place.' },
           { name: 'Self-hosted CI runner', text: "The machine builds CI jobs for the org's repos." },
           { name: 'Start button', text: 'A double click starts the latest version of the CI.' },
-          { name: 'CI status page', text: 'A local page shows the runner and the jobs at a glance.' },
+          {
+            name: 'CI status page',
+            text: 'A local page shows the runner and the jobs at a glance, with a progress bar per release and the reason for each cancel.',
+          },
+          {
+            name: 'Build cancellation',
+            text: 'The page server stops a replaced run, and a release whose Checks failed. The log names each cause.',
+          },
           {
             name: 'Cloud runners first',
             text: 'Jobs build on free cloud runners while their minutes last, then on this PC.',
           },
           {
             name: 'Releases',
-            text: 'Start an app release on CI, build supported Android APKs from the latest main locally, and install published or local APKs on a connected phone over ADB.',
+            text: 'Start an app release on CI, build Android APKs from the latest main and install them on a connected phone. Install Dev also unlocks its developer settings. A cleanup deletes old Actions artifacts and APK releases after a confirm.',
           },
           { name: 'Updates by themselves', text: 'The PC installs each release within minutes of the merge.' },
         ],
@@ -1345,6 +1441,10 @@ export const projects: Project[] = [
             name: 'Calendar sync',
             text: 'Busy times in Google Calendar block booking times, and a feed shows every booking.',
           },
+          {
+            name: 'Fonts',
+            text: 'Alina picks the heading, text and label fonts from 10 free fonts, or uploads her own.',
+          },
           { name: 'Client galleries', text: 'A private link with watermarked proofs, then every original as one zip.' },
         ],
       },
@@ -1403,7 +1503,7 @@ export const projects: Project[] = [
         features: [
           {
             name: 'Update all',
-            text: 'One tap downloads and installs each new release, with a bar per app and one for the run. Cancel stops it.',
+            text: 'One tap updates each installed Workbench Soft app in silence through Shizuku, with a bar per app. Cancel stops it.',
           },
           {
             name: 'Self update',
@@ -1411,9 +1511,16 @@ export const projects: Project[] = [
           },
           {
             name: 'Update one app',
-            text: 'An Update button beside each row brings only that app to its newest release.',
+            text: 'An Update button on each card brings only that app to its newest release. A failed card keeps its button for a retry.',
           },
-          { name: 'App list', text: 'Each app shows whether it is up to date or which version comes next.' },
+          { name: 'Install a missing app', text: 'A released app that isn’t on the phone yet installs from its card.' },
+          {
+            name: 'App list',
+            text: 'One card per released APK, matched to the installed apps, updates first. A studio project with no APK gets an Open link.',
+          },
+          { name: 'Saved list offline', text: 'The last release list shows when GitHub is out of reach.' },
+          { name: 'Shizuku setup', text: 'Opens Google Play or Shizuku for each missing step, then runs the update.' },
+          { name: 'Release notes', text: 'Each card shows the release notes, or the commits since the last release.' },
         ],
       },
     ],
@@ -1440,6 +1547,43 @@ export const projects: Project[] = [
             text: 'Merges a Dependabot PR once each check passes. A major update waits for a person.',
           },
           { name: 'Releases', text: 'Each push to main that passes the checks gets a dated release with notes.' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'disk-reorg',
+    kind: 'internal',
+    repo: 'disk-reorg',
+    hue: 40,
+    code: 'DR',
+    name: 'disk-reorg',
+    tagline: 'Sorts, dedupes and archives folders by rules.',
+    lede: 'disk-reorg moves files to a quarantine folder and leaves each delete to the owner. The folders, rules and keep patterns stay in a local config, out of git.',
+    platforms: ['Windows'],
+    stack: ['TypeScript', 'Node', 'mise'],
+    links: [],
+    groups: [
+      {
+        features: [
+          { name: 'Folder report', text: 'A Markdown report of counts, sizes, years, file types and likely copies.' },
+          {
+            name: 'Duplicates to quarantine',
+            text: 'Keeps the best placed copy of each file and moves the rest to quarantine.',
+          },
+          {
+            name: 'Files safe to drop',
+            text: 'Installers, torrents and old tickets go to quarantine by rule. Keep patterns protect important names.',
+          },
+          {
+            name: 'Sort into topic folders',
+            text: 'Files go into topic folders by rules, and the rest into a fallback folder.',
+          },
+          { name: 'Monthly inbox', text: 'Downloads entries older than 30 days move into a folder per month.' },
+          {
+            name: 'Plans, moves and undo',
+            text: 'A dry run writes a plan to edit, each move goes in a log, and undo puts the moves back.',
+          },
         ],
       },
     ],
@@ -1476,6 +1620,10 @@ export const projects: Project[] = [
           { name: 'Tester post', text: 'A post that asks for testers of an Android app, from a list of apps.' },
           { name: 'Inside Archon', text: 'The Reddit tab of Archon shows this window in a frame.' },
           { name: 'Info button', text: 'The i button explains the Reddit setup.' },
+          {
+            name: 'Updates',
+            text: 'The app updates itself from GitHub. At start and once a day it offers Update or Later, and installs only signed builds.',
+          },
           { name: 'Language', text: "Settings has a language dropdown: the system's or one of 9." },
           { name: 'Done list', text: 'Each posted and skipped thread with its date.' },
         ],
@@ -1604,11 +1752,15 @@ export const projects: Project[] = [
           { name: 'Move a repo', text: 'Moves a repo to the org and makes it private, with free CI kept.' },
           {
             name: 'CI and releases for every repo',
-            text: 'Checks each repo for Checks and Release, and adds the missing ones.',
+            text: 'Checks each repo for Checks and Release, and adds the missing ones. A release builds beside Checks and publishes once they pass.',
           },
           { name: 'Rewrite a repo', text: 'New names, folders and docs, with the same behaviour.' },
           { name: 'Rotate secrets', text: 'Renews the CI secrets and keys, app by app.' },
           { name: 'Workflow rules', text: 'A spec first, a merge right away, a batch test later.' },
+          {
+            name: 'MCP gateway',
+            text: 'One gateway server stands in for the Google Play, GitHub, AdMob, AdSense and Reddit servers, so a session lists 7 tools in place of 238.',
+          },
           { name: 'Releases', text: 'A dated release for each green push to main.' },
           { name: 'Feature queue', text: 'Sessions on one app take turns on shared files, and one release follows.' },
         ],

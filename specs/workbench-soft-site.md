@@ -375,3 +375,14 @@ The studio needed one public site for its apps and their installers.
   - **`src/data/projects.ts`** the `tripforge` entry gets its first link, `tripforge.workbench-soft.com`. The Sites menu picks it up, since the link is a page we host.
   - **`src/i18n/`** the same link label in the 8 other catalogs.
 - **Docs** `CHANGELOG.md`.
+
+#### 2026-11-10 Project entries match each repo's features.md
+
+- **Why** the app repos added, renamed and merged features in their `docs/features.md`, and `mise run feature-check` listed each one missing from the site.
+- **What the visitor gets**
+  - **New lines** Pro purchases, ads and new features for Property Trends, Tripforge, Sky Altar, Farnear, Memories, Shuttrix, KeepPad, Tick-a-Lot, ServoHop, Alina Photography, WBS Updater, Reddit Desk, Local CI and SpotTheCam.
+  - **Agent Skills** the list follows its features.md: big groups split into one line per skill, and the lines that named private skills go.
+  - **disk-reorg** a new internal tool with its own panel.
+  - **Updated text** Lumiere Player music and voice, Guitar Upscale chord sheet and play panel, Tripforge, WBS Updater and Local CI lines.
+- **Changes** `src/data/projects.ts` and the 8 other catalogs in `src/i18n/`.
+- **Docs** `CHANGELOG.md`.
