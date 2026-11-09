@@ -18,11 +18,21 @@ on:
 permissions:
   contents: read
 
-# Main keeps one group, so a pull request can't cancel a deploy.
-
 jobs:
+  # The github-pages environment deploys only from main, and a release runs on its tag.
+  # So a property-trends web release starts this workflow again on main.
+  redeploy:
+    if: github.event_name == 'release' && startsWith(github.event.release.tag_name, 'property-trends-web-')
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml --repo "$GITHUB_REPOSITORY" --ref main
+
   checks:
-    if: github.event_name != 'release' || startsWith(github.event.release.tag_name, 'property-trends-web-')
+    if: github.event_name != 'release'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
@@ -34,8 +44,7 @@ jobs:
           mise run check
 
   build:
-    # Each app releases here, and only the property-trends web build changes the site.
-    if: github.event_name != 'release' || startsWith(github.event.release.tag_name, 'property-trends-web-')
+    if: github.event_name != 'release'
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -108,12 +117,25 @@ jobs:
     needs: [build, checks]
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
+    # Builds run side by side and deploys queue. A build of an older commit skips the deploy,
+    # since the run of the newer commit publishes the site.
+    concurrency:
+      group: pages-deploy
+      cancel-in-progress: false
     permissions:
+      contents: read
       pages: write
       id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - id: head
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          main=$(gh api "repos/$GITHUB_REPOSITORY/commits/main" --jq .sha)
+          echo "latest=$([ "$main" = "$GITHUB_SHA" ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
       - id: deployment
+        if: steps.head.outputs.latest == 'true'
         uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
