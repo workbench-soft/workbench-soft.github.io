@@ -1031,7 +1031,10 @@ const fr: Catalog = {
           title: 'Services et réglages',
           features: [
             ['CI, Reddit et Memories', 'Les pages de la CI, de Reddit Desk et de l’indexeur du NAS en onglets.'],
-            ['Chansons', 'Construit et publie les vidéos de songfactory, avec la progression.'],
+            [
+              'Chansons',
+              "La chaîne de songfactory en tuiles : activez-les, réglez-les, lancez-en une seule ou faites toute une vidéo à partir d'un thème.",
+            ],
             ['Voix', 'Choisit la voix de chaque agent.'],
             ['Clés', 'L’âge de chaque secret de CI, et son renouvellement par un agent.'],
           ],
@@ -1441,8 +1444,8 @@ const fr: Catalog = {
               'Nettoyer ou améliorer les chansons dans une fenêtre de bureau, en 9 langues, avec protection contre les noms de sortie identiques.',
             ],
             [
-              'Pipeline de tâches',
-              'Les étapes JSON suivent leurs dépendances. Les vidéos utilisent le son préparé ; les envois demandent une autorisation explicite.',
+              'Pipeline en tuiles',
+              "Dix tuiles mènent d'un thème à une vidéo YouTube : sujets, histoires, paroles, chansons sur Suno, nettoyage, vidéo et mise en ligne. Chacune se lance seule avec ses réglages.",
             ],
             [
               'Une vidéo par chanson',

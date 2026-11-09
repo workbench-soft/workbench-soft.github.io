@@ -982,7 +982,10 @@ const es: Catalog = {
           title: 'Servicios y ajustes',
           features: [
             ['CI, Reddit y Memories', 'Las páginas de la CI, Reddit Desk y el indexador del NAS en pestañas.'],
-            ['Canciones', 'Crea y publica los vídeos de songfactory, con su progreso.'],
+            [
+              'Canciones',
+              'La cadena de songfactory en bloques: actívalos o desactívalos, ajústalos, ejecuta uno solo o crea un vídeo entero a partir de un tema.',
+            ],
             ['Voces', 'Elige la voz con la que habla cada agente.'],
             ['Claves', 'La edad de cada secreto de CI y su renovación con un agente.'],
           ],
@@ -1385,8 +1388,8 @@ const es: Catalog = {
               'Limpia o mejora canciones en una ventana de escritorio, en 9 idiomas y con protección frente a nombres de salida repetidos.',
             ],
             [
-              'Flujo de tareas',
-              'Los pasos JSON siguen sus dependencias. Los vídeos usan el audio preparado; las subidas requieren permiso explícito.',
+              'Pipeline de bloques',
+              'Diez bloques llevan un tema a un vídeo de YouTube: temas, historias, letras, canciones en Suno, limpieza, vídeo y subida. Cada uno se ejecuta solo con sus ajustes.',
             ],
             ['Un vídeo por canción', 'Crea un vídeo en bucle por canción y, si quieres, un vídeo combinado.'],
             ['Instalar y comprobar', 'Un script instala las herramientas y una revisión las comprueba.'],

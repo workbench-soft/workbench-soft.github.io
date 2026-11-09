@@ -904,7 +904,10 @@ const nb: Catalog = {
           title: 'Tjenester og innstillinger',
           features: [
             ['CI, Reddit og Memories', 'Sidene til CI, Reddit Desk og NAS-indekseren i faner.'],
-            ['Sanger', 'Bygger og publiserer songfactory-videoene, med fremdrift.'],
+            [
+              'Sanger',
+              'songfactory-pipelinen som fliser: slå av og på, still inn, kjør én alene eller lag en hel video fra et tema.',
+            ],
             ['Stemmer', 'Velger stemmen hver agent snakker med.'],
             ['Nøkler', 'Alderen til hver CI-hemmelighet, og fornyelse gjennom en agent.'],
           ],
@@ -1265,8 +1268,8 @@ const nb: Catalog = {
               'Rens eller forbedre valgte sanger i et skrivebordsvindu, med 9 språk og vern mot like filnavn i resultatet.',
             ],
             [
-              'Arbeidsflyt',
-              'JSON-trinn kjøres etter avhengighetene. Videoene bruker den ferdige lyden; opplasting krever uttrykkelig tillatelse.',
+              'Flis-pipeline',
+              'Ti fliser gjør et tema til en YouTube-video: emner, historier, sangtekster, sanger i Suno, rensing, video og opplasting. Hver flis kan kjøres alene med egne innstillinger.',
             ],
             ['Video per sang', 'Lag en video i loop for hver sang, og en samlet video hvis du ønsker det.'],
             ['Installer og sjekk', 'Ett skript installerer verktøyene, og en sjekk tester dem.'],

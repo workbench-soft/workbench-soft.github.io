@@ -1490,8 +1490,8 @@ export const projects: Project[] = [
             text: 'Clean or enhance selected songs in a desktop window, with 9 languages and checks against output name collisions.',
           },
           {
-            name: 'Workflow pipeline',
-            text: 'Run JSON steps in dependency order. Videos use the prepared audio; uploads require explicit permission.',
+            name: 'Tile pipeline',
+            text: 'Ten tiles take a theme to a YouTube video: topics, stories, lyrics, Suno songs, cleanup, video and upload. Each runs alone with its settings.',
           },
           { name: 'Per-song videos', text: 'Make a looping video for each song, with an optional combined video.' },
           { name: 'Install and check the setup', text: 'One script installs the tools, and a doctor checks them.' },
@@ -1564,7 +1564,10 @@ export const projects: Project[] = [
         title: 'Services and settings',
         features: [
           { name: 'CI, Reddit and Memories', text: 'The pages of the CI, Reddit Desk and the NAS indexer in tabs.' },
-          { name: 'Songs', text: 'Builds and publishes the songfactory videos, with progress.' },
+          {
+            name: 'Songs',
+            text: 'The songfactory pipeline as tiles: turn each on or off, set it up, run it alone, or make a whole video from a theme.',
+          },
           { name: 'Voices', text: 'Picks the voice each agent speaks with.' },
           { name: 'Keys', text: 'The age of each CI secret, and a renewal through an agent.' },
         ],

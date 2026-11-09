@@ -1006,7 +1006,10 @@ const de: Catalog = {
           title: 'Dienste und Einstellungen',
           features: [
             ['CI, Reddit und Memories', 'Die Seiten von CI, Reddit Desk und dem NAS-Indexer in Tabs.'],
-            ['Songs', 'Baut und veröffentlicht die songfactory-Videos, mit Fortschritt.'],
+            [
+              'Songs',
+              'Die songfactory-Pipeline als Kacheln: ein- und ausschalten, einstellen, einzeln starten oder aus einem Thema ein ganzes Video machen.',
+            ],
             ['Stimmen', 'Wählt die Stimme, mit der jeder Agent spricht.'],
             ['Schlüssel', 'Das Alter jedes CI-Secrets und die Erneuerung durch einen Agenten.'],
           ],
@@ -1394,8 +1397,8 @@ const de: Catalog = {
               'Ausgewählte Songs im Desktopfenster bereinigen oder verbessern, mit 9 Sprachen und Schutz vor gleichen Ausgabenamen.',
             ],
             [
-              'Workflow-Pipeline',
-              'JSON-Schritte folgen ihren Abhängigkeiten. Videos verwenden das vorbereitete Audio; Uploads brauchen eine ausdrückliche Freigabe.',
+              'Kachel-Pipeline',
+              'Zehn Kacheln machen aus einem Thema ein YouTube-Video: Themen, Geschichten, Songtexte, Songs in Suno, Bereinigung, Video und Upload. Jede läuft auch einzeln mit eigenen Einstellungen.',
             ],
             ['Video pro Song', 'Ein Loop-Video pro Song erstellen und auf Wunsch zu einem Video verbinden.'],
             ['Installieren und prüfen', 'Ein Skript installiert die Werkzeuge, eine Prüfung testet sie.'],

@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **Songfactory** the tile pipeline replaces the workflow pipeline, and the Archon Songs line says the tab draws it, in all 9 languages.
+
 - **Sky Altar astrology** a page with two ad slots loads AdSense once and fills each slot once, in place of twice.
 
 - **CI** a `property-trends-web-*` release starts Pages on `main`, so the deploy passes the `github-pages` rule. Deploys queue again, and an older commit skips its deploy.
