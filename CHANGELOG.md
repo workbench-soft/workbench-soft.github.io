@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **Sky Altar astrology** a page with two ad slots loads AdSense once and fills each slot once, in place of twice.
+
 - **CI** a `property-trends-web-*` release starts Pages on `main`, so the deploy passes the `github-pages` rule. Deploys queue again, and an older commit skips its deploy.
 
 - Describe the SongFactory audio workbench, workflow pipeline and per-song videos in 9 languages.
