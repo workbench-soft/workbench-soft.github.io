@@ -760,6 +760,18 @@ export const projects: Project[] = [
             text: 'Artists, albums, songs and folders, a queue, shuffle and repeat, with the phone locked.',
           },
           {
+            name: 'Audiobooks',
+            text: 'Book folders by author, each book with its cover and progress. A book starts where it stopped, a little earlier after a pause.',
+          },
+          {
+            name: 'Find tabs',
+            text: 'With Guitar Upscale installed, a guitar button opens the tabs of the song that plays.',
+          },
+          {
+            name: 'Google Play build',
+            text: 'Google Play updates it, and media permissions take the place of all files access.',
+          },
+          {
             name: 'Voice commands',
             text: 'Say Hey Lumi, play and a song, in English or Russian, with the phone locked.',
           },

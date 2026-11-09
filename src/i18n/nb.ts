@@ -1187,6 +1187,15 @@ const nb: Catalog = {
             ],
             ['Musikkbibliotek', 'Mapper på mobilen, USB og NAS i ett bibliotek, skannet i bakgrunnen.'],
             ['Musikkspiller', 'Artister, album, sanger og mapper, kø, tilfeldig og gjenta, også med låst mobil.'],
+            [
+              'Lydbøker',
+              'Bokmapper etter forfatter, hver bok med omslag og fremdrift. En bok fortsetter der den stoppet, litt tidligere etter en pause.',
+            ],
+            ['Finn tabulatur', 'Med Guitar Upscale åpner en gitarknapp tabulaturen til sangen som spilles.'],
+            [
+              'Google Play-versjon',
+              'Google Play oppdaterer den, og medietillatelser erstatter tilgang til alle filer.',
+            ],
             ['Talekommandoer', 'Si Hey Lumi, play og en sang, på engelsk eller russisk, med låst mobil.'],
             ['Lumiere Pro', 'Ett kjøp låser opp talekommandoer og Hey Lumi og fjerner reklamen.'],
           ],

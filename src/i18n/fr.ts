@@ -1354,6 +1354,18 @@ const fr: Catalog = {
               'Lecteur de musique',
               "Artistes, albums, titres et dossiers, file d'attente, aléatoire et répétition, téléphone verrouillé.",
             ],
+            [
+              'Livres audio',
+              "Les dossiers de livres par auteur, chacun avec sa couverture et sa progression. Un livre reprend là où il s'est arrêté, un peu avant après une pause.",
+            ],
+            [
+              'Trouver les tablatures',
+              'Avec Guitar Upscale, un bouton guitare ouvre les tablatures du titre en cours.',
+            ],
+            [
+              'Version Google Play',
+              "Google Play la met à jour, et les autorisations médias remplacent l'accès à tous les fichiers.",
+            ],
             ['Commandes vocales', 'Dites Hey Lumi, play et un titre, en anglais ou en russe, téléphone verrouillé.'],
             ['Lumiere Pro', 'Un seul achat débloque les commandes vocales et Hey Lumi, et retire la pub.'],
           ],

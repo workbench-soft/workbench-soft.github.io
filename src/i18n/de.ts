@@ -1307,6 +1307,15 @@ const de: Catalog = {
               'Musikplayer',
               'Künstler, Alben, Titel und Ordner, Warteschlange, Zufall und Wiederholen, auch bei gesperrtem Handy.',
             ],
+            [
+              'Hörbücher',
+              'Buchordner nach Autor, jedes Buch mit Cover und Fortschritt. Ein Buch geht dort weiter, wo es stoppte, nach einer Pause etwas früher.',
+            ],
+            ['Tabs finden', 'Mit Guitar Upscale öffnet ein Gitarrenknopf die Tabs des laufenden Songs.'],
+            [
+              'Google-Play-Version',
+              'Google Play aktualisiert sie, und Medienrechte ersetzen den Zugriff auf alle Dateien.',
+            ],
             ['Sprachbefehle', 'Sag Hey Lumi, play und einen Titel, auf Englisch oder Russisch, bei gesperrtem Handy.'],
             ['Lumiere Pro', 'Ein Kauf schaltet Sprachbefehle und Hey Lumi frei und entfernt die Werbung.'],
           ],

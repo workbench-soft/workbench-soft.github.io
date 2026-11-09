@@ -1298,6 +1298,18 @@ const es: Catalog = {
               'Reproductor de música',
               'Artistas, álbumes, canciones y carpetas, cola, aleatorio y repetición, con el móvil bloqueado.',
             ],
+            [
+              'Audiolibros',
+              'Carpetas de libros por autor, cada uno con su portada y su progreso. Un libro sigue donde se quedó, un poco antes tras una pausa.',
+            ],
+            [
+              'Buscar tablaturas',
+              'Con Guitar Upscale, un botón de guitarra abre las tablaturas de la canción que suena.',
+            ],
+            [
+              'Versión de Google Play',
+              'Google Play la actualiza, y los permisos de medios sustituyen el acceso a todos los archivos.',
+            ],
             ['Comandos de voz', 'Di Hey Lumi, play y una canción, en inglés o ruso, con el móvil bloqueado.'],
             ['Lumiere Pro', 'Un solo pago desbloquea los comandos de voz y Hey Lumi, y quita los anuncios.'],
           ],

@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **Lumiere Player** Audiobooks, Find tabs and Google Play build join its features, in all 9 languages.
+
 - **Songfactory** the tile pipeline replaces the workflow pipeline, and the Archon Songs line says the tab draws it, in all 9 languages.
 
 - **Sky Altar astrology** a page with two ad slots loads AdSense once and fills each slot once, in place of twice.
