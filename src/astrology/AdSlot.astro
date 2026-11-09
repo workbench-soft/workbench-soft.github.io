@@ -20,9 +20,11 @@ const slot = import.meta.env.PUBLIC_ADSENSE_SLOT_ARTICLE;
   }
 </div>
 
-<script define:vars={{ client }}>
-  const slots = document.querySelectorAll(".ad-slot .adsbygoogle");
-  if (client && slots.length) {
+<script>
+  // Astro bundles this script once per page, so a page with two slots loads AdSense once and fills each slot once.
+  const slots = [...document.querySelectorAll<HTMLElement>(".ad-slot .adsbygoogle")];
+  const client = slots[0]?.dataset.adClient;
+  if (client) {
     const io = new IntersectionObserver(
       (entries) => {
         if (!entries.some((e) => e.isIntersecting)) return;
@@ -32,7 +34,8 @@ const slot = import.meta.env.PUBLIC_ADSENSE_SLOT_ARTICLE;
         s.crossOrigin = "anonymous";
         s.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${client}`;
         document.head.append(s);
-        for (const _ of slots) (window.adsbygoogle = window.adsbygoogle || []).push({});
+        const queue = ((window as { adsbygoogle?: object[] }).adsbygoogle ??= []);
+        for (const _ of slots) queue.push({});
       },
       { rootMargin: "400px" },
     );

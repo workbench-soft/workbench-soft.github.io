@@ -58,3 +58,8 @@ Workbench Games, `com.workbenchsoft.games`. Release builds of the Android app us
 - [ ] **Consent message** publish a GDPR message for `workbench-soft.com` in AdSense, Privacy and messaging, European regulations.
 - [ ] **Ad unit** once AdSense approves the site, make a display ad unit and set the repo variables `ADSENSE_CLIENT` (`ca-pub-8598703460892343`, shared with the games) and `ADSENSE_SLOT_ARTICLE` at <https://github.com/workbench-soft/workbench-soft.github.io/settings/variables/actions>. The Pages build reads them.
 - [ ] **Search Console** submit `https://workbench-soft.com/sitemap-index.xml` again at <https://search.google.com/search-console> so the new pages get crawled.
+
+## Week review 2026-11
+
+- [ ] **Games languages** `apps/games` ships only English and Russian, against the 9 languages rule. Add de, fr, es, zh, ja, ko and nb to `apps/games/src/game/i18n.ts`, the word lists and `shared/avatars.ts` through the `translations` skill, in its own PR.
+- [ ] **Archon in the catalog** `src/pages/apps/catalog.json.ts` names the `workspace` repo for Archon by hand, since Archon has no `repo` in `src/data/projects.ts`. Give the project a field for its GitHub repo once `mise run feature-check` accepts a repo that is the workspace root.
