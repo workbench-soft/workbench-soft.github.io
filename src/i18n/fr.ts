@@ -1436,6 +1436,18 @@ const fr: Catalog = {
       groups: [
         {
           features: [
+            [
+              'Atelier audio',
+              'Nettoyer ou améliorer les chansons dans une fenêtre de bureau, en 9 langues, avec protection contre les noms de sortie identiques.',
+            ],
+            [
+              'Pipeline de tâches',
+              'Les étapes JSON suivent leurs dépendances. Les vidéos utilisent le son préparé ; les envois demandent une autorisation explicite.',
+            ],
+            [
+              'Une vidéo par chanson',
+              'Créer une vidéo en boucle par chanson et, au choix, une vidéo réunissant les chansons.',
+            ],
             ['Installer et vérifier', 'Un script installe les outils, et un contrôle les vérifie.'],
             ["Longue vidéo d'une playlist", "Les chansons d'un dossier s'enchaînent en fondu sur un clip en boucle."],
             [

@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Describe the SongFactory audio workbench, workflow pipeline and per-song videos in 9 languages.
+
 - **Build cancellation** LocalCI records the cause and replaces only a different commit in the same workflow and branch.
 
 - **Shuttrix and Memories** describe the shared editor, save choices, lens effects and fonts in 9 languages. Shuttrix also describes sharing selected photos, shutter timing and exposure limits.

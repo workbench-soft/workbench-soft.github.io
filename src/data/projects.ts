@@ -1485,6 +1485,15 @@ export const projects: Project[] = [
     groups: [
       {
         features: [
+          {
+            name: 'Audio workbench',
+            text: 'Clean or enhance selected songs in a desktop window, with 9 languages and checks against output name collisions.',
+          },
+          {
+            name: 'Workflow pipeline',
+            text: 'Run JSON steps in dependency order. Videos use the prepared audio; uploads require explicit permission.',
+          },
+          { name: 'Per-song videos', text: 'Make a looping video for each song, with an optional combined video.' },
           { name: 'Install and check the setup', text: 'One script installs the tools, and a doctor checks them.' },
           {
             name: 'Long video from a playlist',

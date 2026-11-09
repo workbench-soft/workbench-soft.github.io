@@ -1389,6 +1389,15 @@ const de: Catalog = {
       groups: [
         {
           features: [
+            [
+              'Audiowerkstatt',
+              'Ausgewählte Songs im Desktopfenster bereinigen oder verbessern, mit 9 Sprachen und Schutz vor gleichen Ausgabenamen.',
+            ],
+            [
+              'Workflow-Pipeline',
+              'JSON-Schritte folgen ihren Abhängigkeiten. Videos verwenden das vorbereitete Audio; Uploads brauchen eine ausdrückliche Freigabe.',
+            ],
+            ['Video pro Song', 'Ein Loop-Video pro Song erstellen und auf Wunsch zu einem Video verbinden.'],
             ['Installieren und prüfen', 'Ein Skript installiert die Werkzeuge, eine Prüfung testet sie.'],
             [
               'Langes Video aus einer Playlist',

@@ -1380,6 +1380,15 @@ const es: Catalog = {
       groups: [
         {
           features: [
+            [
+              'Taller de audio',
+              'Limpia o mejora canciones en una ventana de escritorio, en 9 idiomas y con protección frente a nombres de salida repetidos.',
+            ],
+            [
+              'Flujo de tareas',
+              'Los pasos JSON siguen sus dependencias. Los vídeos usan el audio preparado; las subidas requieren permiso explícito.',
+            ],
+            ['Un vídeo por canción', 'Crea un vídeo en bucle por canción y, si quieres, un vídeo combinado.'],
             ['Instalar y comprobar', 'Un script instala las herramientas y una revisión las comprueba.'],
             ['Vídeo largo de una lista', 'Las canciones de una carpeta se unen con fundido sobre un clip en bucle.'],
             [

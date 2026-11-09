@@ -1260,6 +1260,15 @@ const nb: Catalog = {
       groups: [
         {
           features: [
+            [
+              'Lydverksted',
+              'Rens eller forbedre valgte sanger i et skrivebordsvindu, med 9 språk og vern mot like filnavn i resultatet.',
+            ],
+            [
+              'Arbeidsflyt',
+              'JSON-trinn kjøres etter avhengighetene. Videoene bruker den ferdige lyden; opplasting krever uttrykkelig tillatelse.',
+            ],
+            ['Video per sang', 'Lag en video i loop for hver sang, og en samlet video hvis du ønsker det.'],
             ['Installer og sjekk', 'Ett skript installerer verktøyene, og en sjekk tester dem.'],
             ['Lang video fra en spilleliste', 'Sangene i en temamappe glir over i hverandre over et klipp i loop.'],
             [
