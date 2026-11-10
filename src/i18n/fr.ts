@@ -1462,7 +1462,7 @@ const fr: Catalog = {
             ],
             [
               'Lecteur de musique',
-              'Artistes et Titres sont sur l’écran d’accueil, à côté des disques. La barre du lecteur reste sur chaque écran sauf la vidéo, avec un fil d’Ariane et un tri par artiste.',
+              'Artistes et Titres sont sur l’écran d’accueil, à côté des disques. La barre du lecteur reste sur chaque écran sauf la vidéo, avec un fil d’Ariane et un tri par artiste. Les titres live sont ignorés, par défaut.',
             ],
             [
               'Livres audio',

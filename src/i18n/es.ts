@@ -1403,7 +1403,7 @@ const es: Catalog = {
             ],
             [
               'Reproductor de música',
-              'Artistas y Canciones están en la pantalla de inicio junto a las unidades. La barra del reproductor sigue en cada pantalla menos el vídeo, con ruta de navegación y orden por artista.',
+              'Artistas y Canciones están en la pantalla de inicio junto a las unidades. La barra del reproductor sigue en cada pantalla menos el vídeo, con ruta de navegación y orden por artista. Las pistas en directo se omiten, activado por defecto.',
             ],
             [
               'Audiolibros',

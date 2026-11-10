@@ -1296,7 +1296,7 @@ const nb: Catalog = {
             ['Musikkbibliotek', 'Mapper på mobilen, USB og NAS i ett bibliotek, skannet i bakgrunnen.'],
             [
               'Musikkspiller',
-              'Artister og Sanger ligger på startskjermen ved siden av stasjonene. Spillerlinjen blir på hver skjerm unntatt video, med brødsmuler og sortering etter artist.',
+              'Artister og Sanger ligger på startskjermen ved siden av stasjonene. Spillerlinjen blir på hver skjerm unntatt video, med brødsmuler og sortering etter artist. Livespor hoppes over, på som standard.',
             ],
             [
               'Lydbøker',

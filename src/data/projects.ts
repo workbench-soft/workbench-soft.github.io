@@ -813,7 +813,7 @@ export const projects: Project[] = [
           },
           {
             name: 'Music player',
-            text: 'Artists and Songs sit on the home screen beside the drives. The player bar stays on each screen but video, with breadcrumbs and artist sort.',
+            text: 'Artists and Songs sit on the home screen beside the drives. The player bar stays on each screen but video, with breadcrumbs and artist sort. Live tracks are skipped, on by default.',
           },
           {
             name: 'Audiobooks',

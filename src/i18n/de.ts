@@ -1415,7 +1415,7 @@ const de: Catalog = {
             ['Musikbibliothek', 'Ordner auf Handy, USB und NAS in einer Mediathek, im Hintergrund durchsucht.'],
             [
               'Musikplayer',
-              'Künstler und Songs liegen auf dem Startbildschirm neben den Laufwerken. Die Player-Leiste bleibt auf jedem Bildschirm außer Video, mit Brotkrumen und Sortierung nach Künstler.',
+              'Künstler und Songs liegen auf dem Startbildschirm neben den Laufwerken. Die Player-Leiste bleibt auf jedem Bildschirm außer Video, mit Brotkrumen und Sortierung nach Künstler. Live-Titel werden übersprungen, standardmäßig an.',
             ],
             [
               'Hörbücher',
