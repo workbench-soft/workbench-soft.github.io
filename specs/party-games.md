@@ -353,3 +353,26 @@ score, since the browser keeps a secret token.
 - **Steps** this entry, then the look, checked on the home page, the join
   screen, the lobby and each game at 390 px and on desktop, then the docs.
 - **Docs** `apps/games/docs/features.md`, `CHANGELOG.md`.
+
+### 2026-11-11 Seven more languages in the games
+
+- **Why** the studio ships every app in 9 languages. The games had only
+  English and Russian, so a German or Japanese family read and drew in a
+  language they don't speak.
+- **How** the games screens, the word lists, the kids picture words, the
+  telephone starting phrases, the animal names and the voice now come in
+  `en`, `ru`, `de`, `fr`, `es`, `zh`, `ja`, `ko` and `nb`. The join screen
+  picker and the lobby word language list show all 9. A browser in one of
+  them starts in it. The static pages stay in English and Russian, so a new
+  language links to the English home.
+- **Changes**
+  - `apps/games/src/shared/protocol.ts` `LANGS`, `Lang` with 9 codes,
+    `isLang`, `LANG_NAMES` and `SiteLang` for the 2 page languages.
+  - `apps/games/src/site/` takes `SiteLang`.
+  - `apps/games/src/game/locales/` one catalog per new language.
+  - `apps/games/src/words/` a word list and starting phrases per language,
+    the kids words and animal names in each.
+  - `apps/games/src/server/room.ts`, `worker/room-object.ts` accept each code.
+  - A test checks each language has its words, phrases and kids words.
+- **Steps** this entry, then the code, then `mise run check`, then the docs.
+- **Docs** `apps/games/docs/features.md`, `CHANGELOG.md`.
