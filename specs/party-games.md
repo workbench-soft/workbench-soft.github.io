@@ -289,3 +289,38 @@ score, since the browser keeps a secret token.
 - **Steps** this entry, then the code with its test, then the docs.
 - **Docs** `apps/games/README.md`, `apps/games/docs/features.md`,
   `CHANGELOG.md`, `TODO.md`.
+
+### 2026-11-10 Join screen for all, language, room link, clearer points
+
+- **Why** the owner found that the host skips the animal and the name: a
+  browser that joined once goes straight into the lobby. The language sits as
+  a bare EN/RU button, the room link shows only in the lobby, and the points
+  of guess the drawing read as random.
+- **Join** each person who opens a room in a new tab sees the join screen,
+  the host too. It shows the saved animal picked and the saved name filled
+  in, a language picker, and a Join button. A tap on an animal still joins
+  at once. A reload in the same tab goes straight back in.
+- **Change** the own row in the lobby gets a Change button. It opens the
+  join screen again, and Join sends a new `profile` message with the name and
+  the animal. The message is optional, so old app installs keep working.
+- **Language** a picker with English and Русский on the join screen and in
+  the header. A new room takes the host's language for its words, as before.
+  The other 7 languages of the studio need word lists and stay a follow-up.
+- **Link** the header shows a copy link button in every phase, so the host
+  alone in a room, and every player in a game, can send it at once.
+- **Points** a right guess earns 50 to 300 by speed, times a length factor:
+  0.9 for 3 letters, 1.0 for 5, up 0.05 a letter to 1.3 at 11 or more. The
+  artist earns the average of the guessers' points times the share of
+  players who guessed, so a fast guess by everyone pays the artist the most.
+  A wrong picture in kids mode still costs 100. The lobby shows these rules
+  in one line under "How to play".
+- **Changes**
+  - `apps/games/src/server/guess.ts` the new points, with tests.
+  - `apps/games/src/server/room.ts`, `shared/protocol.ts` the `profile`
+    message.
+  - `apps/games/src/game/` the join screen, the language picker, the header
+    link, the Change button, the points line, in English and Russian.
+- **Steps** this entry, then the server with tests, then the room app, then
+  the docs.
+- **Docs** `apps/games/docs/features.md`, `apps/games/docs/user-flows.md`,
+  `CHANGELOG.md`.
