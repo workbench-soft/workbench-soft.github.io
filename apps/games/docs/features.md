@@ -1,5 +1,11 @@
 # Features
 
+## Party look
+
+- **For the person** the site and the room glow like a party at night, or in candy pastels in light mode, with frosted cards, round Fredoka type and a colour per game: pink to orange, teal to blue, violet to red.
+- **Where** every page and each game screen.
+- **Limits** the glows and the bobbing pictures stop under reduced motion.
+
 ## Rooms by link
 
 - **For the person** one link brings friends into the same room, with no account.

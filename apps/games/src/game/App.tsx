@@ -189,7 +189,7 @@ export function App() {
         </div>
       </header>
       {status.value === 'lost' && !fatal.value && <p class="banner">{t('reconnecting')}</p>}
-      <main class="room-main">
+      <main class="room-main" data-game={room.value?.settings.mode}>
         {!code ? (
           <p class="card center">
             {t('badCode')} <a href={home}>{t('home')}</a>

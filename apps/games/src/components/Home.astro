@@ -45,7 +45,7 @@ const jsonLd = [
       GAMES.map((g) => (
         <a class={`game-card game-${g}`} href={ROUTES[g][lang]}>
           <span class="game-art" aria-hidden="true">
-            {GAME_EMOJI[g]}
+            <span class="game-emoji">{GAME_EMOJI[g]}</span>
           </span>
           <h2>{text.games[g].h1}</h2>
           <p>{text.games[g].lead}</p>
