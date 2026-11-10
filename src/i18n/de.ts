@@ -1297,6 +1297,26 @@ const de: Catalog = {
             ],
             ['Sprachen', 'In 9 Sprachen, nach der Sprache von Telefon oder Browser.'],
             ['App-Symbol', 'Ein Neon-Telefonportal, unter Android und im Web.'],
+            [
+              'Anrufbühne',
+              'Der Anruf füllt das Fenster. Eine Kachel ist groß, die anderen stehen in einer Leiste. Ein Tipp heftet eine Kachel groß an.',
+            ],
+            [
+              'Bildschirm teilen',
+              'Eine Person teilt einen Bildschirm, ein Fenster oder einen Tab. Die anderen sehen ihn groß und zeichnen darüber.',
+            ],
+            [
+              'Ihr Name',
+              'Der Name, den die anderen auf Ihrer Kachel sehen. Ändern Sie ihn auf der Startseite oder in den Einstellungen.',
+            ],
+            [
+              'Videohintergrund',
+              'Machen Sie den Raum hinter sich unscharf, oder setzen Sie eine gezeichnete Szene oder ein eigenes Bild dorthin.',
+            ],
+            [
+              'Transkript und Zusammenfassung',
+              'Ein Gerät schreibt mit, was jede Person sagt. Der Text bleibt beim gespeicherten Anruf, mit einer Zusammenfassung pro Anruf.',
+            ],
           ],
         },
       ],

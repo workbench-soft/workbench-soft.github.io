@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **Farnear** call stage, screen sharing, your name, video background and the call transcript join its features, in all 9 languages.
+
 - **Games** a new party look for the site and all three games: night glows, frosted cards, round display type, chunky buttons and a colour per game.
 
 - **Games** everyone, the host too, picks an animal, a name and the language on joining, and can change them in the lobby. The room code in the header copies the link in every phase. Guess the drawing scores by speed and word length, and pays the artist most when everyone guesses fast.

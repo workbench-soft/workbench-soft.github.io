@@ -1334,6 +1334,26 @@ const fr: Catalog = {
             ],
             ['Langues', 'En 9 langues, selon le téléphone ou le navigateur.'],
             ['Icône de l’app', 'Un portail téléphone en néon, sur Android et sur le web.'],
+            [
+              'Scène d’appel',
+              'L’appel remplit la fenêtre. Une tuile est grande, les autres sont dans une bande. Un appui épingle une tuile en grand.',
+            ],
+            [
+              'Partage d’écran',
+              'Une personne partage un écran, une fenêtre ou un onglet. Les autres le voient en grand et dessinent dessus.',
+            ],
+            [
+              'Votre nom',
+              'Le nom que les autres voient sur votre tuile. Changez-le sur la page d’accueil ou dans les réglages.',
+            ],
+            [
+              'Arrière-plan vidéo',
+              'Floutez la pièce derrière vous, ou placez-y une scène dessinée ou votre propre image.',
+            ],
+            [
+              'Transcription et résumé',
+              'Un appareil note ce que dit chaque personne. Le texte reste avec l’appel enregistré, avec un résumé par appel.',
+            ],
           ],
         },
       ],

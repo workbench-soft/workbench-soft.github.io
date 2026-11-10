@@ -1273,6 +1273,20 @@ const es: Catalog = {
             ],
             ['Idiomas', 'En 9 idiomas, según el teléfono o el navegador.'],
             ['Icono de la app', 'Un portal telefónico de neón, en Android y en la web.'],
+            [
+              'Escenario de la llamada',
+              'La llamada llena la ventana. Un mosaico es grande y los demás van en una tira. Un toque fija un mosaico en grande.',
+            ],
+            [
+              'Compartir pantalla',
+              'Una persona comparte una pantalla, una ventana o una pestaña. Los demás la ven en grande y dibujan encima.',
+            ],
+            ['Tu nombre', 'El nombre que los demás ven en tu mosaico. Cámbialo en la página de inicio o en Ajustes.'],
+            ['Fondo de vídeo', 'Desenfoca la habitación detrás de ti, o pon una escena dibujada o tu propia imagen.'],
+            [
+              'Transcripción y resumen',
+              'Un dispositivo escribe lo que dice cada persona. El texto se queda con la llamada guardada, con un resumen por llamada.',
+            ],
           ],
         },
       ],

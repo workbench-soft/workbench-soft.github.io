@@ -1178,6 +1178,20 @@ const nb: Catalog = {
             ['Android-app', 'Nettappen i et Android-skall, med signerte APK- og AAB-releaser og daterte versjoner.'],
             ['Språk', 'På 9 språk, etter telefonen eller nettleseren.'],
             ['Appikon', 'En neonportal formet som en telefon, på Android og nettet.'],
+            [
+              'Samtalescenen',
+              'Samtalen fyller vinduet. Én flis er stor, resten står i en stripe. Et trykk fester en flis stort.',
+            ],
+            [
+              'Del skjerm',
+              'Én person deler en skjerm, et vindu eller en fane. De andre ser den stort og tegner over den.',
+            ],
+            ['Navnet ditt', 'Navnet de andre ser på flisen din. Endre det på startsiden eller i Innstillinger.'],
+            ['Videobakgrunn', 'Gjør rommet bak deg uskarpt, eller sett inn en tegnet scene eller ditt eget bilde.'],
+            [
+              'Transkripsjon og sammendrag',
+              'Én enhet skriver ned det hver person sier. Teksten blir med den lagrede samtalen, med et sammendrag per samtale.',
+            ],
           ],
         },
       ],

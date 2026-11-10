@@ -662,6 +662,26 @@ export const projects: Project[] = [
           },
           { name: 'Languages', text: 'The app in 9 languages, following the phone or browser.' },
           { name: 'App icon', text: 'A neon phone portal, on Android and the web.' },
+          {
+            name: 'Call stage',
+            text: 'The call fills the window. One tile is large, the rest sit in a strip, and a tap pins a tile large.',
+          },
+          {
+            name: 'Share a screen',
+            text: 'One person shares a screen, a window or a tab. The others see it large and draw over it.',
+          },
+          {
+            name: 'Your name',
+            text: 'The name the others see on your tile. Change it on the home page or in Settings.',
+          },
+          {
+            name: 'Video background',
+            text: 'Blur the room behind you, or put a drawn scene or your own picture there.',
+          },
+          {
+            name: 'Call transcript and summary',
+            text: 'One device writes down what each person says. The text stays with the saved call, with a summary per call.',
+          },
         ],
       },
     ],
