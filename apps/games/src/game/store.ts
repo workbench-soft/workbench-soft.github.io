@@ -21,6 +21,8 @@ export const fatal = signal<ErrorKey | null>(null);
 export const task = signal<{ step: number; kind: TeleKind; prompt: TeleEntry | null } | null>(null);
 export const album = signal<{ chain: number; entries: TeleEntry[] } | null>(null);
 export const clueError = signal(0);
+/** The lobby's Change button opens the join screen again. */
+export const editingProfile = signal(false);
 /** Server time minus local time, so every timer shows the same seconds. */
 export const clockOffset = signal(0);
 
@@ -73,6 +75,12 @@ function handle(msg: ServerMsg): void {
       else fatal.value = msg.key;
       break;
   }
+}
+
+/** A new name or animal from the lobby. A reconnect keeps it too. */
+export function updateProfile(name: string, avatar: string): void {
+  identity = { ...identity, name, avatar };
+  send({ t: 'profile', name, avatar });
 }
 
 export function connect(code: string, name: string, color: string, avatar = ''): void {

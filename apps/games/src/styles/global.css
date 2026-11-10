@@ -420,8 +420,36 @@ summary {
 }
 
 .room-code {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px 12px;
+  background: var(--surface);
+  font: inherit;
   font-size: 14px;
   color: var(--muted);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.room-code:hover,
+.room-code:focus-visible {
+  border-color: var(--brand);
+  color: var(--text);
+}
+
+.lang-pick {
+  font: inherit;
+  font-size: 14px;
+  padding: 6px 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.points-rule {
+  margin: 8px 0 0;
+  font-size: 14px;
 }
 
 .room-code b {
@@ -1150,7 +1178,8 @@ summary {
 }
 
 .animal:hover,
-.animal:focus-visible {
+.animal:focus-visible,
+.animal.on {
   border-color: var(--brand);
   background: var(--brand-soft);
 }

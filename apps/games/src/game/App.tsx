@@ -1,17 +1,18 @@
 import { useEffect, useState } from 'preact/hooks';
 import { COLORS } from '../shared/canvas.ts';
 import { AVATARS } from '../shared/avatars.ts';
-import { MAX_NAME, type Mode } from '../shared/protocol.ts';
+import { MAX_NAME, type Lang, type Mode } from '../shared/protocol.ts';
 import { syncBanner } from './admob.ts';
 import { DuelScreen } from './DuelScreen.tsx';
 import { GuessScreen } from './GuessScreen.tsx';
 import { lang, setLang, t } from './i18n.ts';
 import { Lobby } from './Lobby.tsx';
 import { codeFromLocation, isNative } from './platform.ts';
+import { useCopyLink } from './common.tsx';
 import { Results } from './Results.tsx';
 import { ROUTES, asset } from '../site/routes.ts';
-import { load, save } from './storage.ts';
-import { connect, fatal, room, send, status } from './store.ts';
+import { load, loadTab, save, saveTab } from './storage.ts';
+import { connect, editingProfile, fatal, room, send, status, updateProfile } from './store.ts';
 import { AlbumScreen, TeleScreen } from './TeleScreen.tsx';
 
 const AVATAR_COLORS = COLORS.filter(
@@ -20,9 +21,43 @@ const AVATAR_COLORS = COLORS.filter(
 
 const randomColor = () => AVATAR_COLORS[Math.floor(Math.random() * AVATAR_COLORS.length)];
 
-/** A tap on an animal joins. A child who can't type needs nothing else, and the name stays optional. */
+function LangPicker() {
+  return (
+    <select
+      class="lang-pick"
+      aria-label={t('language')}
+      value={lang.value}
+      onChange={(e) => setLang(e.currentTarget.value as Lang)}
+    >
+      <option value="en">English</option>
+      <option value="ru">Русский</option>
+    </select>
+  );
+}
+
+/** The link to send, in every phase, so a host alone in the room can share it at once. */
+function RoomLink({ code }: { code: string }) {
+  const { copied, copy } = useCopyLink(code);
+  return (
+    <button type="button" class="room-code" title={t('copy')} onClick={copy}>
+      {copied ? (
+        t('copied')
+      ) : (
+        <>
+          🔗 {t('room')} <b>{code}</b>
+        </>
+      )}
+    </button>
+  );
+}
+
+/**
+ * Everyone who opens a room in a new tab lands here, the host too, with the saved animal and name.
+ * A tap on an animal joins. A child who can't type needs nothing else, and the name stays optional.
+ */
 function JoinForm({ onJoin }: { onJoin: () => void }) {
   const [name, setName] = useState(load('name') ?? '');
+  const picked = load('avatar');
   const join = (avatar: string) => {
     save('name', name.trim());
     save('avatar', avatar);
@@ -34,13 +69,19 @@ function JoinForm({ onJoin }: { onJoin: () => void }) {
       class="card join"
       onSubmit={(e) => {
         e.preventDefault();
-        if (name.trim()) join(load('avatar') ?? AVATARS[0].emoji);
+        join(picked ?? AVATARS[0].emoji);
       }}
     >
       <h1>{t('pickAnimal')}</h1>
       <div class="animals">
         {AVATARS.map((a) => (
-          <button type="button" class="animal" aria-label={a[lang.value]} onClick={() => join(a.emoji)}>
+          <button
+            type="button"
+            class={`animal${picked === a.emoji ? ' on' : ''}`}
+            aria-label={a[lang.value]}
+            aria-pressed={picked === a.emoji}
+            onClick={() => join(a.emoji)}
+          >
             <span aria-hidden="true">{a.emoji}</span>
           </button>
         ))}
@@ -49,11 +90,13 @@ function JoinForm({ onJoin }: { onJoin: () => void }) {
         <span>{t('nameOptional')}</span>
         <input value={name} maxLength={MAX_NAME} onInput={(e) => setName(e.currentTarget.value)} autocomplete="off" />
       </label>
-      {name.trim() && (
-        <button type="submit" class="btn btn-big">
-          {t('join')}
-        </button>
-      )}
+      <label class="field">
+        <span>{t('language')}</span>
+        <LangPicker />
+      </label>
+      <button type="submit" class="btn btn-big">
+        {t('join')}
+      </button>
     </form>
   );
 }
@@ -81,8 +124,8 @@ function Screen() {
 
 export function App() {
   const code = codeFromLocation();
-  // A player who joined before goes straight in.
-  const [joined, setJoined] = useState(() => Boolean(code && (load('avatar') || load('name'))));
+  // A reload in the same tab goes straight in. A new tab shows the join screen, so everyone picks an animal.
+  const [joined, setJoined] = useState(() => Boolean(code && loadTab(`joined-${code}`)));
   // The join form saves the name and the color first, so both ways in read them here.
   useEffect(() => {
     if (joined && code) connect(code, load('name') ?? '', load('color') ?? AVATAR_COLORS[0], load('avatar') ?? '');
@@ -90,6 +133,21 @@ export function App() {
   const phase = room.value?.phase;
   const albumDone = room.value?.album?.done ?? false;
   const you = room.value?.you;
+
+  // The game started while a player was still picking an animal: the room only takes changes in the lobby.
+  useEffect(() => {
+    if (phase && phase !== 'lobby') editingProfile.value = false;
+  }, [phase]);
+
+  const onJoin = () => {
+    if (editingProfile.value) {
+      updateProfile(load('name') ?? '', load('avatar') ?? '');
+      editingProfile.value = false;
+    } else if (code) {
+      saveTab(`joined-${code}`, '1');
+      setJoined(true);
+    }
+  };
 
   // A room opened from a game page starts on that game.
   useEffect(() => {
@@ -126,20 +184,8 @@ export function App() {
           <span>{t('appName')}</span>
         </a>
         <div class="header-tools">
-          {code && (
-            <span class="room-code">
-              {t('room')} <b>{code}</b>
-            </span>
-          )}
-          {(!phase || phase === 'lobby') && (
-            <button
-              type="button"
-              class="btn btn-ghost btn-small"
-              onClick={() => setLang(lang.value === 'ru' ? 'en' : 'ru')}
-            >
-              {lang.value === 'ru' ? 'EN' : 'RU'}
-            </button>
-          )}
+          {code && <RoomLink code={code} />}
+          {(!phase || phase === 'lobby') && <LangPicker />}
         </div>
       </header>
       {status.value === 'lost' && !fatal.value && <p class="banner">{t('reconnecting')}</p>}
@@ -152,8 +198,8 @@ export function App() {
           <p class="card center">
             {t(fatal.value === 'clue' ? 'bad' : fatal.value)} <a href={home}>{t('home')}</a>
           </p>
-        ) : !joined ? (
-          <JoinForm onJoin={() => setJoined(true)} />
+        ) : !joined || editingProfile.value ? (
+          <JoinForm onJoin={onJoin} />
         ) : (
           <Screen />
         )}

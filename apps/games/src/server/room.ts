@@ -24,6 +24,11 @@ import { GuessGame } from './guess.ts';
 import { TelephoneGame } from './telephone.ts';
 import { minTime, shuffle, type Random } from './util.ts';
 
+/** A child who can't type joins with an animal, and the animal's name stands in. */
+function nameOf(name: string, animal: string | undefined, lang: Lang): string {
+  return name.trim().replace(/\s+/g, ' ').slice(0, MAX_NAME) || (animal && avatarName(animal, lang)) || 'Player';
+}
+
 export type Player = {
   id: string;
   name: string;
@@ -88,9 +93,7 @@ export class Room {
       return false;
     }
     const animal = isAvatar(avatar) ? avatar : undefined;
-    // A child who can't type joins with an animal, and the animal's name stands in.
-    const cleanName =
-      name.trim().replace(/\s+/g, ' ').slice(0, MAX_NAME) || (animal && avatarName(animal, lang)) || 'Player';
+    const cleanName = nameOf(name, animal, lang);
     if (!player) {
       if (this.players.size >= MAX_SEATS) this.dropNewestOffline();
       if (this.players.size === 0) this.settings.wordLang = lang;
@@ -154,6 +157,13 @@ export class Room {
         break;
       case 'kick':
         if (host && msg.id !== id) this.kick(String(msg.id), now);
+        break;
+      case 'profile':
+        if (this.phase === 'lobby') {
+          player.avatar = isAvatar(msg.avatar) ? msg.avatar : undefined;
+          player.name = nameOf(String(msg.name ?? ''), player.avatar, this.settings.wordLang);
+          this.changed();
+        }
         break;
       case 'team':
         if (this.phase === 'lobby' && (msg.team === 'red' || msg.team === 'blue')) {

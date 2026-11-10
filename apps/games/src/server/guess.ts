@@ -6,8 +6,9 @@ import { wordsFor } from './word-source.ts';
 
 export const CHOOSE_TIME = 15_000;
 export const TURN_END_TIME = 6_000;
-/** Points per guesser that the artist gets. */
-export const ARTIST_POINTS = 60;
+/** A right guess earns MIN_POINTS at the last second, up to MAX_POINTS at once. */
+export const MIN_POINTS = 50;
+export const MAX_POINTS = 300;
 /** Kids mode gives a small child longer to pick and to draw. */
 export const KIDS_CHOOSE_TIME = 30_000;
 export const KIDS_DRAW_TIME = 120;
@@ -18,6 +19,12 @@ const OPTIONS = 4;
 type Stage = 'choosing' | 'drawing' | 'turnEnd';
 
 /** Guess the drawing: each player draws once a round, the others type guesses. */
+/** 0.9 for 3 letters, 1.0 for 5, 0.05 more each letter up to 1.3 at 11. */
+export function lengthFactor(word: string): number {
+  const letters = letterPositions(word).length;
+  return 1 + 0.05 * Math.min(6, Math.max(-2, letters - 5));
+}
+
 export class GuessGame {
   round = 1;
   order: string[] = [];
@@ -100,11 +107,12 @@ export class GuessGame {
     this.room.changed();
   }
 
-  /** A right guess: points for speed, less each wrong picture tapped before it. */
+  /** A right guess: points for speed, a little more for a long word, less each wrong picture tapped before it. */
   private award(id: string, now: number): void {
     const left = Math.max(0, this.deadline - now);
     const misses = this.wrong.get(id)?.length ?? 0;
-    const points = Math.max(50, Math.round(100 + (400 * left) / this.turnTime) - misses * WRONG_COST);
+    const speed = MIN_POINTS + ((MAX_POINTS - MIN_POINTS) * left) / this.turnTime;
+    const points = Math.max(MIN_POINTS, Math.round(speed * lengthFactor(this.word)) - misses * WRONG_COST);
     this.guessed.set(id, points);
     this.room.sys('guessed', this.room.name(id));
     this.room.changed();
@@ -159,6 +167,14 @@ export class GuessGame {
         this.stage === 'drawing' && !isDrawer && !this.guessed.has(id) && this.options.length ? this.options : null,
       wrong: this.wrong.get(id) ?? [],
     };
+  }
+
+  /** The average guess times the share who guessed, so the artist earns most when everyone guesses fast. */
+  private artistPoints(): number {
+    const total = [...this.guessed.values()].reduce((a, b) => a + b, 0);
+    const guessers = new Set([...this.room.online().map((p) => p.id), ...this.guessed.keys()]);
+    guessers.delete(this.drawerId);
+    return Math.round(total / Math.max(1, guessers.size));
   }
 
   private everyoneGuessed(): boolean {
@@ -238,7 +254,7 @@ export class GuessGame {
     const room = this.room;
     const gains: Record<string, number> = {};
     for (const [id, points] of this.guessed) gains[id] = points;
-    if (this.guessed.size) gains[this.drawerId] = this.guessed.size * ARTIST_POINTS;
+    if (this.guessed.size) gains[this.drawerId] = this.artistPoints();
     for (const [id, points] of Object.entries(gains)) {
       const p = room.players.get(id);
       if (p) p.score += points;

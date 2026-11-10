@@ -168,6 +168,8 @@ export type ClientMsg =
   /** `v` is the client's PROTOCOL. Clients from before it send none, which counts as 1. */
   | { t: 'hello'; v?: number; token: string; name: string; color: string; lang: Lang; avatar?: string }
   | { t: 'chat'; text: string }
+  /** A new name or animal from the join screen, sent from the lobby. */
+  | { t: 'profile'; name: string; avatar?: string }
   | { t: 'settings'; settings: Partial<Settings> }
   | { t: 'start' }
   | { t: 'pick'; index: number }

@@ -3,8 +3,24 @@ import type { PlayerView } from '../shared/protocol.ts';
 import { setDevAdsShown } from './admob.ts';
 import { devAdsShown, isDevDevice } from './dev-device.ts';
 import { t } from './i18n.ts';
-import { isNative } from './platform.ts';
-import { room, send, serverNow } from './store.ts';
+import { isNative, roomLink } from './platform.ts';
+import { editingProfile, room, send, serverNow } from './store.ts';
+
+/** Copies the room link, or shows it in a prompt where the clipboard is blocked. */
+export function useCopyLink(code: string) {
+  const [copied, setCopied] = useState(false);
+  const link = roomLink(code);
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(link);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      prompt(t('copy'), link);
+    }
+  };
+  return { link, copied, copy };
+}
 
 export function useSecondsLeft(deadline: number): number {
   const [, tick] = useState(0);
@@ -81,6 +97,11 @@ export function PlayerList({ mark, scores = true }: ListProps) {
           </span>
           {mark?.(p) && <span class="player-mark">{mark(p)}</span>}
           {scores && <span class="player-score">{p.score}</span>}
+          {p.id === view.you && view.phase === 'lobby' && (
+            <button type="button" class="link-btn" onClick={() => (editingProfile.value = true)}>
+              {t('change')}
+            </button>
+          )}
           {isHost && p.id !== view.you && view.phase === 'lobby' && (
             <button
               type="button"

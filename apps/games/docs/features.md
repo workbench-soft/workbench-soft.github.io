@@ -3,7 +3,8 @@
 ## Rooms by link
 
 - **For the person** one link brings friends into the same room, with no account.
-- **Where** "Create a room" on `/games/` and on each game page. The lobby has Copy and Share.
+- **Where** "Create a room" on `/games/` and on each game page. The lobby has Copy and Share, and the room code in the header copies the link in every phase.
+- **Join** everyone who opens a room in a new tab, the host too, picks an animal, types a name if they like and picks the language. Change in the lobby opens it again.
 - **Limits** 2 to 12 players. A room forgets everything 30 minutes after the last player leaves.
 
 Spec: [party-games](../../../specs/party-games.md).
@@ -18,7 +19,7 @@ Spec: [party-games](../../../specs/party-games.md).
 
 ## Guess the drawing
 
-- **For the person** draw a word, guess the others' drawings, race for points.
+- **For the person** draw a word, guess the others' drawings, race for points. A guess earns 50 to 300 by speed, a little more for a longer word. The artist earns the guessers' points split over all guessers, so a fast guess by everyone pays most.
 - **Where** the first game in the lobby.
 - **Limits** English and Russian word lists. The host can add words, and with 12 or more use only those.
 
@@ -51,7 +52,7 @@ Spec: [party-games](../../../specs/party-games.md).
 ## Languages
 
 - **For the person** every page and the room work in English and Russian.
-- **Where** the language link in the header, and the EN/RU button in the room, shown in the lobby only.
+- **Where** the language link in the header, and the language picker in the room, on the join screen and in the lobby.
 
 Spec: [party-games](../../../specs/party-games.md).
 

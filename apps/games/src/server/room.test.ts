@@ -1,5 +1,14 @@
 import { describe, expect, it } from 'vitest';
-import { CHOOSE_TIME, KIDS_CHOOSE_TIME, KIDS_DRAW_TIME, TURN_END_TIME, WRONG_COST } from './guess.ts';
+import {
+  CHOOSE_TIME,
+  KIDS_CHOOSE_TIME,
+  KIDS_DRAW_TIME,
+  MAX_POINTS,
+  MIN_POINTS,
+  TURN_END_TIME,
+  WRONG_COST,
+  lengthFactor,
+} from './guess.ts';
 import { pictureOf } from '../words/kids.ts';
 import { HOST_GRACE, EMPTY_TTL, MAX_SEATS, Room } from './room.ts';
 import { GRACE, STEP_TIMES } from './telephone.ts';
@@ -134,7 +143,22 @@ describe('guess the drawing', () => {
     const gains = view(drawer).guess!.gains!;
     expect(view(drawer).phase).toBe('turnEnd');
     expect(gains[others[0]]).toBeGreaterThan(gains[others[1]]);
-    expect(gains[drawer]).toBe(120);
+    expect(gains[drawer]).toBe(Math.round((gains[others[0]] + gains[others[1]]) / 2));
+  });
+
+  it('pays a little more for a long word, and the artist less when someone missed it', () => {
+    const { view, drawer, others, room } = started();
+    room.message(drawer, { t: 'pick', index: 0 }, 0);
+    room.guess!.word = 'watermelon';
+    room.message(others[0], { t: 'chat', text: 'watermelon' }, 6000);
+    room.alarm(room.guess!.deadline);
+    const gains = view(drawer).guess!.gains!;
+    const speed = MIN_POINTS + (MAX_POINTS - MIN_POINTS) * 0.9;
+    expect(gains[others[0]]).toBe(Math.round(speed * lengthFactor('watermelon')));
+    expect(gains[drawer]).toBe(Math.round(gains[others[0]] / 2));
+    expect(lengthFactor('cat')).toBeCloseTo(0.9);
+    expect(lengthFactor('apple')).toBe(1);
+    expect(lengthFactor('ice cream sundae')).toBeCloseTo(1.3);
   });
 
   it('keeps chat from players who know the word away from the others', () => {
@@ -213,6 +237,15 @@ describe('kids mode', () => {
     const gains = view(drawer).guess!.gains!;
     expect(gains[others[1]] - gains[others[0]]).toBe(WRONG_COST);
     expect(view(drawer).phase).toBe('turnEnd');
+  });
+
+  it('changes the name and the animal from the lobby', () => {
+    const { room, view, join } = makeRoom();
+    join(['a']);
+    room.message('a', { t: 'profile', name: '  Mia ', avatar: '🦊' }, 0);
+    expect(view('a').players[0]).toMatchObject({ name: 'Mia', avatar: '🦊' });
+    room.message('a', { t: 'profile', name: '', avatar: '🐼' }, 0);
+    expect(view('a').players[0]).toMatchObject({ name: 'Panda', avatar: '🐼' });
   });
 
   it('takes the animal as the name of a player who typed none', () => {

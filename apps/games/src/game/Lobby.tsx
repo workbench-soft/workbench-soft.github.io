@@ -2,27 +2,16 @@ import { useState } from 'preact/hooks';
 import { DRAW_TIME_OPTIONS, ROUND_OPTIONS, TEAMS, type Mode, type Settings, type Speed } from '../shared/protocol.ts';
 import { Chat } from './Chat.tsx';
 import { GAME_EMOJI } from '../site/routes.ts';
-import { AdSlot, Avatar, DevAdsSwitch, PlayerList } from './common.tsx';
+import { AdSlot, Avatar, DevAdsSwitch, PlayerList, useCopyLink } from './common.tsx';
 import { HowTo } from './kids.tsx';
 import { t } from './i18n.ts';
-import { roomLink } from './platform.ts';
 import { room, send } from './store.ts';
 
 const MODES: Mode[] = ['guess', 'telephone', 'duel'];
 const NEED: Record<Mode, number> = { guess: 2, telephone: 2, duel: 4 };
 
 function Invite({ code }: { code: string }) {
-  const [copied, setCopied] = useState(false);
-  const link = roomLink(code);
-  const copy = async () => {
-    try {
-      await navigator.clipboard.writeText(link);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch {
-      prompt(t('copy'), link);
-    }
-  };
+  const { link, copied, copy } = useCopyLink(code);
   return (
     <section class="card invite">
       <h2>{t('invite')}</h2>
@@ -200,6 +189,7 @@ export function Lobby() {
             ))}
           </div>
           <HowTo mode={s.mode} kids={s.kids} />
+          {s.mode === 'guess' && !s.kids && <p class="muted points-rule">{t('pointsRule')}</p>}
           <label class="check kids-switch">
             <input
               type="checkbox"

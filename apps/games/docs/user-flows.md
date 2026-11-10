@@ -6,16 +6,16 @@
 flowchart LR
   A[/games/ or a game page/] --> B[Create a room]
   B --> C[/games/r/CODE/]
-  C --> D{Joined before?}
-  D -- no --> E[Tap an animal, a name optional]
+  C --> D{Joined in this tab?}
+  D -- no --> E[Tap an animal, a name and language optional]
   D -- yes --> F[Lobby]
   E --> F
 ```
 
 1. The person opens `/games/`, `/games/ru/` or a game page.
 2. They press "Create a room". The page makes a 6 letter code and opens `/games/r/CODE`.
-3. The first visit shows 12 animals. A tap on one joins, and a typed name is optional. Later visits go straight in.
-4. The lobby shows the invite link with Copy and Share buttons.
+3. Each new tab shows 12 animals with the saved one picked, a name field and a language picker, the host included. A tap on an animal or Join joins. A reload in the same tab goes straight in.
+4. The lobby shows the invite link with Copy and Share buttons. The room code in the header copies it in every phase. Change on the own row opens the join screen again.
 
 ## Join by link or code
 

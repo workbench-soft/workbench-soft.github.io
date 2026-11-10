@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **Games** everyone, the host too, picks an animal, a name and the language on joining, and can change them in the lobby. The room code in the header copies the link in every phase. Guess the drawing scores by speed and word length, and pays the artist most when everyone guesses fast.
+
 - **ServoHop** the map line says the middle pins are yellow and the cheapest price sends out coloured earthquake waves, in all 9 languages.
 - **Projects** each entry matches its repo's features.md: new Pro, ads and feature lines across the apps, Agent Skills one line per skill, and disk-reorg joins the internal tools, in all 9 languages.
 

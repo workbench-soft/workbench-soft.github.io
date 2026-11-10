@@ -5,7 +5,10 @@ import { load, save } from './storage.ts';
 const en = {
   appName: 'Workbench Games',
   pickAnimal: 'Tap your animal',
-  nameOptional: 'Or type a name',
+  nameOptional: 'Your name (you can skip it)',
+  language: 'Language',
+  change: 'Change',
+  pointsRule: 'Points: a faster guess earns more, a longer word a little more. The artist earns more when everyone guesses fast.',
   kids: 'For little ones',
   kidsHint: 'Pictures, a tap to guess, more time',
   howTo: 'How to play',
@@ -150,7 +153,10 @@ type Key = keyof typeof en;
 const ru: Record<Key, string> = {
   appName: 'Workbench Games',
   pickAnimal: 'Нажми на своего зверька',
-  nameOptional: 'Или напиши имя',
+  nameOptional: 'Твоё имя (можно не писать)',
+  language: 'Язык',
+  change: 'Изменить',
+  pointsRule: 'Очки: чем быстрее угадал, тем больше, за длинное слово чуть больше. Художник получает больше, когда все угадали быстро.',
   kids: 'Для малышей',
   kidsHint: 'Картинки, угадывать нажатием, больше времени',
   howTo: 'Как играть',
