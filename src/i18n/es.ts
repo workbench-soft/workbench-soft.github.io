@@ -545,7 +545,7 @@ const es: Catalog = {
           features: [
             [
               'Precios en el mapa',
-              'Marcadores verdes para el tercio más barato, ámbar para el medio y rojos para el más caro.',
+              'Marcadores verdes para el tercio más barato, amarillos para el medio y rojos para el más caro. Del precio más bajo salen ondas de colores como un terremoto.',
             ],
             ['Tu lugar en el mapa', 'Un punto azul te marca, con una flecha que gira con la brújula.'],
             [

@@ -545,7 +545,7 @@ const de: Catalog = {
           features: [
             [
               'Preise auf der Karte',
-              'Grüne Pins für das günstigste Drittel, gelbe für die Mitte und rote für das teuerste.',
+              'Grüne Pins für das günstigste Drittel, gelbe für die Mitte und rote für das teuerste. Vom günstigsten Preis rollen bunte Wellen aus wie bei einem Erdbeben.',
             ],
             [
               'Dein Standort auf der Karte',

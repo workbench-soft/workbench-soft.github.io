@@ -567,7 +567,7 @@ const fr: Catalog = {
           features: [
             [
               'Prix sur la carte',
-              'Repères verts pour le tiers le moins cher, orange pour le milieu et rouges pour le plus cher.',
+              'Repères verts pour le tiers le moins cher, jaunes pour le milieu et rouges pour le plus cher. Des ondes colorées partent du prix le plus bas comme un séisme.',
             ],
             ['Votre position sur la carte', 'Un point bleu vous situe, avec une flèche qui tourne avec la boussole.'],
             [

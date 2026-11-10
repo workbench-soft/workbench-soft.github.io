@@ -510,7 +510,7 @@ const nb: Catalog = {
           features: [
             [
               'Priser på kartet',
-              'Grønne nåler for den billigste tredjedelen, gule for midten og røde for den dyreste.',
+              'Grønne nåler for den billigste tredjedelen, gule for midten og røde for den dyreste. Fargede bølger ruller ut fra den laveste prisen som et jordskjelv.',
             ],
             ['Din plass på kartet', 'En blå prikk viser deg, med en pil som snur seg etter kompasset.'],
             ['Stasjonsliste', 'Stasjonene i bildet, billigst først, med merke, forstad og når prisen endret seg.'],

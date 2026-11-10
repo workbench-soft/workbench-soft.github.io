@@ -853,7 +853,7 @@ export const projects: Project[] = [
         features: [
           {
             name: 'Fuel prices on a map',
-            text: 'Green pins for the cheapest third, amber for the middle and red for the dearest.',
+            text: 'Green pins for the cheapest third, yellow for the middle and red for the dearest. Coloured waves roll out from the cheapest price like an earthquake.',
           },
           { name: 'Your place on the map', text: 'A blue dot marks you, with an arrow that turns with the compass.' },
           {

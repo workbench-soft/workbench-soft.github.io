@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **ServoHop** the map line says the middle pins are yellow and the cheapest price sends out coloured earthquake waves, in all 9 languages.
 - **Projects** each entry matches its repo's features.md: new Pro, ads and feature lines across the apps, Agent Skills one line per skill, and disk-reorg joins the internal tools, in all 9 languages.
 
 - **Lumiere Player** Audiobooks, Find tabs and Google Play build join its features, in all 9 languages.
