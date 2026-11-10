@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **Lint before the push** a pre-push hook runs `mise run lint`, so a lint or format error stays on the PC instead of failing Checks on `main`.
+
 - **Games** the room, the word lists, the kids pictures and the voice come in all 9 languages: German, French, Spanish, Chinese, Japanese, Korean and Norwegian join English and Russian.
 
 - **Farnear** call stage, screen sharing, your name, video background and the call transcript join its features, in all 9 languages.
