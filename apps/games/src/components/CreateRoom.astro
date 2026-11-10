@@ -1,8 +1,8 @@
 ---
-import type { Lang, Mode } from '../shared/protocol.ts';
+import type { SiteLang, Mode } from '../shared/protocol.ts';
 import { TEXT } from '../site/text.ts';
 
-type Props = { lang: Lang; mode?: Mode; label?: string };
+type Props = { lang: SiteLang; mode?: Mode; label?: string };
 const { lang, mode, label } = Astro.props;
 const text = TEXT[lang];
 ---

@@ -1,4 +1,11 @@
 import type { Lang } from '../shared/protocol.ts';
+import { prompts as de } from './de.ts';
+import { prompts as es } from './es.ts';
+import { prompts as fr } from './fr.ts';
+import { prompts as ja } from './ja.ts';
+import { prompts as ko } from './ko.ts';
+import { prompts as nb } from './nb.ts';
+import { prompts as zh } from './zh.ts';
 
 // Starting phrases for drawing telephone. A player who skips the first step gets one of these.
 const prompts: Record<Lang, string[]> = {
@@ -46,6 +53,13 @@ const prompts: Record<Lang, string[]> = {
     'Дерево, на котором растут деньги',
     'Вампир загорает на пляже',
   ],
+  de,
+  fr,
+  es,
+  zh,
+  ja,
+  ko,
+  nb,
 };
 
 export function randomPrompt(lang: Lang, random: () => number = Math.random): string {

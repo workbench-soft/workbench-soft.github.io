@@ -2,11 +2,11 @@
 import Page from '../layouts/Page.astro';
 import CreateRoom from './CreateRoom.astro';
 import AdSlot from './AdSlot.astro';
-import type { Lang, Mode } from '../shared/protocol.ts';
+import type { SiteLang, Mode } from '../shared/protocol.ts';
 import { GAMES, ROUTES } from '../site/routes.ts';
 import { TEXT } from '../site/text.ts';
 
-type Props = { lang: Lang; mode: Mode };
+type Props = { lang: SiteLang; mode: Mode };
 const { lang, mode } = Astro.props;
 const text = TEXT[lang];
 const g = text.games[mode];

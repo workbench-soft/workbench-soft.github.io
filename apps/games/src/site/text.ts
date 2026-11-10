@@ -1,4 +1,4 @@
-import type { Lang, Mode } from '../shared/protocol.ts';
+import type { SiteLang, Mode } from '../shared/protocol.ts';
 
 type Faq = { q: string; a: string };
 type GameText = {
@@ -122,7 +122,10 @@ const en: SiteText = {
           q: 'Can we use our own words?',
           a: 'Yes. The host types them in the lobby, comma separated. With 12 words or more the game can use only those.',
         },
-        { q: 'Which languages are the words in?', a: 'English and Russian. The host picks the language in the lobby.' },
+        {
+          q: 'Which languages are the words in?',
+          a: 'English, Russian, German, French, Spanish, Chinese, Japanese, Korean and Norwegian. The host picks the language in the lobby.',
+        },
         { q: 'What if the artist leaves?', a: 'The turn ends, everyone sees the word, and the next player draws.' },
       ],
     },
@@ -270,7 +273,10 @@ const ru: SiteText = {
           q: 'Можно играть со своими словами?',
           a: 'Да. Ведущий вводит их в лобби через запятую. Если слов 12 и больше, игра может брать только их.',
         },
-        { q: 'На каких языках слова?', a: 'На русском и английском. Язык выбирает ведущий.' },
+        {
+          q: 'На каких языках слова?',
+          a: 'На русском, английском, немецком, французском, испанском, китайском, японском, корейском и норвежском. Язык выбирает ведущий.',
+        },
         { q: 'Что будет, если художник выйдет?', a: 'Ход закончится, все увидят слово, и рисовать начнёт следующий.' },
       ],
     },
@@ -342,4 +348,4 @@ const ru: SiteText = {
   },
 };
 
-export const TEXT: Record<Lang, SiteText> = { en, ru };
+export const TEXT: Record<SiteLang, SiteText> = { en, ru };

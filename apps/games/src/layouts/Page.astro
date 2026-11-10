@@ -1,12 +1,12 @@
 ---
 import '../styles/global.css';
 import '../styles/look.css';
-import type { Lang } from '../shared/protocol.ts';
+import type { SiteLang } from '../shared/protocol.ts';
 import { ROUTES, GAMES, asset, type PageKey } from '../site/routes.ts';
 import { TEXT } from '../site/text.ts';
 
 type Props = {
-  lang: Lang;
+  lang: SiteLang;
   page: PageKey | 'room' | '404';
   title: string;
   description: string;
@@ -19,7 +19,7 @@ const text = TEXT[lang];
 const site = Astro.site!;
 const routes = page in ROUTES ? ROUTES[page as PageKey] : null;
 const canonical = routes ? new URL(routes[lang], site).href : null;
-const other: Lang = lang === 'en' ? 'ru' : 'en';
+const other: SiteLang = lang === 'en' ? 'ru' : 'en';
 const image = new URL(asset('/og.png'), site).href;
 ---
 

@@ -1,6 +1,13 @@
 import { DurableObject } from 'cloudflare:workers';
 import type { Action } from '../src/shared/canvas.ts';
-import type { ClientMsg, ErrorKey, Lang, ServerMsg, TeleEntry } from '../src/shared/protocol.ts';
+import {
+  isLang,
+  type ClientMsg,
+  type ErrorKey,
+  type Lang,
+  type ServerMsg,
+  type TeleEntry,
+} from '../src/shared/protocol.ts';
 import { Room, type Out } from '../src/server/room.ts';
 import { minTime } from '../src/server/util.ts';
 
@@ -79,7 +86,7 @@ export class RoomObject extends DurableObject<Env> {
       }
       const v = Number.isInteger(msg.v) ? Number(msg.v) : 1;
       ws.serializeAttachment({ id, v } satisfies Attachment);
-      const lang: Lang = msg.lang === 'ru' ? 'ru' : 'en';
+      const lang: Lang = isLang(msg.lang) ? msg.lang : 'en';
       room.connect(id, String(msg.name ?? ''), String(msg.color ?? ''), lang, now, msg.avatar);
     } else if (attachment) {
       room.message(attachment.id, msg, now);

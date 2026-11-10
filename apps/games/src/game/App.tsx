@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'preact/hooks';
 import { COLORS } from '../shared/canvas.ts';
 import { AVATARS } from '../shared/avatars.ts';
-import { MAX_NAME, type Lang, type Mode } from '../shared/protocol.ts';
+import { LANG_NAMES, LANGS, MAX_NAME, siteLang, type Lang, type Mode } from '../shared/protocol.ts';
 import { syncBanner } from './admob.ts';
 import { DuelScreen } from './DuelScreen.tsx';
 import { GuessScreen } from './GuessScreen.tsx';
@@ -29,8 +29,11 @@ function LangPicker() {
       value={lang.value}
       onChange={(e) => setLang(e.currentTarget.value as Lang)}
     >
-      <option value="en">English</option>
-      <option value="ru">Русский</option>
+      {LANGS.map((code) => (
+        <option key={code} value={code}>
+          {LANG_NAMES[code]}
+        </option>
+      ))}
     </select>
   );
 }
@@ -170,7 +173,7 @@ export function App() {
     if (isNative()) void syncBanner(phase === 'lobby' || phase === 'gameEnd' || albumDone);
   }, [phase, albumDone]);
 
-  const home = isNative() ? `${ROUTES.home[lang.value]}index.html` : ROUTES.home[lang.value];
+  const home = isNative() ? `${ROUTES.home[siteLang(lang.value)]}index.html` : ROUTES.home[siteLang(lang.value)];
   return (
     <>
       <header class="site-header">

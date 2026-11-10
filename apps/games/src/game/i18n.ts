@@ -1,5 +1,12 @@
 import { signal } from '@preact/signals';
-import type { ChatMsg, Lang } from '../shared/protocol.ts';
+import { isLang, type ChatMsg, type Lang } from '../shared/protocol.ts';
+import de from './locales/de.ts';
+import es from './locales/es.ts';
+import fr from './locales/fr.ts';
+import ja from './locales/ja.ts';
+import ko from './locales/ko.ts';
+import nb from './locales/nb.ts';
+import zh from './locales/zh.ts';
 import { load, save } from './storage.ts';
 
 const en = {
@@ -149,7 +156,7 @@ const en = {
   sys_needMore: 'This game needs {word} players or more',
 };
 
-type Key = keyof typeof en;
+export type Key = keyof typeof en;
 
 const ru: Record<Key, string> = {
   appName: 'Workbench Games',
@@ -298,12 +305,14 @@ const ru: Record<Key, string> = {
   sys_needMore: 'Для этой игры нужно от {word} игроков',
 };
 
-const dicts: Record<Lang, Record<Key, string>> = { en, ru };
+const dicts: Record<Lang, Record<Key, string>> = { en, ru, de, fr, es, zh, ja, ko, nb };
 
 function startLang(): Lang {
   const saved = load('lang');
-  if (saved === 'en' || saved === 'ru') return saved;
-  return typeof navigator !== 'undefined' && navigator.language.toLowerCase().startsWith('ru') ? 'ru' : 'en';
+  if (isLang(saved)) return saved;
+  const code = typeof navigator === 'undefined' ? '' : navigator.language.toLowerCase().slice(0, 2);
+  if (code === 'no' || code === 'nn') return 'nb';
+  return isLang(code) ? code : 'en';
 }
 
 export const lang = signal<Lang>(startLang());

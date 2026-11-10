@@ -19,7 +19,7 @@ Spec: [party-games](../../../specs/party-games.md).
 
 - **For the person** a child who can't read or type still plays. A tap on an animal joins, words come with a picture and a speaker button, guessers tap 1 of 4 pictures, timers are rings that empty, and a right guess plays a chime with confetti and stars.
 - **Where** "For little ones" in the lobby, on by default. The microphone beside the text fields and the "How to play" pictures show in both modes.
-- **Limits** picture words exist for guess the drawing only, 80 in English and Russian. Kids mode guess skips the host's own words. Speech and the microphone need the browser's support, and the microphone hides where it is missing.
+- **Limits** picture words exist for guess the drawing only, 80 in each of the 9 languages. Kids mode guess skips the host's own words. Speech and the microphone need the browser's support, and the microphone hides where it is missing.
 
 Spec: [party-games](../../../specs/party-games.md).
 
@@ -27,7 +27,7 @@ Spec: [party-games](../../../specs/party-games.md).
 
 - **For the person** draw a word, guess the others' drawings, race for points. A guess earns 50 to 300 by speed, a little more for a longer word. The artist earns the guessers' points split over all guessers, so a fast guess by everyone pays most.
 - **Where** the first game in the lobby.
-- **Limits** English and Russian word lists. The host can add words, and with 12 or more use only those.
+- **Limits** word lists in English, Russian, German, French, Spanish, Chinese, Japanese, Korean and Norwegian. The host can add words, and with 12 or more use only those.
 
 Spec: [party-games](../../../specs/party-games.md).
 
@@ -57,7 +57,7 @@ Spec: [party-games](../../../specs/party-games.md).
 
 ## Languages
 
-- **For the person** every page and the room work in English and Russian.
+- **For the person** the room, the words and the voice work in English, Russian, German, French, Spanish, Chinese, Japanese, Korean and Norwegian. The pages read in English and Russian, and a browser in another of the 9 starts the room in its own language.
 - **Where** the language link in the header, and the language picker in the room, on the join screen and in the lobby.
 
 Spec: [party-games](../../../specs/party-games.md).

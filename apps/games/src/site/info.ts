@@ -1,4 +1,4 @@
-import type { Lang } from '../shared/protocol.ts';
+import type { SiteLang } from '../shared/protocol.ts';
 
 export type InfoKey = 'privacy' | 'about';
 type Info = { title: string; description: string; sections: { h?: string; p: string[] }[] };
@@ -6,7 +6,7 @@ type Info = { title: string; description: string; sections: { h?: string; p: str
 // Cloudflare Email Routing forwards it once the domain is set up.
 const CONTACT = 'hello@workbench-soft.com';
 
-export const INFO: Record<InfoKey, Record<Lang, Info>> = {
+export const INFO: Record<InfoKey, Record<SiteLang, Info>> = {
   privacy: {
     en: {
       title: 'Privacy policy',

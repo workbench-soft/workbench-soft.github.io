@@ -1,12 +1,12 @@
 import { BASE } from '../shared/paths.ts';
-import type { Lang, Mode } from '../shared/protocol.ts';
+import type { SiteLang, Mode } from '../shared/protocol.ts';
 
 export type PageKey = 'home' | Mode | 'privacy' | 'about';
 
-const pair = (en: string, ru: string): Record<Lang, string> => ({ en: `${BASE}${en}`, ru: `${BASE}/ru${ru}` });
+const pair = (en: string, ru: string): Record<SiteLang, string> => ({ en: `${BASE}${en}`, ru: `${BASE}/ru${ru}` });
 
 /** Each page in both languages. The pairs give the hreflang links and the language switch. */
-export const ROUTES: Record<PageKey, Record<Lang, string>> = {
+export const ROUTES: Record<PageKey, Record<SiteLang, string>> = {
   home: pair('/', '/'),
   guess: pair('/guess-the-drawing/', '/ugaday-risunok/'),
   telephone: pair('/drawing-telephone/', '/isporchennyy-telefon/'),

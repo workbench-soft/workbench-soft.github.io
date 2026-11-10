@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **Games** the room, the word lists, the kids pictures and the voice come in all 9 languages: German, French, Spanish, Chinese, Japanese, Korean and Norwegian join English and Russian.
+
 - **Farnear** call stage, screen sharing, your name, video background and the call transcript join its features, in all 9 languages.
 
 - **Games** a new party look for the site and all three games: night glows, frosted cards, round display type, chunky buttons and a colour per game.

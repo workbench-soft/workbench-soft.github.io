@@ -1,6 +1,24 @@
 import type { Action, Op } from './canvas.ts';
 
-export type Lang = 'en' | 'ru';
+/** The languages of the game screens and the word lists. */
+export const LANGS = ['en', 'ru', 'de', 'fr', 'es', 'zh', 'ja', 'ko', 'nb'] as const;
+export type Lang = (typeof LANGS)[number];
+/** The static pages come in English and Russian only. */
+export type SiteLang = 'en' | 'ru';
+export const LANG_NAMES: Record<Lang, string> = {
+  en: 'English',
+  ru: 'Русский',
+  de: 'Deutsch',
+  fr: 'Français',
+  es: 'Español',
+  zh: '中文',
+  ja: '日本語',
+  ko: '한국어',
+  nb: 'Norsk',
+};
+export const isLang = (v: unknown): v is Lang => LANGS.includes(v as Lang);
+/** The page language for a game language: Russian stays, the rest read the English pages. */
+export const siteLang = (lang: Lang): SiteLang => (lang === 'ru' ? 'ru' : 'en');
 export type Mode = 'guess' | 'telephone' | 'duel';
 export type Speed = 'fast' | 'normal' | 'slow';
 export type Phase = 'lobby' | 'choosing' | 'drawing' | 'turnEnd' | 'gameEnd' | 'tele' | 'album' | 'duel';

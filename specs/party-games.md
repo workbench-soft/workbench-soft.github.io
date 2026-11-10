@@ -22,7 +22,7 @@
 - **Free** no account, no install, no payment. A banner sits on the content
   pages, in the lobby and on the results screen. The game screens stay clear
   while someone plays.
-- **Languages** English and Russian pages and word lists.
+- **Languages** English and Russian pages. The room, word lists and voice in 9 languages.
 - **Apps** one Android app and one iOS app hold all three games, with an
   AdMob banner in the lobby and on the results.
 

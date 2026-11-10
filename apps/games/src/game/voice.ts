@@ -1,6 +1,16 @@
 import type { Lang } from '../shared/protocol.ts';
 
-const VOICE_LANG: Record<Lang, string> = { en: 'en-US', ru: 'ru-RU' };
+const VOICE_LANG: Record<Lang, string> = {
+  en: 'en-US',
+  ru: 'ru-RU',
+  de: 'de-DE',
+  fr: 'fr-FR',
+  es: 'es-ES',
+  zh: 'zh-CN',
+  ja: 'ja-JP',
+  ko: 'ko-KR',
+  nb: 'nb-NO',
+};
 
 /** Reads the text aloud with the browser's own voice, for a child who can't read yet. */
 export function speak(text: string, lang: Lang): void {

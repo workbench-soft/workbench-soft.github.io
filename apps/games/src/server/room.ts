@@ -2,6 +2,7 @@ import { Drawing, isColor, type Action } from '../shared/canvas.ts';
 import {
   DEFAULT_SETTINGS,
   DRAW_TIME_OPTIONS,
+  isLang,
   MAX_CHAT,
   MAX_NAME,
   MAX_PLAYERS,
@@ -382,7 +383,7 @@ export class Room {
     if (next.mode === 'guess' || next.mode === 'telephone' || next.mode === 'duel') s.mode = next.mode;
     if (typeof next.rounds === 'number' && ROUND_OPTIONS.includes(next.rounds)) s.rounds = next.rounds;
     if (typeof next.drawTime === 'number' && DRAW_TIME_OPTIONS.includes(next.drawTime)) s.drawTime = next.drawTime;
-    if (next.wordLang === 'en' || next.wordLang === 'ru') s.wordLang = next.wordLang;
+    if (isLang(next.wordLang)) s.wordLang = next.wordLang;
     if (typeof next.hints === 'boolean') s.hints = next.hints;
     if (typeof next.kids === 'boolean') s.kids = next.kids;
     if (typeof next.customOnly === 'boolean') s.customOnly = next.customOnly;

@@ -1,5 +1,14 @@
 import { useState } from 'preact/hooks';
-import { DRAW_TIME_OPTIONS, ROUND_OPTIONS, TEAMS, type Mode, type Settings, type Speed } from '../shared/protocol.ts';
+import {
+  DRAW_TIME_OPTIONS,
+  LANG_NAMES,
+  LANGS,
+  ROUND_OPTIONS,
+  TEAMS,
+  type Mode,
+  type Settings,
+  type Speed,
+} from '../shared/protocol.ts';
 import { Chat } from './Chat.tsx';
 import { GAME_EMOJI } from '../site/routes.ts';
 import { AdSlot, Avatar, DevAdsSwitch, PlayerList, useCopyLink } from './common.tsx';
@@ -87,8 +96,11 @@ function SettingsForm({ s, host }: { s: Settings; host: boolean }) {
         )}
         <Field label={t('wordLang')}>
           <select value={s.wordLang} onChange={(e) => set({ wordLang: e.currentTarget.value as Settings['wordLang'] })}>
-            <option value="en">English</option>
-            <option value="ru">Русский</option>
+            {LANGS.map((code) => (
+              <option key={code} value={code}>
+                {LANG_NAMES[code]}
+              </option>
+            ))}
           </select>
         </Field>
         {s.mode === 'guess' && !s.kids && (

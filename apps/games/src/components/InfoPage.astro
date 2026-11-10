@@ -1,9 +1,9 @@
 ---
 import Page from '../layouts/Page.astro';
-import type { Lang } from '../shared/protocol.ts';
+import type { SiteLang } from '../shared/protocol.ts';
 import { INFO, type InfoKey } from '../site/info.ts';
 
-type Props = { lang: Lang; page: InfoKey };
+type Props = { lang: SiteLang; page: InfoKey };
 const { lang, page } = Astro.props;
 const info = INFO[page][lang];
 ---
