@@ -324,3 +324,32 @@ score, since the browser keeps a secret token.
   the docs.
 - **Docs** `apps/games/docs/features.md`, `apps/games/docs/user-flows.md`,
   `CHANGELOG.md`.
+
+### 2026-11-10 A party look for all three games
+
+- **Why** the owner wants the games to look as if a top designer drew them,
+  catchy enough to take the breath away, in all three games.
+- **How** a "party night" look over the same markup:
+  - **Scene** a deep night background with slow colored glows in dark mode,
+    a candy pastel one in light mode. Cards float as frosted glass with a
+    thin gradient rim.
+  - **Type** Fredoka, a round display face, for headings, buttons and the
+    word, from `@fontsource-variable/fredoka` in the bundle, so the apps
+    work offline. The body keeps the system face for speed.
+  - **Colour per game** guess the drawing glows pink to orange, drawing
+    telephone teal to blue, clue duel violet to red. The home cards, the
+    lobby game buttons and the play bar take the game's colors.
+  - **Buttons** chunky with a pressed edge that sinks on tap, a shine that
+    sweeps the Play button, and a soft glow on focus.
+  - **Motion** the game pictures bob, cards rise on hover, the right guess
+    pops. Everything stops under reduced motion.
+- **Library** `@fontsource-variable/fredoka`, since the `stack` skill names
+  no font package. It is free under the OFL.
+- **Changes**
+  - `apps/games/src/styles/look.css` new, loaded after `global.css`.
+  - `apps/games/src/layouts/Page.astro`, `src/pages/room.astro` load it.
+  - `apps/games/src/game/` a `data-game` mark on the room for the colors.
+  - `apps/games/package.json` the font.
+- **Steps** this entry, then the look, checked on the home page, the join
+  screen, the lobby and each game at 390 px and on desktop, then the docs.
+- **Docs** `apps/games/docs/features.md`, `CHANGELOG.md`.
