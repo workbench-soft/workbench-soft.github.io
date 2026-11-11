@@ -871,6 +871,10 @@ const fr: Catalog = {
               'Lancer la release d’une app sur la CI, construire des APK Android depuis le dernier main et les installer sur un téléphone branché. Install Dev ouvre aussi ses réglages développeur. Un nettoyage supprime, après confirmation, les vieux artefacts Actions et releases APK.',
             ],
             ['Se met à jour seul', 'Le PC installe chaque version quelques minutes après la fusion.'],
+            [
+              'Sites',
+              "Deploy site lance le workflow de déploiement de chaque dépôt de l'organisation qui a un site, sur main. La page trouve le workflow seule.",
+            ],
           ],
         },
       ],

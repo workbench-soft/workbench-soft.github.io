@@ -831,6 +831,10 @@ const es: Catalog = {
               'Lanza el release de una app en CI, construye APK de Android desde el último main e instálalos en un teléfono conectado. Install Dev además desbloquea sus ajustes de desarrollador. Una limpieza borra, tras confirmar, artefactos viejos de Actions y releases de APK.',
             ],
             ['Se actualiza solo', 'El PC instala cada versión minutos después del merge.'],
+            [
+              'Sitios',
+              'Deploy site inicia el workflow de despliegue de cada repo de la organización con sitio, en main. La página encuentra el workflow sola.',
+            ],
           ],
         },
       ],

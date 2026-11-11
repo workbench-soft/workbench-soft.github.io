@@ -849,6 +849,10 @@ const de: Catalog = {
               'Ein App-Release auf CI starten, Android-APKs aus dem neuesten main bauen und auf ein verbundenes Telefon installieren. Install Dev schaltet dazu die Entwicklereinstellungen frei. Eine Bereinigung löscht nach Bestätigung alte Actions-Artefakte und APK-Releases.',
             ],
             ['Aktualisiert sich selbst', 'Der PC installiert jedes Release wenige Minuten nach dem Merge.'],
+            [
+              'Websites',
+              'Deploy site startet den Deploy-Workflow jedes Repos der Organisation mit Website, auf main. Die Seite findet den Workflow selbst.',
+            ],
           ],
         },
       ],

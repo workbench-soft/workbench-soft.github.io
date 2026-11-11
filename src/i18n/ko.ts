@@ -648,6 +648,10 @@ const ko: Catalog = {
               'CI에서 앱 릴리스를 시작하고, 최신 main으로 Android APK를 빌드해 연결된 휴대폰에 설치합니다. Install Dev는 개발자 설정도 엽니다. 확인 후 정리 기능이 오래된 Actions 아티팩트와 APK 릴리스를 지웁니다.',
             ],
             ['스스로 업데이트', '병합 후 몇 분 안에 PC가 각 릴리스를 설치합니다.'],
+            [
+              '사이트',
+              'Deploy site는 사이트가 있는 조직의 각 저장소 배포 workflow를 main에서 시작합니다. 페이지가 workflow를 스스로 찾습니다.',
+            ],
           ],
         },
       ],

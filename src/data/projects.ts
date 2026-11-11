@@ -1315,6 +1315,10 @@ export const projects: Project[] = [
             text: 'Start an app release on CI, build Android APKs from the latest main and install them on a connected phone. Install Dev also unlocks its developer settings. A cleanup deletes old Actions artifacts and APK releases after a confirm.',
           },
           { name: 'Updates by themselves', text: 'The PC installs each release within minutes of the merge.' },
+          {
+            name: 'Sites',
+            text: 'Deploy site starts the deploy workflow of each org repo with a site, on main. The page finds the workflow by itself.',
+          },
         ],
       },
     ],

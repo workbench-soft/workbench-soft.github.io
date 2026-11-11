@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **local-ci** the project page lists Sites, the Deploy site button for each org repo with a site.
+
 - **Farnear** the project page says the board draws a line, an arrow, a box or a circle with a drag.
 
 - **Games** the drawing board gets Line, Rectangle and Circle. Drag from corner to corner, and the fill paints inside a closed shape. The project page lists them.

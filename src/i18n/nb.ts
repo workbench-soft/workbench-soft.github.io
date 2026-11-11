@@ -769,6 +769,10 @@ const nb: Catalog = {
               'Start en app-release på CI, bygg Android-APK-er fra nyeste main og installer dem på en tilkoblet telefon. Install Dev låser også opp utviklerinnstillingene. En opprydding sletter gamle Actions-artefakter og APK-releaser etter en bekreftelse.',
             ],
             ['Oppdaterer seg selv', 'PC-en installerer hver utgivelse noen minutter etter sammenslåingen.'],
+            [
+              'Nettsteder',
+              'Deploy site starter deploy-workflowen til hvert repo i organisasjonen med et nettsted, på main. Siden finner workflowen selv.',
+            ],
           ],
         },
       ],

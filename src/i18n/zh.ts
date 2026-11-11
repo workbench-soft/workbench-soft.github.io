@@ -541,6 +541,7 @@ const zh: Catalog = {
               '在 CI 上发起应用发布，从最新 main 构建 Android APK，并安装到连接的手机上。Install Dev 还会解锁开发者设置。确认后，清理功能会删除旧的 Actions 产物和 APK 发布。',
             ],
             ['自动更新', '合并后几分钟内，电脑就装上每个新版本。'],
+            ['网站', 'Deploy site 在 main 上启动组织内每个带网站仓库的部署 workflow。页面会自己找到这个 workflow。'],
           ],
         },
       ],
