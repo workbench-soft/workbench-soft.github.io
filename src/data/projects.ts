@@ -654,7 +654,7 @@ export const projects: Project[] = [
           { name: 'Lessons (planned)', text: 'Lesson rooms are planned, with slides, drawing and a timer.' },
           {
             name: 'Contacts and ringing',
-            text: 'A tap on a person rings their phone, with Answer and Decline. No sign up. Messages are planned.',
+            text: 'A tap on a person rings their phone, with Answer and Decline. No sign up. A text message reaches them as a notification.',
           },
           {
             name: 'Ads and remove ads',

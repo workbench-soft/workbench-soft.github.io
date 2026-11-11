@@ -1326,7 +1326,7 @@ const fr: Catalog = {
             ['Cours (prévus)', 'Les salles de cours avec diapos, dessin et minuteur sont prévus.'],
             [
               'Contacts et sonnerie',
-              'Un appui sur une personne fait sonner son téléphone, avec Répondre et Refuser. Sans inscription. Les messages sont prévus.',
+              'Un appui sur une personne fait sonner son téléphone, avec Répondre et Refuser. Sans inscription. Un message texte arrive en notification.',
             ],
             [
               'Pub et retrait',

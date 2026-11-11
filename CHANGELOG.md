@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **Farnear** the project page says text messages are built.
+
 - **Farnear** the project page says "Contacts and ringing" is built: a tap on a person rings their phone.
 
 - **Farnear** the project page lists "Return to a call" and the planned "Contacts and ringing".

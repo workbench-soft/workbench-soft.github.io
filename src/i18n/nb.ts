@@ -1173,7 +1173,7 @@ const nb: Catalog = {
             ['Undervisning (planlagt)', 'Undervisningsrom med lysbilder, tegning og tidtaker er planlagt.'],
             [
               'Kontakter og ringing',
-              'Et trykk på en person ringer telefonen deres, med Svar og Avvis. Uten registrering. Meldinger er planlagt.',
+              'Et trykk på en person ringer telefonen deres, med Svar og Avvis. Uten registrering. En tekstmelding kommer som et varsel.',
             ],
             [
               'Reklame og fjerning',
