@@ -40,7 +40,7 @@ flowchart LR
 
 1. The host picks "Guess the drawing" and presses Play. "For little ones" is on unless the host clears it.
 2. The artist sees 3 words, each with a picture and a speaker button, and picks one within 15 seconds, or 30 in kids mode.
-3. The artist draws with the pen, the eraser and the fill. In kids mode the page reads the word aloud and the guessers tap one of 4 pictures. A wrong picture greys out. The chat takes typed guesses in both modes.
+3. The artist draws with the pen, the eraser, the fill and the line, rectangle and circle shapes. A shape follows the drag and lands when the finger lifts. In kids mode the page reads the word aloud and the guessers tap one of 4 pictures. A wrong picture greys out. The chat takes typed guesses in both modes.
 4. A right guess plays a chime and confetti for the guesser.
 5. A right guess earns points and hides the word from the chat. A near guess shows "close" to its writer.
 6. The turn ends when everyone guessed or the time ran out. The word and the points, or stars in kids mode, show for 6 seconds.

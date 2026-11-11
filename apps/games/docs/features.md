@@ -49,7 +49,7 @@ Spec: [party-games](../../../specs/party-games.md).
 
 ## Drawing tools
 
-- **For the person** pen, eraser, fill, 20 colors and 4 sizes, or 12 big colors and 3 sizes in kids mode, undo with Ctrl+Z, clear on a second tap.
+- **For the person** pen, eraser, fill, line, rectangle and circle, 20 colors and 4 sizes, or 12 big colors and 3 sizes in kids mode, undo with Ctrl+Z, clear on a second tap.
 - **Where** under the canvas when it is your turn to draw.
 - **Limits** a drawing holds up to 40,000 points.
 

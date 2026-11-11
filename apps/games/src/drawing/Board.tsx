@@ -2,9 +2,11 @@ import { useEffect, useRef, useState } from 'preact/hooks';
 import type { Signal } from '@preact/signals';
 import { COLORS, Drawing, HEIGHT, SIZES, WIDTH, type Action, type Op } from '../shared/canvas.ts';
 import { t } from '../game/i18n.ts';
-import { Painter } from './painter.ts';
+import { Painter, RES } from './painter.ts';
+import { SHAPES, shapePoints, type Shape } from './shapes.ts';
 
-type Tool = 'pen' | 'eraser' | 'fill';
+type Tool = 'pen' | 'eraser' | 'fill' | Shape;
+const isShape = (tool: Tool): tool is Shape => (SHAPES as readonly string[]).includes(tool);
 
 /** Ops leave the artist's browser this often. Fewer messages keep the free plan going longer. */
 const SEND_EVERY = 80;
@@ -44,6 +46,8 @@ let strokeIds = Math.floor(Math.random() * 1e6);
 
 export function Board({ drawing, version, editable = false, onOps, simple = false }: Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const previewRef = useRef<HTMLCanvasElement>(null);
+  const drag = useRef<{ x0: number; y0: number; x1: number; y1: number } | null>(null);
   const painter = useRef<Painter | null>(null);
   const [tool, setTool] = useState<Tool>('pen');
   const [color, setColor] = useState('#000000');
@@ -112,6 +116,10 @@ export function Board({ drawing, version, editable = false, onOps, simple = fals
     const [x, y] = toGrid(e);
     if (tool === 'fill') return emit({ k: 'f', x, y, c: color });
     canvasRef.current!.setPointerCapture(e.pointerId);
+    if (isShape(tool)) {
+      drag.current = { x0: x, y0: y, x1: x, y1: y };
+      return preview();
+    }
     const id = ++strokeIds;
     stroke.current = { id, x, y };
     const eraser = tool === 'eraser';
@@ -125,7 +133,31 @@ export function Board({ drawing, version, editable = false, onOps, simple = fals
     });
   };
 
+  /** Paints the shape under the finger on the top canvas. It joins the drawing on release. */
+  const preview = () => {
+    const canvas = previewRef.current;
+    const ctx = canvas?.getContext('2d');
+    if (!canvas || !ctx) return;
+    canvas.width = WIDTH * RES;
+    canvas.height = HEIGHT * RES;
+    const d = drag.current;
+    if (!d || !isShape(tool)) return;
+    const p = shapePoints(tool, d.x0, d.y0, d.x1, d.y1);
+    ctx.strokeStyle = color;
+    ctx.lineWidth = size * RES;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    ctx.beginPath();
+    for (let i = 0; i < p.length; i += 2) ctx.lineTo(p[i] * RES, p[i + 1] * RES);
+    ctx.stroke();
+  };
+
   const move = (e: PointerEvent) => {
+    const d = drag.current;
+    if (d) {
+      [d.x1, d.y1] = toGrid(e);
+      return preview();
+    }
     const s = stroke.current;
     if (!s) return;
     for (const ev of e.getCoalescedEvents?.() ?? [e]) {
@@ -139,6 +171,17 @@ export function Board({ drawing, version, editable = false, onOps, simple = fals
 
   const up = () => {
     stroke.current = null;
+    const d = drag.current;
+    drag.current = null;
+    preview();
+    if (d && isShape(tool))
+      emit({ k: 's', id: ++strokeIds, c: color, w: size, p: shapePoints(tool, d.x0, d.y0, d.x1, d.y1) });
+  };
+
+  const cancel = () => {
+    stroke.current = null;
+    drag.current = null;
+    preview();
   };
 
   useEffect(() => {
@@ -155,18 +198,21 @@ export function Board({ drawing, version, editable = false, onOps, simple = fals
 
   return (
     <div class={`board${editable ? ' board-edit' : ''}${simple ? ' board-simple' : ''}`}>
-      <canvas
-        ref={canvasRef}
-        class={`board-canvas tool-${tool}`}
-        onPointerDown={down}
-        onPointerMove={move}
-        onPointerUp={up}
-        onPointerCancel={up}
-      />
+      <div class="board-surface">
+        <canvas
+          ref={canvasRef}
+          class={`board-canvas tool-${tool}`}
+          onPointerDown={down}
+          onPointerMove={move}
+          onPointerUp={up}
+          onPointerCancel={cancel}
+        />
+        {editable && <canvas ref={previewRef} class="board-preview" aria-hidden="true" />}
+      </div>
       {editable && (
         <div class="tools" role="toolbar">
           <div class="tool-group">
-            {(['pen', 'eraser', 'fill'] as Tool[]).map((name) => (
+            {(['pen', 'eraser', 'fill', ...SHAPES] as Tool[]).map((name) => (
               <button
                 type="button"
                 class={`icon-btn${tool === name ? ' on' : ''}`}
@@ -252,6 +298,9 @@ const PATHS: Record<string, string> = {
   pen: 'M4 20l4-1 11-11-3-3L5 16l-1 4zM14 6l3 3',
   eraser: 'M8 20h12M5 15l8-8 6 6-6 6H9l-4-4z',
   fill: 'M5 12l7-7 7 7-7 7-7-7zM19 15c0 2 1 3 1 4a1 1 0 0 1-2 0c0-1 1-2 1-4z',
+  line: 'M5 19L19 5',
+  rect: 'M4 6h16v12H4z',
+  circle: 'M12 4a8 8 0 1 0 0 16a8 8 0 1 0 0-16z',
   undo: 'M9 14L4 9l5-5M4 9h10a6 6 0 0 1 0 12h-3',
   clear: 'M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3',
 };

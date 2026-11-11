@@ -382,7 +382,7 @@ score, since the browser keeps a secret token.
 - **Why** the owner asked for shape tools in the drawing games. A straight
   line or a round sun is hard to draw by hand, most of all for a child.
 - **How** the artist picks Line, Rectangle or Circle next to the pen and drags
-  from one corner to the other. A thin preview follows the finger. On release
+  from one corner to the other. A preview follows the finger. On release
   the shape lands as one ordinary stroke in the pen colour and size, so fill,
   undo and the server work on it as on any line. A circle or a rectangle is
   closed, so the fill paints its inside. The others see the shape when the

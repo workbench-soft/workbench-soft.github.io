@@ -838,6 +838,20 @@ summary {
   cursor: cell;
 }
 
+.board-surface {
+  position: relative;
+}
+
+/* The shape under the finger, painted over the drawing until release. */
+.board-preview {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: 1px solid transparent;
+  pointer-events: none;
+}
+
 .tools {
   display: flex;
   flex-wrap: wrap;

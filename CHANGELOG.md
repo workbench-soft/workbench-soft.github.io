@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **Games** the drawing board gets Line, Rectangle and Circle. Drag from corner to corner, and the fill paints inside a closed shape.
+
 - **Farnear** the project page says text messages are built.
 
 - **Farnear** the project page says "Contacts and ringing" is built: a tap on a person rings their phone.
