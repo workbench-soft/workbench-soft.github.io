@@ -1300,6 +1300,10 @@ const fr: Catalog = {
             ],
             ['Reprendre un appel coupé', 'Un appel coupé réessaie 3 fois, puis propose Réessayer.'],
             [
+              "Revenir à l'appel",
+              "Vous avez changé d'application ? Le lien reconnecte sans bouton, et l'accueil affiche « Revenir à l'appel ».",
+            ],
+            [
               'Relais pour réseaux bloqués',
               'Cloudflare TURN prend le relais quand le chemin direct entre les réseaux échoue.',
             ],
@@ -1320,6 +1324,10 @@ const fr: Catalog = {
               'Une personne charge une image ou une vidéo de 100 Mo maximum. Les autres la voient et dessinent dessus.',
             ],
             ['Cours (prévus)', 'Les salles de cours avec diapos, dessin et minuteur sont prévus.'],
+            [
+              'Contacts et sonnerie (prévu)',
+              'Une liste de personnes, un appui qui fait sonner leur téléphone et des messages sont prévus. Sans inscription.',
+            ],
             [
               'Pub et retrait',
               'Des pubs autour de l’appel, aucune pendant. Un achat de A$2.99 les retire des salons de l’acheteur.',

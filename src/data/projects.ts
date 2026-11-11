@@ -631,6 +631,10 @@ export const projects: Project[] = [
           },
           { name: 'Recover a dropped call', text: 'A dropped call retries 3 times, then offers Try again.' },
           {
+            name: 'Return to a call',
+            text: 'Switched apps? The link joins again with no button, and home shows Return to the call.',
+          },
+          {
             name: 'Relay for blocked networks',
             text: 'Cloudflare TURN steps in when a direct path between the networks fails.',
           },
@@ -648,6 +652,10 @@ export const projects: Project[] = [
             text: 'One person loads an image or video up to 100 MB. Everyone sees it and draws over it.',
           },
           { name: 'Lessons (planned)', text: 'Lesson rooms are planned, with slides, drawing and a timer.' },
+          {
+            name: 'Contacts and ringing (planned)',
+            text: 'A list of people, a tap that rings their phone, and messages are planned. No sign up.',
+          },
           {
             name: 'Ads and remove ads',
             text: "Ads around a call, none during one. One A$2.99 purchase removes them for the buyer's rooms.",

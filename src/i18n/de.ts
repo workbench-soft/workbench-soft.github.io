@@ -1266,6 +1266,10 @@ const de: Catalog = {
               'Ein abgebrochener Anruf versucht es 3 Mal neu und bietet dann Erneut versuchen an.',
             ],
             [
+              'Zurück zum Anruf',
+              'App gewechselt? Der Link verbindet erneut ohne Taste, und die Startseite zeigt „Zurück zum Anruf“.',
+            ],
+            [
               'Relais für gesperrte Netze',
               'Cloudflare TURN springt ein, wenn der direkte Weg zwischen den Netzen scheitert.',
             ],
@@ -1283,6 +1287,10 @@ const de: Catalog = {
               'Eine Person lädt ein Bild oder Video bis 100 MB hoch. Alle sehen es und zeichnen darauf.',
             ],
             ['Unterricht (geplant)', 'Unterrichtsräume mit Folien, Zeichnen und Timer sind geplant.'],
+            [
+              'Kontakte und Klingeln (geplant)',
+              'Eine Liste von Personen, ein Tippen lässt ihr Telefon klingeln, dazu Nachrichten. Geplant, ohne Anmeldung.',
+            ],
             [
               'Werbung und entfernen',
               'Werbung rund um den Anruf, keine während des Anrufs. Ein Kauf für A$2.99 entfernt sie in den Räumen des Käufers.',

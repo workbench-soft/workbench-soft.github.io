@@ -1244,6 +1244,10 @@ const es: Catalog = {
               'Un enlace es la sala. Quien la crea entra al momento. Las visitas eligen micrófono, cámara y altavoz.',
             ],
             ['Recuperar una llamada caída', 'Una llamada caída reintenta 3 veces y luego ofrece Reintentar.'],
+            [
+              'Volver a la llamada',
+              '¿Cambiaste de aplicación? El enlace vuelve a conectar sin botón, y el inicio muestra «Volver a la llamada».',
+            ],
             ['Relé para redes bloqueadas', 'Cloudflare TURN entra cuando falla la ruta directa entre las redes.'],
             [
               'Compartir el enlace de la llamada',
@@ -1259,6 +1263,10 @@ const es: Catalog = {
               'Una persona carga una imagen o un vídeo de hasta 100 MB. Los demás lo ven y dibujan encima.',
             ],
             ['Clases (previstas)', 'Las salas de clase con diapositivas, dibujo y temporizador están previstas.'],
+            [
+              'Contactos y timbre (previsto)',
+              'Una lista de personas, un toque que hace sonar su teléfono y mensajes están previstos. Sin registro.',
+            ],
             [
               'Anuncios y quitarlos',
               'Anuncios alrededor de la llamada, ninguno durante ella. Una compra de A$2.99 los quita en las salas del comprador.',

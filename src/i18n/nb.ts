@@ -1152,6 +1152,10 @@ const nb: Catalog = {
               'En lenke er rommet. Oppretteren kobles til med en gang. Gjestene velger mikrofon, kamera og høyttaler.',
             ],
             ['Gjenopprett en brutt samtale', 'En brutt samtale prøver 3 ganger på nytt, og tilbyr så Prøv igjen.'],
+            [
+              'Tilbake til samtalen',
+              'Byttet app? Lenken kobler til igjen uten knapp, og forsiden viser «Tilbake til samtalen».',
+            ],
             ['Relé for blokkerte nett', 'Cloudflare TURN tar over når den direkte veien mellom nettene feiler.'],
             [
               'Del samtalelenken',
@@ -1167,6 +1171,10 @@ const nb: Catalog = {
               'Én person laster opp et bilde eller en video på opptil 100 MB. Alle ser det og tegner oppå.',
             ],
             ['Undervisning (planlagt)', 'Undervisningsrom med lysbilder, tegning og tidtaker er planlagt.'],
+            [
+              'Kontakter og ringing (planlagt)',
+              'En liste over personer, et trykk som ringer telefonen deres, og meldinger er planlagt. Uten registrering.',
+            ],
             [
               'Reklame og fjerning',
               'Reklame rundt samtalen, ingen under den. Ett kjøp for A$2.99 fjerner den i kjøperens rom.',
