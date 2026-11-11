@@ -376,3 +376,26 @@ score, since the browser keeps a secret token.
   - A test checks each language has its words, phrases and kids words.
 - **Steps** this entry, then the code, then `mise run check`, then the docs.
 - **Docs** `apps/games/docs/features.md`, `CHANGELOG.md`.
+
+### 2026-11-11 Shape tools: line, rectangle, circle
+
+- **Why** the owner asked for shape tools in the drawing games. A straight
+  line or a round sun is hard to draw by hand, most of all for a child.
+- **How** the artist picks Line, Rectangle or Circle next to the pen and drags
+  from one corner to the other. A thin preview follows the finger. On release
+  the shape lands as one ordinary stroke in the pen colour and size, so fill,
+  undo and the server work on it as on any line. A circle or a rectangle is
+  closed, so the fill paints its inside. The others see the shape when the
+  finger lifts.
+- **Changes**
+  - `apps/games/src/drawing/shapes.ts` turns a drag into the grid points of
+    each shape, with a test.
+  - `apps/games/src/drawing/Board.tsx` the 3 shape buttons, the drag and a
+    preview canvas over the board.
+  - `apps/games/src/styles/global.css` the preview canvas sits over the board.
+  - `apps/games/src/game/i18n.ts`, `locales/` the 3 button names in 9
+    languages.
+- **Limits** no protocol change, so an old app sees each shape as a stroke.
+- **Steps** this entry, then the code, then `mise run check`, then the docs.
+- **Docs** `apps/games/docs/features.md`, `apps/games/docs/user-flows.md`,
+  `CHANGELOG.md`.
