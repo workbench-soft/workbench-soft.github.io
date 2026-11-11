@@ -1264,8 +1264,8 @@ const es: Catalog = {
             ],
             ['Clases (previstas)', 'Las salas de clase con diapositivas, dibujo y temporizador están previstas.'],
             [
-              'Contactos y timbre (previsto)',
-              'Una lista de personas, un toque que hace sonar su teléfono y mensajes están previstos. Sin registro.',
+              'Contactos y timbre',
+              'Un toque en una persona hace sonar su teléfono, con Responder y Rechazar. Sin registro. Los mensajes están previstos.',
             ],
             [
               'Anuncios y quitarlos',

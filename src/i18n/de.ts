@@ -1288,8 +1288,8 @@ const de: Catalog = {
             ],
             ['Unterricht (geplant)', 'Unterrichtsräume mit Folien, Zeichnen und Timer sind geplant.'],
             [
-              'Kontakte und Klingeln (geplant)',
-              'Eine Liste von Personen, ein Tippen lässt ihr Telefon klingeln, dazu Nachrichten. Geplant, ohne Anmeldung.',
+              'Kontakte und Klingeln',
+              'Ein Tippen auf eine Person lässt ihr Telefon klingeln, mit Annehmen und Ablehnen. Ohne Anmeldung. Nachrichten sind geplant.',
             ],
             [
               'Werbung und entfernen',

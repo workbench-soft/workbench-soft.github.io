@@ -653,8 +653,8 @@ export const projects: Project[] = [
           },
           { name: 'Lessons (planned)', text: 'Lesson rooms are planned, with slides, drawing and a timer.' },
           {
-            name: 'Contacts and ringing (planned)',
-            text: 'A list of people, a tap that rings their phone, and messages are planned. No sign up.',
+            name: 'Contacts and ringing',
+            text: 'A tap on a person rings their phone, with Answer and Decline. No sign up. Messages are planned.',
           },
           {
             name: 'Ads and remove ads',

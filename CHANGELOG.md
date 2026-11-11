@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **Farnear** the project page says "Contacts and ringing" is built: a tap on a person rings their phone.
+
 - **Farnear** the project page lists "Return to a call" and the planned "Contacts and ringing".
 
 - **Lint before the push** a pre-push hook runs `mise run lint`, so a lint or format error stays on the PC instead of failing Checks on `main`.
