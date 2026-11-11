@@ -645,7 +645,7 @@ export const projects: Project[] = [
           { name: 'Saved rooms', text: 'A room link saved under a name, such as Mum. The same link works every time.' },
           {
             name: 'Board',
-            text: 'Everyone draws with a pen, highlighter or fading laser. They can erase and undo their own work.',
+            text: 'Everyone draws with a pen, highlighter or fading laser. A drag draws a line, an arrow, a box or a circle. They can erase and undo their own work.',
           },
           {
             name: 'Share an image or video',

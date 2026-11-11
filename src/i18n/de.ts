@@ -1280,7 +1280,7 @@ const de: Catalog = {
             ['Gespeicherte Räume', 'Ein Raumlink unter einem Namen wie Mama. Derselbe Link geht jedes Mal.'],
             [
               'Tafel',
-              'Alle zeichnen mit Stift, Textmarker oder verblassendem Laser. Eigene Linien lassen sich löschen und rückgängig machen.',
+              'Alle zeichnen mit Stift, Textmarker oder verblassendem Laser. Ein Zug zeichnet Linie, Pfeil, Rechteck oder Kreis. Eigene Linien lassen sich löschen und rückgängig machen.',
             ],
             [
               'Bild oder Video teilen',

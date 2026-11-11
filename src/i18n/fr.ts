@@ -1317,7 +1317,7 @@ const fr: Catalog = {
             ],
             [
               'Tableau',
-              'Chacun dessine au stylo, au surligneur ou au laser qui s’efface. On peut effacer et annuler ses traits.',
+              'Chacun dessine au stylo, au surligneur ou au laser qui s’efface. Un glisser trace une ligne, une flèche, un rectangle ou un cercle. On peut effacer et annuler ses traits.',
             ],
             [
               'Partager une image ou une vidéo',

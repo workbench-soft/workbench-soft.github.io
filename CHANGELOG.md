@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **Farnear** the project page says the board draws a line, an arrow, a box or a circle with a drag.
+
 - **Games** the drawing board gets Line, Rectangle and Circle. Drag from corner to corner, and the fill paints inside a closed shape. The project page lists them.
 
 - **Farnear** the project page says text messages are built.

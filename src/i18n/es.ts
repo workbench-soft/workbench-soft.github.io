@@ -1256,7 +1256,7 @@ const es: Catalog = {
             ['Salas guardadas', 'Un enlace guardado con un nombre, como Mamá. El mismo enlace sirve siempre.'],
             [
               'Pizarra',
-              'Todos dibujan con bolígrafo, rotulador o láser que se desvanece. También pueden borrar y deshacer sus trazos.',
+              'Todos dibujan con bolígrafo, rotulador o láser que se desvanece. Al arrastrar se dibuja una línea, una flecha, un rectángulo o un círculo. También pueden borrar y deshacer sus trazos.',
             ],
             [
               'Compartir una imagen o un vídeo',
