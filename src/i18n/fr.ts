@@ -804,6 +804,12 @@ const fr: Catalog = {
               'Remise à zéro de l’historique',
               'Réduit l’historique à un nouveau commit initial, et garde un bundle en sauvegarde.',
             ],
+            ['Réécrire un dépôt', 'Nouveaux noms, dossiers et docs, pour le même comportement.'],
+            [
+              'Aide sur un site',
+              "Ouvre chaque écran dans votre Chrome, remplit les champs connus et s'arrête à la connexion ou au paiement.",
+            ],
+            ['Exécutions bloquées', "Trouve l'outil qui tient un port ou un fichier, l'arrête et relance l'étape."],
             ['Référencement', 'Search Console, Bing, un plan du site et des statistiques pour un site.'],
             [
               'Publicités',
@@ -838,6 +844,10 @@ const fr: Catalog = {
               "Une courte phrase dite à voix haute indique que l'agent a fini, attend ou demande.",
             ],
             ['Installation', 'Un seul clone relié à chaque agent de la machine. Une modification les atteint tous.'],
+            [
+              "Hooks de l'agent",
+              "L'heure dans chaque requête, des blocages du navigateur intégré et de l'archivage, les serveurs MCP copiés dans Codex et Kimi.",
+            ],
             ['Versions', 'Chaque push sur main qui passe les contrôles devient une version datée avec ses notes.'],
           ],
         },
@@ -1139,7 +1149,6 @@ const fr: Catalog = {
               'CI et releases pour chaque dépôt',
               'Vérifie que chaque dépôt a Checks et Release, et ajoute ceux qui manquent. Une release se construit à côté de Checks et sort une fois qu’ils passent.',
             ],
-            ['Réécrire un dépôt', 'Nouveaux noms, dossiers et docs, pour le même comportement.'],
             ['Renouveler les secrets', 'Renouvelle les secrets de CI et les clés, app par app.'],
             ['Règles de travail', 'Une spec d’abord, une fusion tout de suite, un test groupé ensuite.'],
             [

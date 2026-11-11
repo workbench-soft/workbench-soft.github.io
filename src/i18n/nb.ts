@@ -708,6 +708,15 @@ const nb: Catalog = {
               'Nullstill historikken',
               'Slår historikken sammen til én ny første commit, med en bunt tatt vare på som sikkerhetskopi.',
             ],
+            ['Skriv om et repo', 'Nye navn, mapper og dokumenter, med samme oppførsel.'],
+            [
+              'Hjelp på et nettsted',
+              'Åpner hver skjerm i Chrome, fyller inn feltene den kjenner og stopper ved innlogging eller betaling.',
+            ],
+            [
+              'Låste kjøringer',
+              'Finner verktøyet som holder en port eller en fil, avslutter det og kjører steget på nytt.',
+            ],
             ['Søkeoppsett', 'Search Console, Bing, et nettstedskart og statistikk for et nettsted.'],
             ['Reklame', 'AdSense og AdMob, med testannonser i debug-bygg og samtykkemeldingen.'],
             ['Google Play-release', 'En signert bunt med ny versjonskode, rullet ut til intern testing.'],
@@ -736,6 +745,10 @@ const nb: Catalog = {
             ],
             ['Stemme ved slutten av en tur', 'En kort setning sier at agenten er ferdig, venter eller spør.'],
             ['Installasjon', 'Én klon lenket inn i hver agent på maskinen. En endring når alle.'],
+            [
+              'Agent-hooks',
+              'Klokkeslett i hver melding, sperrer for den innebygde nettleseren og arkivering, og MCP-serverne kopiert til Codex og Kimi.',
+            ],
             ['Utgivelser', 'Hver push til main som består sjekkene, blir en datert utgivelse med notater.'],
           ],
         },
@@ -1007,7 +1020,6 @@ const nb: Catalog = {
               'CI og releaser for hvert repo',
               'Sjekker at hvert repo har Checks og Release, og legger til det som mangler. En release bygges ved siden av Checks og publiseres når de består.',
             ],
-            ['Skriv om et repo', 'Nye navn, mapper og dokumenter, med samme oppførsel.'],
             ['Forny hemmeligheter', 'Fornyer CI-hemmeligheter og nøkler, app for app.'],
             ['Arbeidsregler', 'Først en spesifikasjon, flett med en gang, test samlet senere.'],
             [

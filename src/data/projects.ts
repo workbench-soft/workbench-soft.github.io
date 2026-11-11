@@ -1245,6 +1245,12 @@ export const projects: Project[] = [
             name: 'History reset',
             text: 'Squashes the history into one fresh initial commit, with a bundle kept as a backup.',
           },
+          { name: 'Rewrite a repo', text: 'New names, folders and docs, with the same behaviour.' },
+          {
+            name: 'Help on a site',
+            text: 'Opens each screen in your Chrome, fills the known fields and stops at the login or the payment.',
+          },
+          { name: 'Hung runs', text: 'Finds the tool that holds a port or a file, ends it and reruns the step.' },
           { name: 'Search setup', text: 'Search Console, Bing, a sitemap and analytics for a site.' },
           { name: 'Ads', text: 'AdSense and AdMob, with test ads in debug builds and the consent message.' },
           {
@@ -1273,6 +1279,10 @@ export const projects: Project[] = [
           },
           { name: 'Voice at the end of a turn', text: 'A short spoken line says the agent is done, waits or asks.' },
           { name: 'Install', text: 'One clone linked into each agent on the machine. An edit reaches all of them.' },
+          {
+            name: 'Agent hooks',
+            text: 'The time on each prompt, guards on the built-in browser and on archiving, and the MCP servers copied to Codex and Kimi.',
+          },
           { name: 'Releases', text: 'Each push to main that passes the checks gets a dated release with notes.' },
         ],
       },
@@ -1786,7 +1796,6 @@ export const projects: Project[] = [
             name: 'CI and releases for every repo',
             text: 'Checks each repo for Checks and Release, and adds the missing ones. A release builds beside Checks and publishes once they pass.',
           },
-          { name: 'Rewrite a repo', text: 'New names, folders and docs, with the same behaviour.' },
           { name: 'Rotate secrets', text: 'Renews the CI secrets and keys, app by app.' },
           { name: 'Workflow rules', text: 'A spec first, a merge right away, a batch test later.' },
           {

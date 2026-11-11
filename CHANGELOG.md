@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Agent Skills** the project page lists Help on a site, Hung runs, Agent hooks and Rewrite a repo, which moved there from Agent Skills, private.
 - **local-ci** the project page lists Sites, the Deploy site button for each org repo with a site.
 
 - **Farnear** the project page says the board draws a line, an arrow, a box or a circle with a drag.

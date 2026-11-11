@@ -788,6 +788,15 @@ const de: Catalog = {
               'Verlauf zurücksetzen',
               'Fasst den Verlauf zu einem neuen ersten Commit zusammen und behält ein Bundle als Sicherung.',
             ],
+            ['Repo neu schreiben', 'Neue Namen, Ordner und Doku, bei gleichem Verhalten.'],
+            [
+              'Hilfe auf einer Website',
+              'Öffnet jede Seite in Ihrem Chrome, füllt die bekannten Felder aus und hält bei Anmeldung oder Zahlung an.',
+            ],
+            [
+              'Hängende Läufe',
+              'Findet das Werkzeug, das einen Port oder eine Datei sperrt, beendet es und wiederholt den Schritt.',
+            ],
             ['Sucheinrichtung', 'Search Console, Bing, eine Sitemap und Analytics für eine Website.'],
             ['Werbung', 'AdSense und AdMob, mit Testanzeigen in Debug-Builds und der Einwilligungsabfrage.'],
             ['Google-Play-Release', 'Ein signiertes Bundle mit neuem Versionscode, ausgerollt in den internen Test.'],
@@ -816,6 +825,10 @@ const de: Catalog = {
               'Ein kurzer gesprochener Satz sagt, ob der Agent fertig ist, wartet oder fragt.',
             ],
             ['Installation', 'Ein Klon, in jeden Agenten des Rechners verlinkt. Eine Änderung erreicht alle.'],
+            [
+              'Agent-Hooks',
+              'Die Uhrzeit in jeder Eingabe, Sperren für den eingebauten Browser und das Archivieren, die MCP-Server in Codex und Kimi.',
+            ],
             ['Releases', 'Jeder Push auf main, der die Prüfungen besteht, wird ein datiertes Release mit Notizen.'],
           ],
         },
@@ -1105,7 +1118,6 @@ const de: Catalog = {
               'CI und Releases für jedes Repo',
               'Prüft jedes Repo auf Checks und Release und ergänzt die fehlenden. Ein Release baut neben Checks und erscheint, sobald sie bestehen.',
             ],
-            ['Repo neu schreiben', 'Neue Namen, Ordner und Doku, bei gleichem Verhalten.'],
             ['Secrets erneuern', 'Erneuert CI-Secrets und Schlüssel, App für App.'],
             ['Arbeitsregeln', 'Erst eine Spec, sofort mergen, später gesammelt testen.'],
             [

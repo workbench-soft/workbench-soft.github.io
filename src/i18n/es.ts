@@ -761,6 +761,15 @@ const es: Catalog = {
               'Reinicio del historial',
               'Comprime el historial en un commit inicial nuevo y guarda un bundle como copia.',
             ],
+            ['Reescribir un repo', 'Nombres, carpetas y docs nuevos, con el mismo comportamiento.'],
+            [
+              'Ayuda en un sitio',
+              'Abre cada pantalla en su Chrome, rellena los campos conocidos y se detiene en el inicio de sesión o el pago.',
+            ],
+            [
+              'Ejecuciones colgadas',
+              'Encuentra la herramienta que bloquea un puerto o un archivo, la cierra y repite el paso.',
+            ],
             ['Configurar la búsqueda', 'Search Console, Bing, un mapa del sitio y analítica para una web.'],
             [
               'Anuncios',
@@ -798,6 +807,10 @@ const es: Catalog = {
             ],
             ['Voz al final del turno', 'Una frase corta en voz alta dice que el agente terminó, espera o pregunta.'],
             ['Instalación', 'Un clon enlazado a cada agente de la máquina. Un cambio llega a todos.'],
+            [
+              'Hooks del agente',
+              'La hora en cada mensaje, bloqueos del navegador integrado y del archivado, y los servidores MCP copiados a Codex y Kimi.',
+            ],
             ['Versiones', 'Cada push a main que pasa las comprobaciones recibe una versión con fecha y notas.'],
           ],
         },
@@ -1087,7 +1100,6 @@ const es: Catalog = {
               'CI y releases para cada repo',
               'Revisa que cada repo tenga Checks y Release, y añade los que faltan. Un release se construye junto a Checks y se publica cuando pasan.',
             ],
-            ['Reescribir un repo', 'Nombres, carpetas y docs nuevos, con el mismo comportamiento.'],
             ['Renovar secretos', 'Renueva los secretos de CI y las claves, app por app.'],
             ['Reglas de trabajo', 'Primero una spec, fusión enseguida, prueba en lote después.'],
             [
