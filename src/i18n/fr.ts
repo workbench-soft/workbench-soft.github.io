@@ -1379,7 +1379,7 @@ const fr: Catalog = {
           features: [
             [
               'Vue du ciel',
-              'Étoiles, Soleil, Lune, planètes et 88 constellations sur la caméra, ou tournées à la main.',
+              'Étoiles, Soleil, Lune, planètes et 88 constellations sur la caméra, ou tournées à la main. Une boussole montre le nord, le haut et le bas.',
             ],
             [
               'Horloge',

@@ -1312,7 +1312,7 @@ const es: Catalog = {
           features: [
             [
               'Vista del cielo',
-              'Estrellas, Sol, Luna, planetas y 88 constelaciones sobre la cámara, o giradas a mano.',
+              'Estrellas, Sol, Luna, planetas y 88 constelaciones sobre la cámara, o giradas a mano. Una brújula marca el norte, arriba y abajo.',
             ],
             [
               'Reloj',

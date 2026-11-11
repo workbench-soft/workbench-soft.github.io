@@ -1342,7 +1342,7 @@ const de: Catalog = {
           features: [
             [
               'Himmelsansicht',
-              'Sterne, Sonne, Mond, Planeten und 88 Sternbilder über der Kamera oder von Hand gedreht.',
+              'Sterne, Sonne, Mond, Planeten und 88 Sternbilder über der Kamera oder von Hand gedreht. Ein Kompass zeigt Norden, oben und unten.',
             ],
             [
               'Uhr',

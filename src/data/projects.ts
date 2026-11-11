@@ -762,7 +762,7 @@ export const projects: Project[] = [
         features: [
           {
             name: 'Sky view',
-            text: 'Stars, the Sun, the Moon, the planets and 88 constellations over the camera, or turned by hand.',
+            text: 'Stars, the Sun, the Moon, the planets and 88 constellations over the camera, or turned by hand. A compass shows north, up and down.',
           },
           {
             name: 'Clock',

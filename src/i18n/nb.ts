@@ -1217,7 +1217,7 @@ const nb: Catalog = {
           features: [
             [
               'Himmelvisning',
-              'Stjerner, solen, månen, planetene og 88 stjernebilder over kameraet, eller snudd med hånden.',
+              'Stjerner, solen, månen, planetene og 88 stjernebilder over kameraet, eller snudd med hånden. Et kompass viser nord, opp og ned.',
             ],
             [
               'Klokke',
