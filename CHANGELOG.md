@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-- **Games** the drawing board gets Line, Rectangle and Circle. Drag from corner to corner, and the fill paints inside a closed shape.
+- **Games** the drawing board gets Line, Rectangle and Circle. Drag from corner to corner, and the fill paints inside a closed shape. The project page lists them.
 
 - **Farnear** the project page says text messages are built.
 

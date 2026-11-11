@@ -681,7 +681,7 @@ const fr: Catalog = {
             ["Duel d'indices", 'Un jeu de mots en équipes où chaque indice est public et où voler rapporte.'],
             [
               'Outils de dessin',
-              'Crayon, gomme, remplissage, 20 couleurs, 4 tailles et annulation, avec de grandes couleurs pour les petits doigts.',
+              'Crayon, gomme, remplissage, ligne, rectangle, cercle, 20 couleurs, 4 tailles et annulation, avec de grandes couleurs pour les petits doigts.',
             ],
             ['Langues', 'Les pages et les salons sont en anglais et en russe.'],
             ['Publicité', 'Les jeux restent gratuits, avec une bannière sur les pages, le salon et les résultats.'],

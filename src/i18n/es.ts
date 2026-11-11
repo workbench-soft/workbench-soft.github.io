@@ -653,7 +653,7 @@ const es: Catalog = {
             ['Duelo de pistas', 'Un juego de palabras por equipos donde cada pista es pública y robar da puntos.'],
             [
               'Herramientas de dibujo',
-              'Lápiz, goma, relleno, 20 colores, 4 tamaños y deshacer, con colores grandes para dedos pequeños.',
+              'Lápiz, goma, relleno, línea, rectángulo, círculo, 20 colores, 4 tamaños y deshacer, con colores grandes para dedos pequeños.',
             ],
             ['Idiomas', 'Las páginas y las salas funcionan en inglés y en ruso.'],
             ['Anuncios', 'Los juegos siguen gratis, con un banner en las páginas, la sala y los resultados.'],

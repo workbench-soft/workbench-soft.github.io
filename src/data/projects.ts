@@ -1061,7 +1061,7 @@ export const projects: Project[] = [
           { name: 'Clue duel', text: 'A team word game where every clue is public and stealing pays.' },
           {
             name: 'Drawing tools',
-            text: 'Pen, eraser, fill, 20 colours, 4 sizes and undo, with big colours for small fingers.',
+            text: 'Pen, eraser, fill, line, rectangle, circle, 20 colours, 4 sizes and undo, with big colours for small fingers.',
           },
           { name: 'Languages', text: 'The pages and the rooms work in English and Russian.' },
           { name: 'Ads', text: 'The games stay free, with a banner on the content pages, the lobby and the results.' },

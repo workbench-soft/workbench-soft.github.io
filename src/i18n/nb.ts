@@ -600,7 +600,7 @@ const nb: Catalog = {
             ['Hintduell', 'Et ordspill i lag der hvert hint er åpent og det lønner seg å stjele.'],
             [
               'Tegneverktøy',
-              'Penn, viskelær, fyll, 20 farger, 4 størrelser og angre, med store farger for små fingre.',
+              'Penn, viskelær, fyll, linje, rektangel, sirkel, 20 farger, 4 størrelser og angre, med store farger for små fingre.',
             ],
             ['Språk', 'Sidene og rommene fungerer på engelsk og russisk.'],
             ['Reklame', 'Spillene er gratis, med et banner på sidene, i lobbyen og på resultatene.'],

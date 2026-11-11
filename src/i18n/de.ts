@@ -662,7 +662,7 @@ const de: Catalog = {
             ['Hinweis-Duell', 'Ein Wortspiel in Teams, bei dem jeder Hinweis offen liegt und Klauen sich lohnt.'],
             [
               'Zeichenwerkzeuge',
-              'Stift, Radierer, Füllen, 20 Farben, 4 Größen und Rückgängig, mit großen Farben für kleine Finger.',
+              'Stift, Radierer, Füllen, Linie, Rechteck, Kreis, 20 Farben, 4 Größen und Rückgängig, mit großen Farben für kleine Finger.',
             ],
             ['Sprachen', 'Die Seiten und die Räume gibt es auf Englisch und Russisch.'],
             [
