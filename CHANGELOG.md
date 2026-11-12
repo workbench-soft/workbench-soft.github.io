@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **Farnear** describe stalled-media recovery, shared call names and board documents in every language.
+
 - **Memories** the People description includes merging an unknown person from their card in each language.
 
 - **Projects** short videos play next to the screenshots of KeepPad, Lumiere Player, SpotTheCam and Memories. Shuttrix shows its first screenshots, and ServoHop, SpotTheCam and Lumiere Player get one new screenshot each.

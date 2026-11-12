@@ -1344,6 +1344,19 @@ const de: Catalog = {
               'Transkript und Zusammenfassung',
               'Ein Gerät schreibt mit, was jede Person sagt. Der Text bleibt beim gespeicherten Anruf, mit einer Zusammenfassung pro Anruf.',
             ],
+
+            [
+              'Stockende Medien wiederherstellen',
+              'Eingehender Ton und Video werden getrennt geprüft. Bei Stillstand wird die Verbindung ohne Neuladen mit begrenzten Versuchen wiederhergestellt.',
+            ],
+            [
+              'Gemeinsame Anrufnamen',
+              'Der Raumname wird zwischen Teilnehmern abgeglichen und mit dem Link gespeichert.',
+            ],
+            [
+              'Gemeinsame Dokumente auf dem Board',
+              'PDF oder PowerPoint teilen, Seiten gemeinsam wechseln und die Datei entfernen, ohne Zeichnungen zu löschen.',
+            ],
           ],
         },
       ],

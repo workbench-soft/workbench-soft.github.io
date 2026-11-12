@@ -1314,6 +1314,19 @@ const es: Catalog = {
               'Transcripción y resumen',
               'Un dispositivo escribe lo que dice cada persona. El texto se queda con la llamada guardada, con un resumen por llamada.',
             ],
+
+            [
+              'Recuperar medios bloqueados',
+              'El audio y el vídeo entrantes se comprueban por separado. Si se bloquean, la conexión se recupera sin recargar y con intentos limitados.',
+            ],
+            [
+              'Nombres compartidos de llamadas',
+              'El nombre de la sala se sincroniza entre participantes y se guarda con el enlace.',
+            ],
+            [
+              'Documentos compartidos en la pizarra',
+              'Comparte PDF o diapositivas PowerPoint, cambia de página con los demás y retira el archivo sin borrar los dibujos.',
+            ],
           ],
         },
       ],

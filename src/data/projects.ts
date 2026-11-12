@@ -693,6 +693,16 @@ export const projects: Project[] = [
             name: 'Call transcript and summary',
             text: 'One device writes down what each person says. The text stays with the saved call, with a summary per call.',
           },
+
+          {
+            name: 'Recover stalled media',
+            text: 'Incoming audio and video are checked separately. A stall triggers ICE repair and a bounded reconnect without reloading.',
+          },
+          { name: 'Shared call titles', text: 'A room name syncs between participants and stays with the saved link.' },
+          {
+            name: 'Shared documents on the board',
+            text: 'Share PDF or PowerPoint slides, turn pages together and remove the file while keeping the ink.',
+          },
         ],
       },
     ],

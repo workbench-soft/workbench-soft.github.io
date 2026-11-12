@@ -1378,6 +1378,19 @@ const fr: Catalog = {
               'Transcription et résumé',
               'Un appareil note ce que dit chaque personne. Le texte reste avec l’appel enregistré, avec un résumé par appel.',
             ],
+
+            [
+              'Rétablir les médias figés',
+              'Le son et la vidéo reçus sont vérifiés séparément. En cas de blocage, la connexion est rétablie sans recharger, avec un nombre limité de tentatives.',
+            ],
+            [
+              'Noms des appels partagés',
+              'Le nom de la salle est synchronisé entre les participants et conservé avec le lien.',
+            ],
+            [
+              'Documents partagés sur le tableau',
+              'Partagez un PDF ou des diapositives PowerPoint, tournez les pages ensemble et retirez le fichier en gardant les dessins.',
+            ],
           ],
         },
       ],

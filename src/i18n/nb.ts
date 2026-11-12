@@ -1219,6 +1219,16 @@ const nb: Catalog = {
               'Transkripsjon og sammendrag',
               'Én enhet skriver ned det hver person sier. Teksten blir med den lagrede samtalen, med et sammendrag per samtale.',
             ],
+
+            [
+              'Gjenopprett medier som har stoppet',
+              'Innkommende lyd og video sjekkes hver for seg. Ved stopp gjenopprettes forbindelsen uten å laste siden på nytt, med et begrenset antall forsøk.',
+            ],
+            ['Felles navn på samtaler', 'Romnavnet synkroniseres mellom deltakerne og lagres sammen med lenken.'],
+            [
+              'Delte dokumenter på tavlen',
+              'Del PDF eller PowerPoint, bla sammen og fjern filen mens tegningene blir værende.',
+            ],
           ],
         },
       ],
