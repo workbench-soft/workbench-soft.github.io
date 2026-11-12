@@ -1239,10 +1239,13 @@ const nb: Catalog = {
               'Kamerastjerner',
               'Kamerabildet holdes dempet. Stjernene i det blinker med et spor av gnister og lyser gull når de stemmer med himmelen.',
             ],
-            ['Kulturtemaer', '13 kulturer, fra Hellas og Roma til inkaene, Sumer og steinalderen.'],
+            [
+              'Kulturtemaer',
+              '18 kulturer, fra Hellas og Roma til inkaene, Sumer og steinalderen. Galleriet viser de 28 bildene til hver.',
+            ],
             [
               'Bakgrunnsmusikk',
-              'Sangen «Sky Altar» av Lyrienne går i løkke under himmelen. Skru den av, eller spill egne filer eller en hel mappe.',
+              'Hver kultur spiller sitt eget rolige spor på sine gamle instrumenter, Hellas sangen «Sky Altar» av Lyrienne. Skru musikken av, eller spill egne filer eller en hel mappe.',
             ],
             ['Reklame og reklamefritt', 'Reklamen holder seg unna himmelen. Et engangskjøp på $2.99 fjerner den.'],
             [

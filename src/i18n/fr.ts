@@ -1398,10 +1398,13 @@ const fr: Catalog = {
               'Étoiles de la caméra',
               "L'image de la caméra reste sombre. Ses étoiles scintillent avec une traînée d'étincelles et brillent d'or quand elles collent au ciel.",
             ],
-            ['Thèmes des cultures', '13 cultures, de la Grèce et Rome aux Incas, à Sumer et à l’âge de pierre.'],
+            [
+              'Thèmes des cultures',
+              '18 cultures, de la Grèce et Rome aux Incas, à Sumer et à l’âge de pierre. La galerie montre les 28 images de chacune.',
+            ],
             [
               'Musique d’ambiance',
-              'La chanson « Sky Altar » de Lyrienne tourne en boucle sous le ciel. Coupez-la, ou jouez vos fichiers ou un dossier entier.',
+              'Chaque culture a son morceau calme, joué sur ses instruments anciens, et la Grèce la chanson « Sky Altar » de Lyrienne. Coupez la musique, ou jouez vos fichiers ou un dossier entier.',
             ],
             ['Publicités et retrait', 'Les pubs restent hors du ciel. Un achat unique de $2.99 les retire.'],
             [

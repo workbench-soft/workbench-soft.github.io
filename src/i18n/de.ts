@@ -1364,10 +1364,13 @@ const de: Catalog = {
               'Kamerasterne',
               'Das Kamerabild bleibt gedämpft. Sterne darauf funkeln mit einer Funkenspur und leuchten golden auf, wenn sie zum Himmel passen.',
             ],
-            ['Kulturthemen', '13 Kulturen, von Griechenland und Rom bis zu den Inka, Sumer und der Steinzeit.'],
+            [
+              'Kulturthemen',
+              '18 Kulturen, von Griechenland und Rom bis zu den Inka, Sumer und der Steinzeit. Die Galerie zeigt die 28 Bilder jeder Kultur.',
+            ],
             [
               'Hintergrundmusik',
-              'Der Song „Sky Altar“ von Lyrienne läuft in Schleife unter dem Himmel. Schalte ihn aus oder spiele eigene Dateien oder einen ganzen Ordner.',
+              'Jede Kultur spielt ihr eigenes ruhiges Stück auf ihren alten Instrumenten, Griechenland den Song „Sky Altar“ von Lyrienne. Schalte die Musik aus oder spiele eigene Dateien oder einen ganzen Ordner.',
             ],
             ['Werbung und Werbefreiheit', 'Werbung bleibt vom Himmel fern. Ein Kauf für $2.99 entfernt sie.'],
             [

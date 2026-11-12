@@ -772,10 +772,13 @@ export const projects: Project[] = [
             name: 'Camera stars',
             text: 'The camera picture stays dim. Stars it sees twinkle with a trail of sparks and flash gold when they match the sky.',
           },
-          { name: 'Culture themes', text: '13 cultures, from Greece and Rome to the Inca, Sumer and the Stone Age.' },
+          {
+            name: 'Culture themes',
+            text: '18 cultures, from Greece and Rome to the Inca, Sumer and the Stone Age. Gallery shows the 28 pictures of each.',
+          },
           {
             name: 'Ambient music',
-            text: 'The song “Sky Altar” by Lyrienne loops under the sky. Turn it off, or play your own files or a whole folder.',
+            text: 'Each culture plays its own calm track on its old instruments, Greece the song “Sky Altar” by Lyrienne. Turn it off, or play your own files or a whole folder.',
           },
           { name: 'Ads and Remove ads', text: 'Ads stay off the sky. A one time $2.99 purchase removes them.' },
           {

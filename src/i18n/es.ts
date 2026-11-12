@@ -1334,10 +1334,13 @@ const es: Catalog = {
               'Estrellas de la cámara',
               'La imagen de la cámara queda tenue. Sus estrellas titilan con una estela de chispas y brillan en oro cuando coinciden con el cielo.',
             ],
-            ['Temas de culturas', '13 culturas, de Grecia y Roma a los incas, Sumeria y la Edad de Piedra.'],
+            [
+              'Temas de culturas',
+              '18 culturas, de Grecia y Roma a los incas, Sumeria y la Edad de Piedra. La galería muestra las 28 imágenes de cada una.',
+            ],
             [
               'Música ambiental',
-              'La canción «Sky Altar» de Lyrienne suena en bucle bajo el cielo. Apágala o pon tus propios archivos o una carpeta entera.',
+              'Cada cultura suena con su propia pista tranquila en sus instrumentos antiguos, y Grecia con la canción «Sky Altar» de Lyrienne. Apaga la música o pon tus propios archivos o una carpeta entera.',
             ],
             ['Anuncios y quitarlos', 'Los anuncios no tapan el cielo. Una compra única de $2.99 los quita.'],
             [
