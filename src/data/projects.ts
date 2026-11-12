@@ -150,7 +150,10 @@ export const projects: Project[] = [
             name: 'Trip list and places map',
             text: 'The Archive lists trips abroad and road trips, and draws each photo with GPS on one map, by year.',
           },
-          { name: 'People', text: 'The NAS groups the faces in the photos by person, named people first.' },
+          {
+            name: 'People',
+            text: 'The NAS groups faces by person, named people first. Merge an unknown face into a named person directly from their card.',
+          },
           {
             name: 'Indexing progress page',
             text: 'A page on the NAS shows how far the face engine and the indexer got.',

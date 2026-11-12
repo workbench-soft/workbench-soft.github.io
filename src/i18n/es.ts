@@ -236,7 +236,10 @@ const es: Catalog = {
               'Lista de viajes y mapa de lugares',
               'El archivo lista los viajes al extranjero y por carretera, y pone cada foto con GPS en un mapa, por año.',
             ],
-            ['Personas', 'El NAS agrupa las caras de las fotos por persona, primero las que tienen nombre.'],
+            [
+              'Personas',
+              'El NAS agrupa las caras por persona, primero las que tienen nombre. Una persona desconocida se puede unir a una con nombre desde su ficha.',
+            ],
             [
               'Página de progreso del índice',
               'Una página en el NAS muestra cuánto llevan la detección de caras y el indexador.',

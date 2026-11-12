@@ -236,7 +236,10 @@ const de: Catalog = {
               'Reiseliste und Ortskarte',
               'Das Archiv listet Auslandsreisen und Roadtrips und zeigt jedes Foto mit GPS auf einer Karte, nach Jahr.',
             ],
-            ['Personen', 'Das NAS gruppiert die Gesichter auf den Fotos nach Person, benannte zuerst.'],
+            [
+              'Personen',
+              'Das NAS gruppiert Gesichter nach Person, benannte zuerst. Unbekannte Gesichter lassen sich direkt auf ihrer Karte mit einer benannten Person zusammenführen.',
+            ],
             [
               'Seite zum Indexfortschritt',
               'Eine Seite auf dem NAS zeigt, wie weit Gesichtserkennung und Indexer sind.',

@@ -240,7 +240,10 @@ const fr: Catalog = {
               'Liste des voyages et carte des lieux',
               'L’archive liste les voyages à l’étranger et les road trips, et place chaque photo GPS sur une carte, par année.',
             ],
-            ['Personnes', "Le NAS regroupe les visages des photos par personne, les personnes nommées d'abord."],
+            [
+              'Personnes',
+              "Le NAS regroupe les visages par personne, les personnes nommées d'abord. Une personne inconnue peut être fusionnée avec une personne nommée depuis sa fiche.",
+            ],
             [
               "Page d'avancement de l'index",
               "Une page sur le NAS montre où en sont la détection des visages et l'indexeur.",
