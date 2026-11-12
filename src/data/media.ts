@@ -1,5 +1,5 @@
-// The icon and screenshots of each project, by its id. Astro resizes them at build time.
-// src/assets/icons/<id>.<ext> holds the icon, src/assets/shots/<id>/ the screenshots in name order.
+// The icon, screenshots and videos of each project, by its id. Astro resizes the images at build time.
+// src/assets/icons/<id>.<ext> holds the icon, src/assets/shots/<id>/ the screenshots and src/assets/videos/<id>/ the videos, in name order.
 import type { ImageMetadata } from 'astro';
 
 const load = (glob: Record<string, ImageMetadata>) => Object.entries(glob).toSorted(([a], [b]) => a.localeCompare(b));
@@ -15,3 +15,9 @@ export const iconOf = (id: string) =>
   icons.find(([path]) => parts(path)[1].replace(/\.\w+$/, '') === (sameIcon[id] ?? id))?.[1];
 
 export const shotsOf = (id: string) => shots.filter(([path]) => parts(path)[0] === id).map(([, image]) => image);
+
+const videos = Object.entries(
+  import.meta.glob<string>('../assets/videos/*/*.mp4', { eager: true, query: '?url', import: 'default' }),
+).toSorted(([a], [b]) => a.localeCompare(b));
+
+export const videosOf = (id: string) => videos.filter(([path]) => parts(path)[0] === id).map(([, url]) => url);

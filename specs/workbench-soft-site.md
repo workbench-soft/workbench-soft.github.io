@@ -386,3 +386,14 @@ The studio needed one public site for its apps and their installers.
   - **Updated text** Lumiere Player music and voice, Guitar Upscale chord sheet and play panel, Tripforge, WBS Updater and Local CI lines.
 - **Changes** `src/data/projects.ts` and the 8 other catalogs in `src/i18n/`.
 - **Docs** `CHANGELOG.md`.
+
+#### 2026-11-12 New screenshots and short videos per project
+
+- **Why** the Play listings got new English screenshots and Foreground service videos, recorded on test data in a clean phone user. The site showed older pictures or none.
+- **What the visitor gets**
+  - **Screenshots** Shuttrix gets its first two, ServoHop a station price chart, SpotTheCam the Trips sheet, Lumiere Player the music library on a phone.
+  - **Videos** KeepPad, Lumiere Player, SpotTheCam and Memories show a short muted video after the screenshots, with the player's own controls.
+- **Changes**
+  - **`src/data/media.ts`** `videosOf(id)` lists `src/assets/videos/<id>/*.mp4` in name order.
+  - **`src/components/ProjectPanel.astro`** a `<video>` per file in the same strip as the screenshots, at the same height.
+- **Docs** `CHANGELOG.md`.
