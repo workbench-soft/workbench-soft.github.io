@@ -1534,7 +1534,7 @@ const fr: Catalog = {
             ],
             [
               'Haut-parleur du téléphone',
-              'Sur le téléphone, la vidéo sort du haut-parleur à plein volume, même avec le Bluetooth. Bluetooth et volume du système s’activent dans les réglages.',
+              'Sur le téléphone, la vidéo sort du haut-parleur à plein volume, même avec le Bluetooth. Bluetooth et volume du système s’activent dans les réglages. Si un appareil Bluetooth ne joue rien, comme une voiture sur la radio, le son repasse au haut-parleur du téléphone.',
             ],
             [
               'Bibliothèque musicale',

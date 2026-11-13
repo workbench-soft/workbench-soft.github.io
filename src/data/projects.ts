@@ -856,7 +856,7 @@ export const projects: Project[] = [
           { name: 'Sponsor skip', text: 'Videos saved with yt-dlp skip their SponsorBlock sponsor segments.' },
           {
             name: 'Phone speaker',
-            text: 'On a phone the video plays from the speaker at full volume, also with Bluetooth. Bluetooth and the system volume turn on in Settings.',
+            text: 'On a phone the video plays from the speaker at full volume, also with Bluetooth. Bluetooth and the system volume turn on in Settings. A Bluetooth device that plays no sound, such as a car on the radio, hands the sound back to the phone speaker.',
           },
           {
             name: 'Look',

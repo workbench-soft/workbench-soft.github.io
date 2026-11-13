@@ -1361,7 +1361,7 @@ const nb: Catalog = {
             ['Hopp over sponsorer', 'Videoer lagret med yt-dlp hopper over SponsorBlock-sponsordelene.'],
             [
               'Telefonhøyttaler',
-              'På telefonen spilles videoen fra høyttaleren på full styrke, også med Bluetooth. Bluetooth og systemvolum slås på i innstillingene.',
+              'På telefonen spilles videoen fra høyttaleren på full styrke, også med Bluetooth. Bluetooth og systemvolum slås på i innstillingene. Spiller en Bluetooth-enhet ingen lyd, som en bil på radio, går lyden tilbake til telefonens høyttaler.',
             ],
             [
               'Utseende',

@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **Lumiere Player** Phone speaker says a Bluetooth device that plays no sound hands the sound to the phone, in every language.
+
 - **Guitar Upscale** Song upload says an MP3 finds its song online with the chords, in every language.
 
 - **Lumiere Player** lists Online music: in the GitHub APK, Hey Lumi plays songs no folder holds, found in the MusicBrainz catalog, in every language.

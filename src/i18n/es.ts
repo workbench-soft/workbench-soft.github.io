@@ -1475,7 +1475,7 @@ const es: Catalog = {
             ],
             [
               'Altavoz del teléfono',
-              'En el teléfono el vídeo suena por el altavoz al máximo, también con Bluetooth. Bluetooth y el volumen del sistema se activan en Ajustes.',
+              'En el teléfono el vídeo suena por el altavoz al máximo, también con Bluetooth. Bluetooth y el volumen del sistema se activan en Ajustes. Si un Bluetooth no reproduce nada, como un coche con la radio puesta, el sonido vuelve al altavoz del teléfono.',
             ],
             [
               'Biblioteca de música',

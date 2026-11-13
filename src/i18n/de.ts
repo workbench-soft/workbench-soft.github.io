@@ -1492,7 +1492,7 @@ const de: Catalog = {
             ['Sponsoren überspringen', 'Mit yt-dlp gespeicherte Videos überspringen ihre SponsorBlock-Abschnitte.'],
             [
               'Telefonlautsprecher',
-              'Auf dem Telefon kommt das Video in voller Lautstärke aus dem Lautsprecher, auch mit Bluetooth. Bluetooth und Systemlautstärke lassen sich einschalten.',
+              'Auf dem Telefon kommt das Video in voller Lautstärke aus dem Lautsprecher, auch mit Bluetooth. Bluetooth und Systemlautstärke lassen sich einschalten. Spielt ein Bluetooth-Gerät keinen Ton, etwa ein Auto im Radiobetrieb, kommt der Ton wieder aus dem Telefon.',
             ],
             [
               'Aussehen',
