@@ -67,3 +67,15 @@ Workbench Games, `com.workbenchsoft.games`. Release builds of the Android app us
 
 - [ ] **Games languages** `apps/games` ships only English and Russian, against the 9 languages rule. Add de, fr, es, zh, ja, ko and nb to `apps/games/src/game/i18n.ts`, the word lists and `shared/avatars.ts` through the `translations` skill, in its own PR.
 - [ ] **Archon in the catalog** `src/pages/apps/catalog.json.ts` names the `workspace` repo for Archon by hand, since Archon has no `repo` in `src/data/projects.ts`. Give the project a field for its GitHub repo once `mise run feature-check` accepts a repo that is the workspace root.
+
+## seo
+
+Found by the SEO audit of 2026-11-13. [specs/seo.md](specs/seo.md) has the fixes made in code.
+
+- [ ] **Search Console** add the Domain property `workbench-soft.com` at <https://search.google.com/search-console>, so it covers `games.workbench-soft.com` too. Verify it with the TXT record in Cloudflare DNS, then submit `https://workbench-soft.com/sitemap-index.xml`, `https://workbench-soft.com/memories-mobile/sitemap.xml` and `https://games.workbench-soft.com/games/sitemap-index.xml`.
+- [ ] **Bing** import the sites from Search Console at <https://www.bing.com/webmasters> and check that the 3 sitemaps read without errors.
+- [ ] **HTTPS on the games** `http://games.workbench-soft.com/games/` answers 200 with no redirect. In Cloudflare, workbench-soft.com, SSL/TLS, Edge Certificates, turn on Always Use HTTPS, then check that the address sends a 301 to https.
+- [ ] **Cloudflare** add Web Analytics for `workbench-soft.com` and `games.workbench-soft.com`, and turn on Crawler Hints (Caching, Configuration) so IndexNow tells Bing about changes.
+- [ ] **Trust pages** decide whether workbench-soft.com gets its own About page and privacy policy. The footer links the Memories privacy policy today, and AdSense review looks for both pages.
+- [ ] **Property Trends** <https://workbench-soft.com/property-trends/> has no `h1` and 25 words of text. Add a heading and a paragraph on what the data shows in the private property-trends repo, whose release the Pages build unpacks.
+- [ ] **Rich Results Test** run <https://search.google.com/test/rich-results> on `https://workbench-soft.com/` and `https://workbench-soft.com/skyaltar/astrology/signs/aries/`, and fix any error it names.

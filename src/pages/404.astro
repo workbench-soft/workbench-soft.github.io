@@ -1,0 +1,37 @@
+---
+import Base from "../layouts/Base.astro";
+import { defaultLang, locales, tags } from "../i18n/locales";
+import { ui } from "../i18n";
+
+// GitHub Pages serves this page for each missing path, so it speaks every language and leads home.
+const home = (l: (typeof locales)[number]) => (l === defaultLang ? "/" : `/${l}/`);
+const en = ui(defaultLang);
+---
+
+<Base title={`${en.notFound.title} | Workbench Soft`} description={en.meta.description} noindex>
+  <main class="lost">
+    <a class="logo" href="/"><img src="/favicon.svg" width="64" height="64" alt="Workbench Soft" /></a>
+    <h1>404</h1>
+    <ul>
+      {
+        locales.map((l) => (
+          <li lang={tags[l]}>
+            <span>{ui(l).notFound.title}</span>
+            <a href={home(l)} hreflang={tags[l]}>
+              {ui(l).notFound.home}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+</Base>
+
+<style>
+  .lost { max-width: 640px; margin: 0 auto; padding: 72px 24px; }
+  h1 { font: 700 72px var(--mono); margin: 24px 0; }
+  ul { list-style: none; padding: 0; display: grid; gap: 12px; }
+  li { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; border-top: 1px solid var(--line); padding-top: 12px; }
+  li span { color: var(--muted); }
+  a { color: var(--text); }
+</style>

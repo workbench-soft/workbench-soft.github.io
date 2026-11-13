@@ -4,8 +4,12 @@ export const en = {
   meta: {
     title: 'Workbench Soft: apps for Android, the web, Windows and macOS',
     description:
-      'Workbench Soft builds and ships apps: {names} and developer tools. Each project with each of its features.',
+      'Workbench Soft builds apps for Android, iPhone, the web, Windows and macOS. See each project and its features, from Memories to Sky Altar and Workbench Games.',
     org: 'A software studio that builds apps for Android, iPhone, the web, Windows and macOS.',
+  },
+  notFound: {
+    title: 'Page not found',
+    home: 'Go to the home page',
   },
   nav: {
     services: 'Services',

@@ -13,7 +13,7 @@ const glyphs = ["♈", "♉", "♊", "♋", "♌", "♍", "♎", "♏", "♐", "
 const data = { tips: t.tips, focus: signs.map((s) => t.focus[s]), names: signs.map((s) => t.signs[s]), sun: t.today.sun, moon: t.today.moon };
 ---
 
-<Shell lang={lang} title={`${t.today.title} | Sky Altar`} description={t.today.description} id="today" langs={langs}>
+<Shell lang={lang} title={`${t.today.short} | Sky Altar`} description={t.today.description} id="today" langs={langs}>
   <h1>{t.today.title}</h1>
   <p class="lede">{t.today.lede}</p>
   <noscript><p>{t.today.noscript}</p></noscript>
@@ -35,7 +35,7 @@ const data = { tips: t.tips, focus: signs.map((s) => t.focus[s]), names: signs.m
     {
       signs.map((s, i) => (
         <li class="card" data-sign={i}>
-          <img src={`/skyaltar/astrology/zodiac/${s}.webp`} alt="" width="512" height="512" loading="lazy" />
+          <img src={`/skyaltar/astrology/zodiac/${s}.webp`} alt="" width="512" height="512" loading={i < 3 ? "eager" : "lazy"} />
           <h3>
             <a href={href(lang, `signs/${s}`)}>
               {glyphs[i]} {t.signs[s]}

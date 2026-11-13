@@ -5,8 +5,12 @@ const ja: Catalog = {
     meta: {
       title: 'Workbench Soft：Android、Web、Windows、macOS のアプリ開発',
       description:
-        'Workbench Soft はアプリを開発・公開しています：{names}、そして開発者向けツール。各プロジェクトとそのすべての機能を紹介します。',
+        'Workbench Soft は Android、iPhone、Web、Windows、macOS 向けのアプリを開発しています。Memories から Sky Altar、Workbench Games まで、各プロジェクトと機能を紹介します。',
       org: 'Android、iPhone、Web、Windows、macOS 向けのアプリを作るソフトウェアスタジオ。',
+    },
+    notFound: {
+      title: 'ページが見つかりません',
+      home: 'ホームへ戻る',
     },
     nav: {
       services: 'サービス',

@@ -57,6 +57,7 @@ export const ui: typeof en = {
   },
   today: {
     title: 'Astrologi i dag: Solen, Månen og et tips for hvert tegn',
+    short: 'Astrologi i dag: Solen, Månen og tips',
     description:
       'Hvilke tegn Solen og Månen står i i dag, ditt eget tegn uthevet, og et lett tips for hvert av de 12 tegnene.',
     lede: 'Solen og Månen beveger seg gjennom dyrekretsen hver dag. Velg tegnet ditt for å holde det uthevet.',

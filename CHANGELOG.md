@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **Search** the home site gets short descriptions in 9 languages, a share picture, `WebSite` JSON-LD, a 404 page that leads home and `/llms.txt`. The games get titles that fit in search results, a `robots.txt` with the sitemap, and sitemap links between each English and Russian game page.
+
 - **Projects** Farnear Take a photo, Shuttrix Raw photo (beta), Lumiere Spotify and YouTube, and the Workbench Games party look, in every language.
 
 - **Lumiere Player** describe the video library and voice search for videos in every language.
