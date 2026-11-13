@@ -1365,6 +1365,10 @@ export const projects: Project[] = [
             name: 'Sites',
             text: 'Deploy site starts the deploy workflow of each org repo with a site, on main. The page finds the workflow by itself.',
           },
+          {
+            name: 'CI trends',
+            text: 'Charts of runs a day by result, build time, the wait for a runner and the steps that fail most. Free, from the GitHub API.',
+          },
         ],
       },
     ],

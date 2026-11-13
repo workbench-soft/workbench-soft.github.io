@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **local-ci** the project lists CI trends, the charts of the status page, in every language.
+
 - **Projects** Farnear Take a photo, Shuttrix Raw photo (beta), Lumiere Spotify and YouTube, and the Workbench Games party look, in every language.
 
 - **Lumiere Player** describe the video library and voice search for videos in every language.

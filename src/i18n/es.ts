@@ -855,6 +855,10 @@ const es: Catalog = {
               'Sitios',
               'Deploy site inicia el workflow de despliegue de cada repo de la organización con sitio, en main. La página encuentra el workflow sola.',
             ],
+            [
+              'Tendencias de CI',
+              'Gráficos de ejecuciones por día según el resultado, el tiempo de build, la espera de un runner y los pasos que más fallan. Gratis, desde la API de GitHub.',
+            ],
           ],
         },
       ],
