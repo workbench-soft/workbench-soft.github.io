@@ -57,6 +57,7 @@ export const ui: typeof en = {
   },
   today: {
     title: 'L’astrologie du jour : le Soleil, la Lune et un conseil par signe',
+    short: 'Astrologie du jour : Soleil, Lune et conseils',
     description:
       'Dans quels signes se trouvent le Soleil et la Lune aujourd’hui, votre signe mis en avant, et un conseil léger pour chacun des 12 signes.',
     lede: 'Le Soleil et la Lune avancent chaque jour dans le zodiaque. Choisissez votre signe pour le garder en évidence.',

@@ -5,8 +5,12 @@ const ko: Catalog = {
     meta: {
       title: 'Workbench Soft: Android, 웹, Windows, macOS 앱',
       description:
-        'Workbench Soft는 앱을 만들고 출시합니다: {names}, 그리고 개발자 도구. 모든 프로젝트와 그 기능을 하나하나 소개합니다.',
+        'Workbench Soft는 Android, iPhone, 웹, Windows, macOS용 앱을 만듭니다. Memories부터 Sky Altar, Workbench Games까지 각 프로젝트와 기능을 소개합니다.',
       org: 'Android, iPhone, 웹, Windows, macOS용 앱을 만드는 소프트웨어 스튜디오.',
+    },
+    notFound: {
+      title: '페이지를 찾을 수 없습니다',
+      home: '홈으로 가기',
     },
     nav: {
       services: '서비스',

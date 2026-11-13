@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 import preact from '@astrojs/preact';
 import sitemap from '@astrojs/sitemap';
+import { ROUTES } from './src/site/routes.ts';
 
 // Keep in step with src/shared/paths.ts.
 const BASE = '/games';
@@ -29,7 +30,13 @@ export default defineConfig({
     preact(),
     sitemap({
       filter: (page) => !page.includes('/room/'),
-      i18n: { defaultLocale: 'en', locales: { en: 'en', ru: 'ru' } },
+      // The game pages have their own slug in each language, so the alternates come from ROUTES.
+      serialize: (item) => {
+        const path = new URL(item.url).pathname;
+        const pair = Object.values(ROUTES).find((p) => p.en === path || p.ru === path);
+        if (pair) item.links = Object.entries(pair).map(([lang, url]) => ({ lang, url: new URL(url, site).href }));
+        return item;
+      },
     }),
   ],
   vite: {

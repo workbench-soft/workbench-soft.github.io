@@ -5,8 +5,12 @@ const nb: Catalog = {
     meta: {
       title: 'Workbench Soft: apper for Android, nettet, Windows og macOS',
       description:
-        'Workbench Soft utvikler og lanserer apper: {names} og verktøy for utviklere. Hvert prosjekt med hver av funksjonene sine.',
+        'Workbench Soft lager apper for Android, iPhone, nettet, Windows og macOS. Her står hvert prosjekt med funksjonene sine, fra Memories til Sky Altar.',
       org: 'Et programvarestudio som lager apper for Android, iPhone, nettet, Windows og macOS.',
+    },
+    notFound: {
+      title: 'Fant ikke siden',
+      home: 'Til forsiden',
     },
     nav: {
       services: 'Tjenester',

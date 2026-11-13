@@ -56,6 +56,8 @@ export const en = {
   },
   today: {
     title: 'Astrology today: the Sun, the Moon and a tip for each sign',
+    // The page title in search results, short enough to show in full.
+    short: 'Astrology today: Sun, Moon and a tip per sign',
     description:
       'Which signs the Sun and the Moon are in today, your own sign highlighted, and a light tip for each of the 12 signs.',
     lede: 'The Sun and the Moon move through the zodiac each day. Pick your sign to keep it highlighted.',

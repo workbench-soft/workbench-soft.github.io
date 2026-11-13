@@ -24,7 +24,7 @@ const cuts = [...html.matchAll(/<h2[\s>]/g)].map((m) => m.index);
 const cut = cuts[2] ?? cuts.at(-1) ?? html.length;
 const parts = [html.slice(0, cut), html.slice(cut)];
 
-const org = { "@type": "Organization", name: "Workbench Soft", url: Astro.site?.href };
+const org = { "@type": "Organization", "@id": `${Astro.site?.href}#org`, name: "Workbench Soft", url: Astro.site?.href };
 const crumbs = [
   [t.section, href(lang)],
   [t.groups[group].title, `${href(lang)}#${group}`],
@@ -57,7 +57,7 @@ const schema = [
 ];
 ---
 
-<Shell lang={lang} title={`${title} | Sky Altar`} description={description} id={id} langs={langs} type="article" schema={schema}>
+<Shell lang={lang} title={`${title} | Sky Altar`} description={description} id={id} langs={langs} type="article" schema={schema} image={image}>
   <p class="crumbs">
     <a href={crumbs[0][1]}>{crumbs[0][0]}</a> / <a href={crumbs[1][1]}>{crumbs[1][0]}</a>
   </p>

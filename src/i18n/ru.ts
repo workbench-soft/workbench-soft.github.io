@@ -3,10 +3,14 @@ import type { Catalog } from './types';
 const ru: Catalog = {
   ui: {
     meta: {
-      title: 'Workbench Soft: приложения для Android, веба, Windows и macOS',
+      title: 'Workbench Soft: приложения для Android, веба, Windows, macOS',
       description:
-        'Workbench Soft делает и выпускает приложения: {names} и инструменты для разработчиков. Каждый проект со всеми его функциями.',
+        'Workbench Soft делает приложения для Android, iPhone, веба, Windows и macOS. Здесь каждый проект с его функциями, от Memories до Sky Altar и Workbench Games.',
       org: 'Студия, которая делает приложения для Android, iPhone, веба, Windows и macOS.',
+    },
+    notFound: {
+      title: 'Страница не найдена',
+      home: 'На главную',
     },
     nav: {
       services: 'Услуги',

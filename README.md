@@ -21,6 +21,7 @@ The home page is the studio's business card: what it builds for clients, and eac
 
 - **Stack** Astro 7 and TypeScript build it into static HTML in `dist/`. A WebGL2 shader draws the hero.
 - **Content** the projects sit in [src/data/projects.ts](src/data/projects.ts), the services and the process in [src/data/studio.ts](src/data/studio.ts). A new project or feature is one entry there, plus its translation in each catalog. Its icon goes in `src/assets/icons/<id>.png` or `.svg`, its screenshots in `src/assets/shots/<id>/`, and Astro resizes both at build time. Each project names its `repo`, and each heading of that repo's `docs/features.md` is a feature name or a group title. `mise run feature-check` in the workspace folder lists the gaps.
+- **Search** `src/layouts/Base.astro` writes the title, description, canonical, hreflang, share picture and JSON-LD of each page. `src/pages/` also builds `404.html` and `/llms.txt`. [specs/seo.md](specs/seo.md) has the audit and its fixes.
 - **Languages** English at `/`, and Russian, German, French, Spanish, Chinese, Japanese, Korean and Norwegian Bokmål under `/<code>/`. The text of each language sits in [src/i18n/](src/i18n/), one catalog per language.
 - **Docs** [features](docs/features.md), [user flows](docs/user-flows.md) and [architecture](docs/architecture.md).
 

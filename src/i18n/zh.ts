@@ -4,8 +4,13 @@ const zh: Catalog = {
   ui: {
     meta: {
       title: 'Workbench Soft：为 Android、网页、Windows 和 macOS 打造应用',
-      description: 'Workbench Soft 开发并发布应用：{names}，以及开发者工具。每个项目及其全部功能。',
+      description:
+        'Workbench Soft 为 Android、iPhone、网页、Windows 和 macOS 开发应用。这里介绍每个项目及其功能，从 Memories 到 Sky Altar 和 Workbench Games。',
       org: '一家为 Android、iPhone、网页、Windows 和 macOS 开发应用的软件工作室。',
+    },
+    notFound: {
+      title: '找不到页面',
+      home: '返回首页',
     },
     nav: {
       services: '服务',
