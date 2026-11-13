@@ -367,6 +367,10 @@ export const projects: Project[] = [
             name: 'Enhance photos',
             text: 'Enhance adds colour, sharpness and lifted shadows. With Enhance off, supported ordinary camera sessions use a fixed sRGB tone curve. Night and unsupported cameras keep their own processing.',
           },
+          {
+            name: 'Raw photo (beta)',
+            text: 'Builds the photo from the raw sensor frames up to the press, with less noise and more detail. Off by default.',
+          },
           { name: 'QR codes', text: 'A code in the preview gets brackets and a pill to open it.' },
           {
             name: 'Clock',
@@ -682,6 +686,10 @@ export const projects: Project[] = [
             text: 'One person shares a screen, a window or a tab. The others see it large and draw over it.',
           },
           {
+            name: 'Take a photo',
+            text: 'Save the call with the board and a shared screen as a PNG in Downloads. The picture stays on the device.',
+          },
+          {
             name: 'Your name',
             text: 'The name the others see on your tile. Change it on the home page or in Settings.',
           },
@@ -858,6 +866,10 @@ export const projects: Project[] = [
           {
             name: 'Music player',
             text: 'Artists and Songs sit on the home screen beside the drives. The player bar stays on each screen but video, with breadcrumbs and artist sort. Live tracks are skipped, on by default.',
+          },
+          {
+            name: 'Spotify and YouTube',
+            text: 'Hey Lumi plays a song, an artist or a style no folder holds. Spotify names the songs and YouTube plays them.',
           },
           {
             name: 'Audiobooks',
@@ -1086,6 +1098,10 @@ export const projects: Project[] = [
           { name: 'Languages', text: 'The pages and the rooms work in English and Russian.' },
           { name: 'Ads', text: 'The games stay free, with a banner on the content pages, the lobby and the results.' },
           { name: 'Android and iOS apps', text: 'The same games as an installed app.' },
+          {
+            name: 'Party look',
+            text: 'A night party glow, or candy pastels in light mode, with a colour for each game.',
+          },
         ],
       },
     ],

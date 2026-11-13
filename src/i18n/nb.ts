@@ -608,6 +608,7 @@ const nb: Catalog = {
             ['Språk', 'Sidene og rommene fungerer på engelsk og russisk.'],
             ['Reklame', 'Spillene er gratis, med et banner på sidene, i lobbyen og på resultatene.'],
             ['Apper for Android og iOS', 'De samme spillene som en installert app.'],
+            ['Festpreg', 'Festglød om kvelden, eller godtepastell i lys modus, med en farge for hvert spill.'],
           ],
         },
       ],
@@ -1133,6 +1134,10 @@ const nb: Catalog = {
               'Forbedre bilder',
               'Enhance forsterker farger, skarphet og skygger. Av bruker en fast sRGB-kurve på støttede vanlige kameraer. Natt og andre kameraer beholder egen behandling.',
             ],
+            [
+              'Raw-bilde (beta)',
+              'Lager bildet av sensorens råbilder fram til trykket, med mindre støy og mer detaljer. Av som standard.',
+            ],
             ['QR-koder', 'En kode i forhåndsvisningen får klammer og en knapp for å åpne den.'],
             ['Klokke', 'Klokkeslettet øverst til venstre, der telefonens klokke pleier å stå, unna knappene.'],
             [
@@ -1212,6 +1217,10 @@ const nb: Catalog = {
             [
               'Del skjerm',
               'Én person deler en skjerm, et vindu eller en fane. De andre ser den stort og tegner over den.',
+            ],
+            [
+              'Ta et bilde',
+              'Lagrer samtalen med tavlen og delt skjerm som PNG i Nedlastinger. Bildet blir på enheten.',
             ],
             ['Navnet ditt', 'Navnet de andre ser på flisen din. Endre det på startsiden eller i Innstillinger.'],
             ['Videobakgrunn', 'Gjør rommet bak deg uskarpt, eller sett inn en tegnet scene eller ditt eget bilde.'],
@@ -1351,6 +1360,10 @@ const nb: Catalog = {
             [
               'Musikkspiller',
               'Artister og Sanger ligger på startskjermen ved siden av stasjonene. Spillerlinjen blir på hver skjerm unntatt video, med brødsmuler og sortering etter artist. Livespor hoppes over, på som standard.',
+            ],
+            [
+              'Spotify og YouTube',
+              'Hey Lumi spiller en sang, en artist eller en stil som ingen mappe har. Spotify finner sangene, og YouTube spiller dem.',
             ],
             [
               'Lydbøker',

@@ -673,6 +673,10 @@ const de: Catalog = {
               'Die Spiele bleiben gratis, mit einem Banner auf den Seiten, in der Lobby und bei den Ergebnissen.',
             ],
             ['Apps für Android und iOS', 'Dieselben Spiele als installierte App.'],
+            [
+              'Party-Look',
+              'Partyglühen bei Nacht oder Bonbonpastell im hellen Modus, mit einer Farbe für jedes Spiel.',
+            ],
           ],
         },
       ],
@@ -1243,6 +1247,10 @@ const de: Catalog = {
               'Fotos verbessern',
               'Enhance verstärkt Farben, Schärfe und Schatten. Ohne Enhance nutzen unterstützte normale Kameras eine feste sRGB-Kurve. Nachtmodus und andere Kameras behalten ihre Verarbeitung.',
             ],
+            [
+              'Raw-Foto (Beta)',
+              'Baut das Foto aus den Rohbildern des Sensors bis zum Auslösen, mit weniger Rauschen und mehr Details. Standardmäßig aus.',
+            ],
             ['QR-Codes', 'Ein Code in der Vorschau bekommt Klammern und einen Knopf zum Öffnen.'],
             ['Uhr', 'Die Uhrzeit oben links, wo sonst die Uhr des Telefons steht, abseits der Tasten.'],
             [
@@ -1331,6 +1339,10 @@ const de: Catalog = {
             [
               'Bildschirm teilen',
               'Eine Person teilt einen Bildschirm, ein Fenster oder einen Tab. Die anderen sehen ihn groß und zeichnen darüber.',
+            ],
+            [
+              'Foto aufnehmen',
+              'Speichert den Anruf mit Tafel und geteiltem Bildschirm als PNG in Downloads. Das Bild bleibt auf dem Gerät.',
             ],
             [
               'Ihr Name',
@@ -1479,6 +1491,10 @@ const de: Catalog = {
             [
               'Musikplayer',
               'Künstler und Songs liegen auf dem Startbildschirm neben den Laufwerken. Die Player-Leiste bleibt auf jedem Bildschirm außer Video, mit Brotkrumen und Sortierung nach Künstler. Live-Titel werden übersprungen, standardmäßig an.',
+            ],
+            [
+              'Spotify und YouTube',
+              'Hey Lumi spielt einen Song, einen Künstler oder einen Stil, den kein Ordner hat. Spotify nennt die Songs, YouTube spielt sie.',
             ],
             [
               'Hörbücher',
