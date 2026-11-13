@@ -794,6 +794,10 @@ const nb: Catalog = {
               'Nettsteder',
               'Deploy site starter deploy-workflowen til hvert repo i organisasjonen med et nettsted, på main. Siden finner workflowen selv.',
             ],
+            [
+              'CI-trender',
+              'Diagrammer over kjøringer per dag etter resultat, byggetid, ventetid på en runner og stegene som feiler oftest. Gratis, fra GitHub-API-et.',
+            ],
           ],
         },
       ],

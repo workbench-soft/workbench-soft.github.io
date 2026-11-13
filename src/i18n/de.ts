@@ -877,6 +877,10 @@ const de: Catalog = {
               'Websites',
               'Deploy site startet den Deploy-Workflow jedes Repos der Organisation mit Website, auf main. Die Seite findet den Workflow selbst.',
             ],
+            [
+              'CI-Trends',
+              'Diagramme der Läufe pro Tag nach Ergebnis, der Build-Zeit, der Wartezeit auf einen Runner und der Schritte, die am häufigsten scheitern. Kostenlos, aus der GitHub-API.',
+            ],
           ],
         },
       ],

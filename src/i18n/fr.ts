@@ -893,6 +893,10 @@ const fr: Catalog = {
               'Sites',
               "Deploy site lance le workflow de déploiement de chaque dépôt de l'organisation qui a un site, sur main. La page trouve le workflow seule.",
             ],
+            [
+              'Tendances CI',
+              'Graphiques des exécutions par jour selon le résultat, du temps de build, de l’attente d’un runner et des étapes qui échouent le plus. Gratuit, depuis l’API GitHub.',
+            ],
           ],
         },
       ],
