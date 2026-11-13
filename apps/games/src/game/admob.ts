@@ -6,6 +6,8 @@ let ready: Promise<typeof import('@capacitor-community/admob')> | null = null;
 let devLinks: Promise<void> | null = null;
 let shown = false;
 let wanted = false;
+/** Counts the calls to syncBanner, so a failed show only resets `shown` when no later call changed it. */
+let calls = 0;
 
 async function admob() {
   ready ??= (async () => {
@@ -53,6 +55,7 @@ export function setDevAdsShown(on: boolean): void {
 
 export async function syncBanner(visible: boolean): Promise<void> {
   wanted = visible;
+  const call = ++calls;
   try {
     await readDevLinks();
     const dev = isDevDevice();
@@ -70,7 +73,7 @@ export async function syncBanner(visible: boolean): Promise<void> {
         margin: 0,
         isTesting: id === TEST_BANNER[platform],
       }).catch((error: unknown) => {
-        shown = false;
+        if (call === calls) shown = false;
         throw error;
       });
     } else if (!show && shown) {
