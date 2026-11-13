@@ -67,7 +67,7 @@ const en: SiteText = {
   langOther: 'Русский',
   langSuggest: 'Эта страница есть на русском',
   home: {
-    title: 'Free online drawing and word games with friends | Workbench Games',
+    title: 'Free online drawing and word games | Workbench Games',
     description:
       'Play guess the drawing, drawing telephone and a team word game with friends online. Free, no sign up, no download. Make a room and send the link.',
     h1: 'Party games for friends, right in the browser',
@@ -96,7 +96,7 @@ const en: SiteText = {
   },
   games: {
     guess: {
-      title: 'Guess the drawing online: free draw and guess game | Workbench Games',
+      title: 'Guess the drawing: free draw and guess | Workbench Games',
       description:
         'One player draws a word, everyone else races to guess it in the chat. Free online drawing and guessing game for 2 to 12 friends. No sign up.',
       h1: 'Guess the drawing',
@@ -130,7 +130,7 @@ const en: SiteText = {
       ],
     },
     telephone: {
-      title: 'Drawing telephone online: free game of telephone with pictures | Workbench Games',
+      title: 'Drawing telephone: free online game | Workbench Games',
       description:
         'Write a phrase, draw what you get, describe the drawing, and watch the story change around the group. Free online telephone game, no sign up.',
       h1: 'Drawing telephone',
@@ -159,7 +159,7 @@ const en: SiteText = {
       ],
     },
     duel: {
-      title: 'Clue duel: free online team word association game | Workbench Games',
+      title: 'Clue duel: free team word game online | Workbench Games',
       description:
         'Two teams, one board of 12 words. Give a one word clue for your 2 secret words, but the other team sees it too and can steal them. Free, no sign up.',
       h1: 'Clue duel',
@@ -218,9 +218,9 @@ const ru: SiteText = {
   langOther: 'English',
   langSuggest: 'This page is in English too',
   home: {
-    title: 'Бесплатные онлайн игры с друзьями: рисовалки и слова | Workbench Games',
+    title: 'Онлайн игры с друзьями: рисовалки и слова | Workbench Games',
     description:
-      'Угадай рисунок, испорченный телефон с рисунками и командная игра в ассоциации. Играйте с друзьями онлайн бесплатно, без регистрации: создайте комнату и отправьте ссылку.',
+      'Угадай рисунок, испорченный телефон с рисунками и игра в ассоциации. Играйте с друзьями онлайн бесплатно и без регистрации: создайте комнату и отправьте ссылку.',
     h1: 'Игры для компании прямо в браузере',
     lead: 'Создайте комнату, отправьте ссылку и играйте вместе через минуту. На телефоне, планшете или компьютере. Бесплатно и без аккаунта.',
     stepsTitle: 'Как это работает',
@@ -247,7 +247,7 @@ const ru: SiteText = {
   },
   games: {
     guess: {
-      title: 'Угадай рисунок онлайн: бесплатная рисовалка с друзьями | Workbench Games',
+      title: 'Угадай рисунок онлайн, бесплатно | Workbench Games',
       description:
         'Один рисует слово, остальные угадывают в чате. Бесплатная онлайн игра «рисуй и угадывай» для компании от 2 до 12 человек. Без регистрации.',
       h1: 'Угадай рисунок',
@@ -281,7 +281,7 @@ const ru: SiteText = {
       ],
     },
     telephone: {
-      title: 'Испорченный телефон с рисунками онлайн, бесплатно | Workbench Games',
+      title: 'Испорченный телефон с рисунками | Workbench Games',
       description:
         'Напишите фразу, нарисуйте то, что получили, опишите рисунок и посмотрите, во что превратится история. Бесплатный испорченный телефон онлайн без регистрации.',
       h1: 'Испорченный телефон',
@@ -310,7 +310,7 @@ const ru: SiteText = {
       ],
     },
     duel: {
-      title: 'Дуэль подсказок: командная игра в ассоциации онлайн | Workbench Games',
+      title: 'Дуэль подсказок: игра в ассоциации | Workbench Games',
       description:
         'Две команды и доска из 12 слов. Дайте подсказку в одно слово к 2 тайным словам, но соперники тоже её видят и могут перехватить. Бесплатно, без регистрации.',
       h1: 'Дуэль подсказок',
