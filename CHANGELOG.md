@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Farnear** lists the iPhone app, in every language.
 - **Sky Altar** lists the constellation stories, in every language.
 - **Guitar Upscale** lists the iPhone app, in every language.
 - **Farnear** lists Messages in a call, Button hints and Close Farnear and take back its permissions, in every language.
