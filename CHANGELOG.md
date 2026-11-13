@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **Lumiere Player** lists Online music: in the GitHub APK, Hey Lumi plays songs no folder holds, found in the MusicBrainz catalog, in every language.
+
 - **local-ci** the project lists CI trends, the charts of the status page, in every language.
 - **Search** the home site gets short descriptions in 9 languages, a share picture, `WebSite` JSON-LD, a 404 page that leads home and `/llms.txt`. The games get titles that fit in search results, a `robots.txt` with the sitemap, and sitemap links between each English and Russian game page.
 

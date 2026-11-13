@@ -1565,6 +1565,10 @@ const fr: Catalog = {
               'Commandes vocales',
               'Dites Hey Lumi, puis play et un titre, ou volume 40, en anglais ou en russe, téléphone verrouillé. Une pulsation montre qu’il écoute.',
             ],
+            [
+              'Musique en ligne',
+              'Dans l’APK de GitHub, Hey Lumi joue un titre, un artiste, un album ou un style absent des dossiers, trouvé dans le catalogue MusicBrainz.',
+            ],
             ['Lumiere Pro', 'Un seul achat débloque les commandes vocales et Hey Lumi, et retire la pub.'],
           ],
         },

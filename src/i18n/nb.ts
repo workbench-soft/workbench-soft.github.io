@@ -1390,6 +1390,10 @@ const nb: Catalog = {
               'Talekommandoer',
               'Si Hey Lumi, så play og en sang, eller volume 40, på engelsk eller russisk, også med låst telefon. En puls viser at den lytter.',
             ],
+            [
+              'Musikk på nett',
+              'I APK-en fra GitHub spiller Hey Lumi en sang, en artist, et album eller en stil som ingen mappe har, funnet i MusicBrainz-katalogen.',
+            ],
             ['Lumiere Pro', 'Ett kjøp låser opp talekommandoer og Hey Lumi og fjerner reklamen.'],
           ],
         },
