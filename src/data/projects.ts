@@ -843,6 +843,10 @@ export const projects: Project[] = [
             name: 'Constellation navigation',
             text: 'Search a constellation by name, and the sky turns to the one you tap.',
           },
+          {
+            name: 'Constellation lore',
+            text: 'Each constellation has a card with its myth from the theme’s culture, what to look at, and its brightest stars with their distance. The gallery flies the sky to it.',
+          },
         ],
       },
     ],

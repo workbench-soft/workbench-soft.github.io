@@ -1498,6 +1498,10 @@ const fr: Catalog = {
               'Aller à une constellation',
               'Cherchez une constellation par son nom, et le ciel tourne vers celle que vous touchez.',
             ],
+            [
+              'Mythes des constellations',
+              'Chaque constellation a une fiche : le mythe de la culture du thème, ce qu’il faut observer et ses étoiles les plus brillantes avec leur distance. La galerie tourne le ciel vers elle.',
+            ],
           ],
         },
       ],
