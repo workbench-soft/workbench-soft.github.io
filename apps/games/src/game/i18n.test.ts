@@ -2,7 +2,10 @@ import { describe, expect, it } from 'vitest';
 import { dicts } from './i18n.ts';
 
 const holes = (text: string) => (text.match(/\{\w+\}/g) ?? []).toSorted().join(' ');
-const shape = (dict: Record<string, string>) => Object.entries(dict).map(([key, text]) => `${key} ${holes(text)}`).toSorted();
+const shape = (dict: Record<string, string>) =>
+  Object.entries(dict)
+    .map(([key, text]) => `${key} ${holes(text)}`)
+    .toSorted();
 
 describe.each(Object.entries(dicts))('%s game text', (_, dict) => {
   it('has the {placeholders} of English in each line', () => {
