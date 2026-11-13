@@ -4,10 +4,10 @@
 export const WIDTH = 800;
 export const HEIGHT = 600;
 /** Grid points a single drawing may hold. A long session stays far below it. */
-export const MAX_POINTS = 80_000;
-export const MAX_ACTIONS = 3_000;
-export const MIN_SIZE = 2;
-export const MAX_SIZE = 60;
+const MAX_POINTS = 80_000;
+const MAX_ACTIONS = 3_000;
+const MIN_SIZE = 2;
+const MAX_SIZE = 60;
 
 export type Stroke = { k: 'stroke'; id: number; color: string; size: number; eraser: boolean; points: number[] };
 export type Fill = { k: 'fill'; x: number; y: number; color: string };

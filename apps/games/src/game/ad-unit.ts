@@ -1,5 +1,5 @@
 // Picks the AdMob banner unit. AdMob bans taps on real ads from debug builds and the developer's phone.
-export type AdPlatform = 'android' | 'ios';
+type AdPlatform = 'android' | 'ios';
 
 export const TEST_BANNER: Record<AdPlatform, string> = {
   android: 'ca-app-pub-3940256099942544/6300978111',

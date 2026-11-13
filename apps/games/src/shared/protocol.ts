@@ -41,7 +41,7 @@ export const MAX_PLAYERS = 12;
 export const MAX_NAME = 20;
 export const MAX_CHAT = 100;
 export const MAX_PHRASE = 80;
-export const CODE_ALPHABET = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+const CODE_ALPHABET = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
 export const CODE_RE = /^[A-HJ-NP-Z2-9]{6}$/;
 
 export type Settings = {

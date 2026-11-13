@@ -305,7 +305,7 @@ const PATHS: Record<string, string> = {
   clear: 'M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3',
 };
 
-export function Icon({ name }: { name: string }) {
+function Icon({ name }: { name: string }) {
   return (
     <svg
       viewBox="0 0 24 24"

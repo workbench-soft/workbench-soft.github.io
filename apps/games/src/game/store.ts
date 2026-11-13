@@ -25,7 +25,7 @@ export const clueError = signal(0);
 /** The lobby's Change button opens the join screen again. */
 export const editingProfile = signal(false);
 /** Server time minus local time, so every timer shows the same seconds. */
-export const clockOffset = signal(0);
+const clockOffset = signal(0);
 
 /** The shared picture of guess the drawing. `drawingVersion` tells the board to repaint. */
 export const drawing = new Drawing();

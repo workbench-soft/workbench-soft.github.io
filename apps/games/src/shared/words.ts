@@ -8,7 +8,7 @@ export function normalize(text: string): string {
 }
 
 /** Edit distance, stopping early once it passes `limit`. */
-export function distance(a: string, b: string, limit = 3): number {
+function distance(a: string, b: string, limit = 3): number {
   if (Math.abs(a.length - b.length) > limit) return limit + 1;
   let prev = Array.from({ length: b.length + 1 }, (_, i) => i);
   for (let i = 1; i <= a.length; i++) {
