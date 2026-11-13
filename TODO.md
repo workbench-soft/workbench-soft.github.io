@@ -45,6 +45,23 @@ Workbench Games, `com.workbenchsoft.games`. Release builds of the Android app us
 - Left: one pnpm version and one workspace for the root, apps/games and apps/edge. It is a tooling migration across 3 lockfiles.
 - Left: memories-mobile/assets/social.png (192 KB) has no link in the repo. It is a served file another site or store listing may use.
 - Left: media-organizer/install.ps1 builds the installer URL itself in place of the `url` in latest.json. Both give the same URL today.
+- [ ] Play a telephone round on a phone with a big drawing, and switch from wifi to mobile data mid-room: the drawing arrives, and the room comes back within about 75 seconds (audit 2026-11-13).
+- [ ] Decide the games privacy text: kids mode uses the browser's speech recognition, which Google processes in Chrome, and the policy in `apps/games/src/site/info.ts` doesn't say so.
+- [ ] Decide on kids mode and ads: AdMob starts with no child-directed tag or content rating cap, and the policy says "general audience". Settle it before the Play Families answers.
+- [ ] Before the iOS release, show the App Tracking Transparency prompt or drop `NSUserTrackingUsageDescription` from `apps/games/ios/App/App/Info.plist`.
+- [ ] Decide the phone nav: at 320 to 414 px the search and language buttons sit past the right edge of `src/components/Nav.astro`, so phones can't switch language there.
+- [ ] Decide on the `--dim` text colour in `src/styles/global.css`: 3.56:1 contrast, under the 4.5:1 of WCAG AA.
+- [ ] Add the changelog line for the audit fixes to `CHANGELOG.md` once the other session frees it: the room fixes, the edge proxy fix and the lighter home page.
+- Left: a 12-player telephone chain of full drawings can pass the 2 MB storage value limit. It needs one storage key per entry, a format change.
+- Left: scripts/code-lines.ts writes 0 for a clone on any git error. No clone is missing today and scripts/ has no tests.
+- Left: the hero shader in src/scripts/field.ts ignores WebGL context loss, and runs at full frame rate. Both change the look and need a GPU to check.
+- Left: the home page "Privacy policy" link opens the Memories policy. A site policy needs a page in 9 languages.
+- Left: the games Worker sends no CSP. A CSP that lets AdSense in is an ads choice.
+- Left: 2 moderate advisories in glob and minimatch via `@capacitor/cli`, dev only, waiting on an upstream release.
+- Left: the Today page loads 12 zodiac images at 512 px for 120 px slots (233 KB). Smaller assets change how sharp the "yours" card looks.
+- Left: astrology titles past 60 characters and square share images under `summary_large_image`. Copy and share look, and the catalogs were busy.
+- Left: apps/edge and the unused registry.json fields wait on whether the edge domain stays.
+- Left: src/pages/apps/catalog.json.ts hand-codes project data that belongs in src/data/projects.ts.
 
 ## marketing
 
