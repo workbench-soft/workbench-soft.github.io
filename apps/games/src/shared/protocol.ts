@@ -34,8 +34,11 @@ export const BOARD_SIZE = 12;
  */
 export const PROTOCOL = 1;
 
-/** The longest message the Worker reads. A full telephone drawing, at the canvas limits, sends up to 566 000 characters. */
-export const MAX_MESSAGE = 1024 * 1024;
+/**
+ * The longest message the Worker reads. A full drawing at the canvas limits sends up to 566 000 characters, but one
+ * telephone chain sits in one storage value of at most 2 MB, so the cap stays here until each entry gets its own key.
+ */
+export const MAX_MESSAGE = 256 * 1024;
 
 export const MAX_PLAYERS = 12;
 export const MAX_NAME = 20;

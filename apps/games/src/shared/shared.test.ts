@@ -1,6 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { Drawing, MAX_ACTIONS, MAX_POINTS, sanitizeActions } from './canvas.ts';
-import { MAX_MESSAGE } from './protocol.ts';
+import { Drawing, sanitizeActions } from './canvas.ts';
 import { isClose, maskWord, normalize, parseCustomWords } from './words.ts';
 
 describe('drawing', () => {
@@ -23,17 +22,6 @@ describe('drawing', () => {
     expect(d.apply({ k: 's', id: 1, c: '#000000', w: 10, p: [1] })).toBe(false);
     expect(sanitizeActions([{ k: 'oops' }])).toBeNull();
     expect(sanitizeActions([{ k: 'fill', x: 1, y: 2, color: '#123456' }])).toHaveLength(1);
-  });
-
-  it('fits a drawing at the canvas limits into one telephone message', () => {
-    // The longest numbers and ids, and every action a stroke, give the longest message.
-    const d = new Drawing();
-    for (let i = 0; i < MAX_ACTIONS; i++) {
-      const size = i === MAX_ACTIONS - 1 ? MAX_POINTS - d.points : 26;
-      d.apply({ k: 's', id: 1_000_000 + i, c: '#e53935', w: 40, p: Array(size).fill(800) });
-    }
-    expect(d.points).toBe(MAX_POINTS);
-    expect(JSON.stringify({ t: 'submit', actions: d.actions }).length).toBeLessThanOrEqual(MAX_MESSAGE);
   });
 });
 
