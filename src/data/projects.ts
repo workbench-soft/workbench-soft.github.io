@@ -1773,6 +1773,7 @@ export const projects: Project[] = [
   },
   {
     id: 'archon',
+    repo: 'workspace',
     kind: 'internal',
     hue: 190,
     code: 'ARC',
@@ -1810,15 +1811,35 @@ export const projects: Project[] = [
         ],
       },
       {
-        title: 'Services and settings',
+        title: 'Services',
         features: [
           { name: 'CI, Reddit and Memories', text: 'The pages of the CI, Reddit Desk and the NAS indexer in tabs.' },
           {
             name: 'Songs',
             text: 'The songfactory pipeline as tiles: turn each on or off, set it up, run it alone, or make a whole video from a theme.',
           },
+        ],
+      },
+      {
+        title: 'Settings',
+        features: [
           { name: 'Voices', text: 'Picks the voice each agent speaks with.' },
           { name: 'Keys', text: 'The age of each CI secret, and a renewal through an agent.' },
+        ],
+      },
+      {
+        title: 'The PC',
+        features: [
+          { name: 'Archon on the phone', text: 'Archon on the tailnet, opened from the phone as an app.' },
+          {
+            name: 'Restore a PC',
+            text: 'One script brings back the clones, the rules, the hooks and the tools on a new PC.',
+          },
+          {
+            name: 'Move the workspace',
+            text: 'Moves every clone to a new folder and fixes each place that names the old one.',
+          },
+          { name: 'Sync the repos', text: 'Clones the missing repos and pulls the rest, 8 at a time.' },
         ],
       },
     ],

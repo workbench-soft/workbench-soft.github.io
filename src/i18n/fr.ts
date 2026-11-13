@@ -1136,15 +1136,32 @@ const fr: Catalog = {
           ],
         },
         {
-          title: 'Services et réglages',
+          title: 'Services',
           features: [
             ['CI, Reddit et Memories', 'Les pages de la CI, de Reddit Desk et de l’indexeur du NAS en onglets.'],
             [
               'Chansons',
               "La chaîne de songfactory en tuiles : activez-les, réglez-les, lancez-en une seule ou faites toute une vidéo à partir d'un thème.",
             ],
+          ],
+        },
+        {
+          title: 'Réglages',
+          features: [
             ['Voix', 'Choisit la voix de chaque agent.'],
             ['Clés', 'L’âge de chaque secret de CI, et son renouvellement par un agent.'],
+          ],
+        },
+        {
+          title: 'Le PC',
+          features: [
+            ['Archon sur le téléphone', 'Archon sur le tailnet, ouvert sur le téléphone comme une app.'],
+            ['Restaurer un PC', 'Un script remet les clones, les règles, les hooks et les outils sur un nouveau PC.'],
+            [
+              'Déplacer l’espace de travail',
+              'Déplace chaque clone dans un nouveau dossier et corrige chaque endroit qui nomme l’ancien.',
+            ],
+            ['Synchroniser les dépôts', 'Clone les dépôts manquants et met à jour les autres, 8 à la fois.'],
           ],
         },
       ],

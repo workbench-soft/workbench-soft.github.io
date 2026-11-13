@@ -399,3 +399,22 @@ score, since the browser keeps a secret token.
 - **Steps** this entry, then the code, then `mise run check`, then the docs.
 - **Docs** `apps/games/docs/features.md`, `apps/games/docs/user-flows.md`,
   `CHANGELOG.md`.
+
+### 2026-11-13 Plan: a Remove ads purchase
+
+- **Why** the other studio apps sell `remove_ads` once, and the games show a
+  banner with no way to drop it. The Play app now exists on closed testing.
+- **Product** a one-time in-app product `remove_ads` in Play Console,
+  Monetize, In-app products, at the price of the Tickalot one. The key
+  matches `tickalot/src/ads/play-purchase.ts`.
+- **Plugin** `@capgo/native-purchases`, a maintained Capacitor plugin for
+  Play Billing and StoreKit, in place of the `expo-iap` Tickalot uses.
+- **Flow** the lobby shows a "Remove ads" chip beside the banner. A tap
+  starts the Play purchase. A bought or restored `remove_ads` saves a flag in
+  `storage.ts`, hides the banner and skips the AdMob start in `admob.ts`. The
+  app restores purchases at launch. The web build shows no chip.
+- **Changes** `apps/games/src/game/purchase.ts` new, with a test,
+  `apps/games/src/game/admob.ts`, `Lobby.tsx`, the 9 catalogs in
+  `apps/games/src/game/locales/` and `i18n.ts`.
+- **Left** the product in Play Console needs the person, and the build waits
+  for it. `TODO.md` holds both steps.

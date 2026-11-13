@@ -7,7 +7,7 @@ export function GET(): Response {
   const apps = projects
     .filter((project) => ['app', 'tool', 'internal'].includes(project.kind))
     .map((project) => {
-      const repo = project.id === 'archon' ? 'workspace' : project.repo?.split('/')[0];
+      const repo = project.repo?.split('/')[0];
       const link = project.links[0]?.href ?? (repo ? `https://github.com/workbench-soft/${repo}` : null);
       return {
         id: project.id,

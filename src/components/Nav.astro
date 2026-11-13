@@ -22,7 +22,7 @@ const links = [
 
 <nav class="nav" aria-label={t.main}>
   <div class="wrap">
-    <a class="brand" href="#top"><span class="mark" aria-hidden="true">WS</span>Workbench Soft</a>
+    <a class="brand" href="#top"><span class="mark" aria-hidden="true">WS</span><span class="name">Workbench Soft</span></a>
     <ul class="links">
       {links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
     </ul>
@@ -158,5 +158,10 @@ const links = [
   }
   @media (max-width: 640px) {
     .label, .kbtn[data-palette] kbd { display: none; }
+  }
+  /* Phones from 320 px: the mark stands for the name, so the language button stays on screen. */
+  @media (max-width: 480px) {
+    .wrap { gap: 14px; }
+    .brand .name { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
   }
 </style>
