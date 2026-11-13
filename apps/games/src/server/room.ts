@@ -133,10 +133,7 @@ export class Room {
     player.online = false;
     if (this.hostId === id) this.hostAwaySince = now;
     if (this.online().length === 0) this.emptySince = now;
-    this.guess?.playerLeft(id, now);
-    this.tele?.playerLeft(now);
-    this.duel?.playerLeft(id, now);
-    this.checkEnough();
+    this.playerGone(id, now);
     this.changed();
     this.flush(now);
   }
@@ -417,10 +414,13 @@ export class Room {
     this.changed();
   }
 
-  private checkEnough(): void {
+  /** Tells the game a player went, and ends it when too few are left. */
+  private playerGone(id: string, now: number): void {
+    this.guess?.playerLeft(id, now);
+    this.tele?.playerLeft(now);
+    this.duel?.playerLeft(id, now);
     if (this.phase === 'lobby' || this.phase === 'gameEnd' || this.phase === 'album') return;
-    const need = this.settings.mode === 'duel' ? MIN_PLAYERS.duel : 2;
-    if (this.online().length < need) this.backToLobby();
+    if (this.online().length < MIN_PLAYERS[this.settings.mode]) this.backToLobby();
   }
 
   private kick(id: string, now: number): void {
@@ -430,10 +430,7 @@ export class Room {
     this.sys('kicked', player.name);
     this.out.close(id, 'kicked');
     this.players.delete(id);
-    this.guess?.playerLeft(id, now);
-    this.tele?.playerLeft(now);
-    this.duel?.playerLeft(id, now);
-    this.checkEnough();
+    this.playerGone(id, now);
     this.changed();
   }
 

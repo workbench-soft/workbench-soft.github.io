@@ -316,6 +316,12 @@ describe('clue duel', () => {
     expect(view(redGuesser).duel?.targets.red).toBeNull();
   });
 
+  it('goes back to the lobby once fewer than 4 players are left', () => {
+    const { room, view } = started();
+    room.disconnect('d', 1);
+    expect(view('a').phase).toBe('lobby');
+  });
+
   it('refuses a clue made of a board word', () => {
     const { room, last, duel } = started();
     room.message(duel.givers.red, { t: 'clue', text: duel.board[0] }, 1);
