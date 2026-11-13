@@ -1572,6 +1572,10 @@ const es: Catalog = {
               'Property Trends Pro',
               'Una compra de A$5.99 en Android desbloquea los alquileres y todo el historial de precios, y quita los anuncios.',
             ],
+            [
+              'App para iPhone',
+              'El mismo mapa, Pro e idiomas en el iPhone, con el mismo código. Llega al App Store cuando se abra la cuenta de desarrollador.',
+            ],
           ],
         },
       ],

@@ -1447,6 +1447,10 @@ const nb: Catalog = {
               'Property Trends Pro',
               'Ett kjøp til A$5.99 på Android låser opp leie og hele prishistorikken, og fjerner reklamen.',
             ],
+            [
+              'iPhone-app',
+              'Samme kart, Pro og språk på iPhone, fra samme kode. Den kommer i App Store når utviklerkontoen er åpnet.',
+            ],
           ],
         },
       ],

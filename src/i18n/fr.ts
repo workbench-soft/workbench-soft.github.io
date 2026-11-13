@@ -1628,6 +1628,10 @@ const fr: Catalog = {
               'Property Trends Pro',
               'Un achat de 5,99 A$ sur Android ouvre les loyers et tout l’historique des prix, et retire les publicités.',
             ],
+            [
+              'App iPhone',
+              'La même carte, Pro et les langues sur iPhone, avec le même code. Elle arrive sur l’App Store dès que le compte développeur est ouvert.',
+            ],
           ],
         },
       ],

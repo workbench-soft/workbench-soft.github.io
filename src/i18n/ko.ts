@@ -1245,6 +1245,10 @@ const ko: Catalog = {
               'Property Trends Pro',
               'Android에서 A$5.99를 한 번 결제하면 임대료와 전체 가격 기록이 열리고 광고가 사라집니다.',
             ],
+            [
+              'iPhone 앱',
+              '같은 코드로 iPhone에서도 같은 지도, Pro, 언어를 제공해요. 개발자 계정이 열리면 App Store에 나와요.',
+            ],
           ],
         },
       ],

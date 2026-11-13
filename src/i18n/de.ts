@@ -1584,6 +1584,10 @@ const de: Catalog = {
               'Property Trends Pro',
               'Ein Kauf für A$5.99 unter Android schaltet Mieten und die ganze Preisgeschichte frei und entfernt die Werbung.',
             ],
+            [
+              'iPhone-App',
+              'Dieselbe Karte, Pro und die Sprachen auf dem iPhone, aus demselben Code. Sie kommt in den App Store, sobald das Entwicklerkonto steht.',
+            ],
           ],
         },
       ],

@@ -1070,6 +1070,10 @@ export const projects: Project[] = [
             name: 'Property Trends Pro',
             text: 'One A$5.99 purchase on Android unlocks Rents and the full price history, and removes the ads.',
           },
+          {
+            name: 'iPhone app',
+            text: 'The same map, Pro and languages on the iPhone, from the same code. It reaches the App Store once the developer account opens.',
+          },
         ],
       },
     ],
