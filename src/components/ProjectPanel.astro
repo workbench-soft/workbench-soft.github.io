@@ -57,7 +57,7 @@ let n = 0;
           ))}
           {videos.map((v) => (
             <li>
-              <video src={v} controls muted playsinline preload="metadata" aria-label={p.name} />
+              <video src={v} controls muted playsinline preload="none" aria-label={p.name} />
             </li>
           ))}
         </ul>
@@ -88,6 +88,20 @@ let n = 0;
 </article>
 
 <script>
+  // The videos of a project wait until its screenshot row nears the screen, so the page load skips
+  // megabytes of video no one sees yet. The row is watched, as a video off to its side counts as hidden.
+  const near = new IntersectionObserver(
+    (entries) => {
+      for (const e of entries) {
+        if (!e.isIntersecting) continue;
+        for (const v of e.target.querySelectorAll("video")) v.preload = "metadata";
+        near.unobserve(e.target);
+      }
+    },
+    { rootMargin: "600px 0px" },
+  );
+  for (const row of document.querySelectorAll(".proj .shots:has(video)")) near.observe(row);
+
   for (const b of document.querySelectorAll<HTMLButtonElement>(".proj .more")) {
     const more = b.textContent!.trim();
     b.addEventListener("click", () => {
