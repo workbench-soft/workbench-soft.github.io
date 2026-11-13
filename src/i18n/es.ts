@@ -1370,6 +1370,14 @@ const es: Catalog = {
               'Documentos compartidos en la pizarra',
               'Comparte PDF o diapositivas PowerPoint, cambia de página con los demás y retira el archivo sin borrar los dibujos.',
             ],
+            [
+              'Contactos y salas',
+              'El inicio lista contactos y salas. Un contacto es una persona, una sala es un enlace que abren varias personas.',
+            ],
+            [
+              'Búsqueda y vista previa del enlace',
+              'Los buscadores leen el inicio en 9 idiomas. Un enlace compartido muestra el icono y el nombre de Farnear.',
+            ],
           ],
         },
       ],

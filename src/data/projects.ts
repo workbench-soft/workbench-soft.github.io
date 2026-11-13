@@ -714,6 +714,14 @@ export const projects: Project[] = [
             name: 'Shared documents on the board',
             text: 'Share PDF or PowerPoint slides, turn pages together and remove the file while keeping the ink.',
           },
+          {
+            name: 'Contacts and rooms',
+            text: 'The home page lists contacts and rooms. A contact is a person, a room is a link many people open.',
+          },
+          {
+            name: 'Search and share preview',
+            text: 'Search engines read the home page in 9 languages. A shared link shows the Farnear icon and name.',
+          },
         ],
       },
     ],

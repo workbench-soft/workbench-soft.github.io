@@ -1263,6 +1263,14 @@ const nb: Catalog = {
               'Delte dokumenter på tavlen',
               'Del PDF eller PowerPoint, bla sammen og fjern filen mens tegningene blir værende.',
             ],
+            [
+              'Kontakter og rom',
+              'Startsiden viser kontakter og rom. En kontakt er en person, et rom er en lenke flere åpner.',
+            ],
+            [
+              'Søk og forhåndsvisning av lenke',
+              'Søkemotorer leser startsiden på 9 språk. En delt lenke viser ikonet og navnet til Farnear.',
+            ],
           ],
         },
       ],

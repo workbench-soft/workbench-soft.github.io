@@ -1428,6 +1428,14 @@ const fr: Catalog = {
               'Documents partagés sur le tableau',
               'Partagez un PDF ou des diapositives PowerPoint, tournez les pages ensemble et retirez le fichier en gardant les dessins.',
             ],
+            [
+              'Contacts et salons',
+              'L’accueil liste les contacts et les salons. Un contact est une personne, un salon est un lien que plusieurs personnes ouvrent.',
+            ],
+            [
+              'Recherche et aperçu du lien',
+              'Les moteurs de recherche lisent l’accueil en 9 langues. Un lien partagé affiche l’icône et le nom de Farnear.',
+            ],
           ],
         },
       ],

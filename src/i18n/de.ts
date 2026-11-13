@@ -1397,6 +1397,14 @@ const de: Catalog = {
               'Gemeinsame Dokumente auf dem Board',
               'PDF oder PowerPoint teilen, Seiten gemeinsam wechseln und die Datei entfernen, ohne Zeichnungen zu löschen.',
             ],
+            [
+              'Kontakte und Räume',
+              'Die Startseite listet Kontakte und Räume. Ein Kontakt ist eine Person, ein Raum ist ein Link für mehrere Leute.',
+            ],
+            [
+              'Suche und Linkvorschau',
+              'Suchmaschinen lesen die Startseite in 9 Sprachen. Ein geteilter Link zeigt Symbol und Namen von Farnear.',
+            ],
           ],
         },
       ],
