@@ -14,6 +14,18 @@ permissions:
   contents: read
 
 jobs:
+  # The Pages workflow skips pull requests that touch only apps/, but its lint on main checks the format
+  # and the Markdown of apps/ too. So the same lint runs here first.
+  site-lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: jdx/mise-action@6be3c7ed4c21d4f76b208d351d95aac273ebb76d # v5.2.4
+      - run: |
+          mise x -- pnpm install --frozen-lockfile
+          mise run lint
+
   check:
     runs-on: ubuntu-latest
     timeout-minutes: 15
