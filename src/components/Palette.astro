@@ -8,7 +8,7 @@ const t = ui(langOf(Astro.currentLocale));
 <dialog id="palette" aria-label={t.nav.searchLabel} data-empty={t.palette.empty} data-project={t.palette.project} data-feature={t.palette.feature}>
   <div class="field">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
-    <input id="pal-q" type="search" placeholder={t.nav.searchLabel} autocomplete="off" role="combobox" aria-controls="pal-list" aria-expanded="true" aria-autocomplete="list" />
+    <input id="pal-q" type="search" placeholder={t.nav.searchLabel} aria-label={t.nav.searchLabel} autocomplete="off" role="combobox" aria-controls="pal-list" aria-expanded="true" aria-autocomplete="list" />
     <kbd>Esc</kbd>
   </div>
   <ul id="pal-list" role="listbox" aria-label={t.palette.results}></ul>
