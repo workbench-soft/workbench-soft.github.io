@@ -1356,6 +1356,10 @@ const nb: Catalog = {
               'Lydbøker',
               'Bokmapper etter forfatter, hver bok med omslag og fremdrift. En bok fortsetter der den stoppet, litt tidligere etter en pause.',
             ],
+            [
+              'Videobibliotek',
+              'Videomapper viser serier, sesonger og episoder, også med rotete filnavn. Si «Hey Lumi, spill tegnefilmer» eller en serie med sesong og episode.',
+            ],
             ['Finn tabulatur', 'Med Guitar Upscale åpner en gitarknapp tabulaturen til sangen som spilles.'],
             [
               'Google Play-versjon',

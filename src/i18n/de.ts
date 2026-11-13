@@ -1484,6 +1484,10 @@ const de: Catalog = {
               'Hörbücher',
               'Buchordner nach Autor, jedes Buch mit Cover und Fortschritt. Ein Buch geht dort weiter, wo es stoppte, nach einer Pause etwas früher.',
             ],
+            [
+              'Videothek',
+              'Videoordner zeigen Serien, Staffeln und Folgen, auch bei krummen Dateinamen. Sag „Hey Lumi, spiel Zeichentrick“ oder eine Serie mit Staffel und Folge.',
+            ],
             ['Tabs finden', 'Mit Guitar Upscale öffnet ein Gitarrenknopf die Tabs des laufenden Songs.'],
             [
               'Google-Play-Version',

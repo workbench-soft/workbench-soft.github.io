@@ -1467,6 +1467,10 @@ const es: Catalog = {
               'Carpetas de libros por autor, cada uno con su portada y su progreso. Un libro sigue donde se quedó, un poco antes tras una pausa.',
             ],
             [
+              'Videoteca',
+              'Las carpetas de vídeo muestran series, temporadas y episodios, incluso con nombres de archivo torcidos. Di «Hey Lumi, pon dibujos animados» o una serie con su temporada y episodio.',
+            ],
+            [
               'Buscar tablaturas',
               'Con Guitar Upscale, un botón de guitarra abre las tablaturas de la canción que suena.',
             ],

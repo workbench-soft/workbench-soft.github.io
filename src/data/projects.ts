@@ -864,6 +864,10 @@ export const projects: Project[] = [
             text: 'Book folders by author, each book with its cover and progress. A book starts where it stopped, a little earlier after a pause.',
           },
           {
+            name: 'Video library',
+            text: 'Video folders list shows, seasons and episodes, crooked file names too. Say Hey Lumi, play cartoons, or a show with its season and episode.',
+          },
+          {
             name: 'Find tabs',
             text: 'With Guitar Upscale installed, a guitar button opens the tabs of the song that plays.',
           },
