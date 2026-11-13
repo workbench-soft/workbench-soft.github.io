@@ -9,7 +9,6 @@ import Process from "../components/Process.astro";
 import Contact from "../components/Contact.astro";
 import Palette from "../components/Palette.astro";
 import { email } from "../data/studio";
-import { projects } from "../data/projects";
 import { defaultLang, langOf, locales } from "../i18n/locales";
 import { ui } from "../i18n";
 
@@ -19,10 +18,9 @@ export function getStaticPaths() {
 }
 
 const t = ui(langOf(Astro.currentLocale));
-const names = projects.filter((p) => p.kind === "app").map((p) => p.name);
 ---
 
-<Base title={t.meta.title} description={t.meta.description.replace("{names}", names.join(", "))}>
+<Base title={t.meta.title} description={t.meta.description}>
   <a class="skip" href="#projects">{t.nav.skip}</a>
   <Nav />
   <Hero />

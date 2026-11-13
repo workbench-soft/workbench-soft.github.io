@@ -60,6 +60,7 @@ export const ui: typeof en = {
   },
   today: {
     title: 'Astrologie heute: Sonne, Mond und ein Tipp für jedes Zeichen',
+    short: 'Astrologie heute: Sonne, Mond und Tipps',
     description:
       'In welchen Zeichen Sonne und Mond heute stehen, dein eigenes Zeichen hervorgehoben und ein leichter Tipp für jedes der 12 Zeichen.',
     lede: 'Sonne und Mond wandern jeden Tag durch den Tierkreis. Wähle dein Zeichen, damit es hervorgehoben bleibt.',

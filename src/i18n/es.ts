@@ -5,8 +5,12 @@ const es: Catalog = {
     meta: {
       title: 'Workbench Soft: apps para Android, la web, Windows y macOS',
       description:
-        'Workbench Soft crea y publica apps: {names} y herramientas para desarrolladores. Cada proyecto con cada una de sus funciones.',
+        'Workbench Soft crea apps para Android, iPhone, la web, Windows y macOS. Aquí está cada proyecto con sus funciones, de Memories a Sky Altar y Workbench Games.',
       org: 'Un estudio de software que crea apps para Android, iPhone, la web, Windows y macOS.',
+    },
+    notFound: {
+      title: 'Página no encontrada',
+      home: 'Ir a la página de inicio',
     },
     nav: {
       services: 'Servicios',

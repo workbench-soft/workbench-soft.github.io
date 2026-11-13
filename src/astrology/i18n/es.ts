@@ -57,6 +57,7 @@ export const ui: typeof en = {
   },
   today: {
     title: 'Astrología de hoy: el Sol, la Luna y un consejo para cada signo',
+    short: 'Astrología de hoy: Sol, Luna y consejos',
     description:
       'En qué signos están hoy el Sol y la Luna, tu propio signo resaltado y un consejo ligero para cada uno de los 12 signos.',
     lede: 'El Sol y la Luna recorren el zodiaco cada día. Elige tu signo para mantenerlo resaltado.',
