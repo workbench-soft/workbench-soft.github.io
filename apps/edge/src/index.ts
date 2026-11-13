@@ -10,11 +10,18 @@ export function appFor(pathname: string): App | null {
 
 const ORIGIN = registry.fallback.origin;
 
+/** The page on the public site for a path. A path like //host stays on the site host. */
+export function siteUrl(url: URL): URL {
+  const target = new URL(ORIGIN);
+  // AdSense reads /ads.txt and AdMob reads /app-ads.txt. Both hold the same publisher line.
+  target.pathname = url.pathname === '/ads.txt' ? '/app-ads.txt' : url.pathname;
+  target.search = url.search;
+  return target;
+}
+
 /** Asks GitHub Pages for the page, and keeps its redirects on this domain. */
 async function publicSite(request: Request, url: URL): Promise<Response> {
-  // AdSense reads /ads.txt and AdMob reads /app-ads.txt. Both hold the same publisher line.
-  const path = url.pathname === '/ads.txt' ? '/app-ads.txt' : url.pathname;
-  const response = await fetch(new Request(new URL(path + url.search, ORIGIN), request), { redirect: 'manual' });
+  const response = await fetch(new Request(siteUrl(url), request), { redirect: 'manual' });
   const location = response.headers.get('Location');
   if (!location?.startsWith(ORIGIN)) return response;
   const headers = new Headers(response.headers);
