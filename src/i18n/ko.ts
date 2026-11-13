@@ -1059,6 +1059,10 @@ const ko: Catalog = {
             ],
             ['Farnear Pro', 'Android에서 A$5.99 한 번 구매로 방 전체에 공유 보드와 미디어가 열리고 광고가 사라집니다.'],
             ['Android 앱', '웹 앱을 Android 래퍼에 담아, 서명된 APK와 AAB 릴리스를 날짜 버전으로 냅니다.'],
+            [
+              'iPhone 앱',
+              'iPhone에서도 같은 앱으로, App Store 구매와 iPhone 공유 시트를 씁니다. Apple 계정이 생기면 App Store에 올라갑니다.',
+            ],
             ['언어', '9개 언어로, 휴대폰이나 브라우저를 따릅니다.'],
             ['앱 아이콘', '네온 전화 포털, Android와 웹 공통.'],
             [

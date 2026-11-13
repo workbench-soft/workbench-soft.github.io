@@ -1237,6 +1237,10 @@ const nb: Catalog = {
               'Ett kjøp til A$5.99 på Android åpner den delte tavla og mediene for rommet, og fjerner reklamen.',
             ],
             ['Android-app', 'Nettappen i et Android-skall, med signerte APK- og AAB-releaser og daterte versjoner.'],
+            [
+              'iPhone-app',
+              'Den samme appen på iPhone, med kjøp gjennom App Store og delingsarket på iPhone. Den kommer i App Store når en Apple-konto finnes.',
+            ],
             ['Språk', 'På 9 språk, etter telefonen eller nettleseren.'],
             ['Appikon', 'En neonportal formet som en telefon, på Android og nettet.'],
             [

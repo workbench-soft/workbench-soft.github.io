@@ -1362,6 +1362,10 @@ const de: Catalog = {
               'Android-App',
               'Die Web-App in einer Android-Hülle, mit signierten APK- und AAB-Releases und datierten Versionen.',
             ],
+            [
+              'iPhone-App',
+              'Dieselbe App auf dem iPhone, mit Käufen über den App Store und dem iPhone-Teilen-Menü. Sie kommt in den App Store, sobald es ein Apple-Konto gibt.',
+            ],
             ['Sprachen', 'In 9 Sprachen, nach der Sprache von Telefon oder Browser.'],
             ['App-Symbol', 'Ein Neon-Telefonportal, unter Android und im Web.'],
             [

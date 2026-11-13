@@ -634,7 +634,7 @@ export const projects: Project[] = [
     tagline: 'Video calls across borders, with a board for shared images and video.',
     lede: 'Farnear calls family through a link, with no account. Hosts connect at once; guests choose their devices, then connect.',
     platforms: ['Web', 'Android', 'iOS'],
-    stack: ['React', 'Vite', 'WebRTC', 'Cloudflare Workers', 'Kotlin'],
+    stack: ['React', 'Vite', 'WebRTC', 'Cloudflare Workers', 'Kotlin', 'Swift', 'Capacitor'],
     links: [{ href: 'https://farnear.workbench-soft.com', label: 'farnear.workbench-soft.com' }],
     groups: [
       {
@@ -681,6 +681,10 @@ export const projects: Project[] = [
           {
             name: 'Android app',
             text: 'The web app in an Android wrapper, with signed APK and AAB releases and dated versions.',
+          },
+          {
+            name: 'iPhone app',
+            text: 'The same app on the iPhone, with App Store purchases and the iPhone share sheet. It reaches the App Store once an Apple account exists.',
           },
           { name: 'Languages', text: 'The app in 9 languages, following the phone or browser.' },
           { name: 'App icon', text: 'A neon phone portal, on Android and the web.' },

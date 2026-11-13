@@ -1393,6 +1393,10 @@ const fr: Catalog = {
               'App Android',
               'L’app web dans une enveloppe Android, avec des releases APK et AAB signées et des versions datées.',
             ],
+            [
+              'App iPhone',
+              'La même app sur iPhone, avec les achats par l’App Store et la feuille de partage de l’iPhone. Elle arrivera sur l’App Store dès qu’un compte Apple existera.',
+            ],
             ['Langues', 'En 9 langues, selon le téléphone ou le navigateur.'],
             ['Icône de l’app', 'Un portail téléphone en néon, sur Android et sur le web.'],
             [

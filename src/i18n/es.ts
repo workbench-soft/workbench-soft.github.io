@@ -1341,6 +1341,10 @@ const es: Catalog = {
               'App de Android',
               'La app web dentro de un contenedor Android, con releases APK y AAB firmados y versiones con fecha.',
             ],
+            [
+              'App para iPhone',
+              'La misma app en el iPhone, con compras por la App Store y el menú Compartir del iPhone. Llegará a la App Store cuando exista una cuenta de Apple.',
+            ],
             ['Idiomas', 'En 9 idiomas, según el teléfono o el navegador.'],
             ['Icono de la app', 'Un portal telefónico de neón, en Android y en la web.'],
             [
