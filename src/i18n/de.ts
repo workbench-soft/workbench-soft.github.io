@@ -404,7 +404,10 @@ const de: Catalog = {
               'Akkordblatt',
               'Akkordnamen in Takten, die mit dem Song aufleuchten. Text mit Akkorden einfügen, und er richtet sich am Song aus.',
             ],
-            ['Songs hochladen', 'Guitar-Pro- und MIDI-Dateien kommen in Ihre Songliste.'],
+            [
+              'Songs hochladen',
+              'Guitar-Pro- und MIDI-Dateien kommen in Ihre Songliste. Eine MP3 findet ihren Song online, mit den Akkorden.',
+            ],
             [
               'Song online finden',
               'Durchsucht 4 Songseiten auf einmal. Ein Song von Songsterr wird zur Guitar-Pro-Datei.',

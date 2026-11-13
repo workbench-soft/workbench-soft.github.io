@@ -401,7 +401,10 @@ const es: Catalog = {
               'Hoja de acordes',
               'Nombres de acordes en compases que se iluminan con la canción. Pega letra con acordes y se alinea con la canción.',
             ],
-            ['Subir canciones', 'Los archivos Guitar Pro y MIDI se suman a tu lista.'],
+            [
+              'Subir canciones',
+              'Los archivos Guitar Pro y MIDI se suman a tu lista. Un MP3 encuentra su canción en línea, con los acordes.',
+            ],
             [
               'Buscar una canción en línea',
               'Busca en 4 sitios de canciones a la vez. Una canción de Songsterr se convierte en un archivo Guitar Pro.',

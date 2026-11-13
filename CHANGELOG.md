@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **Guitar Upscale** Song upload says an MP3 finds its song online with the chords, in every language.
+
 - **Lumiere Player** lists Online music: in the GitHub APK, Hey Lumi plays songs no folder holds, found in the MusicBrainz catalog, in every language.
 
 - **local-ci** the project lists CI trends, the charts of the status page, in every language.
