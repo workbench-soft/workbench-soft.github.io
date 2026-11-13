@@ -16,8 +16,10 @@ Undeployed. The Worker for a domain shared by several apps. It hands each reques
 ## Run, check, deploy
 
 ```bash
-mise x -- pnpm test
+mise run check
 ```
+
+- **Check** `mise run check` runs the lint, the types and the tests.
 
 - **Types** `mise x -- pnpm typecheck`.
 - **Deploy** `mise x -- pnpm deploy`. The domain in `wrangler.jsonc` has to sit on Cloudflare with the proxy on. The games run on their own host, so the workflow skips this deploy.
