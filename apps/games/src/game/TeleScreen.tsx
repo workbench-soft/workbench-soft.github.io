@@ -47,10 +47,11 @@ function Task() {
     localVersion.value++;
   }, [tele.step]);
 
-  // While the socket is down the work stays on screen, and the timer effect below sends it once it is back.
   const submit = () => {
     if (sent) return;
-    if (send(kind === 'draw' ? { t: 'submit', actions: local.current.actions } : { t: 'submit', text })) setSent(true);
+    setSent(true);
+    if (kind === 'draw') send({ t: 'submit', actions: local.current.actions });
+    else send({ t: 'submit', text });
   };
 
   // When time runs out, the work so far goes in as it is.

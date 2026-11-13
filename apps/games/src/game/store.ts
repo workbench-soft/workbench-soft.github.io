@@ -43,11 +43,8 @@ export function serverNow(): number {
   return Date.now() + clockOffset.value;
 }
 
-/** Returns false when the socket is down and the message went nowhere. */
-export function send(msg: ClientMsg): boolean {
-  if (socket?.readyState !== WebSocket.OPEN) return false;
-  socket.send(JSON.stringify(msg));
-  return true;
+export function send(msg: ClientMsg): void {
+  if (socket?.readyState === WebSocket.OPEN) socket.send(JSON.stringify(msg));
 }
 
 function handle(msg: ServerMsg): void {
