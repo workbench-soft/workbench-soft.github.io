@@ -6,6 +6,8 @@
 - **Where** every page and each game screen.
 - **Limits** the glows and the bobbing pictures stop under reduced motion.
 
+Spec: [party-games](../../../specs/party-games.md).
+
 ## Rooms by link
 
 - **For the person** one link brings friends into the same room, with no account.

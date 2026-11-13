@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **Projects** Farnear Take a photo, Shuttrix Raw photo (beta), Lumiere Spotify and YouTube, and the Workbench Games party look, in every language.
+
 - **Lumiere Player** describe the video library and voice search for videos in every language.
 
 - **Farnear** describe stalled-media recovery, shared call names and board documents in every language.

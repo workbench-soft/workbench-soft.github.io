@@ -661,6 +661,10 @@ const es: Catalog = {
             ['Idiomas', 'Las páginas y las salas funcionan en inglés y en ruso.'],
             ['Anuncios', 'Los juegos siguen gratis, con un banner en las páginas, la sala y los resultados.'],
             ['Apps para Android e iOS', 'Los mismos juegos como app instalada.'],
+            [
+              'Aspecto de fiesta',
+              'Brillo de fiesta nocturna, o pasteles de caramelo en modo claro, con un color para cada juego.',
+            ],
           ],
         },
       ],
@@ -1219,6 +1223,10 @@ const es: Catalog = {
               'Mejorar fotos',
               'Enhance refuerza color, nitidez y sombras. Al desactivarlo, las cámaras normales compatibles usan una curva sRGB fija. Noche y las demás cámaras conservan su procesamiento.',
             ],
+            [
+              'Foto raw (beta)',
+              'Crea la foto con los fotogramas en bruto del sensor hasta la pulsación, con menos ruido y más detalle. Desactivado por defecto.',
+            ],
             ['Códigos QR', 'Un código en la vista previa recibe un marco y un botón para abrirlo.'],
             [
               'Reloj',
@@ -1307,6 +1315,10 @@ const es: Catalog = {
             [
               'Compartir pantalla',
               'Una persona comparte una pantalla, una ventana o una pestaña. Los demás la ven en grande y dibujan encima.',
+            ],
+            [
+              'Hacer una foto',
+              'Guarda la llamada con la pizarra y la pantalla compartida como PNG en Descargas. La imagen se queda en el dispositivo.',
             ],
             ['Tu nombre', 'El nombre que los demás ven en tu mosaico. Cámbialo en la página de inicio o en Ajustes.'],
             ['Fondo de vídeo', 'Desenfoca la habitación detrás de ti, o pon una escena dibujada o tu propia imagen.'],
@@ -1461,6 +1473,10 @@ const es: Catalog = {
             [
               'Reproductor de música',
               'Artistas y Canciones están en la pantalla de inicio junto a las unidades. La barra del reproductor sigue en cada pantalla menos el vídeo, con ruta de navegación y orden por artista. Las pistas en directo se omiten, activado por defecto.',
+            ],
+            [
+              'Spotify y YouTube',
+              'Hey Lumi pone una canción, un artista o un estilo que no está en las carpetas. Spotify busca las canciones y YouTube las reproduce.',
             ],
             [
               'Audiolibros',

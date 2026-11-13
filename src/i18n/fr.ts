@@ -689,6 +689,7 @@ const fr: Catalog = {
             ['Langues', 'Les pages et les salons sont en anglais et en russe.'],
             ['Publicité', 'Les jeux restent gratuits, avec une bannière sur les pages, le salon et les résultats.'],
             ['Apps Android et iOS', 'Les mêmes jeux dans une app installée.'],
+            ['Look de fête', 'Une lueur de soirée, ou des pastels bonbon en mode clair, avec une couleur par jeu.'],
           ],
         },
       ],
@@ -1277,6 +1278,10 @@ const fr: Catalog = {
               'Améliorer les photos',
               'Enhance renforce couleurs, netteté et ombres. Désactivé, il laisse une courbe sRGB fixe aux caméras ordinaires compatibles. Le mode Nuit et les autres caméras gardent leur traitement.',
             ],
+            [
+              'Photo raw (bêta)',
+              'Construit la photo à partir des images brutes du capteur jusqu’à l’appui, avec moins de bruit et plus de détails. Désactivé par défaut.',
+            ],
             ['Codes QR', "Un code dans l'aperçu reçoit un cadre et une pastille pour l'ouvrir."],
             ['Horloge', 'L’heure en haut à gauche, à la place de l’horloge du téléphone, loin des commandes.'],
             [
@@ -1365,6 +1370,10 @@ const fr: Catalog = {
             [
               'Partage d’écran',
               'Une personne partage un écran, une fenêtre ou un onglet. Les autres le voient en grand et dessinent dessus.',
+            ],
+            [
+              'Prendre une photo',
+              'Enregistre l’appel avec le tableau et l’écran partagé en PNG dans Téléchargements. L’image reste sur l’appareil.',
             ],
             [
               'Votre nom',
@@ -1523,6 +1532,10 @@ const fr: Catalog = {
             [
               'Lecteur de musique',
               'Artistes et Titres sont sur l’écran d’accueil, à côté des disques. La barre du lecteur reste sur chaque écran sauf la vidéo, avec un fil d’Ariane et un tri par artiste. Les titres live sont ignorés, par défaut.',
+            ],
+            [
+              'Spotify et YouTube',
+              'Hey Lumi joue un titre, un artiste ou un style absent des dossiers. Spotify trouve les titres, YouTube les joue.',
             ],
             [
               'Livres audio',
