@@ -1506,6 +1506,10 @@ const es: Catalog = {
               'Comandos de voz',
               'Di Hey Lumi, luego play y una canción, o volume 40, en inglés o ruso, con el teléfono bloqueado. Un pulso muestra que escucha.',
             ],
+            [
+              'Música en línea',
+              'En el APK de GitHub, Hey Lumi reproduce una canción, un artista, un álbum o un estilo que no está en las carpetas, buscado en el catálogo de MusicBrainz.',
+            ],
             ['Lumiere Pro', 'Un solo pago desbloquea los comandos de voz y Hey Lumi, y quita los anuncios.'],
           ],
         },

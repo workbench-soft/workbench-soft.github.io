@@ -891,6 +891,10 @@ export const projects: Project[] = [
             name: 'Voice commands',
             text: 'Say Hey Lumi, then play and a song, or volume 40, in English or Russian, with the phone locked. A pulse shows it listens.',
           },
+          {
+            name: 'Online music',
+            text: 'In the APK from GitHub, Hey Lumi plays a song, an artist, an album or a style that no folder holds, found in the MusicBrainz catalog.',
+          },
           { name: 'Lumiere Pro', text: 'One payment unlocks the voice commands and Hey Lumi, and hides the ads.' },
         ],
       },

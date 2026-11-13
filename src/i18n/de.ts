@@ -1521,6 +1521,10 @@ const de: Catalog = {
               'Sprachbefehle',
               'Sag Hey Lumi, dann play und einen Song oder volume 40, auf Englisch oder Russisch, auch bei gesperrtem Telefon. Ein Pulsieren zeigt, dass es zuhört.',
             ],
+            [
+              'Online-Musik',
+              'In der APK von GitHub spielt Hey Lumi einen Song, eine Band, ein Album oder einen Stil, die in keinem Ordner liegen, gefunden im MusicBrainz-Katalog.',
+            ],
             ['Lumiere Pro', 'Ein Kauf schaltet Sprachbefehle und Hey Lumi frei und entfernt die Werbung.'],
           ],
         },
