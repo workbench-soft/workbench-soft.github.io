@@ -27,6 +27,18 @@ describe('room', () => {
     expect(view('b').hostId).toBe('b');
   });
 
+  it('passes the room on when the host stays away after everyone else came back', () => {
+    const { room, view, join } = makeRoom();
+    join(['a', 'b']);
+    room.disconnect('a', 1000);
+    room.disconnect('b', 1000);
+    room.alarm(1000 + HOST_GRACE);
+    join(['b'], 2000 + HOST_GRACE);
+    expect(room.wakeAt()).toBe(2000 + 2 * HOST_GRACE);
+    room.alarm(2000 + 2 * HOST_GRACE);
+    expect(view('b').hostId).toBe('b');
+  });
+
   it('keeps the seat of a player who drops out, and ignores settings from other players', () => {
     const { room, view, join } = makeRoom();
     join(['a', 'b']);

@@ -118,6 +118,8 @@ export class Room {
     this.emptySince = null;
     if (!this.hostId || !this.players.get(this.hostId)) this.hostId = id;
     if (this.hostId === id) this.hostAwaySince = null;
+    // The handover timer may have run out while nobody was online, so a player who comes back starts it again.
+    else if (!this.isOnline(this.hostId)) this.hostAwaySince ??= now;
     this.changed();
     this.sendSnapshot(id);
     this.flush(now);
