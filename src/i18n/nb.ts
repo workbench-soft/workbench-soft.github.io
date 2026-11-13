@@ -1334,6 +1334,10 @@ const nb: Catalog = {
               'Sveip inn fra venstre for fødselshoroskopet, dagens tips og en match-score. Dagens stjernetegn lyser på himmelen.',
             ],
             ['Gå til stjernebilde', 'Søk etter et stjernebilde på navn, og himmelen snur seg mot det du trykker på.'],
+            [
+              'Stjernebildemyter',
+              'Hvert stjernebilde har et kort med myten fra temaets kultur, hva du kan se og de klareste stjernene med avstanden. Galleriet snur himmelen dit.',
+            ],
           ],
         },
       ],

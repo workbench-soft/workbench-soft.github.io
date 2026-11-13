@@ -1468,6 +1468,10 @@ const de: Catalog = {
               'Von links hereinwischen für das Geburtshoroskop, Tipps für den Tag und einen Match-Wert. Das Sternzeichen des Tages leuchtet am Himmel.',
             ],
             ['Sternbild-Navigation', 'Ein Sternbild nach Namen suchen, und der Himmel dreht sich zu dem angetippten.'],
+            [
+              'Sternbildsagen',
+              'Jedes Sternbild hat eine Karte mit der Sage aus der Kultur des Themas, Sehenswertem und den hellsten Sternen mit ihrer Entfernung. Aus der Galerie dreht sich der Himmel dorthin.',
+            ],
           ],
         },
       ],

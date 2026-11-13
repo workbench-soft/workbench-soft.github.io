@@ -1441,6 +1441,10 @@ const es: Catalog = {
               'Desliza desde la izquierda para la carta natal, consejos del día y una puntuación de compatibilidad. El signo del día brilla en el cielo.',
             ],
             ['Ir a una constelación', 'Busca una constelación por su nombre y el cielo gira hacia la que tocas.'],
+            [
+              'Mitos de las constelaciones',
+              'Cada constelación tiene una ficha con el mito de la cultura del tema, qué observar y sus estrellas más brillantes con su distancia. La galería gira el cielo hacia ella.',
+            ],
           ],
         },
       ],
