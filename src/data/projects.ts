@@ -682,7 +682,7 @@ export const projects: Project[] = [
           { name: 'App icon', text: 'A neon phone portal, on Android and the web.' },
           {
             name: 'Call stage',
-            text: 'The call fills the window. One tile is large, the rest sit in a strip, and a tap pins a tile large.',
+            text: 'The call fills the window. One tile is large, the rest sit in a strip, and a tap pins a tile large. The device details of another participant can switch their microphone or camera.',
           },
           {
             name: 'Share a screen',

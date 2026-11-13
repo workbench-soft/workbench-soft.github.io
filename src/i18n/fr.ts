@@ -1393,7 +1393,7 @@ const fr: Catalog = {
             ['Icône de l’app', 'Un portail téléphone en néon, sur Android et sur le web.'],
             [
               'Scène d’appel',
-              'L’appel remplit la fenêtre. Une tuile est grande, les autres sont dans une bande. Un appui épingle une tuile en grand.',
+              'L’appel remplit la fenêtre. Une tuile est grande, les autres sont dans une bande. Un appui épingle une tuile en grand. Les détails des appareils d’un autre participant permettent de changer son micro ou sa caméra.',
             ],
             [
               'Partage d’écran',

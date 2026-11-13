@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Farnear** Call stage says the device details of another participant can switch their microphone or camera, in every language.
 - **Lumiere Player** Phone speaker says a Bluetooth device that plays no sound hands the sound to the phone, in every language.
 - **Projects** Farnear shows 4 screenshots, Archon lists Services, Settings and The PC in every language, and the Langflip page gets its own share picture.
 - **Home page** phones from 320 px keep the search and language buttons on screen, and the dim text passes the WCAG AA contrast.

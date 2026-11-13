@@ -1362,7 +1362,7 @@ const de: Catalog = {
             ['App-Symbol', 'Ein Neon-Telefonportal, unter Android und im Web.'],
             [
               'Anrufbühne',
-              'Der Anruf füllt das Fenster. Eine Kachel ist groß, die anderen stehen in einer Leiste. Ein Tipp heftet eine Kachel groß an.',
+              'Der Anruf füllt das Fenster. Eine Kachel ist groß, die anderen stehen in einer Leiste. Ein Tipp heftet eine Kachel groß an. In den Gerätedetails eines anderen Teilnehmers lässt sich dessen Mikrofon oder Kamera umschalten.',
             ],
             [
               'Bildschirm teilen',

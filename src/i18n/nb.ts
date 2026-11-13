@@ -1237,7 +1237,7 @@ const nb: Catalog = {
             ['Appikon', 'En neonportal formet som en telefon, på Android og nettet.'],
             [
               'Samtalescenen',
-              'Samtalen fyller vinduet. Én flis er stor, resten står i en stripe. Et trykk fester en flis stort.',
+              'Samtalen fyller vinduet. Én flis er stor, resten står i en stripe. Et trykk fester en flis stort. I enhetsdetaljene til en annen deltaker kan du bytte mikrofonen eller kameraet deres.',
             ],
             [
               'Del skjerm',

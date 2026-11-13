@@ -1341,7 +1341,7 @@ const es: Catalog = {
             ['Icono de la app', 'Un portal telefónico de neón, en Android y en la web.'],
             [
               'Escenario de la llamada',
-              'La llamada llena la ventana. Un mosaico es grande y los demás van en una tira. Un toque fija un mosaico en grande.',
+              'La llamada llena la ventana. Un mosaico es grande y los demás van en una tira. Un toque fija un mosaico en grande. En los detalles de dispositivos de otro participante se puede cambiar su micrófono o su cámara.',
             ],
             [
               'Compartir pantalla',
