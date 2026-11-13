@@ -424,6 +424,10 @@ const es: Catalog = {
               'Instalación y sin conexión',
               'Una PWA que abre a pantalla completa en horizontal. El APK de Android se actualiza solo.',
             ],
+            [
+              'App para iPhone',
+              'La misma app en el iPhone, con compras en el App Store. Llega al App Store cuando exista una cuenta de Apple.',
+            ],
             ['Distribución', 'El mástil ocupa toda la pantalla y los paneles flotan en sus esquinas.'],
             [
               'Panel de reproducción',

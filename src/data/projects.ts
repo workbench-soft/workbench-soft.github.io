@@ -409,7 +409,7 @@ export const projects: Project[] = [
     name: 'Guitar Upscale',
     tagline: 'A guitar you play in the browser.',
     lede: 'Guitar Upscale shows scales and chords on a virtual fretboard, records loops and saves them as MIDI. It edits songs note by note, shows them as tab, and installs to the home screen. A compact fingering diagram above each playback chord shows a comfortable grip for the current scale, tuning, capo and string count.',
-    platforms: ['Web', 'Android'],
+    platforms: ['Web', 'Android', 'iOS'],
     stack: ['Next.js', 'React', 'Web Audio', 'MIDI', 'Capacitor', 'Cloudflare'],
     links: [{ href: 'https://guitar-upscale.com', label: 'guitar-upscale.com' }],
     groups: [
@@ -472,6 +472,10 @@ export const projects: Project[] = [
           {
             name: 'Install and offline',
             text: 'A PWA that opens full screen in landscape. The Android APK updates itself.',
+          },
+          {
+            name: 'iPhone app',
+            text: 'The same app on the iPhone, with App Store purchases. It reaches the App Store once an Apple account exists.',
           },
           {
             name: 'Screen layout',

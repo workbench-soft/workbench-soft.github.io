@@ -434,6 +434,10 @@ const fr: Catalog = {
               'Installation et hors ligne',
               'Une PWA qui s’ouvre en plein écran en paysage. L’APK Android se met à jour seul.',
             ],
+            [
+              'App iPhone',
+              "La même app sur iPhone, avec les achats via l'App Store. Elle arrive sur l'App Store dès qu'un compte Apple existe.",
+            ],
             ['Disposition', "Le manche prend tout l'écran, et les panneaux flottent sur ses coins."],
             [
               'Panneau de lecture',

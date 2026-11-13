@@ -276,6 +276,7 @@ const zh: Catalog = {
               '在 Google Play 一次购买即可解锁 Android 的录音、循环器、歌曲上传与搜索和皮肤，并去除广告。网页版开放全部功能。',
             ],
             ['安装与离线', '一个横屏全屏打开的 PWA。Android APK 会自动更新。'],
+            ['iPhone 应用', 'iPhone 上的同一个应用，通过 App Store 购买。有了 Apple 账户后就会上架 App Store。'],
             ['屏幕布局', '指板占满屏幕，面板浮在四角。'],
             [
               '播放面板',
