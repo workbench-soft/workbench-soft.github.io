@@ -91,9 +91,5 @@ The pages carry the `google-adsense-account` meta tag and `/ads.txt` serves the 
 
 Found by the SEO audit of 2026-11-13. [specs/seo.md](specs/seo.md) has the fixes made in code.
 
-- [ ] **Search Console** the `workbench-soft.com` Domain property is verified and holds the games sitemap.
-  1. Sitemaps: submit `https://workbench-soft.com/sitemap-index.xml` and `https://workbench-soft.com/memories-mobile/sitemap.xml`.
-  2. URL inspection: request indexing of `https://workbench-soft.com/langflip/`.
-- [ ] **Cloudflare** for `workbench-soft.com`: Web Analytics, Add site for `workbench-soft.com` and `games.workbench-soft.com`, then Caching, Configuration, turn on Crawler Hints.
 - [ ] **Property Trends** <https://workbench-soft.com/property-trends/> has no `h1` and 25 words of text. Agent work in the private `property-trends` repo, whose release the Pages build unpacks: add a heading and a paragraph on what the data shows.
 - [ ] **Rich Results Test** agent work: run <https://search.google.com/test/rich-results> on `https://workbench-soft.com/` and `https://workbench-soft.com/skyaltar/astrology/signs/aries/` in Chrome, and fix any error it names.
