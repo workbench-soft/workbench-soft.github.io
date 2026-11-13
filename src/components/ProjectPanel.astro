@@ -100,7 +100,8 @@ let n = 0;
     },
     { rootMargin: "600px 0px" },
   );
-  for (const row of document.querySelectorAll(".proj .shots:has(video)")) near.observe(row);
+  // No :has() here, since an older browser throws on it and the buttons below would get no handlers.
+  for (const row of document.querySelectorAll(".proj .shots")) if (row.querySelector("video")) near.observe(row);
 
   for (const b of document.querySelectorAll<HTMLButtonElement>(".proj .more")) {
     const more = b.textContent!.trim();
