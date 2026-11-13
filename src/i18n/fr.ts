@@ -1436,6 +1436,15 @@ const fr: Catalog = {
               'Recherche et aperçu du lien',
               'Les moteurs de recherche lisent l’accueil en 9 langues. Un lien partagé affiche l’icône et le nom de Farnear.',
             ],
+            [
+              'Messages pendant l’appel',
+              'Un bouton Messages envoie de courtes lignes qui arrivent même quand la vidéo ne passe pas.',
+            ],
+            ['Bulles d’aide des boutons', 'Chaque bouton à icône affiche son nom au survol ou après un appui long.'],
+            [
+              'Fermer Farnear et retirer ses autorisations',
+              'Un bouton marche-arrêt termine l’appel et la sonnerie. Dès Android 13, l’app retire aussi ses accès à la caméra, au micro et aux notifications.',
+            ],
           ],
         },
       ],

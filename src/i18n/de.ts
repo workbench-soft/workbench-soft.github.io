@@ -1405,6 +1405,15 @@ const de: Catalog = {
               'Suche und Linkvorschau',
               'Suchmaschinen lesen die Startseite in 9 Sprachen. Ein geteilter Link zeigt Symbol und Namen von Farnear.',
             ],
+            [
+              'Nachrichten im Anruf',
+              'Ein Nachrichten-Knopf im Anruf sendet kurze Zeilen, die auch ankommen, wenn das Video nicht verbindet.',
+            ],
+            ['Hinweise an Knöpfen', 'Jeder Symbolknopf zeigt seinen Namen beim Überfahren oder langen Drücken.'],
+            [
+              'Farnear schließen und Berechtigungen entziehen',
+              'Ein Aus-Knopf beendet den Anruf und das Klingeln. Ab Android 13 entzieht sich die App auch Kamera, Mikrofon und Benachrichtigungen.',
+            ],
           ],
         },
       ],

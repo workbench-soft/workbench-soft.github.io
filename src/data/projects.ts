@@ -722,6 +722,15 @@ export const projects: Project[] = [
             name: 'Search and share preview',
             text: 'Search engines read the home page in 9 languages. A shared link shows the Farnear icon and name.',
           },
+          {
+            name: 'Messages in a call',
+            text: 'A Messages button in the call sends short lines that arrive even when the video fails.',
+          },
+          { name: 'Button hints', text: 'Each icon button shows its name after a hover or a long press.' },
+          {
+            name: 'Close Farnear and take back its permissions',
+            text: 'A power button ends the call and the ring. On Android 13 and later the app also drops its camera, microphone and notification permissions.',
+          },
         ],
       },
     ],

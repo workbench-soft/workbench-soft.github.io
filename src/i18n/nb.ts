@@ -1271,6 +1271,15 @@ const nb: Catalog = {
               'Søk og forhåndsvisning av lenke',
               'Søkemotorer leser startsiden på 9 språk. En delt lenke viser ikonet og navnet til Farnear.',
             ],
+            [
+              'Meldinger i samtalen',
+              'En Meldinger-knapp i samtalen sender korte linjer som kommer fram selv når videoen ikke kobler til.',
+            ],
+            ['Knappehint', 'Hver ikonknapp viser navnet sitt når du holder musen over eller trykker lenge.'],
+            [
+              'Lukk Farnear og trekk tilbake tillatelsene',
+              'En av-knapp avslutter samtalen og ringingen. Fra Android 13 trekker appen også tilbake tilgang til kamera, mikrofon og varsler.',
+            ],
           ],
         },
       ],

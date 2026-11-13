@@ -1378,6 +1378,15 @@ const es: Catalog = {
               'Búsqueda y vista previa del enlace',
               'Los buscadores leen el inicio en 9 idiomas. Un enlace compartido muestra el icono y el nombre de Farnear.',
             ],
+            ['Mensajes en la llamada', 'Un botón Mensajes envía líneas cortas que llegan aunque el vídeo no conecte.'],
+            [
+              'Pistas en los botones',
+              'Cada botón con icono muestra su nombre al pasar el ratón o con una pulsación larga.',
+            ],
+            [
+              'Cerrar Farnear y retirar sus permisos',
+              'Un botón de apagado termina la llamada y el timbre. Desde Android 13, la app también retira sus permisos de cámara, micrófono y notificaciones.',
+            ],
           ],
         },
       ],
