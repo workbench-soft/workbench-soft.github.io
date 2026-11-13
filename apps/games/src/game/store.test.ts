@@ -30,7 +30,7 @@ describe('room socket', () => {
     vi.useRealTimers();
   });
 
-  it('opens a new socket when the old one goes silent', () => {
+  it('opens a new socket when a ping gets no answer', () => {
     vi.useFakeTimers();
     vi.stubGlobal('WebSocket', FakeSocket);
     vi.stubGlobal('location', new URL('https://games.workbench-soft.com/games/r/ABC234'));
@@ -38,9 +38,26 @@ describe('room socket', () => {
     connect('ABC234', 'Ann', '#000000');
     const first = FakeSocket.last!;
     first.emit('open');
-    vi.advanceTimersByTime(50_000);
+    vi.advanceTimersByTime(30_000);
     expect(FakeSocket.last).toBe(first);
-    vi.advanceTimersByTime(60_000);
+    vi.advanceTimersByTime(30_000);
     expect(FakeSocket.last).not.toBe(first);
+  });
+
+  it('keeps the socket after the page wakes from a freeze', () => {
+    vi.useFakeTimers();
+    vi.stubGlobal('WebSocket', FakeSocket);
+    vi.stubGlobal('location', new URL('https://games.workbench-soft.com/games/r/ABC234'));
+    vi.stubGlobal('window', globalThis);
+    connect('ABC234', 'Ann', '#000000');
+    const first = FakeSocket.last!;
+    first.emit('open');
+    vi.advanceTimersByTime(25_000);
+    first.emit('message', { data: 'pong' });
+    // Five minutes pass with no timer running, as in a frozen background tab.
+    vi.setSystemTime(Date.now() + 300_000);
+    vi.advanceTimersByTime(25_000);
+    expect(FakeSocket.last).toBe(first);
+    expect(first.sent.at(-1)).toBe('ping');
   });
 });

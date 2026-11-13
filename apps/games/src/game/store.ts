@@ -31,8 +31,6 @@ const clockOffset = signal(0);
 export const drawing = new Drawing();
 export const drawingVersion = signal(0);
 
-/** The keepalive gets a pong every 25 seconds. A socket silent this long is dead, though it never fired close. */
-const SILENT_LIMIT = 75_000;
 const CLOSE_FATAL = new Map(Object.entries(CLOSE_CODES).map(([key, code]) => [code, key as ErrorKey]));
 
 let socket: WebSocket | null = null;
@@ -93,6 +91,8 @@ export function connect(code: string, name: string, color: string, avatar = ''):
   status.value = retry ? 'lost' : 'connecting';
   let ping = 0;
   let heard = Date.now();
+  // When the last keepalive went out. A page frozen in the background sends none, so it gets no blame for the quiet.
+  let pinged = 0;
   const retryLater = () => {
     clearInterval(ping);
     socket = null;
@@ -117,12 +117,14 @@ export function connect(code: string, name: string, color: string, avatar = ''):
     );
     ping = window.setInterval(() => {
       if (ws.readyState !== WebSocket.OPEN) return;
-      // A phone that moved from wifi to mobile data keeps the old socket open with nobody on the other end.
-      if (Date.now() - heard > SILENT_LIMIT) {
+      // A ping with no answer a whole interval later: a phone that moved from wifi to mobile data keeps the
+      // old socket open with nobody on the other end.
+      if (pinged > heard) {
         retryLater();
         return ws.close();
       }
       ws.send('ping');
+      pinged = Date.now();
     }, 25_000);
   });
   ws.addEventListener('message', (event) => {
