@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Privacy** workbench-soft.com/privacy covers Workbench MCP, the internal tools that read the Workbench Soft AdMob and Play accounts.
 - **Sky Altar** the project page lists 19 cultures, with the new Celtic Elven Grove.
 - **Farnear** lists Contacts and rooms and Search and share preview, in every language.
 - **Farnear** Call stage says the device details of another participant can switch their microphone or camera, in every language.
