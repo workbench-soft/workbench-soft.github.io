@@ -3,6 +3,9 @@
 ## Unreleased
 
 - **Lumiere Player** Phone speaker says a Bluetooth device that plays no sound hands the sound to the phone, in every language.
+- **Projects** Farnear shows 4 screenshots, Archon lists Services, Settings and The PC in every language, and the Langflip page gets its own share picture.
+- **Home page** phones from 320 px keep the search and language buttons on screen, and the dim text passes the WCAG AA contrast.
+- **Games** a room reconnects after the phone sleeps or the network changes, and a mistyped room code says the link is broken. The edge proxy fix and a lighter home page ship with it.
 
 - **Guitar Upscale** Song upload says an MP3 finds its song online with the chords, in every language.
 

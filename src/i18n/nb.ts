@@ -1010,15 +1010,29 @@ const nb: Catalog = {
           ],
         },
         {
-          title: 'Tjenester og innstillinger',
+          title: 'Tjenester',
           features: [
             ['CI, Reddit og Memories', 'Sidene til CI, Reddit Desk og NAS-indekseren i faner.'],
             [
               'Sanger',
               'songfactory-pipelinen som fliser: slå av og på, still inn, kjør én alene eller lag en hel video fra et tema.',
             ],
+          ],
+        },
+        {
+          title: 'Innstillinger',
+          features: [
             ['Stemmer', 'Velger stemmen hver agent snakker med.'],
             ['Nøkler', 'Alderen til hver CI-hemmelighet, og fornyelse gjennom en agent.'],
+          ],
+        },
+        {
+          title: 'PC-en',
+          features: [
+            ['Archon på mobilen', 'Archon i tailnet, åpnet på mobilen som en app.'],
+            ['Gjenopprett en PC', 'Ett skript henter tilbake kloner, regler, hooks og verktøy på en ny PC.'],
+            ['Flytt arbeidsmappen', 'Flytter hver klon til en ny mappe og retter hvert sted som nevner den gamle.'],
+            ['Synkroniser repoene', 'Kloner repoene som mangler og henter resten, 8 om gangen.'],
           ],
         },
       ],

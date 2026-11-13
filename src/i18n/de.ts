@@ -1111,15 +1111,32 @@ const de: Catalog = {
           ],
         },
         {
-          title: 'Dienste und Einstellungen',
+          title: 'Dienste',
           features: [
             ['CI, Reddit und Memories', 'Die Seiten von CI, Reddit Desk und dem NAS-Indexer in Tabs.'],
             [
               'Songs',
               'Die songfactory-Pipeline als Kacheln: ein- und ausschalten, einstellen, einzeln starten oder aus einem Thema ein ganzes Video machen.',
             ],
+          ],
+        },
+        {
+          title: 'Einstellungen',
+          features: [
             ['Stimmen', 'Wählt die Stimme, mit der jeder Agent spricht.'],
             ['Schlüssel', 'Das Alter jedes CI-Secrets und die Erneuerung durch einen Agenten.'],
+          ],
+        },
+        {
+          title: 'Der PC',
+          features: [
+            ['Archon auf dem Handy', 'Archon im Tailnet, auf dem Handy als App geöffnet.'],
+            ['PC wiederherstellen', 'Ein Skript bringt Klone, Regeln, Hooks und Tools auf einen neuen PC zurück.'],
+            [
+              'Arbeitsordner verschieben',
+              'Verschiebt jeden Klon in einen neuen Ordner und passt jede Stelle an, die den alten nennt.',
+            ],
+            ['Repos synchronisieren', 'Klont fehlende Repos und holt die übrigen, 8 auf einmal.'],
           ],
         },
       ],

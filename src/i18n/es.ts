@@ -1093,15 +1093,35 @@ const es: Catalog = {
           ],
         },
         {
-          title: 'Servicios y ajustes',
+          title: 'Servicios',
           features: [
             ['CI, Reddit y Memories', 'Las páginas de la CI, Reddit Desk y el indexador del NAS en pestañas.'],
             [
               'Canciones',
               'La cadena de songfactory en bloques: actívalos o desactívalos, ajústalos, ejecuta uno solo o crea un vídeo entero a partir de un tema.',
             ],
+          ],
+        },
+        {
+          title: 'Ajustes',
+          features: [
             ['Voces', 'Elige la voz con la que habla cada agente.'],
             ['Claves', 'La edad de cada secreto de CI y su renovación con un agente.'],
+          ],
+        },
+        {
+          title: 'El PC',
+          features: [
+            ['Archon en el móvil', 'Archon en la tailnet, abierto en el móvil como una app.'],
+            [
+              'Restaurar un PC',
+              'Un script recupera los clones, las reglas, los hooks y las herramientas en un PC nuevo.',
+            ],
+            [
+              'Mover el espacio de trabajo',
+              'Mueve cada clon a una carpeta nueva y corrige cada sitio que nombra la anterior.',
+            ],
+            ['Sincronizar los repos', 'Clona los repos que faltan y actualiza el resto, 8 a la vez.'],
           ],
         },
       ],
