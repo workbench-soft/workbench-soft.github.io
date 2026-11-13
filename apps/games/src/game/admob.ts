@@ -16,7 +16,11 @@ async function admob() {
     if (consent.isConsentFormAvailable && consent.status === mod.AdmobConsentStatus.REQUIRED)
       await mod.AdMob.showConsentForm();
     return mod;
-  })();
+  })().catch((error: unknown) => {
+    // Offline at launch, the consent check fails. The next banner tries again in place of giving up for the session.
+    ready = null;
+    throw error;
+  });
   return ready;
 }
 
@@ -65,6 +69,9 @@ export async function syncBanner(visible: boolean): Promise<void> {
         position: mod.BannerAdPosition.BOTTOM_CENTER,
         margin: 0,
         isTesting: id === TEST_BANNER[platform],
+      }).catch((error: unknown) => {
+        shown = false;
+        throw error;
       });
     } else if (!show && shown) {
       shown = false;
