@@ -27,6 +27,18 @@ describe('room', () => {
     expect(view('b').hostId).toBe('b');
   });
 
+  it('passes the room on when the host stays away after everyone else came back', () => {
+    const { room, view, join } = makeRoom();
+    join(['a', 'b']);
+    room.disconnect('a', 1000);
+    room.disconnect('b', 1000);
+    room.alarm(1000 + HOST_GRACE);
+    join(['b'], 2000 + HOST_GRACE);
+    expect(room.wakeAt()).toBe(2000 + 2 * HOST_GRACE);
+    room.alarm(2000 + 2 * HOST_GRACE);
+    expect(view('b').hostId).toBe('b');
+  });
+
   it('keeps the seat of a player who drops out, and ignores settings from other players', () => {
     const { room, view, join } = makeRoom();
     join(['a', 'b']);
@@ -302,6 +314,12 @@ describe('clue duel', () => {
     expect(view(red).duel?.targets.red).toHaveLength(2);
     expect(view(red).duel?.targets.blue).toBeNull();
     expect(view(redGuesser).duel?.targets.red).toBeNull();
+  });
+
+  it('goes back to the lobby once fewer than 4 players are left', () => {
+    const { room, view } = started();
+    room.disconnect('d', 1);
+    expect(view('a').phase).toBe('lobby');
   });
 
   it('refuses a clue made of a board word', () => {

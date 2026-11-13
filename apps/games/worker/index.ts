@@ -1,17 +1,10 @@
 import { BASE } from '../src/shared/paths.ts';
 import { CODE_RE } from '../src/shared/protocol.ts';
+import { sameSite } from './origin.ts';
 
 export { RoomObject } from './room-object.ts';
 
 const ROOM_PATH = new RegExp(`^${BASE}/(ws|r)/([A-Za-z0-9]+)/?$`);
-
-function sameSite(request: Request, url: URL): boolean {
-  const origin = request.headers.get('Origin');
-  if (!origin) return true;
-  const host = new URL(origin).hostname;
-  // The Android and iOS apps load the pages from their own local origin.
-  return host === url.hostname || host === 'localhost' || host === '127.0.0.1';
-}
 
 export default {
   async fetch(request, env): Promise<Response> {

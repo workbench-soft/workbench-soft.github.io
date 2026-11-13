@@ -311,7 +311,7 @@ const ru: Record<Key, string> = {
   sys_needMore: 'Для этой игры нужно от {word} игроков',
 };
 
-const dicts: Record<Lang, Record<Key, string>> = { en, ru, de, fr, es, zh, ja, ko, nb };
+export const dicts: Record<Lang, Record<Key, string>> = { en, ru, de, fr, es, zh, ja, ko, nb };
 
 function startLang(): Lang {
   const saved = load('lang');

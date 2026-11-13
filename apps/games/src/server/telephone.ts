@@ -21,7 +21,7 @@ export const STEP_TIMES: Record<Speed, Record<TeleKind, number>> = {
 /** The server waits this long past the deadline for the last entries the browsers send on their own. */
 export const GRACE = 3_000;
 
-export function kindOf(step: number): TeleKind {
+function kindOf(step: number): TeleKind {
   if (step === 0) return 'write';
   return step % 2 === 1 ? 'draw' : 'describe';
 }

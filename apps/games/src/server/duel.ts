@@ -7,10 +7,10 @@ import { wordsFor } from './word-source.ts';
 export const CLUE_TIME = 60_000;
 export const PICK_TIME = 60_000;
 export const REVEAL_TIME = 8_000;
-export const TARGETS = 2;
+const TARGETS = 2;
 /** Points for a word of your own team, and for a word taken from the other team. */
-export const OWN_POINTS = 2;
-export const STEAL_POINTS = 1;
+const OWN_POINTS = 2;
+const STEAL_POINTS = 1;
 
 const other = (team: Team): Team => (team === 'red' ? 'blue' : 'red');
 const both = <T>(value: () => T): Record<Team, T> => ({ red: value(), blue: value() });

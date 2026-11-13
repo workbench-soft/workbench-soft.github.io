@@ -1,9 +1,10 @@
 import { DurableObject } from 'cloudflare:workers';
 import type { Action } from '../src/shared/canvas.ts';
 import {
+  CLOSE_CODES,
   isLang,
+  MAX_MESSAGE,
   type ClientMsg,
-  type ErrorKey,
   type Lang,
   type ServerMsg,
   type TeleEntry,
@@ -13,8 +14,6 @@ import { minTime } from '../src/server/util.ts';
 
 /** The drawing goes to storage at most this often. */
 const CANVAS_SAVE_GAP = 2_000;
-const MAX_MESSAGE = 256 * 1024;
-const CLOSE_CODES: Record<ErrorKey, number> = { full: 4001, kicked: 4002, replaced: 4003, bad: 4004, clue: 4005 };
 
 /**
  * `v` is the client's protocol version, so a later Worker can answer each socket in its own format.

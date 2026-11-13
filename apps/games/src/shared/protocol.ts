@@ -34,11 +34,17 @@ export const BOARD_SIZE = 12;
  */
 export const PROTOCOL = 1;
 
+/**
+ * The longest message the Worker reads. A full drawing at the canvas limits sends up to 566 000 characters, but one
+ * telephone chain sits in one storage value of at most 2 MB, so the cap stays here until each entry gets its own key.
+ */
+export const MAX_MESSAGE = 256 * 1024;
+
 export const MAX_PLAYERS = 12;
 export const MAX_NAME = 20;
 export const MAX_CHAT = 100;
 export const MAX_PHRASE = 80;
-export const CODE_ALPHABET = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+const CODE_ALPHABET = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
 export const CODE_RE = /^[A-HJ-NP-Z2-9]{6}$/;
 
 export type Settings = {
@@ -205,6 +211,14 @@ export type ClientMsg =
   | { t: 'lock' };
 
 export type ErrorKey = 'full' | 'kicked' | 'replaced' | 'bad' | 'clue';
+/** The close code of a socket the server ends for good. The client reads the reason back from it. */
+export const CLOSE_CODES: Record<ErrorKey, number> = {
+  full: 4001,
+  kicked: 4002,
+  replaced: 4003,
+  bad: 4004,
+  clue: 4005,
+};
 
 export type ServerMsg =
   | { t: 'state'; room: RoomView }

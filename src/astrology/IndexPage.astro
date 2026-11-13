@@ -1,5 +1,5 @@
 ---
-import type { Lang } from "../i18n/locales";
+import { tags, type Lang } from "../i18n/locales";
 import AdSlot from "./AdSlot.astro";
 import Shell from "./Shell.astro";
 import { articles, href, langsOf, text } from "./paths";
@@ -22,7 +22,7 @@ const schema = [
     "@type": "CollectionPage",
     name: t.index.title,
     description: t.index.description,
-    inLanguage: lang,
+    inLanguage: tags[lang],
     url: new URL(href(lang), Astro.site).href,
   },
 ];

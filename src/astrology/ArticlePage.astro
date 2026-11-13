@@ -1,5 +1,5 @@
 ---
-import type { Lang } from "../i18n/locales";
+import { tags, type Lang } from "../i18n/locales";
 import AdSlot from "./AdSlot.astro";
 import Shell from "./Shell.astro";
 import { articles, href, langsOf, text, type Article } from "./paths";
@@ -36,7 +36,7 @@ const schema = [
     "@type": "Article",
     headline: title,
     description,
-    inLanguage: lang,
+    inLanguage: tags[lang],
     mainEntityOfPage: url,
     image: new URL(image, Astro.site).href,
     datePublished: "2026-11-03",

@@ -14,6 +14,18 @@ permissions:
   contents: read
 
 jobs:
+  # The Pages workflow skips pull requests that touch only apps/, but its lint on main checks the format
+  # and the Markdown of apps/ too. So the same lint runs here first.
+  site-lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: jdx/mise-action@6be3c7ed4c21d4f76b208d351d95aac273ebb76d # v5.2.4
+      - run: |
+          mise x -- pnpm install --frozen-lockfile
+          mise run lint
+
   check:
     runs-on: ubuntu-latest
     timeout-minutes: 15
@@ -48,8 +60,8 @@ jobs:
     concurrency:
       group: games-deploy
       cancel-in-progress: false
+    # Only the wrangler steps get the token, so install scripts of the dependencies can't read it.
     env:
-      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
       CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
@@ -59,15 +71,26 @@ jobs:
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
         with:
           node-version-file: apps/games/.node-version
-      - name: Deploy the games
+      - name: Build the games
         working-directory: apps/games
         env:
           PUBLIC_ADSENSE_CLIENT: ${{ vars.ADSENSE_CLIENT }}
           PUBLIC_ADSENSE_SLOT_PAGE: ${{ vars.ADSENSE_SLOT_PAGE }}
           PUBLIC_ADSENSE_SLOT_ROOM: ${{ vars.ADSENSE_SLOT_ROOM }}
-        run: pnpm install --frozen-lockfile && pnpm build && pnpm exec wrangler deploy
+        run: pnpm install --frozen-lockfile && pnpm build
+      - name: Deploy the games
+        working-directory: apps/games
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: pnpm exec wrangler deploy
       # Off: the games have their own host, and the apex of workbench-soft.com stays on GitHub Pages.
+      - name: Install the edge
+        if: vars.EDGE_ENABLED == 'true'
+        working-directory: apps/edge
+        run: pnpm install --frozen-lockfile
       - name: Deploy the edge
         if: vars.EDGE_ENABLED == 'true'
         working-directory: apps/edge
-        run: pnpm install --frozen-lockfile && pnpm exec wrangler deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: pnpm exec wrangler deploy

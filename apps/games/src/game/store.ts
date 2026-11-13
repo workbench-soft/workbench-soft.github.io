@@ -1,6 +1,7 @@
 import { signal } from '@preact/signals';
 import { Drawing } from '../shared/canvas.ts';
 import {
+  CLOSE_CODES,
   PROTOCOL,
   type ChatMsg,
   type ClientMsg,
@@ -24,13 +25,13 @@ export const clueError = signal(0);
 /** The lobby's Change button opens the join screen again. */
 export const editingProfile = signal(false);
 /** Server time minus local time, so every timer shows the same seconds. */
-export const clockOffset = signal(0);
+const clockOffset = signal(0);
 
 /** The shared picture of guess the drawing. `drawingVersion` tells the board to repaint. */
 export const drawing = new Drawing();
 export const drawingVersion = signal(0);
 
-const CLOSE_FATAL: Record<number, ErrorKey> = { 4001: 'full', 4002: 'kicked', 4003: 'replaced', 4004: 'bad' };
+const CLOSE_FATAL = new Map(Object.entries(CLOSE_CODES).map(([key, code]) => [code, key as ErrorKey]));
 
 let socket: WebSocket | null = null;
 let retry = 0;
@@ -89,8 +90,19 @@ export function connect(code: string, name: string, color: string, avatar = ''):
   socket = ws;
   status.value = retry ? 'lost' : 'connecting';
   let ping = 0;
+  let heard = Date.now();
+  // When the last keepalive went out. A page frozen in the background sends none, so it gets no blame for the quiet.
+  let pinged = 0;
+  const retryLater = () => {
+    clearInterval(ping);
+    socket = null;
+    status.value = 'lost';
+    retry++;
+    setTimeout(() => connect(code, identity.name, identity.color, identity.avatar), Math.min(5000, 500 * 2 ** retry));
+  };
   ws.addEventListener('open', () => {
     retry = 0;
+    heard = Date.now();
     status.value = 'open';
     ws.send(
       JSON.stringify({
@@ -103,9 +115,20 @@ export function connect(code: string, name: string, color: string, avatar = ''):
         lang: lang.value,
       } satisfies ClientMsg),
     );
-    ping = window.setInterval(() => ws.readyState === WebSocket.OPEN && ws.send('ping'), 25_000);
+    ping = window.setInterval(() => {
+      if (ws.readyState !== WebSocket.OPEN) return;
+      // A ping with no answer a whole interval later: a phone that moved from wifi to mobile data keeps the
+      // old socket open with nobody on the other end.
+      if (pinged > heard) {
+        retryLater();
+        return ws.close();
+      }
+      ws.send('ping');
+      pinged = Date.now();
+    }, 25_000);
   });
   ws.addEventListener('message', (event) => {
+    heard = Date.now();
     if (event.data === 'pong') return;
     try {
       handle(JSON.parse(event.data));
@@ -116,13 +139,11 @@ export function connect(code: string, name: string, color: string, avatar = ''):
   ws.addEventListener('close', (event) => {
     clearInterval(ping);
     if (socket !== ws) return;
-    const reason = CLOSE_FATAL[event.code];
+    const reason = CLOSE_FATAL.get(event.code);
     if (reason) {
       fatal.value = reason;
       return;
     }
-    status.value = 'lost';
-    retry++;
-    setTimeout(() => connect(code, identity.name, identity.color, identity.avatar), Math.min(5000, 500 * 2 ** retry));
+    retryLater();
   });
 }
