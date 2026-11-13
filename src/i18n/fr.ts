@@ -1529,6 +1529,10 @@ const fr: Catalog = {
               "Les dossiers de livres par auteur, chacun avec sa couverture et sa progression. Un livre reprend là où il s'est arrêté, un peu avant après une pause.",
             ],
             [
+              'Vidéothèque',
+              'Les dossiers vidéo listent séries, saisons et épisodes, même aux noms de fichiers bancals. Dites « Hey Lumi, mets les dessins animés » ou une série avec sa saison et son épisode.',
+            ],
+            [
               'Trouver les tablatures',
               'Avec Guitar Upscale, un bouton guitare ouvre les tablatures du titre en cours.',
             ],

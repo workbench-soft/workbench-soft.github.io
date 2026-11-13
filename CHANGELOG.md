@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **Lumiere Player** describe the video library and voice search for videos in every language.
+
 - **Farnear** describe stalled-media recovery, shared call names and board documents in every language.
 
 - **Memories** the People description includes merging an unknown person from their card in each language.
