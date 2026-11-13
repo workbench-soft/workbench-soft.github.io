@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Sky Altar** the project page lists 19 cultures, with the new Celtic Elven Grove.
 - **Farnear** lists Contacts and rooms and Search and share preview, in every language.
 - **Farnear** Call stage says the device details of another participant can switch their microphone or camera, in every language.
 - **Lumiere Player** Phone speaker says a Bluetooth device that plays no sound hands the sound to the phone, in every language.

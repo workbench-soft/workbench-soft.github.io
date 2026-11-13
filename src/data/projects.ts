@@ -806,7 +806,7 @@ export const projects: Project[] = [
           },
           {
             name: 'Culture themes',
-            text: '18 cultures, from Greece and Rome to the Inca, Sumer and the Stone Age. Gallery shows the 28 pictures of each.',
+            text: '19 cultures, from Greece and Rome to the Inca, Sumer, the Stone Age and the Celtic Elven Grove. Gallery shows the 28 pictures of each.',
           },
           {
             name: 'Ambient music',

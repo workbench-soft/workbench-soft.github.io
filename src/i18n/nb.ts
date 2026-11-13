@@ -1296,7 +1296,7 @@ const nb: Catalog = {
             ],
             [
               'Kulturtemaer',
-              '18 kulturer, fra Hellas og Roma til inkaene, Sumer og steinalderen. Galleriet viser de 28 bildene til hver.',
+              '19 kulturer, fra Hellas og Roma til inkaene, Sumer, steinalderen og den keltiske alvelunden. Galleriet viser de 28 bildene til hver.',
             ],
             [
               'Bakgrunnsmusikk',

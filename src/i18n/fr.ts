@@ -1461,7 +1461,7 @@ const fr: Catalog = {
             ],
             [
               'Thèmes des cultures',
-              '18 cultures, de la Grèce et Rome aux Incas, à Sumer et à l’âge de pierre. La galerie montre les 28 images de chacune.',
+              '19 cultures, de la Grèce et Rome aux Incas, à Sumer, à l’âge de pierre et au bosquet elfique celte. La galerie montre les 28 images de chacune.',
             ],
             [
               'Musique d’ambiance',

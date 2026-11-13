@@ -1430,7 +1430,7 @@ const de: Catalog = {
             ],
             [
               'Kulturthemen',
-              '18 Kulturen, von Griechenland und Rom bis zu den Inka, Sumer und der Steinzeit. Die Galerie zeigt die 28 Bilder jeder Kultur.',
+              '19 Kulturen, von Griechenland und Rom bis zu den Inka, Sumer, der Steinzeit und dem keltischen Elfenhain. Die Galerie zeigt die 28 Bilder jeder Kultur.',
             ],
             [
               'Hintergrundmusik',

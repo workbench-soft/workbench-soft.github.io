@@ -1403,7 +1403,7 @@ const es: Catalog = {
             ],
             [
               'Temas de culturas',
-              '18 culturas, de Grecia y Roma a los incas, Sumeria y la Edad de Piedra. La galería muestra las 28 imágenes de cada una.',
+              '19 culturas, de Grecia y Roma a los incas, Sumeria, la Edad de Piedra y el bosque élfico celta. La galería muestra las 28 imágenes de cada una.',
             ],
             [
               'Música ambiental',
