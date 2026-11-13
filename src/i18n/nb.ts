@@ -375,7 +375,10 @@ const nb: Catalog = {
               'Akkordark',
               'Akkordnavn i takter som lyser opp med sangen. Lim inn tekst med akkorder, så stiller den seg etter sangen.',
             ],
-            ['Last opp sanger', 'Guitar Pro- og MIDI-filer legges til i sanglisten.'],
+            [
+              'Last opp sanger',
+              'Guitar Pro- og MIDI-filer legges til i sanglisten. En MP3 finner sangen sin på nett, med akkordene.',
+            ],
             [
               'Finn en sang på nettet',
               'Søker på 4 sangnettsteder samtidig. En sang fra Songsterr blir til en Guitar Pro-fil.',

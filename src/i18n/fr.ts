@@ -411,7 +411,10 @@ const fr: Catalog = {
               'Grille d’accords',
               'Les noms d’accords dans des mesures qui s’allument avec la chanson. Collez des paroles avec accords, et elles se calent sur la chanson.',
             ],
-            ['Import de morceaux', 'Les fichiers Guitar Pro et MIDI rejoignent votre liste.'],
+            [
+              'Import de morceaux',
+              'Les fichiers Guitar Pro et MIDI rejoignent votre liste. Un MP3 retrouve son morceau en ligne, avec les accords.',
+            ],
             [
               'Trouver un morceau en ligne',
               'Cherche sur 4 sites de morceaux à la fois. Un morceau Songsterr devient un fichier Guitar Pro.',

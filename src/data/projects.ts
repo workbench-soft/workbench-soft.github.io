@@ -447,7 +447,10 @@ export const projects: Project[] = [
             name: 'Chord sheet',
             text: 'Chord names in bars that light up with the song. Paste words with chords, and they line up with the song.',
           },
-          { name: 'Song upload', text: 'Guitar Pro and MIDI files join your song list.' },
+          {
+            name: 'Song upload',
+            text: 'Guitar Pro and MIDI files join your song list. An MP3 finds its song online, with the chords.',
+          },
           {
             name: 'Find a song online',
             text: 'Searches 4 song sites at once. A Songsterr song turns into a Guitar Pro file.',
