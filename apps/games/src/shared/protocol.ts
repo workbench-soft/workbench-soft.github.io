@@ -208,6 +208,8 @@ export type ClientMsg =
   | { t: 'lock' };
 
 export type ErrorKey = 'full' | 'kicked' | 'replaced' | 'bad' | 'clue';
+/** The close code of a socket the server ends for good. The client reads the reason back from it. */
+export const CLOSE_CODES: Record<ErrorKey, number> = { full: 4001, kicked: 4002, replaced: 4003, bad: 4004, clue: 4005 };
 
 export type ServerMsg =
   | { t: 'state'; room: RoomView }

@@ -1,6 +1,7 @@
 import { signal } from '@preact/signals';
 import { Drawing } from '../shared/canvas.ts';
 import {
+  CLOSE_CODES,
   PROTOCOL,
   type ChatMsg,
   type ClientMsg,
@@ -32,7 +33,7 @@ export const drawingVersion = signal(0);
 
 /** The keepalive gets a pong every 25 seconds. A socket silent this long is dead, though it never fired close. */
 const SILENT_LIMIT = 75_000;
-const CLOSE_FATAL: Record<number, ErrorKey> = { 4001: 'full', 4002: 'kicked', 4003: 'replaced', 4004: 'bad' };
+const CLOSE_FATAL = new Map(Object.entries(CLOSE_CODES).map(([key, code]) => [code, key as ErrorKey]));
 
 let socket: WebSocket | null = null;
 let retry = 0;
@@ -139,7 +140,7 @@ export function connect(code: string, name: string, color: string, avatar = ''):
   ws.addEventListener('close', (event) => {
     clearInterval(ping);
     if (socket !== ws) return;
-    const reason = CLOSE_FATAL[event.code];
+    const reason = CLOSE_FATAL.get(event.code);
     if (reason) {
       fatal.value = reason;
       return;
