@@ -25,7 +25,10 @@ class FakeSocket {
 }
 
 describe('room socket', () => {
-  afterEach(() => vi.unstubAllGlobals());
+  afterEach(() => {
+    vi.unstubAllGlobals();
+    vi.useRealTimers();
+  });
 
   it('tells the caller when a message could not go out', () => {
     vi.stubGlobal('WebSocket', FakeSocket);
@@ -36,5 +39,19 @@ describe('room socket', () => {
     FakeSocket.last!.emit('open');
     expect(send({ t: 'submit', text: 'a cat' })).toBe(true);
     expect(FakeSocket.last!.sent.at(-1)).toBe(JSON.stringify({ t: 'submit', text: 'a cat' }));
+  });
+
+  it('opens a new socket when the old one goes silent', () => {
+    vi.useFakeTimers();
+    vi.stubGlobal('WebSocket', FakeSocket);
+    vi.stubGlobal('location', new URL('https://games.workbench-soft.com/games/r/ABC234'));
+    vi.stubGlobal('window', globalThis);
+    connect('ABC234', 'Ann', '#000000');
+    const first = FakeSocket.last!;
+    first.emit('open');
+    vi.advanceTimersByTime(50_000);
+    expect(FakeSocket.last).toBe(first);
+    vi.advanceTimersByTime(60_000);
+    expect(FakeSocket.last).not.toBe(first);
   });
 });

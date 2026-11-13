@@ -30,6 +30,8 @@ export const clockOffset = signal(0);
 export const drawing = new Drawing();
 export const drawingVersion = signal(0);
 
+/** The keepalive gets a pong every 25 seconds. A socket silent this long is dead, though it never fired close. */
+const SILENT_LIMIT = 75_000;
 const CLOSE_FATAL: Record<number, ErrorKey> = { 4001: 'full', 4002: 'kicked', 4003: 'replaced', 4004: 'bad' };
 
 let socket: WebSocket | null = null;
@@ -92,8 +94,17 @@ export function connect(code: string, name: string, color: string, avatar = ''):
   socket = ws;
   status.value = retry ? 'lost' : 'connecting';
   let ping = 0;
+  let heard = Date.now();
+  const retryLater = () => {
+    clearInterval(ping);
+    socket = null;
+    status.value = 'lost';
+    retry++;
+    setTimeout(() => connect(code, identity.name, identity.color, identity.avatar), Math.min(5000, 500 * 2 ** retry));
+  };
   ws.addEventListener('open', () => {
     retry = 0;
+    heard = Date.now();
     status.value = 'open';
     ws.send(
       JSON.stringify({
@@ -106,9 +117,18 @@ export function connect(code: string, name: string, color: string, avatar = ''):
         lang: lang.value,
       } satisfies ClientMsg),
     );
-    ping = window.setInterval(() => ws.readyState === WebSocket.OPEN && ws.send('ping'), 25_000);
+    ping = window.setInterval(() => {
+      if (ws.readyState !== WebSocket.OPEN) return;
+      // A phone that moved from wifi to mobile data keeps the old socket open with nobody on the other end.
+      if (Date.now() - heard > SILENT_LIMIT) {
+        retryLater();
+        return ws.close();
+      }
+      ws.send('ping');
+    }, 25_000);
   });
   ws.addEventListener('message', (event) => {
+    heard = Date.now();
     if (event.data === 'pong') return;
     try {
       handle(JSON.parse(event.data));
@@ -124,8 +144,6 @@ export function connect(code: string, name: string, color: string, avatar = ''):
       fatal.value = reason;
       return;
     }
-    status.value = 'lost';
-    retry++;
-    setTimeout(() => connect(code, identity.name, identity.color, identity.avatar), Math.min(5000, 500 * 2 ** retry));
+    retryLater();
   });
 }
