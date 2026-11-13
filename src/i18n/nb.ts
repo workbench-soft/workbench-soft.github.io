@@ -398,6 +398,10 @@ const nb: Catalog = {
               'Installasjon og uten nett',
               'En PWA som åpnes i fullskjerm i liggende format. Android-APK-en oppdaterer seg selv.',
             ],
+            [
+              'iPhone-app',
+              'Den samme appen på iPhone, med kjøp via App Store. Den kommer i App Store når det finnes en Apple-konto.',
+            ],
             ['Skjermoppsett', 'Gripebrettet fyller skjermen, og panelene flyter over hjørnene.'],
             [
               'Avspillingspanel',

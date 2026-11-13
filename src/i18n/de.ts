@@ -427,6 +427,10 @@ const de: Catalog = {
               'Installation und offline',
               'Eine PWA, die im Querformat als Vollbild öffnet. Das Android-APK aktualisiert sich selbst.',
             ],
+            [
+              'iPhone-App',
+              'Dieselbe App auf dem iPhone, mit Käufen über den App Store. Sie kommt in den App Store, sobald es ein Apple-Konto gibt.',
+            ],
             ['Bildschirmaufbau', 'Das Griffbrett füllt den Bildschirm, die Panels schweben über den Ecken.'],
             [
               'Wiedergabepanel',
