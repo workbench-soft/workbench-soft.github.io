@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Farnear** lists Messages in a call, Button hints and Close Farnear and take back its permissions, in every language.
 - **Property Trends** lists the iPhone app, in every language.
 - **Privacy** workbench-soft.com/privacy covers Workbench MCP, the internal tools that read the Workbench Soft AdMob and Play accounts.
 - **Sky Altar** the project page lists 19 cultures, with the new Celtic Elven Grove.
