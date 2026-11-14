@@ -43,20 +43,37 @@ Workbench Games, `com.workbenchsoft.games`. Release builds of the Android app us
 - [ ] **Kids mode, ads and privacy** decide 3 linked questions, then tell an agent the answers:
   1. Kids mode is for children under 13, while the Play target audience is 13 and up. Listing under 13 means the Families policy: child-safe AdMob requests, no personal ads, a stricter review. Keep 13 and up, or list under 13?
   2. AdMob starts with no child-directed tag or content rating cap, and the policy says "general audience". Tag the kids mode requests as child-directed?
-  3. Kids mode uses the browser's speech recognition, which Google processes in Chrome. Add a line on it to the policy in `apps/games/src/site/info.ts`?
-- [ ] **iOS tracking prompt** before the iOS release, an agent shows the App Tracking Transparency prompt or drops `NSUserTrackingUsageDescription` from `apps/games/ios/App/App/Info.plist`. Waits for the Apple account.
+  3. Kids mode uses the browser's speech recognition, which Google processes in Chrome. Add a line on it to the policy in `apps/games/src/site/info.ts`? The web build also sends `Permissions-Policy: microphone=()` from `apps/games/scripts/finish-build.ts`, which may block that mic button.
+- [ ] **iOS tracking prompt** before the iOS release, an agent shows the App Tracking Transparency prompt or drops `NSUserTrackingUsageDescription` from `apps/games/ios/App/App/Info.plist`. The same release needs a `PrivacyInfo.xcprivacy` and the real `GADApplicationIdentifier`. Waits for the Apple account.
+- [ ] **Ad privacy choices** on an Android phone in the EEA (or with a VPN there), open the games app, Privacy, and press Ad privacy choices: the AdMob consent form opens (audit 2026-11-14).
+- [ ] **"No ads" on the home page** `src/i18n/en.ts` says "This site shows no ads" and "Ads on this site: 0", while the astrology pages load AdSense. Decide the wording, then tell an agent.
+- [ ] **Site privacy notice** the order form sends name, email and message to formsubmit.co, and `public/privacy.html` covers only Workbench MCP. Decide whether the site gets its own privacy page and footer link.
+- [ ] **Dependabot** agent work: after the first Monday run, check the Dependabot tab for `dependency_file_not_resolvable` on the pnpm 11 and 12 lockfiles.
 - Left: one pnpm version and one workspace for the root, apps/games and apps/edge. It is a tooling migration across 3 lockfiles.
+- Left: root astro 7.4.4 has 2 advisories that a static build can't reach. 7.4.7 and up pulls a beta `@emnapi/runtime` that crashes `astro check`, so it waits on a newer `@astrojs/check`.
+- Left: TypeScript 7 in apps/games and apps/edge while the stack table pins 6. An org version call.
 - Left: memories-mobile/assets/social.png (192 KB) has no link in the repo. It is a served file another site or store listing may use.
 - Left: media-organizer/install.ps1 builds the installer URL itself in place of the `url` in latest.json. Both give the same URL today.
 - Left: a 12-player telephone chain of full drawings can pass the 2 MB storage value limit. It needs one storage key per entry, a format change.
+- Left: telephone fills a reloading player's entry as skipped when everyone online is done. Waiting for them slows the rest, a product call.
+- Left: the artist's strokes drawn while the socket is down are lost on reconnect. Replaying them needs a merge with the snapshot.
+- Left: the empty-room alarm can delete a room between a socket's accept and its hello, a window of milliseconds. The fix needs the room code inside the Durable Object.
+- Left: the games deploy has no smoke check and the browser reports no errors. A monitoring choice.
+- Left: the games apps ship Preact, Capacitor, canvas-confetti and Fredoka with no licence notices. A notices page or a file is a choice.
 - Left: scripts/code-lines.ts writes 0 for a clone on any git error. No clone is missing today and scripts/ has no tests.
 - Left: the hero shader in src/scripts/field.ts ignores WebGL context loss, and runs at full frame rate. Both change the look and need a GPU to check.
 - Left: the games Worker sends no CSP. A CSP that lets AdSense in is an ads choice.
 - Left: 2 moderate advisories in glob and minimatch via `@capacitor/cli`, dev only, waiting on an upstream release.
 - Left: the Today page loads 12 zodiac images at 512 px for 120 px slots (233 KB). Smaller assets change how sharp the "yours" card looks.
-- Left: astrology titles past 60 characters and square share images under `summary_large_image`. Copy and share look.
+- Left: astrology titles past 60 characters, 138 meta descriptions past 160 characters, and square share images under `summary_large_image`. Copy and share look.
+- Left: the stack strip in src/components/Marquee.astro pauses only on hover, with no keyboard or touch pause (WCAG 2.2.2). It needs a new control.
+- Left: memoire/privacy-policy.md says answers stay on each device, while Sync sends card progress to Firestore. Sync is disclosed, so the wording is a product call.
+- Left: tripforge/privacy-policy.md doesn't name the iOS tracking prompt. Waits on the iOS release.
+- Left: the Property Trends release tarball is served on the main site origin. The design needs it.
 - Left: apps/edge and the unused registry.json fields wait on whether the edge domain stays.
 - Left: src/pages/apps/catalog.json.ts still hand-codes the GuitarUp Tuner entry, which belongs in src/data/projects.ts.
+- Left: room.ts (482 lines), text.ts and Board.tsx are far past 100 lines, and the root oxlint runs only correctness rules. Tidy only.
+- Left: IndexNow needs a key file and calls to an outside service. The games root 302 is on purpose.
 
 ## marketing
 
