@@ -59,6 +59,7 @@ const arch: Arch = {
       '应用把笔记的第一个词与 Memories 里的名字比对。整理好并标上日期的笔记通过 WebDAV 进入那本日记。',
     'KeepPad Pro':
       'expo-iap 通过 Google Play 出售 Pro，一个 Pro 模块在每个锁定的操作前检查它。退款后，下次启动时 Pro 会关闭。',
+    'Fast scroll': '工作室的 fast-scroll 包包住笔记列表。列表每帧跟随滑块移动，iOS 和网页保留自己的滚动条。',
   },
 };
 

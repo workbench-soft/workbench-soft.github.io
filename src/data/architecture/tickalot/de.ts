@@ -85,6 +85,8 @@ const arch: Arch = {
       'Nach dem Expo-Export schreibt ein Build-Skript die Ratgeber, About und die Sitemap als schlichtes HTML. Die App-Seiten tragen noindex, da sie Listen einer Person zeigen.',
     'Open source licences':
       'Ein Build-Task sammelt den Lizenztext jedes Pakets in eine Datei in der App. Die Einstellungen listen sie aus dieser Datei.',
+    'Long lists':
+      'Das Studiopaket fast-scroll umhüllt jede lange Liste. Die Liste folgt dem Regler in jedem Frame, und ein versteckter Regler lässt Tipps durch.',
   },
 };
 

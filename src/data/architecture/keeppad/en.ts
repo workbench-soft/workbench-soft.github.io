@@ -79,6 +79,8 @@ const arch: Arch = {
       'The app matches the first word of a note to a name from Memories. The tidied and dated note goes to that journal over WebDAV.',
     'KeepPad Pro':
       'expo-iap sells Pro through Google Play, and one Pro module checks it before each locked action. A refund turns Pro off on the next start.',
+    'Fast scroll':
+      'The studio’s fast-scroll package wraps the notes list. The list follows the dragged thumb once per frame, and iOS and the web keep their own scrollbar.',
   },
 };
 

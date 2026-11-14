@@ -580,6 +580,10 @@ export const projects: Project[] = [
             name: 'Open source licences',
             text: 'Settings lists each package the app is built with, under the licence text it shares.',
           },
+          {
+            name: 'Long lists',
+            text: 'On Android a green thumb at the right edge drags an 80 item list to any point. It fades 1.5 seconds after the list stops.',
+          },
         ],
       },
     ],
@@ -642,6 +646,10 @@ export const projects: Project[] = [
           {
             name: 'KeepPad Pro',
             text: 'A one time purchase opens new share links, sending to other apps and to Memories, and hides the ads.',
+          },
+          {
+            name: 'Fast scroll',
+            text: 'On Android a finger drags the scroll thumb of the notes list to any point, down to the last note.',
           },
         ],
       },
@@ -873,6 +881,10 @@ export const projects: Project[] = [
           {
             name: 'Constellation lore',
             text: 'Each constellation has a card with its myth from the theme’s culture, what to look at, and its brightest stars with their distance. The gallery flies the sky to it.',
+          },
+          {
+            name: 'Long lists',
+            text: 'On Android a finger drags the scroll thumb of the constellation list and the theme gallery to any point.',
           },
         ],
       },

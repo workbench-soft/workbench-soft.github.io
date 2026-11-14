@@ -530,6 +530,10 @@ const fr: Catalog = {
             ['Langues', "Une liste partagée s'ouvre dans la langue du téléphone qui l'ouvre."],
             ['Tick-a-Lot dans la recherche', "Des guides et une page d'accueil mènent de la recherche à l'app."],
             ['Licences open source', 'Les réglages listent chaque paquet de l’app sous le texte de sa licence.'],
+            [
+              'Listes longues',
+              'Sur Android, un curseur vert au bord droit mène une liste de 80 articles à n’importe quel point. Il s’efface 1,5 seconde après l’arrêt.',
+            ],
           ],
         },
       ],
@@ -587,6 +591,10 @@ const fr: Catalog = {
             [
               'KeepPad Pro',
               'Un achat unique ouvre les nouveaux liens, l’envoi vers d’autres apps et vers Memories, et retire les pubs.',
+            ],
+            [
+              'Défilement rapide',
+              'Sur Android, un doigt tire le curseur de la liste des notes à n’importe quel point, jusqu’à la dernière note.',
             ],
           ],
         },
@@ -1561,6 +1569,10 @@ const fr: Catalog = {
             [
               'Mythes des constellations',
               'Chaque constellation a une fiche : le mythe de la culture du thème, ce qu’il faut observer et ses étoiles les plus brillantes avec leur distance. La galerie tourne le ciel vers elle.',
+            ],
+            [
+              'Listes longues',
+              'Sur Android, un doigt tire le curseur de la liste des constellations et de la galerie des thèmes à n’importe quel point.',
             ],
           ],
         },

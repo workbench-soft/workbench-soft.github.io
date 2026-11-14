@@ -67,6 +67,8 @@ const arch: Arch = {
       'Eine virtualisierte Liste filtert den Katalog und rechnet jeden Beschriftungspunkt auf den aktuellen Himmel um. Ein Tipp führt die Ansicht in 450 ms dorthin.',
     'Constellation lore':
       'Jede Karte liest die Geschichte der Themenkultur aus einer Sagendatei pro Sprache. Die Sternfakten stammen aus den Hipparcos-Daten im ESA-Gaia-Archiv.',
+    'Long lists':
+      'Das Studiopaket fast-scroll umhüllt beide Listen, und jede zeichnet nur die sichtbaren Zeilen. Der Regler nimmt eine gedämpfte Blattfarbe oder die Beschriftungsfarbe des Themas.',
   },
 };
 

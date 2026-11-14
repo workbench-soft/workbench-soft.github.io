@@ -88,6 +88,8 @@ const arch: Arch = {
       'Tras la exportación de Expo, un script de build escribe las guías, Acerca de y el sitemap en HTML simple. Las páginas de la app llevan noindex, porque muestran listas de una persona.',
     'Open source licences':
       'Una tarea de build reúne el texto de licencia de cada paquete en un archivo dentro de la app. La pantalla de Ajustes los lista desde ese archivo.',
+    'Long lists':
+      'El paquete fast-scroll del estudio envuelve cada lista larga. La lista sigue al control en cada fotograma, y un control oculto deja pasar los toques.',
   },
 };
 

@@ -514,6 +514,10 @@ const de: Catalog = {
             ['Sprachen', 'Eine geteilte Liste öffnet sich in der Sprache des Telefons, das sie öffnet.'],
             ['Tick-a-Lot in der Suche', 'Ratgeber und eine Startseite führen Leute aus der Suche zur App.'],
             ['Open-Source-Lizenzen', 'Die Einstellungen listen jedes Paket der App unter seinem Lizenztext.'],
+            [
+              'Lange Listen',
+              'Auf Android zieht ein grüner Regler am rechten Rand eine Liste mit 80 Einträgen an jede Stelle. Er blendet 1,5 Sekunden nach dem Stopp aus.',
+            ],
           ],
         },
       ],
@@ -565,6 +569,10 @@ const de: Catalog = {
             [
               'KeepPad Pro',
               'Ein einmaliger Kauf öffnet neue Links, das Senden an andere Apps und an Memories, und entfernt die Werbung.',
+            ],
+            [
+              'Schnelles Scrollen',
+              'Auf Android zieht ein Finger den Scrollregler der Notizliste an jede Stelle, bis zur letzten Notiz.',
             ],
           ],
         },
@@ -1527,6 +1535,10 @@ const de: Catalog = {
             [
               'Sternbildsagen',
               'Jedes Sternbild hat eine Karte mit der Sage aus der Kultur des Themas, Sehenswertem und den hellsten Sternen mit ihrer Entfernung. Aus der Galerie dreht sich der Himmel dorthin.',
+            ],
+            [
+              'Lange Listen',
+              'Auf Android zieht ein Finger den Scrollregler der Sternbildliste und der Themengalerie an jede Stelle.',
             ],
           ],
         },

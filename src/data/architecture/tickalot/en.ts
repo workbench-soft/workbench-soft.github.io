@@ -79,6 +79,8 @@ const arch: Arch = {
       "A build script writes the guides, About and the sitemap as plain HTML after the Expo export. The app pages carry noindex, since they show a person's lists.",
     'Open source licences':
       'A build task collects the licence text of each package into a file inside the app. The Settings screen lists them from that file.',
+    'Long lists':
+      'The studio’s fast-scroll package wraps each long list. The list follows the dragged thumb once per frame, and a hidden thumb lets taps through.',
   },
 };
 
