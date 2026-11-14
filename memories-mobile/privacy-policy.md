@@ -1,12 +1,12 @@
 ---
 title: Memories Privacy Policy
 description: Memories keeps your photos, their places and your NAS login on your phone and your NAS. Google AdMob shows the ads in the app.
-last_modified_at: 2026-10-31
+last_modified_at: 2026-11-14
 ---
 
 # Memories Privacy Policy
 
-Last updated: 31 October 2026
+Last updated: 14 November 2026
 
 Memories shows "on this day" photo memories from your own NAS. The app
 sends no data to the developer. Your photos, their places and your NAS
@@ -30,14 +30,20 @@ Google AdMob, which collects the data listed under "Ads".
   in Settings. Later the app compares the last known position with home,
   to pick the home or the remote NAS address. The position stays on the
   phone.
-- **The DCIM folder** you grant in the Android folder picker. The app
-  asks for no access to other files. Through this folder it reads the
+- **The DCIM folder** you grant in the Android folder picker. Through
+  this folder it reads the
   date and GPS point of your camera photos and uploads them to your NAS
   when you ask. Phone sort and auto sort rename the camera files and move
   them into dated folders inside DCIM. After an upload the app deletes
   the phone copy, unless you turn on "Keep a copy on the phone". Free up
   moves the phone copies to the trash or deletes them when you ask. You
   can take the grant back in Android Settings, Apps, Memories.
+- **Photos and videos, and their location** are asked for together.
+  Android keeps the GPS point of a photo read through the DCIM folder
+  only for an app that holds both. The app uses them to read the place
+  of each camera photo, on the phone.
+- **Microphone** records a voice you add to a person album. The
+  recording goes into that album on your NAS.
 - **Notifications** are daily reminders planned on the phone. No server
   sends them.
 
@@ -54,6 +60,10 @@ Google AdMob, which collects the data listed under "Ads".
   map code.
 - **Google Maps**, only when you paste a short Google Maps link to set
   home. The app opens the link to read the point in it.
+- **Google Photos**, only when you import from it. You sign in with
+  your Google account and pick the photos in Google Photos. The app
+  downloads the ones you pick into DCIM and sends nothing to Google
+  Photos.
 - **Google AdMob**, to load the ads. See "Ads" below.
 - **GitHub**, only in the version installed from GitHub. On start it asks
   GitHub whether a newer version exists. The Google Play version gets its
