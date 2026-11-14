@@ -31,6 +31,9 @@ const clockOffset = signal(0);
 export const drawing = new Drawing();
 export const drawingVersion = signal(0);
 
+/** A socket still opening after this long gives up and tries again. */
+const OPEN_TIMEOUT = 10_000;
+
 const CLOSE_FATAL = new Map(Object.entries(CLOSE_CODES).map(([key, code]) => [code, key as ErrorKey]));
 
 let socket: WebSocket | null = null;
@@ -96,7 +99,14 @@ export function connect(code: string, name: string, color: string, avatar = ''):
   let heard = Date.now();
   // When the last keepalive went out. A page frozen in the background sends none, so it gets no blame for the quiet.
   let pinged = 0;
+  // A phone on a network that drops packets can sit in CONNECTING for minutes before the browser gives up.
+  const opening = setTimeout(() => {
+    if (socket !== ws || ws.readyState === WebSocket.OPEN) return;
+    retryLater();
+    ws.close();
+  }, OPEN_TIMEOUT);
   const retryLater = () => {
+    clearTimeout(opening);
     clearInterval(ping);
     socket = null;
     status.value = 'lost';
@@ -104,6 +114,7 @@ export function connect(code: string, name: string, color: string, avatar = ''):
     setTimeout(() => connect(code, identity.name, identity.color, identity.avatar), Math.min(5000, 500 * 2 ** retry));
   };
   ws.addEventListener('open', () => {
+    clearTimeout(opening);
     retry = 0;
     heard = Date.now();
     status.value = 'open';
@@ -140,6 +151,7 @@ export function connect(code: string, name: string, color: string, avatar = ''):
     }
   });
   ws.addEventListener('close', (event) => {
+    clearTimeout(opening);
     clearInterval(ping);
     if (socket !== ws) return;
     const reason = CLOSE_FATAL.get(event.code);

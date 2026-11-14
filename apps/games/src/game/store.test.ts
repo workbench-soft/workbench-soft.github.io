@@ -55,6 +55,19 @@ describe('room socket', () => {
     expect(FakeSocket.last!.sent.at(-1)).toBe(JSON.stringify({ t: 'submit', step: 0, text: 'a cat' }));
   });
 
+  it('tries again when a socket never opens', () => {
+    vi.useFakeTimers();
+    vi.stubGlobal('WebSocket', FakeSocket);
+    vi.stubGlobal('location', new URL('https://games.workbench-soft.com/games/r/ABC234'));
+    vi.stubGlobal('window', globalThis);
+    connect('ABC234', 'Ann', '#000000');
+    const first = FakeSocket.last!;
+    vi.advanceTimersByTime(9_000);
+    expect(FakeSocket.last).toBe(first);
+    vi.advanceTimersByTime(10_000);
+    expect(FakeSocket.last).not.toBe(first);
+  });
+
   it('keeps the socket after the page wakes from a freeze', () => {
     vi.useFakeTimers();
     vi.stubGlobal('WebSocket', FakeSocket);
