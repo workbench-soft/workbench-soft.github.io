@@ -1201,6 +1201,10 @@ const nb: Catalog = {
               'Lys, uskarphet og skrifter',
               'Eksponering fra −6 til +6 EV, fargetone, skygger og høylys. Elliptisk bakgrunnsuskarphet og tilt-shift har justerbart skarpt område. Tekst tilbyr skrifter med og uten seriffer og fast bredde. Opptaksinnstillinger er utelatt.',
             ],
+            [
+              'iPhone-app',
+              'Det samme kameraet på iPhone: hjulene, RAW og ProRAW, de sammensatte modusene og kjøp via App Store. Det kommer i App Store når det finnes en Apple-konto. Av/på-knappen og låseskjermen blir på Android.',
+            ],
           ],
         },
       ],

@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Shuttrix** lists the iPhone app and what it leaves out, in every language.
 - **Lumiere Player** voice commands name Hey Lumi, turn on Bluetooth, in every language.
 - **Memories** lists the iPhone build and what it leaves out, in every language.
 - **Games** the Android app asks for ad consent in the EEA, the UK and Switzerland through its own AdMob message.

@@ -1317,6 +1317,10 @@ const de: Catalog = {
               'Licht, Unschärfe und Schriften',
               'Belichtung von −6 bis +6 EV, Farbton, Schatten und Lichter. Elliptische Hintergrundunschärfe und Tilt-Shift mit einstellbarem scharfem Bereich. Beschriftungen bieten serifenlose, Serifenschrift und Monospace. Aufnahmeparameter bleiben ausgeschlossen.',
             ],
+            [
+              'iPhone-App',
+              'Dieselbe Kamera auf dem iPhone: die Räder, RAW und ProRAW, die gebauten Modi und Käufe im App Store. Sie kommt in den App Store, sobald es ein Apple-Konto gibt. Ein-Taste und Sperrbildschirm bleiben auf Android.',
+            ],
           ],
         },
       ],

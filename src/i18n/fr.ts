@@ -1348,6 +1348,10 @@ const fr: Catalog = {
               'Lumière, flou et polices',
               'Exposition de −6 à +6 EV, teinte, ombres et hautes lumières. Flou de fond elliptique et effet de bascule avec zone nette réglable. Polices avec ou sans empattement et à chasse fixe. Les réglages de prise de vue sont exclus.',
             ],
+            [
+              'App iPhone',
+              'La même caméra sur l’iPhone : les molettes, RAW et ProRAW, les modes assemblés et les achats sur l’App Store. Elle arrive sur l’App Store dès qu’un compte Apple existe. Le bouton marche et l’écran verrouillé restent sur Android.',
+            ],
           ],
         },
       ],

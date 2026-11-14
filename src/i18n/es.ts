@@ -1302,6 +1302,10 @@ const es: Catalog = {
               'Luz, desenfoque y fuentes',
               'Exposición de −6 a +6 EV, matiz, sombras y luces. Desenfoque elíptico de fondo y efecto maqueta con zona nítida ajustable. Fuentes con remates, sin remates y monoespaciadas. No ofrece ajustes propios de la captura.',
             ],
+            [
+              'App para iPhone',
+              'La misma cámara en el iPhone: los diales, RAW y ProRAW, los modos compuestos y las compras en la App Store. Llegará a la App Store cuando exista una cuenta de Apple. El botón de encendido y la pantalla bloqueada siguen en Android.',
+            ],
           ],
         },
       ],

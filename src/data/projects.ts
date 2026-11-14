@@ -400,6 +400,10 @@ export const projects: Project[] = [
             name: 'Light, blur and fonts',
             text: 'Exposure from −6 to +6 EV, tint, shadows and highlights. Approximate ellipse background blur and tilt shift have an adjustable sharp area. Captions offer sans serif, serif and monospace fonts. Capture-only settings stay out.',
           },
+          {
+            name: 'iPhone app',
+            text: 'The same camera on the iPhone: the dials, RAW and ProRAW, the built modes and App Store purchases. It reaches the App Store once an Apple account exists. The power button and the lock screen stay on Android.',
+          },
         ],
       },
     ],
