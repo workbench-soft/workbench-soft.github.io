@@ -1,4 +1,7 @@
 [tools]
+actionlint = "1.7.12"
+# actionlint checks the run scripts with shellcheck only when it finds one on PATH.
+shellcheck = "0.11.0"
 node = "24"
 "npm:markdownlint-cli2" = "0.24.0"
 pnpm = "12.16.1"
@@ -20,8 +23,8 @@ description = "Serve the built dist/ folder"
 run = "pnpm astro preview"
 
 [tasks.lint]
-description = "Lint the home page and check the format of the whole repo"
-run = ["markdownlint-cli2", "pnpm lint", "pnpm format:check"]
+description = "Lint the home page, the workflows and the hook, and check the format of the whole repo"
+run = ["markdownlint-cli2", "actionlint", "shellcheck .githooks/pre-push", "pnpm lint", "pnpm format:check"]
 
 [tasks.format]
 description = "Format the whole repo with oxfmt"
