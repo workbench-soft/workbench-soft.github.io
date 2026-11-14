@@ -1,10 +1,12 @@
 #!/bin/sh
 # Builds an OpenCV AAR for Shuttrix with only the modules it calls: core, imgproc, features, video and the Java bindings.
+# The Android utils of the bindings import imgcodecs and videoio, so those come in with their codecs and cameras off.
 # Usage: opencv.sh <out dir>. Needs ANDROID_HOME, ANDROID_NDK_HOME, Java 17, Python 3, CMake and Ninja.
 set -eu
 
 OPENCV_VERSION=5.0.0
-MODULES=core,imgproc,features,video,java
+MODULES=core,imgproc,features,video,imgcodecs,videoio,java
+OFF="JPEG PNG SPNG TIFF WEBP OPENJPEG JASPER OPENEXR AVIF JPEGXL ANDROID_NATIVE_CAMERA"
 
 mkdir -p "$1"
 out=$(cd "$1" && pwd)
@@ -20,9 +22,11 @@ ABIs = [
     ABI("3", "arm64-v8a", None, 28, cmake_vars=dict(ANDROID_SUPPORT_FLEXIBLE_PAGE_SIZES='ON')),
 ]
 EOF
+set --
+for feature in $OFF; do set -- "$@" --disable "$feature"; done
 python3 src/platforms/android/build_sdk.py --config "$work/shuttrix.config.py" \
   --ndk_path "$ANDROID_NDK_HOME" --sdk_path "$ANDROID_HOME" \
-  --no_samples_build --no_kotlin --no_media_ndk --modules_list "$MODULES" sdk "$work/src"
+  --no_samples_build --no_kotlin --no_media_ndk --modules_list "$MODULES" "$@" sdk "$work/src"
 python3 src/platforms/android/build_java_shared_aar.py sdk/OpenCV-android-sdk \
   --android_min_sdk 28 --ndk_location "$ANDROID_NDK_HOME"
 

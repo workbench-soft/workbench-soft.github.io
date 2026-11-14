@@ -24,8 +24,8 @@ python3 -m venv venv
 pip install --quiet "onnxruntime==$ORT_VERSION" onnx
 # arm keeps the x86 only NCHWc kernels out of the model, so the phone finds a kernel for each node.
 python -m onnxruntime.tools.convert_onnx_models_to_ort "$MODEL.onnx" --output_dir models \
-  --enable_type_reduction --target_platform arm
-config=$(ls models/*.config)
+  --enable_type_reduction --target_platform arm --optimization_style Fixed
+config=models/$MODEL.required_operators_and_types.config
 cat "$config"
 
 [ -d src ] || git clone --quiet --depth 1 --branch "v$ORT_VERSION" https://github.com/microsoft/onnxruntime.git src
