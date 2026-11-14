@@ -10,9 +10,6 @@ author: Oleg Chibikov
 logo: /assets/icon.png
 theme: jekyll-theme-primer
 
-twitter:
-  card: summary_large_image
-
 defaults:
   - scope:
       path: ''
