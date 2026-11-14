@@ -1,0 +1,86 @@
+name: Shuttrix native libraries
+
+# Builds the small ONNX Runtime and OpenCV of the Shuttrix APK and publishes them as a shuttrix-native-<run number> release.
+# A person starts it when a version or the depth model changes. specs/shuttrix-native.md has the plan.
+# The repo is public, so the hosted runner spends no Actions minutes.
+on:
+  workflow_dispatch:
+  # TEMP: builds the branch while the scripts take shape. Publish runs on main only.
+  push:
+    branches: [shuttrix-native]
+
+permissions:
+  contents: read
+
+env:
+  NDK_VERSION: 27.1.12297006
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    strategy:
+      matrix:
+        lib: [onnxruntime, opencv]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      # Each build takes about 10 GB, and the image ships tools these builds don't use.
+      - name: Free disk space
+        run: sudo rm -rf /usr/share/dotnet /usr/local/lib/android/sdk/ndk/2* /opt/ghc /usr/local/.ghcup /opt/hostedtoolcache/CodeQL
+      - name: Set up the NDK and Ninja
+        run: |
+          sudo apt-get install -y -qq ninja-build
+          yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --install "ndk;$NDK_VERSION" >/dev/null
+          echo "ANDROID_NDK_HOME=$ANDROID_HOME/ndk/$NDK_VERSION" >> "$GITHUB_ENV"
+          echo "JAVA_HOME=$JAVA_HOME_17_X64" >> "$GITHUB_ENV"
+      - name: Build
+        run: sh native/shuttrix/${{ matrix.lib }}.sh "$RUNNER_TEMP/out"
+      # Android 15 phones with 16 KB pages refuse a library whose segments align to 4 KB.
+      - name: Check 16 KB pages
+        run: |
+          cd "$RUNNER_TEMP/out"
+          for aar in *.aar; do unzip -q -o "$aar" 'jni/arm64-v8a/*.so' -d check; done
+          for so in check/jni/arm64-v8a/*.so; do
+            "$ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-readelf" -lW "$so" | awk -v so="$so" \
+              '$1 == "LOAD" && $NF != "0x4000" && $NF != "0x10000" { print "::error::" so " aligns to " $NF; bad = 1 } END { exit bad }'
+          done
+          rm -rf check
+          ls -l
+      - uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ${{ runner.temp }}/out
+          key: shuttrix-native-${{ github.run_id }}-${{ matrix.lib }}
+
+  publish:
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ${{ runner.temp }}/out
+          key: shuttrix-native-${{ github.run_id }}-onnxruntime
+          fail-on-cache-miss: true
+      - name: Keep the ONNX Runtime files
+        run: mv "$RUNNER_TEMP/out" "$RUNNER_TEMP/files"
+      - uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ${{ runner.temp }}/out
+          key: shuttrix-native-${{ github.run_id }}-opencv
+          fail-on-cache-miss: true
+      # A prerelease, so the app updaters and the latest release link skip it.
+      - name: Publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: shuttrix-native-${{ github.run_number }}
+        run: |
+          cd "$RUNNER_TEMP/files"
+          mv "$RUNNER_TEMP"/out/* .
+          sha256sum -- * > SHA256SUMS
+          cat SHA256SUMS
+          gh release create "$TAG" --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" --prerelease --latest=false \
+            --title "Shuttrix native libraries ${{ github.run_number }}" \
+            --notes "ONNX Runtime and OpenCV for the Shuttrix APK, built by shuttrix-native.yml. See specs/shuttrix-native.md." ./*

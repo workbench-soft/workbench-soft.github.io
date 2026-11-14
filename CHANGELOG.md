@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Shuttrix** a workflow builds the small ONNX Runtime and OpenCV that make the Shuttrix APK smaller.
 - **App audit 2026-11-14** a game survives a reload and a restart, a telephone entry waits for the socket, the apps get an Ad privacy choices button, the site serves its own fonts, and the Memories, Lumiere, Shuttrix, Tripforge and Langflip privacy texts name what the apps contact.
 - **Shuttrix** lists the iPhone app and what it leaves out, in every language.
 - **Lumiere Player** voice commands name Hey Lumi, turn on Bluetooth, in every language.
