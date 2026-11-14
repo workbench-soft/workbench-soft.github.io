@@ -18,8 +18,8 @@
   --cyan: #5cf2ff;
   --violet: #a98bff;
   --lime: #c5ff4a;
-  --mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
-  --sans: 'Space Grotesk', system-ui, 'Segoe UI', sans-serif;
+  --mono: var(--font-mono);
+  --sans: var(--font-sans);
   --wrap: 1240px;
   --gutter: clamp(16px, 4vw, 40px);
   --ease: cubic-bezier(0.2, 0.8, 0.2, 1);

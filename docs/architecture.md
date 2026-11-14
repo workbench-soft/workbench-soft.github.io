@@ -1,6 +1,6 @@
 # Architecture
 
-The repo serves <https://workbench-soft.com> from GitHub Pages. The site has no server and no outside service at run time, apart from Google Fonts.
+The repo serves <https://workbench-soft.com> from GitHub Pages. The site has no server. The build downloads its 2 fonts from Google Fonts, and the site serves them itself.
 
 ## Parts
 
@@ -49,10 +49,8 @@ flowchart LR
 sequenceDiagram
   participant B as Browser
   participant P as GitHub Pages
-  participant F as Google Fonts
   B->>P: GET /
-  P-->>B: index.html, CSS, scripts
-  B->>F: fonts
+  P-->>B: index.html, CSS, scripts, fonts
   B->>B: WebGL2 shader draws the hero
   B->>B: scroll timelines reveal the blocks
 ```
@@ -177,5 +175,5 @@ Each choice below names what the repo picked, what it costs and what lost. The m
 - **Why** the hero counts, the project panels and the search index all come from one source at build time.
 - **Trade-off** a text edit is a code change and a deploy.
 - **Rejected**
-  - **A headless CMS** the site calls no outside service at run time, apart from Google Fonts.
+  - **A headless CMS** the site calls no outside service for its content at run time.
 - **Cost to undo** low. The data sits in 2 files.
