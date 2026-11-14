@@ -5,7 +5,7 @@ name: Shuttrix native libraries
 # The repo is public, so the hosted runner spends no Actions minutes.
 on:
   workflow_dispatch:
-  # TEMP: builds the branch while the scripts take shape. Publish runs on main only.
+  # TEMP: builds the branch while the scripts take shape.
   push:
     branches: [shuttrix-native]
 
@@ -45,6 +45,7 @@ jobs:
             "$ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-readelf" -lW "$so" | awk -v so="$so" \
               '$1 == "LOAD" && $NF != "0x4000" && $NF != "0x10000" { print "::error::" so " aligns to " $NF; bad = 1 } END { exit bad }'
           done
+          unzip -l ./*.aar 'jni/*'
           rm -rf check
           ls -l
       - uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
@@ -54,7 +55,6 @@ jobs:
 
   publish:
     needs: build
-    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
