@@ -13,7 +13,7 @@ seo:
 
 Memories, an Android app, copies the photos and videos in the phone's camera folder to your NAS over WebDAV. Each file lands in a folder for its year, place and day, and leaves the phone only once the NAS holds all of its bytes.
 
-It works with any NAS that serves WebDAV. Set yours up with the [QNAP guide](qnap-webdav) or the [Synology guide](synology-webdav) first. The NAS user needs read and write rights on the photo folder.
+It works with any NAS that serves WebDAV. Set yours up with the [QNAP guide](qnap-webdav.html) or the [Synology guide](synology-webdav.html) first. The NAS user needs read and write rights on the photo folder.
 
 ## Where the photos go
 
@@ -58,4 +58,4 @@ Kept a copy on the phone? The card "Free up the phone" finds the phone files the
 
 The same Organize tab lists the NAS folders with unsorted photos. "Sort them all" moves them into the layout above. Files only move, and a file whose new folder already holds the same bytes shows once.
 
-Away from home? The upload works through Tailscale too, see [NAS photos away from home](nas-photos-away-from-home).
+Away from home? The upload works through Tailscale too, see [NAS photos away from home](nas-photos-away-from-home.html).

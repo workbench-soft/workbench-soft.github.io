@@ -50,7 +50,7 @@ Memories finds the address on its own. It lists the NAS among the devices on you
 
 ## HTTP or HTTPS?
 
-At home, HTTP on 5005 is enough: the photos stay inside your Wi-Fi. Away from home, open the NAS through Tailscale rather than a router port. Tailscale encrypts the link between the phone and the NAS, and the NAS stays closed to the internet. [NAS photos away from home](nas-photos-away-from-home) shows the setup.
+At home, HTTP on 5005 is enough: the photos stay inside your Wi-Fi. Away from home, open the NAS through Tailscale rather than a router port. Tailscale encrypts the link between the phone and the NAS, and the NAS stays closed to the internet. [NAS photos away from home](nas-photos-away-from-home.html) shows the setup.
 
 ## When Synology WebDAV is not working
 
@@ -60,10 +60,10 @@ At home, HTTP on 5005 is enough: the photos stay inside your Wi-Fi. Away from ho
 | The login fails                   | Log in to DSM in a browser with the same user to check the password.                                                         |
 | The folder is missing             | The user lacks rights on it. Tick Read/Write in the folder's Permissions tab.                                                |
 | Photos open, and the upload fails | The user has Read only. Tick Read/Write.                                                                                     |
-| It works at home only             | The NAS address is local. See [NAS photos away from home](nas-photos-away-from-home).                                        |
+| It works at home only             | The NAS address is local. See [NAS photos away from home](nas-photos-away-from-home.html).                                   |
 
 ## Next
 
 1. [Download Memories]({{ site.download_url }}) and open it on your Android phone.
 2. Pick the NAS, log in with the user from above and open the photo folder.
-3. The phone indexes the folder in the background. [On this day photos from your NAS](on-this-day-photos-from-nas) explains what it shows next.
+3. The phone indexes the folder in the background. [On this day photos from your NAS](on-this-day-photos-from-nas.html) explains what it shows next.

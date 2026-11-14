@@ -17,7 +17,7 @@ The photos stay on the NAS. The phone keeps a small index of dates and places, a
 
 ## What you need
 
-- **A NAS that serves WebDAV** such as QNAP, Synology or TrueNAS. Set it up with the [QNAP guide](qnap-webdav) or the [Synology guide](synology-webdav).
+- **A NAS that serves WebDAV** such as QNAP, Synology or TrueNAS. Set it up with the [QNAP guide](qnap-webdav.html) or the [Synology guide](synology-webdav.html).
 - **An Android phone** with [Memories]({{ site.download_url }}) on it.
 - **Photos in any folder layout** the app finds the date of each file on its own.
 
@@ -51,10 +51,10 @@ The app loads the reminder's photos ahead of time, so they open at once from the
 
 ## Places without a cloud service
 
-A GPS point turns into a place name such as "Kyoto, Japan" from a database of [GeoNames](https://www.geonames.org/) places inside the app. No photo location leaves the phone, and the app sends no photo data to the developer. The [privacy policy](../privacy-policy) lists what the app stores.
+A GPS point turns into a place name such as "Kyoto, Japan" from a database of [GeoNames](https://www.geonames.org/) places inside the app. No photo location leaves the phone, and the app sends no photo data to the developer. The [privacy policy](../privacy-policy.html) lists what the app stores.
 
 ## Start
 
-1. Turn on WebDAV: [QNAP](qnap-webdav) or [Synology](synology-webdav).
+1. Turn on WebDAV: [QNAP](qnap-webdav.html) or [Synology](synology-webdav.html).
 2. Install [Memories]({{ site.download_url }}) and pick the photo folder.
 3. Pick the reminder time in Settings.
