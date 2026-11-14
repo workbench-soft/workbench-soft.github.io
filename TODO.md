@@ -48,7 +48,6 @@ Workbench Games, `com.workbenchsoft.games`. Release builds of the Android app us
 - [ ] **Ad privacy choices** on an Android phone in the EEA (or with a VPN there), open the games app, Privacy, and press Ad privacy choices: the AdMob consent form opens (audit 2026-11-14).
 - [ ] **"No ads" on the home page** `src/i18n/en.ts` says "This site shows no ads" and "Ads on this site: 0", while the astrology pages load AdSense. Decide the wording, then tell an agent.
 - [ ] **Site privacy notice** the order form sends name, email and message to formsubmit.co, and `public/privacy.html` covers only Workbench MCP. Decide whether the site gets its own privacy page and footer link.
-- [ ] **Dependabot** agent work: after the first Monday run, check the Dependabot tab for `dependency_file_not_resolvable` on the pnpm 11 and 12 lockfiles.
 - Left: one pnpm version and one workspace for the root, apps/games and apps/edge. It is a tooling migration across 3 lockfiles.
 - Left: root astro 7.4.4 has 2 advisories that a static build can't reach. 7.4.7 and up pulls a beta `@emnapi/runtime` that crashes `astro check`, so it waits on a newer `@astrojs/check`.
 - Left: TypeScript 7 in apps/games and apps/edge while the stack table pins 6. An org version call.
