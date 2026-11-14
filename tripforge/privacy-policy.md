@@ -1,12 +1,12 @@
 ---
 title: Tripforge Privacy Policy
 description: Tripforge sends the places and dates you search to its own server to find fares and sights. Saved trips and settings stay on your phone. Google AdMob shows the ads.
-last_modified_at: 2026-11-04
+last_modified_at: 2026-11-14
 ---
 
 # Tripforge Privacy Policy
 
-Last updated: 4 November 2026
+Last updated: 14 November 2026
 
 Tripforge finds cheap round trips around the dates you ask for, and the
 sights and secret spots of the city. To do that it sends what you search
@@ -46,7 +46,9 @@ No name, email, account or exact position leaves the phone.
 
 A tap on an offer opens Aviasales or Google Flights in the browser, with
 the route, the dates and the group filled in. A tap on a place opens its
-page. Those sites have their own privacy policies.
+page. The Tickalot button opens tickalot.web.app with the city, the
+dates and the nights in the link. Those sites have their own privacy
+policies.
 
 ## Ads
 
