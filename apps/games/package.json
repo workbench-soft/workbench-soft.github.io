@@ -27,7 +27,6 @@
     "@astrojs/preact": "^6.1.1",
     "@astrojs/sitemap": "^3.7.4",
     "@capacitor/cli": "^8.6.0",
-    "@cloudflare/workers-types": "^5.20261030.1",
     "@resvg/resvg-js": "^2.6.2",
     "@types/canvas-confetti": "^1.9.0",
     "astro": "^7.4.11",

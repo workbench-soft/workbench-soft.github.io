@@ -45,9 +45,6 @@ importers:
       '@capacitor/cli':
         specifier: ^8.6.0
         version: 8.6.0(supports-color@10.2.2)
-      '@cloudflare/workers-types':
-        specifier: ^5.20261030.1
-        version: 5.20261030.1
       '@resvg/resvg-js':
         specifier: ^2.6.2
         version: 2.6.2
@@ -3291,7 +3288,8 @@ snapshots:
   '@cloudflare/workerd-windows-64@1.20261023.1':
     optional: true
 
-  '@cloudflare/workers-types@5.20261030.1': {}
+  '@cloudflare/workers-types@5.20261030.1':
+    optional: true
 
   '@cspotcode/source-map-support@0.8.1':
     dependencies:
