@@ -1,10 +1,9 @@
 ---
 import Base from "../layouts/Base.astro";
-import { defaultLang, locales, tags } from "../i18n/locales";
+import { defaultLang, locales, pathOf, tags } from "../i18n/locales";
 import { ui } from "../i18n";
 
 // GitHub Pages serves this page for each missing path, so it speaks every language and leads home.
-const home = (l: (typeof locales)[number]) => (l === defaultLang ? "/" : `/${l}/`);
 const en = ui(defaultLang);
 ---
 
@@ -17,7 +16,7 @@ const en = ui(defaultLang);
         locales.map((l) => (
           <li lang={tags[l]}>
             <span>{ui(l).notFound.title}</span>
-            <a href={home(l)} hreflang={tags[l]}>
+            <a href={pathOf(l)} hreflang={tags[l]}>
               {ui(l).notFound.home}
             </a>
           </li>

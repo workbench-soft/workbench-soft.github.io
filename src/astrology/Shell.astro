@@ -1,7 +1,7 @@
 ---
 // The frame of each astrology page: the header with the languages, the app card and the footer.
 import Base from "../layouts/Base.astro";
-import { names, tags, type Lang } from "../i18n/locales";
+import { names, pathOf, tags, type Lang } from "../i18n/locales";
 import { apkUrl, appUrl, href, root, text } from "./paths";
 import { ui } from "../i18n";
 
@@ -27,7 +27,7 @@ const t = text(lang);
   <a class="skip" href="#main">{t.nav.skip}</a>
   <header class="top">
     <div class="wrap bar">
-      <a class="brand" href={lang === "en" ? "/" : `/${lang}/`}>{t.nav.home}</a>
+      <a class="brand" href={pathOf(lang)}>{t.nav.home}</a>
       <nav aria-label={t.section}>
         <a href={href(lang)}>{t.nav.index}</a>
         <a href={href(lang, "today")}>{t.nav.today}</a>
