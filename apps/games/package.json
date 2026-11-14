@@ -13,7 +13,7 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@capacitor-community/admob": "^8.2.1",
+    "@capacitor-community/admob": "^8.3.0",
     "@capacitor/android": "^8.6.0",
     "@capacitor/app": "^8.1.2",
     "@capacitor/core": "^8.6.0",
@@ -21,19 +21,19 @@
     "@fontsource-variable/fredoka": "^5.3.0",
     "@preact/signals": "^2.11.4",
     "canvas-confetti": "^1.9.4",
-    "preact": "^11.1.0"
+    "preact": "^11.2.0"
   },
   "devDependencies": {
-    "@astrojs/preact": "^6.1.1",
+    "@astrojs/preact": "^6.1.2",
     "@astrojs/sitemap": "^3.7.4",
     "@capacitor/cli": "^8.6.0",
     "@resvg/resvg-js": "^2.6.2",
     "@types/canvas-confetti": "^1.9.0",
     "astro": "^7.4.11",
-    "oxlint": "^1.90.0",
+    "oxlint": "^1.92.0",
     "typescript": "^7.0.2",
-    "vitest": "^5.0.5",
-    "wrangler": "^4.156.0"
+    "vitest": "^5.1.0",
+    "wrangler": "^4.158.0"
   },
   "packageManager": "pnpm@11.22.0"
 }
