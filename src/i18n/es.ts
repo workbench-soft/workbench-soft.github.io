@@ -1028,7 +1028,7 @@ const es: Catalog = {
             ],
             [
               'Merge automático',
-              'Hace merge de una PR de Dependabot cuando pasa cada comprobación. Una actualización mayor espera a una persona.',
+              'Hace merge de una PR de Dependabot en cuanto se abre, y las comprobaciones corren en main. Una actualización mayor espera a una persona.',
             ],
             ['Versiones', 'Cada push a main que pasa las comprobaciones recibe una versión con fecha y notas.'],
             [
@@ -1304,7 +1304,7 @@ const es: Catalog = {
             ],
             [
               'Foto multifotograma',
-              'Una foto normal une 6 fotogramas rápidos en uno, con la mitad de ruido y bordes más nítidos.',
+              'Una foto normal une 5 fotogramas rápidos en uno, con la mitad de ruido y bordes más nítidos.',
             ],
             [
               'Mejorar fotos',
@@ -1592,8 +1592,8 @@ const es: Catalog = {
               'Artistas y Canciones están en la pantalla de inicio junto a las unidades. La barra del reproductor sigue en cada pantalla menos el vídeo, con ruta de navegación y orden por artista. Las pistas en directo se omiten, activado por defecto.',
             ],
             [
-              'Spotify y YouTube',
-              'Hey Lumi pone una canción, un artista o un estilo que no está en las carpetas. Spotify busca las canciones y YouTube las reproduce.',
+              'MusicBrainz y YouTube',
+              'Hey Lumi pone una canción, un artista o un estilo que no está en las carpetas. MusicBrainz busca las canciones y YouTube las reproduce.',
             ],
             [
               'Audiolibros',
@@ -1639,7 +1639,7 @@ const es: Catalog = {
             ['Idiomas', 'En 9 idiomas, según el teléfono o el navegador.'],
             [
               'Alquileres',
-              'Cada código postal de NSW, QLD, SA y TAS coloreado por el alquiler semanal medio de los nuevos contratos.',
+              'Cada código postal de NSW, VIC, QLD, SA y TAS coloreado por el alquiler semanal medio de los nuevos contratos.',
             ],
             ['Instalar desde el navegador', 'La versión web se instala como app con su propio icono.'],
             [

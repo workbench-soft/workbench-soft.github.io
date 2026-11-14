@@ -954,7 +954,7 @@ const nb: Catalog = {
             ['Dependabot-detaljer', 'Lagrer oppdateringstypen for hver Dependabot-PR til sammenslåingsjobben.'],
             [
               'Automatisk sammenslåing',
-              'Slår sammen en Dependabot-PR når hver sjekk består. En hovedoppdatering venter på et menneske.',
+              'Slår sammen en Dependabot-PR så snart den åpnes, og sjekkene kjører på main. En hovedoppdatering venter på et menneske.',
             ],
             ['Utgivelser', 'Hver push til main som består sjekkene, blir en datert utgivelse med notater.'],
             [
@@ -1212,7 +1212,7 @@ const nb: Catalog = {
             ],
             [
               'Flerbildefoto',
-              'Et vanlig foto slår sammen 6 raske bilder til ett, med halvparten så mye støy og skarpere kanter.',
+              'Et vanlig foto slår sammen 5 raske bilder til ett, med halvparten så mye støy og skarpere kanter.',
             ],
             [
               'Forbedre bilder',
@@ -1476,8 +1476,8 @@ const nb: Catalog = {
               'Artister og Sanger ligger på startskjermen ved siden av stasjonene. Spillerlinjen blir på hver skjerm unntatt video, med brødsmuler og sortering etter artist. Livespor hoppes over, på som standard.',
             ],
             [
-              'Spotify og YouTube',
-              'Hey Lumi spiller en sang, en artist eller en stil som ingen mappe har. Spotify finner sangene, og YouTube spiller dem.',
+              'MusicBrainz og YouTube',
+              'Hey Lumi spiller en sang, en artist eller en stil som ingen mappe har. MusicBrainz finner sangene, og YouTube spiller dem.',
             ],
             [
               'Lydbøker',
@@ -1518,7 +1518,10 @@ const nb: Catalog = {
             ['Forstadskort og historikk', 'Forstadens median, antall salg og et diagram over år.'],
             ['Søk', 'Finner en forstad etter navn eller postnummer og flyr kartet dit.'],
             ['Språk', 'På 9 språk, etter telefonen eller nettleseren.'],
-            ['Leie', 'Hvert postnummer i NSW, QLD, SA og TAS farget etter medianleien for nye leieavtaler per uke.'],
+            [
+              'Leie',
+              'Hvert postnummer i NSW, VIC, QLD, SA og TAS farget etter medianleien for nye leieavtaler per uke.',
+            ],
             ['Installer fra nettleseren', 'Nettversjonen installeres som en app med eget ikon.'],
             [
               'Reklame og fjern reklame',

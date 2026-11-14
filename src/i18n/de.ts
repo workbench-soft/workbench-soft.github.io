@@ -1043,7 +1043,7 @@ const de: Catalog = {
             ['Dependabot-Details', 'Speichert die Update-Art jedes Dependabot-PRs für den Merge-Job.'],
             [
               'Auto-Merge',
-              'Führt einen Dependabot-PR zusammen, sobald jede Prüfung besteht. Ein Major-Update wartet auf einen Menschen.',
+              'Führt einen Dependabot-PR gleich beim Öffnen zusammen, die Prüfungen laufen auf main. Ein Major-Update wartet auf einen Menschen.',
             ],
             ['Releases', 'Jeder Push auf main, der die Prüfungen besteht, wird ein datiertes Release mit Notizen.'],
             [
@@ -1325,7 +1325,7 @@ const de: Catalog = {
             ],
             [
               'Mehrbild-Foto',
-              'Ein normales Foto fügt 6 schnelle Bilder zu einem zusammen, mit halb so viel Rauschen und schärferen Kanten.',
+              'Ein normales Foto fügt 5 schnelle Bilder zu einem zusammen, mit halb so viel Rauschen und schärferen Kanten.',
             ],
             [
               'Fotos verbessern',
@@ -1607,8 +1607,8 @@ const de: Catalog = {
               'Künstler und Songs liegen auf dem Startbildschirm neben den Laufwerken. Die Player-Leiste bleibt auf jedem Bildschirm außer Video, mit Brotkrumen und Sortierung nach Künstler. Live-Titel werden übersprungen, standardmäßig an.',
             ],
             [
-              'Spotify und YouTube',
-              'Hey Lumi spielt einen Song, einen Künstler oder einen Stil, den kein Ordner hat. Spotify nennt die Songs, YouTube spielt sie.',
+              'MusicBrainz und YouTube',
+              'Hey Lumi spielt einen Song, einen Künstler oder einen Stil, den kein Ordner hat. MusicBrainz nennt die Songs, YouTube spielt sie.',
             ],
             [
               'Hörbücher',
@@ -1651,7 +1651,7 @@ const de: Catalog = {
             ['Sprachen', 'In 9 Sprachen, nach der Sprache von Telefon oder Browser.'],
             [
               'Mieten',
-              'Jede Postleitzahl in NSW, QLD, SA und TAS nach der mittleren Wochenmiete neuer Verträge gefärbt.',
+              'Jede Postleitzahl in NSW, VIC, QLD, SA und TAS nach der mittleren Wochenmiete neuer Verträge gefärbt.',
             ],
             ['Aus dem Browser installieren', 'Die Web-Version installiert sich als App mit eigenem Symbol.'],
             [

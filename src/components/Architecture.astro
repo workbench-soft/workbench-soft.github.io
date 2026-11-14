@@ -50,10 +50,10 @@ const names = new Map(projects.map((p) => [p.id, p.name]));
   .parts div { font-size: 14px; line-height: 1.5; }
   .parts dt { display: inline; font: 600 12.5px var(--mono); color: var(--acc); margin-right: 6px; }
   .parts dd { display: inline; margin: 0; color: var(--soft); }
-  .flow { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; counter-reset: step; }
-  .flow li { counter-increment: step; font-size: 13.5px; line-height: 1.4; color: var(--soft); padding: 7px 11px; border: 1px solid var(--line-2); border-radius: 10px; background: var(--acc-a); max-width: 26rem; }
+  .flow { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; counter-reset: step; max-width: 46rem; }
+  .flow li { position: relative; counter-increment: step; font-size: 13.5px; line-height: 1.4; color: var(--soft); padding: 7px 11px; border: 1px solid var(--line-2); border-radius: 10px; background: var(--acc-a); }
   .flow li::before { content: counter(step) ". "; font-family: var(--mono); color: var(--acc); }
-  .flow li:not(:last-child)::after { content: "\2192"; margin-left: 10px; color: var(--acc); }
+  .flow li:not(:last-child)::after { content: ""; position: absolute; left: 20px; bottom: -15px; width: 1px; height: 14px; background: var(--acc); }
   .conn { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; font-size: 14px; line-height: 1.5; color: var(--soft); }
   .conn a, .conn b { font-weight: 600; color: var(--acc); }
 </style>

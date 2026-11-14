@@ -376,7 +376,7 @@ export const projects: Project[] = [
           },
           {
             name: 'Multi-frame photo',
-            text: 'A plain photo merges 6 quick frames into one, with half the noise and crisper edges.',
+            text: 'A plain photo merges 5 quick frames into one, with half the noise and crisper edges.',
           },
           {
             name: 'Enhance photos',
@@ -924,8 +924,8 @@ export const projects: Project[] = [
             text: 'Artists and Songs sit on the home screen beside the drives. The player bar stays on each screen but video, with breadcrumbs and artist sort. Live tracks are skipped, on by default.',
           },
           {
-            name: 'Spotify and YouTube',
-            text: 'Hey Lumi plays a song, an artist or a style no folder holds. Spotify names the songs and YouTube plays them.',
+            name: 'MusicBrainz and YouTube',
+            text: 'Hey Lumi plays a song, an artist or a style no folder holds. MusicBrainz names the songs and YouTube plays them.',
           },
           {
             name: 'Audiobooks',
@@ -1124,7 +1124,7 @@ export const projects: Project[] = [
           { name: 'Languages', text: 'The app in 9 languages, following the phone or browser.' },
           {
             name: 'Rents',
-            text: 'Each postcode of NSW, QLD, SA and TAS coloured by the median weekly rent of new leases.',
+            text: 'Each postcode of NSW, VIC, QLD, SA and TAS coloured by the median weekly rent of new leases.',
           },
           { name: 'Install from the browser', text: 'The web build installs as an app with its own icon.' },
           {
@@ -1722,7 +1722,7 @@ export const projects: Project[] = [
           { name: 'Dependabot details', text: 'Stores the update type of each Dependabot PR for the merge job.' },
           {
             name: 'Dependabot auto merge',
-            text: 'Merges a Dependabot PR once each check passes. A major update waits for a person.',
+            text: 'Merges a Dependabot PR as soon as it opens, and the checks run on main. A major update waits for a person.',
           },
           { name: 'Releases', text: 'Each push to main that passes the checks gets a dated release with notes.' },
           {

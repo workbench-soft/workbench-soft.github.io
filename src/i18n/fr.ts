@@ -1065,7 +1065,7 @@ const fr: Catalog = {
             ['Détails Dependabot', 'Garde le type de mise à jour de chaque PR Dependabot pour le job de merge.'],
             [
               'Merge auto',
-              'Fusionne une PR Dependabot une fois chaque vérification passée. Une mise à jour majeure attend une personne.',
+              'Fusionne une PR Dependabot dès son ouverture, puis les vérifications tournent sur main. Une mise à jour majeure attend une personne.',
             ],
             ['Versions', 'Chaque push sur main qui passe les contrôles devient une version datée avec ses notes.'],
             [
@@ -1356,7 +1356,7 @@ const fr: Catalog = {
             ],
             [
               'Photo multi-images',
-              'Une photo normale fusionne 6 images rapides en une, avec moitié moins de bruit et des bords plus nets.',
+              'Une photo normale fusionne 5 images rapides en une, avec moitié moins de bruit et des bords plus nets.',
             ],
             [
               'Améliorer les photos',
@@ -1647,8 +1647,8 @@ const fr: Catalog = {
               'Artistes et Titres sont sur l’écran d’accueil, à côté des disques. La barre du lecteur reste sur chaque écran sauf la vidéo, avec un fil d’Ariane et un tri par artiste. Les titres live sont ignorés, par défaut.',
             ],
             [
-              'Spotify et YouTube',
-              'Hey Lumi joue un titre, un artiste ou un style absent des dossiers. Spotify trouve les titres, YouTube les joue.',
+              'MusicBrainz et YouTube',
+              'Hey Lumi joue un titre, un artiste ou un style absent des dossiers. MusicBrainz trouve les titres, YouTube les joue.',
             ],
             [
               'Livres audio',
@@ -1694,7 +1694,7 @@ const fr: Catalog = {
             ['Langues', 'En 9 langues, selon le téléphone ou le navigateur.'],
             [
               'Loyers',
-              'Chaque code postal de NSW, QLD, SA et TAS coloré selon le loyer hebdomadaire médian des nouveaux baux.',
+              'Chaque code postal de NSW, VIC, QLD, SA et TAS coloré selon le loyer hebdomadaire médian des nouveaux baux.',
             ],
             ['Installer depuis le navigateur', "La version web s'installe comme une app avec son icône."],
             [
