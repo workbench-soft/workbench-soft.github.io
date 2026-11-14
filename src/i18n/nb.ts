@@ -59,6 +59,12 @@ const nb: Catalog = {
       less: 'Vis færre',
       openSource: 'Åpen kildekode',
       source: 'Kildekode',
+      arch: {
+        title: 'Slik er det bygd',
+        parts: 'Deler',
+        flow: 'Dataflyt',
+        links: 'Koblet til',
+      },
       kinds: {
         app: 'Apper for folk',
         tool: 'Verktøy for utviklere',
@@ -347,6 +353,15 @@ const nb: Catalog = {
             ],
           ],
         },
+        {
+          title: 'iPhone-app',
+          features: [
+            [
+              'Samme app på iPhone',
+              'Kartet, turene, talevarslene, rutene og Pro, solgt gjennom App Store. Den venter på en Apple-konto.',
+            ],
+          ],
+        },
       ],
     },
     'guitar-upscale': {
@@ -460,6 +475,10 @@ const nb: Catalog = {
             ['Endre og slette', 'Hvert felt lagres selv, et trykk krysser av, og sletting kan angres.'],
             ['Språk', 'En delt liste åpnes på språket til telefonen som åpner den.'],
             ['Finn Tick-a-Lot i søk', 'Guider og en forside fører folk fra søk til appen.'],
+            [
+              'Lisenser for åpen kildekode',
+              'Innstillinger viser hver pakke appen bruker, under lisensteksten den deler.',
+            ],
           ],
         },
       ],
@@ -605,6 +624,18 @@ const nb: Catalog = {
             ['Språk', 'Kalkulatoren på 9 språk, med beløp i australske dollar.'],
             ['Reklame', 'AdSense-blokker på nettstedet og et AdMob-banner i Android-appen.'],
             ['Ingen reklame på utviklerens telefon', 'Hvert bygg skjuler banneret på en telefon med utviklernøkkelen.'],
+            [
+              'iPhone-app',
+              'Kalkulatoren, guidene og sidene som iPhone-app, uten nett fra første start. Den venter på App Store.',
+            ],
+            [
+              'Fjern reklame på iPhone',
+              'Én betaling i App Store skjuler banneret. Gjenopprett kjøp henter kjøpet på en ny iPhone.',
+            ],
+            [
+              'Del resultatet',
+              'Del-knappen under svaret sender det billigste valget, kostnaden og lenken til Meldinger, Mail eller Notater.',
+            ],
           ],
         },
       ],
@@ -841,6 +872,10 @@ const nb: Catalog = {
               'Alina velger skrift for overskrifter, tekst og etiketter blant 10 gratis skrifter, eller laster opp sine egne.',
             ],
             ['Kundegallerier', 'En privat lenke med prøvebilder med vannmerke, deretter alle originalene som ZIP.'],
+            [
+              'Søk',
+              'Hver side har tittel, beskrivelse og bildekort for søk og lenkeforhåndsvisning. En egen side dekker Sutherland Shire.',
+            ],
           ],
         },
       ],
@@ -863,6 +898,10 @@ const nb: Catalog = {
               'Hun velger skrift for overskrifter og tekst blant 10 gratis skrifter med kyrillisk, eller laster opp sin egen.',
             ],
             ['KI-generator', 'Tegner et interiør ut fra en forespørsel på russisk, en stil og et bilde av rommet.'],
+            [
+              'Søk',
+              'Yandex og Google leser tittel, beskrivelse, delingsbilde og strukturerte data på hver side. Nettstedskartet viser sidene.',
+            ],
           ],
         },
       ],
@@ -918,6 +957,10 @@ const nb: Catalog = {
               'Slår sammen en Dependabot-PR når hver sjekk består. En hovedoppdatering venter på et menneske.',
             ],
             ['Utgivelser', 'Hver push til main som består sjekkene, blir en datert utgivelse med notater.'],
+            [
+              'iOS-sjekk og simulatorbygg',
+              'Lister hver del som bare finnes på Android uten iOS-plan, og bygger appen for iPhone-simulatoren med skjermbilder av testflytene.',
+            ],
           ],
         },
       ],
@@ -1515,6 +1558,10 @@ const nb: Catalog = {
             [
               'Tripforge Pro',
               'Ett kjøp på Android gir ubegrensede søk, datoer flyttet opptil 30 dager, opptil 50 lagrede turer og ingen reklame.',
+            ],
+            [
+              'Nettsider for søk',
+              'En forside per språk med skjemaet, egen tittel, forhåndsbilde og data for søkemotorer, hver i nettstedskartet.',
             ],
           ],
         },

@@ -1,0 +1,59 @@
+---
+import type { Arch } from "../data/architecture/types";
+import { projects } from "../data/projects";
+import type { Ui } from "../i18n/types";
+
+interface Props {
+  arch: Arch;
+  t: Ui["projects"]["arch"];
+}
+
+const { arch, t } = Astro.props;
+const names = new Map(projects.map((p) => [p.id, p.name]));
+---
+
+<details class="arch">
+  <summary>{t.title}</summary>
+  <p class="sum">{arch.summary}</p>
+  <h4>{t.parts}</h4>
+  <dl class="parts">
+    {arch.parts.map((x) => <div><dt>{x.name}</dt><dd>{x.role}</dd></div>)}
+  </dl>
+  <h4>{t.flow}</h4>
+  <ol class="flow">{arch.flow.map((s) => <li>{s}</li>)}</ol>
+  {
+    arch.links.length > 0 && (
+      <>
+        <h4>{t.links}</h4>
+        <ul class="conn">
+          {arch.links.map((l) => (
+            <li>
+              {names.has(l.to) ? <a href={`#${l.to}`}>{names.get(l.to)}</a> : <b>{l.to}</b>} <span>{l.text}</span>
+            </li>
+          ))}
+        </ul>
+      </>
+    )
+  }
+</details>
+
+<style>
+  .arch { margin-top: 28px; border: 1px solid var(--line); border-radius: 14px; padding: 0 18px; background: rgb(255 255 255 / 0.02); }
+  .arch[open] { padding-bottom: 18px; }
+  summary { cursor: pointer; padding: 14px 0; font: 500 12px var(--mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--acc); list-style: none; }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: "+"; display: inline-block; width: 1.4em; }
+  .arch[open] summary::before { content: "\2212"; }
+  .sum { margin: 0 0 6px; color: var(--soft); max-width: 46rem; }
+  h4 { margin: 18px 0 8px; font: 500 10.5px var(--mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--dim); }
+  .parts { margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); gap: 8px 24px; }
+  .parts div { font-size: 14px; line-height: 1.5; }
+  .parts dt { display: inline; font: 600 12.5px var(--mono); color: var(--acc); margin-right: 6px; }
+  .parts dd { display: inline; margin: 0; color: var(--soft); }
+  .flow { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; counter-reset: step; }
+  .flow li { counter-increment: step; font-size: 13.5px; line-height: 1.4; color: var(--soft); padding: 7px 11px; border: 1px solid var(--line-2); border-radius: 10px; background: var(--acc-a); max-width: 26rem; }
+  .flow li::before { content: counter(step) ". "; font-family: var(--mono); color: var(--acc); }
+  .flow li:not(:last-child)::after { content: "\2192"; margin-left: 10px; color: var(--acc); }
+  .conn { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; font-size: 14px; line-height: 1.5; color: var(--soft); }
+  .conn a, .conn b { font-weight: 600; color: var(--acc); }
+</style>

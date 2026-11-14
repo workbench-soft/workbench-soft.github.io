@@ -59,6 +59,12 @@ const es: Catalog = {
       less: 'Ver menos',
       openSource: 'Código abierto',
       source: 'Código fuente',
+      arch: {
+        title: 'Cómo está hecho',
+        parts: 'Piezas',
+        flow: 'Flujo de datos',
+        links: 'Conectado con',
+      },
       kinds: {
         app: 'Apps para personas',
         tool: 'Herramientas para desarrolladores',
@@ -364,6 +370,15 @@ const es: Catalog = {
             ],
           ],
         },
+        {
+          title: 'App para iPhone',
+          features: [
+            [
+              'La misma app en el iPhone',
+              'El mapa, los viajes, los avisos de voz, las rutas y Pro, vendidos en la App Store. Espera una cuenta de Apple.',
+            ],
+          ],
+        },
       ],
     },
     'guitar-upscale': {
@@ -498,6 +513,7 @@ const es: Catalog = {
             ['Cambiar y borrar', 'Cada campo se guarda solo, un toque marca y un borrado ofrece Deshacer.'],
             ['Idiomas', 'Una lista compartida se abre en el idioma del teléfono que la abre.'],
             ['Tick-a-Lot en la búsqueda', 'Guías y una página de inicio llevan de la búsqueda a la app.'],
+            ['Licencias de código abierto', 'Los ajustes listan cada paquete de la app bajo el texto de su licencia.'],
           ],
         },
       ],
@@ -657,6 +673,18 @@ const es: Catalog = {
             [
               'Sin anuncios en el teléfono del desarrollador',
               'Cada versión oculta el banner en un teléfono con la clave del desarrollador.',
+            ],
+            [
+              'App para iPhone',
+              'La calculadora, las guías y las páginas en una app para iPhone, sin conexión desde el primer uso. Espera la App Store.',
+            ],
+            [
+              'Quitar anuncios en el iPhone',
+              'Un pago en la App Store oculta el banner. Restaurar compra lo recupera en un iPhone nuevo.',
+            ],
+            [
+              'Compartir el resultado',
+              'El botón Compartir bajo el veredicto envía la opción más barata, su coste y el enlace a Mensajes, Mail o Notas.',
             ],
           ],
         },
@@ -912,6 +940,10 @@ const es: Catalog = {
               'Galerías de clientes',
               'Un enlace privado con pruebas con marca de agua y luego todos los originales en un ZIP.',
             ],
+            [
+              'Búsqueda',
+              'Cada página tiene título, descripción y foto para buscadores y vistas previas. Una página local cubre el Sutherland Shire.',
+            ],
           ],
         },
       ],
@@ -936,6 +968,10 @@ const es: Catalog = {
             [
               'Generador con IA',
               'Dibuja un interior a partir de una petición en ruso, un estilo y una foto de la habitación.',
+            ],
+            [
+              'Búsqueda',
+              'Yandex y Google leen el título, la descripción, la foto para compartir y los datos estructurados de cada página. El mapa del sitio lista las páginas.',
             ],
           ],
         },
@@ -995,6 +1031,10 @@ const es: Catalog = {
               'Hace merge de una PR de Dependabot cuando pasa cada comprobación. Una actualización mayor espera a una persona.',
             ],
             ['Versiones', 'Cada push a main que pasa las comprobaciones recibe una versión con fecha y notas.'],
+            [
+              'Revisión de iOS y build para simulador',
+              'Lista cada parte solo de Android sin plan para iOS y compila la app para el simulador de iPhone con capturas de sus flujos de prueba.',
+            ],
           ],
         },
       ],
@@ -1643,6 +1683,10 @@ const es: Catalog = {
             [
               'Tripforge Pro',
               'Una compra en Android da búsquedas ilimitadas, fechas desplazadas hasta 30 días, hasta 50 viajes guardados y cero anuncios.',
+            ],
+            [
+              'Páginas web para buscadores',
+              'Una portada por idioma con el formulario, su título, su imagen de vista previa y datos para buscadores, cada una en el mapa del sitio.',
             ],
           ],
         },

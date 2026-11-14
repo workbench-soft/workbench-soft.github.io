@@ -2,6 +2,8 @@
 import { Image } from "astro:assets";
 import { featureCount, type Project } from "../data/projects";
 import { iconOf, shotsOf, videosOf } from "../data/media";
+import { archOf } from "../data/architecture";
+import Architecture from "./Architecture.astro";
 import { langOf } from "../i18n/locales";
 import { ui } from "../i18n";
 
@@ -11,7 +13,9 @@ interface Props {
 }
 
 const { project: p, number } = Astro.props;
-const t = ui(langOf(Astro.currentLocale)).projects;
+const lang = langOf(Astro.currentLocale);
+const t = ui(lang).projects;
+const arch = archOf(p.id, lang);
 const no = String(number).padStart(2, "0");
 const icon = iconOf(p.id);
 const shots = shotsOf(p.id);
@@ -70,7 +74,14 @@ let n = 0;
             {g.title && <li class:list={["sub", { extra: n >= shown }]}>{g.title}</li>}
             {g.features.map((f) => (
               <li class:list={["feat spot", { extra: n++ >= shown }]}>
-                <b>{f.name}</b> <span>{f.text}</span>
+                {arch?.features[f.key ?? f.name] ? (
+                  <details>
+                    <summary><b>{f.name}</b> <span>{f.text}</span></summary>
+                    <p class="how">{arch.features[f.key ?? f.name]}</p>
+                  </details>
+                ) : (
+                  <><b>{f.name}</b> <span>{f.text}</span></>
+                )}
               </li>
             ))}
           </>
@@ -84,6 +95,7 @@ let n = 0;
         </button>
       )
     }
+    {arch && <Architecture arch={arch} t={t.arch} />}
   </div>
 </article>
 
@@ -172,6 +184,11 @@ let n = 0;
   .feats[data-clip] .extra { display: none; }
   .feat { padding: 9px 10px; border-top: 1px solid var(--line); border-radius: 8px; font-size: 14px; line-height: 1.5; color: var(--soft); }
   .feat b { font-weight: 600; color: var(--acc); }
+  .feat summary { cursor: pointer; list-style: none; }
+  .feat summary::-webkit-details-marker { display: none; }
+  .feat summary::after { content: "+"; margin-left: 6px; font-family: var(--mono); color: var(--dim); }
+  .feat details[open] summary::after { content: "−"; color: var(--acc); }
+  .how { margin: 6px 0 2px; padding-left: 10px; border-left: 2px solid var(--acc-a); font-size: 13.5px; color: var(--muted); }
   .sub {
     grid-column: 1 / -1;
     padding: 18px 10px 6px;
