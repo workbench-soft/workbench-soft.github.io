@@ -1446,7 +1446,7 @@ const nb: Catalog = {
             ],
             [
               'Talekommandoer',
-              'Si Hey Lumi, så play og en sang, eller volume 40, på engelsk eller russisk, også med låst telefon. En puls viser at den lytter.',
+              'Si Hey Lumi, så play og en sang, eller volume 40, på engelsk eller russisk, også med låst telefon. En puls viser at den lytter. Turn on Bluetooth kobler til høyttaleren eller hodetelefonene og sier navnet.',
             ],
             [
               'Musikk på nett',

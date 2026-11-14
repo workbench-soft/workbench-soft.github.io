@@ -1624,7 +1624,7 @@ const fr: Catalog = {
             ],
             [
               'Commandes vocales',
-              'Dites Hey Lumi, puis play et un titre, ou volume 40, en anglais ou en russe, téléphone verrouillé. Une pulsation montre qu’il écoute.',
+              'Dites Hey Lumi, puis play et un titre, ou volume 40, en anglais ou en russe, téléphone verrouillé. Une pulsation montre qu’il écoute. Turn on Bluetooth connecte l’enceinte ou le casque et dit son nom.',
             ],
             [
               'Musique en ligne',

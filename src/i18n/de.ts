@@ -1580,7 +1580,7 @@ const de: Catalog = {
             ],
             [
               'Sprachbefehle',
-              'Sag Hey Lumi, dann play und einen Song oder volume 40, auf Englisch oder Russisch, auch bei gesperrtem Telefon. Ein Pulsieren zeigt, dass es zuhört.',
+              'Sag Hey Lumi, dann play und einen Song oder volume 40, auf Englisch oder Russisch, auch bei gesperrtem Telefon. Ein Pulsieren zeigt, dass es zuhört. Turn on Bluetooth verbindet Lautsprecher oder Kopfhörer und nennt sie.',
             ],
             [
               'Online-Musik',

@@ -1568,7 +1568,7 @@ const es: Catalog = {
             ],
             [
               'Comandos de voz',
-              'Di Hey Lumi, luego play y una canción, o volume 40, en inglés o ruso, con el teléfono bloqueado. Un pulso muestra que escucha.',
+              'Di Hey Lumi, luego play y una canción, o volume 40, en inglés o ruso, con el teléfono bloqueado. Un pulso muestra que escucha. Turn on Bluetooth conecta el altavoz o los auriculares y dice su nombre.',
             ],
             [
               'Música en línea',
