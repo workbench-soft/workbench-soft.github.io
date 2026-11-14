@@ -397,3 +397,10 @@ The studio needed one public site for its apps and their installers.
   - **`src/data/media.ts`** `videosOf(id)` lists `src/assets/videos/<id>/*.mp4` in name order.
   - **`src/components/ProjectPanel.astro`** a `<video>` per file in the same strip as the screenshots, at the same height.
 - **Docs** `CHANGELOG.md`.
+
+#### 2026-11-15 Lumiere Player pitched as a phone player with voice control
+
+- **Why** the card and the Lumiere pages called it a video player for Google TV. It plays video, music and audiobooks on phones with voice control, and also installs on a TV.
+- **What the visitor gets** the Lumiere card opens with an Android player with voice control for video, music and audiobooks, which also installs on a Google TV, in all 9 languages. Android leads the platforms.
+- **Changes** the tagline, the lede and the platforms in `src/data/projects.ts`, the 8 other catalogs, `lumiere/_config.yml` and the opening of `lumiere/privacy-policy.md`.
+- **Docs** `CHANGELOG.md`.
