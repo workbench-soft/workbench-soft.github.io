@@ -416,5 +416,6 @@ score, since the browser keeps a secret token.
 - **Changes** `apps/games/src/game/purchase.ts` new, with a test,
   `apps/games/src/game/admob.ts`, `Lobby.tsx`, the 9 catalogs in
   `apps/games/src/game/locales/` and `i18n.ts`.
-- **Left** the product in Play Console needs the person, and the build waits
-  for it. `TODO.md` holds both steps.
+- **Left** Play Console takes no product before a build with the BILLING
+  permission is on a track, so the build ships first, then `remove_ads` at
+  A$2.99, the Tickalot price. `TODO.md` holds both steps.

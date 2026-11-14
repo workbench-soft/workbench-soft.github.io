@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Games** the Android app asks for ad consent in the EEA, the UK and Switzerland through its own AdMob message.
 - **ServoHop** lists Area search and Hey Servo, in every language.
 - **Farnear** lists the iPhone app, in every language.
 - **Sky Altar** lists the constellation stories, in every language.

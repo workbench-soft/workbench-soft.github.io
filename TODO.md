@@ -32,15 +32,11 @@ The games run at <https://games.workbench-soft.com/games/>.
 
 ## ads-setup
 
-Workbench Games, `com.workbenchsoft.games`. Release builds of the Android app use the real AdMob app `ca-app-pub-8598703460892343~1509665312` and its banner since 2026-11-03.
+Workbench Games, `com.workbenchsoft.games`. Release builds of the Android app use the real AdMob app `ca-app-pub-8598703460892343~1509665312` and its banner since 2026-11-03. The "Workbench Games GDPR" message went live on 2026-11-14.
 
-- [ ] **GDPR message** for the app.
-  1. Open <https://apps.admob.com>, Privacy and messaging, European regulations.
-  2. Create a message for "Workbench Games" and press Publish.
-- [ ] **Remove ads product** the plan sits in `specs/party-games.md`, 2026-11-13. The build waits for the product.
-  1. Open <https://play.google.com/console>, Workbench Games, Monetize, In-app products.
-  2. Create the product `remove_ads` at the Tickalot price and activate it.
-  3. Tell an agent "build Remove ads in the games".
+- [ ] **Remove ads** agent work, the plan sits in `specs/party-games.md`, 2026-11-13. Play Console takes no product until a build with the BILLING permission is uploaded, so the order is:
+  1. An agent builds Remove ads in the games and uploads that build to closed testing.
+  2. An agent creates `remove_ads` in Play Console, Monetize with Play, One-time products, at A$2.99 like Tickalot, and activates it.
 
 ## app-audit
 
