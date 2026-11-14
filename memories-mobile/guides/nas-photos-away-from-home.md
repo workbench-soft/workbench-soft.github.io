@@ -46,6 +46,6 @@ A port forward puts the NAS login page on the internet, where bots try passwords
 
 ## Not set up yet?
 
-1. Turn on WebDAV: [QNAP](qnap-webdav) or [Synology](synology-webdav).
+1. Turn on WebDAV: [QNAP](qnap-webdav.html) or [Synology](synology-webdav.html).
 2. Install [Memories]({{ site.download_url }}) and connect at home first.
 3. Add the Tailscale address as above.

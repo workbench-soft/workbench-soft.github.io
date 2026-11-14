@@ -30,6 +30,7 @@ Run it with [mise](https://mise.jdx.dev):
 ```sh
 mise install
 mise x -- pnpm install
+git config core.hooksPath .githooks   # once per clone: lint runs before each push
 mise run dev
 ```
 

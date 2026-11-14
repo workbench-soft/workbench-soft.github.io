@@ -1,12 +1,12 @@
 ---
 title: Shuttrix Privacy Policy
 description: Shuttrix keeps your photos, videos and their place tags on your phone. Google AdMob shows a banner in the gallery.
-last_modified_at: 2026-11-03
+last_modified_at: 2026-11-14
 ---
 
 # Shuttrix Privacy Policy
 
-Last updated: 3 November 2026
+Last updated: 14 November 2026
 
 Shuttrix is a camera app for Android. The app sends no data to the
 developer. Your photos and videos, and the date, camera and GPS tags in
@@ -36,6 +36,9 @@ AdMob, which collects the data listed under "Ads".
 - **Photos and videos** lets the gallery show and edit the shots in the
   camera folder. You can take this back in Android Settings, Apps,
   Shuttrix, Permissions.
+- **Install apps**, in the version from workbench-soft.com only, hands a
+  newer Shuttrix to the Android installer, which asks you before it
+  installs.
 
 ## On the phone only
 
@@ -50,6 +53,9 @@ AdMob, which collects the data listed under "Ads".
 - **Google AdMob**, to load the banner in the gallery. See "Ads" below.
 - **Google Play**, to sell "Remove ads" and check that your Google
   account owns it. See "Remove ads" below.
+- **GitHub**, in the version from workbench-soft.com only, to look for a
+  newer version and download it. GitHub sees the request like any web
+  request. The version from Google Play doesn't make this check.
 - **The share sheet**, when you share a photo, sends it to the app you
   pick.
 

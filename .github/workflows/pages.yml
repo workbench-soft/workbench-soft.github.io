@@ -104,7 +104,9 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          tag=$(gh release list --repo "$GITHUB_REPOSITORY" --limit 200 --json tagName --jq '.[].tagName' | grep '^property-trends-web-v' | sort -V | tail -n 1 || true)
+          # A failed list fails the build, so an API error can't publish the site without the section.
+          tags=$(gh release list --repo "$GITHUB_REPOSITORY" --limit 200 --json tagName --jq '.[].tagName')
+          tag=$(printf '%s\n' "$tags" | grep '^property-trends-web-v' | sort -V | tail -n 1 || true)
           if [ -n "$tag" ]; then
             gh release download "$tag" --repo "$GITHUB_REPOSITORY" --pattern property-trends-web.tar.gz --dir "$RUNNER_TEMP"
             sudo mkdir -p _site/property-trends

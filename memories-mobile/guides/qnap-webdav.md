@@ -58,10 +58,10 @@ Memories finds the address on its own. It lists the NAS among the devices on you
 | The login fails                   | Check WebDAV is allowed in the user's application privileges, step 5 of the second list.                                |
 | The folder is missing or empty    | With "WebDAV permission" picked, the folder needs RW in its "WebDAV access" list as well.                               |
 | Photos open, and the upload fails | The user has RO. Tick RW on the folder.                                                                                 |
-| It works at home only             | The NAS address is local. See [NAS photos away from home](nas-photos-away-from-home).                                   |
+| It works at home only             | The NAS address is local. See [NAS photos away from home](nas-photos-away-from-home.html).                              |
 
 ## Next
 
 1. [Download Memories]({{ site.download_url }}) and open it on your Android phone.
 2. Pick the NAS, log in with the user from above and open the photo folder.
-3. The phone indexes the folder in the background. [On this day photos from your NAS](on-this-day-photos-from-nas) explains what it shows next.
+3. The phone indexes the folder in the background. [On this day photos from your NAS](on-this-day-photos-from-nas.html) explains what it shows next.

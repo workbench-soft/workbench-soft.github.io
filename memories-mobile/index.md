@@ -7,7 +7,7 @@ last_modified_at: 2025-10-27
 
 Memories is an Android app that shows what happened on this day in earlier years. It reads the photos and videos straight from your QNAP or Synology NAS. It works like Google Photos memories, and your photos stay at home.
 
-**[Download the APK]({{ site.download_url }})** · [Privacy policy](privacy-policy)
+**[Download the APK]({{ site.download_url }})** · [Privacy policy](privacy-policy.html)
 
 <p>
   <img src="assets/drone.jpg" width="200" height="390" alt="Today screen with drone photos from 4 years ago in Canberra" loading="lazy">
@@ -29,26 +29,26 @@ Memories is an Android app that shows what happened on this day in earlier years
 
 ## Guides
 
-- **[On this day photos from your NAS](guides/on-this-day-photos-from-nas)** what the app shows each day and how it picks the year.
-- **[WebDAV on QNAP](guides/qnap-webdav)** and **[WebDAV on Synology](guides/synology-webdav)** the NAS setup.
-- **[Android photos to the NAS](guides/android-photos-to-nas)** the backup into dated folders.
-- **[NAS photos away from home](guides/nas-photos-away-from-home)** Tailscale on the NAS and the phone.
+- **[On this day photos from your NAS](guides/on-this-day-photos-from-nas.html)** what the app shows each day and how it picks the year.
+- **[WebDAV on QNAP](guides/qnap-webdav.html)** and **[WebDAV on Synology](guides/synology-webdav.html)** the NAS setup.
+- **[Android photos to the NAS](guides/android-photos-to-nas.html)** the backup into dated folders.
+- **[NAS photos away from home](guides/nas-photos-away-from-home.html)** Tailscale on the NAS and the phone.
 
 ## Your photos stay home
 
 - **No cloud** the phone reads the NAS over WebDAV. No server sits in between.
-- **No account** the app sends no data to the developer. Ads come from Google AdMob, see the [privacy policy](privacy-policy).
+- **No account** the app sends no data to the developer. Ads come from Google AdMob, see the [privacy policy](privacy-policy.html).
 - **Offline places** a GPS point turns into "Kyoto, Japan" from a database inside the app. No photo location leaves the phone.
 
 ## Questions
 
 ### Which NAS does it work with?
 
-Any NAS or home server that serves WebDAV, such as QNAP, Synology or TrueNAS. The guides show how to turn WebDAV on for [QNAP](guides/qnap-webdav) and [Synology](guides/synology-webdav).
+Any NAS or home server that serves WebDAV, such as QNAP, Synology or TrueNAS. The guides show how to turn WebDAV on for [QNAP](guides/qnap-webdav.html) and [Synology](guides/synology-webdav.html).
 
 ### Can I see my photos away from home?
 
-Yes. The app reaches the NAS through Tailscale or a remote address. With Tailscale the NAS stays closed to the internet. See [NAS photos away from home](guides/nas-photos-away-from-home).
+Yes. The app reaches the NAS through Tailscale or a remote address. With Tailscale the NAS stays closed to the internet. See [NAS photos away from home](guides/nas-photos-away-from-home.html).
 
 ### How does it handle a big photo library?
 

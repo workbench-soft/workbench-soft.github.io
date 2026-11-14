@@ -101,6 +101,9 @@ const t = ui(langOf(Astro.currentLocale));
     if (group) group.open = true;
     if (it.el.closest("[data-clip]") && it.el.matches(".extra")) it.el.closest(".proj")!.querySelector<HTMLButtonElement>(".more")!.click();
     it.el.scrollIntoView({ behavior: still ? "auto" : "smooth", block: "center" });
+    // Focus follows the pick, so Tab and a screen reader go on from the result and not from the search button.
+    it.el.tabIndex = -1;
+    it.el.focus({ preventScroll: true });
     it.el.classList.remove("flash");
     void it.el.offsetWidth;
     it.el.classList.add("flash");

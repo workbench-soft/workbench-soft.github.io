@@ -1,0 +1,49 @@
+# Each week Dependabot opens one PR per folder for minor and patch updates.
+# A merge to main deploys the site and the games, so a person merges these PRs.
+version: 2
+
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    # A hijacked version is usually caught and pulled within days.
+    cooldown:
+      default-days: 7
+    groups:
+      npm-minor-and-patch:
+        update-types: [minor, patch]
+    ignore:
+      # The org pins TypeScript 6, see the versions table of the stack skill.
+      - dependency-name: typescript
+        update-types: [version-update:semver-major]
+
+  - package-ecosystem: npm
+    directory: /apps/games
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+    groups:
+      games-minor-and-patch:
+        update-types: [minor, patch]
+
+  - package-ecosystem: npm
+    directory: /apps/edge
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+    groups:
+      edge-minor-and-patch:
+        update-types: [minor, patch]
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+    groups:
+      actions:
+        patterns: ['*']

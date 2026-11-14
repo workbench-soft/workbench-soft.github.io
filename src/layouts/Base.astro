@@ -1,4 +1,5 @@
 ---
+import { Font } from "astro:assets";
 import "../styles/global.css";
 import { email } from "../data/studio";
 import { langOf, locales, ogLocales, tags, type Lang } from "../i18n/locales";
@@ -80,12 +81,8 @@ const site = {
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <Font cssVariable="--font-sans" preload={[{ subset: "latin" }]} />
+    <Font cssVariable="--font-mono" preload={[{ subset: "latin" }]} />
     <script type="application/ld+json" set:html={JSON.stringify(site)} />
     {schema.map((s) => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}
     <slot name="head" />
