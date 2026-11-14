@@ -10,11 +10,11 @@
     "lint": "oxlint --deny-warnings"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^5.20261030.1",
-    "oxlint": "^1.90.0",
+    "@cloudflare/workers-types": "^5.20261107.1",
+    "oxlint": "^1.92.0",
     "typescript": "^7.0.2",
-    "vitest": "^5.0.5",
-    "wrangler": "^4.156.0"
+    "vitest": "^5.1.0",
+    "wrangler": "^4.158.0"
   },
   "packageManager": "pnpm@11.22.0"
 }
