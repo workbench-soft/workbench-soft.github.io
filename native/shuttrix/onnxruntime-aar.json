@@ -10,6 +10,7 @@
     "--build_java",
     "--build_shared_lib",
     "--skip_tests",
+    "--compile_no_warning_as_error",
     "--minimal_build",
     "--disable_rtti",
     "--disable_ml_ops",
