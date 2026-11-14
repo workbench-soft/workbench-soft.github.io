@@ -16,6 +16,8 @@ type GameText = {
 type SiteText = {
   brand: string;
   nav: Record<Mode | 'about', string>;
+  /** The name a screen reader gives the list of game links. */
+  navLabel: string;
   create: string;
   createFor: string;
   joinCode: string;
@@ -51,6 +53,7 @@ type SiteText = {
 const en: SiteText = {
   brand: 'Workbench Games',
   nav: { guess: 'Guess the drawing', telephone: 'Drawing telephone', duel: 'Clue duel', about: 'About' },
+  navLabel: 'Games',
   create: 'Create a room',
   createFor: 'Play {game}',
   joinCode: 'Have a room code?',
@@ -203,6 +206,7 @@ const en: SiteText = {
 const ru: SiteText = {
   brand: 'Workbench Games',
   nav: { guess: 'Угадай рисунок', telephone: 'Испорченный телефон', duel: 'Дуэль подсказок', about: 'О сайте' },
+  navLabel: 'Игры',
   create: 'Создать комнату',
   createFor: 'Играть: {game}',
   joinCode: 'Есть код комнаты?',

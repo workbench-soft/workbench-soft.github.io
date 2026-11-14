@@ -63,7 +63,7 @@ const image = new URL(asset('/og.png'), site).href;
         <img src={asset('/favicon.svg')} width="28" height="28" alt="" />
         <span>{text.brand}</span>
       </a>
-      <nav class="site-nav" aria-label="Games">
+      <nav class="site-nav" aria-label={text.navLabel}>
         {GAMES.map((g) => <a href={ROUTES[g][lang]} aria-current={page === g ? 'page' : undefined}>{text.nav[g]}</a>)}
         {routes && <a href={routes[other]} hreflang={other} lang={other}>{text.langOther}</a>}
       </nav>
