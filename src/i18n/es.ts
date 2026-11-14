@@ -263,6 +263,10 @@ const es: Catalog = {
               'Luz, desenfoque y fuentes',
               'Exposición de −6 a +6 EV, matiz, sombras y luces. Desenfoque elíptico de fondo y efecto maqueta con zona nítida ajustable. Fuentes con remates, sin remates y monoespaciadas. No ofrece ajustes propios de la captura.',
             ],
+            [
+              'En el iPhone',
+              'La misma app en el iPhone: el NAS, este día en años anteriores, el editor que guarda en Fotos y las compras en la App Store. Ordenar la carpeta de la cámara sigue solo en Android.',
+            ],
           ],
         },
       ],

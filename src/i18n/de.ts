@@ -269,6 +269,10 @@ const de: Catalog = {
               'Licht, Unschärfe und Schriften',
               'Belichtung von −6 bis +6 EV, Farbton, Schatten und Lichter. Elliptische Hintergrundunschärfe und Tilt-Shift mit einstellbarem scharfem Bereich. Beschriftungen bieten serifenlose, Serifenschrift und Monospace. Aufnahmeparameter bleiben ausgeschlossen.',
             ],
+            [
+              'Auf dem iPhone',
+              'Dieselbe App auf dem iPhone: NAS, dieser Tag in früheren Jahren, der Editor mit Sichern in Fotos und Käufe im App Store. Das Sortieren des Kameraordners bleibt auf Android.',
+            ],
           ],
         },
       ],

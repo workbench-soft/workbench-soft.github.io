@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Memories** lists the iPhone build and what it leaves out, in every language.
 - **Games** the Android app asks for ad consent in the EEA, the UK and Switzerland through its own AdMob message.
 - **ServoHop** lists Area search and Hey Servo, in every language.
 - **Farnear** lists the iPhone app, in every language.

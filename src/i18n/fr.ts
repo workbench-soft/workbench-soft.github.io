@@ -270,6 +270,10 @@ const fr: Catalog = {
               'Lumière, flou et polices',
               'Exposition de −6 à +6 EV, teinte, ombres et hautes lumières. Flou de fond elliptique et effet de bascule avec zone nette réglable. Polices avec ou sans empattement et à chasse fixe. Les réglages de prise de vue sont exclus.',
             ],
+            [
+              'Sur l’iPhone',
+              'La même app sur l’iPhone : le NAS, ce jour les années passées, l’éditeur qui enregistre dans Photos et les achats sur l’App Store. Le tri du dossier de l’appareil photo reste sur Android.',
+            ],
           ],
         },
       ],

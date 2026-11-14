@@ -255,6 +255,10 @@ const nb: Catalog = {
               'Lys, uskarphet og skrifter',
               'Eksponering fra −6 til +6 EV, fargetone, skygger og høylys. Elliptisk bakgrunnsuskarphet og tilt-shift har justerbart skarpt område. Tekst tilbyr skrifter med og uten seriffer og fast bredde. Opptaksinnstillinger er utelatt.',
             ],
+            [
+              'På iPhone',
+              'Den samme appen på iPhone: NAS, denne dagen i tidligere år, redigering som lagrer i Bilder, og kjøp i App Store. Sortering av kameramappen blir på Android.',
+            ],
           ],
         },
       ],
