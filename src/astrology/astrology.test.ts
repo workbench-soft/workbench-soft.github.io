@@ -1,5 +1,6 @@
 import { existsSync, readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
+import { shape, strings } from '../i18n/shape';
 import { catalogs } from './i18n';
 import { en } from './i18n/en';
 import { dayNumber, moonLongitude, pick, signAt, sunLongitude } from './sky';
@@ -7,12 +8,6 @@ import { ids, related } from './topics';
 
 const file = (lang: string, id: string) => `src/content/astrology/${lang}/${id}.md`;
 const body = (path: string) => readFileSync(path, 'utf8').replace(/^---[\s\S]*?---/, '');
-const keys = (value: unknown, path = ''): string[] =>
-  Array.isArray(value)
-    ? [`${path}[${value.length}]`]
-    : value && typeof value === 'object'
-      ? Object.entries(value).flatMap(([k, v]) => keys(v, `${path}.${k}`))
-      : [`${path} ${String(value).match(/\{\w+\}/g) ?? ''}`];
 
 describe('sky', () => {
   it('puts the Sun at the start of Aries on the March equinox', () => {
@@ -47,8 +42,12 @@ describe.each(Object.keys(catalogs))('%s articles', (lang) => {
     expect(ids.filter((id) => !existsSync(file(lang, id)))).toEqual([]);
   });
 
-  it('has the labels of English', () => {
-    expect(keys(catalogs[lang as keyof typeof catalogs])).toEqual(keys(en));
+  it('has the labels, lists and placeholders of English', () => {
+    expect(shape(catalogs[lang as keyof typeof catalogs])).toEqual(shape(en));
+  });
+
+  it('has no empty label', () => {
+    expect(strings(catalogs[lang as keyof typeof catalogs]).filter((s) => !s.trim())).toEqual([]);
   });
 });
 
