@@ -979,6 +979,14 @@ export const projects: Project[] = [
           },
           { name: 'Remove ads', text: 'A one time Google Play purchase, restored on a new phone.' },
           { name: 'ServoHop Pro', text: 'One purchase hides the ads and opens the 365 day price chart.' },
+          {
+            name: 'Area search',
+            text: 'Find a suburb or a postcode and fly the map there. Each row shows its distance, sorted by price, distance or power.',
+          },
+          {
+            name: 'Hey Servo',
+            text: 'Say "Hey Servo, go to the nearest charger" and Google Maps starts. Android only.',
+          },
           { name: 'Fuel panel', text: 'Pick petrol, diesel, gas or chargers, slow AC or fast DC.' },
           { name: 'Ads', text: 'One banner under the list: AdMob in the app, AdSense on the site.' },
           { name: 'Languages', text: 'The screens come in 9 languages and follow the phone or browser.' },

@@ -586,6 +586,14 @@ const es: Catalog = {
             ],
             ['Quitar anuncios', 'Una compra única en Google Play, que se restaura en un teléfono nuevo.'],
             ['ServoHop Pro', 'Una compra oculta los anuncios y abre el gráfico de precios de 365 días.'],
+            [
+              'Búsqueda de zona',
+              'Busca un barrio o un código postal y el mapa vuela allí. Cada fila muestra la distancia, ordenada por precio, distancia o potencia.',
+            ],
+            [
+              'Hey Servo',
+              'Di «Hey Servo, go to the nearest charger» y Google Maps inicia la navegación. Solo Android.',
+            ],
             ['Panel de combustible', 'Elige gasolina, diésel, gas o cargadores, AC lento o DC rápido.'],
             ['Anuncios', 'Un banner bajo la lista: AdMob en la app, AdSense en la web.'],
             ['Idiomas', 'Las pantallas vienen en 9 idiomas y siguen al teléfono o al navegador.'],

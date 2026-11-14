@@ -595,6 +595,14 @@ const de: Catalog = {
               'Ein einmaliger Kauf bei Google Play, der auf einem neuen Handy wiederhergestellt wird.',
             ],
             ['ServoHop Pro', 'Ein Kauf blendet die Werbung aus und öffnet das Preisdiagramm über 365 Tage.'],
+            [
+              'Gebietssuche',
+              'Einen Vorort oder eine Postleitzahl suchen, und die Karte fliegt dorthin. Jede Zeile zeigt die Entfernung, sortiert nach Preis, Entfernung oder Leistung.',
+            ],
+            [
+              'Hey Servo',
+              'Sagen Sie „Hey Servo, go to the nearest charger“, und Google Maps startet die Navigation. Nur Android.',
+            ],
             ['Kraftstoffpanel', 'Benzin, Diesel, Gas oder Ladesäulen wählen, langsames AC oder schnelles DC.'],
             ['Werbung', 'Ein Banner unter der Liste: AdMob in der App, AdSense auf der Seite.'],
             ['Sprachen', 'Die Bildschirme gibt es in 9 Sprachen, sie folgen dem Telefon oder Browser.'],

@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **ServoHop** lists Area search and Hey Servo, in every language.
 - **Farnear** lists the iPhone app, in every language.
 - **Sky Altar** lists the constellation stories, in every language.
 - **Guitar Upscale** lists the iPhone app, in every language.

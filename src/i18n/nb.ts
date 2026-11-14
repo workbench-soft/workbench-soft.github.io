@@ -545,6 +545,14 @@ const nb: Catalog = {
             ],
             ['Fjern annonser', 'Et engangskjøp på Google Play, som gjenopprettes på en ny mobil.'],
             ['ServoHop Pro', 'Ett kjøp skjuler reklamen og åpner prisdiagrammet for 365 dager.'],
+            [
+              'Områdesøk',
+              'Søk etter en forstad eller et postnummer, og kartet flyr dit. Hver rad viser avstanden, sortert etter pris, avstand eller effekt.',
+            ],
+            [
+              'Hey Servo',
+              'Si «Hey Servo, go to the nearest charger», så starter Google Maps navigasjonen. Bare Android.',
+            ],
             ['Drivstoffpanel', 'Velg bensin, diesel, gass eller ladere, treg AC eller rask DC.'],
             ['Reklame', 'Ett banner under listen: AdMob i appen, AdSense på nettstedet.'],
             ['Språk', 'Skjermene finnes på 9 språk og følger telefonen eller nettleseren.'],

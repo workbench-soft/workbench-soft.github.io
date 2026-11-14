@@ -608,6 +608,14 @@ const fr: Catalog = {
             ],
             ['Retirer les pubs', 'Un achat unique sur Google Play, restauré sur un nouveau téléphone.'],
             ['ServoHop Pro', 'Un achat masque les publicités et ouvre le graphique des prix sur 365 jours.'],
+            [
+              'Recherche de zone',
+              "Cherchez une banlieue ou un code postal, et la carte s'y rend. Chaque ligne montre la distance, triée par prix, distance ou puissance.",
+            ],
+            [
+              'Hey Servo',
+              'Dites « Hey Servo, go to the nearest charger » et Google Maps lance le guidage. Android uniquement.',
+            ],
             ['Panneau carburant', 'Choisir essence, diesel, gaz ou bornes, AC lente ou DC rapide.'],
             ['Publicité', "Une bannière sous la liste : AdMob dans l'app, AdSense sur le site."],
             ['Langues', 'Les écrans existent en 9 langues et suivent le téléphone ou le navigateur.'],
