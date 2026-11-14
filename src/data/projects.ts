@@ -870,9 +870,10 @@ export const projects: Project[] = [
     hue: 280,
     code: 'LUM',
     name: 'Lumiere Player',
-    tagline: 'A video player for Google TV and Android phones that plays files from a USB stick or a NAS.',
-    lede: 'Lumiere Player plays files from a USB stick or an SMB share on libVLC, so it opens what VLC opens. Each file keeps its place, and the remote skips and switches tracks.',
-    platforms: ['Google TV', 'Android TV', 'Android'],
+    tagline:
+      'An Android player with voice control for video, music and audiobooks, which also installs on a Google TV.',
+    lede: 'Lumiere Player plays your own files from the phone, a USB stick or an SMB share on libVLC, so it opens what VLC opens. Each video, song and book keeps its place, and voice commands find them by name.',
+    platforms: ['Android', 'Google TV', 'Android TV'],
     stack: ['Kotlin', 'Android Views', 'libVLC'],
     links: [],
     groups: [

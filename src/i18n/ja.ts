@@ -1271,8 +1271,8 @@ const ja: Catalog = {
       ],
     },
     'lumiere-player': {
-      tagline: 'USB メモリや NAS のファイルを再生する Google TV と Android スマホ用プレーヤー。',
-      lede: 'Lumiere Player は libVLC で USB メモリや SMB 共有のファイルを再生し、VLC が開けるものを開けます。ファイルごとに続きの位置を覚え、リモコンでスキップやトラック切り替えができます。',
+      tagline: '動画、音楽、オーディオブックを音声で操作できる Android プレーヤー。Google TV にも入れられます。',
+      lede: 'Lumiere Player は libVLC でスマホ、USB メモリ、SMB 共有のファイルを再生し、VLC が開けるものを開けます。動画、曲、本はそれぞれ続きの位置を覚え、音声コマンドで名前から探せます。',
       links: [],
       groups: [
         {

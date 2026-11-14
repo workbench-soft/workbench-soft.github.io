@@ -1007,8 +1007,8 @@ const zh: Catalog = {
       ],
     },
     'lumiere-player': {
-      tagline: '适用于 Google TV 和 Android 手机的视频播放器，播放 U 盘或 NAS 上的文件。',
-      lede: 'Lumiere Player 用 libVLC 播放 U 盘或 SMB 共享上的文件，VLC 能开的它都能开。每个文件记住进度，遥控器可跳转和切换音轨。',
+      tagline: '支持语音控制的 Android 播放器，播放视频、音乐和有声书，也能装在 Google TV 上。',
+      lede: 'Lumiere Player 用 libVLC 播放手机、U 盘或 SMB 共享上的文件，VLC 能开的它都能开。每个视频、歌曲和有声书都记住进度，语音命令按名称就能找到它们。',
       links: [],
       groups: [
         {

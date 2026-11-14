@@ -1200,8 +1200,8 @@ const ko: Catalog = {
       ],
     },
     'lumiere-player': {
-      tagline: 'USB나 NAS의 파일을 재생하는 Google TV와 Android 휴대폰용 플레이어.',
-      lede: 'Lumiere Player는 libVLC로 USB나 SMB 공유의 파일을 재생하므로 VLC가 여는 것을 엽니다. 파일마다 위치를 기억하고 리모컨으로 건너뛰고 트랙을 바꿉니다.',
+      tagline: '동영상, 음악, 오디오북을 음성으로 제어하는 Android 플레이어. Google TV에도 설치할 수 있습니다.',
+      lede: 'Lumiere Player는 libVLC로 휴대폰, USB, SMB 공유의 파일을 재생하므로 VLC가 여는 것을 엽니다. 동영상, 노래, 책마다 위치를 기억하고 음성 명령으로 이름을 말해 찾습니다.',
       links: [],
       groups: [
         {

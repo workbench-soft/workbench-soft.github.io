@@ -1512,8 +1512,9 @@ const es: Catalog = {
       ],
     },
     'lumiere-player': {
-      tagline: 'Un reproductor de vídeo para Google TV y móviles Android que reproduce archivos de un USB o un NAS.',
-      lede: 'Lumiere Player reproduce archivos de un USB o una carpeta SMB con libVLC, así que abre lo que abre VLC. Cada archivo recuerda su punto y el mando salta y cambia de pista.',
+      tagline:
+        'Un reproductor Android con control por voz para vídeo, música y audiolibros, que también se instala en un Google TV.',
+      lede: 'Lumiere Player reproduce tus archivos del móvil, de un USB o de una carpeta SMB con libVLC, así que abre lo que abre VLC. Cada vídeo, canción y libro recuerda su punto, y los comandos de voz los encuentran por su nombre.',
       links: [],
       groups: [
         {

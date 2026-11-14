@@ -6,10 +6,10 @@ last_modified_at: 2026-11-14
 
 # Lumiere Player Privacy Policy
 
-Last updated: 14 November 2026
+Last updated: 15 November 2026
 
-Lumiere Player plays your own videos and music from the device, a USB
-stick or a network share, on Google TV and Android phones. The app sends
+Lumiere Player plays your own videos, music and audiobooks from the device,
+a USB stick or a network share, on Android phones, tablets and Google TV. The app sends
 no data to the developer. Your files, playback positions, NAS logins and
 settings stay on your device. On a phone a banner from Google AdMob shows
 under the file list, and Google collects the data listed under "Ads".

@@ -1568,8 +1568,8 @@ const fr: Catalog = {
     },
     'lumiere-player': {
       tagline:
-        "Un lecteur vidéo pour Google TV et les téléphones Android qui lit les fichiers d'une clé USB ou d'un NAS.",
-      lede: "Lumiere Player lit les fichiers d'une clé USB ou d'un partage SMB avec libVLC, donc il ouvre ce qu'ouvre VLC. Chaque fichier garde sa position, et la télécommande saute et change de piste.",
+        "Un lecteur Android à commande vocale pour la vidéo, la musique et les livres audio, qui s'installe aussi sur un Google TV.",
+      lede: "Lumiere Player lit vos fichiers du téléphone, d'une clé USB ou d'un partage SMB avec libVLC, donc il ouvre ce qu'ouvre VLC. Chaque vidéo, titre et livre garde sa position, et les commandes vocales les trouvent par leur nom.",
       links: [],
       groups: [
         {

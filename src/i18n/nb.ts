@@ -1399,8 +1399,9 @@ const nb: Catalog = {
       ],
     },
     'lumiere-player': {
-      tagline: 'En videospiller for Google TV og Android-telefoner som spiller filer fra en USB-pinne eller en NAS.',
-      lede: 'Lumiere Player spiller filer fra en USB-pinne eller en SMB-deling med libVLC, så den åpner det VLC åpner. Hver fil husker stedet, og fjernkontrollen hopper og bytter spor.',
+      tagline:
+        'En Android-spiller med talestyring for video, musikk og lydbøker, som også kan installeres på en Google TV.',
+      lede: 'Lumiere Player spiller filene dine fra mobilen, en USB-pinne eller en SMB-deling med libVLC, så den åpner det VLC åpner. Hver video, sang og bok husker stedet, og talekommandoer finner dem ved navn.',
       links: [],
       groups: [
         {

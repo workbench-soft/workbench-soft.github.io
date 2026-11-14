@@ -1533,8 +1533,9 @@ const de: Catalog = {
       ],
     },
     'lumiere-player': {
-      tagline: 'Ein Videoplayer für Google TV und Android-Telefone, der Dateien vom USB-Stick oder einem NAS abspielt.',
-      lede: 'Lumiere Player spielt Dateien vom USB-Stick oder einer SMB-Freigabe mit libVLC, also öffnet er, was VLC öffnet. Jede Datei merkt sich die Stelle, die Fernbedienung springt und wechselt Spuren.',
+      tagline:
+        'Ein Android-Player mit Sprachsteuerung für Videos, Musik und Hörbücher, der sich auch auf einem Google TV installieren lässt.',
+      lede: 'Lumiere Player spielt deine Dateien vom Handy, einem USB-Stick oder einer SMB-Freigabe mit libVLC, also öffnet er, was VLC öffnet. Jedes Video, jeder Song und jedes Buch merkt sich die Stelle, und Sprachbefehle finden sie beim Namen.',
       links: [],
       groups: [
         {
