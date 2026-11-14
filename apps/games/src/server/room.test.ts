@@ -120,6 +120,17 @@ describe('room', () => {
     expect(copy.guess?.drawerId).toBe(room.guess?.drawerId);
     expect(copy.phase).toBe('choosing');
   });
+
+  it('ends a game restored from storage when too few players come back', () => {
+    const { room, join } = makeRoom();
+    join(['a', 'b']);
+    room.message('a', { t: 'start' }, 0);
+    const copy = Room.restore(JSON.parse(JSON.stringify(room.toJSON())), room.out, [], []);
+    copy.markAllOffline(1000);
+    copy.connect('a', 'A', '#000000', 'en', 1000);
+    copy.alarm(1000 + REJOIN_GRACE);
+    expect(copy.phase).toBe('lobby');
+  });
 });
 
 function startGuess(kids = false) {

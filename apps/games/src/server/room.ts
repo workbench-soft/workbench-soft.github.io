@@ -124,7 +124,9 @@ export class Room {
     if (this.hostId === id) this.hostAwaySince = null;
     // The handover timer may have run out while nobody was online, so a player who comes back starts it again.
     else if (!this.isOnline(this.hostId)) this.hostAwaySince ??= now;
-    if (!this.tooFew()) this.shortSince = null;
+    // After a wake from storage everyone starts offline, so the first one back may find the game short.
+    if (this.tooFew()) this.shortSince ??= now;
+    else this.shortSince = null;
     this.changed();
     this.sendSnapshot(id);
     this.flush(now);
