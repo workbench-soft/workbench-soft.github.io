@@ -37,3 +37,7 @@ run = "pnpm test"
 [tasks.code-lines]
 description = "Count the lines of code in every repo clone beside this one into src/data/code-lines.json"
 run = "node scripts/code-lines.ts"
+
+[tasks.deploy]
+description = "Put the site live: start the Pages workflow on main and wait for it. Stops when HEAD isn't origin/main"
+run = "node scripts/deploy.ts"
