@@ -1,0 +1,40 @@
+import type { Text } from './en';
+
+export const nb: Text = {
+  title: 'Test Android-appene fra Workbench Soft',
+  description:
+    'Bli med i de lukkede testene av 16 Android-apper fra Workbench Soft på Google Play. Bli med i Google-gruppen, og trykk så Bli med i testen og Installer for hver app.',
+  home: 'Workbench Soft',
+  language: 'Språk',
+  why: 'Google Play publiserer en ny app først når 12 testere har hatt den installert i 14 dager på rad. Testen din hjelper hver app inn i butikken.',
+  stepsTitle: 'Slik blir du med',
+  steps: [
+    'Bli med i Google-gruppen {group}. Trykk «Bli med i gruppen» med den samme Google-kontoen som i Play Butikk.',
+    'For hver app nedenfor åpner du «Bli med i testen» og trykker «Bli tester».',
+    'Trykk så «Installer» og hent appen fra Google Play.',
+    'Ha appene installert i 14 dager. Det hjelper å åpne dem av og til.',
+  ],
+  notAvailable: 'Står det «Appen er ikke tilgjengelig»? Google går fortsatt gjennom appen. Prøv igjen om noen dager.',
+  appsTitle: 'Appene',
+  join: 'Bli med i testen',
+  install: 'Installer',
+  feedback: 'Fant du en feil eller har du en idé? Skriv til {email}.',
+  apps: {
+    farnear: 'Videosamtaler over landegrenser, med en tavle for delte bilder og videoer.',
+    keeppad: 'Talenotater du starter ved å si «Hey Keep».',
+    tickalot: 'Handle-, pakke- og severdighetslister du deler med en lenke.',
+    memoire: 'Lær engelske eller russiske ord i korte runder, rett før du glemmer dem.',
+    shuttrix: 'Et kamera med hjulene til et speilrefleks, og en enkel modus med store glidebrytere.',
+    skyaltar: 'Nattehimmelen gjennom telefonen, tegnet i stilen til gamle kulturer.',
+    guitarupscale: 'En gitar du spiller på skjermen, med skalaer, akkorder og sanger.',
+    guitartuner: 'En gitarstemmer som lytter gjennom mikrofonen.',
+    games: 'Selskapsspill: tegn, gjett og gi hint.',
+    tripforge: 'En hel reise fra noen få ord: fly, rute, hotell og bil, med priser.',
+    servohop: 'Drivstoffpriser i Australia på et kart, med historikken til hver stasjon.',
+    spotthecam: 'Fartskameraer i Australia og New Zealand på ett kart.',
+    propertytrends: 'Australske forsteder farget etter medianprisen på bolig, med historikk.',
+    consdr: 'Leasing, lån eller kontant: hva en bil koster i Australia.',
+    memories: 'Bilder fra denne dagen, fra din egen NAS. Uten NAS hjemme teller det likevel å bli med i testen.',
+    lumiere: 'En Android-spiller med talestyring for video, musikk og bøker. Den kjører også på en TV.',
+  },
+};

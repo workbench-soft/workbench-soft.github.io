@@ -108,3 +108,11 @@ Spec: [workbench-soft-site](../specs/workbench-soft-site.md).
 - **Limits** each page says astrology is a cultural tradition, not a science, and gives no medical, money or life advice.
 
 Spec: [skyaltar-astrology](../specs/skyaltar-astrology.md).
+
+## Testers page
+
+- **What it does** tells a tester how to join the closed tests of the 16 Android apps: why Google needs 12 testers for 14 days, the steps, and a "Join the test" and an "Install" link for each app.
+- **Where** `/testers/` in English and `/<code>/testers/` in the other languages. The welcome message of the `workbench-soft-testers` Google Group links to it.
+- **Limits** the page can't tell which apps Google still reviews, so one line covers the "App not available" case for all of them.
+
+Spec: [testers-page](../specs/testers-page.md).

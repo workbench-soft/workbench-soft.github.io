@@ -1,0 +1,40 @@
+import type { Text } from './en';
+
+export const es: Text = {
+  title: 'Prueba las apps Android de Workbench Soft',
+  description:
+    'Únete a las pruebas cerradas de 16 apps Android de Workbench Soft en Google Play. Únete al grupo de Google y pulsa Unirse a la prueba e Instalar en cada app.',
+  home: 'Workbench Soft',
+  language: 'Idioma',
+  why: 'Google Play publica una app nueva solo cuando 12 testers la tienen instalada 14 días seguidos. Tu prueba ayuda a cada app a llegar a la tienda.',
+  stepsTitle: 'Cómo unirte',
+  steps: [
+    'Únete al grupo de Google {group}. Pulsa «Unirse al grupo» con la misma cuenta de Google que usas en Play Store.',
+    'En cada app de abajo, abre «Unirse a la prueba» y pulsa «Convertirse en tester».',
+    'Luego pulsa «Instalar» y descarga la app de Google Play.',
+    'Mantén las apps instaladas 14 días. Abrirlas de vez en cuando ayuda.',
+  ],
+  notAvailable: '¿Un enlace dice «Aplicación no disponible»? Google aún revisa esa app. Vuelve a probar en unos días.',
+  appsTitle: 'Las apps',
+  join: 'Unirse a la prueba',
+  install: 'Instalar',
+  feedback: '¿Encontraste un fallo o tienes una idea? Escribe a {email}.',
+  apps: {
+    farnear: 'Videollamadas entre países, con una pizarra para compartir imágenes y vídeos.',
+    keeppad: 'Notas de voz que empiezas diciendo «Hey Keep».',
+    tickalot: 'Listas de compras, de equipaje y de visitas que compartes por enlace.',
+    memoire: 'Aprende palabras en inglés o ruso en tandas cortas, justo antes de olvidarlas.',
+    shuttrix: 'Una cámara con los diales de una réflex y un modo simple de grandes deslizadores.',
+    skyaltar: 'El cielo nocturno a través del teléfono, dibujado al estilo de culturas antiguas.',
+    guitarupscale: 'Una guitarra que tocas en la pantalla, con escalas, acordes y canciones.',
+    guitartuner: 'Un afinador de guitarra que escucha por el micrófono.',
+    games: 'Juegos de fiesta: dibuja, adivina y da pistas.',
+    tripforge: 'Un viaje entero en pocas palabras: vuelos, ruta, hoteles y coche, con precios.',
+    servohop: 'Precios del combustible en Australia en un mapa, con el historial de cada gasolinera.',
+    spotthecam: 'Radares de velocidad de Australia y Nueva Zelanda en un solo mapa.',
+    propertytrends: 'Barrios de Australia coloreados por su precio medio de vivienda, con el historial.',
+    consdr: 'Leasing, préstamo o contado: lo que cuesta un coche en Australia.',
+    memories: 'Fotos de un día como hoy, desde tu propio NAS. Sin un NAS en casa, unirte a la prueba también cuenta.',
+    lumiere: 'Un reproductor Android con control por voz para vídeo, música y libros. También funciona en una tele.',
+  },
+};
