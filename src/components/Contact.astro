@@ -97,6 +97,8 @@ const [orBefore, orAfter] = t.or.split("{email}");
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify(body),
+        // A stalled reply shows the error with the address after 20 seconds, in place of a button stuck on "Sending".
+        signal: AbortSignal.timeout(20_000),
       });
       const json = (await res.json()) as { success?: string | boolean };
       if (!res.ok || String(json.success) !== "true") throw new Error(JSON.stringify(json));
