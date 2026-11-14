@@ -404,3 +404,16 @@ The studio needed one public site for its apps and their installers.
 - **What the visitor gets** the Lumiere card opens with an Android player with voice control for video, music and audiobooks, which also installs on a Google TV, in all 9 languages. Android leads the platforms.
 - **Changes** the tagline, the lede and the platforms in `src/data/projects.ts`, the 8 other catalogs, `lumiere/_config.yml` and the opening of `lumiere/privacy-policy.md`.
 - **Docs** `CHANGELOG.md`.
+
+#### 2026-11-15 Deploy from the PC with `mise run deploy`
+
+- **Why** the `ship` rules put a site live from the PC right after the merge. The site went live only on a push to `main`, and the PC had no task for it.
+- **Choice** the task starts `pages.yml` on `main` through `gh workflow run`, then waits for the run with `gh run watch`.
+  - **Direct upload ruled out** the Pages deploy API takes an Actions OIDC token only, and the Jekyll folders build in a container action. A PC upload would need a second build path.
+  - **One path** each Pages deploy builds and uploads in `pages.yml`. Each start outside a push goes through `mise run deploy`: the PC, and the `redeploy` job that a Property Trends release starts.
+- **Guard** the task stops when `HEAD` differs from `origin/main`, so an older commit can't put an old build back. The deploy job keeps its own check for the newest `main`.
+- **Changes**
+  - **`scripts/deploy.ts`** new: the guard, the dispatch and the watch. In Actions it ends after the dispatch.
+  - **`mise.toml`** the `deploy` task runs the script.
+  - **`.github/workflows/pages.yml`** the `redeploy` job checks out `main` and runs `mise run deploy`.
+- **Docs** the Deploy line of `README.md`, `CHANGELOG.md`.
