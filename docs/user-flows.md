@@ -88,6 +88,20 @@ flowchart LR
   panel["Project panel"] --> six["First 6 features"] --> more["Show all"] --> all["Every feature"] --> less["Show fewer"] --> six
 ```
 
+## A client reads how a project is built
+
+1. The client clicks a feature, and its "How it works" line opens under it.
+2. The client opens "How it is built" under the features.
+3. The block lists the parts and their jobs, the data flow and the projects it talks to.
+4. A project link scrolls to that project's panel.
+
+```mermaid
+flowchart LR
+  feat["Click a feature"] --> how["How it works line"]
+  block["How it is built"] --> parts["Parts"] & flow["Data flow"] & links["Connected to"]
+  links --> other["Other project's panel"]
+```
+
 ## A visitor filters the projects
 
 1. The visitor opens Projects.

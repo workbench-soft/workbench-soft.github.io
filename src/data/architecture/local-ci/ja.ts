@@ -1,0 +1,59 @@
+import type { Arch } from '../types';
+
+const arch: Arch = {
+  summary:
+    'PowerShell と POSIX sh のセットアップスクリプトが Windows PC か Mac を整え、GitHub Actions のランナーとして登録します。PC 上の Next.js のページがランナーと実行を表示し、そのサーバーが job の振り分けと中止を担います。',
+  parts: [
+    { name: 'PowerShell と sh のインストーラー', role: 'winget か Homebrew と mise で開発ツールを入れます。' },
+    {
+      name: 'GitHub Actions ランナー',
+      role: '組織の CI の job を受けます。PC ごとに複数あり、重いビルド用の枠もあります。',
+    },
+    { name: 'Windows タスク スケジューラ', role: '起動時にランナーとページを立ち上げ、5 分ごとに更新を実行します。' },
+    { name: 'Next.js', role: 'ローカルのステータスページで、サーバーアクションが実行を止め APK を入れます。' },
+    { name: 'GitHub REST API', role: 'ページに実行とリリースを渡します。ETag で問い合わせて回数の上限を守ります。' },
+    { name: 'adb', role: 'USB でつないだスマホにリリースの APK を入れます。' },
+    { name: 'Blacksmith と Oracle Cloud', role: 'PC より先に job を受ける無料のクラウドランナー。' },
+    { name: 'SVG のグラフ', role: 'JSON ファイルにためた 90 日分の実行から、サーバーで描きます。' },
+  ],
+  flow: [
+    '組織のリポジトリへの push で、GitHub に job が並びます。',
+    'ページのサーバーが各リポジトリをクラウドのランナーかこの PC に向けます。',
+    'ラベルの合うランナーが job を受けます。',
+    'ページのサーバーが実行を読み、置き換えられたものを止めます。',
+    'ページは 15 秒ごとに job、リリース、止まった理由を表示します。',
+  ],
+  links: [
+    { to: 'GitHub Actions', text: 'マシンが組織のランナーとして登録され、ページが API を読みます。' },
+    { to: 'archon', text: 'Archon の CI タブがステータスページを枠の中に表示します。' },
+    { to: 'ci', text: 'この PC でそのセットアップのステップを使う job は、共有ストアからパッケージをコピーします。' },
+    { to: 'agent-skills-private', text: 'その repo-ci テンプレートがランナーの変数を読み、中止のルールを決めます。' },
+    { to: 'Blacksmith', text: '無料の分数があるうちは、軽い job も重い job もクラウドで動かします。' },
+  ],
+  features: {
+    'Mac setup':
+      'POSIX sh のスクリプトが Homebrew のツール、mise、シェルの設定を入れます。続けて git を設定し、組織のリポジトリを clone します。2 回目は入っているものを飛ばします。',
+    'Windows setup':
+      'PowerShell のスクリプトが同じツールを winget と mise で入れ、Python と Rust のコンパイルキャッシュも足します。Mac 専用の部分と入っているものは飛ばします。',
+    'Self-hosted CI runner':
+      'ランナーのスクリプトが GitHub のランナーを取得し、SHA256 を確かめ、Windows に 4 台を登録します。最初の 2 台が Gradle、Cargo、Tauri の job を受けます。',
+    'Start button':
+      'ダブルクリックでチェックアウトを最新のリリースに移し、変わったインストーラーを実行し直します。続けてランナーとページのタスクを起動し、ページを開きます。',
+    'CI status page':
+      'Next.js のサーバーが GitHub API とこの PC のランナーフォルダーから、ランナー、実行、job を読みます。進行バーは直近 10 回の完了した実行から出します。',
+    'Build cancellation':
+      'workflow の concurrency が GitHub で古い実行を取り消します。さらにページのサーバーが 10 秒ごとに、置き換えられた実行と Checks が失敗したリリースを止め、理由をファイルに書きます。',
+    'Cloud runners first':
+      'ページのサーバーが Blacksmith と GitHub の無料の分数を数えます。各プライベートリポジトリにランナーの変数を設定し、変数がなければ job は PC のラベルに戻ります。',
+    Releases:
+      'サーバーアクションがアプリのリリースの workflow を起動するか、一時的な clone で main から APK をビルドします。そのあと adb がつないだスマホに APK を入れます。',
+    'Updates by themselves':
+      '予定されたタスクが 5 分ごとと、ログオン時に動きます。チェックアウトを最新のリリースタグに移し、ファイルが変わったインストーラーだけを実行し直します。',
+    Sites:
+      'ページが 1 時間に 1 回、各リポジトリの workflow を読み、サイトをデプロイするものを見つけます。ボタンがそれを main で起動します。',
+    'CI trends':
+      'ページのサーバーが 10 分ごとに完了した実行を読み、90 日分を JSON ファイルに保ちます。グラフはサーバーで SVG として描きます。',
+  },
+};
+
+export default arch;

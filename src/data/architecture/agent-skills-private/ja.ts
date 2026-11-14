@@ -1,0 +1,54 @@
+import type { Arch } from '../types';
+
+const arch: Arch = {
+  summary:
+    'Markdown のスキルとルールのファイルで、shell のインストーラーが Claude Code、Codex、Kimi Code につなぎます。補助スクリプトが CI を調べ、シークレットを保存し、MCP のゲートウェイを整えます。',
+  parts: [
+    { name: 'Markdown のスキル', role: '1 つの作業ごとの手順で、依頼がその作業を指したときに読み込まれます。' },
+    { name: 'ルールのファイル', role: '各セッションの毎ターン読み込まれる作業のルール。' },
+    {
+      name: 'shell のインストーラー',
+      role: 'スキルを各エージェントにリンクし、ルールのファイルを設定に組み込みます。',
+    },
+    {
+      name: 'GitHub Actions のテンプレート',
+      role: 'repo-ci がリポジトリにコピーする Checks と Release の workflow とリリースの関門。',
+    },
+    { name: 'gh と GraphQL', role: '組織の各リポジトリの workflow とシークレットの一覧を 1 回の呼び出しで読みます。' },
+    { name: 'PowerShell のスクリプト', role: 'エージェントに見せずに新しいシークレットを GitHub に保存します。' },
+    { name: 'mcpproxy', role: '5 つの MCP サーバーの代わりになる 1 つのゲートウェイ。' },
+    { name: 'Python と TypeScript のチェック', role: 'スキルの frontmatter、リンク、キーワード、長さを確かめます。' },
+  ],
+  flow: [
+    'インストーラーがスキルをリンクし、ルールのファイルを各エージェントにコピーします。',
+    'セッションは毎ターン、ルールのファイルを読み込みます。',
+    'スキルの説明に合う依頼が来ると、そのスキルが読み込まれます。',
+    'スキルが gh、スクリプト、MCP のツールで GitHub と各コンソールを操作します。',
+    'エージェントが変更を出し、状態の印でターンを終えます。',
+  ],
+  links: [
+    { to: 'agent-skills', text: '公開のスキルを先に入れ、これらのスキルはそこから書き方のルールを読みます。' },
+    { to: 'local-ci', text: 'repo-ci のテンプレートは local-ci が割り振るランナーでビルドします。' },
+    { to: 'ci', text: 'そのリリーススクリプトは repo-ci のテンプレートと同じです。' },
+    { to: 'Bitwarden', text: '各トークンはまず保管庫に入り、ローテーションのスクリプトで GitHub に渡ります。' },
+    { to: 'GitHub', text: 'スキルは gh でリポジトリを移し、workflow を足し、シークレットを保存します。' },
+  ],
+  features: {
+    'Move a repo':
+      'move-repo スキルが、旧アドレスへの各リンクを gh で探させます。そのあとリポジトリを移し、非公開にし、CI をセルフホストのランナーへ移します。',
+    'CI and releases for every repo':
+      'shell のスクリプトが 1 回の GraphQL 呼び出しで組織の各リポジトリの workflow を読みます。続けて repo-ci スキルが足りない Checks と Release をテンプレートから足します。',
+    'Rotate secrets':
+      'PowerShell のスクリプトが各リポジトリのシークレットの一覧を読み、新しい値を gh で保存します。値は人がコピーするので、エージェントには見えません。',
+    'Workflow rules':
+      'Markdown のルールのファイルが Claude Code、Codex、Kimi Code の毎ターン読み込まれます。各作業で読むスキルの名前もそこにあります。',
+    'MCP gateway':
+      'mcpproxy が 5 つのサーバーを 1 つの stdio サーバーの後ろで動かし、セッションごとに専用のデータフォルダーを持たせます。エージェントはツールを検索してから呼びます。',
+    Releases:
+      'main で check の workflow が通ると、リリースの workflow が始まります。2 本の shell スクリプトが日付のタグを決め、ノートを書きます。',
+    'Feature queue':
+      '各セッションがこの PC のホームフォルダーにあるボードに予約のファイルを書きます。ファイルが重なるセッションは待って、もう一度確かめます。',
+  },
+};
+
+export default arch;

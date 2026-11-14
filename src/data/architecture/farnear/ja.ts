@@ -1,0 +1,98 @@
+import type { Arch } from '../types';
+
+const arch: Arch = {
+  summary:
+    'Farnear は 1 つの React の Web アプリで、Android 向けは Kotlin、iPhone 向けは Capacitor で包みます。Cloudflare 上の Rust の Worker がルームの封をしたメッセージを中継し、通話そのものは端末どうしで直接つながります。',
+  parts: [
+    { name: 'React と Vite', role: '各画面、ルームのページ、9 言語で事前に描画したホームページ。' },
+    { name: 'WebRTC', role: '音声、映像、ボードのデータチャネルを、最大 4 台の端末の間で直接やりとりします。' },
+    {
+      name: 'Rust の Worker と Durable Object',
+      role: 'ルームごとに 1 つのオブジェクトが封をしたメッセージを中継し、中継の設定を渡します。',
+    },
+    { name: 'TURN 中継', role: '2 つのネットワークの直接の経路が通らないとき、暗号化した映像と音声を運びます。' },
+    { name: 'ボードのモジュール', role: '素の TypeScript が線、消した線、ファイル転送を React の外で持ちます。' },
+    { name: 'Whisper と MediaPipe', role: '音声の文字起こしと映像の背景。どちらも端末上で動きます。' },
+    { name: 'Kotlin のラッパー', role: '公開中のサイトを包む Android アプリ。AdMob、Play Billing、着信を持ちます。' },
+    { name: 'Capacitor と Swift', role: '同じサイトを包む iPhone アプリ。StoreKit と共有シートを持ちます。' },
+  ],
+  flow: [
+    'ルームのリンクが鍵を持ち、ページはその鍵で開きます。',
+    'ページは WebSocket で Worker 上のルームに入ります。',
+    '端末どうしが封をした接続の申し出と経路を Worker 経由で交わします。',
+    'WebRTC が端末を直接、または中継を通してつなぎます。',
+    '映像、音声、ボードの線、ファイルが端末の間を流れます。',
+  ],
+  links: [
+    { to: 'Cloudflare', text: 'Worker、Durable Object、TURN 中継の 1 つが無料枠で動きます。' },
+    {
+      to: 'consdr',
+      text: 'Android のラッパーは、Consdr の AdMob と Play Billing のコードを Kotlin に移したものです。',
+    },
+    { to: 'Google Play', text: 'Play Billing が広告の削除と Farnear Pro を売り、AdMob が Android の広告を出します。' },
+    { to: 'app-updater', text: 'WBS Updater が、入っているバージョンと GitHub の最新リリースを比べます。' },
+    { to: 'Hugging Face', text: '書記役の端末がここから Whisper の重みを 1 回ダウンロードします。' },
+  ],
+  features: {
+    'Calls through a link':
+      'リンクの末尾がルームの鍵を持つので、Worker に見えるのは封をしたメッセージだけです。そのあと WebRTC が最大 4 台を網の目状につなぎます。',
+    'Recover a dropped call':
+      '切れたあと、片方が ICE の再起動を最大 3 回申し出ます。相手ごとの待ち行列が、古い応答の勝ちを防ぎます。',
+    'Return to a call':
+      'ブラウザが開いている通話を 30 分覚えているので、リンクはひとりでに入り直します。ルームごとの Web Lock で、新しいタブが通話を引き継ぎます。',
+    'Relay for blocked networks':
+      'Worker がソケット越しに各ブラウザへ短命の TURN 設定を渡します。ICE はまず直接の経路を試し、だめなら中継に切り替えます。',
+    'Share the call link':
+      '招待パネルが、アプリの言語で Gmail、WhatsApp、Telegram 向けの下書きを作ります。「その他のアプリ」はシステムの共有シートを開きます。',
+    'Saved rooms':
+      'ルームのリンクは名前付きでブラウザの保存領域に入り、一覧を持つサーバーはありません。同じ鍵で毎回同じルームが開きます。',
+    Board:
+      '素のモジュールが線と消した線を 2 つの集合で持ち、WebRTC のデータチャネルで送ります。キャンバスが React の外でそれを描きます。',
+    'Share an image or video':
+      'ファイルは専用のデータチャネルで、小分けにして各参加者へ送ります。共有した人の再生、一時停止、移動は制御チャネルを通ります。',
+    'Lessons (planned)':
+      '仕様では、授業の前にスライドを各端末へ送り、どのスライドにもボードの道具を使う予定です。アプリにはまだ授業のコードがありません。',
+    'Contacts and ringing':
+      '着信は相手の端末向けに封をした Web プッシュで、Worker 経由で送ります。Android アプリは Firebase を使わず、Google Play 開発者サービスで受け取ります。',
+    'Ads and remove ads':
+      'AdMob が Android のバナーと通話後の広告を出します。Play Billing が広告の削除を売り、ルームのページは広告のスクリプトを読み込みません。',
+    'Farnear Pro':
+      'Play Billing が Android アプリで Pro を売り、ブラウザでは道具が無料です。Pro の端末は封をしたあいさつでそれを伝え、ルームでボードが開きます。',
+    'Android app':
+      'Kotlin の WebView ラッパーが公開中のサイトを読み込み、カメラとマイクを渡します。CI が APK ごとに署名し、公開の GitHub リリースに置きます。',
+    'iPhone app':
+      'Capacitor が公開中のサイトを読み込み、Kotlin の部品にあたる Swift の部品が StoreKit、AdMob、共有シートを足します。コードは最初のビルドを待っています。',
+    Languages: 'i18next が 9 つのカタログを持ち、選ぶとすぐに各画面が切り替わります。選んだ言語は端末に残ります。',
+    'App icon':
+      'ファビコン、Web のアイコン、Android のランチャー用の各サイズは 1 つの SVG から作ります。Android にはアダプティブとテーマのアイコンもあります。',
+    'Call stage':
+      'ステージのモジュールが、固定と画面共有から大きなタイルと帯を選びます。話し手の輪のために、各端末が自分で声を測ります。',
+    'Share a screen':
+      '各接続が最初から空きの映像枠を持つので、画面共有に新しい申し出は要りません。ボードはその上に描きます。',
+    'Take a photo':
+      'modern-screenshot が、見えている通話を映像とボードごと PNG にします。Android アプリはダウンロードに保存し、サーバーには送りません。',
+    'Your name': '名前はブラウザに残り、封をしたあいさつで相手に届きます。変えた名前は次の通話から見えます。',
+    'Video background':
+      'MediaPipe が端末上で人を見つけ、キャンバスがぼかしや画像の上に描きます。そのキャンバスの映像が、送る前にカメラの映像と入れ替わります。',
+    'Call transcript and summary':
+      '1 台の端末がブラウザで Whisper を動かし、できれば WebGPU を使います。行はデータチャネルでほかの人に届き、IndexedDB に残ります。要約は Chrome の組み込みの要約機能が書きます。',
+    'Recover stalled media':
+      '健全性チェックが 3 秒ごとに、各トラックの受信バイトとフレームを読みます。15 秒止まると ICE を直し、だめならその組を作り直します。',
+    'Shared call titles':
+      'タイトルは版の番号付きで、封をした信号に乗ります。各端末で最新の版が勝ち、Worker はタイトルを読めません。',
+    'Shared documents on the board':
+      'PDF.js が PDF のページを、PowerPoint の描画エンジンがスライドを端末上で描きます。ページめくりと取り外しは制御チャネルを通ります。',
+    'Contacts and rooms':
+      '連絡先とルームはブラウザの 1 つの保存リストを共有し、項目ごとに種類を持ちます。連絡先の名前は端末に残り、ルームのタイトルは同期します。',
+    'Search and share preview':
+      'Vite のプラグインが、ビルド時にホームページを 9 言語それぞれで事前に描画します。別のプラグインがサイトマップを書き、各ページがプレビュー用のタグを持ちます。',
+    'Messages in a call':
+      '1 行ずつ封をしてルームの信号に乗せ、映像の経路とは分けます。各端末が IndexedDB に残し、次の通話で欠けた行を交換します。',
+    'Button hints':
+      '1 つの共有モジュールが、ホバーか長押しのあとに吹き出しを出します。長押しは名前を見せるだけで、ボタンは押しません。',
+    'Close Farnear and take back its permissions':
+      'ページが通話と着信を終え、Android のラッパーに権限を返して閉じるよう頼みます。ブラウザには手でリセットする手順が出ます。',
+  },
+};
+
+export default arch;

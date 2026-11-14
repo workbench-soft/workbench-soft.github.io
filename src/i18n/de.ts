@@ -59,6 +59,12 @@ const de: Catalog = {
       less: 'Weniger zeigen',
       openSource: 'Open Source',
       source: 'Quellcode',
+      arch: {
+        title: 'So ist es gebaut',
+        parts: 'Bausteine',
+        flow: 'Datenfluss',
+        links: 'Verbunden mit',
+      },
       kinds: {
         app: 'Apps für Menschen',
         tool: 'Werkzeuge für Entwickler',
@@ -367,6 +373,15 @@ const de: Catalog = {
             ],
           ],
         },
+        {
+          title: 'iPhone App',
+          features: [
+            [
+              'Dieselbe App auf dem iPhone',
+              'Karte, Fahrten, Sprachwarnungen, Routen und Pro, verkauft über den App Store. Sie wartet auf ein Apple-Konto.',
+            ],
+          ],
+        },
       ],
     },
     'guitar-upscale': {
@@ -498,6 +513,7 @@ const de: Catalog = {
             ],
             ['Sprachen', 'Eine geteilte Liste öffnet sich in der Sprache des Telefons, das sie öffnet.'],
             ['Tick-a-Lot in der Suche', 'Ratgeber und eine Startseite führen Leute aus der Suche zur App.'],
+            ['Open-Source-Lizenzen', 'Die Einstellungen listen jedes Paket der App unter seinem Lizenztext.'],
           ],
         },
       ],
@@ -663,6 +679,18 @@ const de: Catalog = {
             [
               'Keine Werbung auf dem Entwicklertelefon',
               'Jeder Build blendet das Banner auf einem Telefon mit Entwicklerschlüssel aus.',
+            ],
+            [
+              'iPhone App',
+              'Rechner, Ratgeber und Seiten als iPhone App, offline ab dem ersten Start. Sie wartet auf den App Store.',
+            ],
+            [
+              'Werbung auf dem iPhone entfernen',
+              'Eine Zahlung im App Store blendet das Banner aus. „Kauf wiederherstellen“ holt den Kauf auf ein neues iPhone.',
+            ],
+            [
+              'Ergebnis teilen',
+              'Der Teilen-Knopf unter dem Ergebnis schickt die günstigste Wahl, ihre Kosten und den Link an Nachrichten, Mail oder Notizen.',
             ],
           ],
         },
@@ -927,6 +955,10 @@ const de: Catalog = {
               'Alina wählt die Schriften für Überschriften, Text und Beschriftungen aus 10 freien Schriften oder lädt eigene hoch.',
             ],
             ['Kundengalerien', 'Ein privater Link mit Probefotos unter Wasserzeichen, danach alle Originale als ZIP.'],
+            [
+              'Suche',
+              'Jede Seite hat Titel, Beschreibung und Fotokarte für Suche und Linkvorschau. Eine eigene Seite gilt dem Sutherland Shire.',
+            ],
           ],
         },
       ],
@@ -951,6 +983,10 @@ const de: Catalog = {
             [
               'KI-Generator',
               'Zeichnet ein Interieur aus einer Anfrage auf Russisch, einem Stil und einem Foto des Raums.',
+            ],
+            [
+              'Suche',
+              'Yandex und Google lesen Titel, Beschreibung, Teilen-Foto und strukturierte Daten jeder Seite. Die Sitemap listet die Seiten.',
             ],
           ],
         },
@@ -1007,9 +1043,13 @@ const de: Catalog = {
             ['Dependabot-Details', 'Speichert die Update-Art jedes Dependabot-PRs für den Merge-Job.'],
             [
               'Auto-Merge',
-              'Führt einen Dependabot-PR zusammen, sobald jede Prüfung besteht. Ein Major-Update wartet auf einen Menschen.',
+              'Führt einen Dependabot-PR gleich beim Öffnen zusammen, die Prüfungen laufen auf main. Ein Major-Update wartet auf einen Menschen.',
             ],
             ['Releases', 'Jeder Push auf main, der die Prüfungen besteht, wird ein datiertes Release mit Notizen.'],
+            [
+              'iOS-Check und Simulator-Build',
+              'Listet jeden reinen Android-Teil einer App ohne iOS-Plan und baut die App für den iPhone-Simulator, mit Screenshots der Testabläufe.',
+            ],
           ],
         },
       ],
@@ -1285,7 +1325,7 @@ const de: Catalog = {
             ],
             [
               'Mehrbild-Foto',
-              'Ein normales Foto fügt 6 schnelle Bilder zu einem zusammen, mit halb so viel Rauschen und schärferen Kanten.',
+              'Ein normales Foto fügt 5 schnelle Bilder zu einem zusammen, mit halb so viel Rauschen und schärferen Kanten.',
             ],
             [
               'Fotos verbessern',
@@ -1567,8 +1607,8 @@ const de: Catalog = {
               'Künstler und Songs liegen auf dem Startbildschirm neben den Laufwerken. Die Player-Leiste bleibt auf jedem Bildschirm außer Video, mit Brotkrumen und Sortierung nach Künstler. Live-Titel werden übersprungen, standardmäßig an.',
             ],
             [
-              'Spotify und YouTube',
-              'Hey Lumi spielt einen Song, einen Künstler oder einen Stil, den kein Ordner hat. Spotify nennt die Songs, YouTube spielt sie.',
+              'MusicBrainz und YouTube',
+              'Hey Lumi spielt einen Song, einen Künstler oder einen Stil, den kein Ordner hat. MusicBrainz nennt die Songs, YouTube spielt sie.',
             ],
             [
               'Hörbücher',
@@ -1611,7 +1651,7 @@ const de: Catalog = {
             ['Sprachen', 'In 9 Sprachen, nach der Sprache von Telefon oder Browser.'],
             [
               'Mieten',
-              'Jede Postleitzahl in NSW, QLD, SA und TAS nach der mittleren Wochenmiete neuer Verträge gefärbt.',
+              'Jede Postleitzahl in NSW, VIC, QLD, SA und TAS nach der mittleren Wochenmiete neuer Verträge gefärbt.',
             ],
             ['Aus dem Browser installieren', 'Die Web-Version installiert sich als App mit eigenem Symbol.'],
             [
@@ -1658,6 +1698,10 @@ const de: Catalog = {
             [
               'Tripforge Pro',
               'Ein Kauf unter Android bringt unbegrenzte Suchen, um bis zu 30 Tage verschobene Daten, bis zu 50 gespeicherte Reisen und keine Werbung.',
+            ],
+            [
+              'Webseiten für die Suche',
+              'Eine Startseite pro Sprache mit Suchformular, eigenem Titel, Vorschaubild und Daten für Suchmaschinen, jede in der Sitemap.',
             ],
           ],
         },

@@ -30,7 +30,10 @@ export function projectsIn(lang: Lang): Project[] {
         href: l.href.startsWith('/skyaltar/astrology/') ? `/${lang}${l.href}` : l.href,
         label: t.links[i],
       })),
-      groups: t.groups.map((g) => ({ title: g.title, features: g.features.map(([name, text]) => ({ name, text })) })),
+      groups: t.groups.map((g, gi) => ({
+        title: g.title,
+        features: g.features.map(([name, text], fi) => ({ name, text, key: p.groups[gi].features[fi].name })),
+      })),
     };
   });
 }

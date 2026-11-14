@@ -5,6 +5,8 @@ export type Kind = 'app' | 'tool' | 'client' | 'internal' | 'archive';
 export interface Feature {
   name: string;
   text: string;
+  /** The English name, which keys the feature's architecture line in every language. */
+  key?: string;
 }
 
 export interface FeatureGroup {
@@ -291,6 +293,15 @@ export const projects: Project[] = [
           },
         ],
       },
+      {
+        title: 'iPhone app',
+        features: [
+          {
+            name: 'Same app on the iPhone',
+            text: 'The map, trips, voice warnings, routes and Pro, sold through the App Store. It waits for an Apple account.',
+          },
+        ],
+      },
     ],
   },
   {
@@ -365,7 +376,7 @@ export const projects: Project[] = [
           },
           {
             name: 'Multi-frame photo',
-            text: 'A plain photo merges 6 quick frames into one, with half the noise and crisper edges.',
+            text: 'A plain photo merges 5 quick frames into one, with half the noise and crisper edges.',
           },
           {
             name: 'Enhance photos',
@@ -565,6 +576,10 @@ export const projects: Project[] = [
           },
           { name: 'Languages', text: 'A shared list opens in the language of the phone that opens it.' },
           { name: 'Finding Tick-a-Lot in search', text: 'Guides and a home page bring people from search to the app.' },
+          {
+            name: 'Open source licences',
+            text: 'Settings lists each package the app is built with, under the licence text it shares.',
+          },
         ],
       },
     ],
@@ -909,8 +924,8 @@ export const projects: Project[] = [
             text: 'Artists and Songs sit on the home screen beside the drives. The player bar stays on each screen but video, with breadcrumbs and artist sort. Live tracks are skipped, on by default.',
           },
           {
-            name: 'Spotify and YouTube',
-            text: 'Hey Lumi plays a song, an artist or a style no folder holds. Spotify names the songs and YouTube plays them.',
+            name: 'MusicBrainz and YouTube',
+            text: 'Hey Lumi plays a song, an artist or a style no folder holds. MusicBrainz names the songs and YouTube plays them.',
           },
           {
             name: 'Audiobooks',
@@ -1067,6 +1082,18 @@ export const projects: Project[] = [
             name: "No ads on the developer's phone",
             text: 'Each build hides the banner on a phone with the developer key.',
           },
+          {
+            name: 'iPhone app',
+            text: 'The calculator, guides and pages as an iPhone app that works offline from the first launch. It waits for the App Store.',
+          },
+          {
+            name: 'Remove ads on the iPhone',
+            text: 'One App Store payment hides the banner. Restore purchase brings it back on a new iPhone.',
+          },
+          {
+            name: 'Share the result',
+            text: 'A Share button under the verdict sends the cheapest option and its cost, with the link, to Messages, Mail or Notes.',
+          },
         ],
       },
     ],
@@ -1097,7 +1124,7 @@ export const projects: Project[] = [
           { name: 'Languages', text: 'The app in 9 languages, following the phone or browser.' },
           {
             name: 'Rents',
-            text: 'Each postcode of NSW, QLD, SA and TAS coloured by the median weekly rent of new leases.',
+            text: 'Each postcode of NSW, VIC, QLD, SA and TAS coloured by the median weekly rent of new leases.',
           },
           { name: 'Install from the browser', text: 'The web build installs as an app with its own icon.' },
           {
@@ -1193,6 +1220,10 @@ export const projects: Project[] = [
           {
             name: 'Tripforge Pro',
             text: 'One purchase on Android gives unlimited searches, dates shifted up to 30 days, up to 50 saved trips and no ads.',
+          },
+          {
+            name: 'Website pages for search',
+            text: 'A home page per language with the ask form, its own title, preview picture and data for search engines, listed in the sitemap.',
           },
         ],
       },
@@ -1585,6 +1616,10 @@ export const projects: Project[] = [
             text: 'Alina picks the heading, text and label fonts from 10 free fonts, or uploads her own.',
           },
           { name: 'Client galleries', text: 'A private link with watermarked proofs, then every original as one zip.' },
+          {
+            name: 'Search',
+            text: 'Each page has a title, a description and a photo card for search and link previews. A local page covers the Sutherland Shire.',
+          },
         ],
       },
     ],
@@ -1620,6 +1655,10 @@ export const projects: Project[] = [
           {
             name: 'AI generator',
             text: 'Draws an interior from a request in Russian, a style and a photo of the room.',
+          },
+          {
+            name: 'Search',
+            text: 'Yandex and Google read a title, a description, a share photo and structured data on each page. The sitemap lists the pages.',
           },
         ],
       },
@@ -1683,9 +1722,13 @@ export const projects: Project[] = [
           { name: 'Dependabot details', text: 'Stores the update type of each Dependabot PR for the merge job.' },
           {
             name: 'Dependabot auto merge',
-            text: 'Merges a Dependabot PR once each check passes. A major update waits for a person.',
+            text: 'Merges a Dependabot PR as soon as it opens, and the checks run on main. A major update waits for a person.',
           },
           { name: 'Releases', text: 'Each push to main that passes the checks gets a dated release with notes.' },
+          {
+            name: 'iOS check and simulator build',
+            text: 'Lists each Android only piece of an app with no iOS plan, and builds the app for the iPhone simulator with screenshots of its test flows.',
+          },
         ],
       },
     ],

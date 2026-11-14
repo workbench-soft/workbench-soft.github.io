@@ -1,0 +1,78 @@
+import type { Arch } from '../types';
+
+const arch: Arch = {
+  summary:
+    'Farnear 是一个 React 网页应用，Android 版用 Kotlin 包装，iPhone 版用 Capacitor 包装。Cloudflare 上的 Rust Worker 转发房间的加密消息，通话本身直接在设备之间进行。',
+  parts: [
+    { name: 'React 和 Vite', role: '各个界面、房间页，以及预先渲染成 9 种语言的首页。' },
+    { name: 'WebRTC', role: '声音、视频和白板的数据通道，在最多 4 台设备之间直连。' },
+    { name: 'Rust Worker 和 Durable Object', role: '每个房间一个对象，转发加密消息并发放中继设置。' },
+    { name: 'TURN 中继', role: '两个网络之间直连失败时，负责传送加密的音视频。' },
+    { name: '白板模块', role: '纯 TypeScript 在 React 之外保存线条、已擦除的线条和文件传输。' },
+    { name: 'Whisper 和 MediaPipe', role: '语音转文字和视频背景，都在设备上运行。' },
+    { name: 'Kotlin 外壳', role: '包住线上网站的 Android 应用，带 AdMob、Play Billing 和来电提醒。' },
+    { name: 'Capacitor 和 Swift', role: '包住同一网站的 iPhone 应用，带 StoreKit 和分享菜单。' },
+  ],
+  flow: [
+    '房间链接里带着密钥，页面用它打开房间。',
+    '页面通过 WebSocket 加入 Worker 上的房间。',
+    '设备经 Worker 交换加密的连接请求和网络路径。',
+    'WebRTC 直接连通设备，或经过中继连通。',
+    '视频、声音、白板线条和文件在设备之间传送。',
+  ],
+  links: [
+    { to: 'Cloudflare', text: 'Worker、Durable Object 和一个 TURN 中继都在免费套餐内运行。' },
+    { to: 'consdr', text: 'Android 外壳把 Consdr 的 AdMob 和 Play Billing 代码移植到 Kotlin。' },
+    { to: 'Google Play', text: 'Play Billing 出售“去除广告”和 Farnear Pro，AdMob 显示 Android 广告。' },
+    { to: 'app-updater', text: 'WBS Updater 把已安装的版本与 GitHub 上最新的发布做比较。' },
+    { to: 'Hugging Face', text: '记录员从这里下载一次 Whisper 的权重。' },
+  ],
+  features: {
+    'Calls through a link': '链接末尾带着房间密钥，所以 Worker 只能看到加密消息。随后 WebRTC 把最多 4 台设备连成网状。',
+    'Recover a dropped call': '断线后，一方发出 ICE 重启请求，最多 3 次。每个对端一条队列，旧的应答不会覆盖新的。',
+    'Return to a call':
+      '浏览器记住正在进行的通话 30 分钟，所以链接会自动重新加入。每个房间一把 Web Lock，让较新的标签页接管通话。',
+    'Relay for blocked networks':
+      'Worker 通过套接字给每个浏览器发放短期的 TURN 设置。ICE 先试直连路径，不通再改走中继。',
+    'Share the call link': '邀请面板按应用语言为 Gmail、WhatsApp 或 Telegram 生成草稿。“其他应用”打开系统的分享菜单。',
+    'Saved rooms': '房间链接以名字存在浏览器存储里，服务器不保存这份列表。同一个密钥每次都打开同一个房间。',
+    Board: '纯模块把线条和已擦除的线条存成 2 个集合，经 WebRTC 数据通道发送。画布在 React 之外画出它们。',
+    'Share an image or video': '文件分块经专用数据通道发给每个人。分享者的播放、暂停和跳转走控制通道。',
+    'Lessons (planned)': '规格计划在上课前把幻灯片发到每台设备，每张幻灯片上都能用白板工具。应用里还没有课程代码。',
+    'Contacts and ringing':
+      '来电提醒是为对方设备加密的网页推送，经 Worker 发出。Android 应用通过 Google Play 服务接收，不用 Firebase。',
+    'Ads and remove ads': 'AdMob 显示 Android 横幅和通话后的广告。Play Billing 出售去除广告，房间页不加载广告脚本。',
+    'Farnear Pro':
+      'Play Billing 在 Android 应用里出售 Pro，浏览器可免费使用这些工具。有 Pro 的设备在加密的问候里告知这一点，房间随即开放白板。',
+    'Android app':
+      'Kotlin WebView 外壳加载线上网站，并把摄像头和麦克风交给它。CI 为每个 APK 签名，并放进公开的 GitHub 发布。',
+    'iPhone app':
+      'Capacitor 加载线上网站，Kotlin 部件的 Swift 对应版本加上 StoreKit、AdMob 和分享菜单。代码在等待第一次构建。',
+    Languages: 'i18next 保存 9 个词条库，选择后每个界面立即切换。选择保存在设备上。',
+    'App icon': '网站图标、网页图标和 Android 启动器的各种尺寸都来自同一个 SVG。Android 另有自适应图标和主题图标。',
+    'Call stage': '舞台模块根据固定的画面和共享屏幕，选出大图块和缩略条。每台设备自己测量声音，用来点亮说话人光环。',
+    'Share a screen': '每个连接从一开始就留出一个空的视频位，所以共享屏幕不需要新的连接请求。白板画在它上面。',
+    'Take a photo':
+      'modern-screenshot 把可见的通话连同视频和白板截成 PNG。Android 应用把它存进下载文件夹，服务器拿不到它。',
+    'Your name': '名字存在浏览器里，随加密的问候消息发给其他人。改名从下一次通话起生效。',
+    'Video background':
+      'MediaPipe 在设备上找出人像，画布把人画在模糊背景或图片上。这条画布轨道在发出前替换摄像头画面。',
+    'Call transcript and summary':
+      '一台设备在浏览器里运行 Whisper，能用 WebGPU 时就用。文字经数据通道发给其他人，并存进 IndexedDB。Chrome 内置的摘要功能写出摘要。',
+    'Recover stalled media': '健康检查每 3 秒读取每条轨道收到的字节和帧。卡住 15 秒就先修复 ICE，再重建这对连接。',
+    'Shared call titles': '标题带着版本计数器，走加密的信令。每台设备上最新的版本胜出，Worker 读不到标题。',
+    'Shared documents on the board':
+      'PDF.js 在设备上绘制 PDF 页面，PowerPoint 渲染器绘制幻灯片。翻页和移除走控制通道。',
+    'Contacts and rooms':
+      '联系人和房间共用浏览器里的一份保存列表，每条记录有自己的类型。联系人名字留在设备上，房间标题会同步。',
+    'Search and share preview':
+      'Vite 插件在构建时把首页预先渲染成 9 种语言。另一个插件写出站点地图，每个页面带有自己的预览标签。',
+    'Messages in a call':
+      '消息加密后走房间信令，与视频路径分开。每台设备把它存进 IndexedDB，并在下次通话时补齐缺少的消息。',
+    'Button hints': '一个共享模块在鼠标悬停或长按后显示气泡。长按只显示名字，不会触发按钮。',
+    'Close Farnear and take back its permissions':
+      '页面结束通话和来电，然后请 Android 外壳收回权限并关闭。浏览器会显示手动重置权限的步骤。',
+  },
+};
+
+export default arch;
