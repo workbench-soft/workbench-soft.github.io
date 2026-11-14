@@ -10,7 +10,7 @@ import {
   lengthFactor,
 } from './guess.ts';
 import { pictureOf } from '../words/kids.ts';
-import { HOST_GRACE, EMPTY_TTL, MAX_SEATS, Room } from './room.ts';
+import { HOST_GRACE, EMPTY_TTL, MAX_SEATS, REJOIN_GRACE, Room } from './room.ts';
 import { GRACE, STEP_TIMES } from './telephone.ts';
 import { CLUE_TIME, PICK_TIME, REVEAL_TIME } from './duel.ts';
 import { makeRoom } from './test-helpers.ts';
@@ -86,6 +86,23 @@ describe('room', () => {
     expect(room.players.get('alice')?.score).toBe(420);
   });
 
+  it('keeps a two player game when one player reloads, and ends it when they stay away', () => {
+    const { room, view, join } = makeRoom();
+    join(['a', 'b']);
+    room.message('a', { t: 'settings', settings: { mode: 'telephone' } }, 0);
+    room.message('a', { t: 'start' }, 0);
+    room.message('a', { t: 'submit', text: 'a cat on a bike' }, 1);
+    room.disconnect('b', 2);
+    join(['b'], 500);
+    expect(view('b').phase).toBe('tele');
+    expect(room.tele?.chains.flat().some((e) => e.text === 'a cat on a bike')).toBe(true);
+    room.disconnect('b', 1000);
+    room.alarm(1000 + REJOIN_GRACE - 1);
+    expect(view('a').phase).toBe('tele');
+    room.alarm(1000 + REJOIN_GRACE);
+    expect(view('a').phase).toBe('lobby');
+  });
+
   it('asks to be deleted after sitting empty', () => {
     const { room, join } = makeRoom();
     join(['a']);
@@ -102,6 +119,17 @@ describe('room', () => {
     const copy = Room.restore(JSON.parse(JSON.stringify(room.toJSON())), room.out, [], []);
     expect(copy.guess?.drawerId).toBe(room.guess?.drawerId);
     expect(copy.phase).toBe('choosing');
+  });
+
+  it('ends a game restored from storage when too few players come back', () => {
+    const { room, join } = makeRoom();
+    join(['a', 'b']);
+    room.message('a', { t: 'start' }, 0);
+    const copy = Room.restore(JSON.parse(JSON.stringify(room.toJSON())), room.out, [], []);
+    copy.markAllOffline(1000);
+    copy.connect('a', 'A', '#000000', 'en', 1000);
+    copy.alarm(1000 + REJOIN_GRACE);
+    expect(copy.phase).toBe('lobby');
   });
 });
 
@@ -292,6 +320,19 @@ describe('drawing telephone', () => {
     expect(view('a').album?.done).toBe(true);
   });
 
+  it('drops an entry sent again for a step that has passed', () => {
+    const { room, join } = makeRoom();
+    join(['a', 'b', 'c']);
+    room.message('a', { t: 'settings', settings: { mode: 'telephone' } }, 0);
+    room.message('a', { t: 'start' }, 0);
+    room.alarm(STEP_TIMES.normal.write * 1000 + GRACE);
+    expect(room.tele?.step).toBe(1);
+    room.message('b', { t: 'submit', step: 0, text: 'late phrase' }, STEP_TIMES.normal.write * 1000 + GRACE + 1);
+    expect(room.tele?.isDone('b')).toBe(false);
+    room.message('b', { t: 'submit', step: 1, actions: [{ k: 'fill', x: 5, y: 5, color: '#00ff00' }] }, 1);
+    expect(room.tele?.isDone('b')).toBe(true);
+  });
+
   it('moves on once the only player left to answer is kicked', () => {
     const { room, view, join } = makeRoom();
     join(['a', 'b', 'c']);
@@ -319,6 +360,9 @@ describe('clue duel', () => {
   it('goes back to the lobby once fewer than 4 players are left', () => {
     const { room, view } = started();
     room.disconnect('d', 1);
+    expect(view('a').phase).toBe('duel');
+    expect(room.wakeAt()).toBe(1 + REJOIN_GRACE);
+    room.alarm(1 + REJOIN_GRACE);
     expect(view('a').phase).toBe('lobby');
   });
 

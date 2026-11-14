@@ -6,6 +6,8 @@ let ready: Promise<typeof import('@capacitor-community/admob')> | null = null;
 let devLinks: Promise<void> | null = null;
 let shown = false;
 let wanted = false;
+/** Set once the consent check says this region must offer a way to change the answer, such as the EU and the UK. */
+let choicesNeeded = false;
 /** Counts the calls to syncBanner, so a failed show only resets `shown` when no later call changed it. */
 let calls = 0;
 
@@ -17,6 +19,7 @@ async function admob() {
     const consent = await mod.AdMob.requestConsentInfo();
     if (consent.isConsentFormAvailable && consent.status === mod.AdmobConsentStatus.REQUIRED)
       await mod.AdMob.showConsentForm();
+    choicesNeeded = String(consent.privacyOptionsRequirementStatus) === 'REQUIRED';
     return mod;
   })().catch((error: unknown) => {
     // Offline at launch, the consent check fails. The next banner tries again in place of giving up for the session.
@@ -51,6 +54,22 @@ async function resyncBanner(): Promise<void> {
 export function setDevAdsShown(on: boolean): void {
   saveDevAdsShown(on);
   void resyncBanner();
+}
+
+/** True when the app must show the button that changes the ad consent. */
+export async function adChoicesNeeded(): Promise<boolean> {
+  try {
+    await admob();
+    return choicesNeeded;
+  } catch {
+    return false;
+  }
+}
+
+/** Google's form that changes or withdraws the ad consent. */
+export async function showAdChoices(): Promise<void> {
+  const mod = await admob();
+  await mod.AdMob.showPrivacyOptionsForm();
 }
 
 export async function syncBanner(visible: boolean): Promise<void> {

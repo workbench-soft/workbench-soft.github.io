@@ -69,6 +69,8 @@ export class TelephoneGame {
       return;
     }
     if (msg.t !== 'submit' || this.album || !this.order.includes(id) || this.isDone(id)) return;
+    // Work sent again after a reconnect may be for a step that has passed. It must not fill the next one.
+    if (msg.step !== undefined && msg.step !== this.step) return;
     const kind = kindOf(this.step);
     const chain = this.chainOf(id);
     const name = this.room.name(id);

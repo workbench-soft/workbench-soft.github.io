@@ -48,6 +48,8 @@ export interface Out {
 
 /** A host who stays offline this long hands the room to the next player. */
 export const HOST_GRACE = 20_000;
+/** A game left short of players waits this long for one to come back, so a reload keeps it going. */
+export const REJOIN_GRACE = 20_000;
 /** An empty room deletes its storage after this long. */
 export const EMPTY_TTL = 30 * 60_000;
 /** Seats a room keeps, offline players included, so new tokens can't grow it without end. */
@@ -62,6 +64,8 @@ export class Room {
   hostId = '';
   hostAwaySince: number | null = null;
   emptySince: number | null = null;
+  /** When the game fell below its player count, while it waits for someone to come back. */
+  shortSince: number | null = null;
   banned = new Set<string>();
   settings: Settings = { ...DEFAULT_SETTINGS };
   phase: Phase = 'lobby';
@@ -120,6 +124,9 @@ export class Room {
     if (this.hostId === id) this.hostAwaySince = null;
     // The handover timer may have run out while nobody was online, so a player who comes back starts it again.
     else if (!this.isOnline(this.hostId)) this.hostAwaySince ??= now;
+    // After a wake from storage everyone starts offline, so the first one back may find the game short.
+    if (this.tooFew()) this.shortSince ??= now;
+    else this.shortSince = null;
     this.changed();
     this.sendSnapshot(id);
     this.flush(now);
@@ -133,7 +140,7 @@ export class Room {
     player.online = false;
     if (this.hostId === id) this.hostAwaySince = now;
     if (this.online().length === 0) this.emptySince = now;
-    this.playerGone(id, now);
+    this.playerGone(id, now, false);
     this.changed();
     this.flush(now);
   }
@@ -196,6 +203,10 @@ export class Room {
   alarm(now: number): boolean {
     if (this.emptySince !== null && now >= this.emptySince + EMPTY_TTL) return true;
     if (this.hostAwaySince !== null && now >= this.hostAwaySince + HOST_GRACE) this.passHost();
+    if (this.shortSince !== null && now >= this.shortSince + REJOIN_GRACE) {
+      this.shortSince = null;
+      if (this.tooFew()) this.backToLobby();
+    }
     this.guess?.alarm(now);
     this.tele?.alarm(now);
     this.duel?.alarm(now);
@@ -207,6 +218,7 @@ export class Room {
     return minTime(
       this.emptySince === null ? null : this.emptySince + EMPTY_TTL,
       this.hostAwaySince === null ? null : this.hostAwaySince + HOST_GRACE,
+      this.shortSince === null ? null : this.shortSince + REJOIN_GRACE,
       this.guess?.wakeAt(),
       this.tele?.wakeAt(),
       this.duel?.wakeAt(),
@@ -257,6 +269,7 @@ export class Room {
   }
 
   backToLobby(): void {
+    this.shortSince = null;
     this.guess = null;
     this.tele = null;
     this.duel = null;
@@ -311,6 +324,7 @@ export class Room {
       hostId: this.hostId,
       hostAwaySince: this.hostAwaySince,
       emptySince: this.emptySince,
+      shortSince: this.shortSince,
       banned: [...this.banned],
       settings: this.settings,
       phase: this.phase,
@@ -333,6 +347,8 @@ export class Room {
     room.hostId = data.hostId;
     room.hostAwaySince = data.hostAwaySince;
     room.emptySince = data.emptySince;
+    // Rooms saved before the field existed have none.
+    room.shortSince = data.shortSince ?? null;
     room.banned = new Set(data.banned);
     room.settings = { ...DEFAULT_SETTINGS, ...data.settings };
     room.phase = data.phase;
@@ -397,6 +413,7 @@ export class Room {
     const need = MIN_PLAYERS[this.settings.mode];
     if (this.online().length < need) return this.sys('needMore', undefined, String(need), this.hostId);
     for (const p of this.players.values()) p.score = 0;
+    this.shortSince = null;
     this.guess = null;
     this.tele = null;
     this.duel = null;
@@ -414,13 +431,23 @@ export class Room {
     this.changed();
   }
 
-  /** Tells the game a player went, and ends it when too few are left. */
-  private playerGone(id: string, now: number): void {
+  /**
+   * Tells the game a player went. A kicked player ends a game left too short at once. A dropped one gets
+   * REJOIN_GRACE to come back first, since a reload drops the socket too.
+   */
+  private playerGone(id: string, now: number, kicked: boolean): void {
     this.guess?.playerLeft(id, now);
     this.tele?.playerLeft(now);
     this.duel?.playerLeft(id, now);
-    if (this.phase === 'lobby' || this.phase === 'gameEnd' || this.phase === 'album') return;
-    if (this.online().length < MIN_PLAYERS[this.settings.mode]) this.backToLobby();
+    if (!this.tooFew()) return;
+    if (kicked) this.backToLobby();
+    else this.shortSince ??= now;
+  }
+
+  /** A game runs with fewer players than it needs. */
+  private tooFew(): boolean {
+    if (this.phase === 'lobby' || this.phase === 'gameEnd' || this.phase === 'album') return false;
+    return this.online().length < MIN_PLAYERS[this.settings.mode];
   }
 
   private kick(id: string, now: number): void {
@@ -430,7 +457,7 @@ export class Room {
     this.sys('kicked', player.name);
     this.out.close(id, 'kicked');
     this.players.delete(id);
-    this.playerGone(id, now);
+    this.playerGone(id, now, true);
     this.changed();
   }
 

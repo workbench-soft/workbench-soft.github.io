@@ -46,5 +46,5 @@ mise run app:android
 - **Icons** `pnpm icons` draws the PNG icons and the share image from SVG.
 - **Ads** a release build of the Android app uses the AdMob app `ca-app-pub-8598703460892343~1509665312` and the banner `ca-app-pub-8598703460892343/4481644716`. Debug builds, iOS and the developer's phone use Google's test IDs.
 - **Google Play** the app is `com.workbenchsoft.games` on closed testing. The upload key sits in `%USERPROFILE%\.android-keys\games`, and Bitwarden holds `GAMES_ANDROID_KEYSTORE_BASE64` and `GAMES_ANDROID_KEYSTORE_PASSWORD`. Each upload takes a higher code: `./gradlew bundleRelease -PversionCode=2` with the `android.injected.signing.*` flags.
-- **Consent** the AdMob message "Workbench Games GDPR" asks for consent in the EEA, the UK and Switzerland, in 8 languages.
+- **Consent** the AdMob message "Workbench Games GDPR" asks for consent in the EEA, the UK and Switzerland, in 8 languages. In the apps, the Ad privacy choices button on the privacy page changes the answer, where Google asks for one.
 - **Before production** a Remove ads purchase is still open. The `## ads-setup` and `## play-release` sections of the root `TODO.md` list it.

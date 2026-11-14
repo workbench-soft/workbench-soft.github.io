@@ -16,6 +16,8 @@ type GameText = {
 type SiteText = {
   brand: string;
   nav: Record<Mode | 'about', string>;
+  /** The name a screen reader gives the list of game links. */
+  navLabel: string;
   create: string;
   createFor: string;
   joinCode: string;
@@ -31,6 +33,8 @@ type SiteText = {
   otherGames: string;
   footer: string;
   privacy: string;
+  /** The button in the apps that changes the ad consent. */
+  adChoices: string;
   about: string;
   langOther: string;
   langSuggest: string;
@@ -49,6 +53,7 @@ type SiteText = {
 const en: SiteText = {
   brand: 'Workbench Games',
   nav: { guess: 'Guess the drawing', telephone: 'Drawing telephone', duel: 'Clue duel', about: 'About' },
+  navLabel: 'Games',
   create: 'Create a room',
   createFor: 'Play {game}',
   joinCode: 'Have a room code?',
@@ -63,6 +68,7 @@ const en: SiteText = {
   otherGames: 'More games',
   footer: 'Free party games in the browser. No account, no download.',
   privacy: 'Privacy',
+  adChoices: 'Ad privacy choices',
   about: 'About',
   langOther: 'Русский',
   langSuggest: 'Эта страница есть на русском',
@@ -200,6 +206,7 @@ const en: SiteText = {
 const ru: SiteText = {
   brand: 'Workbench Games',
   nav: { guess: 'Угадай рисунок', telephone: 'Испорченный телефон', duel: 'Дуэль подсказок', about: 'О сайте' },
+  navLabel: 'Игры',
   create: 'Создать комнату',
   createFor: 'Играть: {game}',
   joinCode: 'Есть код комнаты?',
@@ -214,6 +221,7 @@ const ru: SiteText = {
   otherGames: 'Другие игры',
   footer: 'Бесплатные игры для компании прямо в браузере. Без регистрации и установки.',
   privacy: 'Конфиденциальность',
+  adChoices: 'Настройки рекламы',
   about: 'О сайте',
   langOther: 'English',
   langSuggest: 'This page is in English too',

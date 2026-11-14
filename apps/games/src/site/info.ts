@@ -12,7 +12,7 @@ export const INFO: Record<InfoKey, Record<SiteLang, Info>> = {
       title: 'Privacy policy',
       description: 'What Workbench Games stores, what the ads use, and how to ask for your data to be removed.',
       sections: [
-        { p: ['Last updated: 30 October 2026.'] },
+        { p: ['Last updated: 14 November 2026.'] },
         {
           h: 'What the games store',
           p: [
@@ -24,7 +24,7 @@ export const INFO: Record<InfoKey, Record<SiteLang, Info>> = {
           h: 'Ads',
           p: [
             'The site shows ads from Google AdSense, and the Android and iOS apps show ads from Google AdMob. Google may use cookies or device identifiers to pick and measure ads.',
-            'In the EU, the UK and Switzerland a consent message asks before personal ads show. Read how Google uses data at <a href="https://policies.google.com/technologies/partner-sites">policies.google.com</a>.',
+            'In the EU, the UK and Switzerland a consent message asks before personal ads show. In the apps, the Ad privacy choices button on this page changes the answer. Read how Google uses data at <a href="https://policies.google.com/technologies/partner-sites">policies.google.com</a>.',
           ],
         },
         {
@@ -39,7 +39,7 @@ export const INFO: Record<InfoKey, Record<SiteLang, Info>> = {
       title: 'Политика конфиденциальности',
       description: 'Что хранит Workbench Games, какие данные использует реклама и как попросить удалить ваши данные.',
       sections: [
-        { p: ['Обновлено: 30 октября 2026.'] },
+        { p: ['Обновлено: 14 ноября 2026.'] },
         {
           h: 'Что хранят игры',
           p: [
@@ -51,7 +51,7 @@ export const INFO: Record<InfoKey, Record<SiteLang, Info>> = {
           h: 'Реклама',
           p: [
             'Сайт показывает рекламу Google AdSense, а приложения для Android и iOS показывают рекламу Google AdMob. Google может использовать cookie или идентификаторы устройства, чтобы подбирать и измерять рекламу.',
-            'В ЕС, Великобритании и Швейцарии перед персональной рекламой появляется запрос согласия. Как Google использует данные: <a href="https://policies.google.com/technologies/partner-sites">policies.google.com</a>.',
+            'В ЕС, Великобритании и Швейцарии перед персональной рекламой появляется запрос согласия. В приложениях ответ меняет кнопка «Настройки рекламы» на этой странице. Как Google использует данные: <a href="https://policies.google.com/technologies/partner-sites">policies.google.com</a>.',
           ],
         },
         {

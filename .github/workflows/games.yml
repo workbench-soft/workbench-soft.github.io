@@ -37,18 +37,14 @@ jobs:
         working-directory: apps/${{ matrix.app }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
-      - uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
+      # Node and pnpm come from the mise.toml of each app, the same pins as on the PC.
+      - uses: jdx/mise-action@6be3c7ed4c21d4f76b208d351d95aac273ebb76d # v5.2.4
         with:
-          package_json_file: apps/${{ matrix.app }}/package.json
-      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
-        with:
-          node-version-file: apps/${{ matrix.app }}/.node-version
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm lint
-      - run: pnpm typecheck
-      - run: pnpm test
+          working_directory: apps/${{ matrix.app }}
+      - run: mise x -- pnpm install --frozen-lockfile
+      - run: mise run check
       - if: matrix.app == 'games'
-        run: pnpm build
+        run: mise run build
 
   # The games deploy first, so the edge binds to a Worker that exists.
   deploy:
@@ -65,32 +61,29 @@ jobs:
       CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
-      - uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
+      - uses: jdx/mise-action@6be3c7ed4c21d4f76b208d351d95aac273ebb76d # v5.2.4
         with:
-          package_json_file: apps/games/package.json
-      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
-        with:
-          node-version-file: apps/games/.node-version
+          working_directory: apps/games
       - name: Build the games
         working-directory: apps/games
         env:
           PUBLIC_ADSENSE_CLIENT: ${{ vars.ADSENSE_CLIENT }}
           PUBLIC_ADSENSE_SLOT_PAGE: ${{ vars.ADSENSE_SLOT_PAGE }}
           PUBLIC_ADSENSE_SLOT_ROOM: ${{ vars.ADSENSE_SLOT_ROOM }}
-        run: pnpm install --frozen-lockfile && pnpm build
+        run: mise x -- pnpm install --frozen-lockfile && mise run build
       - name: Deploy the games
         working-directory: apps/games
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        run: pnpm exec wrangler deploy
+        run: mise x -- pnpm exec wrangler deploy
       # Off: the games have their own host, and the apex of workbench-soft.com stays on GitHub Pages.
       - name: Install the edge
         if: vars.EDGE_ENABLED == 'true'
         working-directory: apps/edge
-        run: pnpm install --frozen-lockfile
+        run: mise x -- pnpm install --frozen-lockfile
       - name: Deploy the edge
         if: vars.EDGE_ENABLED == 'true'
         working-directory: apps/edge
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        run: pnpm exec wrangler deploy
+        run: mise x -- pnpm exec wrangler deploy
