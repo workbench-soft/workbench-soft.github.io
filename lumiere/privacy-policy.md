@@ -1,12 +1,12 @@
 ---
 title: Lumiere Player Privacy Policy
 description: Lumiere Player keeps your files, positions, NAS logins and settings on your device. Google AdMob shows a banner on phones.
-last_modified_at: 2026-11-04
+last_modified_at: 2026-11-14
 ---
 
 # Lumiere Player Privacy Policy
 
-Last updated: 4 November 2026
+Last updated: 14 November 2026
 
 Lumiere Player plays your own videos and music from the device, a USB
 stick or a network share, on Google TV and Android phones. The app sends
@@ -45,6 +45,10 @@ under the file list, and Google collects the data listed under "Ads".
   listens, and in the version from workbench-soft.com for a ready update.
 - **Run at start** brings Hey Lumi back after a reboot, when you turned it
   on.
+- **Display over other apps**, asked once after you turn on Hey Lumi. It
+  lets the app light the screen edge while it listens over another app,
+  and come to the front for a command.
+- **Bluetooth** lets "Hey Lumi, turn on Bluetooth" switch Bluetooth on.
 
 ## Network connections the app makes
 
@@ -54,6 +58,13 @@ under the file list, and Google collects the data listed under "Ads".
   name holds a YouTube video ID. The app sends the first 4 characters of
   the ID's SHA-256 hash, never the ID itself, and gets back the sponsor
   segments of many videos. See <https://sponsor.ajay.app>.
+- **Wikidata** (wikidata.org), after a scan of your books, to find the
+  author of each one. The app sends the book title.
+- **MusicBrainz**, **Cover Art Archive** and **YouTube**, in the version
+  from workbench-soft.com only, when you ask for music that isn't on your
+  device. The app sends the artist, album or song name you say or type.
+  Once a week on Wi-Fi it also downloads the newest yt-dlp from GitHub.
+  The version from Google Play has no online music.
 - **Google AdMob**, on a phone, to load the banner. See "Ads" below.
 - **Google Play**, to sell "Remove ads" and "Lumiere Pro" and check that
   you bought them.
