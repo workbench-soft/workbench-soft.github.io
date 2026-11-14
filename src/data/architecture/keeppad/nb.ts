@@ -79,6 +79,8 @@ const arch: Arch = {
       'Appen sammenligner det første ordet i notatet med navnene i Memories. Det ryddede og daterte notatet går til den dagboken via WebDAV.',
     'KeepPad Pro':
       'expo-iap selger Pro gjennom Google Play, og én Pro-modul sjekker det før hver låst handling. En refusjon slår av Pro ved neste start.',
+    'Fast scroll':
+      'Studioets fast-scroll-pakke pakker inn notatlisten. Listen følger knotten hvert bilde. iOS og nettet beholder sitt eget rullefelt.',
   },
 };
 

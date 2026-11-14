@@ -56,3 +56,8 @@ A client who reads the site sees how the studio builds an app, beside what the a
   3. The missing features.
   4. The other projects, a few per commit.
 - **Docs** `docs/architecture.md`, `docs/features.md`, `README.md`.
+
+### 2026-11-15 Fast scroll on the site
+
+- **Why** `feature-check --fetch` found Tickalot "Long lists", KeepPad "Fast scroll" and Sky Altar "Long lists", added by the shared `fast-scroll` package after the first merge.
+- **Changes** `src/data/projects.ts`, the 8 catalogs and the architecture files of the 3 projects get the feature and its line.

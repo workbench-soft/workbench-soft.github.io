@@ -79,6 +79,8 @@ const arch: Arch = {
       'Die App gleicht das erste Wort einer Notiz mit den Namen aus Memories ab. Die aufgeräumte Notiz mit Datum geht per WebDAV in dieses Tagebuch.',
     'KeepPad Pro':
       'expo-iap verkauft Pro über Google Play, und ein Pro-Modul prüft es vor jeder gesperrten Aktion. Nach einer Erstattung ist Pro beim nächsten Start aus.',
+    'Fast scroll':
+      'Das Studiopaket fast-scroll umhüllt die Notizliste. Die Liste folgt dem Regler in jedem Frame. iOS und das Web behalten ihre eigene Scrollleiste.',
   },
 };
 

@@ -58,6 +58,8 @@ const arch: Arch = {
       'A virtualized list filters the catalog and turns each label point into a spot on the current sky. A tap eases the view there over 450 ms.',
     'Constellation lore':
       'Each card reads the story of the theme culture from a lore file per language. The star facts come from the Hipparcos data in the ESA Gaia archive.',
+    'Long lists':
+      'The studio’s fast-scroll package wraps both lists, and each list draws only the rows on screen. The thumb takes a muted sheet colour or the theme’s label colour.',
   },
 };
 

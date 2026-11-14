@@ -514,6 +514,10 @@ const es: Catalog = {
             ['Idiomas', 'Una lista compartida se abre en el idioma del teléfono que la abre.'],
             ['Tick-a-Lot en la búsqueda', 'Guías y una página de inicio llevan de la búsqueda a la app.'],
             ['Licencias de código abierto', 'Los ajustes listan cada paquete de la app bajo el texto de su licencia.'],
+            [
+              'Listas largas',
+              'En Android, un control verde en el borde derecho lleva una lista de 80 artículos a cualquier punto. Se desvanece 1,5 segundos después de parar.',
+            ],
           ],
         },
       ],
@@ -565,6 +569,10 @@ const es: Catalog = {
             [
               'KeepPad Pro',
               'Una compra única abre los enlaces nuevos, el envío a otras apps y a Memories, y quita los anuncios.',
+            ],
+            [
+              'Desplazamiento rápido',
+              'En Android, un dedo arrastra el control de la lista de notas a cualquier punto, hasta la última nota.',
             ],
           ],
         },
@@ -1500,6 +1508,10 @@ const es: Catalog = {
             [
               'Mitos de las constelaciones',
               'Cada constelación tiene una ficha con el mito de la cultura del tema, qué observar y sus estrellas más brillantes con su distancia. La galería gira el cielo hacia ella.',
+            ],
+            [
+              'Listas largas',
+              'En Android, un dedo arrastra el control de la lista de constelaciones y de la galería de temas a cualquier punto.',
             ],
           ],
         },

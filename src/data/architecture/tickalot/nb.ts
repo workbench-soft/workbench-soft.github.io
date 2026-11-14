@@ -76,6 +76,8 @@ const arch: Arch = {
       'Etter Expo-eksporten skriver et byggeskript guidene, Om og sitemapen som enkel HTML. Appsidene har noindex, siden de viser lister til en person.',
     'Open source licences':
       'En byggeoppgave samler lisensteksten til hver pakke i en fil i appen. Innstillinger lister dem fra den filen.',
+    'Long lists':
+      'Studioets fast-scroll-pakke pakker inn hver lange liste. Listen følger knotten hvert bilde, og en skjult knott slipper trykk gjennom.',
   },
 };
 

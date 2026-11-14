@@ -72,6 +72,8 @@ const arch: Arch = {
       'アプリはメモの最初の言葉を Memories の名前と照らし合わせます。整えて日付を付けたメモが、WebDAV でその日記に入ります。',
     'KeepPad Pro':
       'expo-iap が Google Play で Pro を売り、Pro のモジュールがロックされた操作の前に確かめます。返金されると、次の起動で Pro が切れます。',
+    'Fast scroll':
+      'スタジオ共通の fast-scroll パッケージがメモ一覧を包みます。リストは毎フレームつまみに追従し、iOS と Web は標準のスクロールバーのままです。',
   },
 };
 

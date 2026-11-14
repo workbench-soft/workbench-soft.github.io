@@ -82,6 +82,8 @@ const arch: Arch = {
       'L’app compare le premier mot de la note aux noms de Memories. La note remise au propre et datée va dans ce journal par WebDAV.',
     'KeepPad Pro':
       'expo-iap vend Pro via Google Play, et un module Pro le vérifie avant chaque action verrouillée. Un remboursement coupe Pro au lancement suivant.',
+    'Fast scroll':
+      'Le paquet fast-scroll du studio enveloppe la liste des notes. La liste suit le curseur à chaque image. iOS et le web gardent leur barre de défilement.',
   },
 };
 

@@ -61,6 +61,7 @@ const arch: Arch = {
     'Finding Tick-a-Lot in search':
       'Expo 导出之后，构建脚本把指南、关于页和站点地图写成纯 HTML。应用页面带 noindex，因为上面是个人的清单。',
     'Open source licences': '一个构建任务把每个依赖包的许可文本收进应用里的一个文件。设置页面从这个文件列出它们。',
+    'Long lists': '工作室的 fast-scroll 包包住每个长列表。列表每帧跟随滑块移动，隐藏的滑块让点按穿过。',
   },
 };
 

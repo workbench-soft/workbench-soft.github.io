@@ -73,6 +73,8 @@ const arch: Arch = {
       'Une liste virtualisée filtre le catalogue et place le point d’étiquette de chaque constellation sur le ciel du moment. Un appui y mène la vue en 450 ms.',
     'Constellation lore':
       'Chaque fiche lit le récit de la culture du thème dans un fichier de légendes par langue. Les données des étoiles viennent d’Hipparcos dans l’archive ESA Gaia.',
+    'Long lists':
+      'Le paquet fast-scroll du studio enveloppe les deux listes, et chacune ne dessine que les lignes visibles. Le curseur prend une couleur atténuée du panneau ou celle des libellés du thème.',
   },
 };
 

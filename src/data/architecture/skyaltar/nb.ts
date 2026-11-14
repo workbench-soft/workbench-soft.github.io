@@ -54,6 +54,8 @@ const arch: Arch = {
       'En virtualisert liste filtrerer katalogen og regner om etikettpunktet til hvert stjernebilde til himmelen nå. Et trykk fører visningen dit på 450 ms.',
     'Constellation lore':
       'Hvert kort leser fortellingen til temaets kultur fra en sagnfil per språk. Stjernefaktaene kommer fra Hipparcos-dataene i ESA Gaia-arkivet.',
+    'Long lists':
+      'Studioets fast-scroll-pakke pakker inn begge listene, og hver liste tegner bare radene på skjermen. Knotten får en dempet arkfarge eller temaets etikettfarge.',
   },
 };
 

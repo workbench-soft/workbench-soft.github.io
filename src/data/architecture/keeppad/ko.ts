@@ -72,6 +72,8 @@ const arch: Arch = {
       '앱이 메모의 첫 단어를 Memories의 이름과 맞춰 봅니다. 다듬고 날짜를 붙인 메모가 WebDAV로 그 일기에 들어갑니다.',
     'KeepPad Pro':
       'expo-iap이 Google Play로 Pro를 팔고, Pro 모듈이 잠긴 동작 전마다 확인합니다. 환불되면 다음 시작 때 Pro가 꺼집니다.',
+    'Fast scroll':
+      '스튜디오의 fast-scroll 패키지가 메모 목록을 감쌉니다. 목록은 매 프레임 손잡이를 따라가고, iOS와 웹은 자체 스크롤바를 씁니다.',
   },
 };
 

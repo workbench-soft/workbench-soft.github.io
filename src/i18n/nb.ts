@@ -479,6 +479,10 @@ const nb: Catalog = {
               'Lisenser for åpen kildekode',
               'Innstillinger viser hver pakke appen bruker, under lisensteksten den deler.',
             ],
+            [
+              'Lange lister',
+              'På Android drar en grønn knott i høyre kant en liste med 80 ting til hvilket som helst punkt. Den blekner 1,5 sekunder etter at listen stopper.',
+            ],
           ],
         },
       ],
@@ -534,6 +538,10 @@ const nb: Catalog = {
               'Et notat som starter med navnet til noen i Memories, havner i dagboken deres på NAS-en hjemme.',
             ],
             ['KeepPad Pro', 'Ett kjøp åpner nye lenker, sending til andre apper og til Memories, og fjerner reklamen.'],
+            [
+              'Rask rulling',
+              'På Android drar en finger rulleknotten i notatlisten til hvilket som helst punkt, helt ned til siste notat.',
+            ],
           ],
         },
       ],
@@ -1396,6 +1404,10 @@ const nb: Catalog = {
             [
               'Stjernebildemyter',
               'Hvert stjernebilde har et kort med myten fra temaets kultur, hva du kan se og de klareste stjernene med avstanden. Galleriet snur himmelen dit.',
+            ],
+            [
+              'Lange lister',
+              'På Android drar en finger rulleknotten i stjernebildelisten og temagalleriet til hvilket som helst punkt.',
             ],
           ],
         },
