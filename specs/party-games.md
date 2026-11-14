@@ -75,6 +75,8 @@ score, since the browser keeps a secret token.
 - **Players** 2 to 12 in a room, 4 or more for the clue duel. A player who
   joins mid game waits for the next turn, or the next game in telephone. A
   room keeps 24 seats at most, offline players included.
+  A game left with too few players online waits 20 seconds for one to come
+  back, so a reload keeps it going, then goes back to the lobby.
 - **Free plan** Workers Free gives 100,000 requests a day. With hibernation 20
   WebSocket messages count as 1 request. The artist sends points 12 times a
   second, about 40 hours of drawing a day before the limit.

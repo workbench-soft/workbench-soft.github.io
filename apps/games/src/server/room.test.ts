@@ -10,7 +10,7 @@ import {
   lengthFactor,
 } from './guess.ts';
 import { pictureOf } from '../words/kids.ts';
-import { HOST_GRACE, EMPTY_TTL, MAX_SEATS, Room } from './room.ts';
+import { HOST_GRACE, EMPTY_TTL, MAX_SEATS, REJOIN_GRACE, Room } from './room.ts';
 import { GRACE, STEP_TIMES } from './telephone.ts';
 import { CLUE_TIME, PICK_TIME, REVEAL_TIME } from './duel.ts';
 import { makeRoom } from './test-helpers.ts';
@@ -84,6 +84,23 @@ describe('room', () => {
     expect(room.players.size).toBe(MAX_SEATS);
     room.connect('alice', 'Alice', '#000000', 'en', 3);
     expect(room.players.get('alice')?.score).toBe(420);
+  });
+
+  it('keeps a two player game when one player reloads, and ends it when they stay away', () => {
+    const { room, view, join } = makeRoom();
+    join(['a', 'b']);
+    room.message('a', { t: 'settings', settings: { mode: 'telephone' } }, 0);
+    room.message('a', { t: 'start' }, 0);
+    room.message('a', { t: 'submit', text: 'a cat on a bike' }, 1);
+    room.disconnect('b', 2);
+    join(['b'], 500);
+    expect(view('b').phase).toBe('tele');
+    expect(room.tele?.chains.flat().some((e) => e.text === 'a cat on a bike')).toBe(true);
+    room.disconnect('b', 1000);
+    room.alarm(1000 + REJOIN_GRACE - 1);
+    expect(view('a').phase).toBe('tele');
+    room.alarm(1000 + REJOIN_GRACE);
+    expect(view('a').phase).toBe('lobby');
   });
 
   it('asks to be deleted after sitting empty', () => {
@@ -319,6 +336,9 @@ describe('clue duel', () => {
   it('goes back to the lobby once fewer than 4 players are left', () => {
     const { room, view } = started();
     room.disconnect('d', 1);
+    expect(view('a').phase).toBe('duel');
+    expect(room.wakeAt()).toBe(1 + REJOIN_GRACE);
+    room.alarm(1 + REJOIN_GRACE);
     expect(view('a').phase).toBe('lobby');
   });
 
