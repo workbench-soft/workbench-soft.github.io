@@ -30,7 +30,7 @@
     "@cloudflare/workers-types": "^5.20261030.1",
     "@resvg/resvg-js": "^2.6.2",
     "@types/canvas-confetti": "^1.9.0",
-    "astro": "^7.4.4",
+    "astro": "^7.4.11",
     "oxlint": "^1.90.0",
     "typescript": "^7.0.2",
     "vitest": "^5.0.5",
