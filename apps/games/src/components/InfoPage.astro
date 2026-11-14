@@ -2,6 +2,7 @@
 import Page from '../layouts/Page.astro';
 import type { SiteLang } from '../shared/protocol.ts';
 import { INFO, type InfoKey } from '../site/info.ts';
+import { TEXT } from '../site/text.ts';
 
 type Props = { lang: SiteLang; page: InfoKey };
 const { lang, page } = Astro.props;
@@ -19,5 +20,23 @@ const info = INFO[page][lang];
         </section>
       ))
     }
+    {page === 'privacy' && (
+      <button id="ad-choices" class="btn" type="button" hidden>
+        {TEXT[lang].adChoices}
+      </button>
+    )}
   </article>
 </Page>
+
+<script>
+  import { adChoicesNeeded, showAdChoices } from '../game/admob.ts';
+  import { isNative } from '../game/platform.ts';
+
+  // Google's consent rules ask the apps for a way to change the answer where the consent message shows.
+  const button = document.querySelector<HTMLButtonElement>('#ad-choices');
+  if (button && isNative())
+    void adChoicesNeeded().then((needed) => {
+      button.hidden = !needed;
+      button.addEventListener('click', () => void showAdChoices().catch(() => undefined));
+    });
+</script>

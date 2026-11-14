@@ -70,6 +70,7 @@ Spec: [party-games](../../../specs/party-games.md).
 - **Where** AdSense on the site, AdMob in the apps.
 - **Units** a release build of the Android app shows the banner "Games lobby banner" of the AdMob app "Workbench Games". Debug builds and the iOS app show Google's test banner.
 - **Limits** no ad shows while someone draws or guesses.
+- **Consent** in the EEA, the UK and Switzerland the apps ask before ads load. The privacy page of the apps shows an Ad privacy choices button there, which opens Google's form to change the answer.
 - **Developer's phone** the apps hide the banner on a phone that got the developer key from `mise run dev-phone` in the `workspace` repo. There the lobby shows "Show test ads (developer phone)": ticked, Google's test banner comes back, cleared, it hides again. `--ads on` and `--ads off` set the same box.
 
 Spec: [party-games](../../../specs/party-games.md).

@@ -31,6 +31,8 @@ type SiteText = {
   otherGames: string;
   footer: string;
   privacy: string;
+  /** The button in the apps that changes the ad consent. */
+  adChoices: string;
   about: string;
   langOther: string;
   langSuggest: string;
@@ -63,6 +65,7 @@ const en: SiteText = {
   otherGames: 'More games',
   footer: 'Free party games in the browser. No account, no download.',
   privacy: 'Privacy',
+  adChoices: 'Ad privacy choices',
   about: 'About',
   langOther: 'Русский',
   langSuggest: 'Эта страница есть на русском',
@@ -214,6 +217,7 @@ const ru: SiteText = {
   otherGames: 'Другие игры',
   footer: 'Бесплатные игры для компании прямо в браузере. Без регистрации и установки.',
   privacy: 'Конфиденциальность',
+  adChoices: 'Настройки рекламы',
   about: 'О сайте',
   langOther: 'English',
   langSuggest: 'This page is in English too',
