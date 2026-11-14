@@ -21,7 +21,7 @@ echo "$MODEL_SHA256  $MODEL.onnx" | sha256sum -c -
 
 python3 -m venv venv
 . venv/bin/activate
-pip install --quiet "onnxruntime==$ORT_VERSION"
+pip install --quiet "onnxruntime==$ORT_VERSION" onnx
 # arm keeps the x86 only NCHWc kernels out of the model, so the phone finds a kernel for each node.
 python -m onnxruntime.tools.convert_onnx_models_to_ort "$MODEL.onnx" --output_dir models \
   --enable_type_reduction --target_platform arm
