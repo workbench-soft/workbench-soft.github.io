@@ -309,6 +309,19 @@ describe('drawing telephone', () => {
     expect(view('a').album?.done).toBe(true);
   });
 
+  it('drops an entry sent again for a step that has passed', () => {
+    const { room, join } = makeRoom();
+    join(['a', 'b', 'c']);
+    room.message('a', { t: 'settings', settings: { mode: 'telephone' } }, 0);
+    room.message('a', { t: 'start' }, 0);
+    room.alarm(STEP_TIMES.normal.write * 1000 + GRACE);
+    expect(room.tele?.step).toBe(1);
+    room.message('b', { t: 'submit', step: 0, text: 'late phrase' }, STEP_TIMES.normal.write * 1000 + GRACE + 1);
+    expect(room.tele?.isDone('b')).toBe(false);
+    room.message('b', { t: 'submit', step: 1, actions: [{ k: 'fill', x: 5, y: 5, color: '#00ff00' }] }, 1);
+    expect(room.tele?.isDone('b')).toBe(true);
+  });
+
   it('moves on once the only player left to answer is kicked', () => {
     const { room, view, join } = makeRoom();
     join(['a', 'b', 'c']);

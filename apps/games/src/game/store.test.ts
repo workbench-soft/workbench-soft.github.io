@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { connect } from './store.ts';
+import { connect, send } from './store.ts';
 
 /** A socket that opens when the test says so and records what it sent. */
 class FakeSocket {
@@ -42,6 +42,17 @@ describe('room socket', () => {
     expect(FakeSocket.last).toBe(first);
     vi.advanceTimersByTime(30_000);
     expect(FakeSocket.last).not.toBe(first);
+  });
+
+  it('tells the caller when a message could not go out', () => {
+    vi.stubGlobal('WebSocket', FakeSocket);
+    vi.stubGlobal('location', new URL('https://games.workbench-soft.com/games/r/ABC234'));
+    vi.stubGlobal('window', globalThis);
+    connect('ABC234', 'Ann', '#000000');
+    expect(send({ t: 'submit', step: 0, text: 'a cat' })).toBe(false);
+    FakeSocket.last!.emit('open');
+    expect(send({ t: 'submit', step: 0, text: 'a cat' })).toBe(true);
+    expect(FakeSocket.last!.sent.at(-1)).toBe(JSON.stringify({ t: 'submit', step: 0, text: 'a cat' }));
   });
 
   it('keeps the socket after the page wakes from a freeze', () => {

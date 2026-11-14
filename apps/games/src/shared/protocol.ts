@@ -200,7 +200,8 @@ export type ClientMsg =
   /** Kids mode: a guess by tapping one of the options. */
   | { t: 'tap'; index: number }
   | { t: 'draw'; ops: Op[] }
-  | { t: 'submit'; text?: string; actions?: Action[] }
+  /** `step` is the telephone step the entry is for. Apps from before it send none. */
+  | { t: 'submit'; step?: number; text?: string; actions?: Action[] }
   | { t: 'next' }
   | { t: 'lobby' }
   | { t: 'kick'; id: string }
