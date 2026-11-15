@@ -110,6 +110,7 @@ const ja: Catalog = {
       empty: '一致するものがありません。別の言葉で試してください。',
       project: 'プロジェクト',
       feature: '機能',
+      close: '閉じる',
     },
     footer: { noAds: 'このサイトに広告はありません。', releases: 'リリース', privacy: 'Memories のプライバシー' },
     technologies: '技術',

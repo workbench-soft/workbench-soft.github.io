@@ -1,7 +1,8 @@
 ---
 // The closed test page: why, the steps, then each app with its Join and Install links.
 import Base from "../layouts/Base.astro";
-import { locales, names, pathOf, tags, type Lang } from "../i18n/locales";
+import LangPicker from "../components/LangPicker.astro";
+import { locales, pathOf, type Lang } from "../i18n/locales";
 import { apps, feedback, group, installUrl, joinUrl } from "./apps";
 import { catalogs, parts } from "./i18n";
 
@@ -23,20 +24,7 @@ const links: Record<string, { href: string; text: string }> = {
   <header class="top">
     <div class="bar">
       <a class="brand" href={pathOf(lang)}>{t.home}</a>
-      <details class="langs">
-        <summary aria-label={`${t.language}: ${names[lang]}`}>{names[lang]}</summary>
-        <ul>
-          {
-            locales.map((l) => (
-              <li>
-                <a href={href(l)} hreflang={tags[l]} lang={tags[l]} aria-current={l === lang ? "page" : undefined}>
-                  {names[l]}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </details>
+      <LangPicker lang={lang} items={locales.map((l) => ({ lang: l, href: href(l) }))} label={t.language} />
     </div>
   </header>
   <main class="page">
@@ -78,11 +66,6 @@ const links: Record<string, { href: string; text: string }> = {
   .top { border-bottom: 1px solid var(--line); }
   .bar { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 56px; }
   .brand { font-family: var(--mono); letter-spacing: 0.04em; color: var(--text); text-decoration: none; font-weight: 500; }
-  .langs { position: relative; font-size: 14px; }
-  .langs summary { cursor: pointer; color: var(--muted); list-style: none; }
-  .langs ul { position: absolute; right: 0; z-index: 5; margin: 8px 0 0; padding: 8px; list-style: none; background: var(--bg-3); border: 1px solid var(--line-2); border-radius: 10px; min-width: 160px; }
-  .langs li a { display: block; padding: 6px 10px; border-radius: 6px; color: var(--soft); text-decoration: none; }
-  .langs li a[aria-current] { color: var(--cyan); }
   .page { padding-top: 40px; padding-bottom: 40px; }
   h1 { font-size: clamp(30px, 5vw, 44px); line-height: 1.12; margin: 8px 0 14px; }
   h2 { font-size: 24px; margin: 40px 0 12px; }

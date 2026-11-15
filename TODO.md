@@ -104,3 +104,14 @@ Found by the SEO audit of 2026-11-13. [specs/seo.md](specs/seo.md) has the fixes
 
 - [ ] **Property Trends** <https://workbench-soft.com/property-trends/> has no `h1` and 25 words of text. Agent work in the private `property-trends` repo, whose release the Pages build unpacks: add a heading and a paragraph on what the data shows.
 - [ ] **Rich Results Test** agent work: run <https://search.google.com/test/rich-results> on `https://workbench-soft.com/` and `https://workbench-soft.com/skyaltar/astrology/signs/aries/` in Chrome, and fix any error it names.
+
+## UX audit
+
+Found by the UX audit of 2026-11-16 (PR #171), with Playwright at 320, 390 and 1280 px.
+
+- [ ] **Phone menu** below 980 px the header hides Services, Projects, Process, Engineering and Contact, with no menu in their place. A phone reaches them only by scrolling, the hero buttons, Order an app and search. Decide on a menu button, then tell an agent. (decision)
+- [ ] **One contact email** the testers page asks for feedback at `workbench.soft@gmail.com` (`src/testers/apps.ts`), while the home page, Langflip and the privacy pages use `hello@workbench-soft.com`. Pick one, then tell an agent. (decision)
+- [ ] **Light and dark** the studio pages are dark only, while Langflip and the Jekyll pages (Memories and each privacy policy) are light only and ignore the phone's dark mode. Decide whether they follow the system theme. (decision)
+- [ ] **Search hint on phones** the Projects intro says "Press / to search any feature" and the Find a feature chip shows a `/` key, on phones too. Decide on touch wording in 9 languages, then tell an agent. (decision)
+- [ ] **Order an app button** on a phone the floating button covers the right edge of the content under it, such as the feature count of a project row. Decide whether it hides near the order form and the footer, or moves. (decision)
+- [ ] **Privacy pages** each Jekyll privacy policy links only Workbench Soft and Contact at the foot, with no link to the app's own page or store listing. A link there changes the policy pages, so a person decides. (decision)

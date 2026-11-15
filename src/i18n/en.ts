@@ -109,6 +109,7 @@ export const en = {
     empty: 'No match. Try another word.',
     project: 'Project',
     feature: 'Feature',
+    close: 'Close',
   },
   footer: {
     noAds: 'This site shows no ads.',

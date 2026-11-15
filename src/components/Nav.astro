@@ -7,11 +7,14 @@ const lang = langOf(Astro.currentLocale);
 const t = ui(lang).nav;
 const projects = projectsIn(lang);
 const games = projects.find((p) => p.id === "games")!.links;
-// A project's first link is its site when we host the page. The games keep their own menu.
+// A project's first link is its site when we host the page. The games keep their own menu,
+// and a client's site shows once, under Our clients.
 const hosted = (href: string) => /^(\/|https:\/\/)/.test(href) && !/github\.com|marketplace\./.test(href);
-const sites = projects.flatMap((p) =>
-  p.id !== "games" && p.links[0] && hosted(p.links[0].href) ? [{ href: p.links[0].href, label: p.name }] : [],
-);
+const client = new Set(clientSites.map((s) => s.href));
+const sites = projects.flatMap((p) => {
+  const href = p.links[0]?.href;
+  return p.id !== "games" && href && hosted(href) && !client.has(href) ? [{ href, label: p.name }] : [];
+});
 const links = [
   { href: "#services", label: t.services },
   { href: "#projects", label: t.projects },
@@ -128,7 +131,7 @@ const links = [
   .lang summary { gap: 8px; }
   .lang[open] summary { color: var(--text); border-color: var(--cyan); }
   .games { margin-left: -6px; }
-  .games summary { display: flex; align-items: center; gap: 6px; color: var(--muted); font: 500 13px var(--mono); letter-spacing: 0.04em; white-space: nowrap; transition: color 0.2s; }
+  .games summary { display: flex; align-items: center; gap: 6px; padding: 12px 2px; color: var(--muted); font: 500 13px var(--mono); letter-spacing: 0.04em; white-space: nowrap; transition: color 0.2s; }
   .games summary:hover, .games[open] summary { color: var(--text); }
   .games[open] svg { rotate: 180deg; }
   .games ul { left: 0; right: auto; min-width: 220px; }
@@ -154,11 +157,13 @@ const links = [
   .games ul { max-height: calc(100svh - 80px); overflow-y: auto; }
   @media (max-width: 980px) {
     .links { display: none; }
-    .games { margin-left: auto; }
+    .games:first-of-type { margin-left: auto; }
     .games ul { left: auto; right: 0; }
   }
   @media (max-width: 640px) {
     .label, .kbtn[data-palette] kbd { display: none; }
+    /* A list hung from its button ran off the left edge, so on a phone it spans the screen under the header. */
+    .games ul { position: fixed; top: 72px; left: var(--gutter); right: var(--gutter); min-width: 0; }
   }
   /* Phones from 320 px: the mark stands for the name, so the language button stays on screen. */
   @media (max-width: 480px) {

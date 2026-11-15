@@ -111,6 +111,7 @@ const ru: Catalog = {
       empty: 'Совпадений нет. Попробуйте другое слово.',
       project: 'Проект',
       feature: 'Функция',
+      close: 'Закрыть',
     },
     footer: { noAds: 'На этом сайте нет рекламы.', releases: 'Релизы', privacy: 'Приватность Memories' },
     technologies: 'Технологии',

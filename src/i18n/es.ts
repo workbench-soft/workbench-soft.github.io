@@ -111,6 +111,7 @@ const es: Catalog = {
       empty: 'Sin resultados. Prueba con otra palabra.',
       project: 'Proyecto',
       feature: 'Función',
+      close: 'Cerrar',
     },
     footer: { noAds: 'Este sitio no muestra anuncios.', releases: 'Versiones', privacy: 'Privacidad de Memories' },
     technologies: 'Tecnologías',
