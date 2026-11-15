@@ -61,3 +61,19 @@ A client who reads the site sees how the studio builds an app, beside what the a
 
 - **Why** `feature-check --fetch` found Tickalot "Long lists", KeepPad "Fast scroll" and Sky Altar "Long lists", added by the shared `fast-scroll` package after the first merge.
 - **Changes** `src/data/projects.ts`, the 8 catalogs and the architecture files of the 3 projects get the feature and its line.
+
+### 2026-11-15 Design depth for each project
+
+- **Why** the owner wants each project's block to answer the questions a senior engineer asks about a system: load and limits, data, interfaces, failures, security, speed, release and the choices behind them. The site stays about the apps, so no line mentions interviews.
+- **Shape** `Arch` gets `design` with 8 lists of 2 to 4 lines each:
+  - **`scale`** who uses it, how much data and load, the limits that shaped it.
+  - **`data`** what it stores, the shape of the records, where each one lives.
+  - **`interfaces`** the APIs, protocols and messages between the parts.
+  - **`reliability`** failures, offline work, retries, conflicts, consistency.
+  - **`security`** sign in, permissions, secrets, privacy.
+  - **`performance`** caching, batching, background work, the hot paths.
+  - **`operations`** build, release, hosting, updates, monitoring.
+  - **`tradeoffs`** each choice, the option it gave up and the reason.
+- **Facts** each line comes from the repo: its code, `docs/architecture.md`, specs and README. A number stays only when the repo shows it.
+- **Changes** `types.ts`, the test, `Architecture.astro` and the 8 labels in each catalog, then the `design` of each project in 9 languages.
+- **Docs** `docs/architecture.md`, `docs/features.md`.
