@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **UX audit 2026-11-16** on a phone the Games and Sites menus open inside the screen, the header menus, footer links and language picker take a bigger tap, the testers and astrology pages get a globe language button that closes on a tap outside, the search box gets a Close button, and the Sites menu lists Aspiration Style once, in 9 languages.
 - **Langflip** a feature for the welcome on the first start, and the layout feature says the tooltip names the layout too, in 9 languages.
 - **Shuttrix** the Russian pages call the manual dials «шкалы», as the app does, in place of «диски».
 - **How it is built** each project block adds 8 short lists on the system behind it: scale and limits, data, interfaces, reliability, security and privacy, performance, build and release, and the trade-offs, in 9 languages.

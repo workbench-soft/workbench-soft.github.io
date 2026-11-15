@@ -425,9 +425,10 @@ The studio needed one public site for its apps and their installers.
   - **Games and Sites menus** open inside the screen at 320 px. They opened off its left edge and cut the game names.
   - **Header on a phone** Games and Sites sit together, with a tap area of 40 px in place of 17 px.
   - **Sites menu** lists Aspiration Style once, under Our clients.
-  - **Language picker** on the testers and astrology pages shows a globe and an arrow, takes a 40 px tap, and closes on a tap outside or on Escape.
-  - **Footer** the links wrap as whole links, each with a 24 px tap area, and the email stays on one line.
+  - **Language picker** on the testers and astrology pages shows a globe and the language code, as the home header does, takes a 40 px tap, and closes on a tap outside or on Escape. The astrology header fits 320 px.
+  - **Footer** the links wrap as whole links, each with a 24 px tap area, and the email stays on one line, under the order form too.
+  - **Project links** a screen reader skips the ↗ after each store, site and source link.
   - **Search** a Close button replaces the Esc hint, so a phone can close the search box too.
-- **Changes** `src/components/Nav.astro`, `src/components/Palette.astro`, `src/pages/[...lang].astro`, a new `src/components/LangPicker.astro` for `src/astrology/Shell.astro` and `src/testers/TestersPage.astro`, and the `palette.close` key in the 9 catalogs of `src/i18n/`.
+- **Changes** `src/components/Nav.astro`, `src/components/Palette.astro`, `src/components/Contact.astro`, `src/components/ProjectPanel.astro`, `src/pages/[...lang].astro`, a new `src/components/LangPicker.astro` for `src/astrology/Shell.astro` and `src/testers/TestersPage.astro`, and the `palette.close` key in the 9 catalogs of `src/i18n/`.
 - **Left** findings that need a decision sit in the `UX audit` section of `TODO.md`.
 - **Docs** `CHANGELOG.md`.
