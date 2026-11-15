@@ -417,3 +417,17 @@ The studio needed one public site for its apps and their installers.
   - **`mise.toml`** the `deploy` task runs the script.
   - **`.github/workflows/pages.yml`** the `redeploy` job checks out `main` and runs `mise run deploy`. It landed in a second PR, after the `shuttrix-native` PR freed the file.
 - **Docs** the Deploy line of `README.md`, `CHANGELOG.md`.
+
+#### 2026-11-16 UX audit: menus, tap targets and the language picker on phones
+
+- **Why** a walk of the home, testers, astrology, 404, Langflip and privacy pages with Playwright at 320, 390 and 1280 px found menus and controls that fail on a phone.
+- **What the visitor gets**
+  - **Games and Sites menus** open inside the screen at 320 px. They opened off its left edge and cut the game names.
+  - **Header on a phone** Games and Sites sit together, with a tap area of 40 px in place of 17 px.
+  - **Sites menu** lists Aspiration Style once, under Our clients.
+  - **Language picker** on the testers and astrology pages shows a globe and an arrow, takes a 40 px tap, and closes on a tap outside or on Escape.
+  - **Footer** the links wrap as whole links, each with a 24 px tap area, and the email stays on one line.
+  - **Search** a Close button replaces the Esc hint, so a phone can close the search box too.
+- **Changes** `src/components/Nav.astro`, `src/components/Palette.astro`, `src/pages/[...lang].astro`, a new `src/components/LangPicker.astro` for `src/astrology/Shell.astro` and `src/testers/TestersPage.astro`, and the `palette.close` key in the 9 catalogs of `src/i18n/`.
+- **Left** findings that need a decision sit in the `UX audit` section of `TODO.md`.
+- **Docs** `CHANGELOG.md`.
