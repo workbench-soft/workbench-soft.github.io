@@ -41,8 +41,8 @@ let n = 0;
     {
       (p.links.length > 0 || p.source) && (
         <div class="links">
-          {p.links.map((l) => <a href={l.href}>{l.label} ↗</a>)}
-          {p.source && <a href={p.source}>{t.source} ↗</a>}
+          {p.links.map((l) => <a href={l.href}>{l.label} <span aria-hidden="true">↗</span></a>)}
+          {p.source && <a href={p.source}>{t.source} <span aria-hidden="true">↗</span></a>}
         </div>
       )
     }
