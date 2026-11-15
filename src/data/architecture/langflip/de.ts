@@ -120,6 +120,8 @@ const arch: Arch = {
       'Die Windows-Schicht schreibt jede Entscheidung in eine Logdatei: Tastenzahl, App und Grund. Buchstaben bleiben draußen, und bei 1 MB beginnt eine neue Datei.',
     'Update from GitHub':
       'Ein Thread fragt einmal am Tag über ureq die Release-Liste von GitHub ab. Nach einem Klick prüft er Größe und SHA-256, dann tauscht self-replace die laufende exe.',
+    'Welcome on the first start':
+      'Beim ersten Start unter Windows zeigt ein Aufgabendialog die Tasten, in einem eigenen Thread, damit die Hooks ihre Nachrichten behalten. Der Tooltip nennt das Layout für Screenreader.',
   },
 };
 

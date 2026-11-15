@@ -120,6 +120,8 @@ const arch: Arch = {
       'La capa de Windows escribe cada decisión en un registro con el número de teclas, la app y el motivo. Las letras se quedan fuera, y a 1 MB el archivo empieza de nuevo.',
     'Update from GitHub':
       'Un hilo consulta la lista de versiones de GitHub una vez al día con ureq. Tras un clic comprueba el tamaño y el SHA-256, y self-replace cambia el exe en marcha.',
+    'Welcome on the first start':
+      'En el primer inicio en Windows, un diálogo de tareas muestra las teclas en su propio hilo, para que los hooks no pierdan sus mensajes. La descripción emergente nombra la distribución para los lectores de pantalla.',
   },
 };
 

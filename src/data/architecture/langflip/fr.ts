@@ -123,6 +123,8 @@ const arch: Arch = {
       'La couche Windows écrit chaque décision dans un journal avec le nombre de touches, l’app et la raison. Les lettres restent hors du journal, et le fichier tourne à 1 Mo.',
     'Update from GitHub':
       'Un thread interroge la liste des versions GitHub une fois par jour avec ureq. Après un clic il vérifie la taille et le SHA-256, puis self-replace remplace l’exe en cours.',
+    'Welcome on the first start':
+      'Au premier lancement sous Windows, une boîte de dialogue de tâche montre les touches dans son propre thread, pour que les hooks gardent leurs messages. L’info-bulle donne la disposition aux lecteurs d’écran.',
   },
 };
 

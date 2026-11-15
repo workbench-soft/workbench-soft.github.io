@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Langflip** a feature for the welcome on the first start, and the layout feature says the tooltip names the layout too, in 9 languages.
 - **Shuttrix** the Russian pages call the manual dials «шкалы», as the app does, in place of «диски».
 - **How it is built** each project block adds 8 short lists on the system behind it: scale and limits, data, interfaces, reliability, security and privacy, performance, build and release, and the trade-offs, in 9 languages.
 - **Sky Altar** a tap on a constellation shows the figure the theme draws there, and a button reads its myth aloud, in every language.

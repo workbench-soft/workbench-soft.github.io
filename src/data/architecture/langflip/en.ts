@@ -120,6 +120,8 @@ const arch: Arch = {
       'The Windows layer writes each decision to a log file with the key count, the app and the reason. Letters stay out, and the file rolls over at 1 MB.',
     'Update from GitHub':
       'A thread asks the GitHub releases list once a day through ureq. After a click it checks the size and the SHA-256, and self-replace swaps the running exe.',
+    'Welcome on the first start':
+      'On the first start on Windows a task dialog names the keys, on a thread of its own so the hooks keep their messages. The tooltip names the layout for screen readers.',
   },
 };
 

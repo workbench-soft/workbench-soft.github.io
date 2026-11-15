@@ -99,6 +99,8 @@ const arch: Arch = {
     'Decision log': 'Windows 层把每个判断写进日志：按键数、应用和原因。日志里没有所打的字母，文件到 1 MB 时换新。',
     'Update from GitHub':
       '一个线程每天用 ureq 查询一次 GitHub 的发布列表。点击后它核对大小和 SHA-256，再由 self-replace 换掉正在运行的 exe。',
+    'Welcome on the first start':
+      'Windows 上首次启动时，任务对话框在单独的线程里列出快捷键，让钩子不丢消息。图标提示写出当前布局，供屏幕阅读器朗读。',
   },
 };
 
