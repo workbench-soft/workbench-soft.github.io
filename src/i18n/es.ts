@@ -1518,7 +1518,7 @@ const es: Catalog = {
             ['Ir a una constelación', 'Busca una constelación por su nombre y el cielo gira hacia la que tocas.'],
             [
               'Mitos de las constelaciones',
-              'Cada constelación tiene una ficha con el mito de la cultura del tema, qué observar y sus estrellas más brillantes con su distancia. La galería gira el cielo hacia ella.',
+              'Cada constelación tiene una ficha con el mito de la cultura del tema, qué observar y sus estrellas más brillantes con su distancia. La galería gira el cielo hacia ella. Al tocar una constelación aparece la figura del tema, y un botón lee su mito en voz alta.',
             ],
             [
               'Listas largas',

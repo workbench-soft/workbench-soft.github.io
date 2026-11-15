@@ -880,7 +880,7 @@ export const projects: Project[] = [
           },
           {
             name: 'Constellation lore',
-            text: 'Each constellation has a card with its myth from the theme’s culture, what to look at, and its brightest stars with their distance. The gallery flies the sky to it.',
+            text: 'Each constellation has a card with its myth from the theme’s culture, what to look at, and its brightest stars with their distance. The gallery flies the sky to it. A tap on a constellation shows the figure the theme draws there, and a button reads its myth aloud.',
           },
           {
             name: 'Long lists',

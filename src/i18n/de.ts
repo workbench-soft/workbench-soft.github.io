@@ -1545,7 +1545,7 @@ const de: Catalog = {
             ['Sternbild-Navigation', 'Ein Sternbild nach Namen suchen, und der Himmel dreht sich zu dem angetippten.'],
             [
               'Sternbildsagen',
-              'Jedes Sternbild hat eine Karte mit der Sage aus der Kultur des Themas, Sehenswertem und den hellsten Sternen mit ihrer Entfernung. Aus der Galerie dreht sich der Himmel dorthin.',
+              'Jedes Sternbild hat eine Karte mit der Sage aus der Kultur des Themas, Sehenswertem und den hellsten Sternen mit ihrer Entfernung. Aus der Galerie dreht sich der Himmel dorthin. Ein Tippen auf ein Sternbild zeigt die Figur des Themas, und ein Knopf liest die Sage vor.',
             ],
             [
               'Lange Listen',

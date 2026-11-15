@@ -1579,7 +1579,7 @@ const fr: Catalog = {
             ],
             [
               'Mythes des constellations',
-              'Chaque constellation a une fiche : le mythe de la culture du thème, ce qu’il faut observer et ses étoiles les plus brillantes avec leur distance. La galerie tourne le ciel vers elle.',
+              'Chaque constellation a une fiche : le mythe de la culture du thème, ce qu’il faut observer et ses étoiles les plus brillantes avec leur distance. La galerie tourne le ciel vers elle. Touchez une constellation pour voir la figure du thème, et un bouton lit son mythe à voix haute.',
             ],
             [
               'Listes longues',
