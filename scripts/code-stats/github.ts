@@ -9,7 +9,7 @@ const skip = new Set(['aspirationstyle-site', 'farnear-site', 'media-organizer',
 // A secret set from a Windows PowerShell pipe starts with a BOM, which breaks the header.
 export const token = () =>
   (process.env.CODE_STATS_TOKEN || process.env.GH_TOKEN || execFileSync('gh', ['auth', 'token']).toString())
-    .replace(/^﻿/, '')
+    .replace(/^\uFEFF/, '')
     .trim();
 
 async function query<T>(text: string, variables: Record<string, unknown>): Promise<T> {
