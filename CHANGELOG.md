@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Shuttrix** the Russian pages call the manual dials «шкалы», as the app does, in place of «диски».
 - **How it is built** each project block adds 8 short lists on the system behind it: scale and limits, data, interfaces, reliability, security and privacy, performance, build and release, and the trade-offs, in 9 languages.
 - **Sky Altar** a tap on a constellation shows the figure the theme draws there, and a button reads its myth aloud, in every language.
 - **Lumiere Player** Voice commands say Hey Lumi plays the last, the first or the 2016 album of a band, in every language.
