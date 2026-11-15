@@ -104,7 +104,3 @@ Found by the SEO audit of 2026-11-13. [specs/seo.md](specs/seo.md) has the fixes
 
 - [ ] **Property Trends** <https://workbench-soft.com/property-trends/> has no `h1` and 25 words of text. Agent work in the private `property-trends` repo, whose release the Pages build unpacks: add a heading and a paragraph on what the data shows.
 - [ ] **Rich Results Test** agent work: run <https://search.google.com/test/rich-results> on `https://workbench-soft.com/` and `https://workbench-soft.com/skyaltar/astrology/signs/aries/` in Chrome, and fix any error it names.
-
-## engineering: live code numbers
-
-- [ ] Add the `CODE_STATS_TOKEN` secret, so the Engineering numbers count the private repos too. Until then the site hides the numbers, the hero lines of code too. From any device: make a fine-grained token on <https://github.com/settings/personal-access-tokens/new> (owner workbench-soft, All repositories, Contents read-only, 1 year), save it in Bitwarden Secrets Manager, project workbench-soft, as `CODE_STATS_TOKEN`, then tell an agent "CODE_STATS_TOKEN is in the vault". The agent copies it to GitHub with `rotate-secrets.ps1 -FromVault`. (login: GitHub asks for a passkey)
