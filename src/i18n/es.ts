@@ -1609,7 +1609,7 @@ const es: Catalog = {
             ],
             [
               'Audiolibros',
-              'Carpetas de libros por autor, cada uno con su portada y su progreso. Un libro sigue donde se quedó, un poco antes tras una pausa.',
+              'Carpetas de libros por autor, cada uno con su portada y su progreso. Un libro sigue donde se quedó, un poco antes tras una pausa. Tras un salto por error, el capítulo sigue en el mismo punto.',
             ],
             [
               'Videoteca',

@@ -941,7 +941,7 @@ export const projects: Project[] = [
           },
           {
             name: 'Audiobooks',
-            text: 'Book folders by author, each book with its cover and progress. A book starts where it stopped, a little earlier after a pause.',
+            text: 'Book folders by author, each book with its cover and progress. A book starts where it stopped, a little earlier after a pause. A wrong skip back to a chapter goes on where it left off.',
           },
           {
             name: 'Video library',

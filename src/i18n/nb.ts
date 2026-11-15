@@ -1493,7 +1493,7 @@ const nb: Catalog = {
             ],
             [
               'Lydbøker',
-              'Bokmapper etter forfatter, hver bok med omslag og fremdrift. En bok fortsetter der den stoppet, litt tidligere etter en pause.',
+              'Bokmapper etter forfatter, hver bok med omslag og fremdrift. En bok fortsetter der den stoppet, litt tidligere etter en pause. Etter et feil hopp fortsetter kapittelet på samme sted.',
             ],
             [
               'Videobibliotek',

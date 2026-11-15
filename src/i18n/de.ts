@@ -1624,7 +1624,7 @@ const de: Catalog = {
             ],
             [
               'Hörbücher',
-              'Buchordner nach Autor, jedes Buch mit Cover und Fortschritt. Ein Buch geht dort weiter, wo es stoppte, nach einer Pause etwas früher.',
+              'Buchordner nach Autor, jedes Buch mit Cover und Fortschritt. Ein Buch geht dort weiter, wo es stoppte, nach einer Pause etwas früher. Nach einem falschen Sprung geht ein Kapitel an derselben Stelle weiter.',
             ],
             [
               'Videothek',

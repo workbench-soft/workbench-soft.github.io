@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Lumiere Player** the Audiobooks feature says a wrong skip back to a chapter goes on where it left off, in every language.
 - **Property Trends** a new web release redeploys the site through `mise run deploy`, the same task the PC runs.
 - **Shuttrix** a workflow builds the small ONNX Runtime and OpenCV that make the Shuttrix APK smaller.
 - **Deploy** `mise run deploy` puts the site live from the PC through the Pages workflow on `main`.

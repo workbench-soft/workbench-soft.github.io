@@ -1664,7 +1664,7 @@ const fr: Catalog = {
             ],
             [
               'Livres audio',
-              "Les dossiers de livres par auteur, chacun avec sa couverture et sa progression. Un livre reprend là où il s'est arrêté, un peu avant après une pause.",
+              "Les dossiers de livres par auteur, chacun avec sa couverture et sa progression. Un livre reprend là où il s'est arrêté, un peu avant après une pause. Après un saut par erreur, le chapitre reprend au même endroit.",
             ],
             [
               'Vidéothèque',
