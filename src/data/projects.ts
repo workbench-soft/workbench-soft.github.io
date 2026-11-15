@@ -957,7 +957,7 @@ export const projects: Project[] = [
           },
           {
             name: 'Voice commands',
-            text: 'Say Hey Lumi, then play and a song, or volume 40, in English or Russian, with the phone locked. A pulse shows it listens. Turn on Bluetooth connects the speaker or headphones and names them.',
+            text: 'Say Hey Lumi, then play and a song, or volume 40, in English or Russian, with the phone locked. A pulse shows it listens. Turn on Bluetooth connects the speaker or headphones and names them. Play the last album of In Flames, or its album from 2016, plays that one album.',
           },
           {
             name: 'Online music',

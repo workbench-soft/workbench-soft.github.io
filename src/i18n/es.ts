@@ -1626,7 +1626,7 @@ const es: Catalog = {
             ],
             [
               'Comandos de voz',
-              'Di Hey Lumi, luego play y una canción, o volume 40, en inglés o ruso, con el teléfono bloqueado. Un pulso muestra que escucha. Turn on Bluetooth conecta el altavoz o los auriculares y dice su nombre.',
+              'Di Hey Lumi, luego play y una canción, o volume 40, en inglés o ruso, con el teléfono bloqueado. Un pulso muestra que escucha. Turn on Bluetooth conecta el altavoz o los auriculares y dice su nombre. Play the last album of In Flames pone ese álbum, y también el álbum de un año como 2016.',
             ],
             [
               'Música en línea',
