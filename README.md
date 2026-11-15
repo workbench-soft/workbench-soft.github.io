@@ -3,6 +3,7 @@
 Public files for the Workbench Soft apps. The code sits in private repos in this org.
 
 - **Releases** each app's CI publishes its APKs and installers on the [releases page](https://github.com/workbench-soft/workbench-soft.github.io/releases). The tag starts with the repo name, such as `tickalot-v2025.10.28.3`. Each app keeps its last 3 releases.
+- **Shuttrix native libraries** [shuttrix-native.yml](.github/workflows/shuttrix-native.yml) builds a small ONNX Runtime and OpenCV for the Shuttrix APK from [native/shuttrix/](native/shuttrix/), and publishes them as a `shuttrix-native-<n>` prerelease. A person starts it by hand. [specs/shuttrix-native.md](specs/shuttrix-native.md) has the plan.
 - **Updates** the apps installed from an APK read the release list through the GitHub API and pick the newest tag with their own name.
 - **Site** <https://workbench-soft.com>, built by [pages.yml](.github/workflows/pages.yml) on each push to main. `www` and the old <https://workbench-soft.github.io> send each path there. [docs/architecture.md](docs/architecture.md#domain) has the DNS setup.
 - **Memories site** sits in [memories-mobile/](memories-mobile/), a Jekyll site with its own `_config.yml`.
