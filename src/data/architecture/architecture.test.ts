@@ -3,6 +3,7 @@ import { locales } from '../../i18n/locales';
 import { shape, strings } from '../../i18n/shape';
 import { projects } from '../projects';
 import { archs } from './index';
+import { designKeys } from './types';
 
 describe.each(projects.map((p) => [p.id, p] as const))('%s architecture', (id, project) => {
   const en = archs[id]?.en;
@@ -18,6 +19,11 @@ describe.each(projects.map((p) => [p.id, p] as const))('%s architecture', (id, p
 
   it.each(locales.filter((l) => l !== 'en'))('%s has the keys and lists of English', (lang) => {
     expect(shape(archs[id]?.[lang])).toEqual(shape(en));
+  });
+
+  it.each(designKeys)('has 2 to 4 design lines on %s', (key) => {
+    expect(en?.design[key].length).toBeGreaterThanOrEqual(2);
+    expect(en?.design[key].length).toBeLessThanOrEqual(4);
   });
 
   it('links to projects that exist', () => {

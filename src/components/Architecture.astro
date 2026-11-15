@@ -1,5 +1,5 @@
 ---
-import type { Arch } from "../data/architecture/types";
+import { designKeys, type Arch } from "../data/architecture/types";
 import { projects } from "../data/projects";
 import type { Ui } from "../i18n/types";
 
@@ -35,6 +35,16 @@ const names = new Map(projects.map((p) => [p.id, p.name]));
       </>
     )
   }
+  <div class="design">
+    {
+      designKeys.map((k) => (
+        <section>
+          <h4>{t.design[k]}</h4>
+          <ul>{arch.design[k].map((line) => <li>{line}</li>)}</ul>
+        </section>
+      ))
+    }
+  </div>
 </details>
 
 <style>
@@ -56,4 +66,8 @@ const names = new Map(projects.map((p) => [p.id, p.name]));
   .flow li:not(:last-child)::after { content: ""; position: absolute; left: 20px; bottom: -15px; width: 1px; height: 14px; background: var(--acc); }
   .conn { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; font-size: 14px; line-height: 1.5; color: var(--soft); }
   .conn a, .conn b { font-weight: 600; color: var(--acc); }
+  .design { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 4px 28px; margin-top: 6px; }
+  .design ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; }
+  .design li { position: relative; padding-left: 14px; font-size: 13.5px; line-height: 1.5; color: var(--soft); }
+  .design li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 5px; height: 5px; border-radius: 2px; background: var(--acc); }
 </style>

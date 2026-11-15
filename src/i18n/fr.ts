@@ -66,6 +66,16 @@ const fr: Catalog = {
         parts: 'Briques',
         flow: 'Flux de données',
         links: 'Relié à',
+        design: {
+          scale: 'Échelle et limites',
+          data: 'Données',
+          interfaces: 'Interfaces',
+          reliability: 'Fiabilité',
+          security: 'Sécurité et vie privée',
+          performance: 'Performances',
+          operations: 'Build et publication',
+          tradeoffs: 'Compromis',
+        },
       },
       kinds: {
         app: 'Apps pour tous',

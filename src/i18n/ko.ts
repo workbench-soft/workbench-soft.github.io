@@ -65,6 +65,16 @@ const ko: Catalog = {
         parts: '구성 요소',
         flow: '데이터 흐름',
         links: '연결',
+        design: {
+          scale: '규모와 한계',
+          data: '데이터',
+          interfaces: '인터페이스',
+          reliability: '안정성',
+          security: '보안과 개인정보',
+          performance: '성능',
+          operations: '빌드와 출시',
+          tradeoffs: '트레이드오프',
+        },
       },
       kinds: {
         app: '사람을 위한 앱',

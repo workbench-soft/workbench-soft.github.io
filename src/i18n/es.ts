@@ -65,6 +65,16 @@ const es: Catalog = {
         parts: 'Piezas',
         flow: 'Flujo de datos',
         links: 'Conectado con',
+        design: {
+          scale: 'Escala y límites',
+          data: 'Datos',
+          interfaces: 'Interfaces',
+          reliability: 'Fiabilidad',
+          security: 'Seguridad y privacidad',
+          performance: 'Rendimiento',
+          operations: 'Compilación y publicación',
+          tradeoffs: 'Compromisos',
+        },
       },
       kinds: {
         app: 'Apps para personas',
