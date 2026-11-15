@@ -33,7 +33,7 @@ flowchart LR
 ## Home page
 
 - **Data** `src/data/projects.ts` holds each project with its features in groups. `src/data/studio.ts` holds the services, the process steps, the stack and the email. Both hold the English text.
-- **Architecture** `src/data/architecture/<id>/<lang>.ts` holds how each project is built, a file per language: the parts, the data flow, the links and a line per feature keyed by its English name. `index.ts` loads them with `import.meta.glob`, `Architecture.astro` draws the block, and `architecture.test.ts` checks each file against `projects.ts` and English.
+- **Architecture** `src/data/architecture/<id>/<lang>.ts` holds how each project is built, a file per language: the parts, the data flow, the links, the `design` lists (scale, data, interfaces, reliability, security, performance, operations, trade-offs) and a line per feature keyed by its English name. `index.ts` loads them with `import.meta.glob`, `Architecture.astro` draws the block, and `architecture.test.ts` checks each file against `projects.ts` and English.
 - **Languages** Astro's i18n routing builds `src/pages/[...lang].astro` once per language: English at `/`, the others at `/<code>/`. Each component reads `Astro.currentLocale` and takes its text from `src/i18n/`.
   - **Catalogs** `en.ts` holds the English UI text. `ru.ts`, `de.ts` and the others hold the UI text plus the services, steps and projects, matched by project id and feature order.
   - **Helpers** `src/i18n/index.ts` merges a catalog into the data: `projectsIn`, `servicesIn`, `stepsIn` and `ui`.
