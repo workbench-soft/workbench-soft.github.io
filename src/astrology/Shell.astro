@@ -1,7 +1,8 @@
 ---
 // The frame of each astrology page: the header with the languages, the app card and the footer.
 import Base from "../layouts/Base.astro";
-import { names, pathOf, tags, type Lang } from "../i18n/locales";
+import LangPicker from "../components/LangPicker.astro";
+import { pathOf, type Lang } from "../i18n/locales";
 import { apkUrl, appUrl, href, root, text } from "./paths";
 import { ui } from "../i18n";
 
@@ -32,20 +33,7 @@ const t = text(lang);
         <a href={href(lang)}>{t.nav.index}</a>
         <a href={href(lang, "today")}>{t.nav.today}</a>
       </nav>
-      <details class="langs">
-        <summary aria-label={`${ui(lang).nav.language}: ${names[lang]}`}>{names[lang]}</summary>
-        <ul>
-          {
-            langs.map((l) => (
-              <li>
-                <a href={href(l, id)} hreflang={tags[l]} lang={tags[l]} aria-current={l === lang ? "page" : undefined}>
-                  {names[l]}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </details>
+      <LangPicker lang={lang} items={langs.map((l) => ({ lang: l, href: href(l, id) }))} label={ui(lang).nav.language} />
     </div>
   </header>
   <main id="main" class="wrap astro-page">
@@ -76,11 +64,8 @@ const t = text(lang);
   .bar a:hover { color: var(--text); }
   .brand { font-family: var(--mono); letter-spacing: 0.04em; color: var(--text) !important; }
   .bar nav { display: flex; gap: 16px; margin-right: auto; }
-  .langs { position: relative; font-size: 14px; }
-  .langs summary { cursor: pointer; color: var(--muted); list-style: none; }
-  .langs ul { position: absolute; right: 0; margin: 8px 0 0; padding: 8px; list-style: none; background: var(--bg-3); border: 1px solid var(--line-2); border-radius: 10px; min-width: 160px; }
-  .langs li a { display: block; padding: 6px 10px; border-radius: 6px; }
-  .langs li a[aria-current] { color: var(--cyan); }
+  /* At 320 px the brand, both links and the language button fit on one line. */
+  @media (max-width: 480px) { .bar, .bar nav { gap: 10px; } }
   .astro-page { padding-top: 40px; padding-bottom: 40px; }
   .astro-page h1 { font-size: clamp(30px, 5vw, 44px); line-height: 1.12; margin: 8px 0 14px; }
   .astro-page h2 { font-size: 24px; margin: 40px 0 12px; }
@@ -97,5 +82,5 @@ const t = text(lang);
   .btn.ghost { background: transparent; color: var(--cyan) !important; border: 1px solid var(--cyan); }
   .note { font-size: 14px !important; color: var(--muted) !important; border-left: 3px solid var(--violet); padding-left: 12px; }
   .foot { display: flex; justify-content: space-between; gap: 16px; padding-top: 24px; padding-bottom: 40px; border-top: 1px solid var(--line); color: var(--dim); font: 500 12px var(--mono); }
-  .foot a { color: var(--muted); }
+  .foot a { color: var(--muted); padding: 4px 0; }
 </style>

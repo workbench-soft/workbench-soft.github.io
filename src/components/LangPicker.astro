@@ -1,0 +1,63 @@
+---
+// The language menu of the testers and astrology pages: a globe, the language code and an arrow, as in the home page header.
+import { names, tags, type Lang } from "../i18n/locales";
+
+interface Props {
+  lang: Lang;
+  /** The languages this page has, each with the path of its copy of the page. */
+  items: { lang: Lang; href: string }[];
+  /** "Language", in the page's language. */
+  label: string;
+}
+
+const { lang, items, label } = Astro.props;
+---
+
+<details class="langs">
+  <summary aria-label={`${label}: ${names[lang]}`} title={label}>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg>
+    {lang.toUpperCase()}
+    <svg class="arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+  </summary>
+  <ul>
+    {
+      items.map((i) => (
+        <li>
+          <a href={i.href} hreflang={tags[i.lang]} lang={tags[i.lang]} aria-current={i.lang === lang ? "page" : undefined}>
+            {names[i.lang]}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</details>
+
+<script>
+  // The menu closes on a click outside it, on a pick, or on Escape.
+  for (const menu of document.querySelectorAll<HTMLDetailsElement>("details.langs")) {
+    document.addEventListener("click", (e) => {
+      if (!menu.contains(e.target as Node) || (e.target as Element).closest("a")) menu.open = false;
+    });
+    menu.addEventListener("keydown", (e) => {
+      if (e.key !== "Escape" || !menu.open) return;
+      menu.open = false;
+      menu.querySelector("summary")!.focus();
+    });
+  }
+</script>
+
+<style>
+  .langs { position: relative; font-size: 14px; }
+  summary { display: flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 10px; border: 1px solid var(--line-2); border-radius: 10px; cursor: pointer; color: var(--muted); list-style: none; }
+  summary::-webkit-details-marker { display: none; }
+  summary:hover, .langs[open] summary { color: var(--text); }
+  .langs[open] .arrow { rotate: 180deg; }
+  @media (max-width: 400px) {
+    summary { padding: 0 8px; }
+    .arrow { display: none; }
+  }
+  ul { position: absolute; right: 0; z-index: 5; margin: 8px 0 0; padding: 8px; list-style: none; background: var(--bg-3); border: 1px solid var(--line-2); border-radius: 10px; min-width: 160px; }
+  .langs a { display: block; padding: 8px 10px; border-radius: 6px; color: var(--soft); text-decoration: none; }
+  .langs a:hover { color: var(--text); background: rgb(255 255 255 / 0.05); }
+  .langs a[aria-current] { color: var(--cyan); }
+</style>
