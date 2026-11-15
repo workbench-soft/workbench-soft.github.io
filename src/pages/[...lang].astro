@@ -36,11 +36,11 @@ const t = ui(langOf(Astro.currentLocale));
   <footer>
     <div class="wrap">
       <span>© {new Date().getFullYear()} Workbench Soft. {t.footer.noAds}</span>
-      <span>
-        <a href="https://github.com/workbench-soft/workbench-soft.github.io/releases">{t.footer.releases}</a> ·
-        <a href="/memories-mobile/privacy-policy.html">{t.footer.privacy}</a> ·
-        <a href={`mailto:${email}`}>{email}</a>
-      </span>
+      <ul class="foot-links">
+        <li><a href="https://github.com/workbench-soft/workbench-soft.github.io/releases">{t.footer.releases}</a></li>
+        <li><a href="/memories-mobile/privacy-policy.html">{t.footer.privacy}</a></li>
+        <li><a href={`mailto:${email}`}>{email}</a></li>
+      </ul>
     </div>
   </footer>
   <Palette />
@@ -76,6 +76,9 @@ const t = ui(langOf(Astro.currentLocale));
 <style>
   footer { padding: 56px 0 40px; color: var(--dim); font: 500 12px var(--mono); letter-spacing: 0.04em; }
   footer .wrap { display: flex; flex-wrap: wrap; gap: 16px 28px; justify-content: space-between; border-top: 1px solid var(--line); padding-top: 28px; }
+  /* Each link wraps whole, with a 24 px tap area, so the email doesn't break at its hyphen. */
+  .foot-links { display: flex; flex-wrap: wrap; gap: 4px 20px; margin: 0; padding: 0; list-style: none; }
+  .foot-links a { display: inline-block; padding: 4px 0; white-space: nowrap; }
   footer a { color: var(--muted); text-decoration: none; }
   footer a:hover { color: var(--text); }
 </style>
