@@ -36,6 +36,49 @@ const arch: Arch = {
     { to: 'GitHub', text: 'The APK and its updates come from GitHub releases.' },
     { to: 'Google Play', text: 'The Play build, its updates and the Pro and Remove ads purchases.' },
   ],
+  design: {
+    scale: [
+      'One APK for Android phones and Google TV, one person per install. The libraries are indexed on the device.',
+      'The video scan reads names only, with no tag reads, so a big share indexes without opening each file.',
+      'Two ABIs ship, armeabi-v7a and arm64-v8a, to keep the libVLC APK small.',
+    ],
+    data: [
+      'SQLite on the device: positions.db, library.db, books.db, book-places.db and videos.db.',
+      'positions.db keys a row by the URI without the NAS login, and a USB file also by name plus size.',
+      'Android backup keeps positions and book places, and leaves out nas.xml and the databases that hold a NAS login.',
+    ],
+    interfaces: [
+      'libVLC reads file://, content:// and smb:// sources. A Media3 MediaSessionService gives the notification, the lock screen and the Bluetooth buttons.',
+      'Voice uses the on-device SpeechRecognizer, and sherpa-onnx spots the Hey Lumi wake phrase. Guitar Upscale opens through an Android VIEW link.',
+      'The online module calls MusicBrainz and Wikidata, and YouTube through yt-dlp, in the GitHub APK only.',
+    ],
+    reliability: [
+      'The player saves its position every 5 seconds, on pause, on stop and on exit, so a crash loses seconds.',
+      'ScanWorker runs on WorkManager for a new folder, at app start and daily on Wi-Fi, and lookups run slowly on one worker thread.',
+      'A silent Bluetooth device sends the sound back to the speaker.',
+    ],
+    security: [
+      'No account and no server of its own. Names and tags stay on the device.',
+      'The NAS list with its passwords sits in nas.xml, which Android backup leaves out.',
+      'SponsorBlock gets only a hash prefix of the YouTube id. The wake microphone runs as a foreground service.',
+    ],
+    performance: [
+      'libVLC plays each file directly, and a Media3 player wraps it for audio, so one engine serves video and music.',
+      'LoudnessGate feeds the keyword model only loud frames and the half second before them, so a quiet room skips it.',
+      'Covers decode at their size with a cache, and the word index lists each word once with its books.',
+    ],
+    operations: [
+      'A push to main starts Checks and Release side by side. Release signs the APK and publishes it once Checks pass.',
+      'Each build runner keeps its Gradle state, so Gradle rebuilds only what changed. The release list keeps the newest 3.',
+      'The APK updates from GitHub Releases at launch. The Play bundle leaves out the updater and the online module.',
+    ],
+    tradeoffs: [
+      'Native Kotlin with plain Views over Expo, because the player is a libVLC view driven by remote keys and focus.',
+      'libVLC unmodified over Media3 ExoPlayer, for MKV tracks, SMB browsing and Windows-1251 subtitles, at the cost of an LGPL notice and a large APK.',
+      'SMB through libVLC over a separate library, so no extra dependency, but a NAS listing gives no file size.',
+      'One Pro purchase over a subscription per app, so one check, Entitled.pro(), gates every screen.',
+    ],
+  },
   features: {
     Sources:
       'USB folders open through the Android file system, and libVLC browses the SMB shares. The saved NAS list stays on the device, out of Android backup.',

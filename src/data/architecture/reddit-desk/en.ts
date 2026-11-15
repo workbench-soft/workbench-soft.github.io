@@ -29,6 +29,48 @@ const arch: Arch = {
       text: 'The installer and the signed update file sit in a release of the public site repo.',
     },
   ],
+  design: {
+    scale: [
+      'One person on one Windows PC, with caps that keep it small: 6 comment drafts, 3 post drafts and 3 posted comments an hour.',
+      'A Find takes 1 to 5 minutes, because Claude Code reads the threads itself.',
+    ],
+    data: [
+      'Plain JSON files in the app data folder hold the settings, the queue, the post cards and both histories.',
+      'history.json keeps posted and skipped threads with the date, and the next Find skips them. opens.json holds the time of each posted comment in the last day.',
+    ],
+    interfaces: [
+      'The core runs claude -p with stream-json and turns each output line into a find-log event for the window.',
+      'Claude reaches Reddit through one MCP server pinned to a commit, passed with --strict-mcp-config.',
+      'The window calls the core through Tauri invoke, or through HTTP and server-sent events when Archon frames it.',
+      'Post it for me drives Chrome over the DevTools protocol with chromiumoxide.',
+    ],
+    reliability: [
+      'A Find can be cancelled, and the core parses found.json after the run and keeps 6 cards.',
+      "Post it for me counts a comment as posted only after the page shows a comment by the account with the draft's text.",
+      'One app runs at a time. A second start shows the open window, and a background run quits 2 minutes after the frame closes.',
+    ],
+    security: [
+      "The Reddit login stays in the person's Chrome profile or the app's own Chrome folder. The app stores no password.",
+      "The local server answers only a loopback Host, and a POST needs a JSON content type, so another site can't call it.",
+      'A Claude run may use read tools, the Reddit server and a write to its own output file. The updater checks a signature before it installs.',
+    ],
+    performance: [
+      'Claude and Chrome run as child processes with no console window, and the window gets streamed lines instead of waiting for the end.',
+      'The release build skips LTO and takes 16 codegen units, which cut the compile from 18 minutes to about 2.',
+      "The runner keeps cargo's target folder between builds, so only the app crate compiles again.",
+    ],
+    operations: [
+      'Checks and Release start together on each push to main, and a release gate cancels the build when Checks fail.',
+      'Publish tags the commit with the date and uploads the NSIS installer. A signed latest.json drives the updater.',
+      'The Tauri updater checks at start and every 24 hours, then installs the new build quietly.',
+    ],
+    tradeoffs: [
+      'Claude Code with a skill over the Reddit API called from Rust, so the thread rules live in one place. A Find runs slower.',
+      'Tauri 2 over Electron, which ships a whole Chromium in each install. The cost is 2 languages to check.',
+      "The app's own Chrome with a debug port over the person's Chrome, since Chrome 136 refuses a debug port on the default profile. It needs one more Reddit login.",
+      'The old Reddit form over the new editor, which hides its inputs in shadow roots.',
+    ],
+  },
   features: {
     'Repo picker':
       'The Rust core lists each git folder under the root folder from the settings. The pick saves to a JSON file in the app data folder.',

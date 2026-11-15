@@ -21,6 +21,48 @@ const arch: Arch = {
     { to: 'Google Play', text: 'The App access notes give the reviewer the address and the login.' },
     { to: 'Cloudflare', text: 'The free Workers plan runs it, and CI deploys it once the checks pass.' },
   ],
+  design: {
+    scale: [
+      'One shared demo library for Google Play reviewers: 42 photos, 2 videos and one login.',
+      'One Durable Object takes every request, so all reviewers share one copy on the free Workers plan.',
+    ],
+    data: [
+      'Files sit in 1 MB chunks in the SQLite storage of the Durable Object, below the 2 MB row cap.',
+      "Samples under base/ stay read only. A client's uploads and folders go to Uploads/, with markers for deletes and moves.",
+      'A JSON file holds the EXIF date of each sample, which PROPFIND reports as the last modified time.',
+    ],
+    interfaces: [
+      'WebDAV only as far as the app needs: OPTIONS, PROPFIND at Depth 0 or 1, ranged GET and HEAD, PUT, MKCOL, MOVE and DELETE.',
+      'LOCK answers 405 and PROPFIND at Depth infinity answers 403.',
+      'The Worker forwards each request to the Durable Object, which offers head, ranged get, put, delete and list calls.',
+    ],
+    reliability: [
+      'A daily cron at 03:00 UTC deletes Uploads/, so the demo returns to the samples.',
+      'On each start the Durable Object brings base/ in line with the sample list, so a half finished seed heals.',
+      'A PUT stops reading past 50 MB, and a ranged GET loads only its chunks, to stay inside 128 MB of memory.',
+    ],
+    security: [
+      'One Basic auth user is checked against a Worker secret. OPTIONS answers without a login.',
+      'The sample files ship as static assets behind the Worker, so the login guards them too.',
+      'The samples are synthetic, so no real person or place is exposed.',
+    ],
+    performance: [
+      "A ranged GET reads only the chunks it needs, so a 50 MB file doesn't take 100 MB of memory.",
+      'Sample dates come from a JSON file, so a PROPFIND needs no EXIF read.',
+    ],
+    operations: [
+      'Checks run lint, the type check and unit tests on each push to main, and Deploy starts once they pass.',
+      'Deploy builds the samples, runs the wrangler deploy through mise and tags the commit with a date version.',
+      'It stops when the sample folder and the date list disagree, or when the Cloudflare token is missing.',
+      'One deploy runs at a time, and a newer waiting one replaces an older one.',
+    ],
+    tradeoffs: [
+      'Durable Object SQLite over R2, since R2 needs a payment card and the free plan covers the Durable Object.',
+      'A write layer over read-only samples over writes into them, so a reset is one prefix delete.',
+      'Synthetic photos over real ones, so a stranger sees no real people or places.',
+      'A TypeScript Worker now over Rust, to ship first. The org stack plans a move to workers-rs.',
+    ],
+  },
   features: {
     'Sample library':
       'A Python script draws the photos with EXIF dates and some GPS points. They ship as static assets and fill the Durable Object on start.',

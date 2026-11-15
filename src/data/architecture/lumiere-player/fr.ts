@@ -48,6 +48,49 @@ const arch: Arch = {
     { to: 'GitHub', text: 'L’APK et ses mises à jour viennent des versions sur GitHub.' },
     { to: 'Google Play', text: 'La version Play, ses mises à jour et les achats Pro et Supprimer les pubs.' },
   ],
+  design: {
+    scale: [
+      "Un APK pour les téléphones Android et Google TV, une personne par installation. Les bibliothèques sont indexées sur l'appareil.",
+      "L'analyse vidéo lit seulement les noms, sans lire les tags, si bien qu'un gros partage s'indexe sans ouvrir chaque fichier.",
+      "Deux ABI sont livrées, armeabi-v7a et arm64-v8a, pour garder l'APK avec libVLC léger.",
+    ],
+    data: [
+      "SQLite sur l'appareil : positions.db, library.db, books.db, book-places.db et videos.db.",
+      "positions.db indexe une ligne par l'URI sans l'identifiant NAS, et un fichier USB aussi par nom et taille.",
+      'La sauvegarde Android garde les positions et les passages de livres, mais pas nas.xml ni les bases qui contiennent un identifiant NAS.',
+    ],
+    interfaces: [
+      "libVLC lit les sources file://, content:// et smb://. Un MediaSessionService de Media3 fournit la notification, l'écran verrouillé et les boutons Bluetooth.",
+      "La voix passe par le SpeechRecognizer de l'appareil, et sherpa-onnx repère la phrase Hey Lumi. Guitar Upscale s'ouvre par un lien Android VIEW.",
+      "Le module en ligne appelle MusicBrainz et Wikidata, et YouTube via yt-dlp, dans l'APK GitHub seulement.",
+    ],
+    reliability: [
+      "Le lecteur enregistre sa position toutes les 5 secondes, à la pause, à l'arrêt et à la sortie, donc un plantage coûte des secondes.",
+      'ScanWorker tourne sous WorkManager pour un nouveau dossier, au démarrage et chaque jour en Wi-Fi, et les recherches vont lentement sur un seul thread.',
+      'Un appareil Bluetooth qui ne joue rien renvoie le son vers le haut-parleur.',
+    ],
+    security: [
+      "Pas de compte ni de serveur propre. Les noms et les tags restent sur l'appareil.",
+      'La liste NAS avec ses mots de passe est dans nas.xml, que la sauvegarde Android écarte.',
+      "SponsorBlock reçoit seulement un préfixe de hachage de l'id YouTube. Le micro d'éveil tourne comme service au premier plan.",
+    ],
+    performance: [
+      "libVLC joue chaque fichier directement, et un lecteur Media3 l'enveloppe pour l'audio : un seul moteur sert la vidéo et la musique.",
+      "LoudnessGate ne donne au modèle de mot clé que les trames fortes et la demi-seconde avant, donc une pièce calme l'évite.",
+      "Les pochettes sont décodées à leur taille avec un cache, et l'index de mots liste chaque mot une fois avec ses livres.",
+    ],
+    operations: [
+      "Un push sur main lance Checks et Release côte à côte. Release signe l'APK et le publie une fois Checks passés.",
+      'Chaque runner de build garde son état Gradle, donc Gradle ne refait que ce qui a changé. La liste des versions garde les 3 plus récentes.',
+      "L'APK se met à jour depuis GitHub Releases au lancement. Le bundle Play écarte le module de mise à jour et le module en ligne.",
+    ],
+    tradeoffs: [
+      "Kotlin natif avec des Views simples plutôt qu'Expo, car le lecteur est une vue libVLC pilotée par les touches de la télécommande et le focus.",
+      "libVLC sans modification plutôt que Media3 ExoPlayer, pour les pistes MKV, le parcours SMB et les sous-titres Windows-1251, au prix d'une mention LGPL et d'un gros APK.",
+      "SMB via libVLC plutôt qu'une bibliothèque à part, sans dépendance de plus, mais une liste NAS ne donne pas la taille du fichier.",
+      "Un seul achat Pro plutôt qu'un abonnement par app, donc une seule vérification, Entitled.pro(), commande chaque écran.",
+    ],
+  },
   features: {
     Sources:
       'Les dossiers USB s’ouvrent par le système de fichiers d’Android, et libVLC parcourt les partages SMB. La liste des NAS reste sur l’appareil, hors de la sauvegarde Android.',

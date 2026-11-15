@@ -34,6 +34,45 @@ const arch: Arch = {
       text: 'PR-ene flettes gjennom den felles workflowen, og en større oppdatering venter på et menneske.',
     },
   ],
+  design: {
+    scale: [
+      'Én eier og de titalls app-repoene i én GitHub-organisasjon, som hver kaller de samme få stegene fra sine egne arbeidsflyter.',
+      'En rettelse her når hver kaller ved neste kjøring, så én dårlig sammenslåing kan ødelegge alle.',
+    ],
+    data: [
+      'Ingen database. Tilstanden er en datotagg, et format for commit-emner og mise.toml som låser hvert verktøy.',
+      'Taggen er v<yyyy.mm.dd>.<n>, og notatene sorterer feat-, fix- og perf-commits fra emner på formen type(scope)!: text.',
+    ],
+    interfaces: [
+      'Oppsettssteget er en sammensatt handling som en kaller kjører med uses, og den kjører i kallerens jobb.',
+      'Dependabot-sammenslåingen og iOS-simulatorbyggingen er gjenbrukbare arbeidsflyter som tar imot listen over arbeidsflyter som skal starte på main.',
+      'Automatisk sammenslåing går fra pull_request_target, og iOS-sjekken er et Node-skript med bestått eller ikke bestått som resultat.',
+    ],
+    reliability: [
+      'Sammenslåingsjobben kjører bare når dependabot[bot] åpnet PR-en og utløste hendelsen, og den stopper på en PR som er slått sammen eller lukket.',
+      'På PC-runnerne kopierer pnpm pakker fra et felles lager, siden en slettet hard lenke fikk andre lesninger til å feile med EBUSY.',
+      'Hver jobb får sin egen mise-shim-mappe, så en kjørende prosess som holder den delte uvx.exe ikke blokkerer en verktøyoppdatering.',
+    ],
+    security: [
+      'Repoet er privat, og Actions-tilgangen er satt til organisasjonen slik at kallerne kan laste arbeidsflytene.',
+      'pull_request_target kjører fra main med et skrive-token, så bare Dependabots egne PR-er slås sammen, og en hovedoppdatering venter på en person.',
+    ],
+    performance: [
+      'Verktøyinstallasjoner deles mellom jobbene på en runner, og bare den lille shim-mappen bygges på nytt for hver jobb.',
+      'pnpm installerer fra låsfilen uten oppslagssteg, og iOS-sjekken kjører først, så en dårlig plan feiler før Mac-minuttene starter.',
+    ],
+    operations: [
+      'Lint kjører ved hver push til main. Release-arbeidsflyten starter på workflow_run etter bestått Lint og setter en datotagg på committen.',
+      'En push med bare Markdown hopper over Lint og får derfor ingen release.',
+      'mise run test bygger et kastbart git-repo og sjekker de to release-skriptene, og Vitest dekker ios-check.',
+    ],
+    tradeoffs: [
+      'Kallerne bruker @main i stedet for en fast tagg, så én rettelse lander overalt. Et repo som må holde igjen, låser en release-tagg.',
+      'En sammensatt handling i stedet for en gjenbrukbar arbeidsflyt til oppsettet, så kallerens egne sjekker følger i samme jobb.',
+      'Slå sammen ved åpning og sjekk på main i stedet for å vente på PR-sjekker, siden org-repoene ikke kjører noen på PR-er. En dårlig oppdatering når main først.',
+      'En macOS-runner til iPhone-byggingen, siden PC-runnerne er Windows. Ett macOS-minutt teller som 10, så kallerne starter den for hånd eller ved release.',
+    ],
+  },
   features: {
     'Setup step':
       'En sammensatt action kjører mise for de låste verktøyene, så installerer pnpm fra låsefilen. Den kjører i jobben til den som kaller, så sjekkene derfra følger rett etter.',

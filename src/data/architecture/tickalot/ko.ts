@@ -36,6 +36,49 @@ const arch: Arch = {
     { to: 'OpenStreetMap', text: 'Nominatim이 이름으로 매장을 찾고 Overpass가 근처 매장을 찾습니다.' },
     { to: 'Google Play', text: 'AdMob이 광고를 보여 주고 Play Billing이 광고 제거와 Pro를 팝니다.' },
   ],
+  design: {
+    scale: [
+      '개인 목록은 한 기기에만 남고, 공유 목록은 링크 하나로 가족이나 몇 명의 친구에게 닿습니다.',
+      '앱에 서버가 없어서 Firestore 무료 요금제의 하루 읽기 50,000회와 쓰기 20,000회가 공유 목록의 예산을 정합니다.',
+    ],
+    data: [
+      '기기의 SQLite가 목록, 항목, 매장, 진열대, 동선, 아는 이름, 가격을 저장합니다. 웹 버전은 같은 SQLite를 wasm으로 돌립니다.',
+      '공유 목록만 Firestore로 가며 lists/{id}/items/{itemId}에 저장되고, 매장의 진열대와 동선은 stores/{osmId}에 저장됩니다.',
+      '삭제는 deleted = 1을 설정하고 행을 남깁니다. dirty = 1은 Firestore가 아직 받지 못한 변경을 표시합니다.',
+      '사진은 360픽셀, 약 30 KB의 JPEG이며 항목 안에 들어 있습니다.',
+    ],
+    interfaces: [
+      '공유 링크에는 무작위 32자리 16진수 목록 id가 들어 있고, Android intent filter가 앱에서 엽니다.',
+      'Tripforge 여행 링크에는 v, place, start, nights와 최대 60곳이 든 base64url JSON이 들어 있습니다.',
+      '가격은 Woolworths와 Coles 사이트 검색 뒤의 JSON에서, 매장은 Nominatim과 Overpass에서, 명소는 Tripforge Worker나 Wikidata에서 가져옵니다.',
+    ],
+    reliability: [
+      '모든 변경은 먼저 SQLite에 저장되고 화면이 거기서 다시 그려지므로 신호가 없어도 체크됩니다. 앱이 열려 있는 동안 전송은 30초마다 다시 시도합니다.',
+      '항목마다 더 새로운 updated 시각이 이기며, 기기와 Firestore 규칙 모두 같습니다. 같은 항목의 오프라인 수정 두 건은 합쳐지지 않고, 나중 것이 항목 전체를 가져갑니다.',
+      '리스너는 앱이 백그라운드로 간 뒤 1분 동안 동작합니다. 닫힌 앱은 알림을 받지 못하는데, 푸시 서버가 필요하기 때문입니다.',
+    ],
+    security: [
+      '설치마다 Firebase에 익명으로 로그인하고, 링크 속 무작위 목록 id가 비밀입니다. Firestore는 목록 나열을 거부합니다.',
+      '규칙은 32자리 16진수 id, 알려진 필드, 크기, 하루를 넘지 않는 미래 시각을 확인합니다. 사진은 JPEG 데이터나 Wikimedia Commons 그림이어야 합니다.',
+      '링크가 있는 사람은 누구나 목록을 읽고 바꾸고 지울 수 있으며, Firebase App Check는 아직 꺼져 있습니다.',
+    ],
+    performance: [
+      '전송은 0.5초 기다리므로 연달아 체크한 것이 한 번의 쓰기로 나갑니다.',
+      '가격은 Woolworths에서 3개 이름씩, Coles에서 1개씩 불러옵니다. SQLite에 하루 동안 남고 가격만 다시 그려집니다.',
+      '기기는 매장의 진열대를 Firestore에서 10분에 한 번까지만 읽습니다.',
+    ],
+    operations: [
+      'main에 push할 때마다 Checks와 Release가 함께 시작됩니다. Checks가 통과하면 서명된 APK를 공개하고, Checks가 실패하면 빌드를 취소합니다.',
+      'Google Play용 bundle은 하루에 한 번 시드니 시간 19:00에, 앱이 바뀐 경우에만 만듭니다.',
+      '웹 버전은 Firebase Hosting이 제공하며 Checks가 통과하면 Firestore 규칙과 함께 배포됩니다. GitHub의 APK는 스스로 업데이트하고, Play 빌드에는 그 코드가 없습니다.',
+    ],
+    tradeoffs: [
+      'Kotlin 네이티브 앱 대신 Expo를 택해, 코드 하나로 공유 링크가 열리는 페이지도 만듭니다.',
+      '자체 서버나 WebRTC 대신 Firestore 행을 택해, 돌릴 서버가 없고 체크가 잠든 기기를 기다리지 않습니다.',
+      '필드 병합 대신 항목마다 더 새로운 변경이 이깁니다. 코드는 줄지만 오래된 오프라인 수정은 사라집니다.',
+      'GitHub Pages 대신 Firebase Hosting을 택했는데, wasm SQLite에 필요한 COOP와 COEP 헤더를 Pages는 설정할 수 없기 때문입니다.',
+    ],
+  },
   features: {
     'Share by link':
       'Firestore가 공유 목록의 사본을 두고, 링크에는 무작위 id가 담깁니다. 휴대폰은 변경을 먼저 SQLite에 저장하고 네트워크가 돌아오면 보냅니다.',

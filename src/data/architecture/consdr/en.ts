@@ -32,6 +32,52 @@ const arch: Arch = {
     { to: 'Google Play', text: 'The AdMob banner and the Remove ads purchase in the Android app.' },
     { to: 'App Store', text: 'StoreKit sells Remove ads in the iPhone app once it is on the App Store.' },
   ],
+  design: {
+    scale: [
+      'One person per browser, with 23 inputs on one calculator page. The comparison reruns in the browser on each edit.',
+      "The site is static files on Cloudflare, so no server of the studio's own carries the load.",
+      'Tax tiers, FBT and stamp duty are fixed numbers in code, so keeping them current is the limit, not load.',
+    ],
+    data: [
+      'No database and no account. Edits sit in localStorage as JSON under 3 keys: inputs (with a version field), theme and language.',
+      'Only edited fields are saved, so an untouched start date reads as today and a default follows the car type and the rules.',
+      'Tax tiers, FBT constants and stamp duty per state sit in src/rules as constants, each with a link to its source.',
+    ],
+    interfaces: [
+      'compareOptions takes one CalcInputs object and returns a Comparison: cost, account run and cost parts per option.',
+      'The page talks to the Android app over window.ConsdrApp, with the messages state, buy, privacy and devAds and JSON replies.',
+      'The iPhone app answers the same bridge from Swift, and Capacitor serves the built site from inside the app.',
+      'The build writes sitemap.xml, llms.txt, ads.txt and the JSON-LD of the common questions.',
+    ],
+    reliability: [
+      'Pages go to the network first and fall back to the cached copy after 3 seconds or on a server error.',
+      'With site data blocked, reads give null and writes are skipped, so the page still works for that visit.',
+      'A saved value of the wrong type or an unknown select value is dropped on load. A save in one tab reloads the other tabs.',
+    ],
+    security: [
+      'No sign in, and the numbers go to no server, so the inputs stay in the browser.',
+      'Response headers set frame-ancestors none, object-src none, nosniff and HSTS, and switch off camera, microphone and location.',
+      'The Android signing key is a CI secret decoded on the runner, and the repo holds no key.',
+      "The Android app asks for ad consent through Google's consent SDK.",
+    ],
+    performance: [
+      'English ships in the main script, and each of the 8 other catalogs loads as its own chunk when picked.',
+      'The build prerenders the calculator with the defaults and preloads the Latin fonts, so content shows early and numbers hold still.',
+      'Files in /assets/ carry a content hash, get a one year immutable cache header and are served cache first by the worker.',
+    ],
+    operations: [
+      'One job lints, tests and builds, then wrangler deploy publishes dist/ to Cloudflare on each push to main.',
+      "CI runs on the studio's own Windows PC runner, so the private repo uses no Actions minutes.",
+      'A nightly run at 19:00 Sydney time builds the signed Android bundle for Google Play, only when android/ changed.',
+      'The service worker cache name hashes the file list, the page text and the worker code, so each deploy replaces the old cache.',
+    ],
+    tradeoffs: [
+      'Calculation in the browser over a server API, so no data leaves the device and hosting is static files.',
+      'A WebView around the live site on Android over native screens, so one codebase serves web and app, and a site deploy reaches the app at once.',
+      'Network first pages over cache first, so a deploy shows at once, at the cost of up to 3 seconds on a slow link.',
+      'Fixed rules in code with sources over a rates API, so each number is reviewable, but a tax year change needs a release.',
+    ],
+  },
   features: {
     'Compare a lease, a loan and cash':
       'A plain TypeScript function takes the fields and returns one total per option. It runs in the browser on each edit, and no server sees the numbers.',

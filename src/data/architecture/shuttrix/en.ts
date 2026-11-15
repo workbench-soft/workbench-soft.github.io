@@ -39,6 +39,51 @@ const arch: Arch = {
     { to: 'Google Play', text: 'Google Play Billing sells Plus and Remove ads.' },
     { to: 'Google AdMob', text: 'AdMob shows the gallery banner after the consent form.' },
   ],
+  design: {
+    scale: [
+      'One person per phone, with no server: each photo is built and saved on the phone.',
+      'A Portrait photo costs about 7 s per 12 MP on a Pixel 7 Pro CPU, and the depth model is a 26 MB download.',
+      'A merged photo holds 5 full size frames of about 18 MB each in memory.',
+    ],
+    data: [
+      'Settings are one JSON value in the Android shared preferences, read at the first render, so the camera opens as it was left.',
+      'Shots are WebP, JPEG, PNG or MP4 files in DCIM/Camera, listed through MediaStore rows the app owns. RAW adds a DNG.',
+      'The place, the white balance calibration and the live values stay in memory while the camera is open.',
+    ],
+    interfaces: [
+      'React Native passes the dial values to the Kotlin camera view as props, and the module sends live values back 4 times a second.',
+      'CameraX runs the lifecycle and use cases, and Camera2 interop sets ISO, shutter, focus distance and white balance gains.',
+      'Shots land in MediaStore under DCIM/Camera, where Memories reads them, and the app answers the Android camera intents.',
+    ],
+    reliability: [
+      'The dials go back on the camera each time it opens, from the saved settings.',
+      'A 512 px draft shows in the gallery until the final file lands.',
+      'A lens without the Night extension falls back to a slow frame rate with strong noise reduction, and CameraX falls back to the closest supported size.',
+    ],
+    security: [
+      'Photos stay on the phone. The app has no account and no server of its own.',
+      'Location is read only while the camera is open, and the place goes into the EXIF tags of the saved file.',
+      "AdMob asks for consent in the gallery on the first open, not at launch, so a quick shot isn't delayed.",
+    ],
+    performance: [
+      'Zero shutter lag fires on touch down, so the shot keeps the moment of the press.',
+      'A plain photo asks for a 60 frame range, so auto exposure keeps the shutter at 1/60 s or faster.',
+      'The Portrait blur renders on a 2048 px layer, and Enhance and Mini run as GPU passes.',
+      'A ring holds the last 5 frames for the merged photo and the last 8 raw frames for the Rust develop step.',
+    ],
+    operations: [
+      'A push to main starts the camera checks and the release build side by side, and release-gate.sh publishes only when checks pass.',
+      'Tags are shuttrix-v with a date, and the APK goes to a release in the public site repo, where the app and the updater find it.',
+      'The Play bundle builds once a day at 19:00 Sydney when the camera changed, and the Play build holds a stub for the updater.',
+      'A separate workflow builds the ONNX Runtime and OpenCV libraries and publishes them as a prerelease.',
+    ],
+    tradeoffs: [
+      'Expo with a Kotlin module over CameraX over react-native-vision-camera, which has no manual focus distance, ISO, shutter or kelvin.',
+      "Night through the CameraX extension over stacking frames in Kotlin, so the phone's own pipeline runs and leaves white balance and EV to it.",
+      'Depth Anything V2 Small over a larger model for its Apache licence, at a 26 MB download and about 7 s per photo.',
+      'A monorepo with Memories over a repo of its own, to share the editor and viewer, at the cost of path based CI.',
+    ],
+  },
   features: {
     'Simple and Pro':
       'Both modes drive one camera view. Simple hands focus and exposure to auto, and Pro hands them to the dials.',

@@ -40,6 +40,49 @@ const arch: Arch = {
     { to: 'Google Play', text: 'Play Billing sells Remove ads and SpotTheCam Pro. AdMob shows the banner in the app.' },
     { to: 'GitHub Releases', text: 'Each release puts the APK there, and the GitHub build updates itself from it.' },
   ],
+  design: {
+    scale: [
+      'One driver per install. The camera file holds about 13,700 cameras, one per line.',
+      'The site is static files, so only trip sharing needs a server. One small Worker stays in the Cloudflare free tier.',
+      'A shared trip is capped at 1 MB and 100,000 points, and one address can share 10 trips a minute.',
+    ],
+    data: [
+      'data/cameras.json holds one camera per line: type, state, point, road, suburb, source, limit and direction.',
+      'Trips sit in the private storage of the app for 400 days. Road limits stay on the phone for 60 days.',
+      'A shared trip lives in Cloudflare KV under a 10 character id, as thinned route lines and totals with no times.',
+    ],
+    interfaces: [
+      'The Worker answers POST /api/trips, and GET and DELETE on /api/trips/<id>. Everything else is a static file.',
+      'Capacitor plugins link the web page to the Kotlin drive services and their Swift ports.',
+      'Overpass tiles give roads, railways and runways. Photon, Valhalla and TomTom answer place, route and traffic calls.',
+    ],
+    reliability: [
+      'The service worker tries the network first and falls back after 4 seconds, with up to 500 map tiles kept for offline use.',
+      'A store failure in the Worker goes out as 503 with CORS headers, so the app reads it as a failure and not as no signal.',
+      'When a public routing server is down, the voice says so. Past the TomTom limit, routes skip traffic.',
+    ],
+    security: [
+      "Sharing needs no sign in. KV keeps only a SHA-256 hash of the delete key, so reading the store doesn't let anyone delete trips.",
+      'The Worker checks each body with a strict parser and sends nosniff and a default-src none policy.',
+      'Trips stay on the phone until shared. A shared trip has no times, and speeds at cameras stay out unless the person opts in.',
+    ],
+    performance: [
+      'Kotlin services match the GPS to cached roads on the phone and speak about 20 seconds before a camera, with no network.',
+      'The nightly build turns timed limits into windows for the next 35 days, so the browser only picks the current one.',
+      "KV caches a shared trip for a minute near the reader, and map tiles are stored without OpenFreeMap's weekly folder name.",
+    ],
+    operations: [
+      'A CI job refreshes the cameras at 3 am Sydney time and commits the file, one camera per line to keep diffs small.',
+      'Each push to main deploys the site to Cloudflare. A nightly job sends the Android bundle to Google Play when the app changed.',
+      'The GitHub APK build updates itself from GitHub Releases. The Google Play build leaves that code out.',
+    ],
+    tradeoffs: [
+      'A static Next.js site in a Capacitor shell over Expo, so the map and the site pages share one codebase, at the cost of a Worker for trips.',
+      'One daily JSON file over a database behind an API, so it works offline and costs no server, at the cost of a list up to a day old.',
+      'Native Kotlin drive services over JavaScript in the WebView, since Android pauses the WebView with the screen off.',
+      'Leaflet with OpenFreeMap tiles over Google Maps or Mapbox, since it needs no key and has no quota.',
+    ],
+  },
   features: {
     'Camera map':
       "The nightly build turns each camera's timed limits into windows for the next 35 days. The browser picks the window for the current minute.",

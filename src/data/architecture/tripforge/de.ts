@@ -36,6 +36,48 @@ const arch: Arch = {
       text: 'Ein Link trägt die Reise in beide Richtungen, ohne gemeinsames Konto. Tick-a-Lot holt seine Sehenswürdigkeiten vom selben Worker.',
     },
   ],
+  design: {
+    scale: [
+      'Eine Person plant ein paar Reisen im Jahr, daher ist die Last klein. Der kostenlose Cloudflare-Workers-Tarif erlaubt 100.000 Anfragen am Tag.',
+      'Alle teilen ein Travelpayouts-Token mit einem Limit pro Minute, daher macht ein kostenloses Telefon 10 Suchen am Tag. Pro hebt das auf.',
+    ],
+    data: [
+      'Der Worker hat keine Datenbank. Jede Antwort von außen liegt bis zum Ablauf ihrer Lebensdauer im Workers-Cache.',
+      'Das Telefon hält die Sprachwahl, den Suchzähler, gespeicherte Reisen und die Kauf-Flags in localStorage, unter Android über expo-sqlite.',
+      'Eine Reise erreicht Tick-a-Lot im Link als JSON mit v, place, start, nights und bis zu 60 Orten. Kein Server speichert sie.',
+    ],
+    interfaces: [
+      'Der Worker hat 4 GET-Routen: /places, /flights, /sights und /spots. Jede nimmt Query-Parameter und antwortet mit JSON.',
+      'trip-core nimmt die rohen Preise und liefert Angebote, für die Gruppe berechnet, den Preiskalender und die Links.',
+      'Eine Reise geht als base64url-Hash an Tick-a-Lot, und zurück zum Ask-Bildschirm kommt sie als Query-String mit Orten und Nächten.',
+    ],
+    reliability: [
+      'Die Cache-Laufzeiten sind 6 Stunden für Flugpreise, 7 Tage für Orte und Sehenswürdigkeiten und 30 Tage für Wikivoyage-Seiten.',
+      'Ein Fehler, der mit 200 gesendet wird, etwa ein maxlag von MediaWiki oder success:false von Travelpayouts, und ein abgeschnittener JSON-Körper gehen ungecacht zurück.',
+      '/spots macht höchstens 6 Aufrufe und weicht auf das englische Wikivoyage aus, wenn die lokale Ausgabe unter 3 Einträge hat.',
+    ],
+    security: [
+      'Der Worker besitzt jedes Geheimnis und jeden Aufruf nach außen. Die App importiert kein Crate und hält keinen Schlüssel.',
+      'Es gibt keine Konten. Pro- und Werbe-Flags liegen auf dem Telefon und werden über Google Play gekauft, daher setzt das Löschen der App-Daten den Suchzähler zurück.',
+      'Der Wikidata-Aufruf nennt die App in seinem User-Agent, wie Wikimedia es verlangt.',
+    ],
+    performance: [
+      'Jeder Aufruf nach außen steht hinter dem Workers-Cache. Gelesene Wikivoyage-Einträge liegen dort 30 Tage, da das Lesen von London etwa 20 ms CPU kostet, aus dem Cache 1 ms.',
+      'Eine Wikidata-Abfrage liefert die Sprachzahlen und Klassen einer ganzen Seite von Einträgen, statt eines Aufrufs pro Ort.',
+      'Lange Listen werden über FlashList gezeichnet, daher erscheinen nur die Zeilen auf dem Bildschirm.',
+    ],
+    operations: [
+      'Ein Push auf main startet Checks: Lint, Test und Build. Release und Deploy starten über workflow_run, sobald Checks bestehen.',
+      'Release reiht sich ein, damit jedes seine Version nach dem Tag davor wählt, und ein neueres Deploy bricht ein älteres ab.',
+      'Deploy liefert den Web-Export und den Worker aus und schlägt dann fehl, wenn einer der Hosts nicht antwortet. Die Rust-Version ist festgelegt, und der Worker baut für wasm.',
+    ],
+    tradeoffs: [
+      'Die Planung läuft im Worker statt in wasm in der App, da Hermes kein wasm ausführt. Der Preis ist keine Offline-Planung.',
+      'Gecachte Travelpayouts-Preise statt Duffel oder Scraping: kostenlos, und ein Aufruf sagt, welches Datum am günstigsten ist. Der Preis sind 2 bis 7 Tage alte Preise.',
+      'Wikidata und Wikivoyage statt eines Anbieters für Sehenswürdigkeiten: kostenlos, und die Zahl der Wikipedia-Sprachen liefert ein Bekanntheitssignal, das Geheimtipps markiert.',
+      'Keine Werbung auf dem Flugbildschirm statt mehr Werbefläche, da Fehlklicks neben Provisionslinks eine Sperre riskieren.',
+    ],
+  },
   features: {
     Ask: 'Das Formular sucht jeden Ort über den Worker. Ein Link aus Tick-a-Lot füllt das Formular aus seiner Adresse.',
     Flights:

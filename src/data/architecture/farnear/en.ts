@@ -33,6 +33,47 @@ const arch: Arch = {
     { to: 'app-updater', text: 'WBS Updater compares the installed version with the newest GitHub release.' },
     { to: 'Hugging Face', text: 'The scribe downloads the Whisper weights from there once.' },
   ],
+  design: {
+    scale: [
+      'One call joins up to 4 devices in a mesh, so each device uploads its video to the other 3.',
+      'A room object holds 6 sockets at most, 64 KB per message and 20 messages a second, so a flood stays in one room.',
+      'The Worker, the Durable Object and the relay all run in free tiers, since only small sealed messages cross them.',
+    ],
+    data: [
+      'No account database. The name, language, saved rooms and push keys sit in localStorage under one versioned prefix.',
+      'The transcript and the text messages of each room sit in IndexedDB on each device.',
+      'The Durable Object keeps only the relay quota and a cached relay reply for 90 minutes. KV keeps connection reports for 14 days.',
+    ],
+    interfaces: [
+      'Signalling is a WebSocket to the room object. Each message is an AES-GCM envelope with a version, an id and a sequence number.',
+      'Each pair of devices opens 3 negotiated data channels: live points, control messages and file chunks.',
+    ],
+    reliability: [
+      'After a 3 second disconnect the lower peer id sends an ICE restart offer, with waits of 12, 18 and 25 seconds.',
+      'A health check reads each track every 3 seconds. A 15 second stall starts an ICE repair, then a rebuild of that pair.',
+      'An envelope id drops a copy, the sequence number drops a replay and an offer id drops a superseded answer.',
+    ],
+    security: [
+      'The room key sits after the # of the link, so the Worker sees ciphertext and no names, titles or offers.',
+      'Media is DTLS-SRTP between the devices, and a TURN relay carries only encrypted packets.',
+      'The room page loads no ad script and carries noindex, so no third party code runs beside the key.',
+    ],
+    performance: [
+      'The canvas and the WebRTC calls run in plain modules, and React reads small stores through useSyncExternalStore.',
+      'The Worker caches relay settings per room for 90 minutes and issues at most 20 upstream per room and day.',
+      'Whisper runs on WebGPU where it exists and the small model on WebAssembly elsewhere. Large file sends wait for the channel to drain.',
+    ],
+    operations: [
+      'Checks run lint, tests and the build on each push to main, then the site goes to GitHub Pages and the Worker deploys through wrangler.',
+      'The APK builds only when android/ changed, since the app loads the live site. A web change gets a tag and no heavy runner.',
+      'A nightly run at 19:00 Sydney builds the Play bundle when android/ changed. A failed Checks run cancels the build.',
+    ],
+    tradeoffs: [
+      'A mesh of direct links over a media server, so no server hosts video and it costs no hosting. Upload grows with each person, so calls stop at 4.',
+      'A wrapper around the live site over native screens, so a web fix ships with no store review. The app needs the network.',
+      'Whisper in the browser over a cloud speech API, so audio stays on the devices. The first use downloads the model weights.',
+    ],
+  },
   features: {
     'Calls through a link':
       'The end of the link holds the room key, so the Worker sees only sealed messages. WebRTC then joins up to 4 devices in a mesh.',

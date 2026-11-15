@@ -51,6 +51,49 @@ const arch: Arch = {
     { to: 'Google Play', text: 'Fjern reklame og ServoHop Pro selges som engangskjøp. AdMob viser banneret.' },
     { to: 'GitHub Releases', text: 'Hver utgivelse legger APK-en der, og GitHub-bygget oppdaterer seg selv derfra.' },
   ],
+  design: {
+    scale: [
+      'Én installasjon per telefon og ingen konto, så lasten er lesing av åpne priser fra sjåfører og søkemotorer.',
+      'Gratisnivåene la rammene: 100k Pages-forespørsler, 100k skrevne D1-rader og 10 ms CPU per forespørsel i døgnet.',
+      'Et kartsvar rommer opptil 400 stasjoner for utsnittet på skjermen.',
+    ],
+    data: [
+      'D1 holder station, price_now, price_daily, price_report, ev_site og ev_price. Stasjons-id-en bærer kilden, som nsw-1234.',
+      'price_now har én rad per stasjon og drivstoff. En trigger legger hver endring inn i price_daily med døgnets laveste, høyeste og antall.',
+      'Telefonen beholder bare drivstoffvalget og innstillingene. Prisene bor i D1.',
+    ],
+    interfaces: [
+      'Appen kaller JSON-ruter under /api: stasjonene i et kartutsnitt, historikken til én stasjon, meldinger og ladere.',
+      'De samme Functions gir ren HTML under /fuel og sitemaps til søkemotorene.',
+      'Polleren leser WA RSS, API-ene til NSW, VIC og QLD, Open Charge Map og OpenStreetMap, og skriver med wrangler d1 execute.',
+    ],
+    reliability: [
+      'En kilde uten nøkkel hoppes over, så jobben holder seg grønn og de andre delstatene oppdateres.',
+      'Hver upsert ender med WHERE price_now.cents <> excluded.cents, så en ny kjøring skriver ingen rad to ganger.',
+      'Pollingen stopper mens den egne runneren er nede. En pris vises opptil 5 minutter for sent, og VIC-priser kommer 24 timer etter.',
+    ],
+    security: [
+      'Ingen innlogging og ingen konto. Avsenderen av en melding er en saltet hash av adressen, ikke adressen.',
+      'En melding må bestå en kontroll av prisområdet og en grense på 10 i timen per avsender.',
+      'Kildenøklene ligger i GitHub Actions-secrets som bare polleren leser. Appen har ingen.',
+    ],
+    performance: [
+      'API-svar har s-maxage=300, og appen runder utsnittet til 2 desimaler, så nære kartforflytninger deler ett bufret svar.',
+      'Søkesider bufres i 30 minutter, historikken i en time og sitemaps i 6 timer.',
+      'NSW-lista på flere MB tolkes på runneren, siden en gratis Worker bare får 10 ms CPU.',
+    ],
+    operations: [
+      'Kontrollene kjører ved hver push. Release bygger APK og Play-pakken samtidig, og mislykkede kontroller avbryter dem.',
+      'Deploy web bruker db/schema.sql på den levende D1-en og publiserer så Pages. Hver setning i skjemaet er IF NOT EXISTS.',
+      'Pollingen går på cron: hver time for NSW, VIC og QLD, hver 6. time for Tasmania, daglig for WA og ladere.',
+    ],
+    tradeoffs: [
+      'Pages Functions og D1 i stedet for Firebase eller en betalt server, så et kartutsnitt er én SQL-spørring innenfor gratisnivået.',
+      'En daglig oppsummering i stedet for en rad per polling, så timespollingen holder seg under skrivegrensen. En dag uten endring har ingen rad.',
+      'En poller på GitHub Actions i stedet for en Worker-cron, fordi tolkingen av NSW-lista tar mer enn 10 ms.',
+      'MapLibre med OpenFreeMap-fliser i stedet for Google Maps, så ingen nøkkel og ingen regning, mot to kartbygg.',
+    ],
+  },
   features: {
     'Fuel prices on a map':
       'En Pages Function gir opptil 400 stasjoner i utsnittet fra D1. Appen deler prisene på skjermen i tredjedeler og farger nålene.',

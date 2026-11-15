@@ -57,6 +57,49 @@ const arch: Arch = {
     },
     { to: 'GitHub Releases', text: 'Chaque version y dépose l’APK, et le build GitHub se met à jour depuis là.' },
   ],
+  design: {
+    scale: [
+      'Une installation par téléphone, sans compte : la charge se résume à des lectures de prix publics par les conducteurs et les moteurs de recherche.',
+      'Les offres gratuites ont fixé la forme : 100k requêtes Pages, 100k lignes D1 écrites et 10 ms de CPU par requête et par jour.',
+      "Une réponse de carte contient jusqu'à 400 stations pour la zone affichée.",
+    ],
+    data: [
+      "D1 contient station, price_now, price_daily, price_report, ev_site et ev_price. L'id d'une station porte la source, comme nsw-1234.",
+      'price_now a une ligne par station et carburant. Un trigger verse chaque changement dans price_daily avec le plus bas, le plus haut et le nombre du jour.',
+      'Le téléphone ne garde que le choix du carburant et les réglages. Les prix vivent dans D1.',
+    ],
+    interfaces: [
+      "L'app appelle des routes JSON sous /api : les stations d'une zone, l'historique d'une station, les signalements et les bornes.",
+      'Les mêmes Functions rendent du HTML simple sous /fuel et les sitemaps pour les moteurs de recherche.',
+      'Le poller lit WA RSS, les API de NSW, VIC et QLD, Open Charge Map et OpenStreetMap, et écrit par wrangler d1 execute.',
+    ],
+    reliability: [
+      'Une source sans clé est ignorée : la tâche reste verte et les autres États se mettent à jour.',
+      "Chaque upsert finit par WHERE price_now.cents <> excluded.cents, donc une relance n'écrit aucune ligne deux fois.",
+      "Les relevés s'arrêtent quand le runner maison est à l'arrêt. Un prix apparaît avec jusqu'à 5 minutes de retard, et ceux de VIC avec 24 heures.",
+    ],
+    security: [
+      "Pas de connexion ni de compte. L'auteur d'un signalement est un hachage salé de l'adresse, pas l'adresse.",
+      'Un signalement passe un contrôle de plage de prix et une limite de 10 par heure et par auteur.',
+      "Les clés des sources sont dans les secrets GitHub Actions, lus seulement par le poller. L'app n'en a aucune.",
+    ],
+    performance: [
+      "Les réponses de l'API portent s-maxage=300 et l'app arrondit la zone à 2 décimales, si bien que des déplacements proches partagent une réponse en cache.",
+      "Les pages de recherche se mettent en cache 30 minutes, l'historique une heure, les sitemaps 6 heures.",
+      "La liste NSW de plusieurs Mo est analysée sur le runner, car un Worker gratuit n'a que 10 ms de CPU.",
+    ],
+    operations: [
+      "Les vérifications tournent à chaque push. Release construit l'APK et le bundle Play en même temps, et un échec des vérifications les annule.",
+      'Deploy web applique db/schema.sql à la D1 en ligne, puis publie Pages. Chaque instruction du schéma est IF NOT EXISTS.',
+      'Les relevés tournent par cron : toutes les heures pour NSW, VIC et QLD, toutes les 6 heures pour la Tasmanie, chaque jour pour WA et les bornes.',
+    ],
+    tradeoffs: [
+      "Pages Functions et D1 plutôt que Firebase ou un serveur payant, pour qu'une zone de carte soit une requête SQL dans l'offre gratuite.",
+      "Un cumul quotidien plutôt qu'une ligne par relevé, pour que les relevés horaires restent sous la limite d'écriture. Un jour sans changement n'a pas de ligne.",
+      "Un poller sur GitHub Actions plutôt qu'un cron Worker, car l'analyse de la liste NSW dépasse 10 ms.",
+      'MapLibre avec les tuiles OpenFreeMap plutôt que Google Maps, donc sans clé ni facture, au prix de deux builds de carte.',
+    ],
+  },
   features: {
     'Fuel prices on a map':
       'Une Pages Function renvoie depuis D1 jusqu’à 400 stations dans le cadre de la carte. L’app répartit les prix à l’écran en tiers et colore les repères.',

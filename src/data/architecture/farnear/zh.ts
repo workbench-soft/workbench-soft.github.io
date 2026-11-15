@@ -27,6 +27,47 @@ const arch: Arch = {
     { to: 'app-updater', text: 'WBS Updater 把已安装的版本与 GitHub 上最新的发布做比较。' },
     { to: 'Hugging Face', text: '记录员从这里下载一次 Whisper 的权重。' },
   ],
+  design: {
+    scale: [
+      '一次通话最多把 4 台设备连成网状，每台设备把自己的视频发给另外 3 台。',
+      '一个房间对象最多容纳 6 个套接字，每条消息 64 KB，每秒 20 条，所以洪水只留在一个房间。',
+      'Worker、Durable Object 和中继都跑在免费档，因为经过它们的只有小的密封消息。',
+    ],
+    data: [
+      '没有账号数据库。名字、语言、已存房间和推送密钥放在 localStorage，用一个带版本的前缀。',
+      '每个房间的转写和文字消息存在每台设备的 IndexedDB 里。',
+      'Durable Object 只存中继配额和缓存 90 分钟的中继回复。KV 把连接报告存 14 天。',
+    ],
+    interfaces: [
+      '信令走到房间对象的 WebSocket。每条消息是带版本、id 和序号的 AES-GCM 信封。',
+      '每一对设备打开 3 个协商好的数据通道：实时笔迹点、控制消息和文件分块。',
+    ],
+    reliability: [
+      '断开 3 秒后，较小的 peer id 发出 ICE 重启 offer，等待 12、18、25 秒。',
+      '健康检查每 3 秒读取每条轨道。停滞 15 秒就启动 ICE 修复，再重建这一对连接。',
+      '信封 id 丢弃副本，序号丢弃重放，offer id 丢弃过期的应答。',
+    ],
+    security: [
+      '房间密钥放在链接的 # 之后，所以 Worker 只看到密文，看不到名字、标题和 offer。',
+      '媒体在设备之间走 DTLS-SRTP，TURN 中继只传加密的包。',
+      '房间页不加载广告脚本并带 noindex，所以密钥旁边不运行第三方代码。',
+    ],
+    performance: [
+      '画布和 WebRTC 调用在普通模块里运行，React 通过 useSyncExternalStore 读取小型 store。',
+      'Worker 按房间缓存中继设置 90 分钟，每个房间每天最多向上游申请 20 次。',
+      '有 WebGPU 的地方 Whisper 跑在 WebGPU 上，否则用 WebAssembly 的小模型。大文件发送会等通道排空。',
+    ],
+    operations: [
+      '每次推送到 main，Checks 都会运行 lint、测试和构建，然后网站发布到 GitHub Pages，Worker 通过 wrangler 部署。',
+      '只有 android/ 变了才构建 APK，因为应用加载线上网站。网页改动只打标签，不占重型 runner。',
+      '悉尼时间 19:00 的夜间任务在 android/ 变更时构建 Play 的 bundle。Checks 失败会取消构建。',
+    ],
+    tradeoffs: [
+      '选直连网状而不是媒体服务器：不用托管视频，也没有费用。上行随人数增加，所以通话上限是 4 人。',
+      '选包装线上网站而不是原生界面：网页修复无需商店审核即可发布。应用需要联网。',
+      '选在浏览器里跑 Whisper 而不是云端语音识别，让声音留在设备上。首次使用要下载模型权重。',
+    ],
+  },
   features: {
     'Calls through a link': '链接末尾带着房间密钥，所以 Worker 只能看到加密消息。随后 WebRTC 把最多 4 台设备连成网状。',
     'Recover a dropped call': '断线后，一方发出 ICE 重启请求，最多 3 次。每个对端一条队列，旧的应答不会覆盖新的。',

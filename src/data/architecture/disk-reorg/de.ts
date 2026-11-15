@@ -37,6 +37,48 @@ const arch: Arch = {
       text: 'Führt die Prüfungen bei jedem Push auf main aus und veröffentlicht ein Release mit Notizen.',
     },
   ],
+  design: {
+    scale: [
+      'Der PC eines Entwicklers und seine Netzfreigaben, wobei ein Lauf die Ordner einer Konfiguration abdeckt.',
+      'Eine große Freigabe hat die Bauweise geprägt. Das Hashen läuft in Stufen, und alle 5 Sekunden erscheint eine Fortschrittszeile mit der Restzeit.',
+    ],
+    data: [
+      'Eine JSON-Konfiguration außerhalb von git hält Ordner und Regeln. Das Repo liefert config.example.json mit erfundenen Pfaden.',
+      'Jeder Lauf schreibt eine Plan-CSV mit From, To und einer optionalen Spalte Keep sowie ein Verschiebeprotokoll mit From, To und Time.',
+      'Der Befehl inventory schreibt einen Markdown-Bericht mit Zahlen, Größen, Jahren, Dateitypen und wahrscheinlichen Kopien.',
+    ],
+    interfaces: [
+      'Eine Befehlszeile mit inventory, move, undo, dupes, candidates, sort und inbox, gelesen mit node:util parseArgs.',
+      'Die Plan-CSV ist der Vertrag zwischen den Befehlen und dem Verschieber, daher kann ein Mensch sie ändern und mit move anwenden.',
+      'Jede CSV beginnt mit einer UTF-8-Bytereihenfolge-Marke, damit Excel und PowerShell 5.1 kyrillische Namen richtig lesen.',
+    ],
+    reliability: [
+      'Ein Lauf stoppt, wenn sein Protokoll nicht geschrieben werden kann, damit jede Verschiebung rückgängig bleibt. Die Zeile steht im Protokoll vor der nächsten Verschiebung.',
+      'Über Laufwerke hinweg kopiert eine Verschiebung zuerst und entfernt danach, sodass eine fehlgeschlagene Kopie die Quelle heil lässt.',
+      'Ein Duplikat, dessen behaltene Kopie fehlt, bleibt liegen, und ein Lauf endet mit 1, wenn danach eine behaltene Kopie fehlt.',
+    ],
+    security: [
+      'Das Werkzeug löscht keine Datei. Ein Entfernen verschiebt sie in die Quarantäne, mit erhaltenem Laufwerk und Pfad.',
+      'inventory, candidates, sort und inbox lesen nur Namen, Größen und Daten. dupes liest Inhalt nur zum Hashen.',
+      'Es liest die lokale Konfiguration und Dateien, ruft kein Netz auf und speichert kein Token. Echte Pfade bleiben aus git.',
+    ],
+    performance: [
+      'dupes gruppiert nach Größe, hasht das erste 1 MB und liest nur die noch gleichen Dateien vollständig.',
+      'Der Läufer liest Dateiinfos 64 auf einmal und zählt jeden Pfad einmal, sodass überlappende Wurzeln billig bleiben.',
+      'Das Hashen liest 4 Dateien gleichzeitig und meldet Dateien, Gigabyte, Prozent und Restzeit.',
+    ],
+    operations: [
+      'Node 24 führt die TypeScript-Dateien unverändert aus, ohne Bundle, und mise startet jeden Befehl und jede Aufgabe.',
+      'Checks laufen bei jedem Push auf main, und Release veröffentlicht danach ein GitHub-Release, sobald die Checks bestehen. Läufe für Pull Requests sind aus.',
+      'Ein husky-Hook vor dem Push startet Lint und Tests. Die Tests bauen temporäre Ordner und lassen echte in Ruhe.',
+    ],
+    tradeoffs: [
+      'Quarantäne statt Löschen oder Papierkorb, damit eine falsche Regel nur eine Rückverschiebung kostet, auf Kosten von Platz, der erst frei wird, wenn der Mensch die Quarantäne leert.',
+      'Ein Plan-Modul für alle Befehle statt Prüfungen in jedem Befehl, damit eine behaltene Kopie oder eine kollidierende Verschiebung den Lauf an einer Stelle stoppt.',
+      'Eine private Konfiguration außerhalb von git statt Regeln im Repo, damit Ordnernamen auf dem PC bleiben, auf Kosten des manuellen Kopierens auf einen neuen PC.',
+      'TypeScript auf Node statt der ersten PowerShell-Skripte, für Tests und Pfade in der Konfiguration.',
+    ],
+  },
   features: {
     'Folder report':
       'Der Walker liest Namen, Größen und Daten in den genannten Ordnern. Das Tool schreibt Anzahl, Jahre, Typen und wahrscheinliche Kopien in eine Markdown-Datei.',

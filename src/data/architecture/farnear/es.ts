@@ -45,6 +45,47 @@ const arch: Arch = {
     { to: 'app-updater', text: 'WBS Updater compara la versión instalada con la última versión de GitHub.' },
     { to: 'Hugging Face', text: 'El escriba descarga de ahí una vez los pesos de Whisper.' },
   ],
+  design: {
+    scale: [
+      'Una llamada une hasta 4 dispositivos en malla, y cada uno envía su vídeo a los otros 3.',
+      'Un objeto de sala admite 6 sockets como máximo, 64 KB por mensaje y 20 mensajes por segundo, así que una avalancha queda en una sala.',
+      'El Worker, el Durable Object y el relé corren en planes gratuitos, porque solo pasan por ellos mensajes pequeños y sellados.',
+    ],
+    data: [
+      'No hay base de datos de cuentas. El nombre, el idioma, las salas guardadas y las claves push están en localStorage con un prefijo versionado.',
+      'La transcripción y los mensajes de texto de cada sala están en IndexedDB en cada dispositivo.',
+      'El Durable Object solo guarda la cuota del relé y una respuesta del relé en caché durante 90 minutos. KV guarda los informes de conexión 14 días.',
+    ],
+    interfaces: [
+      'La señalización va por un WebSocket al objeto de sala. Cada mensaje es un sobre AES-GCM con versión, id y número de secuencia.',
+      'Cada par de dispositivos abre 3 canales de datos negociados: puntos en vivo, mensajes de control y trozos de archivo.',
+    ],
+    reliability: [
+      'Tras 3 segundos de corte, el id de par más bajo envía una oferta de reinicio ICE, con esperas de 12, 18 y 25 segundos.',
+      'Una comprobación lee cada pista cada 3 segundos. Un bloqueo de 15 segundos inicia una reparación ICE y luego reconstruye el par.',
+      'El id del sobre descarta una copia, el número de secuencia una repetición y el id de oferta una respuesta superada.',
+    ],
+    security: [
+      'La clave de la sala va tras el # del enlace, así que el Worker ve texto cifrado sin nombres, títulos ni ofertas.',
+      'Los medios van por DTLS-SRTP entre los dispositivos, y un relé TURN solo lleva paquetes cifrados.',
+      'La página de la sala no carga scripts de anuncios y lleva noindex, así que ningún código ajeno corre junto a la clave.',
+    ],
+    performance: [
+      'El canvas y las llamadas WebRTC corren en módulos simples, y React lee pequeños stores con useSyncExternalStore.',
+      'El Worker guarda en caché los ajustes del relé 90 minutos por sala y pide 20 como máximo por sala y día.',
+      'Whisper corre en WebGPU donde existe, y el modelo pequeño en WebAssembly si no. Los archivos grandes esperan a que el canal se vacíe.',
+    ],
+    operations: [
+      'Checks ejecuta lint, pruebas y compilación en cada push a main, luego el sitio va a GitHub Pages y el Worker se despliega con wrangler.',
+      'El APK se compila solo si cambió android/, porque la app carga el sitio en vivo. Un cambio web recibe una etiqueta sin runner pesado.',
+      'Una ejecución nocturna a las 19:00 de Sídney compila el bundle de Play si cambió android/. Un Checks fallido cancela la compilación.',
+    ],
+    tradeoffs: [
+      'Una malla de enlaces directos en lugar de un servidor de medios: no se aloja vídeo y no cuesta nada. La subida crece con cada persona, por eso las llamadas paran en 4.',
+      'Una envoltura del sitio en vivo en lugar de pantallas nativas: un arreglo web sale sin revisión de tienda. La app necesita red.',
+      'Whisper en el navegador en lugar de reconocimiento de voz en la nube, para que el audio quede en los dispositivos. El primer uso descarga los pesos del modelo.',
+    ],
+  },
   features: {
     'Calls through a link':
       'El final del enlace lleva la clave de la sala, así que el Worker solo ve mensajes sellados. Luego WebRTC une hasta 4 dispositivos en malla.',

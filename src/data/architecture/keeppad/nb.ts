@@ -45,6 +45,49 @@ const arch: Arch = {
     { to: 'Firebase', text: 'Firestore holder delte notater oppdatert live, og Hosting leverer nettstedet.' },
     { to: 'Google Play', text: 'AdMob viser banneret, og Play Billing selger Fjern annonser og KeepPad Pro.' },
   ],
+  design: {
+    scale: [
+      'Én person per installasjon. Notater blir på telefonen, og bare et delt notat når Firestore, som tekst på opptil 20 000 tegn.',
+      'Hey Keep går hele dagen som en forgrunnstjeneste i Android, så batteriet formet designet: en lydterskel hopper over stille rammer.',
+    ],
+    data: [
+      'SQLite keeppad.db holder notater, exports (hvilken app som fikk hvilket notat) og applied_inbox. PRAGMA user_version teller migreringstrinnene en telefon har kjørt.',
+      'Opptak er WAV-filer i files/audio. Notater Hey Keep tar opp mens appen er lukket, er JSON-filer i files/keep-inbox.',
+      'Innstillinger ligger i localStorage. Tokener til tilknyttede apper ligger i Android keystore eller iOS keychain via expo-secure-store.',
+      'Et delt notat i Firestore holder bare text, group og updated.',
+    ],
+    interfaces: [
+      'Kotlin-tjenesten og appen sender notater gjennom JSON-innboksen og en watch-hendelse, siden tjenesten ikke når SQLite.',
+      'Tilknyttede apper får hvert nye notat gjennom sitt eget web-API. Obsidian får en fil i en valgt mappe, og en Memories-dagbok får det over WebDAV.',
+      'expo-speech-recognition gjør tale om til tekst gjennom Androids taletjeneste eller Apples gjenkjenner.',
+    ],
+    reliability: [
+      'Et langt opptak skriver en PCM-fil og en JSON-fil underveis, og etter et krasj gjør appen dem om til et notat.',
+      'applied_inbox lagrer innboks-iden i samme transaksjon som notatet, så et krasj importerer ikke et fortsettelsesnotat to ganger.',
+      'Hver lokale endring lagrer updated = MAX(now, updated + 1), så en telefon med treg klokke vinner likevel i Firestore.',
+    ],
+    security: [
+      'Ingen kontoer og ingen taleforståelse i skyen. Vekkeordmodellen kjører på telefonen, så ingen lyd forlater den.',
+      'Firestore-reglene krever en notat-id på 32 hex-sifre, nekter listing og tar bare imot text, group og updated. Ingen kan bla etter ider.',
+      'Tokener til tilknyttede apper ligger utenfor notatfilen, i det sikre lageret.',
+    ],
+    performance: [
+      'I et stille rom koster hver ramme på 100 ms én sum. sherpa-onnx-modellen på 3,3 millioner parametere kjører bare på høye rammer.',
+      'Hver skriving øker notesVersion, og skjermene laster på nytt. Notatlisten med FlashList tegner bare radene på skjermen.',
+      'Et ordtreff velger gruppen med en gang, og Gemini Nano eller Apple Foundation Models kjører bare mens appen er åpen.',
+    ],
+    operations: [
+      'Checks og Release starter sammen ved hver push til main. Utgivelsen publiserer APK-en når Checks består, og beholder de 3 siste.',
+      'En Play-bundle bygges med PLAY=1 én gang i døgnet klokken 19:00 Sydney-tid, når appen er endret. APK-en fra GitHub oppdaterer seg selv.',
+      'Firebase Hosting leverer nettstedet, og det rulles ut med Firestore-reglene etter bestått Checks. iPhone-bygget kjører bare for hånd på macOS.',
+    ],
+    tradeoffs: [
+      'Expo med Kotlin- og Swift-moduler framfor en innebygd Android-app, for iPhone og nettet, til prisen av native kode ved siden av TypeScript.',
+      'En forgrunnstjeneste med sherpa-onnx framfor et vekkeord i JavaScript, så den hører med skjermen av. Modellen kan bare engelsk.',
+      'Telefonens egen talegjenkjenner framfor en modell i APK-en. Telefonen har allerede engelsk og russisk, så appen leverer ingen modell.',
+      'En GitHub-APK som oppdaterer seg selv og et Play-bygg med stubber framfor ett bygg, siden Play avviser apper som installerer oppdateringer selv.',
+    ],
+  },
   features: {
     'Hey Keep':
       'En Kotlin-tjeneste i forgrunnen hopper over stillhet og kjører en sherpa-onnx-modell på høye lyder. Svarene spilles fra klipp tatt opp per stemme, og tilpasningen setter en terskel per frase.',

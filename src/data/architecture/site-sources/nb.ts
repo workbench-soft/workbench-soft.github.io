@@ -28,6 +28,48 @@ const arch: Arch = {
     'Chrome-nedlastingene lagrer zip-filen under Nedlastinger.',
   ],
   links: [],
+  design: {
+    scale: [
+      'Én person lagrer én åpen side om gangen, og to faner kan lagre samtidig.',
+      'Filene ligger i minnet til zip-filen er skrevet, så et nettsted på flere hundre megabyte kan svikte.',
+    ],
+    data: [
+      'En lagring er en zip oppkalt etter verten og tiden, med index.html, en mappe per vert, _sources og _frames.',
+      'Tilstanden til hver lagring ligger i chrome.storage.session: tellerne, filene som feilet og trinnet.',
+      'Ingenting lagres etter at zip-filen har havnet i Nedlastinger. Utvidelsen har ingen historikk og ingen innstillinger.',
+    ],
+    interfaces: [
+      'Popupen, service workeren og offscreen-siden snakker gjennom chrome.runtime-meldinger og tilstanden i session storage.',
+      'Et sideskript injisert med chrome.scripting returnerer HTML og nettadressene fra performance-oppføringer, src og link href.',
+      'Zip-filen går ut som en blob-URL som chrome.downloads lagrer i Nedlastinger.',
+    ],
+    reliability: [
+      'En fil serveren avviser, teller som mislykket og blir utenfor zip-filen, uten nytt forsøk. Et kall stopper etter 2 minutter.',
+      'Popupen kan lukkes midt i lagringen og tegnes på nytt fra session storage når den åpnes igjen, så lagringen går videre.',
+      'Ett delt løfte oppretter offscreen-siden, så en andre fane bruker den ene Chrome tillater.',
+    ],
+    security: [
+      'Utvidelsen ber om activeTab, scripting, downloads, storage, offscreen og alle nettadresser, siden den henter filer fra hvert nettsted siden laster fra.',
+      'Den sender ingenting til en egen server. De eneste forespørslene går til nettstedene siden allerede bruker.',
+      'En fil bak en innlogging utvidelsen ikke kan sende, teller som mislykket. Chrome-sider og Chrome Nettmarked avviser utvidelser.',
+    ],
+    performance: [
+      'Oppdagelsen henter skript og stilark i hver runde side om side og beholder bytene, så pakkingen ikke henter dem på nytt.',
+      'Fremdriftstellere slås sammen og går ut høyst hvert 100. ms, og en ny tilstand går ut med en gang.',
+      'Bilder, skrifter, video og andre komprimerte formater legges i zip-filen som de er, uten ny komprimering.',
+    ],
+    operations: [
+      'Vite bunter service workeren, popupen og offscreen-siden. fflate pakker også utvidelsen for hver utgivelse.',
+      'Hver push til main bygger zip-filen ved siden av sjekkene. Et portskript utgir den når sjekkene består og avbryter den når de feiler.',
+      'Utgivelser får en datotag som v2026.11.02.1, og manifestet har samme versjon. Chrome laster den upakket.',
+    ],
+    tradeoffs: [
+      'En offscreen-side framfor en data-URL fra workeren, siden bare en side kan lage en blob-URL og en data-URL er en tredjedel større.',
+      'zipSync framfor asynkron zip, siden utvidelsens policy blokkerer blob-workerne i fflates asynkrone zip, på bekostning av en pause på store zip-filer.',
+      'Finne filene først og så hente, så totalen står fast mens linjen fylles, på bekostning av ventetid før første fil på store sider.',
+      'chrome.i18n framfor i18next, siden manifestnavnet bare kan komme fra _locales og en andre katalog ikke gir noe.',
+    ],
+  },
   features: {
     'Download from the popup':
       'Popupen gir fanen til service workeren, som kjører lagringen på egen hånd. Tilstanden ligger i øktlageret, så jobben fortsetter når popupen lukkes.',

@@ -27,6 +27,49 @@ const arch: Arch = {
     { to: 'Google AdSense', text: 'AdSense がサイトにバナーを出します。' },
     { to: 'Google AdMob', text: 'AdMob が Android と iOS のアプリにバナーを出します。' },
   ],
+  design: {
+    scale: [
+      '1つのルームは最大12人で、ヒントバトルは4人以上が必要です。',
+      'Workers Free は1日10万リクエストで、お絵かきにすると1日約40時間分です。',
+      'メッセージは256 KB、1枚の絵は3000アクションまでです。',
+    ],
+    data: [
+      '各ルームは専用の SQLite ストレージを持つ Durable Object で、キーは meta、canvas、chain:N の3種類です。',
+      'meta は変更のたびにプレイヤー、得点、設定、フェーズ、チャット、ゲーム状態を保存します。canvas は2秒に1回までです。',
+      '絵は 800 × 600 のグリッド上のアクションの列です。ブラウザは wg- で始まるキーでトークンと設定を持ちます。',
+    ],
+    interfaces: [
+      'プレイヤーごとに /games/ws/CODE へ WebSocket を1本張ります。Worker は idFromName でコードをルームのオブジェクトに結びつけます。',
+      '最初のメッセージ hello は、プロトコルのバージョン、トークン、名前、色を運びます。その後に state、chat、draw が続きます。',
+      'Android と iOS のアプリも同じソケットをゲームの Worker に開きます。Origin のチェックでサイトとアプリを通します。',
+    ],
+    reliability: [
+      'Hibernation API で、使われていないルームはメモリを離れ、ソケットのメッセージかアラームがストレージから起こします。',
+      'アラームがすべての締め切りを動かし、ルームが空になって30分後に片づけます。',
+      'PROTOCOL の番号で、Worker は古いアプリにそのアプリの形式で答えます。切れたプレイヤーの席は、ルームが24席で埋まるまで残ります。',
+    ],
+    security: [
+      'アカウントはありません。ブラウザがランダムなトークンを持ち、ルームはそのハッシュをプレイヤー ID として保存します。',
+      'ルームのオブジェクトがお題を選んで答えを判定するので、正解はサーバーに残ります。',
+      '他のサイトからのソケットは断ります。名前は20文字、チャットは1行100文字までです。',
+    ],
+    performance: [
+      '絵は画素ではなく、小さなアクションのリストを80 msごとに送ります。',
+      'Hibernation を使うと、WebSocket のメッセージ20件が1リクエストとして数えられます。',
+      '静的ページは無料です。run_worker_first がルームのリンクとソケットだけを Worker のコードに通すからです。',
+    ],
+    operations: [
+      'Worker は wrangler で出荷し、静的な dist/ フォルダとルームのオブジェクトを含みます。Games ワークフローは main への push のたびにデプロイします。',
+      'mise run check は各ゲームのルールに oxlint、型チェック、Vitest をかけます。',
+      'Worker の可観測性はオンです。Android アプリは Google Play のクローズドテストで配信します。',
+    ],
+    tradeoffs: [
+      'Supabase Realtime、PartyKit、VPS ではなく hibernation 付きの Durable Objects を選び、サーバーなしで無料枠に収めました。ルームのコードは Cloudflare 向けです。',
+      'Preact のシングルページアプリではなく Preact のアイランド付き Astro 静的ページにして、検索エンジンが完全な HTML を得られます。',
+      '画素ではなく固定グリッド上の描画アクションにして、メッセージを小さく、取り消しを1手にしました。',
+      'Trusted Web Activity や React Native ではなく Capacitor を選び、同じページをネイティブの AdMob バナー付きでアプリに載せます。',
+    ],
+  },
   features: {
     'Rooms by link':
       'Worker が部屋コードごとに専用の Durable Object を結び付けます。ブラウザのランダムなトークンがプレイヤーを表し、部屋はそのハッシュだけを持ちます。',

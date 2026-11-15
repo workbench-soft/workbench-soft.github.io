@@ -30,6 +30,47 @@ const arch: Arch = {
       text: 'Ses règles et skills fixent comment chaque agent lancé par Archon livre un changement.',
     },
   ],
+  design: {
+    scale: [
+      "Le PC d'un développeur, quelques dizaines de dépôts et 5 à 10 agents en même temps.",
+      'Le registre des exécutions garde les 200 dernières, et le reste tient dans de petites listes JSON, donc pas de base de données.',
+    ],
+    data: [
+      "Des listes JSON nomment les dépôts, les apps et les tâches d'agents qu'Archon montre.",
+      "runs.json dans le dossier de données locales de l'app garde chaque exécution avec son début, sa fin et son résultat.",
+      "Le TODO.md de chaque dépôt et les fichiers de session des agents sont lus sur place, Archon n'en garde pas de copie.",
+    ],
+    interfaces: [
+      'server.ts relie chaque chemin à une fonction : les lectures répondent au GET en JSON, et les actions répondent au POST par une ligne de texte.',
+      'Une exécution en console se termine par un marqueur done ou failed que le registre lit.',
+      "Les autres outils passent par adb, git, l'API des releases GitHub et les registres npm, crates.io et PyPI. Certains onglets encadrent des pages locales en HTTP.",
+    ],
+    reliability: [
+      "Le serveur reste actif jusqu'à la déconnexion, donc les exécutions et les mises à jour continuent fenêtres fermées.",
+      'Un second lancement trouve le port pris et ouvre une fenêtre de plus sur le même serveur.',
+      "La page démarre avec ses propres catalogues, donc les boutons d'onglet marchent hors ligne, et un onglet qui n'a pas chargé réessaie au clic suivant.",
+    ],
+    security: [
+      "Le serveur n'écoute que sur la boucle locale, et le téléphone l'atteint par Tailscale dans le tailnet.",
+      "Une action exige le type JSON, donc une page d'un autre site ne peut pas poster sans preflight, que le serveur ne traite pas.",
+      "Ask Archon n'atteint ni les suppressions de branches ni la rotation des clés. L'onglet Keys montre l'âge de chaque secret, pas sa valeur.",
+    ],
+    performance: [
+      'La page interroge les exécutions toutes les 5 secondes dans de petits fichiers, donc pas besoin de canal push.',
+      "Le temps restant d'une exécution est la médiane des exécutions terminées du même type.",
+      'Les synchros de dépôts et les scans de paquets traitent 8 dépôts à la fois.',
+    ],
+    operations: [
+      "Toutes les 2 minutes, le programme de mise à jour tire main et installe les builds de bureau plus récents. Un nouveau code d'Archon redémarre le serveur et recharge la page.",
+      'Un raccourci caché dans le dossier Démarrage lance le serveur à la connexion, sans fenêtre.',
+      'mise run test vérifie que les catalogues anglais et russe ont les mêmes clés, puis lance le lanceur de tests de Node.',
+    ],
+    tradeoffs: [
+      "Une page web locale plutôt que Tauri, car elle tourne sur Node seul et s'ouvre sur le téléphone. Elle demande Edge pour la fenêtre d'app et la voix.",
+      "Pas de paquets ni d'étape de build, donc git pull est tout le déploiement. Le routage est écrit à la main.",
+      "Une console visible par exécution d'agent plutôt que des exécutions sans interface, pour que la personne puisse suivre et répondre aux questions.",
+    ],
+  },
   features: {
     'Ask Archon':
       "Edge transforme la voix en texte. Claude Code sur Haiku choisit ensuite une action du lanceur, et le serveur l'exécute et ouvre son onglet.",

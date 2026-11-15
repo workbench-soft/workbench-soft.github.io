@@ -27,6 +27,49 @@ const arch: Arch = {
     { to: 'Google Play', text: 'Google Play Billing 出售去广告和 Pro。' },
     { to: 'Open-Meteo', text: '出生城市搜索只发送输入的城市名，返回地点和它的时区。' },
   ],
+  design: {
+    scale: [
+      '每次安装只有一个人使用，没有账号，也没有自己的服务器。',
+      '天空包含 2851 颗恒星、89 个星座图形和 19 个文化主题，每帧约绘制 3000 个点。',
+      '应用里只带 2 个免费主题，每张付费图片约 30 KB，从 CDN 下载。',
+    ],
+    data: [
+      '恒星、图形和名称是应用内的 JSON。故事按语言各放在一个 .lore 文件里。',
+      '设置和保存的出生数据存在 localStorage，手机上则存在 expo-sqlite。',
+      '手机把下载的图片和曲目保存在应用的文档文件夹里。',
+    ],
+    interfaces: [
+      'CDN 上的 manifest.json 把每张主题图片对应到一个以内容哈希命名的文件。',
+      'expo-iap 读取两个 Google Play 商品。更新检查读取共享的 GitHub 发布列表。',
+      'Open-Meteo 地理编码接收输入的城市名，返回地点及其时区。',
+    ],
+    reliability: [
+      '下载过一次的主题可离线使用，免费主题从第一次启动起就能离线使用。',
+      '下载失败的图片会在一分钟后重试。',
+      '陀螺仪负责移动视图，指南针只在转动时才修正，所以天空不会自己漂移。',
+    ],
+    security: [
+      '没有登录，也没有服务器。保存的出生数据只留在手机上。',
+      'Open-Meteo 只收到输入的城市名。相机照片在手机上处理。',
+      '在 EEA、英国和瑞士，任何广告出现前都会先显示 Google 同意表单。签名密钥放在仓库之外。',
+    ],
+    performance: [
+      '类型化数组组成的地平线缓存每秒刷新一次，所以每帧不会为每颗星创建对象。',
+      'Skia 每帧录制一张图直接交给视图，不经过 React 渲染。静止的视图每秒重绘约 8 次。',
+      '图片模糊在加载时只做一次，带哈希的文件名让 CDN 和手机缓存一年。',
+    ],
+    operations: [
+      '每次推送到 main，Checks 运行 lint、测试以及 Android 和 web 打包，Release 同时构建已签名的 APK。',
+      'Publish 把 APK 放进共享发布列表，列表为每个应用保留最近 3 个构建。',
+      'mise run deploy 上传新的图片、曲目和清单，所以重绘的图片不需要发布新版本。',
+    ],
+    tradeoffs: [
+      '选 Skia 而不是 react-native-svg，因为后者画每帧 3000 个点太慢。代价是 web 上多一个 7 MB 的 CanvasKit 文件。',
+      '名称用 React Native 绘制而不是 Skia 段落，这样中文、日文和韩文可使用手机自带字体。',
+      '选 d3-celestial 数据而不是 Stellarium 星空文化，后者许可混杂，部分是 GPL。',
+      '选 Astronomy Engine 而不是 Swiss Ephemeris，后者是 AGPL 或收费，而且每个平台都要原生构建。',
+    ],
+  },
   features: {
     'Sky view': '旋转传感器移动视角，陀螺仪在两次罗盘校正之间保持稳定。Skia 用应用内的数据画出星星、天体和 88 个星座。',
     Clock: 'React Native 图层用主题字体绘制时间和日期。计时器每分钟触发一次，时钟随按钮一起变暗。',

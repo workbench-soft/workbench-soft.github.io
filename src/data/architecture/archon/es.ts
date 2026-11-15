@@ -33,6 +33,47 @@ const arch: Arch = {
       text: 'Sus reglas y skills fijan cómo entrega un cambio cada agente que lanza Archon.',
     },
   ],
+  design: {
+    scale: [
+      'El PC de un desarrollador, unas decenas de repositorios y de 5 a 10 agentes a la vez.',
+      'El registro de ejecuciones guarda las últimas 200, y el resto son listas JSON pequeñas, así que no hace falta una base de datos.',
+    ],
+    data: [
+      'Listas JSON nombran los repositorios, las apps y las tareas de agentes que muestra Archon.',
+      'runs.json en la carpeta de datos locales de la app guarda cada ejecución con su inicio, su fin y su resultado.',
+      'El TODO.md de cada repositorio y los archivos de sesión de los agentes se leen en su sitio, y Archon no guarda copia.',
+    ],
+    interfaces: [
+      'server.ts asigna cada ruta a una función: las lecturas responden al GET con JSON, y las acciones responden al POST con una línea de texto.',
+      'Una ejecución en consola termina con una marca done o failed que lee el registro.',
+      'Otras herramientas están tras adb, git, la API de releases de GitHub y los registros de npm, crates.io y PyPI. Algunas pestañas enmarcan páginas locales por HTTP.',
+    ],
+    reliability: [
+      'El servidor sigue activo hasta cerrar sesión, así que las ejecuciones y las actualizaciones continúan con todas las ventanas cerradas.',
+      'Un segundo inicio encuentra el puerto ocupado y abre una ventana más en el mismo servidor.',
+      'La página arranca con sus propios catálogos, así que los botones de pestaña funcionan sin conexión, y una pestaña que no cargó reintenta en el siguiente clic.',
+    ],
+    security: [
+      'El servidor escucha solo en el bucle local, y el móvil llega a él por Tailscale dentro del tailnet.',
+      'Una acción exige el tipo JSON, así que una página de otro sitio no puede hacer un POST sin preflight, que el servidor no responde.',
+      'Ask Archon no alcanza el borrado de ramas ni la rotación de claves. La pestaña Keys muestra la antigüedad de cada secreto, no su valor.',
+    ],
+    performance: [
+      'La página consulta las ejecuciones cada 5 segundos en archivos pequeños, así que no hace falta un canal push.',
+      'El tiempo restante de una ejecución es la mediana de las ejecuciones terminadas del mismo tipo.',
+      'Las sincronizaciones de repositorios y los escaneos de paquetes tratan 8 repositorios a la vez.',
+    ],
+    operations: [
+      'Cada 2 minutos el actualizador trae main e instala las compilaciones de escritorio más nuevas. El código nuevo de Archon reinicia el servidor y recarga la página.',
+      'Un acceso directo oculto en la carpeta de inicio arranca el servidor al iniciar sesión, sin ventana.',
+      'mise run test comprueba que los catálogos en inglés y ruso tienen las mismas claves y luego lanza el ejecutor de pruebas de Node.',
+    ],
+    tradeoffs: [
+      'Una página web local en vez de Tauri, porque corre solo sobre Node y se abre en el móvil. Necesita Edge para la ventana de la app y la voz.',
+      'Sin paquetes ni paso de compilación, así que git pull es todo el despliegue. El enrutado está escrito a mano.',
+      'Una consola visible por ejecución de agente en vez de ejecuciones sin interfaz, para que la persona pueda mirar y responder preguntas.',
+    ],
+  },
   features: {
     'Ask Archon':
       'Edge convierte la voz en texto. Luego Claude Code con Haiku elige una acción del lanzador, y el servidor la ejecuta y abre su pestaña.',

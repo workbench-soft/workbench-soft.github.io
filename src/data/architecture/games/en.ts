@@ -30,6 +30,49 @@ const arch: Arch = {
     { to: 'Google AdSense', text: 'AdSense shows the banner on the website.' },
     { to: 'Google AdMob', text: 'AdMob shows the banner in the Android and iOS apps.' },
   ],
+  design: {
+    scale: [
+      'A room holds up to 12 players, and the clue duel needs at least 4.',
+      'Workers Free gives 100,000 requests a day, about 40 hours of drawing a day.',
+      'A message caps at 256 KB, and a drawing at 3000 actions.',
+    ],
+    data: [
+      'Each room is a Durable Object with its own SQLite storage and 3 kinds of key: meta, canvas and chain:N.',
+      'meta holds the players, scores, settings, phase, chat and game state after each change. canvas saves at most every 2 seconds.',
+      'A drawing is a list of actions on an 800 by 600 grid. The browser keeps a token and settings under keys that start with wg-.',
+    ],
+    interfaces: [
+      'One WebSocket per player at /games/ws/CODE. The Worker maps the code with idFromName to the room object.',
+      'The first message, hello, carries the protocol version, the token, the name and the color. After it come state, chat and draw messages.',
+      'The Android and iOS apps open the same sockets on the games Worker. An Origin check lets the site and the apps in.',
+    ],
+    reliability: [
+      'The Hibernation API lets an idle room leave memory, and a socket message or an alarm wakes it from storage.',
+      'Alarms drive each deadline and clear a room 30 minutes after it empties.',
+      'A PROTOCOL number lets the Worker answer an old app in its own format. A player who drops keeps a seat until the room fills at 24 seats.',
+    ],
+    security: [
+      'No account. The browser keeps a random token, and the room stores its hash as the player id.',
+      'The room object picks the word and checks each guess, so the answer stays on the server.',
+      'Sockets from other sites are turned down. Names cap at 20 characters, chat lines at 100.',
+    ],
+    performance: [
+      'Drawing travels as small action lists every 80 ms, not as pixels.',
+      'With hibernation, 20 WebSocket messages count as 1 request.',
+      'Static pages are free to serve, since run_worker_first sends only room links and sockets through Worker code.',
+    ],
+    operations: [
+      'One Worker deploys with wrangler: the static dist/ folder plus the room object. The Games workflow deploys on each push to main.',
+      'mise run check runs oxlint, the type check and Vitest on the rules of each game.',
+      'Worker observability is on. The Android app ships through Google Play closed testing.',
+    ],
+    tradeoffs: [
+      'Durable Objects with hibernation over Supabase Realtime, PartyKit or a VPS, so no server and a free tier. The room code is written for Cloudflare.',
+      'Astro static pages with a Preact island over a Preact single page app, so search engines get full HTML.',
+      'Drawing actions on a fixed grid over pixels, so messages stay small and undo is one step.',
+      'Capacitor over a Trusted Web Activity or React Native, so the same pages run in the apps with a native AdMob banner.',
+    ],
+  },
   features: {
     'Rooms by link':
       'The Worker maps each room code to its own Durable Object. A random token in the browser stands for the player, and the room keeps only its hash.',

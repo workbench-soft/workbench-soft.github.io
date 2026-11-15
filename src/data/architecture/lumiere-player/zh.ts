@@ -27,6 +27,49 @@ const arch: Arch = {
     { to: 'GitHub', text: 'APK 和它的更新来自 GitHub 上的发布版本。' },
     { to: 'Google Play', text: 'Play 版本、它的更新，以及 Pro 和去广告的购买。' },
   ],
+  design: {
+    scale: [
+      '一个 APK 同时用于 Android 手机和 Google TV，每次安装对应一个人。媒体库在设备上建立索引。',
+      '视频扫描只读文件名，不读标签，所以很大的共享也不用逐个打开文件就能建好索引。',
+      '只发布 armeabi-v7a 和 arm64-v8a 两种 ABI，让带 libVLC 的 APK 保持小体积。',
+    ],
+    data: [
+      '设备上的 SQLite：positions.db、library.db、books.db、book-places.db 和 videos.db。',
+      'positions.db 的每一行以不含 NAS 登录信息的 URI 为键，USB 文件还加上文件名和大小。',
+      'Android 备份保留播放位置和书籍进度，但不含 nas.xml，也不含带 NAS 登录信息的数据库。',
+    ],
+    interfaces: [
+      'libVLC 读取 file://、content:// 和 smb:// 来源。Media3 的 MediaSessionService 提供通知、锁屏和蓝牙按键。',
+      '语音用设备上的 SpeechRecognizer，sherpa-onnx 识别唤醒词 Hey Lumi。Guitar Upscale 通过 Android VIEW 链接打开。',
+      '在线模块调用 MusicBrainz 和 Wikidata，并通过 yt-dlp 访问 YouTube，只在 GitHub 的 APK 里。',
+    ],
+    reliability: [
+      '播放器每 5 秒、暂停、停止和退出时保存位置，崩溃最多丢几秒。',
+      'ScanWorker 基于 WorkManager，在新增文件夹、应用启动时和每天在 Wi-Fi 下运行，查询在单个工作线程上慢慢跑。',
+      '不播放任何内容的蓝牙设备，会让声音回到扬声器。',
+    ],
+    security: [
+      '没有账号，也没有自己的服务器。名称和标签都留在设备上。',
+      '带密码的 NAS 列表存在 nas.xml 里，Android 备份不包含它。',
+      'SponsorBlock 只收到 YouTube id 的哈希前缀。唤醒用的麦克风以前台服务运行。',
+    ],
+    performance: [
+      'libVLC 直接播放每个文件，Media3 播放器在外面包一层用于音频，所以一个引擎同时服务视频和音乐。',
+      'LoudnessGate 只把响亮的帧和其前半秒交给关键词模型，安静的房间会跳过它。',
+      '封面按所需大小解码并带缓存，词索引把每个词只记一次，并附上含该词的书。',
+    ],
+    operations: [
+      '推送到 main 会同时启动 Checks 和 Release。Checks 通过后，Release 为 APK 签名并发布。',
+      '每个构建 runner 保留自己的 Gradle 状态，Gradle 只重建改动的部分。发布列表保留最新的 3 个。',
+      'APK 在启动时从 GitHub Releases 更新。Play 包不含更新器和在线模块。',
+    ],
+    tradeoffs: [
+      '选原生 Kotlin 加普通 View，不选 Expo，因为播放器是一个 libVLC 视图，由遥控器按键和焦点驱动。',
+      '选未修改的 libVLC，不选 Media3 ExoPlayer，为了 MKV 音轨、SMB 浏览和 Windows-1251 字幕，代价是一份 LGPL 声明和较大的 APK。',
+      '选经 libVLC 访问 SMB，不选单独的库，少一个依赖，但 NAS 列表不给文件大小。',
+      '选一次性 Pro 购买，不选每个应用一份订阅，这样一个检查 Entitled.pro() 就能控制每个界面。',
+    ],
+  },
   features: {
     Sources:
       'U 盘文件夹通过 Android 文件系统打开，SMB 共享由 libVLC 浏览。保存的 NAS 列表留在设备上，不进入 Android 备份。',

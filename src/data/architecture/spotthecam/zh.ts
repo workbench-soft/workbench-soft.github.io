@@ -43,6 +43,49 @@ const arch: Arch = {
     { to: 'Google Play', text: 'Play Billing 销售去除广告和 SpotTheCam Pro。AdMob 在应用里显示横幅。' },
     { to: 'GitHub Releases', text: '每次发布都把 APK 放在这里，GitHub 版从这里自行更新。' },
   ],
+  design: {
+    scale: [
+      '每次安装只对应一位司机。摄像头文件约有 13,700 个摄像头，每行一个。',
+      '网站是静态文件，只有分享行程需要服务器。一个小型 Worker 留在 Cloudflare 免费套餐内。',
+      '分享的行程上限为 1 MB 和 100,000 个点，同一地址每分钟可分享 10 次行程。',
+    ],
+    data: [
+      'data/cameras.json 每行一个摄像头：类型、州、坐标、道路、郊区、来源、限速和方向。',
+      '行程在应用的私有存储中保存 400 天。道路限速在手机上保留 60 天。',
+      '分享的行程存在 Cloudflare KV 中，用 10 位 id 作键，内容是精简后的路线和不含时间的汇总。',
+    ],
+    interfaces: [
+      'Worker 只响应 POST /api/trips，以及 /api/trips/<id> 上的 GET 和 DELETE。其余都是静态文件。',
+      'Capacitor 插件把网页与 Kotlin 驾驶服务及其 Swift 移植版连接起来。',
+      'Overpass 瓦片提供道路、铁路和跑道。Photon、Valhalla 和 TomTom 负责地点、路线和路况请求。',
+    ],
+    reliability: [
+      'Service worker 先走网络，4 秒后改用缓存，最多保留 500 块地图瓦片供离线使用。',
+      'Worker 的存储故障会以带 CORS 头的 503 返回，让应用把它当作故障，而不是没有信号。',
+      '公共路线服务器无响应时，语音会提示。超出 TomTom 额度后，路线不再带路况。',
+    ],
+    security: [
+      '分享无需登录。KV 只存删除密钥的 SHA-256 哈希，所以读取存储也无法删除行程。',
+      'Worker 用严格的解析器检查每个请求体，并发送 nosniff 和 default-src none 策略。',
+      '行程在分享前只留在手机上。分享的行程不含时间，摄像头处的车速未经同意不会带上。',
+    ],
+    performance: [
+      'Kotlin 服务在手机上把 GPS 与缓存的道路匹配，无需网络，在摄像头前约 20 秒播报。',
+      '夜间构建把定时限速变成未来 35 天的时间窗，浏览器只需选当前的一个。',
+      'KV 在读取者附近缓存分享的行程一分钟，地图瓦片存储时不带 OpenFreeMap 每周更换的文件夹名。',
+    ],
+    operations: [
+      'CI 任务在悉尼时间凌晨 3 点刷新摄像头并提交文件，每行一个摄像头，让差异保持很小。',
+      '每次推送到 main 都会把网站部署到 Cloudflare。应用有变化时，夜间任务把 Android 包发到 Google Play。',
+      'GitHub 版 APK 从 GitHub Releases 自行更新。Google Play 版不含这段代码。',
+    ],
+    tradeoffs: [
+      '选 Capacitor 外壳里的静态 Next.js 网站而非 Expo，让地图和网页共用一套代码，代价是行程需要一个 Worker。',
+      '选每日一个 JSON 文件而非 API 后的数据库，离线可用且无需服务器，代价是列表最多滞后一天。',
+      '选原生 Kotlin 驾驶服务而非 WebView 里的 JavaScript，因为息屏后 Android 会暂停 WebView。',
+      '选 OpenFreeMap 瓦片的 Leaflet 而非 Google Maps 或 Mapbox，因为不需要密钥，也没有配额。',
+    ],
+  },
   features: {
     'Camera map': '夜间构建把每个摄像头的分时限速转成未来 35 天的时间窗。浏览器选出当前这一分钟的时间窗。',
     'Search and filter': '页面用摄像头文件建立区域索引，并在浏览器里搜索。不需要服务器。',

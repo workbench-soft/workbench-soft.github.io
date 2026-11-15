@@ -48,6 +48,51 @@ const arch: Arch = {
     { to: 'Google Play', text: 'Google Play Billing vend Plus et Retirer les pubs.' },
     { to: 'Google AdMob', text: 'AdMob affiche la bannière de la galerie après le formulaire de consentement.' },
   ],
+  design: {
+    scale: [
+      'Une personne par téléphone, sans serveur : chaque photo est construite et enregistrée sur le téléphone.',
+      'Une photo Portrait coûte environ 7 s par 12 Mpx sur le processeur d’un Pixel 7 Pro, et le modèle de profondeur est un téléchargement de 26 Mo.',
+      'Une photo fusionnée garde en mémoire 5 images pleine taille d’environ 18 Mo chacune.',
+    ],
+    data: [
+      'Les réglages sont une valeur JSON dans les shared preferences d’Android, lue au premier rendu, donc la caméra s’ouvre comme on l’a laissée.',
+      'Les prises sont des fichiers WebP, JPEG, PNG ou MP4 dans DCIM/Camera, listés par les lignes MediaStore que l’app possède. Le RAW ajoute un DNG.',
+      'Le lieu, l’étalonnage de la balance des blancs et les valeurs en direct restent en mémoire tant que la caméra est ouverte.',
+    ],
+    interfaces: [
+      'React Native passe les valeurs des molettes à la vue caméra Kotlin comme props, et le module renvoie les valeurs en direct 4 fois par seconde.',
+      'CameraX gère le cycle de vie et les use cases, et l’interop Camera2 règle l’ISO, la vitesse, la distance de mise au point et les gains de balance des blancs.',
+      'Les prises arrivent dans MediaStore sous DCIM/Camera, où Memories les lit, et l’app répond aux intents caméra d’Android.',
+    ],
+    reliability: [
+      'Les molettes reviennent sur la caméra à chaque ouverture, depuis les réglages enregistrés.',
+      'Un brouillon de 512 px s’affiche dans la galerie jusqu’à l’arrivée du fichier final.',
+      'Un objectif sans l’extension Night passe à une cadence lente avec forte réduction du bruit, et CameraX prend la taille prise en charge la plus proche.',
+    ],
+    security: [
+      'Les photos restent sur le téléphone. L’app n’a ni compte ni serveur à elle.',
+      'La position n’est lue que pendant que la caméra est ouverte, et le lieu va dans les tags EXIF du fichier enregistré.',
+      'AdMob demande le consentement dans la galerie à la première ouverture, pas au lancement, donc une photo rapide n’est pas retardée.',
+    ],
+    performance: [
+      'Le zéro retard d’obturateur se déclenche au toucher, donc la prise garde l’instant de l’appui.',
+      'Une photo simple demande une plage de 60 images, donc l’exposition auto garde 1/60 s ou plus court.',
+      'Le flou du Portrait se rend sur une couche de 2048 px, et Enhance et Mini passent par le GPU.',
+      'Un anneau garde les 5 dernières images pour la photo fusionnée et les 8 dernières images brutes pour le développement en Rust.',
+    ],
+    operations: [
+      'Un push sur main lance les checks de la caméra et le build de release côte à côte, et release-gate.sh ne publie que si les checks passent.',
+      'Les tags sont shuttrix-v avec une date, et l’APK va dans une release du dépôt public du site, où l’app et l’updater la trouvent.',
+      'Le bundle Play se construit une fois par jour à 19:00 de Sydney si la caméra a changé, et le build Play garde un stub pour l’updater.',
+      'Un workflow à part construit les bibliothèques ONNX Runtime et OpenCV et les publie en prerelease.',
+    ],
+    tradeoffs: [
+      'Expo avec un module Kotlin sur CameraX plutôt que react-native-vision-camera, qui n’a ni distance de mise au point manuelle, ni ISO, ni vitesse, ni kelvin.',
+      'Nuit par l’extension CameraX plutôt qu’en empilant des images en Kotlin, donc le pipeline du téléphone tourne et garde la balance des blancs et l’EV.',
+      'Depth Anything V2 Small plutôt qu’un modèle plus grand pour sa licence Apache, avec un téléchargement de 26 Mo et environ 7 s par photo.',
+      'Un monorepo avec Memories plutôt qu’un dépôt à part, pour partager l’éditeur et la visionneuse, au prix d’une CI par chemins.',
+    ],
+  },
   features: {
     'Simple and Pro':
       'Les 2 modes pilotent une seule vue caméra. Simple confie la mise au point et l’exposition à l’auto, et Pro les confie aux molettes.',

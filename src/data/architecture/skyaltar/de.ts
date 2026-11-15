@@ -42,6 +42,49 @@ const arch: Arch = {
       text: 'Die Suche nach dem Geburtsort schickt nur den getippten Namen und bekommt Ort und Zeitzone zurück.',
     },
   ],
+  design: {
+    scale: [
+      'Eine Person pro Installation, ohne Konto und ohne eigenen Server.',
+      'Der Himmel hat 2851 Sterne, 89 Figuren und 19 Kulturthemen, gezeichnet als etwa 3000 Punkte pro Bild.',
+      'Nur die 2 freien Themen stecken in der App, und jedes Bezahlbild ist etwa 30 KB groß und kommt von einem CDN.',
+    ],
+    data: [
+      'Sterne, Figuren und Namen liegen als JSON in der App. Die Geschichten stehen in einer .lore-Datei je Sprache.',
+      'Einstellungen und gespeicherte Geburtsdaten liegen in localStorage, auf dem Handy in expo-sqlite.',
+      'Heruntergeladene Bilder und Titel liegen im Dokumentenordner der App auf dem Handy.',
+    ],
+    interfaces: [
+      'Eine manifest.json auf dem CDN ordnet jedem Themenbild eine Datei zu, die nach ihrem Inhalts-Hash heißt.',
+      'expo-iap liest zwei Google-Play-Produkte. Die Update-Prüfung liest die gemeinsame GitHub-Releases-Liste.',
+      'Die Open-Meteo-Geokodierung bekommt einen getippten Ortsnamen und gibt Ort und Zeitzone zurück.',
+    ],
+    reliability: [
+      'Ein einmal geladenes Thema läuft offline, und die freien Themen laufen ab dem ersten Start offline.',
+      'Ein Bild, dessen Download scheitert, wird nach einer Minute erneut versucht.',
+      'Das Gyroskop bewegt die Ansicht, und der Kompass korrigiert sie nur während einer Drehung, damit der Himmel nicht wandert.',
+    ],
+    security: [
+      'Keine Anmeldung und kein Server. Gespeicherte Geburtsdaten bleiben auf dem Handy.',
+      'Open-Meteo bekommt nur den getippten Ortsnamen. Die Kamerafotos werden auf dem Handy gelesen.',
+      'Das Google-Einwilligungsformular erscheint im EWR, in Großbritannien und in der Schweiz vor jeder Werbung. Der Signaturschlüssel liegt außerhalb des Repos.',
+    ],
+    performance: [
+      'Ein Horizont-Cache in typisierten Arrays füllt sich einmal pro Sekunde, sodass ein Bild kein Objekt pro Stern anlegt.',
+      'Skia zeichnet ein Bild pro Frame direkt in die Ansicht, ohne React-Render. Eine ruhige Ansicht zeichnet etwa 8-mal pro Sekunde neu.',
+      'Die Bildunschärfe entsteht einmal beim Laden, und Dateinamen mit Hash erlauben CDN und Handy ein Jahr Cache.',
+    ],
+    operations: [
+      'Checks führt bei jedem Push auf main Lint, Tests und die Android- und Web-Bundles aus, und Release baut daneben die signierte APK.',
+      'Publish legt die APK in die gemeinsame Releases-Liste, die je App die letzten 3 Builds behält.',
+      'mise run deploy lädt neue Bilder, Titel und das Manifest hoch, daher braucht ein neu gezeichnetes Bild kein App-Release.',
+    ],
+    tradeoffs: [
+      'Skia statt react-native-svg, das für 3000 Punkte pro Bild zu langsam ist. Der Preis ist eine 7-MB-CanvasKit-Datei im Web.',
+      'Namen in React Native statt Skia-Absätzen, damit Chinesisch, Japanisch und Koreanisch die Schriften des Handys nutzen.',
+      'd3-celestial-Daten statt Stellarium-Himmelskulturen, die Lizenzen mischen und teils unter GPL stehen.',
+      'Astronomy Engine statt Swiss Ephemeris, die unter AGPL oder kostenpflichtig ist und je Plattform einen nativen Build braucht.',
+    ],
+  },
   features: {
     'Sky view':
       'Der Drehsensor bewegt die Ansicht, und das Gyroskop hält sie zwischen Kompasskorrekturen ruhig. Skia zeichnet Sterne, Himmelskörper und 88 Figuren aus Daten in der App.',

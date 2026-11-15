@@ -43,6 +43,44 @@ const arch: Arch = {
     { to: 'Codex', text: 'Los mismos skills, los hooks y una copia de los servidores MCP de Claude Code.' },
     { to: 'GitHub', text: 'Las comprobaciones y las versiones con fecha corren en GitHub Actions.' },
   ],
+  design: {
+    scale: [
+      'Una persona por máquina, 33 skills y cualquier número de agentes que lean el formato Agent Skills.',
+      'Cada sesión carga la descripción de cada skill, así que una descripción queda bajo 480 caracteres y un cuerpo de skill bajo 300 líneas.',
+    ],
+    data: [
+      'No hay base de datos. Un skill es una carpeta con un SKILL.md y su front matter, más referencias que se cargan a demanda.',
+      'Los grupos de hooks están en archivos JSON, y el hook turn-voice guarda sus clips de voz en caché en una carpeta local.',
+    ],
+    interfaces: [
+      'El contrato con un agente es el front matter: el nombre es igual a la carpeta, y la descripción dice cuándo cargar el skill.',
+      'El instalador fusiona los grupos de hooks en los ajustes de Claude Code y Codex, y escribe un bloque marcado para Kimi Code.',
+      'El hook turn-voice lee el marcador de estado en la última línea de un turno y dice la frase que corresponde.',
+    ],
+    reliability: [
+      'Los hooks de git en el clon vuelven a enlazar los skills tras pull, merge, checkout y rebase, así que un skill nuevo aparece al instante.',
+      'La fusión de hooks respeta los hooks propios de la persona. Sin Node, la instalación omite los hooks y lo avisa.',
+      'Si falla la descarga de la voz, queda solo el aviso sonoro, y un clip en caché suena sin red.',
+    ],
+    security: [
+      'El repositorio es público y no guarda ningún token. Las PR de forks corren en runners de GitHub, así que su código no llega al PC.',
+      'Los skills de sitios se detienen ante un inicio de sesión, un CAPTCHA, un secreto o un pago, y se lo dejan a la persona.',
+    ],
+    performance: [
+      'Solo las reglas breves de escritura se cargan en cada turno. Un skill completo se carga cuando una petición coincide con su descripción.',
+      'Los clips de voz van en caché, y el aviso y la voz se unen en una sola llamada a PlaySound, así que la primera palabra suena entera.',
+    ],
+    operations: [
+      'El workflow check corre en Windows para la instalación con PowerShell y en Linux para la de shell, con mise fijando cada herramienta.',
+      'El workflow release arranca con workflow_run cuando check pasa en main, y pone una etiqueta con fecha como v2026.10.30.1.',
+      'mise run test comprueba el formato de los skills, el presupuesto de texto, las pruebas unitarias y una instalación y desinstalación en un home temporal.',
+    ],
+    tradeoffs: [
+      'Una carpeta Markdown por skill en vez de un archivo de reglas por agente, así una copia sirve a unos 50 agentes. Solo el agente que lee hace cumplir una regla.',
+      'Un clon enlazado en cada agente en vez de una copia por agente, así un cambio llega a todos a la vez. Windows sin modo desarrollador recibe junctions.',
+      'Un hook en C# compilado con el csc.exe que trae Windows, sin necesitar SDK. Solo corre en Windows, y un gemelo en Node cubre el Mac.',
+    ],
+  },
   features: {
     'Writing style':
       'Un archivo corto de reglas se carga en cada turno con el archivo de reglas principal del agente. El skill completo se carga antes del primer texto, con sus tablas de palabras y una revisión final.',

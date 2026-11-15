@@ -26,6 +26,47 @@ const arch: Arch = {
     'El resultado sale en la terminal, y el repo cambia a través de git.',
   ],
   links: [{ to: 'GitHub', text: 'Aloja el repo, ejecuta las comprobaciones y publica las versiones con fecha.' }],
+  design: {
+    scale: [
+      'Un desarrollador en unas pocas máquinas, sin servidor. Cada alias es un script bash en bin/.',
+      'La carga son unas pocas llamadas a git por alias, así que git y el repositorio fijan los límites, no los scripts.',
+    ],
+    data: [
+      'Los alias no guardan estado propio. Leen y cambian el repositorio a través de git.',
+      'Los instaladores escriben gitaliases.dir e include.path en la config de git del usuario, y una función en el perfil de zsh o PowerShell.',
+      'aliases.gitconfig asocia el nombre de cada alias con su script en el clon.',
+    ],
+    interfaces: [
+      'Git ejecuta un alias como proceso hijo, así que un script recibe argumentos e imprime en el terminal.',
+      'git sb imprime en stdout una línea __cd__ con una ruta, y una función de zsh o PowerShell la convierte en un cd.',
+      'fzf dibuja el selector, y los scripts cargan las ayudas _shared.sh y _prune.sh.',
+    ],
+    reliability: [
+      'Cada script corre con set -euo pipefail, así que una llamada fallida a git detiene el alias.',
+      'El borrado de ramas y worktrees salta el worktree principal, la carpeta actual y los worktrees bloqueados.',
+      'Esc en el selector termina el alias sin borrar nada.',
+    ],
+    security: [
+      'El único servicio externo es el remoto de git. Los scripts no guardan token y no llaman a ninguna API.',
+      'Los instaladores preguntan antes de cada cambio y copian primero cada archivo que editan.',
+      'Los alias de borrado listan los candidatos y quitan solo lo que la persona elige.',
+    ],
+    performance: [
+      'Cada alias es un proceso bash con unas pocas llamadas a git, y un pull los actualiza todos.',
+      'Las listas de limpieza salen de una llamada a for-each-ref y de la lista de worktrees, y one_line usa printf -v porque una sustitución de comando por worktree cuesta un fork.',
+    ],
+    operations: [
+      'lint.sh ejecuta shellcheck y shfmt y comprueba que cada alias tenga un script, una descripción y una fila en el README. test.sh ejecuta los alias en repositorios de prueba.',
+      'Un hook pre-commit y uno pre-push ejecutan mise run lint, y lint.yml lo hace en runners de Linux y Windows.',
+      'Cada push en verde a main recibe una versión fechada como v2026.10.30.1.',
+    ],
+    tradeoffs: [
+      'Un script bash por alias en lugar de alias ! en línea o funciones de shell, para que shellcheck y las pruebas los cubran, a costa de un archivo por alias.',
+      'Bash en lugar de TypeScript o Rust, porque git trae bash en cada sistema y ninguna máquina necesita Node.',
+      'Un include que apunta al clon en lugar de alias copiados, para que un git pull los actualice. Mover el clon los rompe.',
+      'Dos instaladores en lugar de uno, porque solo PowerShell necesita editar su perfil, a costa de dos copias que mantener al día.',
+    ],
+  },
   features: {
     Aliases:
       'Un archivo de config une cada nombre de alias con un script bash del clon. git a lee el comentario al inicio de cada script e imprime la lista.',

@@ -29,6 +29,48 @@ const arch: Arch = {
     { to: 'Workbench Soft site', text: 'Nettstedet bygger appkatalogen fra sin egen prosjektliste.' },
     { to: 'archon', text: 'Archon har ingen APK, så kortet har en Åpne-lenke.' },
   ],
+  design: {
+    scale: [
+      'Én skjerm på utviklerens egen telefon, med ett kort per utgitte studioapp.',
+      'GitHub-API-et tillater 60 kall i timen uten token, og det formet listebufferen på 10 minutter.',
+    ],
+    data: [
+      'Ingen database. Shared preferences holder siste utgivelsesliste, med notater og navn, og pakkenavnene som er lært i en kjøring.',
+      'En ressursnøkkel er tagg-prefikset pluss APK-navnet uten versjon og plattformendelse, for eksempel farnear/farnear.',
+      'De installerte appene kommer fra Androids pakkebehandler ved hver sjekk.',
+    ],
+    interfaces: [
+      'GitHub Releases-API-et til det delte offentlige utgivelsesrepoet lister hver APK side for side, og compare-API-et gir commit-notater.',
+      'Studionettstedet leverer en katalog som JSON med navn, plattformer og lenke for hvert prosjekt.',
+      'Shizuku kjører sh -c som shell-bruker, med pm install -r -d -S og pm uninstall.',
+    ],
+    reliability: [
+      'Feiler GitHub-sjekken, vises den lagrede listen, og en åpning venter ett minutt før den spør igjen.',
+      'Oppdateringskjøringen lever utenfor activity, så en skjermdreining tar den ikke, og Avbryt stopper før neste bit.',
+      'Et bygg i veien fjernes bare ved en signatur- eller versjonskonflikt, og exit-status avslører en mislykket ominstallering.',
+    ],
+    security: [
+      'Den leser bare offentlige utgivelser og har verken token eller konto.',
+      'Installasjonsretten kommer fra Shizuku-tillatelsen personen gir, og appen kjører ingen root-kommando.',
+      'Den egne installasjonen sjekker APK-filens størrelse før den installerer.',
+    ],
+    performance: [
+      'APK-er lastes ned i biter på 64 KB med tidsavbrudd og en stoppsjekk.',
+      'Utgivelseslisten er fersk i 10 minutter, så de fleste åpninger hopper over API-et.',
+      'Notater til kort uten notater lastes i bakgrunnen fra compare-API-et etter at kortene vises.',
+    ],
+    operations: [
+      'Checks kjører ktlint, shellcheck, shfmt, actionlint, markdownlint, enhetstestene og feilsøkingsbygget på en egen runner.',
+      'Release bygger en signert APK ved siden av Checks, og release-gate.sh publiserer den når sjekkene består.',
+      'Jobben setter en datoversjon som tagg og lager en oppdatereutgivelse i det offentlige utgivelsesrepoet, med de siste 3 beholdt.',
+    ],
+    tradeoffs: [
+      'Shizuku framfor systeminstallatøren, så installasjoner går uten spørsmål, til pris av en start etter hver omstart.',
+      'Vanlige Views framfor Compose, for én skjerm og Shizukus Java-API, til pris av håndbygd layout.',
+      'Et offentlig utgivelsesrepo framfor private apprepoer, så telefonen slipper token, til pris av grensen på 60 kall i timen.',
+      'Selve APK-en installeres sist, med én shell-kommando, siden en installasjon kan drepe den kjørende prosessen.',
+    ],
+  },
   features: {
     'Update all':
       'Oppdateringsrunden setter hver app som henger etter i kø og laster den ned i biter på 64 KB. Shizuku installerer hver som shell-brukeren, og Avbryt stopper før neste bit.',

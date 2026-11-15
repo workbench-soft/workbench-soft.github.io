@@ -45,6 +45,49 @@ const arch: Arch = {
     },
     { to: 'Blacksmith', text: 'Cloud-Runner für leichte und schwere Jobs, solange die freien Minuten reichen.' },
   ],
+  design: {
+    scale: [
+      'Ein PC und ein Mac bedienen die privaten Repos einer Organisation, mit standardmäßig 4 Runnern auf dem PC.',
+      'Das GitHub-Limit von 5000 API-Aufrufen pro Stunde prägte die Abfrage, nachdem die Seite es einmal aufgebraucht hatte.',
+      'Blacksmith gibt 3000 freie Minuten im Monat, daher stoppt der Router seine Nutzung bei 2700.',
+    ],
+    data: [
+      'Die Seite hält 90 Tage beendeter Läufe in einer JSON-Datei, und cloud-usage.json zählt die Blacksmith-Minuten.',
+      'Die Runner-Zahl steht in einer Datei runner-count im Home-Ordner. Die Route steht in 3 Repo-Variablen: CI_RUNNER, CI_HEAVY_RUNNER und CI_WINDOWS_RUNNER.',
+    ],
+    interfaces: [
+      'Die GitHub-REST-API liefert Runner, Läufe, Jobs, Abrechnung und Releases, und die Seite setzt darüber die Repo-Variablen.',
+      'Das runs-on eines Jobs liest eine Repo-Variable, mit den PC-Labels als Rückfall, und ein Runner nimmt den Job mit passenden Labels.',
+      'Server-Aktionen führen PowerShell und adb aus, und adb installiert eine Release-APK auf einem per USB angeschlossenen Handy.',
+    ],
+    reliability: [
+      'Ein Watchdog startet eine Runner-Aufgabe neu, deren Runner GitHub länger als 10 Minuten offline zeigt.',
+      'Ein Job, der 5 Minuten auf Blacksmith wartet, wird abgebrochen und auf dem nächsten Runner neu gestartet.',
+      'Die Variablen behalten ihren letzten Wert, solange der PC aus ist, und eine ungesetzte Variable fällt auf die PC-Labels zurück.',
+      'Eine Installationssperre verhindert, dass die Update-Aufgabe und START.cmd gleichzeitig Installer ausführen.',
+    ],
+    security: [
+      'Runner starten als eigene geplante Aufgabe der Person und nicht als Dienst, damit Jobs deren gh-Anmeldung und mise-Einrichtung sehen.',
+      'Der Runner-Download wird vor der Registrierung gegen seine SHA256 geprüft.',
+      'Dieses Repo ist öffentlich, daher läuft sein eigenes CI auf GitHub-Runnern. Ein Fork-PR auf dem PC-Runner würde seinen Code auf dem PC ausführen.',
+    ],
+    performance: [
+      'Der Server sendet If-None-Match, da ein 304 nichts vom Limit kostet, und teilt jede Antwort 20 Sekunden lang über alle Tabs.',
+      'Die ersten 2 Runner tragen das Label heavy, damit Gradle-, Cargo- und Tauri-Jobs nicht kriechen, wenn 8 zugleich laufen.',
+      'Das Dashboard baut in den Ordner, den die laufende Seite nicht ausliefert, sodass die Seite nur für den Tausch stoppt.',
+    ],
+    operations: [
+      'Die Update-Aufgabe läuft alle 5 Minuten und bei der Anmeldung, setzt den Checkout auf das neueste Release-Tag und startet nur die Installer neu, deren Dateien sich bewegt haben.',
+      'Release startet nach Checks über workflow_run, und fehlgeschlagene Checks brechen den Build ab.',
+      'Der Seitenserver stoppt alle 10 Sekunden Läufe, die ein neuerer Commit ersetzt hat, und protokolliert jeweils den Grund.',
+    ],
+    tradeoffs: [
+      'Eigene Runner statt GitHub-gehosteter, damit private Repos 0 Minuten kosten. CI steht, wenn der PC aus ist.',
+      'Repo-Variablen statt eines Routen-Jobs je Workflow, der jedem Lauf einen zusätzlichen Job hinzufügen würde.',
+      'Eine geplante Aufgabe statt eines Windows-Dienstes, dem mise und die gh-Anmeldung der Person fehlen. Die Seite erkennt einen lebenden Runner an seinen Log-Dateien.',
+      'Eine Next.js-Serverseite statt Grafana, mit SVG-Diagrammen aus dem eigenen Verlauf. Sie haben keinen Zoom.',
+    ],
+  },
   features: {
     'Mac setup':
       'Ein POSIX-sh-Skript installiert Homebrew-Werkzeuge, mise und die Shell. Danach setzt es die Git-Konfiguration und klont die Repos der Organisation. Ein zweiter Lauf überspringt, was schon da ist.',

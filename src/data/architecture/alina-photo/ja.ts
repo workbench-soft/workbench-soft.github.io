@@ -28,6 +28,52 @@ const arch: Arch = {
     { to: 'Cloudflare', text: 'Worker、D1、R2、Email Routing、フォームの回数制限を動かします。' },
     { to: 'GitHub', text: 'main のチェックが通るとリリースが D1 のマイグレーションとデプロイを行います。' },
   ],
+  design: {
+    scale: [
+      '写真家 1 人のスタジオサイトで、客は予約してギャラリーを開き、Alina が管理画面を使います。トラフィックは小さいです。',
+      '写真は 2400 px と 800 px の 2 サイズで保存し、25 MB のカメラファイルは 1 MB 未満でアップロードされます。',
+      'Worker の 1 リクエストの CPU は数ミリ秒で、wasm ビルドは約 2.5 MB のため、重い処理はブラウザに回しました。',
+    ],
+    data: [
+      'D1 には photos、bookings、settings、sessions、login_links、galleries、gallery_files があります。時刻は UTC の文字列なので、文字列の順が時刻の順です。',
+      'settings の行はバージョンなしの JSON です。読めなくなった行は既定値に戻り、エラーを記録します。',
+      'R2 には p/<id>/l.webp と s.webp の写真、アップロードしたフォント、g/<gallery>/ 下のギャラリーファイル（見本、160 px のサムネイル、原本）があります。',
+    ],
+    interfaces: [
+      'Worker は /api で日、枠、予約、写真、ギャラリー、サインインの JSON を返し、/calendar/<token>.ics でカレンダーフィードを出します。',
+      '入力のカレンダーは Alina の秘密の iCal アドレスで、5 分キャッシュします。出力は予約フィードで、予約メールには booking.ics も付きます。',
+      'メールは Email Routing の send_email バインディングから、Alina の確認済みアドレスにだけ送ります。',
+      'booking-core は枠、予約の再確認、日没時刻、iCal を扱う Rust クレートで、繰り返しの予定には rrule クレートを使います。',
+    ],
+    reliability: [
+      '予約の POST は枠がまだ空いているかを再確認するので、一覧を読み込んだ後に埋まった枠は断られます。',
+      '購読したカレンダーフィードは数時間遅れるので、予約メールには iCal ファイルも付けます。',
+      '期限切れのセッションとログインリンクは D1 から削除し、保存済みのテストが今日の settings 行を読めることを保ちます。',
+      'リリースは D1 を移行してからデプロイし、Cloudflare のタイムアウトでは移行とデプロイにそれぞれ 3 回試します。',
+    ],
+    security: [
+      'サインインはメールで届く 15 分有効のリンクです。メールスキャナーが GET リンクを開くので、リンク先はトークンを POST するページです。',
+      'セッションは HttpOnly、SameSite Lax の cookie で 30 日続き、D1 にはトークンのハッシュだけを保存します。',
+      'Workers のレート制限バインディングが、予約とメール送信のフォームで IP ごとに 1 分 5 回までに制限します。',
+      'ギャラリー ID はリンクのハッシュにあるので、サーバーログや referrer に残りません。リンクを知る人はギャラリーを見られます。',
+    ],
+    performance: [
+      'ブラウザがアップロード前に写真を 2 サイズに縮小するので、25 MB のファイルが 1 MB 未満で上がり、GPS データも消えます。',
+      'client-zip がギャラリーの zip をブラウザで作ります。Worker は CPU の制限内で数 GB を読めないからです。',
+      'ページは Worker が返す静的な Astro の HTML で、カレンダーの文面は 5 分キャッシュします。',
+    ],
+    operations: [
+      '1 つの Worker がページと API を返します。worker-build が Rust を wasm にし、mise が Rust、Node、pnpm を固定します。',
+      'main で Checks が通ると workflow_run でリリースが始まり、1 回に 1 つずつ、ビルド、D1 移行、デプロイ、タグの順に進みます。',
+      '移行は migrations/ の番号付き SQL ファイルです。lint は oxlint、oxfmt、tsc、knip、rustfmt、PC 向けと wasm 向けの clippy、cargo shear を含みます。',
+    ],
+    tradeoffs: [
+      'GitHub Pages と Worker の組み合わせではなく 1 つの Worker でページと API を出し、管理用 cookie が 1 つのオリジンで CORS なしで動きます。',
+      'パスワードや Cloudflare Access ではなくメールリンクでサインインし、Alina が忘れるパスワードがなく、Zero Trust の設定も要りません。',
+      'Google カレンダー API ではなく iCal の入出力にして、OAuth アプリ、審査、トークン更新が要りませんが、フィードは数時間遅れます。',
+      'CPU が足りない Worker ではなくブラウザで縮小、透かし、zip を行い、見本は原本がないと透かしを付け直せません。',
+    ],
+  },
   features: {
     Portfolio:
       'ページは Worker から写真の一覧を読み、Worker は D1 から取り出します。各写真は R2 から 800 px と 2400 px の 2 つの WebP サイズで届きます。',

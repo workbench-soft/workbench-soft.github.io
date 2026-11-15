@@ -33,6 +33,43 @@ const arch: Arch = {
     { to: 'GitLab and Bitbucket', text: 'Linkziele neben GitHub, gebaut aus der Remote-URL ohne API-Aufruf.' },
     { to: 'Visual Studio Marketplace', text: 'Listet die Erweiterung. Jede Veröffentlichung dort geschieht von Hand.' },
   ],
+  design: {
+    scale: [
+      'Eine Person pro VS-Code-Fenster, ein Link pro Klick, die Arbeit sind also wenige git-Aufrufe in einem Repo.',
+      'Es läuft in lokalen, SSH- und Container-Fenstern, und ein git-Aufruf endet nach 10 Sekunden, damit ein langsamer Remote den Editor nicht hängen lässt.',
+    ],
+    data: [
+      'Die Erweiterung hält keinen Zustand. Jeder Befehl liest Einstellungen, Auswahl und git, baut einen Link und vergisst sie.',
+      'Die openInGitHub-Einstellungen und die Remote-URL bestimmen Host, Branch und eine abgebildete Adresse.',
+    ],
+    interfaces: [
+      'Befehle kommen aus der Palette, dem Editor-Menü und dem Explorer-Menü, 8 an der Zahl, und jeder ruft denselben Link-Runner auf.',
+      'git liefert über execFile die Repo-Wurzel, die Remote-URL und die Branches, und die Link-Bauer schreiben die URLs für Datei, Blame und Verlauf je Host.',
+      'vscode.env.openExternal öffnet den Browser und vscode.env.clipboard kopiert, sodass beides in Remote-Fenstern geht.',
+    ],
+    reliability: [
+      'Die Branch-Prüfung probiert die Einstellung, den Remote-HEAD, main und master und fällt dann auf den aktuellen Branch oder den Commit bei losgelöstem HEAD zurück.',
+      'Ein git-Fehler zeigt die eigene Meldung von git, und git fragt in einem Terminal nach keinem Passwort.',
+    ],
+    security: [
+      'Die Erweiterung sendet den Hosts keine Anfragen, braucht also kein Token und keinen Login für GitHub, GitLab oder Bitbucket.',
+      'git läuft über execFile ohne Shell, sodass die Einstellung defaultRemote keinen Befehl ausführen kann.',
+    ],
+    performance: [
+      'esbuild bündelt die Quellen in eine Datei, was das Paket kleiner und das Laden schneller machte.',
+      'Jeder git-Aufruf ist ein kurzer Prozess über execFile mit 10 Sekunden Limit, ein Klick kostet also wenige kleine Prozesse.',
+    ],
+    operations: [
+      'Checks führen Lint, Typprüfung, Unit-Tests und Build bei jedem Push aus, und der Release-Workflow baut daneben die .vsix.',
+      'Ein Gate-Skript veröffentlicht den Build, sobald Checks bestehen, und ein fehlgeschlagener Checks-Lauf bricht ihn ab. Die Marketplace-Veröffentlichung bleibt manuell.',
+      'Einfaches TypeScript in git und links läuft in Node unter mise run test, und nur der Editor-Kleber braucht ein VS-Code-Testfenster.',
+    ],
+    tradeoffs: [
+      'Links aus lokalem git statt der REST-API jedes Hosts, also kein Token und kein Netzaufruf pro Klick. Der Link kann nicht bestätigen, dass die Datei auf dem Host existiert.',
+      'vscode.env.openExternal statt des Pakets open, das Namen wie users.$id.tsx zerstörte und aus SSH-Fenstern keinen Browser öffnete.',
+      'Ein Fork einer bestehenden Erweiterung statt eines Neuschreibens, der den Host-Link-Code und seine Tests behielt. Die neue ID heißt, dass Leute neu installieren.',
+    ],
+  },
   features: {
     'Open a file, blame or history link':
       'Der Befehl liest Datei und markierte Zeilen aus dem Editor und den Remote aus git. Ein Host-Modul schreibt den Link, und VS Code öffnet ihn im Browser.',

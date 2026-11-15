@@ -33,6 +33,49 @@ const arch: Arch = {
     { to: 'Firebase', text: 'Firestore 让共享笔记实时同步，Hosting 托管网站。' },
     { to: 'Google Play', text: 'AdMob 显示横幅，Play Billing 出售“去除广告”和 KeepPad Pro。' },
   ],
+  design: {
+    scale: [
+      '每次安装对应一个人。笔记留在手机上，只有共享笔记会进入 Firestore，文本最多 20,000 个字符。',
+      'Hey Keep 作为 Android 前台服务全天运行，所以设计围绕电量展开：音量门限会跳过安静的帧。',
+    ],
+    data: [
+      'SQLite 的 keeppad.db 保存笔记、exports（哪个应用收到了哪条笔记）和 applied_inbox。PRAGMA user_version 记录手机已执行的迁移步数。',
+      '录音是 files/audio 里的 WAV 文件。Hey Keep 在应用关闭时录下的笔记，是 files/keep-inbox 里的 JSON 文件。',
+      '设置存在 localStorage 中。已关联应用的令牌通过 expo-secure-store 存在 Android keystore 或 iOS keychain 里。',
+      'Firestore 里的共享笔记只有 text、group 和 updated。',
+    ],
+    interfaces: [
+      'Kotlin 服务和应用通过 JSON 收件箱和 watch 事件传递笔记，因为服务无法访问 SQLite。',
+      '已关联的应用通过各自的网页 API 接收每条新笔记。Obsidian 得到所选文件夹里的一个文件，Memories 日志通过 WebDAV 接收。',
+      'expo-speech-recognition 通过 Android 语音服务或 Apple 识别器把语音转成文字。',
+    ],
+    reliability: [
+      '长录音会边录边写一个 PCM 文件和一个 JSON 文件，崩溃后应用会把它们变成一条笔记。',
+      'applied_inbox 在保存笔记的同一事务里记下收件箱 id，所以崩溃不会把续写笔记导入两次。',
+      '每次本地编辑都存 updated = MAX(now, updated + 1)，所以时钟偏慢的手机在 Firestore 里照样能胜出。',
+    ],
+    security: [
+      '没有账号，也没有云端语音识别。唤醒词模型在手机上运行，声音不会离开手机。',
+      'Firestore 规则要求 32 位十六进制的笔记 id，禁止列出，只接受 text、group 和 updated。没人能遍历 id。',
+      '已关联应用的令牌放在安全存储里，不在笔记文件中。',
+    ],
+    performance: [
+      '在安静的房间里，每个 100 毫秒的帧只花一次求和。330 万参数的 sherpa-onnx 模型只在响亮的帧上运行。',
+      '每次写入都会推高 notesVersion，界面随之重新加载。笔记的 FlashList 只绘制屏幕上的行。',
+      '词语匹配立即选出分组，Gemini Nano 或 Apple Foundation Models 只在应用打开时运行。',
+    ],
+    operations: [
+      '每次推送到 main，Checks 和 Release 会一起启动。Checks 通过后，发布版会公开 APK，并保留最近 3 个发布。',
+      'Play 的 bundle 用 PLAY=1 每天 19:00（悉尼时间）构建一次，前提是应用有改动。GitHub 的 APK 会自我更新。',
+      'Firebase Hosting 提供网站，Checks 通过后会连同 Firestore 规则一起部署。iPhone 构建只在 macOS 上手动运行。',
+    ],
+    tradeoffs: [
+      '选带 Kotlin 和 Swift 模块的 Expo，而不是原生 Android 应用，为的是 iPhone 和网页，代价是 TypeScript 旁边有原生代码。',
+      '选带 sherpa-onnx 的前台服务，而不是 JavaScript 里的唤醒词，这样关屏也能听到。模型只支持英语。',
+      '选手机自带的语音识别器，而不是把模型放进 APK。手机已有英语和俄语，所以应用不带模型。',
+      '选自我更新的 GitHub APK 加带桩代码的 Play 版本，而不是单一构建，因为 Play 会拒绝自行安装更新的应用。',
+    ],
+  },
   features: {
     'Hey Keep':
       'Kotlin 前台服务跳过安静的声音，只在响亮的片段上运行 sherpa-onnx 模型。回答来自按声音录好的片段，调校会为每个短语设定阈值。',

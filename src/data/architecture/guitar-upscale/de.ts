@@ -39,6 +39,49 @@ const arch: Arch = {
     { to: 'Google Play', text: 'Google Play verkauft Pro und Remove ads, und AdMob zeigt die Werbung.' },
     { to: 'Cloudflare', text: 'Cloudflare Workers hosten die Seite, und KV hält die eingebauten Songs.' },
   ],
+  design: {
+    scale: [
+      'Ein Spieler pro Gerät, und Klang, Takt und Rekorder laufen alle auf dem Gerät.',
+      'Rund 100 eingebaute Songs kommen als Guitar-Pro-Dateien, die eigenen Songs der Nutzer bleiben im Browser.',
+      'Schwere Arbeit hat harte Grenzen. Ein Akkorderkennungslauf kann den wasm-Speicher auf etwa 600 MB wachsen lassen, und ein Worker-Upload bleibt unter 3 MiB.',
+    ],
+    data: [
+      'Redux-Slices für Einstellungen, Bildschirmzustand und Piano Roll werden in localStorage gespeichert, ein Schlüssel pro Slice.',
+      'Songs, Aufnahmen, Loops und Piano-Roll-Änderungen teilen eine TickTimeline aus Noten und Akkorden, nach Takt der Uhr abgelegt.',
+      'Eingebaute Songs liegen in Cloudflare KV nach Dateiname, und eine song-settings.json hält die Akkordwahl je Song.',
+    ],
+    interfaces: [
+      'Song-Seiten laufen über Worker-Routen: Songsterr-Suche und -Meta, Songdatei-Suche und -Download sowie Songtexte.',
+      'Noten und Akkorde laufen über zwei RxJS-Subjects, sodass der Sender nicht weiß, wer sie spielt, aufnimmt oder animiert.',
+      'Songs laden als .gp- oder MIDI-Dateien und werden genauso exportiert. Die eingebaute Liste ist songs/index.json, jeder Song ist songs-json/<name>.json mit einem Inhalts-Hash in der URL.',
+    ],
+    reliability: [
+      'Jeder Seiten-Proxy hat ein Timeout. Eine Textsuche, die an einer ausgefallenen Seite scheitert, kommt nicht in den Cache.',
+      'Ein Versionssprung bei redux-persist löscht einen unter alter Version gespeicherten Slice, und der Looper sichert seine Loops, bevor ein Wechsel von Tonleiter, Stimmung oder Kapodaster sie löscht.',
+      'Eine Melodie überspringt einen Tick, der über 10 ms wartete, bis zu 8 in Folge, sodass ein langsames Rendern nach Play die erste Note nicht verzögert.',
+    ],
+    security: [
+      'Die Besitzer-Route prüft den SHA-256 des Entwicklerschlüssels und antwortet bei Fehlern mit 404. Das GitHub-Token fürs Deploy liegt in einem Worker-Secret.',
+      'CORS lässt nur die Capacitor-Ursprünge und die Seite an die Proxys, und der Server-Build sendet HSTS, nosniff und frame-ancestors none.',
+      'Akkorde aus einer Audiodatei werden auf dem Gerät mit ONNX erkannt. Nur die GitHub-APK schickt eine kurze Probe an Shazam, um einen Song zu benennen.',
+    ],
+    performance: [
+      'Der Taktgeber läuft in einem Web Worker mit Timeouts auf die genaue Zeit seit dem Start, sodass ein ausgelasteter Hauptthread den Takt nicht bremst.',
+      'Ein Pool aus bis zu 4 Workern findet Griffbilder je Akkordtyp, und jede Funktion der App lädt als Lazy-Komponente.',
+      'Die Akkordmodelle laden bei erster Nutzung und bleiben im Cache Storage. Der Audiokontext am Handy verlangt einen 12-ms-Puffer, weil der Hall bei 4 bis 8 ms knisterte.',
+    ],
+    operations: [
+      'Jeder Push auf main startet Prüfungen und den Android-Build nebeneinander, und eine fehlgeschlagene Prüfung bricht den Lauf ab. Das Release erscheint, wenn beide bestehen.',
+      'Ein nächtlicher Job um 19:00 Sydney-Zeit baut das Google-Play-Bundle nur bei Änderungen. Ein Bundle brauchte 40 bis 46 Minuten auf dem schweren Runner.',
+      'OpenNext baut den Server für Cloudflare Workers mit eingeschalteter Observability. Releases bekommen ein Tag aus Datum und Zähler, und der GitHub-Build aktualisiert sich daran.',
+    ],
+    tradeoffs: [
+      'Ein statischer Build für Seite, Android und iPhone statt nativer Apps, damit jede Funktion nur einmal entsteht, auf Kosten von Capacitor-Plugins für Handyklang und Käufe.',
+      'Die Engine läuft außerhalb von React mit einer einfachen Kopie der Einstellungen statt überall den Store zu lesen, damit Audiocode keine Hooks braucht, auf Kosten eines Spiegels, den man synchron halten muss.',
+      'Akkordmodelle laufen auf dem Gerät statt über eine Server-API, damit keine Datei das Handy verlässt, auf Kosten von 14 MB Modellen beim ersten Lauf.',
+      'Gesampelte General-MIDI-Instrumente statt eines Synthesizers für echten Gitarren- und Klavierklang, auf Kosten des Ladens der Samples beim ersten Tippen.',
+    ],
+  },
   features: {
     Fretboard:
       'Konva zeichnet das Griffbrett auf eine Canvas aus Skala und Stimmung der Einstellungen. Ein Tippen schickt die Note auf den Event-Bus, und smplr spielt sie.',

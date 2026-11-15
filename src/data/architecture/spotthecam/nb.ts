@@ -43,6 +43,49 @@ const arch: Arch = {
     { to: 'Google Play', text: 'Play Billing selger Fjern reklame og SpotTheCam Pro. AdMob viser banneret i appen.' },
     { to: 'GitHub Releases', text: 'Hver utgivelse legger APK-en der, og GitHub-bygget oppdaterer seg selv derfra.' },
   ],
+  design: {
+    scale: [
+      'Én sjåfør per installasjon. Kamerafilen har rundt 13 700 kameraer, ett per linje.',
+      'Siden er statiske filer, så bare deling av turer trenger en server. Én liten Worker holder seg i Cloudflares gratisnivå.',
+      'En delt tur er begrenset til 1 MB og 100 000 punkter, og én adresse kan dele 10 turer i minuttet.',
+    ],
+    data: [
+      'data/cameras.json har ett kamera per linje: type, delstat, punkt, vei, forstad, kilde, fartsgrense og retning.',
+      'Turer ligger i appens private lagring i 400 dager. Fartsgrenser for veiene blir på telefonen i 60 dager.',
+      'En delt tur ligger i Cloudflare KV under en id på 10 tegn, som tynnede rutelinjer og summer uten tider.',
+    ],
+    interfaces: [
+      'Workeren svarer på POST /api/trips og på GET og DELETE på /api/trips/<id>. Alt annet er statiske filer.',
+      'Capacitor-plugins knytter nettsiden til Kotlin-kjøretjenestene og Swift-portene deres.',
+      'Overpass-fliser gir veier, jernbaner og rullebaner. Photon, Valhalla og TomTom svarer på steder, ruter og trafikk.',
+    ],
+    reliability: [
+      'Service workeren prøver nettet først og faller tilbake på kopien etter 4 sekunder, med opptil 500 kartfliser lagret for bruk uten nett.',
+      'En lagringsfeil i Workeren går ut som 503 med CORS-headere, så appen leser den som en feil og ikke som manglende signal.',
+      'Når en offentlig ruteserver ikke svarer, sier stemmen fra. Over TomTom-grensen får rutene ingen trafikk.',
+    ],
+    security: [
+      'Deling krever ingen innlogging. KV lagrer bare en SHA-256-hash av slettenøkkelen, så lesing av lageret gir ikke tilgang til å slette turer.',
+      'Workeren sjekker hver kropp med en streng parser og sender nosniff og en policy med default-src none.',
+      'Turer blir på telefonen til de deles. En delt tur har ingen tider, og fart ved kameraer holdes utenfor uten samtykke.',
+    ],
+    performance: [
+      'Kotlin-tjenester matcher GPS mot veier i hurtigbufferen på telefonen og varsler rundt 20 sekunder før et kamera, uten nett.',
+      'Nattbygget gjør tidsstyrte grenser om til vinduer for de neste 35 dagene, så nettleseren bare velger det gjeldende.',
+      'KV hurtigbufrer en delt tur i ett minutt nær leseren, og fliser lagres uten OpenFreeMaps ukentlige mappenavn.',
+    ],
+    operations: [
+      'En CI-jobb oppdaterer kameraene klokken 03 Sydney-tid og committer filen med ett kamera per linje, så diffene blir små.',
+      'Hver push til main ruller siden ut til Cloudflare. En nattjobb sender Android-pakken til Google Play når appen er endret.',
+      'APK-bygget fra GitHub oppdaterer seg selv fra GitHub Releases. Google Play-bygget har ikke den koden.',
+    ],
+    tradeoffs: [
+      'En statisk Next.js-side i et Capacitor-skall framfor Expo, så kartet og sidene deler én kodebase, på bekostning av en Worker for turer.',
+      'En daglig JSON-fil framfor en database bak et API, så det virker uten nett og uten server, på bekostning av en liste som kan være en dag gammel.',
+      'Native Kotlin-kjøretjenester framfor JavaScript i WebView, siden Android pauser WebView når skjermen er av.',
+      'Leaflet med OpenFreeMap-fliser framfor Google Maps eller Mapbox, siden det ikke trenger nøkkel og ikke har kvote.',
+    ],
+  },
   features: {
     'Camera map':
       'Nattbygget gjør de tidsstyrte grensene for hvert kamera om til vinduer for de neste 35 dagene. Nettleseren velger vinduet for minuttet nå.',

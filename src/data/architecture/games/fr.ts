@@ -33,6 +33,49 @@ const arch: Arch = {
     { to: 'Google AdSense', text: 'AdSense affiche la bannière sur le site web.' },
     { to: 'Google AdMob', text: 'AdMob affiche la bannière dans les apps Android et iOS.' },
   ],
+  design: {
+    scale: [
+      "Une salle accueille jusqu'à 12 joueurs, et le duel d'indices en demande au moins 4.",
+      'Workers Free donne 100 000 requêtes par jour, soit environ 40 heures de dessin par jour.',
+      'Un message est limité à 256 Ko, et un dessin à 3000 actions.',
+    ],
+    data: [
+      'Chaque salle est un Durable Object avec son propre stockage SQLite et 3 sortes de clés : meta, canvas et chain:N.',
+      "meta garde les joueurs, les scores, les réglages, la phase, le chat et l'état du jeu après chaque changement. canvas s'enregistre au plus toutes les 2 secondes.",
+      "Un dessin est une liste d'actions sur une grille de 800 sur 600. Le navigateur garde un jeton et des réglages sous des clés qui commencent par wg-.",
+    ],
+    interfaces: [
+      "Un WebSocket par joueur sur /games/ws/CODE. Le Worker relie le code à l'objet de la salle avec idFromName.",
+      'Le premier message, hello, porte la version du protocole, le jeton, le nom et la couleur. Viennent ensuite state, chat et draw.',
+      "Les apps Android et iOS ouvrent les mêmes sockets sur le Worker des jeux. Un contrôle d'Origin laisse entrer le site et les apps.",
+    ],
+    reliability: [
+      "L'API Hibernation laisse une salle inactive quitter la mémoire, et un message de socket ou une alarme la réveille depuis le stockage.",
+      "Les alarmes pilotent chaque échéance et nettoient une salle 30 minutes après qu'elle s'est vidée.",
+      "Un numéro PROTOCOL permet au Worker de répondre à une ancienne app dans son format. Un joueur déconnecté garde sa place jusqu'à ce que la salle atteigne 24 places.",
+    ],
+    security: [
+      'Pas de compte. Le navigateur garde un jeton aléatoire, et la salle en stocke le hachage comme identifiant du joueur.',
+      "L'objet de la salle choisit le mot et vérifie chaque proposition : la réponse reste sur le serveur.",
+      "Les sockets d'autres sites sont refusées. Les noms sont limités à 20 caractères, les lignes de chat à 100.",
+    ],
+    performance: [
+      "Le dessin voyage en petites listes d'actions toutes les 80 ms, pas en pixels.",
+      "Avec l'hibernation, 20 messages WebSocket comptent pour 1 requête.",
+      "Les pages statiques ne coûtent rien, car run_worker_first n'envoie par le code du Worker que les liens de salle et les sockets.",
+    ],
+    operations: [
+      "Un Worker se déploie avec wrangler : le dossier statique dist/ et l'objet de salle. Le workflow Games déploie à chaque push sur main.",
+      'mise run check lance oxlint, la vérification des types et Vitest sur les règles de chaque jeu.',
+      "L'observabilité du Worker est activée. L'app Android passe par le test fermé de Google Play.",
+    ],
+    tradeoffs: [
+      'Durable Objects avec hibernation plutôt que Supabase Realtime, PartyKit ou un VPS : pas de serveur et une offre gratuite. Le code de salle est écrit pour Cloudflare.',
+      "Des pages statiques Astro avec un îlot Preact plutôt qu'une application Preact monopage, pour que les moteurs de recherche reçoivent du HTML complet.",
+      "Des actions de dessin sur une grille fixe plutôt que des pixels, pour que les messages restent petits et que l'annulation soit un pas.",
+      "Capacitor plutôt qu'une Trusted Web Activity ou React Native, pour que les mêmes pages tournent dans les apps avec une bannière AdMob native.",
+    ],
+  },
   features: {
     'Rooms by link':
       'Le Worker relie chaque code de salle à son propre Durable Object. Un jeton aléatoire dans le navigateur représente le joueur, et la salle n’en garde que l’empreinte.',

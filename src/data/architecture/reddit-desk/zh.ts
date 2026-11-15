@@ -26,6 +26,48 @@ const arch: Arch = {
     { to: 'Reddit', text: 'Claude 通过 MCP 服务器读取帖子，用户在 Chrome 里发布。' },
     { to: 'GitHub Releases', text: '安装程序和已签名的更新文件放在公开网站仓库的一个发布里。' },
   ],
+  design: {
+    scale: [
+      '一台 Windows 电脑，一个人使用，并用上限保持小规模：6 条评论草稿、3 条帖子草稿，每小时发 3 条评论。',
+      '一次 Find 需要 1 到 5 分钟，因为 Claude Code 自己阅读帖子。',
+    ],
+    data: [
+      '应用数据文件夹里的普通 JSON 文件保存设置、队列、帖子卡片和两份历史。',
+      'history.json 记录已发布和已跳过的帖子及日期，下一次 Find 会跳过它们。opens.json 记录最近一天每条已发评论的时间。',
+    ],
+    interfaces: [
+      '核心用 stream-json 运行 claude -p，把每行输出变成给窗口的 find-log 事件。',
+      'Claude 通过一个固定到某个提交的 MCP 服务器访问 Reddit，并用 --strict-mcp-config 传入。',
+      '窗口通过 Tauri invoke 调用核心，被 Archon 嵌入时则通过 HTTP 和 server-sent events。',
+      'Post it for me 用 chromiumoxide 通过 DevTools 协议驱动 Chrome。',
+    ],
+    reliability: [
+      'Find 可以取消，运行结束后核心解析 found.json 并保留 6 张卡片。',
+      '只有页面显示出该账号发的、内容与草稿一致的评论，Post it for me 才算它已发布。',
+      '同一时间只运行一个应用。再次启动只会显示已打开的窗口，后台运行在框架关闭 2 分钟后退出。',
+    ],
+    security: [
+      'Reddit 登录留在使用者的 Chrome 配置文件或应用自己的 Chrome 文件夹里。应用不保存密码。',
+      '本地服务器只回应环回地址的 Host，POST 需要 JSON 内容类型，所以其他网站无法调用它。',
+      '一次 Claude 运行可以用读取工具、Reddit 服务器，以及写入自己的输出文件。更新器在安装前会校验签名。',
+    ],
+    performance: [
+      'Claude 和 Chrome 作为没有控制台窗口的子进程运行，窗口以流的方式收到各行，而不是等到结束。',
+      '发布构建关闭 LTO 并使用 16 个 codegen unit，把编译从 18 分钟缩短到约 2 分钟。',
+      'runner 在两次构建之间保留 cargo 的 target 文件夹，所以只需重新编译应用这个 crate。',
+    ],
+    operations: [
+      '每次推送到 main，Checks 和 Release 一起启动，Checks 失败时 release gate 会取消构建。',
+      'Publish 给提交打上日期标签并上传 NSIS 安装包。签名的 latest.json 驱动更新器。',
+      'Tauri 更新器在启动时和每 24 小时检查一次，然后静默安装新版本。',
+    ],
+    tradeoffs: [
+      '选带 skill 的 Claude Code，而不是在 Rust 里调用 Reddit API，让帖子规则只放在一处。代价是 Find 更慢。',
+      '选 Tauri 2 而不是 Electron，后者每次安装都带一整个 Chromium。代价是要检查 2 种语言。',
+      '选应用自己的带调试端口的 Chrome，而不是使用者的 Chrome，因为 Chrome 136 拒绝在默认配置文件上开调试端口。代价是多登录一次 Reddit。',
+      '选旧版 Reddit 表单而不是新编辑器，后者把输入框藏在 shadow root 里。',
+    ],
+  },
   features: {
     'Repo picker': 'Rust 核心列出设置里根文件夹下的每个 git 文件夹。选择结果存进应用数据文件夹里的 JSON 文件。',
     Subreddits:

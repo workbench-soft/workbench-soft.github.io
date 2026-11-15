@@ -34,6 +34,44 @@ const arch: Arch = {
     { to: 'Codex', text: 'De samme skillene, hookene og en kopi av MCP-serverne fra Claude Code.' },
     { to: 'GitHub', text: 'Sjekkene og de daterte utgivelsene kjører på GitHub Actions.' },
   ],
+  design: {
+    scale: [
+      'Én person per maskin, 33 skills og så mange agenter som helst som leser Agent Skills-formatet.',
+      'Hver økt laster beskrivelsen av hver skill, så en beskrivelse holder seg under 480 tegn og en skill-tekst under 300 linjer.',
+    ],
+    data: [
+      'Ingen database. En skill er en mappe med en SKILL.md og front matter, pluss referansefiler som lastes ved behov.',
+      'Hook-grupper ligger i JSON-filer, og turn-voice-hooken holder bufrede stemmeklipp i en lokal mappe.',
+    ],
+    interfaces: [
+      'Avtalen med en agent er front matter: navnet er likt mappen, og beskrivelsen sier når skillen skal lastes.',
+      'Installasjonsprogrammet slår hook-grupper inn i innstillingene til Claude Code og Codex, og skriver en merket blokk for Kimi Code.',
+      'turn-voice-hooken leser statusmarkøren på siste linje i en tur og sier den passende frasen.',
+    ],
+    reliability: [
+      'Git-hooks i klonen kobler skillene på nytt etter pull, merge, checkout og rebase, så en ny skill dukker opp med en gang.',
+      'Sammenslåingen av hooks beholder personens egne hooks. Uten Node hopper installasjonen over hooks og sier fra.',
+      'Mislykkes stemmehentingen, blir bare lydsignalet igjen, og et bufret klipp spilles uten nett.',
+    ],
+    security: [
+      'Repoet er offentlig og har ingen token. PR-er fra forks kjører på GitHub-runnere, så koden deres holdes unna PC-en.',
+      'Nettsted-skillene stopper ved innlogging, CAPTCHA, hemmeligheter og betaling, og overlater dem til personen.',
+    ],
+    performance: [
+      'Bare de korte skrivereglene lastes hver tur. En hel skill lastes når en forespørsel passer til beskrivelsen.',
+      'Stemmeklipp bufres, og signalet og stemmen går i ett PlaySound-kall, så det første ordet kommer helt med.',
+    ],
+    operations: [
+      'Check-arbeidsflyten kjører på Windows for PowerShell-installasjonen og på Linux for shell-installasjonen, med mise som låser hvert verktøy.',
+      'Release-arbeidsflyten starter på workflow_run når check består på main, og setter en datotagg som v2026.10.30.1.',
+      'mise run test sjekker skill-formatet, tekstbudsjettet, enhetstestene og en installasjon og avinstallasjon i en midlertidig hjemmemappe.',
+    ],
+    tradeoffs: [
+      'En Markdown-mappe per skill i stedet for en regelfil per agent, så én kopi tjener rundt 50 agenter. Bare agenten som leser, håndhever en regel.',
+      'Én klon lenket inn i hver agent i stedet for en kopi per agent, så en endring når alle med en gang. Windows uten utviklermodus får junctions.',
+      'En C#-hook bygget med csc.exe som følger med Windows, så ingen SDK trengs. Den kjører bare på Windows, og en Node-tvilling dekker Mac.',
+    ],
+  },
   features: {
     'Writing style':
       'En kort regelfil lastes på hver tur gjennom agentens hovedregelfil. Hele skillen lastes før den første teksten, med ordtabeller og en sluttsjekk.',

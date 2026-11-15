@@ -30,6 +30,53 @@ const arch: Arch = {
     { to: 'memories-demo-webdav', text: 'The Google Play review signs in to this sample NAS.' },
     { to: 'Tailscale', text: 'A second address reaches the NAS away from home. Funnel serves the album links.' },
   ],
+  design: {
+    scale: [
+      'One person per install with a home NAS, and up to about a million photos and videos.',
+      'A first sync of half a million photos takes most of a day, since the NAS answers about 10 header reads a second.',
+      'Album links reach a few people through Tailscale Funnel, so the NAS is the only server.',
+    ],
+    data: [
+      'Photos stay on the NAS. The phone keeps a SQLite index with folders, media and a days table that triggers keep counted.',
+      'A file row holds a folder id and a file name, so a million files fit in about 200 MB.',
+      'Capture time is a wall clock in seconds, so On this day is a plain range query.',
+      'The NAS keeps a .memories folder beside the photos with index.db, status.json, faces.db and the album files.',
+    ],
+    interfaces: [
+      'The phone speaks WebDAV to the NAS: PROPFIND per folder, ranged GET for headers, PUT, MKCOL and MOVE.',
+      'The NAS containers publish index.db and status.json in .memories, and the phone merges them over the same WebDAV link.',
+      'The Rust folder rules reach the app as a uniffi library on Android and as wasm on the web.',
+    ],
+    reliability: [
+      'Sync saves every 50 files in one transaction, and a pass cut short resumes in the next run.',
+      'The background task has an 8 minute budget and plans the reminders first, so a failing NAS still gets reminders.',
+      "An empty gallery root stops the pass, so an unmounted share doesn't wipe the index.",
+    ],
+    security: [
+      'The NAS login sits in the Android keystore through expo-secure-store, and the app sends it as a Basic header.',
+      'Album links hold a 16 byte random token. The album server mounts the gallery read-only and answers 404 to any other path.',
+      'Place names come from an offline database in the app, so no GPS point leaves the phone.',
+      'Plain http is allowed, since a NAS at home rarely has a certificate.',
+    ],
+    performance: [
+      'FlashList draws the visible tiles and one screen ahead. Each tile shows the small EXIF thumbnail, read from the first 66 KB.',
+      'Reads run 8 at a time in a queue, newest first, and a native module lifts OkHttp from 5 to 32 requests per host.',
+      'The days and geo_cells tables keep the month list, trips and map off the million file rows.',
+      'The NAS indexer reads a header from its own disk in milliseconds, where WebDAV takes seconds.',
+    ],
+    operations: [
+      'One pnpm monorepo with node, pnpm, java and rust pinned in mise.toml and one lockfile.',
+      'Each push to main whose Checks pass publishes a signed APK with a date version, and release-gate.sh cancels the build when checks fail.',
+      'The installed app reads the latest release from the GitHub API. The Google Play build swaps the updater for stubs and builds once a day.',
+      'The NAS containers deploy over ssh with a deploy script.',
+    ],
+    tradeoffs: [
+      'Plain WebDAV over a server of our own, so any NAS works, at the cost of a slow first sync.',
+      'SQLite on the phone over a server database, so the app works offline and needs no hosting.',
+      "Capture time as a wall clock over UTC, so On this day is a simple range, but photos from two zones can't be put in exact order.",
+      'One Rust folder rules crate over a copy per app, so phone and desktop sort the same, at 1 to 2 MB per ABI.',
+    ],
+  },
   features: {
     'Daily reminder':
       'expo-notifications holds one-off reminders for the next 7 days, planned from the index by the background task. A trip abroad on that day wins the year.',

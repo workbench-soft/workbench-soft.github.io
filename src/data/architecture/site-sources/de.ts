@@ -37,6 +37,48 @@ const arch: Arch = {
     'Die Chrome-Downloads speichern das Zip unter Downloads.',
   ],
   links: [],
+  design: {
+    scale: [
+      'Eine Person speichert eine offene Seite auf einmal, und zwei Tabs können gleichzeitig speichern.',
+      'Die Dateien liegen im Speicher, bis das Zip geschrieben ist, daher kann eine Seite von mehreren hundert Megabyte scheitern.',
+    ],
+    data: [
+      'Ein Speichern ist ein Zip, benannt nach Host und Zeit, mit index.html, einem Ordner pro Host, _sources und _frames.',
+      'Der Zustand jedes Speicherns liegt in chrome.storage.session: die Zähler, die fehlgeschlagenen Dateien und die Stufe.',
+      'Nach dem Ablegen des Zips in Downloads bleibt nichts gespeichert. Die Erweiterung hat keinen Verlauf und keine Einstellungen.',
+    ],
+    interfaces: [
+      'Popup, Service Worker und Offscreen-Seite sprechen über chrome.runtime-Nachrichten und den Zustand im Session Storage.',
+      'Ein mit chrome.scripting eingeschleustes Seitenskript liefert das HTML und die URLs aus performance-Einträgen, src und link href.',
+      'Das Zip geht als Blob-URL hinaus, die chrome.downloads in Downloads speichert.',
+    ],
+    reliability: [
+      'Eine vom Server abgelehnte Datei zählt als fehlgeschlagen und bleibt außerhalb des Zips, ohne zweiten Versuch. Ein Abruf endet nach 2 Minuten.',
+      'Das Popup kann mitten im Speichern schließen und sich beim Öffnen aus dem Session Storage neu zeichnen, das Speichern läuft weiter.',
+      'Ein gemeinsames Promise erzeugt die Offscreen-Seite, sodass ein zweiter Tab die eine nutzt, die Chrome erlaubt.',
+    ],
+    security: [
+      'Die Erweiterung verlangt activeTab, scripting, downloads, storage, offscreen und alle URLs, weil sie von jeder Seite lädt, aus der die Seite Dateien bezieht.',
+      'Sie sendet nichts an einen eigenen Server. Die einzigen Anfragen gehen an die Seiten, die die Seite schon nutzt.',
+      'Eine Datei hinter einem Login, den die Erweiterung nicht senden kann, zählt als fehlgeschlagen. Chrome-Seiten und der Chrome Web Store lehnen Erweiterungen ab.',
+    ],
+    performance: [
+      'Die Suche ruft Skripte und Stylesheets jeder Runde nebeneinander ab und behält ihre Bytes, sodass das Packen sie nicht noch einmal lädt.',
+      'Fortschrittszähler werden zusammengeführt und gehen höchstens alle 100 ms hinaus, ein neuer Zustand sofort.',
+      'Bilder, Schriften, Video und andere komprimierte Formate kommen unverändert ins Zip, ohne zweite Kompression.',
+    ],
+    operations: [
+      'Vite bündelt Service Worker, Popup und Offscreen-Seite. fflate packt auch die Erweiterung für jedes Release.',
+      'Jeder Push auf main baut das Zip neben den Checks. Ein Gate-Skript veröffentlicht es, sobald die Checks bestehen, und bricht es bei Fehlern ab.',
+      'Releases bekommen ein Datums-Tag wie v2026.11.02.1, und das Manifest trägt dieselbe Version. Chrome lädt es entpackt.',
+    ],
+    tradeoffs: [
+      'Eine Offscreen-Seite statt einer Data-URL aus dem Worker, weil nur eine Seite eine Blob-URL erzeugen kann und eine Data-URL ein Drittel größer ist.',
+      'zipSync statt des asynchronen Zips, weil die Richtlinie der Erweiterung die Blob-Worker des asynchronen fflate-Zips blockiert, auf Kosten einer Pause bei großen Zips.',
+      'Erst die Dateien finden, dann laden, damit die Gesamtzahl feststeht, während der Balken sich füllt, auf Kosten einer Wartezeit vor der ersten Datei bei großen Seiten.',
+      'chrome.i18n statt i18next, weil der Manifestname nur aus _locales kommen kann und ein zweiter Katalog nichts bringt.',
+    ],
+  },
   features: {
     'Download from the popup':
       'Das Pop-up gibt den Tab an den Service Worker, der das Speichern selbst ausführt. Der Zustand liegt im Sitzungsspeicher, so läuft es nach dem Schließen weiter.',

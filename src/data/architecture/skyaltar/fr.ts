@@ -48,6 +48,49 @@ const arch: Arch = {
       text: 'La recherche de la ville de naissance envoie seulement le nom tapé et reçoit le lieu et son fuseau horaire.',
     },
   ],
+  design: {
+    scale: [
+      'Une personne par installation, sans compte et sans serveur propre.',
+      'Le ciel compte 2851 étoiles, 89 figures et 19 thèmes de cultures, dessinés en environ 3000 points par image.',
+      "Seuls les 2 thèmes gratuits sont dans l'app, et chaque image payante pèse environ 30 Ko depuis un CDN.",
+    ],
+    data: [
+      "Les étoiles, les figures et les noms sont du JSON dans l'app. Les récits tiennent dans un fichier .lore par langue.",
+      'Les réglages et les données de naissance enregistrées sont dans localStorage, ou dans expo-sqlite sur le téléphone.',
+      "Le téléphone garde les images et les pistes téléchargées dans le dossier de documents de l'app.",
+    ],
+    interfaces: [
+      "Un manifest.json sur le CDN associe chaque image de thème à un fichier nommé d'après le hash de son contenu.",
+      'expo-iap lit deux produits Google Play. La vérification des mises à jour lit la liste partagée des releases GitHub.',
+      'Le géocodage Open-Meteo reçoit un nom de ville saisi et renvoie le lieu et son fuseau horaire.',
+    ],
+    reliability: [
+      'Un thème téléchargé une fois marche hors ligne, et les thèmes gratuits marchent hors ligne dès le premier lancement.',
+      "Une image dont le téléchargement échoue est retentée au bout d'une minute.",
+      'Le gyroscope déplace la vue, et la boussole ne la corrige que pendant une rotation, pour que le ciel ne dérive pas.',
+    ],
+    security: [
+      'Ni connexion ni serveur. Les données de naissance enregistrées restent sur le téléphone.',
+      'Open-Meteo ne reçoit que le nom de ville saisi. Les photos de la caméra sont lues sur le téléphone.',
+      "Le formulaire de consentement de Google s'affiche dans l'EEE, au Royaume-Uni et en Suisse avant toute pub. La clé de signature reste hors du dépôt.",
+    ],
+    performance: [
+      "Un cache d'horizon en tableaux typés se remplit une fois par seconde, donc une image ne crée aucun objet par étoile.",
+      'Skia enregistre une image par frame pour la vue, sans rendu React. Une vue immobile se redessine environ 8 fois par seconde.',
+      'Le flou des images est fait une fois au chargement, et des noms de fichier à hash laissent le CDN et le téléphone les garder un an.',
+    ],
+    operations: [
+      "Checks lance le lint, les tests et les bundles Android et web à chaque push sur main, et Release construit l'APK signé à côté.",
+      "Publish met l'APK dans la liste partagée des releases, qui garde les 3 derniers builds de chaque app.",
+      "mise run deploy envoie les nouvelles images, pistes et le manifeste, donc une image redessinée n'a pas besoin de release.",
+    ],
+    tradeoffs: [
+      'Skia plutôt que react-native-svg, trop lent pour 3000 points par image. Le coût est un fichier CanvasKit de 7 Mo sur le web.',
+      'Les noms dans React Native plutôt que des paragraphes Skia, pour que le chinois, le japonais et le coréen prennent les polices du téléphone.',
+      'Les données d3-celestial plutôt que les cultures du ciel de Stellarium, qui mélangent les licences et dont certaines sont en GPL.',
+      'Astronomy Engine plutôt que Swiss Ephemeris, sous AGPL ou payante, avec un build natif par plateforme.',
+    ],
+  },
   features: {
     'Sky view':
       'Le capteur de rotation bouge la vue, et le gyroscope la tient stable entre les corrections de la boussole. Skia dessine les étoiles, les astres et 88 figures depuis les données de l’app.',

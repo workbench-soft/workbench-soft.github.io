@@ -37,6 +37,47 @@ const arch: Arch = {
   links: [
     { to: 'GitHub', text: 'Hostet das Repo, führt die Prüfungen aus und veröffentlicht die datierten Releases.' },
   ],
+  design: {
+    scale: [
+      'Ein Entwickler auf wenigen Rechnern, ohne Server. Jeder Alias ist ein Bash-Skript in bin/.',
+      'Die Last sind einige git-Aufrufe pro Alias, die Grenzen setzen also git und das Repo, nicht die Skripte.',
+    ],
+    data: [
+      'Die Aliase halten keinen eigenen Zustand. Sie lesen und ändern das Repo über git.',
+      'Die Installer schreiben gitaliases.dir und include.path in die Benutzer-Git-Konfiguration und eine Funktion ins zsh- oder PowerShell-Profil.',
+      'aliases.gitconfig ordnet jedem Aliasnamen sein Skript im Klon zu.',
+    ],
+    interfaces: [
+      'Git startet einen Alias als Kindprozess, ein Skript bekommt also Argumente und schreibt ins Terminal.',
+      'git sb gibt eine __cd__-Zeile mit Pfad auf stdout aus, und eine zsh- oder PowerShell-Funktion macht daraus ein cd.',
+      'fzf zeichnet die Auswahl, und die Skripte laden die Helfer _shared.sh und _prune.sh.',
+    ],
+    reliability: [
+      'Jedes Skript läuft mit set -euo pipefail, ein fehlgeschlagener git-Aufruf stoppt den Alias also.',
+      'Das Löschen von Branches und Worktrees überspringt den Haupt-Worktree, den aktuellen Ordner und gesperrte Worktrees.',
+      'Esc in der Auswahl beendet den Alias, ohne etwas zu löschen.',
+    ],
+    security: [
+      'Der einzige externe Dienst ist das Git-Remote. Die Skripte speichern kein Token und rufen keine API auf.',
+      'Die Installer fragen vor jeder Änderung und kopieren jede Datei, die sie ändern, zuerst.',
+      'Die Lösch-Aliase listen die Kandidaten und entfernen nur, was die Person wählt.',
+    ],
+    performance: [
+      'Jeder Alias ist ein Bash-Prozess mit wenigen git-Aufrufen, und ein Pull aktualisiert alle.',
+      'Die Prune-Listen kommen aus einem for-each-ref-Aufruf und der Worktree-Liste, und one_line nutzt printf -v, weil eine Befehlsersetzung pro Worktree einen fork kostet.',
+    ],
+    operations: [
+      'lint.sh führt shellcheck und shfmt aus und prüft, dass jeder Alias ein Skript, eine Beschreibung und eine README-Zeile hat. test.sh lässt die Aliase auf Testrepos laufen.',
+      'Ein pre-commit- und ein pre-push-Hook führen mise run lint aus, und lint.yml tut es auf Linux- und Windows-Runnern.',
+      'Jeder grüne Push auf main bekommt ein datiertes Release wie v2026.10.30.1.',
+    ],
+    tradeoffs: [
+      'Ein Bash-Skript pro Alias statt eingebetteter !-Aliase oder Shell-Funktionen, damit shellcheck und Tests es abdecken, um den Preis einer Datei pro Alias.',
+      'Bash statt TypeScript oder Rust, weil git auf jedem System Bash mitbringt und kein Rechner Node braucht.',
+      'Ein Include, das auf den Klon zeigt, statt kopierter Aliase, damit ein git pull sie aktualisiert. Verschiebt man den Klon, brechen sie.',
+      'Zwei Installer statt einem, weil nur PowerShell sein Profil geändert braucht, um den Preis von zwei Kopien, die im Gleichschritt bleiben müssen.',
+    ],
+  },
   features: {
     Aliases:
       'Eine Konfigurationsdatei ordnet jedem Aliasnamen ein bash-Skript im Klon zu. git a liest den Kommentar oben in jedem Skript und gibt die Liste aus.',

@@ -24,6 +24,52 @@ const arch: Arch = {
     { to: 'Cloudflare', text: '运行 Worker、D1、R2、Email Routing 和表单的限流。' },
     { to: 'GitHub', text: 'main 上的检查通过后，发布流程执行 D1 迁移并部署。' },
   ],
+  design: {
+    scale: [
+      '一位摄影师的工作室网站：客户预约并打开相册，Alina 使用管理后台。流量很小。',
+      '每张照片存 2 种尺寸，2400 px 和 800 px，25 MB 的相机文件上传后不到 1 MB。',
+      'Worker 每次请求只有几毫秒 CPU，wasm 构建约 2.5 MB，所以把繁重的工作放进了浏览器。',
+    ],
+    data: [
+      'D1 保存 photos、bookings、settings、sessions、login_links、galleries 和 gallery_files。时间用 UTC 文本，所以文本顺序就是时间顺序。',
+      'settings 行是不带版本的 JSON。解析失败的行回退到默认值并记录一条错误。',
+      'R2 保存 p/<id>/l.webp 和 s.webp 形式的照片、上传的字体，以及 g/<gallery>/ 下的相册文件：样片、160 px 缩略图和原图。',
+    ],
+    interfaces: [
+      'Worker 在 /api 下提供 JSON，涵盖日期、时段、预约、照片、相册和登录，并在 /calendar/<token>.ics 提供日历订阅源。',
+      '输入的日历是 Alina 的私密 iCal 地址，缓存 5 分钟。输出的是预约订阅源，每封预约邮件还附带 booking.ics。',
+      '邮件通过 Email Routing 的 send_email 绑定发出，只发往 Alina 已验证的地址。',
+      'booking-core 是一个 Rust crate，负责时段、预约复核、日落时间和 iCal，重复事件用 rrule crate。',
+    ],
+    reliability: [
+      '预约的 POST 会再次确认时段仍然空闲，所以列表加载之后被占用的时段会被拒绝。',
+      '订阅的日历源会滞后数小时，所以每封预约邮件也附带 iCal 文件。',
+      '过期的会话和登录链接会从 D1 删除，一个已存的测试保证今天的 settings 行仍能解析。',
+      '发布会迁移 D1 并部署，遇到 Cloudflare 超时时，迁移和部署各有 3 次重试。',
+    ],
+    security: [
+      '登录是通过邮件发送的链接，15 分钟有效。它打开一个用 POST 提交令牌的页面，因为邮件扫描器会打开 GET 链接。',
+      '会话在 HttpOnly、SameSite Lax 的 cookie 中持续 30 天，D1 只存令牌的哈希。',
+      'Workers 的限流绑定在预约和发邮件的表单上，每个 IP 每分钟允许 5 次调用。',
+      '相册 id 放在链接的哈希里，所以不会进入服务器日志和 referrer。拿到链接的人都能看到相册。',
+    ],
+    performance: [
+      '浏览器在上传前把每张照片缩成 2 种尺寸，所以 25 MB 的文件上传后不到 1 MB，且不含 GPS 数据。',
+      'client-zip 在浏览器里生成相册 zip，因为 Worker 在 CPU 限制内读不完几个 GB。',
+      '页面是 Worker 提供的静态 Astro HTML，日历文本缓存 5 分钟。',
+    ],
+    operations: [
+      '一个 Worker 提供页面和 API。worker-build 把 Rust 变成 wasm，mise 锁定 Rust、Node 和 pnpm 的版本。',
+      'Checks 在 main 上通过后，发布由 workflow_run 启动，一次只运行一个：构建、D1 迁移、部署、打标签。',
+      '迁移是 migrations/ 里编号的 SQL 文件。lint 涵盖 oxlint、oxfmt、tsc、knip、rustfmt、面向本机和 wasm 的 clippy，以及 cargo shear。',
+    ],
+    tradeoffs: [
+      '页面和 API 用同一个 Worker，而不是 GitHub Pages 加 Worker，这样管理员 cookie 在同一个源下工作，无需 CORS。',
+      '用邮件链接登录，而不是密码或 Cloudflare Access，这样 Alina 没有会忘的密码，也不需要配置 Zero Trust。',
+      '日历用 iCal 输入输出，而不是 Google 日历 API，这样不需要 OAuth 应用、审核和令牌刷新，但订阅源会滞后数小时。',
+      '缩放、水印和 zip 在浏览器里做，而不是在 CPU 不足的 Worker 里，代价是样片没有原文件就无法重新加水印。',
+    ],
+  },
   features: {
     Portfolio: '页面从 Worker 读取照片列表，Worker 从 D1 取出。每张照片从 R2 以 800 和 2400 像素两种 WebP 尺寸加载。',
     Booking:

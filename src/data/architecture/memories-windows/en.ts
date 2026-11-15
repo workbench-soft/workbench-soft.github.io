@@ -18,6 +18,41 @@ const arch: Arch = {
     'It opened the files straight from the photo archive.',
   ],
   links: [{ to: 'memories', text: 'The phone app replaced it and took over the on this day idea.' }],
+  design: {
+    scale: [
+      'One person and one Windows PC, reading the photo archive of a home NAS.',
+      'The index holds capture dates only, so it stays small next to the photos.',
+    ],
+    data: [
+      'LiteDB, an embedded document database, holds the index of capture dates.',
+      'The synchronizer reads the EXIF of each photo, and the gallery opens the index for each day of the period.',
+    ],
+    interfaces: [
+      'The synchronizer on the NAS and the Windows app meet in the LiteDB index, read by date.',
+      'The app opens the photo files straight from the NAS archive, with no server API between.',
+    ],
+    reliability: [
+      "The synchronizer ran in Docker beside the archive, so indexing didn't need the PC.",
+      'The gallery skips files in the recycle bin and loads the rest as you scroll.',
+    ],
+    security: [
+      'No account and no cloud service: photos and index stayed on the home NAS and the PC.',
+      'The app opens the archive with the file access the PC already had.',
+    ],
+    performance: [
+      'Capture dates are read once on the NAS, so the gallery needs no scan of the photos.',
+      'The gallery loads photos as you scroll, a day of the period at a time.',
+    ],
+    operations: [
+      'The synchronizer shipped as a Docker container on the NAS, and the app as a Windows program.',
+      'The repo is archived, since the phone app replaced it.',
+    ],
+    tradeoffs: [
+      '.NET for both parts over two stacks, so one platform covered the NAS service and the Windows app.',
+      'An index built on the NAS over a scan from the PC, so dates were ready when the gallery opened.',
+      'Replaced by the phone app, which reads the NAS over WebDAV and needs no Windows PC.',
+    ],
+  },
   features: {
     Tray: 'A WPF window lives in the system tray. A click or the tray menu opens the gallery.',
     'Daily reminder': 'A Quartz job shows a Windows notification with a button. The button opens the gallery.',

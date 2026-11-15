@@ -45,6 +45,53 @@ const arch: Arch = {
     { to: 'memories-demo-webdav', text: 'Die Prüfung bei Google Play meldet sich an diesem Beispiel-NAS an.' },
     { to: 'Tailscale', text: 'Eine zweite Adresse erreicht das NAS unterwegs. Funnel liefert die Albumlinks aus.' },
   ],
+  design: {
+    scale: [
+      'Eine Person pro Installation mit einem NAS zu Hause, bis etwa eine Million Fotos und Videos.',
+      'Der erste Sync von einer halben Million Fotos dauert fast einen Tag, da das NAS etwa 10 Header pro Sekunde liefert.',
+      'Albumlinks erreichen wenige Personen über Tailscale Funnel, daher bleibt das NAS der einzige Server.',
+    ],
+    data: [
+      'Die Fotos bleiben auf dem NAS. Das Handy führt einen SQLite-Index mit Ordnern, Medien und einer Tabelle days, die Trigger mitzählen.',
+      'Eine Dateizeile hält eine Ordner-ID und einen Dateinamen, daher passt eine Million Dateien in etwa 200 MB.',
+      'Die Aufnahmezeit ist eine Wanduhr in Sekunden, daher ist An diesem Tag eine einfache Bereichsabfrage.',
+      'Das NAS legt neben den Fotos einen Ordner .memories mit index.db, status.json, faces.db und den Albumdateien ab.',
+    ],
+    interfaces: [
+      'Das Handy spricht WebDAV mit dem NAS: PROPFIND je Ordner, GET mit Bereich für Header, PUT, MKCOL und MOVE.',
+      'Die NAS-Container veröffentlichen index.db und status.json in .memories, und das Handy führt sie über dieselbe WebDAV-Verbindung zusammen.',
+      'Die Rust-Ordnerregeln erreichen die App als uniffi-Bibliothek auf Android und als wasm im Web.',
+    ],
+    reliability: [
+      'Der Sync speichert je 50 Dateien in einer Transaktion, und ein abgebrochener Durchlauf geht im nächsten Lauf weiter.',
+      'Die Hintergrundaufgabe hat 8 Minuten Budget und plant die Erinnerungen zuerst, daher kommen sie auch bei einem ausgefallenen NAS.',
+      'Ein leeres Galerie-Wurzelverzeichnis stoppt den Durchlauf, daher löscht eine nicht gemountete Freigabe den Index nicht.',
+    ],
+    security: [
+      'Die NAS-Anmeldung liegt im Android-Keystore über expo-secure-store, und die App sendet sie als Basic-Header.',
+      'Albumlinks enthalten ein zufälliges Token aus 16 Bytes. Der Albumserver mountet die Galerie nur lesend und antwortet auf jeden anderen Pfad mit 404.',
+      'Ortsnamen kommen aus einer Offline-Datenbank in der App, daher verlässt kein GPS-Punkt das Handy.',
+      'Einfaches http ist erlaubt, da ein NAS zu Hause selten ein Zertifikat hat.',
+    ],
+    performance: [
+      'FlashList zeichnet die sichtbaren Kacheln und einen Bildschirm voraus. Jede Kachel zeigt das kleine EXIF-Vorschaubild aus den ersten 66 KB.',
+      'Lesevorgänge laufen zu 8 gleichzeitig in einer Warteschlange, neueste zuerst, und ein natives Modul hebt OkHttp von 5 auf 32 Anfragen je Host.',
+      'Die Tabellen days und geo_cells halten Monatsliste, Reisen und Karte von der Million Dateizeilen fern.',
+      'Der NAS-Indexer liest einen Header von der eigenen Platte in Millisekunden, wo WebDAV Sekunden braucht.',
+    ],
+    operations: [
+      'Ein pnpm-Monorepo mit node, pnpm, java und rust in mise.toml festgelegt und einer Lockfile.',
+      'Jeder Push auf main, dessen Checks bestehen, veröffentlicht eine signierte APK mit Datumsversion, und release-gate.sh bricht den Build bei fehlgeschlagenen Checks ab.',
+      'Die installierte App liest das neueste Release über die GitHub-API. Der Google-Play-Build ersetzt den Updater durch Stubs und baut einmal am Tag.',
+      'Die NAS-Container werden per ssh mit einem Deploy-Skript ausgerollt.',
+    ],
+    tradeoffs: [
+      'Schlichtes WebDAV statt eines eigenen Servers, damit jedes NAS geht, zum Preis eines langsamen ersten Syncs.',
+      'SQLite auf dem Handy statt einer Serverdatenbank, damit die App offline läuft und nichts fürs Hosting kostet.',
+      'Aufnahmezeit als Wanduhr statt UTC, damit An diesem Tag ein einfacher Bereich bleibt, doch Fotos aus zwei Zeitzonen lassen sich nicht exakt ordnen.',
+      'Eine Rust-Crate für die Ordnerregeln statt einer Kopie je App, damit Handy und Desktop gleich sortieren, bei 1 bis 2 MB je ABI.',
+    ],
+  },
   features: {
     'Daily reminder':
       'expo-notifications hält einmalige Erinnerungen für die nächsten 7 Tage, die die Hintergrundaufgabe aus dem Index plant. Eine Reise ins Ausland an dem Tag bestimmt das Jahr.',

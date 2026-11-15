@@ -48,6 +48,49 @@ const arch: Arch = {
     { to: 'OpenStreetMap', text: 'Nominatim busca una tienda por su nombre, y Overpass encuentra la tienda cercana.' },
     { to: 'Google Play', text: 'AdMob muestra los anuncios, y Play Billing vende Quitar anuncios y Pro.' },
   ],
+  design: {
+    scale: [
+      'Una lista privada se queda en un solo teléfono, y una lista compartida llega a un hogar o a unos amigos con un enlace.',
+      'La app no tiene servidor, así que el plan gratuito de Firestore, 50 000 lecturas y 20 000 escrituras al día, marca el presupuesto de las listas compartidas.',
+    ],
+    data: [
+      'SQLite en el teléfono guarda listas, artículos, tiendas, pasillos, recorridos, nombres conocidos y precios. La versión web ejecuta el mismo SQLite sobre wasm.',
+      'Solo las listas compartidas llegan a Firestore, como lists/{id}/items/{itemId}, y los pasillos y recorridos de una tienda como stores/{osmId}.',
+      'Un borrado pone deleted = 1 y conserva la fila. dirty = 1 marca un cambio que Firestore aún no ha recibido.',
+      'Una foto es un JPEG de 360 píxeles, de unos 30 KB, guardado dentro del artículo.',
+    ],
+    interfaces: [
+      'Un enlace para compartir lleva un id de lista aleatorio de 32 dígitos hexadecimales, y un intent filter de Android lo abre en la app.',
+      'Un enlace de viaje de Tripforge lleva JSON en base64url con v, place, start, nights y hasta 60 lugares.',
+      'Los precios salen del JSON detrás de la búsqueda de los sitios de Woolworths y Coles, las tiendas de Nominatim y Overpass, y los lugares del Worker de Tripforge o de Wikidata.',
+    ],
+    reliability: [
+      'Cada cambio se guarda primero en SQLite y la pantalla se dibuja desde ahí, así que marcar funciona sin señal. El envío se repite cada 30 segundos mientras la app está abierta.',
+      'Gana el cambio más reciente por artículo, en el teléfono y en las reglas de Firestore. Dos ediciones sin conexión del mismo artículo no se fusionan, y la posterior se queda con todo el artículo.',
+      'El oyente funciona un minuto después de que la app pasa a segundo plano. Una app cerrada no recibe avisos, porque haría falta un servidor de notificaciones push.',
+    ],
+    security: [
+      'Cada instalación entra en Firebase de forma anónima, y el id aleatorio de la lista en el enlace es el secreto. Firestore se niega a listar las listas.',
+      'Las reglas comprueban el id de 32 dígitos hex, los campos conocidos, sus tamaños y una hora como mucho un día adelantada. Una foto debe ser datos JPEG o una imagen de Wikimedia Commons.',
+      'Quien tenga el enlace puede leer, cambiar y borrar la lista, y Firebase App Check está desactivado por ahora.',
+    ],
+    performance: [
+      'El envío espera medio segundo, así que una ráfaga de marcas sale en una sola escritura.',
+      'Los precios se cargan de Woolworths de 3 en 3 nombres y de Coles de uno en uno. Quedan un día en SQLite, y solo se redibujan los precios.',
+      'El teléfono lee los pasillos de una tienda en Firestore como mucho una vez cada 10 minutos.',
+    ],
+    operations: [
+      'Checks y Release empiezan juntos con cada push a main. La release publica el APK firmado cuando Checks pasan, y un Checks fallido cancela la compilación.',
+      'Un bundle de Google Play se compila una vez al día a las 19:00 de Sídney, y solo si la app cambió.',
+      'Firebase Hosting sirve la versión web, y se despliega con las reglas de Firestore cuando Checks pasan. El APK de GitHub se actualiza solo, y la compilación de Play deja ese código fuera.',
+    ],
+    tradeoffs: [
+      'Expo en lugar de una app nativa en Kotlin, para que un solo código dé también la página donde se abre un enlace compartido.',
+      'Filas de Firestore en lugar de un servidor propio o WebRTC: no hay servidor que mantener, y una marca no espera a un teléfono dormido.',
+      'Gana el cambio más reciente por artículo en lugar de fusionar campos: menos código, pero se pierde una edición anterior hecha sin conexión.',
+      'Firebase Hosting en lugar de GitHub Pages, porque SQLite sobre wasm necesita las cabeceras COOP y COEP que Pages no puede poner.',
+    ],
+  },
   features: {
     'Share by link':
       'Firestore guarda una copia de cada lista compartida, y el enlace lleva su id aleatorio. Cada teléfono guarda un cambio primero en SQLite y lo envía cuando vuelve la red.',

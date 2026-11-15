@@ -36,6 +36,49 @@ const arch: Arch = {
     { to: 'OpenStreetMap', text: 'Nominatim が店名で店を探し、Overpass が近くの店を見つけます。' },
     { to: 'Google Play', text: 'AdMob が広告を出し、Play Billing が「広告を削除」と Pro を売ります。' },
   ],
+  design: {
+    scale: [
+      '個人用のリストは 1 台の端末にとどまり、共有リストは 1 本のリンクで家族や数人の友人に届きます。',
+      'アプリにサーバーはないため、Firestore の無料枠（1 日 50,000 回の読み取りと 20,000 回の書き込み）が共有リストの予算を決めます。',
+    ],
+    data: [
+      '端末の SQLite がリスト、項目、店、売り場、順路、既知の名前、価格を持ちます。ウェブ版は同じ SQLite を wasm で動かします。',
+      'Firestore に届くのは共有リストだけで、lists/{id}/items/{itemId} に入り、店の売り場と順路は stores/{osmId} に入ります。',
+      '削除は deleted = 1 を立てて行を残します。dirty = 1 は Firestore がまだ受け取っていない変更の印です。',
+      '写真は 360 ピクセル、約 30 KB の JPEG で、項目の中に入ります。',
+    ],
+    interfaces: [
+      '共有リンクはランダムな 32 桁の 16 進リスト ID を持ち、Android の intent filter がアプリで開きます。',
+      'Tripforge の旅行リンクは、v、place、start、nights と最大 60 か所を含む base64url の JSON を運びます。',
+      '価格は Woolworths と Coles のサイト検索の裏にある JSON から、店は Nominatim と Overpass から、名所は Tripforge の Worker か Wikidata から取ります。',
+    ],
+    reliability: [
+      '変更はまず SQLite に保存し、画面はそこから描き直すので、電波がなくてもチェックできます。アプリを開いている間、送信は 30 秒ごとに再試行します。',
+      '項目ごとに新しい updated の時刻が勝ち、端末でも Firestore のルールでも同じです。同じ項目へのオフライン編集 2 件は統合できず、後の編集が項目全体を取ります。',
+      'リスナーはアプリがバックグラウンドに移ってから 1 分間動きます。閉じたアプリには通知が届きません。プッシュ用のサーバーが必要になるからです。',
+    ],
+    security: [
+      '各インストールは匿名で Firebase にサインインし、リンクにあるランダムなリスト ID が秘密です。Firestore はリストの一覧取得を拒否します。',
+      'ルールは 32 桁の 16 進 ID、既知のフィールド、そのサイズ、1 日先までの時刻を確認します。写真は JPEG データか Wikimedia Commons の画像に限ります。',
+      'リンクを知っていれば誰でもリストを読み、変更し、削除できます。Firebase App Check は今のところオフです。',
+    ],
+    performance: [
+      '送信は 0.5 秒待つので、続けてチェックした分は 1 回の書き込みで出ます。',
+      '価格は Woolworths から 3 件ずつ、Coles から 1 件ずつ読み込みます。SQLite に 1 日残し、再描画するのは価格だけです。',
+      '端末は店の売り場を Firestore から 10 分に 1 回までしか読みません。',
+    ],
+    operations: [
+      'main への push ごとに Checks と Release が同時に始まります。Checks が通ると署名済み APK を公開し、Checks が失敗するとビルドを取り消します。',
+      'Google Play 用の bundle は 1 日 1 回、シドニー時間の 19:00 に、アプリに変更があったときだけ作ります。',
+      'ウェブ版は Firebase Hosting が配信し、Checks が通ると Firestore のルールと一緒にデプロイします。GitHub の APK は自分で更新し、Play 版はそのコードを含みません。',
+    ],
+    tradeoffs: [
+      'Kotlin のネイティブアプリではなく Expo を選び、1 つのコードで共有リンクが開くページも作ります。',
+      '自前サーバーや WebRTC ではなく Firestore の行を選び、動かすサーバーをなくし、チェックが眠った端末を待たないようにします。',
+      '項目ごとに新しい変更を勝たせ、フィールド単位のマージはしません。コードは減りますが、古いオフライン編集は失われます。',
+      'GitHub Pages ではなく Firebase Hosting を選びます。wasm の SQLite には COOP と COEP ヘッダーが要り、Pages では設定できないからです。',
+    ],
+  },
   features: {
     'Share by link':
       'Firestore が共有リストのコピーを持ち、リンクにはランダムな id が入ります。各スマホは変更をまず SQLite に保存し、回線が戻ると送ります。',

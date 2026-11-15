@@ -30,6 +30,43 @@ const arch: Arch = {
     { to: 'GitLab and Bitbucket', text: 'Lenkemål ved siden av GitHub, bygget fra remote-URL-en uten API-kall.' },
     { to: 'Visual Studio Marketplace', text: 'Viser utvidelsen. Hver publisering der gjøres for hånd.' },
   ],
+  design: {
+    scale: [
+      'Én person per VS Code-vindu, én lenke per klikk, så arbeidet er noen få git-kall på ett repo.',
+      'Den kjører i lokale, SSH- og container-vinduer, og et git-kall stopper etter 10 sekunder så en treg remote ikke henger editoren.',
+    ],
+    data: [
+      'Utvidelsen har ingen tilstand. Hver kommando leser innstillingene, utvalget og git, bygger en lenke og glemmer dem.',
+      'openInGitHub-innstillingene og remote-URL-en avgjør verten, grenen og en tilordnet adresse.',
+    ],
+    interfaces: [
+      'Kommandoene kommer fra paletten, editormenyen og Utforsker-menyen, 8 til sammen, og hver kaller den samme lenkekjøreren.',
+      'git gir reporoten, remote-URL-en og grenene gjennom execFile, og lenkebyggerne skriver URL-ene for fil, blame og historikk for hver vert.',
+      'vscode.env.openExternal åpner nettleseren og vscode.env.clipboard kopierer, så begge virker i eksterne vinduer.',
+    ],
+    reliability: [
+      'Grensjekken prøver innstillingen, remote-HEAD, main og master, og faller så tilbake til gjeldende gren eller committen ved frakoblet HEAD.',
+      'En git-feil viser gits egen melding, og git ber ikke om passord i en terminal.',
+    ],
+    security: [
+      'Utvidelsen sender ingen forespørsler til vertene, så den trenger ikke token eller innlogging for GitHub, GitLab eller Bitbucket.',
+      'git kjører gjennom execFile uten skall, så innstillingen defaultRemote kan ikke kjøre en kommando.',
+    ],
+    performance: [
+      'esbuild samler kildene i én fil, noe som gjorde pakken mindre og lastingen raskere.',
+      'Hvert git-kall er en kort prosess gjennom execFile med 10 sekunders grense, så et klikk koster noen få små prosesser.',
+    ],
+    operations: [
+      'Checks kjører lint, typesjekk, enhetstester og bygg ved hver push, og release-arbeidsflyten bygger .vsix ved siden av.',
+      'Et portskript publiserer bygget når Checks består, og en mislykket Checks avbryter det. Publisering til Marketplace forblir manuell.',
+      'Vanlig TypeScript i git og links kjører i Node under mise run test, og bare editorlimet trenger et VS Code-testvindu.',
+    ],
+    tradeoffs: [
+      'Lenker fra lokal git i stedet for hver verts REST-API, så ingen token og ingen nettverkskall per klikk. Lenken kan ikke bekrefte at filen finnes hos verten.',
+      'vscode.env.openExternal i stedet for pakken open, som ødela navn som users.$id.tsx og ikke åpnet nettleser fra SSH-vinduer.',
+      'En fork av en eksisterende utvidelse i stedet for omskriving, som beholdt verts-lenkekoden og testene. Den nye id-en betyr at folk må installere på nytt.',
+    ],
+  },
   features: {
     'Open a file, blame or history link':
       'Kommandoen leser filen og de markerte linjene fra editoren og remote fra git. En vertsmodul skriver lenken, og VS Code åpner den i nettleseren.',

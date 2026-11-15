@@ -33,6 +33,53 @@ const arch: Arch = {
     { to: 'memories-demo-webdav', text: 'Gjennomgangen hos Google Play logger inn på denne eksempel-NAS-en.' },
     { to: 'Tailscale', text: 'En andre adresse når NAS-en borte fra hjemmet. Funnel leverer albumlenkene.' },
   ],
+  design: {
+    scale: [
+      'En person per installasjon med en NAS hjemme, opptil omtrent en million bilder og videoer.',
+      'Første synk av en halv million bilder tar nesten en dag, siden NAS-en svarer på rundt 10 filhoder i sekundet.',
+      'Albumlenker når noen få personer gjennom Tailscale Funnel, så NAS-en er den eneste serveren.',
+    ],
+    data: [
+      'Bildene blir på NAS-en. Telefonen har en SQLite-indeks med mapper, medier og en days-tabell som triggere teller opp.',
+      'En filrad har bare mappe-id og filnavn, så en million filer får plass i omtrent 200 MB.',
+      'Opptakstid lagres som veggklokke i sekunder, så På denne dagen er en enkel områdespørring.',
+      'NAS-en har en .memories-mappe ved siden av bildene med index.db, status.json, faces.db og albumfilene.',
+    ],
+    interfaces: [
+      'Telefonen snakker WebDAV med NAS-en: PROPFIND per mappe, GET med område for filhoder, PUT, MKCOL og MOVE.',
+      'Containerne på NAS-en legger index.db og status.json i .memories, og telefonen slår dem sammen over samme WebDAV-lenke.',
+      'Rust-mapperegelene når appen som et uniffi-bibliotek på Android og som wasm på nettet.',
+    ],
+    reliability: [
+      'Synken lagrer 50 filer om gangen i én transaksjon, og en avbrutt runde fortsetter i neste kjøring.',
+      'Bakgrunnsjobben har 8 minutters budsjett og planlegger påminnelsene først, så de kommer selv om NAS-en svikter.',
+      'En tom galleri-rot stopper runden, så en ikke-montert deling sletter ikke indeksen.',
+    ],
+    security: [
+      'NAS-påloggingen ligger i Android-nøkkellageret via expo-secure-store, og appen sender den som Basic-header.',
+      'En albumlenke har et tilfeldig token på 16 byte. Albumserveren monterer galleriet skrivebeskyttet og svarer 404 på alle andre stier.',
+      'Stedsnavn kommer fra en frakoblet database i appen, så ingen GPS-punkter forlater telefonen.',
+      'Vanlig http er tillatt, siden en NAS hjemme sjelden har sertifikat.',
+    ],
+    performance: [
+      'FlashList tegner de synlige rutene og én skjerm foran. Hver rute viser det lille EXIF-miniatyrbildet, lest fra de første 66 KB.',
+      'Lesingene går 8 om gangen i en kø, nyeste først, og en innebygd modul løfter OkHttp fra 5 til 32 forespørsler per vert.',
+      'Tabellene days og geo_cells holder månedslisten, turene og kartet unna millionen filrader.',
+      'Indekseren på NAS-en leser et filhode fra egen disk på millisekunder, mens WebDAV bruker sekunder.',
+    ],
+    operations: [
+      'Ett pnpm-monorepo med node, pnpm, java og rust låst i mise.toml og én låsefil.',
+      'Hvert push til main der sjekkene består, gir en signert APK med datoversjon, og release-gate.sh avbryter bygget når sjekkene feiler.',
+      'Den installerte appen leser siste utgivelse fra GitHub-API-et. Google Play-bygget bytter oppdatereren mot stubber og bygges én gang om dagen.',
+      'Containerne på NAS-en rulles ut over ssh med et deploy-skript.',
+    ],
+    tradeoffs: [
+      'Vanlig WebDAV framfor en egen server, så hvilken som helst NAS duger, til pris av en treg første synk.',
+      'SQLite på telefonen framfor en serverdatabase, så appen virker frakoblet og koster ingenting å drifte.',
+      'Opptakstid som veggklokke framfor UTC, så På denne dagen blir et enkelt område, men bilder fra to tidssoner kan ikke ordnes helt nøyaktig.',
+      'Én Rust-crate for mapperegler framfor en kopi per app, så telefon og skrivebord sorterer likt, til 1 til 2 MB per ABI.',
+    ],
+  },
   features: {
     'Daily reminder':
       'expo-notifications holder enkeltpåminnelser for de neste 7 dagene, planlagt fra indeksen av bakgrunnsjobben. En utenlandstur den dagen velger året.',

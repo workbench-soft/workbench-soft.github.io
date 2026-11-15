@@ -36,6 +36,43 @@ const arch: Arch = {
     },
     { to: 'Visual Studio Marketplace', text: 'Liste l’extension. Chaque publication y est faite à la main.' },
   ],
+  design: {
+    scale: [
+      'Une personne par fenêtre VS Code, un lien par clic, donc le travail se réduit à quelques appels git sur un dépôt.',
+      'Elle tourne dans les fenêtres locales, SSH et conteneur, et un appel git s’arrête après 10 secondes pour qu’un remote lent ne fige pas l’éditeur.',
+    ],
+    data: [
+      'L’extension ne garde aucun état. Chaque commande lit les réglages, la sélection et git, construit un lien puis les oublie.',
+      'Les réglages openInGitHub et l’URL du remote décident de l’hôte, de la branche et d’une adresse remplacée.',
+    ],
+    interfaces: [
+      'Les commandes viennent de la palette, du menu de l’éditeur et du menu de l’Explorateur, au nombre de 8, et chacune appelle le même exécuteur de liens.',
+      'git donne la racine du dépôt, l’URL du remote et les branches via execFile, et les constructeurs de liens écrivent les URL de fichier, blame et historique de chaque hôte.',
+      'vscode.env.openExternal ouvre le navigateur et vscode.env.clipboard copie, donc les deux marchent dans les fenêtres distantes.',
+    ],
+    reliability: [
+      'Le contrôle de branche essaie le réglage, le HEAD du remote, main et master, puis retombe sur la branche courante ou le commit en HEAD détaché.',
+      'Un échec de git affiche le message propre à git, et git ne demande aucun mot de passe dans un terminal.',
+    ],
+    security: [
+      'L’extension n’envoie aucune requête aux hôtes, donc elle n’a besoin d’aucun jeton ni connexion pour GitHub, GitLab ou Bitbucket.',
+      'git passe par execFile sans shell, donc le réglage defaultRemote ne peut lancer aucune commande.',
+    ],
+    performance: [
+      'esbuild regroupe les sources en un fichier, ce qui a allégé le paquet et accéléré le chargement.',
+      'Chaque appel git est un court processus via execFile avec une limite de 10 secondes, donc un clic coûte quelques petits processus.',
+    ],
+    operations: [
+      'Checks lance lint, vérification des types, tests unitaires et build à chaque push, et le workflow de release construit le .vsix à côté.',
+      'Un script de porte publie la construction quand Checks passe, et un Checks en échec l’annule. La publication sur le Marketplace reste manuelle.',
+      'Le TypeScript simple de git et links tourne dans Node sous mise run test, et seule la colle de l’éditeur demande une fenêtre de test VS Code.',
+    ],
+    tradeoffs: [
+      'Des liens issus du git local plutôt que de l’API REST de chaque hôte, donc pas de jeton et pas d’appel réseau par clic. Le lien ne peut pas confirmer que le fichier existe sur l’hôte.',
+      'vscode.env.openExternal plutôt que le paquet open, qui cassait des noms comme users.$id.tsx et n’ouvrait aucun navigateur depuis les fenêtres SSH.',
+      'Un fork d’une extension existante plutôt qu’une réécriture, qui a gardé le code des liens d’hôtes et ses tests. Le nouvel id oblige à réinstaller.',
+    ],
+  },
   features: {
     'Open a file, blame or history link':
       'La commande lit le fichier et ses lignes choisies dans l’éditeur, et le remote dans git. Un module d’hôte écrit le lien, et VS Code l’ouvre dans le navigateur.',

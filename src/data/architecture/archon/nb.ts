@@ -30,6 +30,47 @@ const arch: Arch = {
       text: 'Reglene og ferdighetene derfra bestemmer hvordan hver agent Archon starter, leverer en endring.',
     },
   ],
+  design: {
+    scale: [
+      'PC-en til én utvikler, noen titalls repoer og 5 til 10 agenter samtidig.',
+      'Kjøreregisteret beholder de siste 200 kjøringene, og resten er små JSON-lister, så det trengs ingen database.',
+    ],
+    data: [
+      'JSON-lister navngir repoene, appene og agentoppgavene som Archon viser.',
+      'runs.json i den lokale appdatamappen holder hver kjøring med start, slutt og resultat.',
+      'Hvert repos TODO.md og agentenes øktfiler leses på stedet, og Archon har ingen kopi.',
+    ],
+    interfaces: [
+      'server.ts knytter hver sti til én funksjon: lesinger svarer på GET med JSON, og handlinger svarer på POST med en tekstlinje.',
+      'En konsollkjøring ender med en markør, done eller failed, som registeret leser.',
+      'Andre verktøy ligger bak adb, git, GitHubs utgivelses-API og registrene npm, crates.io og PyPI. Noen faner rammer inn lokale sider over HTTP.',
+    ],
+    reliability: [
+      'Serveren går til utlogging, så kjøringer og oppdateringer fortsetter med alle vinduer lukket.',
+      'En ny start finner porten tatt og åpner ett vindu til på samme server.',
+      'Siden starter på egne kataloger, så fanknappene virker uten nett, og en fane som ikke lastet, prøver igjen ved neste klikk.',
+    ],
+    security: [
+      'Serveren lytter bare på loopback, og telefonen når den gjennom Tailscale i tailnettet.',
+      'En handling trenger innholdstypen JSON, så en side på et annet nettsted kan ikke poste uten preflight, som serveren ikke svarer på.',
+      'Ask Archon når ikke sletting av grener eller nøkkelrotasjon. Fanen Keys viser alderen til hver hemmelighet, ikke verdien.',
+    ],
+    performance: [
+      'Siden henter kjøringene hvert 5. sekund fra små filer, så det trengs ingen push-kanal.',
+      'Gjenstående tid for en kjøring er medianen av tidligere ferdige kjøringer av samme slag.',
+      'Repo-synkronisering og pakkeskanning tar 8 repoer om gangen.',
+    ],
+    operations: [
+      'Hvert 2. minutt henter oppdateringen main og installerer nyere skrivebordsbygg. Ny Archon-kode starter serveren på nytt og laster siden på nytt.',
+      'En skjult snarvei i oppstartsmappen starter serveren ved innlogging, uten vindu.',
+      'mise run test sjekker at den engelske og den russiske katalogen har de samme nøklene, og kjører så Nodes testløper.',
+    ],
+    tradeoffs: [
+      'En lokal nettside i stedet for Tauri, siden den kjører på Node alene og kan åpnes på telefonen. Den trenger Edge til appvinduet og talen.',
+      'Ingen pakker og ingen byggtrinn, så git pull er hele utrullingen. Rutingen er skrevet for hånd.',
+      'En synlig konsoll per agentkjøring i stedet for hodeløse kjøringer, så personen kan se på og svare på spørsmål.',
+    ],
+  },
   features: {
     'Ask Archon':
       'Edge gjør tale om til tekst. Claude Code på Haiku velger så én handling i startprogrammet, og serveren kjører den og åpner fanen.',

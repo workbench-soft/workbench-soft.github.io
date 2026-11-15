@@ -42,6 +42,53 @@ const arch: Arch = {
     { to: 'memories-demo-webdav', text: 'L’examen de Google Play se connecte à ce NAS d’exemple.' },
     { to: 'Tailscale', text: 'Une deuxième adresse atteint le NAS hors de chez soi. Funnel sert les liens d’album.' },
   ],
+  design: {
+    scale: [
+      'Une personne par installation avec un NAS à la maison, jusqu’à environ un million de photos et de vidéos.',
+      'Une première synchro d’un demi-million de photos prend presque une journée, car le NAS répond à environ 10 lectures d’en-tête par seconde.',
+      'Les liens d’album atteignent quelques personnes via Tailscale Funnel, donc le NAS reste le seul serveur.',
+    ],
+    data: [
+      'Les photos restent sur le NAS. Le téléphone tient un index SQLite avec les dossiers, les médias et une table days que des triggers tiennent à jour.',
+      'Une ligne de fichier garde un id de dossier et un nom de fichier, donc un million de fichiers tient dans environ 200 Mo.',
+      'L’heure de prise de vue est une heure murale en secondes, donc Ce jour-là est une simple requête par plage.',
+      'Le NAS garde à côté des photos un dossier .memories avec index.db, status.json, faces.db et les fichiers d’album.',
+    ],
+    interfaces: [
+      'Le téléphone parle WebDAV au NAS : PROPFIND par dossier, GET par plage pour les en-têtes, PUT, MKCOL et MOVE.',
+      'Les conteneurs du NAS publient index.db et status.json dans .memories, et le téléphone les fusionne par le même lien WebDAV.',
+      'Les règles de dossiers en Rust arrivent dans l’app comme bibliothèque uniffi sur Android et comme wasm sur le web.',
+    ],
+    reliability: [
+      'La synchro enregistre 50 fichiers par transaction, et un passage interrompu reprend à l’exécution suivante.',
+      'La tâche de fond a 8 minutes de budget et planifie les rappels d’abord, donc ils arrivent même si le NAS est en panne.',
+      'Une racine de galerie vide arrête le passage, donc un partage non monté n’efface pas l’index.',
+    ],
+    security: [
+      'L’identifiant du NAS reste dans le keystore Android via expo-secure-store, et l’app l’envoie en en-tête Basic.',
+      'Un lien d’album porte un jeton aléatoire de 16 octets. Le serveur d’albums monte la galerie en lecture seule et répond 404 à tout autre chemin.',
+      'Les noms de lieux viennent d’une base hors ligne dans l’app, donc aucun point GPS ne quitte le téléphone.',
+      'Le http simple est permis, car un NAS à la maison a rarement un certificat.',
+    ],
+    performance: [
+      'FlashList dessine les tuiles visibles et un écran d’avance. Chaque tuile montre la petite miniature EXIF, lue dans les 66 premiers Ko.',
+      'Les lectures passent 8 à la fois dans une file, les plus récentes d’abord, et un module natif porte OkHttp de 5 à 32 requêtes par hôte.',
+      'Les tables days et geo_cells évitent à la liste des mois, aux voyages et à la carte de lire le million de lignes de fichiers.',
+      'L’indexeur du NAS lit un en-tête sur son propre disque en millisecondes, là où WebDAV prend des secondes.',
+    ],
+    operations: [
+      'Un monorepo pnpm avec node, pnpm, java et rust figés dans mise.toml et un seul lockfile.',
+      'Chaque push sur main dont les checks passent publie un APK signé avec une version datée, et release-gate.sh annule le build si les checks échouent.',
+      'L’app installée lit la dernière release par l’API GitHub. Le build Google Play remplace l’updater par des stubs et se construit une fois par jour.',
+      'Les conteneurs du NAS se déploient par ssh avec un script deploy.',
+    ],
+    tradeoffs: [
+      'WebDAV simple plutôt qu’un serveur à nous, pour que tout NAS marche, au prix d’une première synchro lente.',
+      'SQLite sur le téléphone plutôt qu’une base serveur, pour que l’app marche hors ligne et ne coûte rien en hébergement.',
+      'Heure de prise de vue murale plutôt qu’UTC, pour garder Ce jour-là en simple plage, mais des photos de deux fuseaux ne se classent pas exactement.',
+      'Une seule crate Rust de règles de dossiers plutôt qu’une copie par app, pour que téléphone et bureau trient pareil, pour 1 à 2 Mo par ABI.',
+    ],
+  },
   features: {
     'Daily reminder':
       'expo-notifications garde des rappels ponctuels pour les 7 prochains jours, planifiés depuis l’index par la tâche de fond. Un voyage à l’étranger ce jour-là choisit l’année.',
