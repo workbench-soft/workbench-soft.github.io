@@ -104,7 +104,7 @@ const zh: Catalog = {
       copied: '已复制',
       subject: '给 Workbench Soft 的项目',
     },
-    palette: { results: '结果', empty: '没有匹配。换个词试试。', project: '项目', feature: '功能' },
+    palette: { results: '结果', empty: '没有匹配。换个词试试。', project: '项目', feature: '功能', close: '关闭' },
     footer: { noAds: '本站不展示广告。', releases: '发布版本', privacy: 'Memories 隐私政策' },
     technologies: '技术',
   },

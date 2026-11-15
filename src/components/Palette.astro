@@ -9,7 +9,10 @@ const t = ui(langOf(Astro.currentLocale));
   <div class="field">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
     <input id="pal-q" type="search" placeholder={t.nav.searchLabel} aria-label={t.nav.searchLabel} autocomplete="off" role="combobox" aria-controls="pal-list" aria-expanded="true" aria-autocomplete="list" />
-    <kbd>Esc</kbd>
+    <button class="close" type="button" aria-label={t.palette.close} title={t.palette.close}>
+      <kbd>Esc</kbd>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+    </button>
   </div>
   <ul id="pal-list" role="listbox" aria-label={t.palette.results}></ul>
 </dialog>
@@ -124,6 +127,7 @@ const t = ui(langOf(Astro.currentLocale));
   dlg.addEventListener("click", (e) => {
     if (e.target === dlg) dlg.close();
   });
+  dlg.querySelector(".close")!.addEventListener("click", () => dlg.close());
   for (const b of document.querySelectorAll("[data-palette]")) b.addEventListener("click", open);
   addEventListener("keydown", (e) => {
     const typing = /^(INPUT|TEXTAREA|SELECT)$/.test((document.activeElement as HTMLElement | null)?.tagName ?? "");
@@ -151,7 +155,15 @@ const t = ui(langOf(Astro.currentLocale));
   dialog::backdrop { background: rgb(2 3 8 / 0.6); backdrop-filter: blur(6px); }
   .field { display: flex; align-items: center; gap: 12px; padding: 16px 18px; border-bottom: 1px solid var(--line); }
   input { flex: 1; background: none; border: 0; outline: 0; color: var(--text); font: 500 17px var(--sans); }
-  .field svg { width: 18px; height: 18px; color: var(--cyan); flex: none; }
+  .field > svg { width: 18px; height: 18px; color: var(--cyan); flex: none; }
+  /* The Esc key on a keyboard, a cross on a touch screen, where no Esc key exists. */
+  .close { flex: none; display: grid; place-items: center; min-width: 32px; min-height: 32px; padding: 0; background: none; border: 0; color: var(--muted); cursor: pointer; }
+  .close:hover { color: var(--text); }
+  .close svg { display: none; width: 18px; height: 18px; }
+  @media (pointer: coarse) {
+    .close kbd { display: none; }
+    .close svg { display: block; }
+  }
   ul { list-style: none; margin: 0; padding: 8px; max-height: 52vh; overflow: auto; }
   ul :global(li) { display: flex; gap: 12px; align-items: baseline; padding: 10px 12px; border-radius: 10px; cursor: pointer; }
   ul :global(li[aria-selected="true"]) { background: rgb(92 242 255 / 0.1); }

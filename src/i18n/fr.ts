@@ -112,6 +112,7 @@ const fr: Catalog = {
       empty: 'Aucun résultat. Essayez un autre mot.',
       project: 'Projet',
       feature: 'Fonction',
+      close: 'Fermer',
     },
     footer: { noAds: 'Ce site n’affiche aucune publicité.', releases: 'Versions', privacy: 'Confidentialité Memories' },
     technologies: 'Technologies',

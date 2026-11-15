@@ -111,6 +111,7 @@ const ko: Catalog = {
       empty: '일치하는 항목이 없습니다. 다른 단어로 찾아보세요.',
       project: '프로젝트',
       feature: '기능',
+      close: '닫기',
     },
     footer: { noAds: '이 사이트에는 광고가 없습니다.', releases: '릴리스', privacy: 'Memories 개인정보처리방침' },
     technologies: '기술',

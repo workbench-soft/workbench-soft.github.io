@@ -111,6 +111,7 @@ const nb: Catalog = {
       empty: 'Ingen treff. Prøv et annet ord.',
       project: 'Prosjekt',
       feature: 'Funksjon',
+      close: 'Lukk',
     },
     footer: {
       noAds: 'Dette nettstedet viser ingen annonser.',
