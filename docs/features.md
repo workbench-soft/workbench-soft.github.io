@@ -15,7 +15,7 @@ Spec: [workbench-soft-site](../specs/workbench-soft-site.md).
 - **What it does** shows how the studio builds software: live numbers about the code, a card per topic (code, tests, specs, docs, coding agents, tools) and the stack table.
 - **Where** the Engineering link in the header, section 04.
 - **Numbers** lines of code, source files, functions, types, tests, modules, files under 100 lines, the median file, specs, doc pages, commits and merged PRs in 30 days, and lines per language.
-- **Limits** the count reads private repos only with the `CODE_STATS_TOKEN` secret. A local build without `src/data/code-stats.json` hides the numbers.
+- **Limits** without the `CODE_STATS_TOKEN` secret the build skips the count and the numbers stay hidden, the hero lines of code too. A local build without `src/data/code-stats.json` hides the numbers.
 
 Spec: [engineering](../specs/engineering.md).
 

@@ -11,7 +11,8 @@
 - **Source** `pages.yml` counts them from the org repos on GitHub before each
   build and each night. No count sits in git.
 - **Access** the count reads private repos with the org secret
-  `CODE_STATS_TOKEN`. Without it, the count covers the public repos only.
+  `CODE_STATS_TOKEN`. Without it, the build skips the count and the site
+  hides the numbers, since the public repos alone undercount.
 
 ## What it does for the person
 
@@ -77,5 +78,7 @@ comments and strings for code.
     each language holds the same topics and points.
 - **Steps** the spec, the count, the section in English, the translations,
   the docs.
+- **No token yet** the first deploy counted only the 7 public repos, so the
+  build now skips the count until the secret exists.
 - **Docs** `README.md`, `docs/features.md`, `docs/architecture.md`,
   `CHANGELOG.md`, and the workspace `docs/accounts.md` for the token.

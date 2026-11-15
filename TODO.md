@@ -107,4 +107,4 @@ Found by the SEO audit of 2026-11-13. [specs/seo.md](specs/seo.md) has the fixes
 
 ## engineering: live code numbers
 
-- [ ] Add the `CODE_STATS_TOKEN` secret, so the Engineering numbers count the private repos too. Until then the nightly count covers the public repos only. Tell an agent "rotate the secrets for workbench-soft.github.io": it opens the token page in Chrome with the settings from `.github/secret-rotation.json`, and you press Generate.
+- [ ] Add the `CODE_STATS_TOKEN` secret, so the Engineering numbers count the private repos too. Until then the site hides the numbers, the hero lines of code too. Tell an agent "rotate the secrets for workbench-soft.github.io": it opens the token page in Chrome with the settings from `.github/secret-rotation.json`, and you press Generate.
