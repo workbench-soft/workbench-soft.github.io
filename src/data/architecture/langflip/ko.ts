@@ -105,6 +105,8 @@ const arch: Arch = {
       'Windows 계층이 판단마다 키 수, 앱, 이유를 로그에 씁니다. 입력한 글자는 쓰지 않고, 1 MB가 되면 새 파일로 바뀝니다.',
     'Update from GitHub':
       '스레드가 하루 한 번 ureq로 GitHub 릴리스 목록을 묻습니다. 클릭 뒤 크기와 SHA-256을 확인하고, self-replace가 실행 중인 exe를 바꿉니다.',
+    'Welcome on the first start':
+      'Windows에서 처음 실행하면 작업 대화 상자가 별도 스레드에서 단축키를 알려 줘서 후크가 메시지를 놓치지 않아요. 툴팁은 화면 읽기 프로그램을 위해 배열을 적어요.',
   },
 };
 

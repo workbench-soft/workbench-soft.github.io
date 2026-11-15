@@ -1274,7 +1274,7 @@ export const projects: Project[] = [
           },
           {
             name: 'The current layout on the icon',
-            text: 'The tray shows EN on blue or RU on red for the window in front.',
+            text: 'The tray shows EN or RU for the window in front, on the icon and in its tooltip.',
           },
           { name: 'Pause with a click', text: 'A click on the tray icon turns fixing off, and the icon turns grey.' },
           {
@@ -1295,6 +1295,7 @@ export const projects: Project[] = [
           { name: 'Tray menu', text: 'A right click on the icon opens the menu.' },
           { name: 'Decision log', text: 'A log file says what Langflip decided for each word and why.' },
           { name: 'Update from GitHub', text: 'Checks for a new release once a day and updates itself after a click.' },
+          { name: 'Welcome on the first start', text: 'A dialog names the keys and shows where the icon hides.' },
         ],
       },
     ],

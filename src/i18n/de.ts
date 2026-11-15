@@ -773,7 +773,10 @@ const de: Catalog = {
               'Apps und Felder auslassen',
               'Passwortfelder, Admin-Fenster und jede App aus den Einstellungen bleiben unberührt.',
             ],
-            ['Layout am Symbol', 'Der Infobereich zeigt EN auf Blau oder RU auf Rot für das Fenster im Vordergrund.'],
+            [
+              'Layout am Symbol',
+              'Der Infobereich zeigt EN oder RU für das Fenster im Vordergrund, auf dem Symbol und im Tooltip.',
+            ],
             ['Pause per Klick', 'Ein Klick auf das Symbol schaltet die Korrektur aus, und das Symbol wird grau.'],
             [
               'Wechsel per Doppelklick',
@@ -796,6 +799,7 @@ const de: Catalog = {
               'Update von GitHub',
               'Sucht einmal am Tag nach einer neuen Version und aktualisiert sich nach einem Klick.',
             ],
+            ['Willkommen beim ersten Start', 'Ein Dialog nennt die Tasten und zeigt, wo das Symbol sitzt.'],
           ],
         },
       ],

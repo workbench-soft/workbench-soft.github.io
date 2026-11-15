@@ -788,7 +788,7 @@ const fr: Catalog = {
             ],
             [
               'Disposition sur l’icône',
-              'La zone de notification affiche EN sur bleu ou RU sur rouge pour la fenêtre active.',
+              'La zone de notification affiche EN ou RU pour la fenêtre active, sur l’icône et dans l’info-bulle.',
             ],
             ['Pause d’un clic', 'Un clic sur l’icône coupe la correction, et l’icône devient grise.'],
             ['Changer d’un double clic', 'Un double clic sur l’icône change la disposition de la fenêtre active.'],
@@ -809,6 +809,7 @@ const fr: Catalog = {
               'Mise à jour depuis GitHub',
               'Cherche une nouvelle version une fois par jour et se met à jour en un clic.',
             ],
+            ['Accueil au premier lancement', 'Une fenêtre donne les touches et montre où se trouve l’icône.'],
           ],
         },
       ],

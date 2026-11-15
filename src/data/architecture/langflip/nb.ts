@@ -119,6 +119,8 @@ const arch: Arch = {
       'Windows-laget skriver hver avgjørelse i en loggfil med antall taster, appen og grunnen. Bokstaver holdes utenfor, og ved 1 MB starter en ny fil.',
     'Update from GitHub':
       'En tråd spør GitHub om listen over utgivelser én gang om dagen med ureq. Etter et klikk sjekker den størrelse og SHA-256, og self-replace bytter den kjørende exe-filen.',
+    'Welcome on the first start':
+      'Ved første start på Windows viser en oppgavedialog tastene i en egen tråd, så hookene beholder meldingene sine. Verktøytipset nevner oppsettet for skjermlesere.',
   },
 };
 
