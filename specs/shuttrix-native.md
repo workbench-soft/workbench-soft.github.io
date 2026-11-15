@@ -35,3 +35,5 @@
 - **Changes** `native/shuttrix/`, `.github/workflows/shuttrix-native.yml`, `README.md`.
 - **Steps** this spec, then the scripts and the workflow, then a run that publishes the first release.
 - **Docs** `README.md`.
+- **Result** run 7 published `shuttrix-native-7`. In the arm64 APK, compressed: ONNX Runtime 12.9 MB to 2.6 MB, OpenCV 13.6 MB to 7.5 MB.
+- **Build fixes** the ONNX Runtime test targets fail to compile on `armeabi-v7a`, so they stay off. A warning in KleidiAI code then stopped arm64, so warnings no longer fail the build. The OpenCV Java utils import `imgcodecs` and `videoio`, which come in with their codecs and cameras off.

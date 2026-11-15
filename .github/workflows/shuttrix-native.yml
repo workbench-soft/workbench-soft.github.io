@@ -5,9 +5,6 @@ name: Shuttrix native libraries
 # The repo is public, so the hosted runner spends no Actions minutes.
 on:
   workflow_dispatch:
-  # TEMP: builds the branch while the scripts take shape.
-  push:
-    branches: [shuttrix-native]
 
 permissions:
   contents: read
