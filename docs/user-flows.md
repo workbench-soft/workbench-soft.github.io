@@ -88,6 +88,20 @@ flowchart LR
   panel["Project panel"] --> six["First 6 features"] --> more["Show all"] --> all["Every feature"] --> less["Show fewer"] --> six
 ```
 
+## A client reads how a project is built
+
+1. The client clicks a feature, and its "How it works" line opens under it.
+2. The client opens "How it is built" under the features.
+3. The block lists the parts and their jobs, the data flow and the projects it talks to.
+4. A project link scrolls to that project's panel.
+
+```mermaid
+flowchart LR
+  feat["Click a feature"] --> how["How it works line"]
+  block["How it is built"] --> parts["Parts"] & flow["Data flow"] & links["Connected to"]
+  links --> other["Other project's panel"]
+```
+
 ## A visitor filters the projects
 
 1. The visitor opens Projects.
@@ -116,4 +130,18 @@ flowchart LR
   article --> related["Related article"] --> article
   article --> today["Today page"] --> pick["Pick your sign"] --> tip["Tip for today"]
   article --> app["Google Play or APK"]
+```
+
+## A tester joins the closed tests
+
+1. The Google Group welcome or a tester email opens `/testers/`.
+2. The tester presses "Join group" on the `workbench-soft-testers` group.
+3. For each app the tester opens "Join the test" and presses "Become a tester".
+4. "Install" opens the app on Google Play, and the tester keeps it for 14 days.
+
+```mermaid
+flowchart LR
+  mail["Group welcome or email"] --> page["/testers/"]
+  page --> group["Join the Google Group"] --> join["Join the test"] --> install["Install"] --> keep["Keep 14 days"]
+  join -->|App not available| later["Try again in a few days"]
 ```

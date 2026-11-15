@@ -14,6 +14,7 @@ Public files for the Workbench Soft apps. The code sits in private repos in this
 - **Lumiere Player privacy policy** sits in [lumiere/](lumiere/), a Jekyll folder like the Tripforge one. It serves <https://workbench-soft.com/lumiere/privacy-policy>.
 - **Memoire privacy policy** sits in [memoire/](memoire/), a Jekyll folder like the Lumiere one. It serves <https://workbench-soft.com/memoire/privacy-policy>.
 - **Property Trends** its web build and data sit at <https://workbench-soft.com/property-trends/>. The private repo publishes them as a `property-trends-web-v*` release here. That release starts `pages.yml`, which unpacks the newest one.
+- **Testers page** <https://workbench-soft.com/testers> tells testers how to join the closed tests of the Android apps. The app list and its text sit in [src/testers/](src/testers/). [specs/testers-page.md](specs/testers-page.md) has the details.
 - **app-ads.txt** lists the AdMob publisher for apps whose Play listing points at this site.
 
 ## Home page
@@ -36,9 +37,10 @@ mise run dev
 ```
 
 - **Check** `mise run check` type checks the pages and scripts.
-- **Test** `mise run test` checks that each language catalog holds the same keys, projects and features as English.
+- **Test** `mise run test` checks that each language catalog holds the same keys, projects and features as English. It also checks that each project has its architecture in [src/data/architecture/](src/data/architecture/) in every language, with a line for each feature.
 - **Build** `mise run build` writes `dist/`. `mise run preview` serves it.
-- **Deploy** a push to `main` runs [pages.yml](.github/workflows/pages.yml). It builds the home page and the Memories site, then publishes both. A pull request runs the same build and skips the publish.
+- **Deploy** a push to `main` runs [pages.yml](.github/workflows/pages.yml). It builds the site and publishes it. A pull request runs the same build and skips the publish.
+- **Deploy from the PC** `CI=1 mise run deploy` starts `pages.yml` on `main` and waits for the run. The task stops when `HEAD` isn't `origin/main`, so run it after `git checkout --detach origin/main`.
 
 ## Who writes here
 

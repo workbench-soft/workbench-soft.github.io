@@ -1,0 +1,40 @@
+import type { Text } from './en';
+
+export const zh: Text = {
+  title: '测试 Workbench Soft 的 Android 应用',
+  description:
+    '加入 Workbench Soft 16 款 Android 应用在 Google Play 上的封闭测试：先加入 Google 群组，再为每款应用点“加入测试”和“安装”。',
+  home: 'Workbench Soft',
+  language: '语言',
+  why: 'Google Play 要等 12 位测试人员连续 14 天保留安装，才会发布一款新应用。你的测试能帮每款应用上架。',
+  stepsTitle: '如何加入',
+  steps: [
+    '加入 Google 群组 {group}。用你在 Play 商店使用的同一个 Google 账号，点“加入群组”。',
+    '为下面的每款应用打开“加入测试”，然后点“成为测试人员”。',
+    '再点“安装”，从 Google Play 获取应用。',
+    '让这些应用保持安装 14 天。时不时打开一下会更有帮助。',
+  ],
+  notAvailable: '链接显示“应用不可用”？说明 Google 还在审核这款应用。过几天再试。',
+  appsTitle: '应用列表',
+  join: '加入测试',
+  install: '安装',
+  feedback: '发现问题或有想法？请写信到 {email}。',
+  apps: {
+    farnear: '跨国视频通话，白板可共同展示图片和视频。',
+    keeppad: '说一声“Hey Keep”就开始的语音笔记。',
+    tickalot: '通过链接共享的购物、行李和观光清单。',
+    memoire: '在快要忘记之前，用短小批次学英语或俄语单词。',
+    shuttrix: '拥有单反拨盘的相机，还有大滑块的简单模式。',
+    skyaltar: '透过手机看夜空，以古老文明的风格绘制。',
+    guitarupscale: '在屏幕上弹的吉他，带音阶、和弦和歌曲。',
+    guitartuner: '通过麦克风听音的吉他调音器。',
+    games: '聚会游戏：画画、猜词、给提示。',
+    tripforge: '几句话规划整趟旅行：机票、路线、酒店和租车，都有价格。',
+    servohop: '澳大利亚油价地图，附每个加油站的价格历史。',
+    spotthecam: '澳大利亚和新西兰的测速摄像头，尽在一张地图上。',
+    propertytrends: '按房价中位数上色的澳大利亚郊区，附历史走势。',
+    consdr: '租赁、贷款还是全款：在澳大利亚买车要花多少钱。',
+    memories: '来自你自己 NAS 的“那年今日”照片。家里没有 NAS，加入测试也一样算数。',
+    lumiere: '支持语音控制的 Android 播放器，播放视频、音乐和图书。也能在电视上运行。',
+  },
+};

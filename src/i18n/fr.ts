@@ -60,6 +60,12 @@ const fr: Catalog = {
       less: 'Afficher moins',
       openSource: 'Open source',
       source: 'Code source',
+      arch: {
+        title: 'Comment c’est construit',
+        parts: 'Briques',
+        flow: 'Flux de données',
+        links: 'Relié à',
+      },
       kinds: {
         app: 'Apps pour tous',
         tool: 'Outils pour développeurs',
@@ -371,6 +377,15 @@ const fr: Catalog = {
             ],
           ],
         },
+        {
+          title: 'App iPhone',
+          features: [
+            [
+              'La même app sur iPhone',
+              'La carte, les trajets, les alertes vocales, les itinéraires et Pro, vendus sur l’App Store. Elle attend un compte Apple.',
+            ],
+          ],
+        },
       ],
     },
     'guitar-upscale': {
@@ -514,6 +529,11 @@ const fr: Catalog = {
             ],
             ['Langues', "Une liste partagée s'ouvre dans la langue du téléphone qui l'ouvre."],
             ['Tick-a-Lot dans la recherche', "Des guides et une page d'accueil mènent de la recherche à l'app."],
+            ['Licences open source', 'Les réglages listent chaque paquet de l’app sous le texte de sa licence.'],
+            [
+              'Listes longues',
+              'Sur Android, un curseur vert au bord droit mène une liste de 80 articles à n’importe quel point. Il s’efface 1,5 seconde après l’arrêt.',
+            ],
           ],
         },
       ],
@@ -571,6 +591,10 @@ const fr: Catalog = {
             [
               'KeepPad Pro',
               'Un achat unique ouvre les nouveaux liens, l’envoi vers d’autres apps et vers Memories, et retire les pubs.',
+            ],
+            [
+              'Défilement rapide',
+              'Sur Android, un doigt tire le curseur de la liste des notes à n’importe quel point, jusqu’à la dernière note.',
             ],
           ],
         },
@@ -682,6 +706,18 @@ const fr: Catalog = {
             [
               'Pas de pub sur le téléphone du développeur',
               'Chaque version masque la bannière sur un téléphone avec la clé du développeur.',
+            ],
+            [
+              'App iPhone',
+              'Le calculateur, les guides et les pages dans une app iPhone, hors ligne dès le premier lancement. Elle attend l’App Store.',
+            ],
+            [
+              'Retirer les pubs sur iPhone',
+              'Un paiement sur l’App Store masque la bannière. Restaurer l’achat le reprend sur un nouvel iPhone.',
+            ],
+            [
+              'Partager le résultat',
+              'Le bouton Partager sous le verdict envoie l’option la moins chère, son coût et le lien vers Messages, Mail ou Notes.',
             ],
           ],
         },
@@ -943,6 +979,10 @@ const fr: Catalog = {
               'Alina choisit les polices des titres, du texte et des libellés parmi 10 polices libres, ou importe les siennes.',
             ],
             ['Galeries clients', 'Un lien privé avec des épreuves filigranées, puis tous les originaux en un ZIP.'],
+            [
+              'Recherche',
+              'Chaque page a un titre, une description et une photo pour la recherche et les aperçus de lien. Une page locale couvre le Sutherland Shire.',
+            ],
           ],
         },
       ],
@@ -970,6 +1010,10 @@ const fr: Catalog = {
             [
               'Générateur IA',
               'Dessine un intérieur à partir d’une demande en russe, d’un style et d’une photo de la pièce.',
+            ],
+            [
+              'Recherche',
+              'Yandex et Google lisent le titre, la description, la photo de partage et les données structurées de chaque page. Le plan du site liste les pages.',
             ],
           ],
         },
@@ -1029,9 +1073,13 @@ const fr: Catalog = {
             ['Détails Dependabot', 'Garde le type de mise à jour de chaque PR Dependabot pour le job de merge.'],
             [
               'Merge auto',
-              'Fusionne une PR Dependabot une fois chaque vérification passée. Une mise à jour majeure attend une personne.',
+              'Fusionne une PR Dependabot dès son ouverture, puis les vérifications tournent sur main. Une mise à jour majeure attend une personne.',
             ],
             ['Versions', 'Chaque push sur main qui passe les contrôles devient une version datée avec ses notes.'],
+            [
+              'Contrôle iOS et build simulateur',
+              'Liste chaque partie Android seule sans plan iOS, et construit l’app pour le simulateur iPhone avec des captures de ses parcours de test.',
+            ],
           ],
         },
       ],
@@ -1316,7 +1364,7 @@ const fr: Catalog = {
             ],
             [
               'Photo multi-images',
-              'Une photo normale fusionne 6 images rapides en une, avec moitié moins de bruit et des bords plus nets.',
+              'Une photo normale fusionne 5 images rapides en une, avec moitié moins de bruit et des bords plus nets.',
             ],
             [
               'Améliorer les photos',
@@ -1522,6 +1570,10 @@ const fr: Catalog = {
               'Mythes des constellations',
               'Chaque constellation a une fiche : le mythe de la culture du thème, ce qu’il faut observer et ses étoiles les plus brillantes avec leur distance. La galerie tourne le ciel vers elle.',
             ],
+            [
+              'Listes longues',
+              'Sur Android, un doigt tire le curseur de la liste des constellations et de la galerie des thèmes à n’importe quel point.',
+            ],
           ],
         },
       ],
@@ -1568,8 +1620,8 @@ const fr: Catalog = {
     },
     'lumiere-player': {
       tagline:
-        "Un lecteur vidéo pour Google TV et les téléphones Android qui lit les fichiers d'une clé USB ou d'un NAS.",
-      lede: "Lumiere Player lit les fichiers d'une clé USB ou d'un partage SMB avec libVLC, donc il ouvre ce qu'ouvre VLC. Chaque fichier garde sa position, et la télécommande saute et change de piste.",
+        "Un lecteur Android à commande vocale pour la vidéo, la musique et les livres audio, qui s'installe aussi sur un Google TV.",
+      lede: "Lumiere Player lit vos fichiers du téléphone, d'une clé USB ou d'un partage SMB avec libVLC, donc il ouvre ce qu'ouvre VLC. Chaque vidéo, titre et livre garde sa position, et les commandes vocales les trouvent par leur nom.",
       links: [],
       groups: [
         {
@@ -1607,8 +1659,8 @@ const fr: Catalog = {
               'Artistes et Titres sont sur l’écran d’accueil, à côté des disques. La barre du lecteur reste sur chaque écran sauf la vidéo, avec un fil d’Ariane et un tri par artiste. Les titres live sont ignorés, par défaut.',
             ],
             [
-              'Spotify et YouTube',
-              'Hey Lumi joue un titre, un artiste ou un style absent des dossiers. Spotify trouve les titres, YouTube les joue.',
+              'MusicBrainz et YouTube',
+              'Hey Lumi joue un titre, un artiste ou un style absent des dossiers. MusicBrainz trouve les titres, YouTube les joue.',
             ],
             [
               'Livres audio',
@@ -1654,7 +1706,7 @@ const fr: Catalog = {
             ['Langues', 'En 9 langues, selon le téléphone ou le navigateur.'],
             [
               'Loyers',
-              'Chaque code postal de NSW, QLD, SA et TAS coloré selon le loyer hebdomadaire médian des nouveaux baux.',
+              'Chaque code postal de NSW, VIC, QLD, SA et TAS coloré selon le loyer hebdomadaire médian des nouveaux baux.',
             ],
             ['Installer depuis le navigateur', "La version web s'installe comme une app avec son icône."],
             [
@@ -1698,6 +1750,10 @@ const fr: Catalog = {
             [
               'Tripforge Pro',
               'Un achat sur Android donne des recherches illimitées, des dates décalées jusqu’à 30 jours, jusqu’à 50 voyages enregistrés et aucune publicité.',
+            ],
+            [
+              'Pages du site pour la recherche',
+              'Une page d’accueil par langue avec le formulaire, son titre, son aperçu et des données pour les moteurs, chacune dans le plan du site.',
             ],
           ],
         },

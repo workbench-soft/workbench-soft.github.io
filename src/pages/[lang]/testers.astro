@@ -1,0 +1,10 @@
+---
+import TestersPage from "../../testers/TestersPage.astro";
+import { locales, type Lang } from "../../i18n/locales";
+
+export function getStaticPaths() {
+  return locales.filter((l) => l !== "en").map((lang) => ({ params: { lang } }));
+}
+---
+
+<TestersPage lang={Astro.params.lang as Lang} />

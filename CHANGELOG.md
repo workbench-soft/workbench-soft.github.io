@@ -3,6 +3,11 @@
 ## Unreleased
 
 - **Shuttrix** a workflow builds the small ONNX Runtime and OpenCV that make the Shuttrix APK smaller.
+- **Deploy** `mise run deploy` puts the site live from the PC through the Pages workflow on `main`.
+- **Tickalot, KeepPad and Sky Altar** list the fast scroll thumb of their long lists and how it works, in every language.
+- **Projects** each panel shows how the project is built: its parts, the data flow and its links to other projects. Each feature opens to how it works, in every language. SpotTheCam, Tickalot, Consdr, Tripforge, Alina Photo, Aspiration Style and CI list the features their repos added.
+- **Testers page** workbench-soft.com/testers lists the steps to join the closed tests and the Join and Install links of the 16 Android apps, in every language.
+- **Lumiere Player** the card calls it an Android player with voice control for video, music and audiobooks, which also installs on a Google TV, in every language.
 - **App audit 2026-11-14** a game survives a reload and a restart, a telephone entry waits for the socket, the apps get an Ad privacy choices button, the site serves its own fonts, and the Memories, Lumiere, Shuttrix, Tripforge and Langflip privacy texts name what the apps contact.
 - **Shuttrix** lists the iPhone app and what it leaves out, in every language.
 - **Lumiere Player** voice commands name Hey Lumi, turn on Bluetooth, in every language.

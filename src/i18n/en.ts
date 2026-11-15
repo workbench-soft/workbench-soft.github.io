@@ -58,6 +58,12 @@ export const en = {
     less: 'Show fewer',
     openSource: 'Open source',
     source: 'Source code',
+    arch: {
+      title: 'How it is built',
+      parts: 'Parts',
+      flow: 'Data flow',
+      links: 'Connected to',
+    },
     kinds: {
       app: 'Apps for people',
       tool: 'Tools for developers',

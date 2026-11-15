@@ -59,6 +59,12 @@ const nb: Catalog = {
       less: 'Vis færre',
       openSource: 'Åpen kildekode',
       source: 'Kildekode',
+      arch: {
+        title: 'Slik er det bygd',
+        parts: 'Deler',
+        flow: 'Dataflyt',
+        links: 'Koblet til',
+      },
       kinds: {
         app: 'Apper for folk',
         tool: 'Verktøy for utviklere',
@@ -347,6 +353,15 @@ const nb: Catalog = {
             ],
           ],
         },
+        {
+          title: 'iPhone-app',
+          features: [
+            [
+              'Samme app på iPhone',
+              'Kartet, turene, talevarslene, rutene og Pro, solgt gjennom App Store. Den venter på en Apple-konto.',
+            ],
+          ],
+        },
       ],
     },
     'guitar-upscale': {
@@ -460,6 +475,14 @@ const nb: Catalog = {
             ['Endre og slette', 'Hvert felt lagres selv, et trykk krysser av, og sletting kan angres.'],
             ['Språk', 'En delt liste åpnes på språket til telefonen som åpner den.'],
             ['Finn Tick-a-Lot i søk', 'Guider og en forside fører folk fra søk til appen.'],
+            [
+              'Lisenser for åpen kildekode',
+              'Innstillinger viser hver pakke appen bruker, under lisensteksten den deler.',
+            ],
+            [
+              'Lange lister',
+              'På Android drar en grønn knott i høyre kant en liste med 80 ting til hvilket som helst punkt. Den blekner 1,5 sekunder etter at listen stopper.',
+            ],
           ],
         },
       ],
@@ -515,6 +538,10 @@ const nb: Catalog = {
               'Et notat som starter med navnet til noen i Memories, havner i dagboken deres på NAS-en hjemme.',
             ],
             ['KeepPad Pro', 'Ett kjøp åpner nye lenker, sending til andre apper og til Memories, og fjerner reklamen.'],
+            [
+              'Rask rulling',
+              'På Android drar en finger rulleknotten i notatlisten til hvilket som helst punkt, helt ned til siste notat.',
+            ],
           ],
         },
       ],
@@ -605,6 +632,18 @@ const nb: Catalog = {
             ['Språk', 'Kalkulatoren på 9 språk, med beløp i australske dollar.'],
             ['Reklame', 'AdSense-blokker på nettstedet og et AdMob-banner i Android-appen.'],
             ['Ingen reklame på utviklerens telefon', 'Hvert bygg skjuler banneret på en telefon med utviklernøkkelen.'],
+            [
+              'iPhone-app',
+              'Kalkulatoren, guidene og sidene som iPhone-app, uten nett fra første start. Den venter på App Store.',
+            ],
+            [
+              'Fjern reklame på iPhone',
+              'Én betaling i App Store skjuler banneret. Gjenopprett kjøp henter kjøpet på en ny iPhone.',
+            ],
+            [
+              'Del resultatet',
+              'Del-knappen under svaret sender det billigste valget, kostnaden og lenken til Meldinger, Mail eller Notater.',
+            ],
           ],
         },
       ],
@@ -841,6 +880,10 @@ const nb: Catalog = {
               'Alina velger skrift for overskrifter, tekst og etiketter blant 10 gratis skrifter, eller laster opp sine egne.',
             ],
             ['Kundegallerier', 'En privat lenke med prøvebilder med vannmerke, deretter alle originalene som ZIP.'],
+            [
+              'Søk',
+              'Hver side har tittel, beskrivelse og bildekort for søk og lenkeforhåndsvisning. En egen side dekker Sutherland Shire.',
+            ],
           ],
         },
       ],
@@ -863,6 +906,10 @@ const nb: Catalog = {
               'Hun velger skrift for overskrifter og tekst blant 10 gratis skrifter med kyrillisk, eller laster opp sin egen.',
             ],
             ['KI-generator', 'Tegner et interiør ut fra en forespørsel på russisk, en stil og et bilde av rommet.'],
+            [
+              'Søk',
+              'Yandex og Google leser tittel, beskrivelse, delingsbilde og strukturerte data på hver side. Nettstedskartet viser sidene.',
+            ],
           ],
         },
       ],
@@ -915,9 +962,13 @@ const nb: Catalog = {
             ['Dependabot-detaljer', 'Lagrer oppdateringstypen for hver Dependabot-PR til sammenslåingsjobben.'],
             [
               'Automatisk sammenslåing',
-              'Slår sammen en Dependabot-PR når hver sjekk består. En hovedoppdatering venter på et menneske.',
+              'Slår sammen en Dependabot-PR så snart den åpnes, og sjekkene kjører på main. En hovedoppdatering venter på et menneske.',
             ],
             ['Utgivelser', 'Hver push til main som består sjekkene, blir en datert utgivelse med notater.'],
+            [
+              'iOS-sjekk og simulatorbygg',
+              'Lister hver del som bare finnes på Android uten iOS-plan, og bygger appen for iPhone-simulatoren med skjermbilder av testflytene.',
+            ],
           ],
         },
       ],
@@ -1169,7 +1220,7 @@ const nb: Catalog = {
             ],
             [
               'Flerbildefoto',
-              'Et vanlig foto slår sammen 6 raske bilder til ett, med halvparten så mye støy og skarpere kanter.',
+              'Et vanlig foto slår sammen 5 raske bilder til ett, med halvparten så mye støy og skarpere kanter.',
             ],
             [
               'Forbedre bilder',
@@ -1354,6 +1405,10 @@ const nb: Catalog = {
               'Stjernebildemyter',
               'Hvert stjernebilde har et kort med myten fra temaets kultur, hva du kan se og de klareste stjernene med avstanden. Galleriet snur himmelen dit.',
             ],
+            [
+              'Lange lister',
+              'På Android drar en finger rulleknotten i stjernebildelisten og temagalleriet til hvilket som helst punkt.',
+            ],
           ],
         },
       ],
@@ -1399,8 +1454,9 @@ const nb: Catalog = {
       ],
     },
     'lumiere-player': {
-      tagline: 'En videospiller for Google TV og Android-telefoner som spiller filer fra en USB-pinne eller en NAS.',
-      lede: 'Lumiere Player spiller filer fra en USB-pinne eller en SMB-deling med libVLC, så den åpner det VLC åpner. Hver fil husker stedet, og fjernkontrollen hopper og bytter spor.',
+      tagline:
+        'En Android-spiller med talestyring for video, musikk og lydbøker, som også kan installeres på en Google TV.',
+      lede: 'Lumiere Player spiller filene dine fra mobilen, en USB-pinne eller en SMB-deling med libVLC, så den åpner det VLC åpner. Hver video, sang og bok husker stedet, og talekommandoer finner dem ved navn.',
       links: [],
       groups: [
         {
@@ -1432,8 +1488,8 @@ const nb: Catalog = {
               'Artister og Sanger ligger på startskjermen ved siden av stasjonene. Spillerlinjen blir på hver skjerm unntatt video, med brødsmuler og sortering etter artist. Livespor hoppes over, på som standard.',
             ],
             [
-              'Spotify og YouTube',
-              'Hey Lumi spiller en sang, en artist eller en stil som ingen mappe har. Spotify finner sangene, og YouTube spiller dem.',
+              'MusicBrainz og YouTube',
+              'Hey Lumi spiller en sang, en artist eller en stil som ingen mappe har. MusicBrainz finner sangene, og YouTube spiller dem.',
             ],
             [
               'Lydbøker',
@@ -1474,7 +1530,10 @@ const nb: Catalog = {
             ['Forstadskort og historikk', 'Forstadens median, antall salg og et diagram over år.'],
             ['Søk', 'Finner en forstad etter navn eller postnummer og flyr kartet dit.'],
             ['Språk', 'På 9 språk, etter telefonen eller nettleseren.'],
-            ['Leie', 'Hvert postnummer i NSW, QLD, SA og TAS farget etter medianleien for nye leieavtaler per uke.'],
+            [
+              'Leie',
+              'Hvert postnummer i NSW, VIC, QLD, SA og TAS farget etter medianleien for nye leieavtaler per uke.',
+            ],
             ['Installer fra nettleseren', 'Nettversjonen installeres som en app med eget ikon.'],
             [
               'Reklame og fjern reklame',
@@ -1514,6 +1573,10 @@ const nb: Catalog = {
             [
               'Tripforge Pro',
               'Ett kjøp på Android gir ubegrensede søk, datoer flyttet opptil 30 dager, opptil 50 lagrede turer og ingen reklame.',
+            ],
+            [
+              'Nettsider for søk',
+              'En forside per språk med skjemaet, egen tittel, forhåndsbilde og data for søkemotorer, hver i nettstedskartet.',
             ],
           ],
         },
