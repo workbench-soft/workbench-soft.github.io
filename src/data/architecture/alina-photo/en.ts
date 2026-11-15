@@ -37,6 +37,52 @@ const arch: Arch = {
     { to: 'Cloudflare', text: 'Runs the Worker, D1, R2, Email Routing and the rate limit on the forms.' },
     { to: 'GitHub', text: 'A release runs the D1 migrations and deploys once the checks pass on main.' },
   ],
+  design: {
+    scale: [
+      "One photographer's studio site: clients book and open galleries, and Alina runs an admin area. Traffic is small.",
+      'Each photo is stored in 2 sizes, 2400 px and 800 px, and a 25 MB camera file uploads as under 1 MB.',
+      'A Worker request has a few milliseconds of CPU and the wasm build is about 2.5 MB, which pushed heavy work into the browser.',
+    ],
+    data: [
+      'D1 holds photos, bookings, settings, sessions, login_links, galleries and gallery_files. Times sit in UTC text, so text order is time order.',
+      'Settings rows are JSON with no version. A row that no longer parses falls back to the default and logs an error.',
+      'R2 holds the photos as p/<id>/l.webp and s.webp, an uploaded font, and gallery files under g/<gallery>/ as proof, 160 px thumbnail and original.',
+    ],
+    interfaces: [
+      'The Worker serves JSON under /api for days, slots, bookings, photos, galleries and sign in, and a calendar feed at /calendar/<token>.ics.',
+      "Calendar in is Alina's secret iCal address, cached for 5 minutes. Calendar out is the bookings feed, and each booking email carries booking.ics.",
+      "Email leaves through the send_email binding of Email Routing, to Alina's verified address only.",
+      'booking-core is a Rust crate for slots, the booking recheck, sunset times and iCal, with the rrule crate for repeating events.',
+    ],
+    reliability: [
+      'A booking POST rechecks that the slot is still free, so a slot taken after the list loaded is refused.',
+      'A subscribed calendar feed lags by hours, so each booking email also carries the iCal file.',
+      "Expired sessions and login links are deleted from D1, and a stored test keeps today's settings rows parsing.",
+      'Release migrates D1 and deploys, and Cloudflare timeouts get 3 tries for the migrations and for the deploy.',
+    ],
+    security: [
+      'Sign in is an emailed link valid for 15 minutes. It opens a page that POSTs the token, since mail scanners open GET links.',
+      'A session lasts 30 days in an HttpOnly, SameSite Lax cookie, and D1 stores only the hash of the token.',
+      'A Workers rate limit binding allows 5 calls a minute per IP on the forms that book or send email.',
+      'The gallery id sits in the link hash, so it stays out of server logs and referrers. Anyone with the link sees the gallery.',
+    ],
+    performance: [
+      'The browser resizes each photo to 2 sizes before upload, so a 25 MB file goes up as under 1 MB with GPS data gone.',
+      "client-zip builds the gallery zip in the browser, since the Worker can't read gigabytes within its CPU limit.",
+      'Pages are static Astro HTML served by the Worker, and the calendar text is cached for 5 minutes.',
+    ],
+    operations: [
+      'One Worker serves the pages and the API. worker-build turns the Rust into wasm, and mise pins Rust, Node and pnpm.',
+      'Release starts on workflow_run once Checks pass on main, one run at a time: build, D1 migrations, deploy, tag.',
+      'Migrations are numbered SQL files in migrations/. Lint covers oxlint, oxfmt, tsc, knip, rustfmt, clippy for the PC and for wasm, and cargo shear.',
+    ],
+    tradeoffs: [
+      'One Worker for pages and API over GitHub Pages plus a Worker, so the admin cookie works on one origin with no CORS.',
+      'Email link sign in over a password or Cloudflare Access, so Alina has no password to forget and no Zero Trust setup is needed.',
+      'iCal in and out over the Google Calendar API, so no OAuth app, review or token refresh is needed, but a feed lags by hours.',
+      "Resize, watermark and zip in the browser over the Worker, which has too little CPU, at the cost that a proof can't be re-watermarked without its original file.",
+    ],
+  },
   features: {
     Portfolio:
       'The page loads the photo list from the Worker, which reads it from D1. Each photo comes from R2 in 2 WebP sizes, 800 and 2400 px.',

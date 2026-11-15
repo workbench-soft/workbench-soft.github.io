@@ -38,7 +38,7 @@ Spec: [workbench-soft-site](../specs/workbench-soft-site.md).
 - **Features** one line each, the name then the text, in two columns. The first 6 show, and Show all opens the rest.
 - **Source** each project lists the headings of its repo's `docs/features.md`, as a feature or a group title.
 - **How it works** a click on a feature opens one or two sentences on the modules and data behind it.
-- **How it is built** a folded block under the features gives the parts of the project and the job of each, the data flow step by step, and the projects and services it talks to. A project link scrolls to that panel.
+- **How it is built** a folded block under the features gives the parts of the project and the job of each, the data flow step by step, and the projects and services it talks to. A project link scrolls to that panel. Below them, 8 short lists describe the system: scale and limits, data, interfaces, reliability, security and privacy, performance, build and release, and the trade-offs.
 - **Limits** links go to the public sites, the install pages and the releases page. The other code repos are private. A project with no icon shows its code on a tile, and one with no screenshots shows none.
 
 Spec: [workbench-soft-site](../specs/workbench-soft-site.md). How it is built: [architecture-pages](../specs/architecture-pages.md).

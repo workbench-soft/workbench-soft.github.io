@@ -48,6 +48,49 @@ const arch: Arch = {
     { to: 'Google Play', text: 'Remove ads and ServoHop Pro sell as one time purchases. AdMob shows the banner.' },
     { to: 'GitHub Releases', text: 'Each release puts the APK there, and the GitHub build updates itself from it.' },
   ],
+  design: {
+    scale: [
+      'One install per phone with no account, so the load is public price reads from drivers and search engines.',
+      'Free tiers shaped it: 100k Pages requests, 100k D1 rows written and 10 ms of CPU per request a day.',
+      'A map answer holds up to 400 servos for the box on screen.',
+    ],
+    data: [
+      'D1 holds station, price_now, price_daily, price_report, ev_site and ev_price. Station ids carry the feed, such as nsw-1234.',
+      'price_now has one row per station and fuel. A trigger rolls each change into price_daily with the low, high and count of the day.',
+      'The phone keeps only the fuel pick and settings. Prices live in D1.',
+    ],
+    interfaces: [
+      "The app calls JSON routes under /api for the stations in a map box, one station's history, reports and EV chargers.",
+      'The same Functions render plain HTML under /fuel and the sitemaps for search engines.',
+      'The poller reads WA RSS, the NSW, VIC and QLD APIs, Open Charge Map and OpenStreetMap, and writes through wrangler d1 execute.',
+    ],
+    reliability: [
+      'A feed without its key is skipped, so the job stays green and the other states still update.',
+      'Each upsert ends with WHERE price_now.cents <> excluded.cents, so a rerun writes no row twice.',
+      'Polls stop while the self-hosted runner is down. A price shows up to 5 minutes late, and VIC prices arrive 24 hours late.',
+    ],
+    security: [
+      'No sign in and no account. A report sender is a salted hash of the address, not the address.',
+      'A report passes a price range check and a limit of 10 an hour per sender.',
+      'Feed keys sit in GitHub Actions secrets that only the poller reads. The app holds none.',
+    ],
+    performance: [
+      'API answers carry s-maxage=300, and the app rounds the box to 2 decimals, so nearby pans share one cached answer.',
+      'Search pages cache for 30 minutes, the history for an hour and the sitemaps for 6 hours.',
+      'The multi MB NSW list parses on the runner, since a free Worker gets 10 ms of CPU.',
+    ],
+    operations: [
+      'Checks run on each push. Release builds the APK and the Play bundle at once, and a failed Checks run cancels them.',
+      'Deploy web applies db/schema.sql to the live D1, then publishes Pages. Each schema statement is IF NOT EXISTS.',
+      'Polls run on cron: hourly for NSW, VIC and QLD, every 6 hours for Tasmania, daily for WA and chargers.',
+    ],
+    tradeoffs: [
+      'Pages Functions and D1 over Firebase or a paid server, so a map box is one SQL query inside the free tier.',
+      'A daily roll up over a row per poll, so hourly polls stay under the write limit. A day with no change has no row.',
+      'A poller on GitHub Actions over a Worker cron, because the NSW list needs more than 10 ms to parse.',
+      'MapLibre on OpenFreeMap tiles over Google Maps, so no key and no bill, at the cost of two map builds.',
+    ],
+  },
   features: {
     'Fuel prices on a map':
       'A Pages Function returns up to 400 servos in the map box from D1. The app splits the prices on screen into thirds and colours the pins.',

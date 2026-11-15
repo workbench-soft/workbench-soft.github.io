@@ -33,6 +33,49 @@ const arch: Arch = {
     { to: 'Google Play', text: 'Google Play selger Pro og Remove ads, og AdMob viser annonsene.' },
     { to: 'Cloudflare', text: 'Cloudflare Workers kjører nettstedet, og KV lagrer de innebygde sangene.' },
   ],
+  design: {
+    scale: [
+      'Én spiller per enhet, og lyd, klokke og opptakere kjører alle på enheten.',
+      'Rundt 100 innebygde sanger kommer som Guitar Pro-filer, og brukerens egne sanger blir i nettleseren.',
+      'Tungt arbeid har harde grenser. Én akkordgjenkjenning kan øke wasm-minnet til rundt 600 MB, og en Worker-opplasting holdes under 3 MiB.',
+    ],
+    data: [
+      'Redux-slicer for innstillinger, skjermtilstand og pianorull lagres i localStorage, én nøkkel per slice.',
+      'Sanger, opptak, loops og pianorull-endringer deler én TickTimeline med noter og akkorder lagt etter klokketikk.',
+      'Innebygde sanger ligger i Cloudflare KV etter filnavn, med én song-settings.json for akkordvalget til hver sang.',
+    ],
+    interfaces: [
+      'Sangsider går gjennom Worker-ruter: Songsterr-søk og meta, søk og nedlasting av sangfiler og sangtekster.',
+      'Noter og akkorder går over to RxJS-subjects, så avsenderen vet ikke hvem som spiller, tar opp eller animerer dem.',
+      'Sanger lastes som .gp- eller MIDI-filer og eksporteres likt. Den innebygde listen er songs/index.json, og hver sang er songs-json/<name>.json med en innholdshash i adressen.',
+    ],
+    reliability: [
+      'Hver side-proxy har en tidsgrense. Et tekstoppslag som feiler fordi en side var nede, havner ikke i bufferen.',
+      'Et versjonshopp i redux-persist sletter en slice lagret under gammel versjon, og looperen lagrer loopene før et bytte av skala, stemming eller capo sletter dem.',
+      'En melodi hopper over en tikk som ventet over 10 ms, opptil 8 på rad, så tregt gjenopptegning etter Play ikke forsinker første tone.',
+    ],
+    security: [
+      'Eier-ruten sjekker SHA-256 av utviklernøkkelen og svarer 404 ved bom. GitHub-tokenet for utrullingen ligger i en Worker-hemmelighet.',
+      'CORS slipper bare Capacitor-opphavene og siden til proxyene, og serverbygget sender HSTS, nosniff og frame-ancestors none.',
+      'Akkorder fra en lydfil gjenkjennes på enheten med ONNX. Bare GitHub-APK-en sender en kort prøve til Shazam for å navngi en sang.',
+    ],
+    performance: [
+      'Taktklokken kjører i en Web Worker med tidsavbrudd rettet mot eksakt tid siden start, så en travel hovedtråd ikke bremser takten.',
+      'En pool med opptil 4 workere finner akkordgrep én akkordtype om gangen, og hver funksjon i appen lastes som en lat komponent.',
+      'Akkordmodellene lastes ved første bruk og blir i Cache Storage. Lydkonteksten på telefonen ber om en buffer på 12 ms, siden etterklangen knitret med 4 til 8 ms.',
+    ],
+    operations: [
+      'Hver push til main starter sjekker og Android-bygget side om side, og en mislykket sjekk avbryter kjøringen. Utgivelsen kommer når begge består.',
+      'En nattjobb klokken 19.00 Sydney-tid bygger Google Play-pakken bare når appen er endret. En pakke tok 40 til 46 minutter på den tunge runneren.',
+      'OpenNext bygger serveren for Cloudflare Workers med observerbarhet på. Utgivelser får en tag med dato og teller, og GitHub-bygget oppdaterer seg etter dem.',
+    ],
+    tradeoffs: [
+      'Ett statisk bygg for siden, Android og iPhone framfor native apper, så hver funksjon skrives én gang, på bekostning av Capacitor-plugins for lyd og kjøp på telefonen.',
+      'Motoren kjører utenfor React med en enkel kopi av innstillingene framfor å lese storen overalt, så lydkode slipper hooks, på bekostning av et speil som må holdes i takt.',
+      'Akkordmodeller kjører på enheten framfor et server-API, så en fil aldri forlater telefonen, på bekostning av 14 MB modeller ved første kjøring.',
+      'Samplede General MIDI-instrumenter framfor en synth, for ekte gitar- og pianolyd, på bekostning av å laste samples ved første trykk.',
+    ],
+  },
   features: {
     Fretboard:
       'Konva tegner gripebrettet på et lerret ut fra skalaen og stemmingen i innstillingene. Et trykk sender tonen på bussen, og smplr spiller den.',

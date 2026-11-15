@@ -45,6 +45,53 @@ const arch: Arch = {
     { to: 'memories-demo-webdav', text: 'La revisión de Google Play entra en este NAS de muestra.' },
     { to: 'Tailscale', text: 'Una segunda dirección llega al NAS fuera de casa. Funnel sirve los enlaces de álbum.' },
   ],
+  design: {
+    scale: [
+      'Una persona por instalación con un NAS en casa, hasta cerca de un millón de fotos y vídeos.',
+      'La primera sincronización de medio millón de fotos tarda casi un día, porque el NAS responde a unas 10 lecturas de cabecera por segundo.',
+      'Los enlaces de álbum llegan a unas pocas personas por Tailscale Funnel, así que el NAS es el único servidor.',
+    ],
+    data: [
+      'Las fotos se quedan en el NAS. El teléfono lleva un índice SQLite con carpetas, medios y una tabla days que cuentan los triggers.',
+      'Una fila de archivo guarda el id de la carpeta y el nombre, así que un millón de archivos caben en unos 200 MB.',
+      'La hora de captura es un reloj de pared en segundos, así que Tal día como hoy es una simple consulta por rango.',
+      'El NAS guarda junto a las fotos una carpeta .memories con index.db, status.json, faces.db y los archivos de álbum.',
+    ],
+    interfaces: [
+      'El teléfono habla WebDAV con el NAS: PROPFIND por carpeta, GET por rango para las cabeceras, PUT, MKCOL y MOVE.',
+      'Los contenedores del NAS publican index.db y status.json en .memories, y el teléfono los fusiona por el mismo enlace WebDAV.',
+      'Las reglas de carpetas en Rust llegan a la app como biblioteca uniffi en Android y como wasm en la web.',
+    ],
+    reliability: [
+      'La sincronización guarda cada 50 archivos en una transacción, y un pase cortado sigue en la próxima ejecución.',
+      'La tarea de fondo tiene 8 minutos de presupuesto y planifica primero los recordatorios, así que llegan aunque el NAS falle.',
+      'Una raíz de galería vacía detiene el pase, así que un recurso sin montar no borra el índice.',
+    ],
+    security: [
+      'El acceso al NAS se guarda en el keystore de Android con expo-secure-store, y la app lo envía como cabecera Basic.',
+      'Un enlace de álbum lleva un token aleatorio de 16 bytes. El servidor de álbumes monta la galería de solo lectura y responde 404 a cualquier otra ruta.',
+      'Los nombres de lugar salen de una base sin conexión en la app, así que ningún punto GPS sale del teléfono.',
+      'Se permite http simple, porque un NAS en casa rara vez tiene certificado.',
+    ],
+    performance: [
+      'FlashList dibuja las teselas visibles y una pantalla por delante. Cada tesela muestra la miniatura EXIF, leída de los primeros 66 KB.',
+      'Las lecturas van de 8 en 8 en una cola, las más nuevas primero, y un módulo nativo sube OkHttp de 5 a 32 peticiones por host.',
+      'Las tablas days y geo_cells evitan que la lista de meses, los viajes y el mapa lean el millón de filas de archivos.',
+      'El indexador del NAS lee una cabecera de su propio disco en milisegundos, donde WebDAV tarda segundos.',
+    ],
+    operations: [
+      'Un monorepo pnpm con node, pnpm, java y rust fijados en mise.toml y un solo lockfile.',
+      'Cada push a main cuyos checks pasan publica un APK firmado con versión por fecha, y release-gate.sh cancela la compilación si los checks fallan.',
+      'La app instalada lee la última versión por la API de GitHub. La compilación de Google Play cambia el actualizador por stubs y se hace una vez al día.',
+      'Los contenedores del NAS se despliegan por ssh con un script deploy.',
+    ],
+    tradeoffs: [
+      'WebDAV simple en vez de un servidor propio, para que sirva cualquier NAS, a costa de una primera sincronización lenta.',
+      'SQLite en el teléfono en vez de una base en servidor, para que la app funcione sin conexión y no cueste hosting.',
+      'Hora de captura de pared en vez de UTC, para que Tal día como hoy sea un rango simple, aunque fotos de dos zonas no se ordenan con exactitud.',
+      'Una sola crate Rust de reglas de carpetas en vez de una copia por app, para que teléfono y escritorio ordenen igual, a 1 a 2 MB por ABI.',
+    ],
+  },
   features: {
     'Daily reminder':
       'expo-notifications guarda recordatorios sueltos para los próximos 7 días, planificados desde el índice por la tarea de fondo. Un viaje al extranjero ese día elige el año.',

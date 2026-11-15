@@ -42,6 +42,47 @@ const arch: Arch = {
     { to: 'app-updater', text: 'WBS Updater compare la version installée à la dernière version sur GitHub.' },
     { to: 'Hugging Face', text: 'Le scribe y télécharge une fois les poids de Whisper.' },
   ],
+  design: {
+    scale: [
+      'Un appel relie jusqu’à 4 appareils en maillage, et chacun envoie sa vidéo aux 3 autres.',
+      'Un objet de salle tient 6 sockets au plus, 64 Ko par message et 20 messages par seconde, donc un déluge reste dans une salle.',
+      'Le Worker, le Durable Object et le relais tournent sur des offres gratuites, car seuls de petits messages scellés y passent.',
+    ],
+    data: [
+      'Pas de base de comptes. Le nom, la langue, les salles enregistrées et les clés push sont dans localStorage sous un préfixe versionné.',
+      'La transcription et les messages texte de chaque salle sont dans IndexedDB sur chaque appareil.',
+      'Le Durable Object ne garde que le quota du relais et une réponse du relais en cache pendant 90 minutes. KV garde les rapports de connexion 14 jours.',
+    ],
+    interfaces: [
+      'La signalisation passe par un WebSocket vers l’objet de salle. Chaque message est une enveloppe AES-GCM avec une version, un id et un numéro de séquence.',
+      'Chaque paire d’appareils ouvre 3 canaux de données négociés : points en direct, messages de contrôle et morceaux de fichier.',
+    ],
+    reliability: [
+      'Après 3 secondes de coupure, l’id de pair le plus bas envoie une offre de redémarrage ICE, avec des attentes de 12, 18 et 25 secondes.',
+      'Un contrôle lit chaque piste toutes les 3 secondes. Un blocage de 15 secondes lance une réparation ICE, puis la reconstruction de la paire.',
+      'L’id d’enveloppe écarte une copie, le numéro de séquence un rejeu et l’id d’offre une réponse périmée.',
+    ],
+    security: [
+      'La clé de la salle suit le # du lien, donc le Worker voit du texte chiffré sans noms, titres ni offres.',
+      'Les médias passent en DTLS-SRTP entre les appareils, et un relais TURN ne porte que des paquets chiffrés.',
+      'La page de salle ne charge aucun script publicitaire et porte noindex, donc aucun code tiers ne tourne près de la clé.',
+    ],
+    performance: [
+      'Le canvas et les appels WebRTC tournent dans des modules simples, et React lit de petits stores via useSyncExternalStore.',
+      'Le Worker met en cache les réglages du relais 90 minutes par salle et en demande 20 au plus par salle et par jour.',
+      'Whisper tourne sur WebGPU quand il existe, sinon le petit modèle sur WebAssembly. Les gros fichiers attendent que le canal se vide.',
+    ],
+    operations: [
+      'Checks lance lint, tests et build à chaque push sur main, puis le site part sur GitHub Pages et le Worker se déploie via wrangler.',
+      'L’APK n’est construit que si android/ a changé, car l’app charge le site en direct. Un changement web reçoit un tag sans runner lourd.',
+      'Un lancement nocturne à 19:00 Sydney construit le bundle Play si android/ a changé. Un Checks en échec annule la construction.',
+    ],
+    tradeoffs: [
+      'Un maillage de liens directs plutôt qu’un serveur média : aucune vidéo n’est hébergée, et ça ne coûte rien. L’envoi croît avec chaque personne, donc les appels s’arrêtent à 4.',
+      'Un habillage du site en direct plutôt que des écrans natifs : un correctif web sort sans revue des stores. L’app a besoin du réseau.',
+      'Whisper dans le navigateur plutôt qu’une reconnaissance vocale cloud, pour que le son reste sur les appareils. Le premier usage télécharge les poids du modèle.',
+    ],
+  },
   features: {
     'Calls through a link':
       'La fin du lien porte la clé de la salle, donc le Worker ne voit que des messages scellés. WebRTC relie ensuite jusqu’à 4 appareils en maillage.',

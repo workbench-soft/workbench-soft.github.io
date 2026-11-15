@@ -26,6 +26,48 @@ const arch: Arch = {
     { to: 'Reddit', text: 'Claude는 MCP 서버로 스레드를 읽고, 게시는 사용자가 Chrome에서 합니다.' },
     { to: 'GitHub Releases', text: '설치 파일과 서명된 업데이트 파일은 공개 사이트 저장소의 릴리스에 있습니다.' },
   ],
+  design: {
+    scale: [
+      'Windows PC 한 대에 한 사람이며, 상한이 규모를 작게 유지합니다. 댓글 초안 6개, 글 초안 3개, 시간당 게시 댓글 3개입니다.',
+      'Find는 1분에서 5분 걸립니다. Claude Code가 스레드를 직접 읽기 때문입니다.',
+    ],
+    data: [
+      '앱 데이터 폴더의 평범한 JSON 파일이 설정, 대기열, 글 카드, 두 기록을 담습니다.',
+      'history.json은 게시했거나 건너뛴 스레드를 날짜와 함께 보관하고, 다음 Find는 그것들을 건너뜁니다. opens.json은 최근 하루 동안 게시한 댓글의 시각을 담습니다.',
+    ],
+    interfaces: [
+      '코어는 stream-json으로 claude -p를 실행하고 출력 줄마다 창에 보내는 find-log 이벤트로 바꿉니다.',
+      'Claude는 커밋에 고정해 --strict-mcp-config로 넘기는 MCP 서버 하나를 거쳐 Reddit에 닿습니다.',
+      '창은 Tauri invoke로 코어를 부르고, Archon이 프레임에 넣을 때는 HTTP와 server-sent events로 부릅니다.',
+      'Post it for me는 chromiumoxide로 DevTools 프로토콜을 통해 Chrome을 조작합니다.',
+    ],
+    reliability: [
+      'Find는 취소할 수 있고, 코어는 실행 뒤 found.json을 읽어 카드 6장을 남깁니다.',
+      'Post it for me는 그 계정이 쓴, 초안과 같은 글의 댓글이 페이지에 나타나야 게시된 것으로 셉니다.',
+      '앱은 한 번에 하나만 돌아갑니다. 두 번째 실행은 열린 창을 보여 주고, 백그라운드 실행은 프레임이 닫힌 뒤 2분 뒤에 끝납니다.',
+    ],
+    security: [
+      'Reddit 로그인은 사용자의 Chrome 프로필이나 앱 전용 Chrome 폴더에 남습니다. 앱은 비밀번호를 저장하지 않습니다.',
+      '로컬 서버는 루프백 Host에만 답하고, POST에는 JSON content type이 필요해서 다른 사이트는 부를 수 없습니다.',
+      'Claude 실행은 읽기 도구, Reddit 서버, 자기 출력 파일 쓰기만 쓸 수 있습니다. 업데이터는 설치 전에 서명을 확인합니다.',
+    ],
+    performance: [
+      'Claude와 Chrome은 콘솔 창 없는 자식 프로세스로 돌고, 창은 끝까지 기다리지 않고 줄을 스트림으로 받습니다.',
+      '릴리스 빌드는 LTO를 끄고 codegen unit을 16개로 잡아 컴파일을 18분에서 약 2분으로 줄였습니다.',
+      '러너가 빌드 사이에 cargo의 target 폴더를 보관하므로 앱 crate만 다시 컴파일됩니다.',
+    ],
+    operations: [
+      'main에 푸시할 때마다 Checks와 Release가 함께 시작하고, Checks가 실패하면 릴리스 게이트가 빌드를 취소합니다.',
+      'Publish는 커밋에 날짜 태그를 달고 NSIS 설치 프로그램을 올립니다. 서명된 latest.json이 업데이터를 움직입니다.',
+      'Tauri 업데이터는 시작할 때와 24시간마다 확인한 뒤 새 빌드를 조용히 설치합니다.',
+    ],
+    tradeoffs: [
+      'Rust에서 Reddit API를 부르는 대신 스킬을 쓰는 Claude Code를 골라 스레드 규칙을 한곳에 두었습니다. Find는 더 느립니다.',
+      '설치마다 Chromium 전체를 담는 Electron 대신 Tauri 2를 골랐습니다. 대가로 검사할 언어가 2개입니다.',
+      '사용자의 Chrome 대신 디버그 포트가 있는 앱 전용 Chrome을 골랐습니다. Chrome 136이 기본 프로필의 디버그 포트를 막기 때문이며, Reddit 로그인이 한 번 더 필요합니다.',
+      '새 에디터 대신 예전 Reddit 양식을 골랐습니다. 새 쪽은 입력란을 shadow root에 숨깁니다.',
+    ],
+  },
   features: {
     'Repo picker':
       'Rust 코어가 설정의 루트 폴더 아래에 있는 각 git 폴더를 나열합니다. 선택은 앱 데이터 폴더의 JSON 파일에 저장됩니다.',

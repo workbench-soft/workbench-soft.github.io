@@ -65,6 +65,16 @@ const ja: Catalog = {
         parts: '構成要素',
         flow: 'データの流れ',
         links: 'つながり',
+        design: {
+          scale: '規模と制約',
+          data: 'データ',
+          interfaces: 'インターフェース',
+          reliability: '信頼性',
+          security: 'セキュリティとプライバシー',
+          performance: 'パフォーマンス',
+          operations: 'ビルドとリリース',
+          tradeoffs: 'トレードオフ',
+        },
       },
       kinds: {
         app: 'みんなのためのアプリ',

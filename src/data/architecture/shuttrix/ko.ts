@@ -30,6 +30,51 @@ const arch: Arch = {
     { to: 'Google Play', text: 'Google Play Billing이 Plus와 광고 제거를 판매합니다.' },
     { to: 'Google AdMob', text: 'AdMob이 동의 양식 다음에 갤러리 배너를 보여 줍니다.' },
   ],
+  design: {
+    scale: [
+      '휴대폰 한 대에 사람 한 명이고 서버는 없습니다. 사진은 모두 휴대폰에서 만들고 저장합니다.',
+      '인물 사진은 Pixel 7 Pro CPU에서 1200만 화소당 약 7초가 걸리고, 깊이 모델은 26 MB를 내려받습니다.',
+      '합성한 사진은 프레임당 약 18 MB인 전체 크기 프레임 5장을 메모리에 둡니다.',
+    ],
+    data: [
+      '설정은 Android shared preferences에 둔 JSON 값 하나로, 첫 렌더에서 읽으므로 카메라가 마지막 상태로 열립니다.',
+      '촬영물은 DCIM/Camera의 WebP, JPEG, PNG, MP4 파일이고, 앱이 가진 MediaStore 행으로 목록을 만듭니다. RAW는 DNG가 하나 더 생깁니다.',
+      '장소, 화이트 밸런스 보정, 실시간 값은 카메라가 열려 있는 동안 메모리에 있습니다.',
+    ],
+    interfaces: [
+      'React Native가 다이얼 값을 props로 Kotlin 카메라 뷰에 넘기고, 모듈은 실시간 값을 초당 4번 돌려줍니다.',
+      'CameraX가 수명 주기와 유스케이스를 맡고, Camera2 상호 운용이 ISO, 셔터, 초점 거리, 화이트 밸런스 게인을 정합니다.',
+      '촬영물은 DCIM/Camera 아래 MediaStore에 들어가 Memories가 읽고, 앱은 Android 카메라 intent에도 응답합니다.',
+    ],
+    reliability: [
+      '다이얼은 카메라를 열 때마다 저장된 설정에서 카메라로 돌아갑니다.',
+      '최종 파일이 생길 때까지 512 px 초안이 갤러리에 보입니다.',
+      'Night 확장이 없는 렌즈는 강한 노이즈 감소와 느린 프레임 속도로 물러서고, CameraX는 지원하는 가장 가까운 크기를 고릅니다.',
+    ],
+    security: [
+      '사진은 휴대폰에 남습니다. 앱에는 계정도 자체 서버도 없습니다.',
+      '위치는 카메라가 열려 있는 동안만 읽고, 장소는 저장한 파일의 EXIF 태그에 들어갑니다.',
+      'AdMob 동의는 시작할 때가 아니라 갤러리를 처음 열 때 묻기 때문에 빠른 촬영이 늦어지지 않습니다.',
+    ],
+    performance: [
+      '제로 셔터 랙은 손을 대는 순간 발사되어 사진이 누른 순간을 담습니다.',
+      '일반 사진은 60프레임 범위를 요청하므로 자동 노출이 셔터를 1/60초 이하로 유지합니다.',
+      '인물 흐림은 2048 px 레이어에 그리고 Enhance와 Mini는 GPU 패스로 돕니다.',
+      '링이 합성 사진용 최근 5프레임과 Rust 현상용 최근 8장의 raw 프레임을 들고 있습니다.',
+    ],
+    operations: [
+      'main에 푸시하면 카메라 검사와 릴리스 빌드가 나란히 시작되고, 검사가 통과해야만 release-gate.sh가 공개합니다.',
+      '태그는 날짜가 붙은 shuttrix-v이고 APK는 공개 사이트 저장소의 릴리스로 가서 앱과 업데이터가 거기서 찾습니다.',
+      '카메라가 바뀌었을 때 Play 번들은 시드니 시간 19:00에 하루 한 번 빌드하고, Play 빌드에는 업데이터 스텁이 들어갑니다.',
+      '별도 workflow가 ONNX Runtime과 OpenCV 라이브러리를 빌드해 prerelease로 공개합니다.',
+    ],
+    tradeoffs: [
+      'react-native-vision-camera 대신 CameraX 위의 Kotlin 모듈을 쓴 Expo를 골랐습니다. 앞의 것은 수동 초점 거리, ISO, 셔터, 켈빈이 없습니다.',
+      'Kotlin에서 프레임을 쌓는 대신 CameraX 확장으로 야간을 찍어, 휴대폰 자체 파이프라인이 돌고 화이트 밸런스와 EV는 그쪽에 맡깁니다.',
+      '더 큰 모델 대신 Apache 라이선스 때문에 Depth Anything V2 Small을 골랐고, 대가는 26 MB 다운로드와 사진당 약 7초입니다.',
+      '자체 저장소 대신 Memories와 모노레포를 골라 편집기와 뷰어를 공유하는 대신 CI를 경로별로 나눕니다.',
+    ],
+  },
   features: {
     'Simple and Pro':
       '두 모드는 하나의 카메라 뷰를 움직입니다. 간단 모드는 초점과 노출을 자동에 맡기고 Pro는 다이얼에 맡깁니다.',

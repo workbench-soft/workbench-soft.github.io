@@ -25,6 +25,49 @@ const arch: Arch = {
     { to: 'GitHub', text: '各 PR、レビュー、コメントの出どころで、gh CLI で読みます。' },
     { to: 'Homebrew', text: 'インストール時に jq と terminal-notifier を入れます。' },
   ],
+  design: {
+    scale: [
+      '1人が1台の Mac で使います。検索の対象は、直近3日以内に更新された開いている PR です。',
+      '2回目以降の実行は10秒未満で、updatedAt が動いた PR だけを開き直すためです。',
+      'ツールは400行に満たない bash ファイル1つです。',
+    ],
+    data: [
+      'ユーザーのキャッシュフォルダにある平文ファイルは seen.txt、pr-updated.tsv、review-requests.tsv とロック用フォルダです。',
+      'seen.txt は直近3000件のイベントキーを持ちます。キーはレビューやコメントの URL です。',
+      '非公開 PR の URL を並べるため、フォルダは自分のアカウントだけが読めます。',
+    ],
+    interfaces: [
+      'gh search prs と gh api が GitHub を読み、jq が JSON の応答を読みます。',
+      'terminal-notifier が通知を出し、クリックでコメントを開きます。代わりに osascript も使えます。',
+      'launchd が180秒ごとにエージェントを起動します。GH_REVIEW_NOTIFY_INTERVAL と GH_REVIEW_NOTIFY_BOTS で間隔とボットの扱いを変えます。',
+    ],
+    reliability: [
+      'ロック用フォルダがあるので、2つ目の実行はすぐ終わります。',
+      'PR の検索が失敗するとキャッシュを変える前に止まり、レビュー依頼の取得が失敗してもキャッシュに入れないので、次の実行でもう一度尋ねます。',
+      'イベントは最大3分遅れて出て、Mac が起きている間だけです。復帰後は launchd が追いつきます。',
+    ],
+    security: [
+      'gh auth のログインを使うので、ツールはトークンを保存しません。',
+      'キャッシュファイルは自分のアカウントだけが読めます。',
+      'Mac から github.com をポーリングするので、Webhook も公開アドレスもマシンまで届きません。',
+    ],
+    performance: [
+      'レビューとコメントを読むのは updatedAt が動いた PR だけで、初回の取り込みのときは全 PR です。',
+      'チーム宛てのレビュー依頼は捨て、1つの PR への4件を超えるコメントは1件の通知にまとめます。',
+      'grep と awk が各イベントキーを seen.txt と照らし、データベースは使いません。',
+    ],
+    operations: [
+      'install.sh はスクリプトをローカルの bin フォルダにコピーし、plist を書いてエージェントを読み込みます。uninstall.sh は逆の操作です。',
+      'tests/run.sh は用意した GitHub の応答でスクリプトを動かし、gh、date、terminal-notifier の代役を使います。',
+      'チェックは GitHub の macOS ランナーで走り、チェックを通った push ごとに日付付きリリースが付きます。インストールは最新の main を取ります。',
+    ],
+    tradeoffs: [
+      'メール、Slack アプリ、Webhook ではなく3分ごとのポーリングにして、サーバーも公開アドレスも要りません。代償は最大3分の遅れです。',
+      'トークン付きの curl ではなく gh の CLI にして、保存するトークンをなくしました。gh のログインが切れるとツールは止まります。',
+      'TypeScript や Rust ではなく bash ファイル1つにして、ビルドなしでコピーできます。テストには代役が要ります。',
+      'SQLite ではなく平文ファイルにして、bash は grep と awk だけで足ります。新しい形式には新しいファイル名が要ります。',
+    ],
+  },
   features: {
     'Review and comment notifications':
       'gh は自分が作成、レビュー、参加した未完了の PR を検索し、変わった各 PR のレビューとコメントを読みます。新しいイベントがそれぞれ通知になります。',

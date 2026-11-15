@@ -34,6 +34,44 @@ const arch: Arch = {
     { to: 'Codex', text: 'The same skills, the hooks and a copy of the MCP servers of Claude Code.' },
     { to: 'GitHub', text: 'The checks and the dated releases run on GitHub Actions.' },
   ],
+  design: {
+    scale: [
+      'One person per machine, 33 skills, and any number of agents that read the Agent Skills format.',
+      'Every session loads each skill description, so a description stays under 480 characters and a skill body under 300 lines.',
+    ],
+    data: [
+      'No database. A skill is a folder with a SKILL.md and its front matter, plus references that load on demand.',
+      'Hook groups sit in JSON files, and the turn-voice hook keeps its cached voice clips in a local folder.',
+    ],
+    interfaces: [
+      'The contract with an agent is the front matter: the name equals the folder, and the description says when to load the skill.',
+      'The installer merges hook groups into the settings of Claude Code and Codex, and writes a marked block for Kimi Code.',
+      'The turn-voice hook reads the status marker on the last line of a turn and speaks the matching phrase.',
+    ],
+    reliability: [
+      'Git hooks in the clone relink the skills after a pull, a merge, a checkout and a rebase, so a new skill shows up at once.',
+      'The hook merge keeps the person’s own hooks. Without Node the install skips the hooks and says so.',
+      'A failed voice fetch leaves only the sound cue, and a cached clip plays with no network.',
+    ],
+    security: [
+      'The repo is public and holds no token. Fork PRs run on GitHub runners, so their code stays off the PC.',
+      'The site skills stop at a login, a CAPTCHA, a secret or a payment, and leave those to the person.',
+    ],
+    performance: [
+      'Only the short writing rules load on every turn. A full skill loads when a request matches its description.',
+      'Voice clips are cached, and the cue and the voice join in one PlaySound call, so the first word comes through whole.',
+    ],
+    operations: [
+      'The check workflow runs on Windows for the PowerShell install and on Linux for the shell install, with mise pinning each tool.',
+      'The release workflow starts on workflow_run once check passes on main, and tags a date version such as v2026.10.30.1.',
+      'mise run test checks the skill format, the prose budget, the unit tests and an install and uninstall in a temp home.',
+    ],
+    tradeoffs: [
+      'One Markdown folder per skill over a rules file per agent, so one copy serves about 50 agents. Only the agent that reads a rule enforces it.',
+      'One clone linked into each agent over a copy per agent, so an edit reaches every agent at once. Windows without Developer Mode gets junctions.',
+      'A C# hook built with the csc.exe that ships with Windows, so no SDK is needed. It runs on Windows only, and a Node twin covers the Mac.',
+    ],
+  },
   features: {
     'Writing style':
       'A short rules file loads on every turn through each agent’s main rules file. The full skill loads before the first piece of text, with its word tables and a final check.',

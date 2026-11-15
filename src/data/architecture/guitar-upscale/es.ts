@@ -42,6 +42,49 @@ const arch: Arch = {
     { to: 'Google Play', text: 'Google Play vende Pro y Remove ads, y AdMob muestra los anuncios.' },
     { to: 'Cloudflare', text: 'Cloudflare Workers aloja el sitio, y KV guarda las canciones incluidas.' },
   ],
+  design: {
+    scale: [
+      'Un jugador por dispositivo, y el sonido, el reloj y los grabadores corren en el propio dispositivo.',
+      'Unas 100 canciones incluidas llegan como archivos de Guitar Pro, y las canciones propias del usuario se quedan en el navegador.',
+      'El trabajo pesado tiene límites duros. Un reconocimiento de acordes puede subir la memoria wasm a unos 600 MB, y una subida de Worker queda bajo 3 MiB.',
+    ],
+    data: [
+      'Los slices de Redux con ajustes, estado de pantalla y piano roll se guardan en localStorage, una clave por slice.',
+      'Canciones, grabaciones, bucles y ediciones del piano roll comparten una TickTimeline de notas y acordes ordenados por tic del reloj.',
+      'Las canciones incluidas están en Cloudflare KV por nombre de archivo, con un song-settings.json para la elección de acordes de cada una.',
+    ],
+    interfaces: [
+      'Los sitios de canciones pasan por rutas del Worker: búsqueda y metadatos de Songsterr, búsqueda y descarga de archivos y letras.',
+      'Notas y acordes viajan por dos sujetos de RxJS, así que quien envía no sabe quién los toca, graba o anima.',
+      'Las canciones se cargan como archivos .gp o MIDI y se exportan igual. La lista incluida es songs/index.json, y cada canción es songs-json/<name>.json con un hash del contenido en la URL.',
+    ],
+    reliability: [
+      'Cada proxy de sitio tiene un tiempo límite. Una búsqueda de letras que falla porque un sitio estaba caído no entra en la caché.',
+      'Subir la versión de redux-persist borra un slice guardado con una versión vieja, y el looper guarda sus bucles antes de que un cambio de escala, afinación o cejilla los borre.',
+      'Una melodía salta un tic que esperó más de 10 ms, hasta 8 seguidos, así que un dibujo lento tras Play no retrasa la primera nota.',
+    ],
+    security: [
+      'La ruta del propietario comprueba el SHA-256 de la clave del desarrollador y responde 404 si falla. El token de GitHub del despliegue está en un secreto del Worker.',
+      'CORS solo deja leer los proxies a los orígenes de Capacitor y al sitio, y la compilación del servidor envía HSTS, nosniff y frame-ancestors none.',
+      'Los acordes de un archivo de audio se reconocen en el dispositivo con ONNX. Solo el APK de GitHub envía una muestra corta a Shazam para nombrar una canción.',
+    ],
+    performance: [
+      'El reloj del compás corre en un Web Worker con esperas apuntadas a la hora exacta desde el inicio, así que un hilo principal ocupado no frena el compás.',
+      'Un grupo de hasta 4 workers busca las posturas de acordes un tipo cada vez, y cada función de la app se carga como componente diferido.',
+      'Los modelos de acordes se cargan en el primer uso y quedan en Cache Storage. El contexto de audio del teléfono pide un búfer de 12 ms, porque la reverberación crujía con 4 a 8 ms.',
+    ],
+    operations: [
+      'Cada push a main lanza las comprobaciones y la compilación de Android a la vez, y una comprobación fallida cancela la ejecución. La versión sale cuando ambas pasan.',
+      'Una tarea nocturna a las 19:00 de Sídney construye el bundle de Google Play solo si la app cambió. Un bundle tardaba de 40 a 46 minutos en el runner pesado.',
+      'OpenNext compila el servidor para Cloudflare Workers con observabilidad activa. Las versiones llevan una etiqueta de fecha y contador, y la compilación de GitHub se actualiza con ellas.',
+    ],
+    tradeoffs: [
+      'Una compilación estática para el sitio, Android y iPhone en vez de apps nativas, para escribir cada función una vez, a costa de plugins de Capacitor para el sonido y las compras.',
+      'El motor corre fuera de React con una copia simple de los ajustes en vez de leer el store en todas partes, para que el código de audio no necesite hooks, a costa de un espejo que mantener al día.',
+      'Los modelos de acordes corren en el dispositivo en vez de una API de servidor, para que el archivo no salga del teléfono, a costa de 14 MB de modelos en la primera ejecución.',
+      'Instrumentos General MIDI muestreados en vez de un sintetizador, para un sonido real de guitarra y piano, a costa de cargar muestras en el primer toque.',
+    ],
+  },
   features: {
     Fretboard:
       'Konva dibuja el mástil en un lienzo según la escala y la afinación de los ajustes. Un toque manda la nota al bus de eventos, y smplr la toca.',

@@ -29,6 +29,48 @@ const arch: Arch = {
       text: 'Installasjonsprogrammet og den signerte oppdateringsfilen ligger i en release i det offentlige nettstedsrepoet.',
     },
   ],
+  design: {
+    scale: [
+      'En person på én Windows-PC, og tak holder det lite: 6 kommentarutkast, 3 innleggsutkast og 3 postede kommentarer i timen.',
+      'Et Find tar 1 til 5 minutter, fordi Claude Code leser trådene selv.',
+    ],
+    data: [
+      'Vanlige JSON-filer i appens datamappe holder innstillingene, køen, innleggskortene og begge historikkene.',
+      'history.json beholder postede og hoppede over tråder med dato, og neste Find hopper over dem. opens.json holder tidspunktet for hver postede kommentar siste døgn.',
+    ],
+    interfaces: [
+      'Kjernen starter claude -p med stream-json og gjør hver utdatalinje om til en find-log-hendelse for vinduet.',
+      'Claude når Reddit gjennom én MCP-server som er festet til en commit og sendt med --strict-mcp-config.',
+      'Vinduet kaller kjernen gjennom Tauri invoke, eller gjennom HTTP og server-sent events når Archon rammer det inn.',
+      'Post it for me styrer Chrome over DevTools-protokollen med chromiumoxide.',
+    ],
+    reliability: [
+      'Et Find kan avbrytes, og kjernen leser found.json etter kjøringen og beholder 6 kort.',
+      'Post it for me teller en kommentar som postet først når siden viser en kommentar fra kontoen med utkastets tekst.',
+      'Bare én app kjører om gangen. En ny start viser det åpne vinduet, og en bakgrunnskjøring avsluttes 2 minutter etter at rammen er lukket.',
+    ],
+    security: [
+      'Reddit-innloggingen blir i personens Chrome-profil eller i appens egen Chrome-mappe. Appen lagrer ikke noe passord.',
+      'Den lokale serveren svarer bare på en loopback-Host, og en POST trenger innholdstypen JSON, så et annet nettsted kan ikke kalle den.',
+      'En Claude-kjøring kan bruke lesverktøy, Reddit-serveren og skriving til sin egen utdatafil. Oppdateringen sjekker en signatur før installasjonen.',
+    ],
+    performance: [
+      'Claude og Chrome kjører som barneprosesser uten konsollvindu, og vinduet får linjer som en strøm i stedet for å vente til slutten.',
+      'Release-bygget slår av LTO og bruker 16 codegen-enheter, noe som kuttet kompileringen fra 18 minutter til rundt 2.',
+      'Runneren beholder cargos target-mappe mellom byggene, så bare app-craten kompileres på nytt.',
+    ],
+    operations: [
+      'Checks og Release starter sammen ved hver push til main, og en release-gate avbryter bygget når Checks feiler.',
+      'Publish tagger commiten med datoen og laster opp NSIS-installasjonsprogrammet. En signert latest.json styrer oppdateringen.',
+      'Tauri-oppdateringen sjekker ved start og hver 24. time, og installerer så det nye bygget i stillhet.',
+    ],
+    tradeoffs: [
+      'Claude Code med en skill i stedet for Reddit-API-et kalt fra Rust, så trådreglene bor ett sted. Et Find går tregere.',
+      'Tauri 2 i stedet for Electron, som pakker hele Chromium i hver installasjon. Prisen er 2 språk å sjekke.',
+      'Appens egen Chrome med feilsøkingsport i stedet for personens Chrome, siden Chrome 136 nekter en feilsøkingsport på standardprofilen. Det trenger én innlogging til på Reddit.',
+      'Det gamle Reddit-skjemaet i stedet for den nye editoren, som skjuler feltene i shadow roots.',
+    ],
+  },
   features: {
     'Repo picker':
       'Rust-kjernen lister hver git-mappe under rotmappen fra innstillingene. Valget lagres i en JSON-fil i datamappen til appen.',

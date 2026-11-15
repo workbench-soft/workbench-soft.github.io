@@ -57,6 +57,49 @@ const arch: Arch = {
       text: 'Cada versión deja allí el APK, y el build de GitHub se actualiza solo desde allí.',
     },
   ],
+  design: {
+    scale: [
+      'Una instalación por teléfono y sin cuenta, así que la carga son lecturas de precios públicos de conductores y buscadores.',
+      'Los planes gratuitos fijaron la forma: 100k peticiones de Pages, 100k filas escritas en D1 y 10 ms de CPU por petición al día.',
+      'Una respuesta de mapa lleva hasta 400 gasolineras para el recuadro en pantalla.',
+    ],
+    data: [
+      'D1 guarda station, price_now, price_daily, price_report, ev_site y ev_price. El id de una estación lleva la fuente, como nsw-1234.',
+      'price_now tiene una fila por estación y combustible. Un trigger suma cada cambio a price_daily con el mínimo, el máximo y el recuento del día.',
+      'El teléfono solo guarda el combustible elegido y los ajustes. Los precios viven en D1.',
+    ],
+    interfaces: [
+      'La app llama a rutas JSON bajo /api: las estaciones de un recuadro, el historial de una estación, los avisos y los cargadores.',
+      'Las mismas Functions sirven HTML simple bajo /fuel y los sitemaps para los buscadores.',
+      'El poller lee WA RSS, las API de NSW, VIC y QLD, Open Charge Map y OpenStreetMap, y escribe con wrangler d1 execute.',
+    ],
+    reliability: [
+      'Una fuente sin clave se omite, así la tarea sigue en verde y los demás estados se actualizan.',
+      'Cada upsert acaba en WHERE price_now.cents <> excluded.cents, de modo que repetir la ejecución no escribe una fila dos veces.',
+      'Las consultas paran mientras el runner propio está caído. Un precio sale con hasta 5 minutos de retraso, y los de VIC con 24 horas.',
+    ],
+    security: [
+      'Sin inicio de sesión ni cuenta. Quien envía un aviso es un hash con sal de la dirección, no la dirección.',
+      'Un aviso pasa una comprobación del rango del precio y un límite de 10 por hora y por remitente.',
+      'Las claves de las fuentes están en secretos de GitHub Actions que solo lee el poller. La app no tiene ninguna.',
+    ],
+    performance: [
+      'Las respuestas de la API llevan s-maxage=300 y la app redondea el recuadro a 2 decimales, así que movimientos cercanos comparten una respuesta en caché.',
+      'Las páginas de búsqueda se cachean 30 minutos, el historial una hora y los sitemaps 6 horas.',
+      'La lista de NSW, de varios MB, se procesa en el runner, porque un Worker gratuito recibe 10 ms de CPU.',
+    ],
+    operations: [
+      'Las comprobaciones corren en cada push. Release compila el APK y el bundle de Play a la vez, y una comprobación fallida los cancela.',
+      'Deploy web aplica db/schema.sql a la D1 en vivo y luego publica Pages. Cada sentencia del esquema es IF NOT EXISTS.',
+      'Las consultas van por cron: cada hora para NSW, VIC y QLD, cada 6 horas para Tasmania, cada día para WA y los cargadores.',
+    ],
+    tradeoffs: [
+      'Pages Functions y D1 en lugar de Firebase o un servidor de pago, para que un recuadro de mapa sea una consulta SQL dentro del plan gratuito.',
+      'Un resumen diario en lugar de una fila por consulta, para que las consultas cada hora queden bajo el límite de escritura. Un día sin cambios no tiene fila.',
+      'Un poller en GitHub Actions en lugar de un cron de Worker, porque procesar la lista de NSW tarda más de 10 ms.',
+      'MapLibre con teselas de OpenFreeMap en lugar de Google Maps, sin clave ni factura, a costa de dos compilaciones del mapa.',
+    ],
+  },
   features: {
     'Fuel prices on a map':
       'Una Pages Function devuelve desde D1 hasta 400 gasolineras del recuadro. La app reparte los precios en pantalla en tercios y colorea los marcadores.',

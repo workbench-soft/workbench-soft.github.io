@@ -38,6 +38,48 @@ const arch: Arch = {
       text: 'El instalador y el archivo de actualización firmado están en una release del repo público del sitio.',
     },
   ],
+  design: {
+    scale: [
+      'Una persona en un PC con Windows, y unos topes lo mantienen pequeño: 6 borradores de comentarios, 3 borradores de publicaciones y 3 comentarios publicados por hora.',
+      'Un Find tarda de 1 a 5 minutos, porque Claude Code lee los hilos por sí mismo.',
+    ],
+    data: [
+      'Archivos JSON sencillos en la carpeta de datos de la app guardan los ajustes, la cola, las tarjetas de publicaciones y los dos historiales.',
+      'history.json guarda los hilos publicados y omitidos con la fecha, y el siguiente Find los salta. opens.json guarda la hora de cada comentario publicado en el último día.',
+    ],
+    interfaces: [
+      'El núcleo lanza claude -p con stream-json y convierte cada línea de salida en un evento find-log para la ventana.',
+      'Claude llega a Reddit por un servidor MCP fijado a un commit y pasado con --strict-mcp-config.',
+      'La ventana llama al núcleo con Tauri invoke, o con HTTP y server-sent events cuando Archon la enmarca.',
+      'Post it for me maneja Chrome por el protocolo DevTools con chromiumoxide.',
+    ],
+    reliability: [
+      'Un Find se puede cancelar, y el núcleo analiza found.json tras la ejecución y se queda con 6 tarjetas.',
+      'Post it for me da un comentario por publicado solo cuando la página muestra un comentario de la cuenta con el texto del borrador.',
+      'Solo corre una app a la vez. Un segundo inicio muestra la ventana abierta, y una ejecución en segundo plano sale 2 minutos después de cerrarse el marco.',
+    ],
+    security: [
+      'El inicio de sesión de Reddit queda en el perfil de Chrome de la persona o en la carpeta de Chrome propia de la app. La app no guarda contraseñas.',
+      'El servidor local solo responde a un Host de bucle local, y un POST exige el tipo JSON, así que otro sitio no puede llamarlo.',
+      'Una ejecución de Claude puede usar herramientas de lectura, el servidor de Reddit y una escritura en su propio archivo de salida. El actualizador comprueba una firma antes de instalar.',
+    ],
+    performance: [
+      'Claude y Chrome corren como procesos hijos sin ventana de consola, y la ventana recibe las líneas en flujo en vez de esperar al final.',
+      'La compilación de release desactiva LTO y usa 16 codegen units, lo que bajó la compilación de 18 minutos a unos 2.',
+      'El runner conserva la carpeta target de cargo entre compilaciones, así que solo se recompila el crate de la app.',
+    ],
+    operations: [
+      'Checks y Release arrancan juntos en cada push a main, y una release gate cancela la compilación si Checks falla.',
+      'Publish etiqueta el commit con la fecha y sube el instalador NSIS. Un latest.json firmado guía al actualizador.',
+      'El actualizador de Tauri comprueba al inicio y cada 24 horas, y luego instala la nueva versión en silencio.',
+    ],
+    tradeoffs: [
+      'Claude Code con un skill en vez de la API de Reddit desde Rust, para que las reglas de hilos vivan en un solo sitio. Un Find es más lento.',
+      'Tauri 2 en vez de Electron, que lleva un Chromium entero en cada instalación. El coste son 2 lenguajes que comprobar.',
+      'El Chrome propio de la app con puerto de depuración en vez del Chrome de la persona, porque Chrome 136 rechaza un puerto de depuración en el perfil por defecto. Pide un inicio de sesión más en Reddit.',
+      'El formulario antiguo de Reddit en vez del editor nuevo, que esconde sus campos en shadow roots.',
+    ],
+  },
   features: {
     'Repo picker':
       'El núcleo en Rust lista cada carpeta git bajo la carpeta raíz de los ajustes. La elección se guarda en un archivo JSON en la carpeta de datos de la app.',

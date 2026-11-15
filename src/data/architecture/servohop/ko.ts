@@ -51,6 +51,49 @@ const arch: Arch = {
     { to: 'Google Play', text: '광고 제거와 ServoHop Pro는 한 번 사는 상품입니다. AdMob이 배너를 띄웁니다.' },
     { to: 'GitHub Releases', text: '릴리스마다 APK가 그곳에 올라가고, GitHub 빌드는 거기서 스스로 업데이트합니다.' },
   ],
+  design: {
+    scale: [
+      '휴대폰마다 한 번 설치하고 계정이 없어서, 부하는 운전자와 검색 엔진이 공개 가격을 읽는 일입니다.',
+      '무료 한도가 형태를 정했습니다. 하루 Pages 요청 10만 건, D1 쓰기 10만 행, 요청당 CPU 10 ms입니다.',
+      '지도 응답에는 화면 범위의 주유소를 최대 400곳까지 담습니다.',
+    ],
+    data: [
+      'D1에는 station, price_now, price_daily, price_report, ev_site, ev_price가 있습니다. 주유소 id는 nsw-1234처럼 출처를 담습니다.',
+      'price_now는 주유소와 연료마다 한 행입니다. 트리거가 변경마다 price_daily에 그날의 최저, 최고, 횟수를 더합니다.',
+      '휴대폰에는 연료 선택과 설정만 남고, 가격은 D1에 있습니다.',
+    ],
+    interfaces: [
+      '앱은 /api 아래 JSON 경로를 호출합니다. 지도 범위의 주유소, 한 곳의 기록, 가격 제보, 충전기입니다.',
+      '같은 Functions가 /fuel 아래에서 단순 HTML을 내고, 검색 엔진용 사이트맵도 냅니다.',
+      '폴러는 WA RSS, NSW·VIC·QLD API, Open Charge Map, OpenStreetMap을 읽고 wrangler d1 execute로 씁니다.',
+    ],
+    reliability: [
+      '키가 없는 출처는 건너뛰므로 작업은 초록으로 남고 다른 주는 계속 갱신됩니다.',
+      '각 upsert는 WHERE price_now.cents <> excluded.cents로 끝나서, 다시 실행해도 같은 행을 두 번 쓰지 않습니다.',
+      '자체 러너가 멈추면 폴링도 멈춥니다. 가격은 최대 5분 늦게 보이고, VIC 가격은 24시간 늦게 옵니다.',
+    ],
+    security: [
+      '로그인도 계정도 없습니다. 제보자는 주소의 솔트 해시이며 주소 자체가 아닙니다.',
+      '제보는 가격 범위 검사와 발신자당 시간당 10건 제한을 거칩니다.',
+      '출처 키는 GitHub Actions 시크릿에 있고 폴러만 읽습니다. 앱에는 없습니다.',
+    ],
+    performance: [
+      'API 응답에는 s-maxage=300이 붙고 앱이 범위를 소수 2자리로 맞추므로, 가까운 이동은 캐시된 응답 하나를 같이 씁니다.',
+      '검색 페이지는 30분, 기록은 1시간, 사이트맵은 6시간 캐시합니다.',
+      '수 MB인 NSW 목록은 러너에서 분석합니다. 무료 Worker는 CPU가 10 ms뿐이기 때문입니다.',
+    ],
+    operations: [
+      '검사는 푸시마다 돕니다. Release는 APK와 Play 번들을 동시에 만들고, 검사가 실패하면 취소합니다.',
+      'Deploy web은 db/schema.sql을 운영 D1에 적용한 뒤 Pages를 게시합니다. 스키마의 모든 문은 IF NOT EXISTS입니다.',
+      '폴링은 cron으로 돕니다. NSW, VIC, QLD는 매시간, 태즈메이니아는 6시간마다, WA와 충전기는 매일입니다.',
+    ],
+    tradeoffs: [
+      'Firebase나 유료 서버 대신 Pages Functions와 D1을 써서, 지도 범위 하나가 무료 한도 안의 SQL 한 번이 됩니다.',
+      '폴링마다 한 행 대신 일별 집계로 두어 매시간 폴링도 쓰기 한도 안에 듭니다. 변경 없는 날은 행이 없습니다.',
+      'Worker cron 대신 GitHub Actions 폴러를 쓴 이유는 NSW 목록 분석이 10 ms를 넘기 때문입니다.',
+      'Google Maps 대신 OpenFreeMap 타일의 MapLibre를 써서 키도 청구도 없앴고, 대신 지도 빌드가 둘입니다.',
+    ],
+  },
   features: {
     'Fuel prices on a map':
       'Pages Function이 지도 범위 안의 주유소를 D1에서 최대 400곳 돌려줍니다. 앱은 화면의 가격을 셋으로 나눠 핀에 색을 입힙니다.',

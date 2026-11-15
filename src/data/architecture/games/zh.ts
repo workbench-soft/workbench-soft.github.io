@@ -24,6 +24,49 @@ const arch: Arch = {
     { to: 'Google AdSense', text: 'AdSense 在网站上显示横幅。' },
     { to: 'Google AdMob', text: 'AdMob 在 Android 和 iOS 应用里显示横幅。' },
   ],
+  design: {
+    scale: [
+      '一个房间最多 12 名玩家，线索对决至少需要 4 人。',
+      'Workers 免费版每天 10 万次请求，约相当于每天 40 小时的绘画。',
+      '一条消息上限 256 KB，一幅画上限 3000 个动作。',
+    ],
+    data: [
+      '每个房间是一个带独立 SQLite 存储的 Durable Object，有 3 类键：meta、canvas 和 chain:N。',
+      'meta 在每次变化后保存玩家、得分、设置、阶段、聊天和游戏状态。canvas 最多每 2 秒保存一次。',
+      '一幅画是 800 乘 600 网格上的动作列表。浏览器把令牌和设置存在以 wg- 开头的键下。',
+    ],
+    interfaces: [
+      '每位玩家一个 WebSocket，路径为 /games/ws/CODE。Worker 用 idFromName 把房间码对应到房间对象。',
+      '第一条消息 hello 带着协议版本、令牌、名字和颜色，之后是 state、chat 和 draw 消息。',
+      'Android 和 iOS 应用在游戏 Worker 上打开同样的 socket。Origin 检查放行网站和应用。',
+    ],
+    reliability: [
+      'Hibernation API 让空闲的房间离开内存，socket 消息或闹钟会从存储里把它唤醒。',
+      '闹钟驱动每个截止时间，并在房间变空 30 分钟后清理它。',
+      'PROTOCOL 编号让 Worker 用旧应用的格式回应它。掉线的玩家保留座位，直到房间坐满 24 个座位。',
+    ],
+    security: [
+      '没有账号。浏览器保存随机令牌，房间保存其哈希作为玩家 id。',
+      '房间对象选词并检查每次猜测，所以答案留在服务器上。',
+      '来自其他网站的 socket 会被拒绝。名字最多 20 个字符，聊天行最多 100 个。',
+    ],
+    performance: [
+      '绘画以小的动作列表每 80 毫秒传一次，而不是传像素。',
+      '启用 hibernation 后，20 条 WebSocket 消息算 1 次请求。',
+      '静态页面不花钱，因为 run_worker_first 只让房间链接和 socket 经过 Worker 代码。',
+    ],
+    operations: [
+      '一个 Worker 用 wrangler 部署：静态的 dist/ 文件夹加房间对象。Games 工作流在每次推送到 main 时部署。',
+      'mise run check 对每个游戏的规则运行 oxlint、类型检查和 Vitest。',
+      'Worker 的可观测性已开启。Android 应用通过 Google Play 封闭测试发布。',
+    ],
+    tradeoffs: [
+      '选带 hibernation 的 Durable Objects，不选 Supabase Realtime、PartyKit 或 VPS，没有服务器且在免费额度内。房间代码是为 Cloudflare 写的。',
+      '选 Astro 静态页加一个 Preact 岛，不选 Preact 单页应用，让搜索引擎拿到完整 HTML。',
+      '选固定网格上的绘画动作，不选像素，这样消息很小，撤销只需一步。',
+      '选 Capacitor，不选 Trusted Web Activity 或 React Native，这样同样的页面能在应用里运行，并带原生 AdMob 横幅。',
+    ],
+  },
   features: {
     'Rooms by link':
       'Worker 把每个房间码对应到它自己的 Durable Object。浏览器里的随机令牌代表玩家，房间只保存它的哈希。',

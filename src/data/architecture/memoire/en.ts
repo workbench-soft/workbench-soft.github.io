@@ -36,6 +36,56 @@ const arch: Arch = {
     { to: 'Google Gemini', text: "Talk practice and topic guesses call it with the person's own key." },
     { to: 'Google Play', text: 'AdMob shows the ads, and Play Billing sells Remove ads and Pro.' },
   ],
+  design: {
+    scale: [
+      "One learner per install, with all cards in SQLite on the device. No server of the studio's own runs.",
+      'The word base ships in the app as assets/words/en.json and ru.json, built from CEFR-J, Octanove, Wiktionary and OpenRussian.',
+      'Free services set the limits: MyMemory gives about 5,000 words a day per device, and the GitHub release list allows 60 calls an hour per address.',
+      'The talk model on the phone takes about 1.2 GB of storage and 2 GB of free memory.',
+    ],
+    data: [
+      'Cards, reviews, known words and pictures sit in SQLite through expo-sqlite, on the web too.',
+      'A card keeps its FSRS state as JSON in memory, and due is copied to its own column for the index. (lang, term_key) is unique.',
+      'A deleted card stays as a flag, and updated_at lets the later edit win in sync.',
+      'Settings sit in localStorage. Pictures stay on each device and out of sync.',
+    ],
+    interfaces: [
+      'Sync writes each card to Firestore under decks/{code}/cards/{lang}_{termKey}, and firestore.rules checks the code length and each field.',
+      'A typed word goes to the base, then to Wiktionary through kaikki.org, then to the MyMemory API. Wikipedia gives the lead photo.',
+      "Gemini is called from the device with the person's own key, and Qwen 3 runs on the phone through react-native-executorch.",
+      'A Kotlin module in modules/speaker/ renders speech to a file, and a background handler draws the Android home widget.',
+    ],
+    reliability: [
+      'Each device works alone on its SQLite file, so the app runs offline, and sync is an optional layer on top.',
+      'The later edit of a word wins in sync, and a deleted card stays as a flag so the deletion syncs too.',
+      'A lookup falls back from the base to Wiktionary to MyMemory. kaikki.org sends no CORS headers, so the web build skips it.',
+      'A pure, tested function plans a week of local notifications, so a person who skips the app gets one a day for 7 days.',
+    ],
+    security: [
+      'Firebase anonymous sign in gives one user per device, and a pairing code of 80 random bits shares a deck with no account.',
+      'Anyone with the code can read and change that deck. Reviews, settings and known words stay on each device.',
+      "Gemini runs on the person's own key, and no message leaves the device apart from the call to the chosen engine.",
+      'The Android keystore and its password are CI secrets, with a copy kept outside the repo.',
+    ],
+    performance: [
+      'The batch query reads due cards through the cards_due index, then fills in new words up to the daily quota.',
+      'words/complete offers base words by first letters with no network, and the base loads on first use.',
+      'expo-image keeps pictures on disk, and an empty picture result is asked again after 30 days.',
+      'The release build reuses its kept android/ folder when @expo/fingerprint matches, and rebuilds only the JS.',
+    ],
+    operations: [
+      'Checks run lint, format, types, knip and Vitest twice: as Android and the web, then with Platform.OS set to ios.',
+      'A push to main builds the APK on a heavy runner, and release-gate.sh publishes once Checks pass. Failed Checks cancel the build.',
+      'With PLAY_TRACK set, a nightly run at 19:00 Sydney time uploads a bundle to Google Play, and only when the app changed.',
+      'The GitHub APK checks the release list for a newer memoire-v* tag. The Play and iOS builds leave that code out.',
+    ],
+    tradeoffs: [
+      'Expo with React Native over a native Kotlin app, so one codebase builds Android, iOS and the web, at the cost of some phone only parts.',
+      'SQLite on the device over Firestore as the only store, so the app works offline and opens at once, and sync stays optional.',
+      'A pairing code over Google sign in, so devices pair with no account, at the cost that anyone with the code can edit the deck.',
+      "FSRS state as one JSON column over a column per field, so a ts-fsrs change needs no schema change, but the JSON can't be queried.",
+    ],
+  },
   features: {
     'Word batches':
       'A batch module takes the due cards from SQLite, then new words from the base up to the daily quota. ts-fsrs sets when each card returns.',

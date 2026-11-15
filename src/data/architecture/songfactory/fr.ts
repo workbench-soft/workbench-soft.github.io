@@ -26,6 +26,53 @@ const arch: Arch = {
     { to: 'YouTube', text: 'Les vidéos partent par la YouTube Data API, environ 6 par jour.' },
     { to: 'Claude', text: 'La Claude CLI écrit le texte avec l’abonnement et sans compte API.' },
   ],
+  design: {
+    scale: [
+      "Un créateur sur un PC Windows avec un GPU. L'exécution quotidienne met en ligne environ 6 vidéos au plus.",
+      'Chaque envoi coûte environ 1 600 des 10 000 unités de quota YouTube par jour, et ce quota fixe le plafond.',
+      'Le GPU local produit environ 5 s de vidéo en 720p par exécution, donc chaque fond est un clip en boucle.',
+    ],
+    data: [
+      "L'état tient dans des fichiers du dossier de thème : theme.toml garde les réglages, out/upload.json marque un thème comme fait, et out/claude.json garde le texte écrit par Claude.",
+      'Un projet garde ses dix tuiles dans pipeline.json, chacune avec kind, enabled et params.',
+      'Les chansons nettoyées vont dans out/clean/ en FLAC, et les originaux restent. Les secrets sont dans un dossier hors du dépôt.',
+    ],
+    interfaces: [
+      "La CLI a les commandes bg, clean, build, upload, publish, run, enhance, clips et celles des tuiles. L'onglet Songs d'Archon lit songfactory project et lance songfactory tile.",
+      'ffmpeg et ffprobe tournent comme sous-processus, et ComfyUI reçoit workflows/loop.json en HTTP avec le prompt et le seed renseignés.',
+      "upload.py appelle videos.insert et thumbnails.set de l'API YouTube Data après une connexion OAuth pour application de bureau.",
+      'progress.py imprime des lignes step, file i/n et progress NN% que le lanceur transforme en barres.',
+    ],
+    reliability: [
+      "upload.json est écrit dès que YouTube renvoie l'identifiant de la vidéo, donc une miniature en échec ne provoque pas un second envoi.",
+      "run saute les dossiers qui commencent par _ ou un point, et passe au thème suivant quand l'un échoue.",
+      'claude.py est facultatif. Une CLI absente ou un appel en échec imprime une ligne, et le thème continue avec le nom du dossier comme titre.',
+      'Une tuile désactivée transmet son entrée, et une tuile audio prend les fichiers de la tuile précédente la plus proche qui a tourné.',
+    ],
+    security: [
+      'Le jeton OAuth de YouTube et les autres secrets sont dans un dossier hors du dépôt.',
+      "claude -p tourne sans la variable de clé d'API, donc il facture l'abonnement connecté et aucun compte d'API.",
+      "Les envois posent containsSyntheticMedia et restent privés tant que Google n'a pas audité le projet.",
+    ],
+    performance: [
+      'h264_nvenc encode sur le GPU quand le PC en a un, et libx264 prend le relais sinon.',
+      'Le clip boucle avec -stream_loop et un aller-retour, donc un clip de 5 s couvre une longue vidéo sans long rendu.',
+      'Le nettoyage est un seul appel ffmpeg avec un gain fixe, highpass, afftdn et une coupure dynamique à 7 kHz, sans modèle neuronal.',
+      'Un enhance par lot passe par un seul processus CLI, donc il écrit un seul compare.html pour toutes les chansons.',
+    ],
+    operations: [
+      'Une tâche planifiée Windows lance mise run daily à 03 h 00 sur le PC qui garde les chansons, le jeton et le GPU.',
+      'checks.yml lance lint, tests et uv build sur le runner Windows auto-hébergé à chaque push sur main.',
+      'release.yml construit le wheel et le sdist à côté de Checks, et release-gate.sh publie une fois Checks passé. Un Checks en échec annule le build.',
+      'mise run doctor imprime une ligne par prérequis, ok ou MISSING, et en JSON pour le lanceur.',
+    ],
+    tradeoffs: [
+      "ffmpeg en ligne de commande plutôt qu'une bibliothèque vidéo Python, pour que le mixage, la boucle et l'encodage NVENC tiennent dans un seul outil, mais les graphes de filtres sont des chaînes et une faute ne se voit qu'à l'exécution.",
+      "Un court clip en boucle plutôt qu'un clip aussi long que les chansons, puisque le GPU produit environ 5 s par exécution.",
+      "De simples fichiers par thème plutôt qu'une base de données, pour qu'un fichier dise si un thème a été envoyé, mais déplacer un dossier perd son lien avec l'envoi.",
+      "Le Planificateur de tâches local plutôt qu'un cron de CI, puisque les chansons et le jeton sont hors de git, mais le PC doit être allumé à 03 h 00.",
+    ],
+  },
   features: {
     'Audio workbench':
       'Une fenêtre tkinter lance la commande de nettoyage ou d’amélioration sur les fichiers choisis. Un contrôle des noms arrête le lot avant que deux sorties se heurtent.',

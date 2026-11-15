@@ -32,6 +32,52 @@ const arch: Arch = {
     { to: 'Google Play', text: 'AdMob-banneret og kjøpet Fjern reklame i Android-appen.' },
     { to: 'App Store', text: 'StoreKit selger Fjern reklame i iPhone-appen når den er i App Store.' },
   ],
+  design: {
+    scale: [
+      'En person per nettleser, med 23 felt på én kalkulatorside. Sammenligningen regnes på nytt i nettleseren ved hver endring.',
+      'Nettstedet er statiske filer på Cloudflare, så ingen egen server hos studioet bærer lasten.',
+      'Skattetrinn, FBT og stempelavgift er faste tall i koden, så grensen er å holde dem oppdatert, ikke last.',
+    ],
+    data: [
+      'Ingen database og ingen konto. Endringer ligger i localStorage som JSON under 3 nøkler: felt (med versjonsfelt), tema og språk.',
+      'Bare endrede felt lagres, så en urørt startdato leses som i dag, og en standardverdi følger biltypen og reglene.',
+      'Skattetrinn, FBT-konstanter og stempelavgift per delstat ligger som konstanter i src/rules, hver med en lenke til kilden.',
+    ],
+    interfaces: [
+      'compareOptions tar ett CalcInputs-objekt og gir tilbake en Comparison: kostnad, kontoforløp og kostnadsdeler per alternativ.',
+      'Siden snakker med Android-appen over window.ConsdrApp, med meldingene state, buy, privacy og devAds og svar som JSON.',
+      'iPhone-appen svarer på den samme broen fra Swift, og Capacitor serverer det bygde nettstedet fra innsiden av appen.',
+      'Bygget skriver sitemap.xml, llms.txt, ads.txt og JSON-LD for de vanlige spørsmålene.',
+    ],
+    reliability: [
+      'Sider går først til nettet og faller tilbake på kopien i hurtigbufferen etter 3 sekunder eller ved en serverfeil.',
+      'Når nettstedsdata er blokkert, gir lesing null og skriving hoppes over, og siden fungerer videre for det besøket.',
+      'En lagret verdi av feil type eller en ukjent listeverdi forkastes ved innlasting. Å lagre i én fane laster de andre på nytt.',
+    ],
+    security: [
+      'Ingen innlogging, og tallene går til ingen server, så det som skrives inn forlater aldri nettleseren.',
+      'Svarhodene setter frame-ancestors none, object-src none, nosniff og HSTS, og slår av kamera, mikrofon og posisjon.',
+      'Android-signeringsnøkkelen er en CI-hemmelighet som dekrypteres på runneren, og repoet har ingen nøkkel.',
+      'Android-appen ber om samtykke til annonser gjennom Googles samtykke-SDK.',
+    ],
+    performance: [
+      'Engelsk ligger i hovedskriptet, og hver av de 8 andre katalogene lastes som en egen bit når den velges.',
+      'Bygget forhåndsrenderer kalkulatoren med standardverdiene og forhåndslaster de latinske skriftene, så innholdet vises tidlig og tallene holder seg i ro.',
+      'Filer i /assets/ har innholds-hash, får en hurtigbuffer-header på ett år og serveres fra hurtigbufferen først av workeren.',
+    ],
+    operations: [
+      'Én jobb sjekker, tester og bygger, og så publiserer wrangler deploy dist/ til Cloudflare ved hver push til main.',
+      'CI kjører på studioets egen Windows-runner, så det private repoet bruker ingen Actions-minutter.',
+      'En nattlig kjøring klokken 19:00 Sydney-tid bygger den signerte Android-pakken for Google Play, bare når android/ er endret.',
+      'Hurtigbuffernavnet til service workeren hasher fillisten, sideteksten og worker-koden, så hver utrulling erstatter den gamle hurtigbufferen.',
+    ],
+    tradeoffs: [
+      'Beregning i nettleseren i stedet for en server-API, så ingen data forlater enheten og vertstjenesten er statiske filer.',
+      'På Android en WebView rundt det levende nettstedet i stedet for native skjermer, så én kodebase dekker web og app, og en utrulling av nettstedet når appen med en gang.',
+      'Sider først fra nettet i stedet for fra hurtigbufferen, så en utrulling synes med en gang, til en pris på opptil 3 sekunder på tregt nett.',
+      'Faste regler i koden med kilder i stedet for en rente-API, så hvert tall kan etterprøves, men et nytt skatteår krever en utgivelse.',
+    ],
+  },
   features: {
     'Compare a lease, a loan and cash':
       'En enkel TypeScript-funksjon tar feltene og gir én sum per valg. Den kjører i nettleseren ved hver endring, og ingen server ser tallene.',

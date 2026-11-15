@@ -51,6 +51,49 @@ const arch: Arch = {
     { to: 'Google Play', text: '広告の削除と ServoHop Pro は 1 回きりの購入です。AdMob がバナーを出します。' },
     { to: 'GitHub Releases', text: 'リリースごとに APK がそこに置かれ、GitHub 版はそこから自分で更新します。' },
   ],
+  design: {
+    scale: [
+      '端末ごとに1回のインストールでアカウントはなく、負荷はドライバーと検索エンジンによる公開価格の読み取りです。',
+      '無料枠が形を決めました。1日あたり Pages 10万リクエスト、D1 書き込み10万行、1リクエスト10 ms の CPU です。',
+      '地図の応答には、画面の範囲にあるスタンドを最大400件まで入れます。',
+    ],
+    data: [
+      'D1 には station、price_now、price_daily、price_report、ev_site、ev_price があります。スタンド ID は nsw-1234 のように取得元を含みます。',
+      'price_now は給油所と燃料ごとに1行です。トリガーが変更ごとに price_daily へ、その日の最安、最高、件数を加えます。',
+      '端末が持つのは燃料の選択と設定だけで、価格は D1 にあります。',
+    ],
+    interfaces: [
+      'アプリは /api 以下の JSON ルートを呼びます。地図範囲のスタンド、1件の履歴、価格報告、充電器です。',
+      '同じ Functions が /fuel 以下で素の HTML を返し、検索エンジン向けにサイトマップも出します。',
+      'ポーラーは WA の RSS、NSW・VIC・QLD の API、Open Charge Map、OpenStreetMap を読み、wrangler d1 execute で書き込みます。',
+    ],
+    reliability: [
+      'キーのない取得元は飛ばすので、ジョブは緑のままで、他の州は更新されます。',
+      '各 upsert は WHERE price_now.cents <> excluded.cents で終わるため、再実行しても同じ行を二度書きません。',
+      '自前のランナーが止まっている間はポーリングも止まります。価格は最大5分遅れ、VIC の価格は24時間遅れで届きます。',
+    ],
+    security: [
+      'ログインもアカウントもありません。報告者はアドレスのソルト付きハッシュで、アドレス自体ではありません。',
+      '報告は価格の範囲チェックと、送信者ごとに1時間10件の上限を通ります。',
+      '取得元のキーは GitHub Actions のシークレットにあり、読めるのはポーラーだけです。アプリは持ちません。',
+    ],
+    performance: [
+      'API の応答は s-maxage=300 を持ち、アプリが範囲を小数2桁に丸めるので、近い移動は1つのキャッシュ応答を共有します。',
+      '検索ページは30分、履歴は1時間、サイトマップは6時間キャッシュします。',
+      '数 MB ある NSW のリストはランナーで解析します。無料の Worker は CPU が10 ms しかないためです。',
+    ],
+    operations: [
+      'チェックは push のたびに走ります。Release は APK と Play 用バンドルを同時に作り、チェックが失敗すると取り消します。',
+      'Deploy web は db/schema.sql を本番の D1 に適用してから Pages を公開します。スキーマの各文は IF NOT EXISTS です。',
+      'ポーリングは cron で動きます。NSW・VIC・QLD は毎時、タスマニアは6時間ごと、WA と充電器は毎日です。',
+    ],
+    tradeoffs: [
+      'Firebase や有料サーバーではなく Pages Functions と D1 を選び、地図の範囲を無料枠で1回の SQL にしました。',
+      'ポーリングごとに1行ではなく日次の集計にして、毎時のポーリングでも書き込み上限に収めました。変更のない日は行がありません。',
+      'Worker の cron ではなく GitHub Actions のポーラーにしました。NSW のリストの解析に10 msを超えるためです。',
+      'Google Maps ではなく OpenFreeMap タイルの MapLibre にして、キーも請求もなくしました。代償は地図のビルドが2つになることです。',
+    ],
+  },
   features: {
     'Fuel prices on a map':
       'Pages Function が地図の枠内の給油所を最大 400 件 D1 から返します。アプリは画面上の価格を 3 つに分け、ピンに色を付けます。',

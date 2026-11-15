@@ -26,6 +26,53 @@ const arch: Arch = {
     { to: 'YouTube', text: '영상은 YouTube Data API로 하루 6개쯤 올라갑니다.' },
     { to: 'Claude', text: 'Claude CLI는 구독으로 글을 쓰며 API 계정이 필요 없습니다.' },
   ],
+  design: {
+    scale: [
+      'GPU가 있는 Windows PC 한 대에 제작자 한 사람입니다. 매일 실행으로 올리는 영상은 많아야 약 6개입니다.',
+      '업로드 한 번에 YouTube 하루 쿼터 10,000단위 중 약 1,600이 들고, 이 쿼터가 상한을 정합니다.',
+      '로컬 GPU는 한 번 실행에 720p 영상 약 5초를 만들기 때문에 배경은 모두 반복 클립입니다.',
+    ],
+    data: [
+      '상태는 테마 폴더의 파일입니다. theme.toml이 설정을 담고, out/upload.json이 테마가 끝났음을 표시하고, out/claude.json이 Claude가 쓴 글을 보관합니다.',
+      '프로젝트는 타일 10개를 pipeline.json에 두며, 각각 kind, enabled, params가 있습니다.',
+      '정리한 곡은 FLAC으로 out/clean/에 들어가고 원본은 그대로 남습니다. 비밀 정보는 저장소 밖 폴더에 있습니다.',
+    ],
+    interfaces: [
+      'CLI에는 bg, clean, build, upload, publish, run, enhance, clips와 타일 명령이 있습니다. Archon의 Songs 탭은 songfactory project를 읽고 songfactory tile을 실행합니다.',
+      'ffmpeg와 ffprobe는 하위 프로세스로 돌고, ComfyUI에는 프롬프트와 시드를 채운 workflows/loop.json을 HTTP로 보냅니다.',
+      'upload.py는 데스크톱 앱용 OAuth 로그인 뒤에 YouTube Data API의 videos.insert와 thumbnails.set을 호출합니다.',
+      'progress.py는 step, file i/n, progress NN% 줄을 출력하고 런처가 이를 막대로 바꿉니다.',
+    ],
+    reliability: [
+      'upload.json은 YouTube가 영상 id를 돌려주자마자 쓰므로 썸네일이 실패해도 두 번째 업로드가 생기지 않습니다.',
+      'run은 _ 또는 점으로 시작하는 폴더를 건너뛰고, 한 테마가 실패하면 다음 테마로 넘어갑니다.',
+      'claude.py는 선택 사항입니다. CLI가 없거나 호출이 실패하면 한 줄을 출력하고, 테마는 폴더 이름을 제목으로 삼아 계속됩니다.',
+      '꺼진 타일은 입력을 그대로 넘기고, 오디오 타일은 실행된 가장 가까운 앞 타일의 파일을 받습니다.',
+    ],
+    security: [
+      'YouTube OAuth 토큰과 다른 비밀 정보는 저장소 밖 폴더에 있습니다.',
+      'claude -p는 API 키 변수를 뺀 채 실행하므로 API 계정이 아니라 로그인된 구독에 과금됩니다.',
+      '업로드는 containsSyntheticMedia를 설정하고, Google이 프로젝트를 감사할 때까지 비공개로 남습니다.',
+    ],
+    performance: [
+      'PC에 GPU가 있으면 h264_nvenc가 GPU에서 인코딩하고, 없으면 libx264가 이어받습니다.',
+      '클립은 -stream_loop와 핑퐁으로 반복하므로 5초 클립이 긴 영상을 덮고 긴 렌더링이 필요 없습니다.',
+      '정리는 고정 게인, highpass, afftdn, 7 kHz 동적 컷을 한 번의 ffmpeg 호출로 하며 신경망 모델은 쓰지 않습니다.',
+      '배치 enhance는 CLI 프로세스 하나로 돌아서 모든 곡에 compare.html 하나를 씁니다.',
+    ],
+    operations: [
+      'Windows 작업 스케줄러가 곡, 토큰, GPU가 있는 PC에서 매일 03:00에 mise run daily를 실행합니다.',
+      'checks.yml은 main에 푸시할 때마다 자체 호스팅 Windows 러너에서 lint, 테스트, uv build를 실행합니다.',
+      'release.yml은 Checks와 나란히 wheel과 sdist를 빌드하고, Checks가 통과하면 release-gate.sh가 게시합니다. Checks가 실패하면 빌드를 취소합니다.',
+      'mise run doctor는 전제 조건마다 ok 또는 MISSING 한 줄을 출력하고, 런처용으로는 JSON으로도 출력합니다.',
+    ],
+    tradeoffs: [
+      'Python 영상 라이브러리 대신 명령줄 ffmpeg를 써서 믹싱, 반복, NVENC 인코딩을 한 도구에 담지만, 필터 그래프는 문자열이라 오타가 실행할 때 드러납니다.',
+      '곡만큼 긴 클립 대신 짧은 반복 클립을 씁니다. GPU가 한 번에 약 5초를 만들기 때문입니다.',
+      '데이터베이스 대신 테마별 일반 파일을 써서 파일 하나로 업로드 여부를 알지만, 폴더를 옮기면 업로드와의 연결이 끊깁니다.',
+      'CI cron 대신 로컬 작업 스케줄러를 씁니다. 곡과 토큰이 git 밖에 있기 때문이지만, 03:00에 PC가 켜져 있어야 합니다.',
+    ],
+  },
   features: {
     'Audio workbench':
       'tkinter 창이 고른 파일에 정리나 개선 명령을 실행합니다. 이름 검사가 두 결과가 겹치기 전에 작업을 멈춥니다.',

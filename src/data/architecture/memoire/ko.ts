@@ -27,6 +27,56 @@ const arch: Arch = {
     { to: 'Google Gemini', text: '대화 연습과 주제 추측이 본인 키로 호출합니다.' },
     { to: 'Google Play', text: 'AdMob이 광고를 보여 주고 Play Billing이 광고 제거와 Pro를 팝니다.' },
   ],
+  design: {
+    scale: [
+      '설치 하나에 학습자 한 사람이며, 모든 카드는 기기의 SQLite에 있습니다. 스튜디오 자체 서버는 돌지 않습니다.',
+      '단어 베이스는 assets/words/en.json과 ru.json으로 앱에 들어 있고 CEFR-J, Octanove, Wiktionary, OpenRussian으로 만듭니다.',
+      '한계는 무료 서비스가 정합니다. MyMemory는 기기당 하루 약 5,000단어, GitHub 릴리스 목록은 주소당 시간당 60회입니다.',
+      '휴대폰의 대화 모델은 저장 공간 약 1.2 GB와 여유 메모리 2 GB를 씁니다.',
+    ],
+    data: [
+      '카드, 복습, 아는 단어, 그림은 expo-sqlite를 통해 SQLite에 있으며 웹에서도 같습니다.',
+      '카드는 FSRS 상태를 JSON으로 memory에 두고, due는 색인을 위해 별도 열로 복사합니다. (lang, term_key)는 유일합니다.',
+      '삭제한 카드는 표시와 함께 남고, updated_at 덕분에 동기화에서 나중 수정이 이깁니다.',
+      '설정은 localStorage에 있습니다. 그림은 각 기기에 남고 동기화하지 않습니다.',
+    ],
+    interfaces: [
+      '동기화는 각 카드를 Firestore의 decks/{code}/cards/{lang}_{termKey}에 쓰고, firestore.rules가 코드 길이와 각 필드를 확인합니다.',
+      '입력한 단어는 베이스로, 이어서 kaikki.org를 통해 Wiktionary로, 그다음 MyMemory API로 갑니다. Wikipedia가 대표 사진을 줍니다.',
+      'Gemini는 사용자 본인의 키로 기기에서 호출하고, Qwen 3는 react-native-executorch로 휴대폰에서 돌아갑니다.',
+      'modules/speaker/의 Kotlin 모듈이 음성을 파일로 만들고, 백그라운드 핸들러가 안드로이드 홈 화면 위젯을 그립니다.',
+    ],
+    reliability: [
+      '각 기기는 자기 SQLite 파일로 혼자 동작하므로 앱은 오프라인에서 돌고, 동기화는 그 위의 선택 계층입니다.',
+      '동기화에서는 단어의 나중 수정이 이기고, 삭제한 카드는 표시와 함께 남아 삭제도 동기화됩니다.',
+      '조회는 베이스에서 Wiktionary로, 다시 MyMemory로 넘어갑니다. kaikki.org는 CORS 헤더를 보내지 않아 웹 빌드는 건너뜁니다.',
+      '테스트된 순수 함수가 일주일치 로컬 알림을 계획하므로 앱을 열지 않는 사람도 7일 동안 하루 한 번 받습니다.',
+    ],
+    security: [
+      'Firebase 익명 로그인으로 기기마다 사용자 한 명이 생기고, 무작위 80비트 페어링 코드로 계정 없이 덱을 공유합니다.',
+      '코드를 가진 사람은 그 덱을 읽고 바꿀 수 있습니다. 복습, 설정, 아는 단어는 각 기기에 남습니다.',
+      'Gemini는 사용자 본인의 키로 동작하며, 고른 엔진을 부르는 호출 외에는 어떤 메시지도 기기를 떠나지 않습니다.',
+      '안드로이드 키스토어와 비밀번호는 CI 시크릿이고, 사본은 저장소 밖에 보관합니다.',
+    ],
+    performance: [
+      '배치 쿼리는 cards_due 색인으로 복습할 카드를 읽은 뒤 하루 할당량까지 새 단어를 채웁니다.',
+      'words/complete는 네트워크 없이 첫 글자로 베이스 단어를 제안하고, 베이스는 처음 쓸 때 로드합니다.',
+      'expo-image가 그림을 디스크에 보관하고, 그림이 비어 있던 결과는 30일 뒤에 다시 물어봅니다.',
+      '@expo/fingerprint가 맞으면 릴리스 빌드는 보관해 둔 android/ 폴더를 재사용하고 JS만 다시 빌드합니다.',
+    ],
+    operations: [
+      '검사는 lint, 서식, 타입, knip, Vitest를 두 번 실행합니다. Android와 웹으로, 그다음 Platform.OS를 ios로 두고.',
+      'main에 푸시하면 무거운 러너에서 APK를 빌드하고, 검사가 통과하면 release-gate.sh가 게시합니다. 검사가 실패하면 빌드를 취소합니다.',
+      'PLAY_TRACK을 설정하면 매일 밤 시드니 시간 19:00 실행이 번들을 Google Play에 올리며, 앱이 바뀐 경우에만 합니다.',
+      'GitHub APK는 릴리스 목록에서 더 새로운 memoire-v* 태그를 확인합니다. Play와 iOS 빌드에는 이 코드가 없습니다.',
+    ],
+    tradeoffs: [
+      '네이티브 Kotlin 앱 대신 Expo와 React Native를 써서 코드 하나로 Android, iOS, 웹을 빌드하지만, 일부는 휴대폰 전용입니다.',
+      'Firestore만 저장소로 쓰는 대신 기기의 SQLite를 써서 앱이 오프라인에서 돌고 바로 열리며, 동기화는 선택으로 남습니다.',
+      'Google 로그인 대신 페어링 코드를 써서 계정 없이 기기를 묶지만, 코드를 아는 사람은 누구나 덱을 편집할 수 있습니다.',
+      '필드마다 열을 두는 대신 FSRS 상태를 JSON 열 하나에 두어 ts-fsrs가 바뀌어도 스키마를 바꿀 필요가 없지만, JSON 안은 질의할 수 없습니다.',
+    ],
+  },
   features: {
     'Word batches':
       '묶음 모듈이 SQLite에서 복습할 카드를 꺼내고, 이어서 하루 한도까지 베이스의 새 단어를 넣습니다. ts-fsrs가 카드가 돌아올 때를 정합니다.',

@@ -35,6 +35,49 @@ const arch: Arch = {
     { to: 'Google Play', text: '去除广告和 Property Trends Pro 在 Android 上是一次性购买。' },
     { to: 'App Store', text: '开发者账号开通后，iPhone 上提供同样的购买。' },
   ],
+  design: {
+    scale: [
+      '一个静态网站服务所有访客，所以读者再多也不增加工作室的成本。',
+      '销售数据来自 VIC、NSW 和 SA，形状文件把 15,358 个 ABS 郊区切成一个 53 MB 的 PMTiles 文件。',
+      '其他州显示为灰色，因为它们没有公开免费的销售数据。',
+    ],
+    data: [
+      '每组筛选条件都有自己的 JSON 文件，因为中位数不能跨组相加。少于 5 笔销售的格子没有中位数。',
+      '形状放在 boundaries.pmtiles 里，要素 id 是郊区代码，没有标签。',
+      '郊区文件把每种类型和地块档位存成由时期、中位数和销量组成的列表。人口普查文件补充 Census 2021 和 SEIFA 的数字。',
+    ],
+    interfaces: [
+      '应用通过 HTTP range 请求读取静态 JSON 和 PMTiles，没有自己的 API。',
+      'Rust 管线从 CKAN API 读取 VIC 和 SA 的列表，读取 NSW 的 .DAT 压缩包和 ABS 形状。',
+      'ts-rs 根据 Rust 结构体写出每个数据文件的 TypeScript 类型。',
+    ],
+    reliability: [
+      '某个数据源的许可变了，管线运行就会停止，所以不会发布没有许可的数据。',
+      'Pages 一次换掉整个网站，所以访客读到的是完整的一个版本。',
+      '目前没有 service worker，所以装好的网页应用需要联网。',
+    ],
+    security: [
+      '没有登录，也没有服务器。Google Play 在手机上验证购买，所以已 root 的手机可以伪造购买。',
+      '只用许可已列明的开放数据。NSW 销售数据只出现在无广告的网站上，因为它的许可是非商业的。',
+      '计划中的 Rust Worker 会把任何 API 密钥放在 Worker 机密里，不进安装包。它还没有建成。',
+    ],
+    performance: [
+      '文件预先算好，所以改一次筛选只取一个 JSON，网页地图通过 feature-state 换颜色。',
+      '在手机上，MapLibre 用该文件构造一个 match 表达式，因为 15,000 次 feature-state 调用会逐个穿过桥接。',
+      'PMTiles 把相同的瓦片只存一次，输入与上次运行相同时，部署会跳过管线。',
+    ],
+    operations: [
+      'Checks 在电脑上的 runner 上并行运行 TypeScript 和 Rust 任务：lint、类型、测试以及 web 和 iOS 导出。',
+      '每次 Release 变绿以及每周一都会运行 Deploy web。它发布站点仓库的一个 release，Pages 解压最新的一个。',
+      '托管成本为 0 美元：GitHub Pages、无需密钥的 OpenFreeMap 底图，以及自托管 runner。',
+    ],
+    tradeoffs: [
+      '选 GitHub Pages 上的静态文件而不是服务器数据库，让托管成本为 0 美元。筛选只能是固定选项。',
+      '选政府开放数据而不是抓取门户网站，后者被其条款禁止。代价是没有卧室数，部分州为灰色。',
+      '选 Rust 管线而不是 Node 脚本，因为 NSW 保存了 1990 年以来的每一笔销售，形状处理也很吃力。',
+      '选一套 Expo 代码库而不是纯网页站，这样应用商店构建不会变成第二个应用。地图需要 2 个库。',
+    ],
+  },
   features: {
     'Price map': 'Rust 数据管道为每个区域和类型计算各时段的中位数。MapLibre 按分位数把每个 ABS 区域分成 7 档上色。',
     Filters: '每种筛选组合都有预先生成的 JSON 文件。切换筛选只加载一个文件，URL 保存所选条件。',

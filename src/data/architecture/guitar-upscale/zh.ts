@@ -27,6 +27,49 @@ const arch: Arch = {
     { to: 'Google Play', text: 'Google Play 出售 Pro 和 Remove ads，AdMob 显示广告。' },
     { to: 'Cloudflare', text: 'Cloudflare Workers 托管网站，KV 存放内置歌曲。' },
   ],
+  design: {
+    scale: [
+      '每台设备对应一位演奏者，声音、时钟和录音器都在设备上运行。',
+      '约 100 首内置歌曲以 Guitar Pro 文件提供，用户自己的歌曲留在浏览器里。',
+      '重活有硬性上限。一次和弦识别可让 wasm 内存增长到约 600 MB，Worker 上传体积保持在 3 MiB 以下。',
+    ],
+    data: [
+      '设置、界面状态和钢琴卷帘的 Redux 切片保存到 localStorage，每个切片一个键。',
+      '歌曲、录音、循环和钢琴卷帘编辑共用一个 TickTimeline，音符和和弦按时钟节拍归档。',
+      '内置歌曲按文件名存在 Cloudflare KV 中，一个 song-settings.json 记录每首歌的和弦选择。',
+    ],
+    interfaces: [
+      '歌曲网站通过 Worker 路由访问：Songsterr 搜索和元数据、歌曲文件搜索和下载、歌词。',
+      '音符和和弦走两个 RxJS subject，发送方不必知道谁来播放、录制或做动画。',
+      '歌曲以 .gp 或 MIDI 文件载入，也以同样格式导出。内置列表是 songs/index.json，每首歌是 songs-json/<name>.json，地址里带内容哈希。',
+    ],
+    reliability: [
+      '每个网站代理都有超时。因网站宕机而失败的歌词查询不会进入缓存。',
+      'redux-persist 升级版本会清空旧版本保存的切片，循环器会在换音阶、调弦或变调夹清除循环之前先保存。',
+      '旋律会跳过等待超过 10 毫秒的节拍，最多连续 8 个，所以点击播放后渲染变慢也不会推迟第一个音。',
+    ],
+    security: [
+      '站长路由校验开发者密钥的 SHA-256，不匹配就返回 404。用于部署的 GitHub 令牌放在 Worker 密钥里。',
+      'CORS 只允许 Capacitor 来源和网站读取代理，服务端构建会发送 HSTS、nosniff 和 frame-ancestors none。',
+      '音频文件的和弦由 ONNX 在设备上识别。只有 GitHub 版 APK 会把一小段样本发给 Shazam 来识别歌名。',
+    ],
+    performance: [
+      '节拍时钟在 Web Worker 里运行，超时以起点起算的准确时间为目标，所以主线程忙碌也不会拖慢节拍。',
+      '最多 4 个 worker 组成的池一次找一种和弦类型的按法，应用的每个功能都以懒加载组件载入。',
+      '和弦模型首次使用时加载并留在 Cache Storage。手机上的音频上下文请求 12 毫秒缓冲，因为 4 到 8 毫秒时混响会爆音。',
+    ],
+    operations: [
+      '每次推送到 main 会并行运行检查和 Android 构建，检查失败就取消本次运行。两者都通过后才发布。',
+      '悉尼时间 19:00 的夜间任务只在应用有变化时构建 Google Play 包。一个包在重型 runner 上要 40 到 46 分钟。',
+      'OpenNext 为 Cloudflare Workers 构建服务端并开启可观测性。发布带有日期加计数的标签，GitHub 版据此自行更新。',
+    ],
+    tradeoffs: [
+      '网站、Android 和 iPhone 共用一个静态构建而不做原生应用，每个功能只写一次，代价是手机声音和购买需要 Capacitor 插件。',
+      '引擎在 React 之外运行，用设置的简单副本，而不是到处读 store，音频代码不需要 hook，代价是要保持副本同步。',
+      '和弦模型在设备上运行而不用服务器 API，文件不离开手机，代价是首次运行要下载 14 MB 模型。',
+      '用采样的 General MIDI 乐器而不用合成器，换来真实的吉他和钢琴音色，代价是首次点击时要加载采样。',
+    ],
+  },
   features: {
     Fretboard: 'Konva 按设置里的音阶和调弦在画布上画出指板。点按把音符送上事件总线，再由 smplr 发声。',
     'Scale, tuning and capo': '音阶和调弦是应用内的固定数据。选择会写入 Redux，指板和指法随之重建。',

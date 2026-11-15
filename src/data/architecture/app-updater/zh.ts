@@ -26,6 +26,48 @@ const arch: Arch = {
     { to: 'Workbench Soft site', text: '网站根据自己的项目列表生成应用目录。' },
     { to: 'archon', text: 'Archon 不发布 APK，所以它的卡片带一个打开链接。' },
   ],
+  design: {
+    scale: [
+      '开发者自己手机上的一个界面，每个已发布的工作室应用对应一张卡片。',
+      'GitHub API 未登录时每小时只允许 60 次调用，这决定了 10 分钟的列表缓存。',
+    ],
+    data: [
+      '没有数据库。shared preferences 保存上一次的发布列表（含说明和名称）以及一次运行中学到的包名。',
+      '资源键是标签前缀加上去掉版本和平台后缀的 APK 名，例如 farnear/farnear。',
+      '已安装的应用在每次检查时从 Android 包管理器读取。',
+    ],
+    interfaces: [
+      '共享公开发布仓库的 GitHub Releases API 逐页列出每个 APK，compare API 提供提交说明。',
+      '工作室网站提供一份目录 JSON，含每个项目的名称、平台和链接。',
+      'Shizuku 以 shell 用户运行 sh -c，执行 pm install -r -d -S 和 pm uninstall。',
+    ],
+    reliability: [
+      'GitHub 检查失败时显示已保存的列表，再次打开要等一分钟才会重新请求。',
+      '更新过程在 activity 之外运行，所以旋转屏幕不会中断它，取消会在下一个数据块前停下。',
+      '只有出现签名或版本冲突时才会卸载挡路的构建，退出状态能暴露重装失败。',
+    ],
+    security: [
+      '只读取公开发布，不保存令牌或账号。',
+      '安装权限来自用户授予的 Shizuku 授权，应用不执行任何 root 命令。',
+      '自身更新在安装前会核对 APK 的文件大小。',
+    ],
+    performance: [
+      'APK 以 64 KB 的块下载，带超时和停止检查。',
+      '发布列表保持 10 分钟有效，所以多数打开都会跳过 API。',
+      '没有说明的卡片在卡片显示之后，从 compare API 在后台加载说明。',
+    ],
+    operations: [
+      '检查在自托管 runner 上运行 ktlint、shellcheck、shfmt、actionlint、markdownlint、单元测试和调试构建。',
+      'Release 与检查并行构建签名 APK，检查通过后由 release-gate.sh 发布。',
+      '该任务打上日期版本标签，并在公开发布仓库里创建更新器的发布，保留最近 3 个。',
+    ],
+    tradeoffs: [
+      '选 Shizuku 而不是系统安装器，安装无需提示，代价是每次重启后要先启动它。',
+      '选普通 Views 而不是 Compose，因为只有一个界面且要用 Shizuku 的 Java API，代价是手写布局。',
+      '选公开发布仓库而不是私有应用仓库，手机无需令牌，代价是每小时 60 次调用的上限。',
+      '更新器自己的 APK 最后用一条 shell 命令安装，因为安装可能杀掉正在运行的进程。',
+    ],
+  },
   features: {
     'Update all':
       '更新队列把每个落后的应用排队，按 64 KB 分块下载。Shizuku 以 shell 用户身份逐个安装，取消会在下一块之前停止。',

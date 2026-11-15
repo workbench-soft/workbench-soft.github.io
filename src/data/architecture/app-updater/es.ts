@@ -38,6 +38,48 @@ const arch: Arch = {
     { to: 'Workbench Soft site', text: 'El sitio crea el catálogo de apps a partir de su propia lista de proyectos.' },
     { to: 'archon', text: 'Archon no publica APK, así que su tarjeta lleva un enlace Abrir.' },
   ],
+  design: {
+    scale: [
+      'Una pantalla en el propio teléfono del desarrollador, con una tarjeta por cada app publicada del estudio.',
+      'La API de GitHub permite 60 llamadas por hora sin token, lo que fijó la caché de lista de 10 minutos.',
+    ],
+    data: [
+      'Sin base de datos. Las shared preferences guardan la última lista de versiones, con notas y nombres, y los nombres de paquete aprendidos en una pasada.',
+      'Una clave de recurso es el prefijo de la etiqueta más el nombre del APK sin versión ni sufijo de plataforma, como farnear/farnear.',
+      'Las apps instaladas salen del gestor de paquetes de Android en cada comprobación.',
+    ],
+    interfaces: [
+      'La API de Releases de GitHub del repositorio público compartido lista cada APK por páginas, y la API compare da las notas de commits.',
+      'El sitio del estudio sirve un catálogo JSON con el nombre, las plataformas y el enlace de cada proyecto.',
+      'Shizuku ejecuta sh -c como usuario shell, con pm install -r -d -S y pm uninstall.',
+    ],
+    reliability: [
+      'Si falla la comprobación de GitHub se muestra la lista guardada, y una apertura espera un minuto antes de volver a preguntar.',
+      'La actualización vive fuera de la activity, así que girar la pantalla no la corta, y Cancelar para antes del siguiente bloque.',
+      'Una compilación que estorba solo se quita ante un choque de firma o de versión, y el código de salida delata una reinstalación fallida.',
+    ],
+    security: [
+      'Solo lee versiones públicas y no guarda token ni cuenta.',
+      'El permiso para instalar viene de la autorización de Shizuku que da la persona, y la app no ejecuta ningún comando root.',
+      'La instalación propia comprueba el tamaño del archivo APK antes de instalar.',
+    ],
+    performance: [
+      'Los APK se descargan en bloques de 64 KB con tiempos de espera y una comprobación de parada.',
+      'La lista de versiones queda fresca 10 minutos, así que la mayoría de las aperturas se salta la API.',
+      'Las notas de las tarjetas que no las tienen se cargan en segundo plano con la API compare, tras mostrar las tarjetas.',
+    ],
+    operations: [
+      'Checks ejecuta ktlint, shellcheck, shfmt, actionlint, markdownlint, las pruebas unitarias y la compilación de debug en un runner propio.',
+      'Release compila un APK firmado junto a Checks, y release-gate.sh lo publica cuando los checks pasan.',
+      'La tarea pone una etiqueta con fecha y crea una versión del actualizador en el repositorio público, conservando las últimas 3.',
+    ],
+    tradeoffs: [
+      'Shizuku en vez del instalador del sistema, para instalar sin avisos, a costa de un arranque tras cada reinicio.',
+      'Views simples en vez de Compose, por una sola pantalla y la API Java de Shizuku, a costa de un diseño hecho a mano.',
+      'Un repositorio público de versiones en vez de repositorios privados de apps, para que el teléfono no necesite token, a costa del límite de 60 llamadas por hora.',
+      'El APK propio se instala el último, con un solo comando shell, porque una instalación puede matar el proceso en marcha.',
+    ],
+  },
   features: {
     'Update all':
       'La ronda pone en cola cada app atrasada y la descarga en partes de 64 KB. Shizuku instala cada una como el usuario shell, y Cancelar para antes de la parte siguiente.',

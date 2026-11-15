@@ -45,6 +45,49 @@ const arch: Arch = {
     },
     { to: 'Google Play', text: 'AdMob zeigt die Werbung, und Play Billing verkauft Werbung entfernen und Pro.' },
   ],
+  design: {
+    scale: [
+      'Eine private Liste bleibt auf einem Telefon, und eine geteilte Liste erreicht über einen Link einen Haushalt oder ein paar Freunde.',
+      'Die App hat keinen Server, daher bestimmt der kostenlose Firestore-Tarif mit 50.000 Lese- und 20.000 Schreibvorgängen am Tag das Budget geteilter Listen.',
+    ],
+    data: [
+      'SQLite auf dem Telefon hält Listen, Einträge, Geschäfte, Gänge, Wege, bekannte Namen und Preise. Die Web-Version läuft mit demselben SQLite auf wasm.',
+      'Nur geteilte Listen gehen an Firestore, als lists/{id}/items/{itemId}, und die Gänge und Wege eines Geschäfts als stores/{osmId}.',
+      'Ein Löschen setzt deleted = 1 und behält die Zeile. dirty = 1 markiert eine Änderung, die Firestore noch nicht hat.',
+      'Ein Foto ist ein JPEG mit 360 Pixeln und etwa 30 KB, im Eintrag abgelegt.',
+    ],
+    interfaces: [
+      'Ein Teilen-Link trägt eine zufällige Listen-ID aus 32 Hex-Ziffern, und ein Intent-Filter von Android öffnet ihn in der App.',
+      'Ein Reise-Link von Tripforge trägt base64url-JSON mit v, place, start, nights und bis zu 60 Orten.',
+      'Preise kommen aus dem JSON hinter der Suche der Seiten von Woolworths und Coles, Geschäfte von Nominatim und Overpass, Sehenswürdigkeiten vom Tripforge-Worker oder von Wikidata.',
+    ],
+    reliability: [
+      'Jede Änderung wird zuerst in SQLite gespeichert, und der Bildschirm zeichnet daraus, daher geht ein Abhaken ohne Netz. Das Senden wird alle 30 Sekunden wiederholt, solange die App offen ist.',
+      'Pro Eintrag gewinnt die neuere updated-Zeit, auf dem Telefon und in den Firestore-Regeln. Zwei Offline-Änderungen am selben Eintrag lassen sich nicht mischen, und die spätere nimmt den ganzen Eintrag.',
+      'Der Listener läuft eine Minute, nachdem die App in den Hintergrund ging. Eine geschlossene App bekommt keine Hinweise, dafür braucht es einen Push-Server.',
+    ],
+    security: [
+      'Jede Installation meldet sich anonym bei Firebase an, und die zufällige Listen-ID im Link ist das Geheimnis. Firestore verweigert das Auflisten von Listen.',
+      'Die Regeln prüfen die 32-stellige Hex-ID, die bekannten Felder, ihre Größen und eine Zeit, die höchstens einen Tag voraus liegt. Ein Foto muss JPEG-Daten oder ein Bild von Wikimedia Commons sein.',
+      'Wer den Link hat, kann die Liste lesen, ändern und löschen, und Firebase App Check ist vorerst aus.',
+    ],
+    performance: [
+      'Das Senden wartet eine halbe Sekunde, daher geht eine Folge von Häkchen in einem Schreibvorgang hinaus.',
+      'Preise kommen von Woolworths zu je 3 Namen und von Coles einzeln. Sie bleiben einen Tag in SQLite, und nur die Preise werden neu gezeichnet.',
+      'Das Telefon liest die Gänge eines Geschäfts höchstens alle 10 Minuten aus Firestore.',
+    ],
+    operations: [
+      'Checks und Release starten bei jedem Push auf main zusammen. Das Release veröffentlicht die signierte APK, sobald Checks bestehen, und ein fehlgeschlagener Lauf bricht den Build ab.',
+      'Ein Google-Play-Bundle wird einmal am Tag um 19:00 Sydney gebaut, und nur wenn sich die App geändert hat.',
+      'Firebase Hosting liefert die Web-Version aus, und sie wird nach bestandenen Checks mit den Firestore-Regeln ausgerollt. Die APK von GitHub aktualisiert sich selbst, der Play-Build lässt diesen Code weg.',
+    ],
+    tradeoffs: [
+      'Expo statt einer nativen Kotlin-App, damit ein Code-Stand auch die Seite liefert, auf der sich ein geteilter Link öffnet.',
+      'Firestore-Zeilen statt eines eigenen Servers oder WebRTC, daher gibt es keinen Server zu betreiben, und ein Häkchen wartet nicht auf ein schlafendes Telefon.',
+      'Die neuere Änderung gewinnt pro Eintrag statt eines Feld-Merge: weniger Code, aber eine ältere Offline-Änderung geht verloren.',
+      'Firebase Hosting statt GitHub Pages, weil wasm-SQLite die Header COOP und COEP braucht, die Pages nicht setzen kann.',
+    ],
+  },
   features: {
     'Share by link':
       'Firestore hält eine Kopie jeder geteilten Liste, und der Link trägt ihre zufällige ID. Jedes Handy speichert eine Änderung zuerst in SQLite und sendet sie, sobald das Netz zurück ist.',

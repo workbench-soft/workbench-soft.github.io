@@ -27,6 +27,53 @@ const arch: Arch = {
     { to: 'memories-demo-webdav', text: 'Google Play 审核用这台示例 NAS 登录。' },
     { to: 'Tailscale', text: '第二个地址让人在外也能连上 NAS。Funnel 提供相册链接。' },
   ],
+  design: {
+    scale: [
+      '每次安装对应一个人和一台家用 NAS，照片和视频最多约一百万。',
+      '50 万张照片的首次同步要花近一天，因为 NAS 每秒只能回应约 10 次文件头读取。',
+      '相册链接通过 Tailscale Funnel 送到几个人手里，所以 NAS 是唯一的服务器。',
+    ],
+    data: [
+      '照片留在 NAS 上。手机在 SQLite 里维护索引，含文件夹、媒体和一张由触发器计数的 days 表。',
+      '文件行只存文件夹 id 和文件名，所以一百万个文件约占 200 MB。',
+      '拍摄时间存为以秒计的墙上时间，因此历史上的今天只是一次范围查询。',
+      'NAS 在照片旁放一个 .memories 文件夹，里面有 index.db、status.json、faces.db 和相册文件。',
+    ],
+    interfaces: [
+      '手机用 WebDAV 与 NAS 通信：每个文件夹一次 PROPFIND，读文件头用带范围的 GET，另有 PUT、MKCOL 和 MOVE。',
+      'NAS 上的容器把 index.db 和 status.json 发布到 .memories，手机通过同一条 WebDAV 链路合并它们。',
+      'Rust 文件夹规则在 Android 上以 uniffi 库、在网页上以 wasm 的形式进入应用。',
+    ],
+    reliability: [
+      '同步每 50 个文件在一个事务里保存，被打断的一轮会在下次运行时接着做。',
+      '后台任务有 8 分钟预算，并先安排提醒，所以 NAS 出故障时提醒照样到。',
+      '图库根目录为空就停止这一轮，所以未挂载的共享不会清空索引。',
+    ],
+    security: [
+      'NAS 登录信息通过 expo-secure-store 存在 Android 密钥库里，应用以 Basic 头发送。',
+      '相册链接带一个 16 字节的随机令牌。相册服务器只读挂载图库，对其他路径一律回 404。',
+      '地名来自应用内的离线数据库，所以没有任何 GPS 点离开手机。',
+      '允许普通 http，因为家里的 NAS 很少有证书。',
+    ],
+    performance: [
+      'FlashList 绘制可见的图块并提前一屏。每个图块显示从前 66 KB 读出的 EXIF 小缩略图。',
+      '读取在队列里每次 8 个，最新的先读，原生模块把 OkHttp 每个主机的请求数从 5 提到 32。',
+      'days 和 geo_cells 两张表让月份列表、旅行和地图不必读一百万行文件记录。',
+      'NAS 上的索引器从自己的磁盘读文件头只要毫秒，WebDAV 则要几秒。',
+    ],
+    operations: [
+      '一个 pnpm 单体仓库，node、pnpm、java 和 rust 版本固定在 mise.toml，只有一份锁文件。',
+      '每次推送到 main 且检查通过，就发布一个以日期为版本的签名 APK，检查失败时 release-gate.sh 取消构建。',
+      '已安装的应用通过 GitHub API 读取最新版本。Google Play 版本把更新器换成空桩，每天构建一次。',
+      'NAS 上的容器用部署脚本通过 ssh 发布。',
+    ],
+    tradeoffs: [
+      '选普通 WebDAV 而不是自建服务器，任何 NAS 都能用，代价是首次同步慢。',
+      '选手机上的 SQLite 而不是服务器数据库，应用可离线运行，托管零成本。',
+      '拍摄时间用墙上时间而不是 UTC，历史上的今天保持为简单范围，但跨两个时区的照片无法精确排序。',
+      '选一个 Rust 文件夹规则 crate 而不是每个应用一份拷贝，手机和桌面分拣一致，代价是每个 ABI 多 1 到 2 MB。',
+    ],
+  },
   features: {
     'Daily reminder':
       'expo-notifications 保存接下来 7 天的单次提醒，由后台任务根据索引安排。当天若有出国旅行，就选那一年。',

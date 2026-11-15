@@ -36,6 +36,49 @@ const arch: Arch = {
     { to: 'OpenStreetMap', text: 'Nominatim finner en butikk etter navn, og Overpass finner butikken i nærheten.' },
     { to: 'Google Play', text: 'AdMob viser reklamen, og Play Billing selger Fjern reklame og Pro.' },
   ],
+  design: {
+    scale: [
+      'En privat liste blir på én telefon, og en delt liste når en husstand eller noen få venner med én lenke.',
+      'Appen har ingen server, så den gratis Firestore-planen på 50 000 lesinger og 20 000 skrivinger i døgnet setter budsjettet for delte lister.',
+    ],
+    data: [
+      'SQLite på telefonen holder lister, varer, butikker, ganger, ruter, kjente navn og priser. Nettversjonen kjører den samme SQLite på wasm.',
+      'Bare delte lister går til Firestore, som lists/{id}/items/{itemId}, og gangene og rutene i en butikk som stores/{osmId}.',
+      'En sletting setter deleted = 1 og beholder raden. dirty = 1 markerer en endring Firestore ikke har mottatt ennå.',
+      'Et bilde er en JPEG på 360 piksler, omtrent 30 KB, lagt inni varen.',
+    ],
+    interfaces: [
+      'En delelenke har en tilfeldig liste-id på 32 heksadesimale sifre, og et intent filter i Android åpner den i appen.',
+      'En reiselenke fra Tripforge har base64url-JSON med v, place, start, nights og opptil 60 steder.',
+      'Prisene kommer fra JSON-en bak søket på nettsidene til Woolworths og Coles, butikkene fra Nominatim og Overpass, severdighetene fra Tripforge-Worker eller Wikidata.',
+    ],
+    reliability: [
+      'Hver endring lagres først i SQLite, og skjermen tegnes fra den, så en avhuking virker uten dekning. Sendingen prøves på nytt hvert 30. sekund mens appen er åpen.',
+      'Den nyeste updated-tiden vinner per vare, på telefonen og i Firestore-reglene. To offline-endringer av samme vare kan ikke slås sammen, og den siste tar hele varen.',
+      'Lytteren går i ett minutt etter at appen er gått i bakgrunnen. En lukket app får ingen varsler, siden det krever en push-server.',
+    ],
+    security: [
+      'Hver installasjon logger anonymt inn i Firebase, og den tilfeldige liste-iden i lenken er hemmeligheten. Firestore nekter å liste lister.',
+      'Reglene sjekker 32-sifret hex-id, kjente felt, størrelsene og en tid som er høyst ett døgn fram. Et bilde må være JPEG-data eller et bilde fra Wikimedia Commons.',
+      'Alle som har lenken kan lese, endre og slette listen, og Firebase App Check er foreløpig av.',
+    ],
+    performance: [
+      'Sendingen venter et halvt sekund, så en rekke avhukinger går ut i én skriving.',
+      'Priser lastes fra Woolworths 3 navn om gangen og fra Coles ett om gangen. De blir i SQLite i ett døgn, og bare prisene tegnes på nytt.',
+      'Telefonen leser gangene i en butikk fra Firestore høyst én gang per 10 minutter.',
+    ],
+    operations: [
+      'Checks og Release starter sammen ved hver push til main. Utgivelsen publiserer den signerte APK-en når Checks består, og en mislykket Checks avbryter bygget.',
+      'En Google Play-bundle bygges én gang i døgnet klokken 19:00 Sydney-tid, og bare når appen er endret.',
+      'Firebase Hosting leverer nettversjonen, og den rulles ut med Firestore-reglene etter bestått Checks. APK-en fra GitHub oppdaterer seg selv, og Play-bygget har ikke den koden.',
+    ],
+    tradeoffs: [
+      'Expo framfor en innebygd Kotlin-app, så én kodebase også gir siden en delt lenke åpnes på.',
+      'Firestore-rader framfor en egen server eller WebRTC: ingen server å drive, og en avhuking venter ikke på en sovende telefon.',
+      'Den nyeste endringen vinner per vare framfor en sammenslåing av felt: mindre kode, men en eldre offline-endring går tapt.',
+      'Firebase Hosting framfor GitHub Pages, fordi wasm-SQLite trenger COOP- og COEP-headere som Pages ikke kan sette.',
+    ],
+  },
   features: {
     'Share by link':
       'Firestore holder en kopi av hver delt liste, og lenken bærer den tilfeldige id-en. Hver telefon lagrer en endring i SQLite først og sender den når nettet er tilbake.',

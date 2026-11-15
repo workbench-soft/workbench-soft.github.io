@@ -45,6 +45,49 @@ const arch: Arch = {
     { to: 'Firebase', text: 'Firestore keeps shared notes live, and Hosting serves the website.' },
     { to: 'Google Play', text: 'AdMob shows the banner, and Play Billing sells Remove ads and KeepPad Pro.' },
   ],
+  design: {
+    scale: [
+      'One person per install. Notes stay on the phone, and only a shared note reaches Firestore, as text of up to 20,000 characters.',
+      'Hey Keep runs all day as an Android foreground service, so battery shaped the design: a loudness gate skips quiet frames.',
+    ],
+    data: [
+      'SQLite keeppad.db holds notes, exports (which app got which note) and applied_inbox. PRAGMA user_version counts the migration steps a phone ran.',
+      'Recordings are WAV files in files/audio. Notes Hey Keep records with the app closed are JSON files in files/keep-inbox.',
+      'Settings sit in localStorage. Tokens of linked apps sit in the Android keystore or the iOS keychain through expo-secure-store.',
+      'A shared note in Firestore holds only text, group and updated.',
+    ],
+    interfaces: [
+      "The Kotlin service and the app pass notes through the JSON inbox and a watch event, since the service can't reach SQLite.",
+      'Linked apps get each new note through their own web API. Obsidian gets a file in a picked folder, and a Memories journal gets it over WebDAV.',
+      'expo-speech-recognition turns speech into text through the Android speech service or the Apple recognizer.',
+    ],
+    reliability: [
+      'A long recording writes a pending PCM file and a JSON file as it goes, and after a crash the app turns them into a note.',
+      "applied_inbox saves the inbox id in the same transaction as the note, so a crash can't import a continue note twice.",
+      'Each local edit stores updated = MAX(now, updated + 1), so a phone with a slow clock still wins in Firestore.',
+    ],
+    security: [
+      'No accounts and no cloud speech. The wake word model runs on the phone, so no sound leaves it.',
+      'The Firestore rules ask for a 32 hex note id, deny listing and accept only text, group and updated. Nobody can browse for ids.',
+      'Linked app tokens stay out of the notes file, in the secure store.',
+    ],
+    performance: [
+      'In a quiet room each 100 ms frame costs one sum. The sherpa-onnx model of 3.3M parameters runs only on loud frames.',
+      'Each write bumps notesVersion and the screens reload. The notes FlashList renders only the rows on screen.',
+      'A word match picks the group at once, and Gemini Nano or Apple Foundation Models runs only with the app open.',
+    ],
+    operations: [
+      'Checks and Release start together on each push to main. The release publishes the APK once Checks pass, and keeps the last 3 releases.',
+      'A Play bundle builds with PLAY=1 once a day at 19:00 Sydney, when the app changed. The GitHub APK updates itself.',
+      'Firebase Hosting serves the website, and it deploys with the Firestore rules after Checks pass. The iPhone build runs on macOS by hand only.',
+    ],
+    tradeoffs: [
+      'Expo with Kotlin and Swift modules over a native Android app, for the iPhone and the web, at the cost of native code beside TypeScript.',
+      'A foreground service with sherpa-onnx over a wake word in JavaScript, so it hears with the screen off. The model is English only.',
+      "The phone's own speech recognizer over a model in the APK. The phone already has English and Russian, so the app ships no model.",
+      'A GitHub APK that updates itself plus a Play build with stubs over one build, since Play rejects apps that install updates.',
+    ],
+  },
   features: {
     'Hey Keep':
       'A Kotlin foreground service skips quiet sound and runs a sherpa-onnx keyword model on loud frames. Replies play from clips recorded per voice, and tuning sets a threshold per phrase.',

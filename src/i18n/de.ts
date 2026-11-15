@@ -65,6 +65,16 @@ const de: Catalog = {
         parts: 'Bausteine',
         flow: 'Datenfluss',
         links: 'Verbunden mit',
+        design: {
+          scale: 'Umfang und Grenzen',
+          data: 'Daten',
+          interfaces: 'Schnittstellen',
+          reliability: 'Zuverlässigkeit',
+          security: 'Sicherheit und Datenschutz',
+          performance: 'Leistung',
+          operations: 'Build und Release',
+          tradeoffs: 'Abwägungen',
+        },
       },
       kinds: {
         app: 'Apps für Menschen',

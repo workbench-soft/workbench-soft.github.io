@@ -35,6 +35,53 @@ const arch: Arch = {
     { to: 'YouTube', text: 'Die Videos gehen über die YouTube Data API hoch, etwa 6 am Tag.' },
     { to: 'Claude', text: 'Die Claude CLI schreibt den Text über das Abo ohne API-Konto.' },
   ],
+  design: {
+    scale: [
+      'Ein Ersteller auf einem Windows-PC mit GPU. Der tägliche Lauf lädt höchstens etwa 6 Videos hoch.',
+      'Jeder Upload kostet etwa 1.600 der 10.000 täglichen YouTube-Kontingenteinheiten, und dieses Kontingent setzt die Obergrenze.',
+      'Die lokale GPU erzeugt pro Lauf etwa 5 s Video in 720p, daher ist jeder Hintergrund ein Schleifenclip.',
+    ],
+    data: [
+      'Der Zustand sind Dateien im Themenordner: theme.toml hält die Einstellungen, out/upload.json markiert ein Thema als erledigt, und out/claude.json bewahrt den von Claude geschriebenen Text.',
+      'Ein Projekt hält seine zehn Kacheln in pipeline.json, jede mit kind, enabled und params.',
+      'Bereinigte Songs gehen als FLAC nach out/clean/, die Originale bleiben. Geheimnisse liegen in einem Ordner außerhalb des Repos.',
+    ],
+    interfaces: [
+      'Die CLI hat die Befehle bg, clean, build, upload, publish, run, enhance, clips und Kachelbefehle. Der Songs-Tab von Archon liest songfactory project und führt songfactory tile aus.',
+      'ffmpeg und ffprobe laufen als Unterprozesse, und ComfyUI bekommt workflows/loop.json per HTTP, mit eingesetztem Prompt und Seed.',
+      'upload.py ruft videos.insert und thumbnails.set der YouTube Data API auf, nach einer OAuth-Anmeldung für Desktop-Apps.',
+      'progress.py gibt Zeilen step, file i/n und progress NN% aus, die der Launcher in Balken verwandelt.',
+    ],
+    reliability: [
+      'upload.json wird geschrieben, sobald YouTube die Video-ID liefert, daher löst ein fehlgeschlagenes Vorschaubild keinen zweiten Upload aus.',
+      'run überspringt Ordner, die mit _ oder einem Punkt beginnen, und macht mit dem nächsten Thema weiter, wenn eines scheitert.',
+      'claude.py ist optional. Eine fehlende CLI oder ein fehlgeschlagener Aufruf gibt eine Zeile aus, und das Thema läuft mit dem Ordnernamen als Titel weiter.',
+      'Eine abgeschaltete Kachel reicht ihre Eingabe weiter, und eine Audiokachel nimmt die Dateien der nächsten früheren Kachel, die lief.',
+    ],
+    security: [
+      'Das OAuth-Token für YouTube und die anderen Geheimnisse liegen in einem Ordner außerhalb des Repos.',
+      'claude -p läuft ohne die API-Key-Variable, daher belastet es das angemeldete Abo und kein API-Konto.',
+      'Uploads setzen containsSyntheticMedia und bleiben privat, bis Google das Projekt prüft.',
+    ],
+    performance: [
+      'h264_nvenc kodiert auf der GPU, wenn der PC eine hat, sonst übernimmt libx264.',
+      'Der Clip läuft mit -stream_loop und Ping-Pong, daher deckt ein 5-s-Clip ein langes Video ohne langes Rendern ab.',
+      'Die Bereinigung ist ein ffmpeg-Aufruf mit festem Gain, highpass, afftdn und einem dynamischen Schnitt bei 7 kHz, ohne neuronales Modell.',
+      'Ein Stapel-Enhance läuft durch einen CLI-Prozess, daher entsteht eine compare.html für alle Songs.',
+    ],
+    operations: [
+      'Eine geplante Windows-Aufgabe führt mise run daily um 03:00 auf dem PC aus, der Songs, Token und GPU hält.',
+      'checks.yml führt Lint, Tests und uv build auf dem selbst gehosteten Windows-Runner bei jedem Push auf main aus.',
+      'release.yml baut Wheel und sdist neben Checks, und release-gate.sh veröffentlicht, sobald Checks bestehen. Ein fehlgeschlagener Checks-Lauf bricht den Build ab.',
+      'mise run doctor gibt pro Voraussetzung eine Zeile aus, ok oder MISSING, und als JSON für den Launcher.',
+    ],
+    tradeoffs: [
+      'ffmpeg auf der Kommandozeile statt einer Python-Videobibliothek, damit Mischen, Schleifen und NVENC-Kodierung in einem Werkzeug liegen, doch Filtergraphen sind Strings, und ein Tippfehler zeigt sich erst zur Laufzeit.',
+      'Ein kurzer Schleifenclip statt eines Clips so lang wie die Songs, da die GPU pro Lauf etwa 5 s erzeugt.',
+      'Einfache Dateien pro Thema statt einer Datenbank, damit eine Datei beantwortet, ob ein Thema hochgeladen wurde, doch ein verschobener Ordner verliert seine Verbindung zum Upload.',
+      'Die lokale Aufgabenplanung statt eines CI-Cronjobs, da Songs und Token außerhalb von git liegen, doch der PC muss um 03:00 laufen.',
+    ],
+  },
   features: {
     'Audio workbench':
       'Ein Fenster mit tkinter startet den Befehl zum Reinigen oder Verbessern für die gewählten Dateien. Eine Namensprüfung stoppt den Stapel, bevor zwei Ergebnisse kollidieren.',

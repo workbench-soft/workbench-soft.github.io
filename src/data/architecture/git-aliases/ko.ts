@@ -23,6 +23,47 @@ const arch: Arch = {
     '결과는 터미널에 나오고, 저장소는 git으로 바뀝니다.',
   ],
   links: [{ to: 'GitHub', text: '저장소를 두고, 검사를 돌리고, 날짜가 붙은 릴리스를 냅니다.' }],
+  design: {
+    scale: [
+      '개발자 한 명이 몇 대의 기기에서 쓰고, 서버는 없습니다. 각 별칭은 bin/의 bash 스크립트 하나입니다.',
+      '부하는 별칭당 git 호출 몇 번이라서, 한계는 스크립트가 아니라 git과 저장소가 정합니다.',
+    ],
+    data: [
+      '별칭은 자체 상태를 두지 않고, git으로 저장소를 읽고 바꿉니다.',
+      '설치 프로그램은 gitaliases.dir와 include.path를 사용자 git 설정에, 함수를 zsh나 PowerShell 프로필에 씁니다.',
+      'aliases.gitconfig가 각 별칭 이름을 클론 안의 스크립트에 연결합니다.',
+    ],
+    interfaces: [
+      'git은 별칭을 자식 프로세스로 실행하므로, 스크립트는 인자를 받고 터미널에 출력합니다.',
+      'git sb는 경로가 든 __cd__ 줄을 stdout에 내고, zsh나 PowerShell 함수가 그것을 cd로 바꿉니다.',
+      'fzf가 선택 화면을 그리고, 스크립트는 보조 파일 _shared.sh와 _prune.sh를 불러옵니다.',
+    ],
+    reliability: [
+      '각 스크립트는 set -euo pipefail로 돌아서, git 호출이 실패하면 별칭이 멈춥니다.',
+      '브랜치와 worktree 삭제는 메인 worktree, 현재 폴더, 잠긴 worktree를 건너뜁니다.',
+      '선택 화면에서 Esc를 누르면 아무것도 지우지 않고 별칭이 끝납니다.',
+    ],
+    security: [
+      '바깥 서비스는 git 원격뿐입니다. 스크립트는 토큰을 저장하지 않고 API도 부르지 않습니다.',
+      '설치 프로그램은 바꾸기 전마다 묻고, 고칠 파일을 먼저 복사합니다.',
+      '삭제 별칭은 후보를 보여 주고 사람이 고른 것만 지웁니다.',
+    ],
+    performance: [
+      '각 별칭은 git 호출 몇 번을 가진 bash 프로세스 하나이고, pull 한 번으로 모두 갱신됩니다.',
+      '정리 목록은 for-each-ref 한 번과 worktree 목록에서 만들고, one_line은 printf -v를 씁니다. worktree마다 명령 치환을 하면 fork 비용이 들기 때문입니다.',
+    ],
+    operations: [
+      'lint.sh는 shellcheck와 shfmt를 돌리고 각 별칭에 스크립트, 설명, README 행이 있는지 확인합니다. test.sh는 임시 저장소에서 별칭을 실행합니다.',
+      'pre-commit과 pre-push 훅이 mise run lint를 실행하고, lint.yml이 Linux와 Windows 러너에서 실행합니다.',
+      'main에 검사를 통과한 푸시마다 v2026.10.30.1 같은 날짜 릴리스가 붙습니다.',
+    ],
+    tradeoffs: [
+      '인라인 ! 별칭이나 셸 함수 대신 별칭마다 bash 스크립트를 두어 shellcheck와 테스트가 닿게 했고, 대가는 별칭마다 파일 하나입니다.',
+      'TypeScript나 Rust 대신 bash를 골랐습니다. git이 모든 시스템에 bash를 싣고 있어 어떤 기기에도 Node가 필요 없기 때문입니다.',
+      '복사한 별칭 대신 클론을 가리키는 include를 써서 git pull로 갱신합니다. 클론을 옮기면 깨집니다.',
+      '설치 프로그램을 하나가 아닌 둘로 둔 것은 프로필을 고쳐야 하는 쪽이 PowerShell뿐이기 때문이며, 대가는 두 벌을 맞춰 유지하는 일입니다.',
+    ],
+  },
   features: {
     Aliases:
       '설정 파일이 각 별칭 이름을 클론 안의 bash 스크립트에 연결합니다. git a는 각 스크립트 맨 위의 주석을 읽어 목록을 출력합니다.',

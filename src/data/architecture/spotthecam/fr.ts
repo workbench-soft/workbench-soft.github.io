@@ -55,6 +55,49 @@ const arch: Arch = {
     },
     { to: 'GitHub Releases', text: 'Chaque version y dépose l’APK, et le build GitHub se met à jour depuis là.' },
   ],
+  design: {
+    scale: [
+      'Un conducteur par installation. Le fichier des radars compte environ 13 700 radars, un par ligne.',
+      "Le site est fait de fichiers statiques, donc seul le partage de trajets demande un serveur. Un petit Worker reste dans l'offre gratuite de Cloudflare.",
+      'Un trajet partagé est limité à 1 Mo et 100 000 points, et une adresse peut partager 10 trajets par minute.',
+    ],
+    data: [
+      'data/cameras.json contient un radar par ligne : type, État, point, route, banlieue, source, limite et direction.',
+      "Les trajets restent 400 jours dans le stockage privé de l'application. Les limites de route restent 60 jours sur le téléphone.",
+      'Un trajet partagé vit dans Cloudflare KV sous un id de 10 caractères, en lignes de route allégées et totaux sans horaires.',
+    ],
+    interfaces: [
+      'Le Worker répond à POST /api/trips, et à GET et DELETE sur /api/trips/<id>. Tout le reste est un fichier statique.',
+      'Des plugins Capacitor relient la page web aux services de conduite en Kotlin et à leurs ports Swift.',
+      'Les tuiles Overpass donnent routes, voies ferrées et pistes. Photon, Valhalla et TomTom répondent pour les lieux, les itinéraires et le trafic.',
+    ],
+    reliability: [
+      "Le service worker essaie d'abord le réseau et se rabat sur la copie après 4 secondes, avec jusqu'à 500 tuiles gardées hors ligne.",
+      "Une panne du stockage dans le Worker part en 503 avec des en-têtes CORS, pour que l'application y lise une erreur et non une absence de signal.",
+      "Quand un serveur d'itinéraires public ne répond pas, la voix le dit. Au-delà de la limite TomTom, les itinéraires se passent du trafic.",
+    ],
+    security: [
+      "Le partage ne demande aucune connexion. KV ne garde que le hachage SHA-256 de la clé de suppression, donc lire le stockage ne permet pas d'effacer des trajets.",
+      'Le Worker vérifie chaque corps avec un analyseur strict et envoie nosniff et une politique default-src none.',
+      "Les trajets restent sur le téléphone tant qu'ils ne sont pas partagés. Un trajet partagé n'a pas d'horaires, et les vitesses aux radars restent exclues sans accord.",
+    ],
+    performance: [
+      'Des services Kotlin rapprochent le GPS des routes en cache sur le téléphone et parlent environ 20 secondes avant un radar, sans réseau.',
+      "La compilation de nuit transforme les limites horaires en fenêtres pour les 35 jours à venir, et le navigateur n'a qu'à choisir la fenêtre en cours.",
+      "KV met un trajet partagé en cache une minute près du lecteur, et les tuiles sont stockées sans le dossier hebdomadaire d'OpenFreeMap.",
+    ],
+    operations: [
+      'Une tâche CI actualise les radars à 3 h, heure de Sydney, et commite le fichier avec un radar par ligne pour garder de petits diffs.',
+      "Chaque push sur main déploie le site sur Cloudflare. Une tâche de nuit envoie le bundle Android à Google Play quand l'application a changé.",
+      "Le build APK de GitHub se met à jour seul depuis GitHub Releases. Le build Google Play n'a pas ce code.",
+    ],
+    tradeoffs: [
+      "Un site Next.js statique dans une coque Capacitor plutôt qu'Expo, pour que la carte et les pages partagent un seul code, au prix d'un Worker pour les trajets.",
+      "Un fichier JSON quotidien plutôt qu'une base derrière une API, pour fonctionner hors ligne sans serveur, au prix d'une liste vieille d'un jour au plus.",
+      'Des services de conduite natifs en Kotlin plutôt que du JavaScript dans la WebView, car Android met la WebView en pause écran éteint.',
+      "Leaflet avec les tuiles OpenFreeMap plutôt que Google Maps ou Mapbox, car il n'y a ni clé ni quota.",
+    ],
+  },
   features: {
     'Camera map':
       'Le build de nuit change les limites horaires de chaque radar en fenêtres pour les 35 jours à venir. Le navigateur choisit la fenêtre de la minute en cours.',

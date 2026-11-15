@@ -64,6 +64,16 @@ const zh: Catalog = {
         parts: '组成部分',
         flow: '数据流',
         links: '关联',
+        design: {
+          scale: '规模与限制',
+          data: '数据',
+          interfaces: '接口',
+          reliability: '可靠性',
+          security: '安全与隐私',
+          performance: '性能',
+          operations: '构建与发布',
+          tradeoffs: '取舍',
+        },
       },
       kinds: {
         app: '面向用户的应用',

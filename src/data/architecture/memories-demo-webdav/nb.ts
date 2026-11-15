@@ -24,6 +24,48 @@ const arch: Arch = {
     { to: 'Google Play', text: 'Notatene under App access gir kontrolløren adressen og innloggingen.' },
     { to: 'Cloudflare', text: 'Gratisplanen for Workers kjører den, og CI ruller den ut når sjekkene går gjennom.' },
   ],
+  design: {
+    scale: [
+      'Ett delt demobibliotek for Google Play-vurderere: 42 bilder, 2 videoer og én innlogging.',
+      'Ett Durable Object tar alle forespørsler, så alle vurderere deler én kopi på den gratis Workers-planen.',
+    ],
+    data: [
+      'Filer ligger i biter på 1 MB i SQLite-lageret til Durable Object, under radgrensen på 2 MB.',
+      'Eksemplene under base/ er skrivebeskyttet. Opplastinger og mapper fra en klient går til Uploads/, med markører for sletting og flytting.',
+      'En JSON-fil har EXIF-datoen til hvert eksempel, som PROPFIND melder som endringstid.',
+    ],
+    interfaces: [
+      'WebDAV bare så langt appen trenger: OPTIONS, PROPFIND med dybde 0 eller 1, GET og HEAD med område, PUT, MKCOL, MOVE og DELETE.',
+      'LOCK svarer 405, og PROPFIND med uendelig dybde svarer 403.',
+      'Worker sender hver forespørsel videre til Durable Object, som har kallene head, get med område, put, delete og list.',
+    ],
+    reliability: [
+      'En daglig cron kl. 03:00 UTC sletter Uploads/, og demoen går tilbake til eksemplene.',
+      'Ved hver oppstart justerer Durable Object base/ etter eksempellisten, så en halvferdig fylling leges.',
+      'En PUT slutter å lese etter 50 MB, og en GET med område laster bare sine biter, for å holde seg innenfor 128 MB minne.',
+    ],
+    security: [
+      'Én Basic-bruker sjekkes mot en Worker-hemmelighet. OPTIONS svarer uten innlogging.',
+      'Eksempelfilene ligger som statiske ressurser bak Worker, så innloggingen vokter dem også.',
+      'Eksemplene er syntetiske, så ingen ekte personer eller steder vises.',
+    ],
+    performance: [
+      'En GET med område leser bare bitene den trenger, så en fil på 50 MB bruker ikke 100 MB minne.',
+      'Eksempeldatoene kommer fra en JSON-fil, så PROPFIND trenger ikke lese EXIF.',
+    ],
+    operations: [
+      'Checks kjører lint, typesjekk og enhetstester ved hvert push til main, og Deploy starter når de består.',
+      'Deploy bygger eksemplene, kjører wrangler deploy gjennom mise og merker commit med en datoversjon.',
+      'Den stopper hvis eksempelmappen og datolisten er uenige, eller Cloudflare-tokenet mangler.',
+      'Én utrulling kjører om gangen, og en nyere ventende erstatter en eldre.',
+    ],
+    tradeoffs: [
+      'SQLite i Durable Object framfor R2, siden R2 krever betalingskort og den gratis planen dekker Durable Object.',
+      'Et skrivelag over skrivebeskyttede eksempler framfor å skrive i dem, så en nullstilling er én sletting på prefiks.',
+      'Syntetiske bilder framfor ekte, så en fremmed ikke ser ekte personer eller steder.',
+      'En TypeScript-Worker nå framfor Rust, for å levere først. Organisasjonens stack planlegger flytting til workers-rs.',
+    ],
+  },
   features: {
     'Sample library':
       'Et Python-skript tegner bildene med EXIF-dato og noen GPS-punkter. De følger med som statiske filer og fyller Durable Object ved oppstart.',

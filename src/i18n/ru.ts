@@ -66,6 +66,16 @@ const ru: Catalog = {
         parts: 'Части',
         flow: 'Путь данных',
         links: 'Связи',
+        design: {
+          scale: 'Масштаб и пределы',
+          data: 'Данные',
+          interfaces: 'Интерфейсы',
+          reliability: 'Надёжность',
+          security: 'Безопасность',
+          performance: 'Скорость',
+          operations: 'Сборка и выпуск',
+          tradeoffs: 'Компромиссы',
+        },
       },
       kinds: {
         app: 'Приложения для людей',

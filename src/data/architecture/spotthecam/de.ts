@@ -52,6 +52,49 @@ const arch: Arch = {
       text: 'Jedes Release legt dort die APK ab, und der GitHub-Build aktualisiert sich daraus selbst.',
     },
   ],
+  design: {
+    scale: [
+      'Ein Fahrer pro Installation. Die Kameradatei enthält rund 13.700 Kameras, eine pro Zeile.',
+      'Die Seite besteht aus statischen Dateien, nur das Teilen von Fahrten braucht einen Server. Ein kleiner Worker bleibt im kostenlosen Cloudflare-Tarif.',
+      'Eine geteilte Fahrt ist auf 1 MB und 100.000 Punkte begrenzt, und eine Adresse kann 10 Fahrten pro Minute teilen.',
+    ],
+    data: [
+      'data/cameras.json hält eine Kamera pro Zeile: Typ, Bundesstaat, Punkt, Straße, Vorort, Quelle, Limit und Richtung.',
+      'Fahrten liegen 400 Tage im privaten Speicher der App. Straßenlimits bleiben 60 Tage auf dem Handy.',
+      'Eine geteilte Fahrt liegt in Cloudflare KV unter einer ID aus 10 Zeichen, als ausgedünnte Routenlinien und Summen ohne Zeiten.',
+    ],
+    interfaces: [
+      'Der Worker beantwortet POST /api/trips sowie GET und DELETE auf /api/trips/<id>. Alles andere sind statische Dateien.',
+      'Capacitor-Plugins verbinden die Webseite mit den Kotlin-Fahrdiensten und ihren Swift-Ports.',
+      'Overpass-Kacheln liefern Straßen, Bahnstrecken und Start- und Landebahnen. Photon, Valhalla und TomTom beantworten Orts-, Routen- und Verkehrsanfragen.',
+    ],
+    reliability: [
+      'Der Service Worker versucht zuerst das Netz und weicht nach 4 Sekunden auf die Kopie aus, mit bis zu 500 Kartenkacheln für den Offline-Betrieb.',
+      'Ein Speicherfehler im Worker geht als 503 mit CORS-Headern hinaus, damit die App ihn als Fehler liest und nicht als fehlendes Signal.',
+      'Antwortet ein öffentlicher Routenserver nicht, sagt die Stimme es an. Über dem TomTom-Limit entfallen die Verkehrsdaten.',
+    ],
+    security: [
+      'Das Teilen braucht keine Anmeldung. KV speichert nur einen SHA-256-Hash des Löschschlüssels, sodass der Zugriff auf den Speicher kein Löschen erlaubt.',
+      'Der Worker prüft jeden Body mit einem strengen Parser und sendet nosniff und eine Richtlinie mit default-src none.',
+      'Fahrten bleiben auf dem Handy, bis sie geteilt werden. Eine geteilte Fahrt hat keine Zeiten, und Tempo an Kameras bleibt ohne Zustimmung draußen.',
+    ],
+    performance: [
+      'Kotlin-Dienste gleichen das GPS mit zwischengespeicherten Straßen auf dem Handy ab und sprechen rund 20 Sekunden vor einer Kamera, ohne Netz.',
+      'Der nächtliche Build macht aus zeitgebundenen Limits Fenster für die nächsten 35 Tage, der Browser wählt nur noch das aktuelle.',
+      'KV puffert eine geteilte Fahrt eine Minute nahe beim Leser, und Kacheln werden ohne den wöchentlichen Ordnernamen von OpenFreeMap gespeichert.',
+    ],
+    operations: [
+      'Ein CI-Job aktualisiert die Kameras um 3 Uhr Sydney-Zeit und committet die Datei mit einer Kamera pro Zeile, damit die Diffs klein bleiben.',
+      'Jeder Push auf main stellt die Seite bei Cloudflare bereit. Ein nächtlicher Job schickt das Android-Bundle an Google Play, wenn sich die App geändert hat.',
+      'Der APK-Build von GitHub aktualisiert sich selbst über GitHub Releases. Der Google-Play-Build enthält diesen Code nicht.',
+    ],
+    tradeoffs: [
+      'Eine statische Next.js-Seite in einer Capacitor-Hülle statt Expo, damit Karte und Seiten einen Code teilen, auf Kosten eines Workers für Fahrten.',
+      'Eine tägliche JSON-Datei statt einer Datenbank hinter einer API, damit es offline und ohne Server läuft, auf Kosten einer bis zu einen Tag alten Liste.',
+      'Native Kotlin-Fahrdienste statt JavaScript im WebView, weil Android den WebView bei dunklem Bildschirm pausiert.',
+      'Leaflet mit OpenFreeMap-Kacheln statt Google Maps oder Mapbox, weil kein Schlüssel und keine Quote nötig sind.',
+    ],
+  },
   features: {
     'Camera map':
       'Der nächtliche Build macht aus den zeitlichen Limits jedes Blitzers Zeitfenster für die nächsten 35 Tage. Der Browser wählt das Fenster der aktuellen Minute.',

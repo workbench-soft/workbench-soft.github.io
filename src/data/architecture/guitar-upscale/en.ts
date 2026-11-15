@@ -33,6 +33,49 @@ const arch: Arch = {
     { to: 'Google Play', text: 'Google Play sells Pro and Remove ads, and AdMob shows the ads.' },
     { to: 'Cloudflare', text: 'Cloudflare Workers host the site, and KV holds the built-in songs.' },
   ],
+  design: {
+    scale: [
+      'One player per device, with the sound, the clock and the recorders all running on the device.',
+      "About 100 built-in songs ship as Guitar Pro files, and a user's own songs stay in the browser.",
+      'Heavy work has hard limits. One chord recognition run can grow wasm memory to about 600 MB, and a Worker upload stays under 3 MiB.',
+    ],
+    data: [
+      'Redux slices for settings, screen state and the piano roll are saved to localStorage, one key per slice.',
+      'Songs, recordings, loops and piano roll edits share one TickTimeline of notes and chords filed by clock tick.',
+      "Built-in songs sit in Cloudflare KV by file name, with one song-settings.json for each song's chords choice.",
+    ],
+    interfaces: [
+      'Song sites come through Worker routes: Songsterr search and meta, song file search and download, and song words.',
+      "Notes and chords travel on two RxJS subjects, so the sender doesn't know who plays, records or animates them.",
+      'Songs load as .gp or MIDI files and export the same way. The built-in list is songs/index.json, and each song is songs-json/<name>.json with a content hash in its URL.',
+    ],
+    reliability: [
+      'Each site proxy has a timeout. A words lookup that fails because a site was down stays out of the cache.',
+      'A redux-persist version bump wipes a slice saved under an old version, and the looper saves its loops before a scale, tuning or capo change clears them.',
+      "A melody skips a tick that waited over 10 ms, up to 8 in a row, so a slow render after Play can't delay the first note.",
+    ],
+    security: [
+      'The owner song route checks the SHA-256 of the developer key and answers 404 on a miss. The GitHub token for the deploy sits in a Worker secret.',
+      'CORS lets only the Capacitor origins and the site read the proxies, and the server build sends HSTS, nosniff and frame-ancestors none.',
+      'Chords from an audio file are heard on the device with ONNX. Only the GitHub APK sends a short sample to Shazam to name a song.',
+    ],
+    performance: [
+      "The beat clock runs in a Web Worker with timeouts aimed at the exact time since the start, so a busy main thread can't slow the beat.",
+      'A pool of up to 4 workers finds chord shapes one chord type at a time, and the app loads each feature as a lazy component.',
+      'The chord models load on first use and stay in Cache Storage. The phone audio context asks for a 12 ms buffer, since the reverb crackled with 4 to 8 ms.',
+    ],
+    operations: [
+      'Each push to main runs checks and the Android build side by side, and a failed check cancels the run. The release publishes once both pass.',
+      'A nightly job at 19:00 Sydney time builds the Google Play bundle only when the app changed. One bundle took 40 to 46 minutes on the heavy runner.',
+      'OpenNext builds the server for Cloudflare Workers, with observability on. Releases get a date and counter tag, and the GitHub build updates itself from them.',
+    ],
+    tradeoffs: [
+      'One static build for the site, Android and iPhone over native apps, so each feature is written once, at the cost of Capacitor plugins for phone sound and billing.',
+      'The engine runs outside React with a plain copy of the settings, over reading the store everywhere, so audio code needs no hooks, at the cost of a mirror to keep in step.',
+      'Chord models run on the device over a server API, so a file stays on the phone, at the cost of 14 MB of models downloaded on the first run.',
+      'Sampled General MIDI instruments over a synth, for a real guitar and piano sound, at the cost of loading samples on the first tap.',
+    ],
+  },
   features: {
     Fretboard:
       'Konva draws the neck on a canvas from the scale and tuning in the settings store. A tap sends the note on the event bus, and smplr plays it.',

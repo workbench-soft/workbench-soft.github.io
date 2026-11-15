@@ -26,6 +26,53 @@ const arch: Arch = {
     { to: 'YouTube', text: '動画は YouTube Data API で上がり、1 日に 6 本ほどです。' },
     { to: 'Claude', text: 'Claude CLI はサブスクリプションで文章を書き、API のアカウントは要りません。' },
   ],
+  design: {
+    scale: [
+      'GPU 付きの Windows PC 1 台に作り手 1 人です。毎日の実行でアップロードするのは多くても約 6 本です。',
+      '1 回のアップロードは YouTube の 1 日 10,000 クォータ単位のうち約 1,600 を使い、このクォータが上限を決めます。',
+      'ローカルの GPU は 1 回の実行で 720p の約 5 秒の映像を作るので、背景はどれもループするクリップです。',
+    ],
+    data: [
+      '状態はテーマフォルダのファイルです。theme.toml が設定を持ち、out/upload.json がテーマの完了を示し、out/claude.json が Claude の書いた文章を保存します。',
+      'プロジェクトは 10 個のタイルを pipeline.json に持ち、それぞれ kind、enabled、params があります。',
+      '整えた曲は FLAC で out/clean/ に入り、元のファイルは残ります。秘密情報はリポジトリの外のフォルダにあります。',
+    ],
+    interfaces: [
+      'CLI には bg、clean、build、upload、publish、run、enhance、clips とタイルのコマンドがあります。Archon の Songs タブは songfactory project を読み、songfactory tile を実行します。',
+      'ffmpeg と ffprobe はサブプロセスとして動き、ComfyUI にはプロンプトとシードを埋めた workflows/loop.json を HTTP で渡します。',
+      'upload.py はデスクトップアプリ用の OAuth サインインの後、YouTube Data API の videos.insert と thumbnails.set を呼びます。',
+      'progress.py が step、file i/n、progress NN% の行を出し、ランチャーがそれをバーにします。',
+    ],
+    reliability: [
+      'upload.json は YouTube が動画 ID を返した時点で書くので、サムネイルが失敗しても 2 回目のアップロードは起きません。',
+      'run は _ かドットで始まるフォルダを飛ばし、1 つが失敗しても次のテーマに進みます。',
+      'claude.py は任意です。CLI がない、または呼び出しが失敗すると 1 行を出し、テーマはフォルダ名をタイトルにして続きます。',
+      'オフにしたタイルは入力をそのまま渡し、音声タイルは実行された直前のタイルのファイルを受け取ります。',
+    ],
+    security: [
+      'YouTube の OAuth トークンとその他の秘密情報は、リポジトリの外のフォルダにあります。',
+      'claude -p は API キーの環境変数を外して動くので、API アカウントではなくサインイン済みのサブスクリプションに課金されます。',
+      'アップロードは containsSyntheticMedia を設定し、Google がプロジェクトを監査するまで非公開のままです。',
+    ],
+    performance: [
+      'PC に GPU があれば h264_nvenc で GPU がエンコードし、なければ libx264 が引き継ぎます。',
+      'クリップは -stream_loop とピンポンでループするので、5 秒のクリップで長い動画をまかない、長いレンダリングは要りません。',
+      '整音は固定ゲイン、highpass、afftdn、7 kHz の動的カットを 1 回の ffmpeg 呼び出しで行い、ニューラルモデルは使いません。',
+      'バッチの enhance は 1 つの CLI プロセスで動くので、全曲で compare.html を 1 つだけ書きます。',
+    ],
+    operations: [
+      'Windows のタスクスケジューラが、曲、トークン、GPU のある PC で毎日 03:00 に mise run daily を実行します。',
+      'checks.yml は main への push のたびに、セルフホストの Windows ランナーで lint、テスト、uv build を実行します。',
+      'release.yml は Checks と並べて wheel と sdist をビルドし、Checks が通ると release-gate.sh が公開します。Checks が失敗するとビルドを取り消します。',
+      'mise run doctor は前提条件ごとに ok か MISSING を 1 行で出し、ランチャー向けには JSON でも出します。',
+    ],
+    tradeoffs: [
+      'Python の動画ライブラリではなくコマンドラインの ffmpeg にして、ミックス、ループ、NVENC エンコードを 1 つのツールにまとめましたが、フィルターグラフは文字列なので打ち間違いは実行時に出ます。',
+      '曲と同じ長さのクリップではなく短いループクリップにしました。GPU が 1 回で作るのは約 5 秒だからです。',
+      'データベースではなくテーマごとのただのファイルにして、1 つのファイルでアップロード済みか分かりますが、フォルダを動かすとアップロードとの対応が切れます。',
+      'CI の cron ではなくローカルのタスクスケジューラにしました。曲とトークンが git の外にあるためですが、03:00 に PC が起きている必要があります。',
+    ],
+  },
   features: {
     'Audio workbench':
       'tkinter のウィンドウが選んだファイルにクリーンアップか強化のコマンドを実行します。名前の確認で 2 つの出力がぶつかる前に処理を止めます。',

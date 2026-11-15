@@ -39,6 +39,45 @@ const arch: Arch = {
     { to: 'Bitwarden', text: 'Chaque jeton va d’abord au coffre, puis à GitHub par le script de rotation.' },
     { to: 'GitHub', text: 'Les skills déplacent des dépôts, ajoutent des workflows et rangent les secrets par gh.' },
   ],
+  design: {
+    scale: [
+      'Un propriétaire, 11 skills et les dizaines de dépôts d’une organisation GitHub que les skills auditent et livrent.',
+      'Un fichier de règles se charge à chaque tour de chaque session, donc il reste court et les règles d’une tâche passent dans des skills.',
+    ],
+    data: [
+      'Pas de base de données. Les skills sont des dossiers Markdown, et le fichier de règles est un fichier Markdown que l’installateur copie dans chaque agent.',
+      'Chaque dépôt d’app liste ses secrets dans .github/secret-rotation.json : le type, la page du fournisseur et ce que coûte une nouvelle valeur.',
+    ],
+    interfaces: [
+      'Le script d’audit lit les fichiers de workflow et les listes de secrets de tous les dépôts avec un seul appel gh GraphQL.',
+      'L’installateur branche le fichier de règles dans les fichiers globaux de Claude Code et de Codex par un bloc balisé, et Kimi Code lit la même ligne.',
+      'Un serveur passerelle remplace 5 serveurs MCP, donc un agent ne charge qu’une liste d’outils.',
+    ],
+    reliability: [
+      'Le workflow de release construit à côté de Checks. Un script de porte consulte Checks à la fin, donc un Checks en échec annule la construction.',
+      'Un Checks plus tardif lance la tâche de publication via workflow_run, donc aucune tâche ne tient un runner en attendant.',
+      'Les exécutions passent sur le PC du propriétaire quand les minutes cloud baissent, et les tâches attendent en file tant qu’il est éteint.',
+    ],
+    security: [
+      'Le script de rotation lit une nouvelle valeur depuis une saisie masquée ou un fichier et la stocke avec gh secret set, donc l’agent ne la voit pas.',
+      'Chaque jeton va d’abord au coffre, puis à GitHub.',
+      'Le dépôt est privé, car il nomme les listes de secrets et les runners de l’organisation. Les skills génériques sont dans le dépôt public agent-skills.',
+    ],
+    performance: [
+      'Seules les règles dont chaque tour a besoin se chargent à chaque fois. Une règle de tâche se charge depuis son skill quand une demande correspond.',
+      'La construction de la release met ses fichiers en cache sous l’id d’exécution, donc la tâche de publication les reprend et prend un runner léger une minute.',
+    ],
+    operations: [
+      'check.yml et release.yml lisent leur runner dans des variables du dépôt, qu’un routeur pointe d’abord vers les runners cloud, puis vers le PC.',
+      'Les releases reçoivent un tag daté comme v2026.10.30.1 par des scripts shell que les modèles repo-ci partagent avec le dépôt ci.',
+      'mise run test vérifie les skills, le budget de texte, l’installation dans un home temporaire, la passerelle et les scripts de release.',
+    ],
+    tradeoffs: [
+      'Un dépôt privé à côté du public, pour que les runners et les listes de secrets de l’organisation restent non publiés. Cela coûte deux clones et deux installateurs.',
+      'Des règles de tâche dans des skills plutôt qu’un long fichier de règles, donc un tour calme paie moins de jetons. Un skill à la description faible est ignoré.',
+      'Un manifeste dans chaque dépôt d’app plutôt qu’une liste centrale, donc un changement de workflow et son entrée de secret arrivent dans une PR. Un dépôt sans manifeste n’a pas de rotation.',
+    ],
+  },
   features: {
     'Move a repo':
       "Le skill move-repo fait trouver à l'agent chaque lien vers l'ancienne adresse avec gh. Il transfère ensuite le dépôt, le rend privé et passe la CI sur le runner auto-hébergé.",

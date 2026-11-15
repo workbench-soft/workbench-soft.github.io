@@ -45,6 +45,51 @@ const arch: Arch = {
     { to: 'Google Play', text: 'Google Play Billing verkauft Plus und Werbung entfernen.' },
     { to: 'Google AdMob', text: 'AdMob zeigt das Banner der Galerie nach dem Einwilligungsformular.' },
   ],
+  design: {
+    scale: [
+      'Eine Person pro Handy, ohne Server: Jedes Foto wird auf dem Handy gebaut und gespeichert.',
+      'Ein Porträtfoto kostet etwa 7 s je 12 MP auf der CPU eines Pixel 7 Pro, und das Tiefenmodell ist ein Download von 26 MB.',
+      'Ein verschmolzenes Foto hält 5 Bilder in voller Größe von je etwa 18 MB im Speicher.',
+    ],
+    data: [
+      'Die Einstellungen sind ein JSON-Wert in den Android Shared Preferences, beim ersten Rendern gelesen, daher öffnet die Kamera wie zuletzt.',
+      'Aufnahmen sind WebP-, JPEG-, PNG- oder MP4-Dateien in DCIM/Camera, über MediaStore-Zeilen der App aufgelistet. RAW fügt eine DNG hinzu.',
+      'Ort, Weißabgleich-Kalibrierung und Live-Werte bleiben im Speicher, solange die Kamera offen ist.',
+    ],
+    interfaces: [
+      'React Native reicht die Reglerwerte als Props an die Kotlin-Kameraansicht, und das Modul sendet Live-Werte 4-mal pro Sekunde zurück.',
+      'CameraX führt Lebenszyklus und Use Cases, und Camera2-Interop setzt ISO, Verschluss, Fokusdistanz und Weißabgleich-Gains.',
+      'Aufnahmen landen in MediaStore unter DCIM/Camera, wo Memories sie liest, und die App beantwortet die Android-Kamera-Intents.',
+    ],
+    reliability: [
+      'Die Regler gehen bei jedem Öffnen aus den gespeicherten Einstellungen zurück auf die Kamera.',
+      'Ein Entwurf mit 512 px erscheint in der Galerie, bis die endgültige Datei da ist.',
+      'Ein Objektiv ohne die Night-Erweiterung weicht auf eine niedrige Bildrate mit starker Rauschminderung aus, und CameraX nimmt die nächste unterstützte Größe.',
+    ],
+    security: [
+      'Die Fotos bleiben auf dem Handy. Die App hat kein Konto und keinen eigenen Server.',
+      'Der Standort wird nur gelesen, solange die Kamera offen ist, und der Ort kommt in die EXIF-Tags der gespeicherten Datei.',
+      'AdMob fragt in der Galerie beim ersten Öffnen nach Einwilligung, nicht beim Start, daher verzögert sich ein schneller Schuss nicht.',
+    ],
+    performance: [
+      'Zero Shutter Lag löst beim Antippen aus, daher hält die Aufnahme den Moment des Drucks fest.',
+      'Ein einfaches Foto verlangt einen Bereich von 60 Bildern, daher hält die Belichtungsautomatik 1/60 s oder kürzer.',
+      'Die Porträt-Unschärfe wird auf einer 2048-px-Ebene gerechnet, und Enhance und Mini laufen als GPU-Durchgänge.',
+      'Ein Ring hält die letzten 5 Bilder für das verschmolzene Foto und die letzten 8 Rohbilder für die Rust-Entwicklung.',
+    ],
+    operations: [
+      'Ein Push auf main startet die Kamera-Checks und den Release-Build nebeneinander, und release-gate.sh veröffentlicht nur, wenn die Checks bestehen.',
+      'Tags heißen shuttrix-v mit Datum, und die APK geht an ein Release im öffentlichen Site-Repo, wo App und Updater sie finden.',
+      'Das Play-Bundle baut einmal am Tag um 19:00 Sydney, wenn sich die Kamera geändert hat, und der Play-Build hält einen Stub für den Updater.',
+      'Ein eigener Workflow baut die Bibliotheken ONNX Runtime und OpenCV und veröffentlicht sie als Prerelease.',
+    ],
+    tradeoffs: [
+      'Expo mit einem Kotlin-Modul über CameraX statt react-native-vision-camera, das keine manuelle Fokusdistanz, kein ISO, keinen Verschluss und kein Kelvin hat.',
+      'Nacht über die CameraX-Erweiterung statt Bilder in Kotlin zu stapeln, so läuft die Pipeline des Handys selbst und lässt ihr Weißabgleich und EV.',
+      'Depth Anything V2 Small statt eines größeren Modells wegen der Apache-Lizenz, bei 26 MB Download und etwa 7 s pro Foto.',
+      'Ein Monorepo mit Memories statt eines eigenen Repos, um Editor und Viewer zu teilen, zum Preis pfadbasierter CI.',
+    ],
+  },
   features: {
     'Simple and Pro':
       'Beide Modi steuern eine Kameraansicht. Einfach überlässt Fokus und Belichtung der Automatik, Pro übergibt sie den Rädern.',

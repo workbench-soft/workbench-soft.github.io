@@ -45,6 +45,45 @@ const arch: Arch = {
     { to: 'Bitwarden', text: 'Cada token va primero a la bóveda y luego a GitHub con el script de rotación.' },
     { to: 'GitHub', text: 'Los skills mueven repos, añaden workflows y guardan secretos con gh.' },
   ],
+  design: {
+    scale: [
+      'Un propietario, 11 skills y las decenas de repositorios de una organización de GitHub que los skills auditan y entregan.',
+      'Un archivo de reglas se carga en cada turno de cada sesión, así que es corto y las reglas de cada tarea pasan a skills.',
+    ],
+    data: [
+      'No hay base de datos. Los skills son carpetas Markdown, y el archivo de reglas es un archivo Markdown que el instalador copia en cada agente.',
+      'Cada repositorio de app lista sus secretos en .github/secret-rotation.json: el tipo, la página del proveedor y lo que cuesta un valor nuevo.',
+    ],
+    interfaces: [
+      'El script de auditoría lee los archivos de workflow y las listas de secretos de todos los repositorios con una sola llamada gh GraphQL.',
+      'El instalador conecta el archivo de reglas a los archivos globales de Claude Code y Codex con un bloque marcado, y Kimi Code lee la misma línea.',
+      'Un servidor pasarela sustituye a 5 servidores MCP, así que un agente carga una sola lista de herramientas.',
+    ],
+    reliability: [
+      'El workflow de release compila junto a Checks. Un script de puerta consulta Checks al final, así que un Checks fallido cancela la compilación.',
+      'Un Checks posterior inicia la tarea de publicación mediante workflow_run, así que ninguna tarea retiene un runner mientras espera.',
+      'Las ejecuciones pasan al PC del propietario cuando se acaban los minutos de la nube, y las tareas esperan en cola mientras está apagado.',
+    ],
+    security: [
+      'El script de rotación lee un valor nuevo de una entrada oculta o de un archivo y lo guarda con gh secret set, así que el agente no lo ve.',
+      'Cada token va primero a la bóveda y después a GitHub.',
+      'El repositorio es privado, porque nombra las listas de secretos y los runners de la organización. Los skills genéricos están en el repositorio público agent-skills.',
+    ],
+    performance: [
+      'Solo las reglas que necesita cada turno se cargan siempre. Una regla de tarea se carga desde su skill cuando una petición coincide.',
+      'La compilación del release guarda sus archivos en caché bajo el id de ejecución, así que la tarea de publicación los reutiliza y ocupa un runner ligero un minuto.',
+    ],
+    operations: [
+      'check.yml y release.yml leen su runner de variables del repositorio, que un enrutador apunta primero a runners en la nube y al PC al final.',
+      'Los releases reciben una etiqueta con fecha como v2026.10.30.1 de scripts de shell que las plantillas de repo-ci comparten con el repositorio ci.',
+      'mise run test comprueba los skills, el presupuesto de texto, la instalación en un home temporal, la pasarela y los scripts de release.',
+    ],
+    tradeoffs: [
+      'Un repositorio privado junto al público, para que los runners y las listas de secretos de la organización no se publiquen. Cuesta dos clones y dos instaladores.',
+      'Reglas de tarea en skills en vez de un archivo de reglas largo, así un turno tranquilo gasta menos tokens. Un skill con descripción débil se omite.',
+      'Un manifiesto en cada repositorio de app en vez de una lista central, así un cambio de workflow y su entrada de secreto llegan en una PR. Un repositorio sin manifiesto no tiene rotación.',
+    ],
+  },
   features: {
     'Move a repo':
       'El skill move-repo hace que el agente encuentre con gh cada enlace a la dirección vieja. Luego transfiere el repo, lo hace privado y pasa la CI al runner propio.',

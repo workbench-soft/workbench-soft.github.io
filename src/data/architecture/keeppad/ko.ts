@@ -39,6 +39,49 @@ const arch: Arch = {
     { to: 'Firebase', text: 'Firestore가 공유 메모를 실시간으로 맞추고 Hosting이 웹사이트를 제공합니다.' },
     { to: 'Google Play', text: 'AdMob이 배너를 보이고 Play Billing이 광고 제거와 KeepPad Pro를 팝니다.' },
   ],
+  design: {
+    scale: [
+      '설치 하나에 한 사람입니다. 메모는 기기에 남고, 공유 메모만 최대 20,000자의 텍스트로 Firestore에 닿습니다.',
+      'Hey Keep은 Android 포그라운드 서비스로 하루 종일 돌아서 배터리가 설계를 이끌었습니다. 음량 게이트가 조용한 프레임을 건너뜁니다.',
+    ],
+    data: [
+      'SQLite keeppad.db에는 메모, exports(어느 앱이 어느 메모를 받았는지), applied_inbox가 있습니다. PRAGMA user_version은 기기가 실행한 마이그레이션 단계를 셉니다.',
+      '녹음은 files/audio의 WAV 파일입니다. 앱이 닫힌 동안 Hey Keep이 녹음한 메모는 files/keep-inbox의 JSON 파일입니다.',
+      '설정은 localStorage에 있습니다. 연결된 앱의 토큰은 expo-secure-store를 통해 Android keystore나 iOS keychain에 있습니다.',
+      'Firestore의 공유 메모에는 text, group, updated만 들어 있습니다.',
+    ],
+    interfaces: [
+      'Kotlin 서비스는 SQLite에 닿지 못하므로, 서비스와 앱은 JSON 받은편지함과 watch 이벤트로 메모를 주고받습니다.',
+      '연결된 앱은 새 메모를 각자의 웹 API로 받습니다. Obsidian은 고른 폴더의 파일로, Memories 일기는 WebDAV로 받습니다.',
+      'expo-speech-recognition은 Android 음성 서비스나 Apple 인식기로 음성을 텍스트로 바꿉니다.',
+    ],
+    reliability: [
+      '긴 녹음은 녹음하는 동안 PCM 파일과 JSON 파일을 쓰고, 충돌 뒤 앱이 그것을 메모로 만듭니다.',
+      'applied_inbox가 메모와 같은 트랜잭션에서 받은편지함 id를 저장하므로, 충돌이 나도 이어쓰기 메모를 두 번 가져오지 않습니다.',
+      '로컬 수정마다 updated = MAX(now, updated + 1)을 저장하므로, 시계가 느린 기기도 Firestore에서 여전히 이깁니다.',
+    ],
+    security: [
+      '계정도 클라우드 음성 인식도 없습니다. 호출어 모델이 기기에서 돌아서 소리가 기기를 떠나지 않습니다.',
+      'Firestore 규칙은 32자리 16진수 메모 id를 요구하고, 나열을 거부하며, text, group, updated만 받습니다. id를 훑어볼 수 없습니다.',
+      '연결된 앱의 토큰은 메모 파일이 아니라 보안 저장소에 둡니다.',
+    ],
+    performance: [
+      '조용한 방에서는 100 ms 프레임마다 덧셈 한 번이 듭니다. 파라미터 330만 개의 sherpa-onnx 모델은 큰 소리의 프레임에서만 돕니다.',
+      '쓰기마다 notesVersion이 오르고 화면이 다시 불러옵니다. 메모 FlashList는 화면에 보이는 행만 그립니다.',
+      '단어 일치가 그룹을 바로 고르고, Gemini Nano나 Apple Foundation Models는 앱이 열려 있을 때만 동작합니다.',
+    ],
+    operations: [
+      'main에 push할 때마다 Checks와 Release가 함께 시작됩니다. Checks가 통과하면 APK를 공개하고 최근 릴리스 3개를 남깁니다.',
+      'Play bundle은 앱이 바뀌었을 때 하루에 한 번 시드니 시간 19:00에 PLAY=1로 만듭니다. GitHub의 APK는 스스로 업데이트합니다.',
+      '웹사이트는 Firebase Hosting이 제공하며 Checks가 통과하면 Firestore 규칙과 함께 배포됩니다. iPhone 빌드는 macOS에서 수동으로만 돕니다.',
+    ],
+    tradeoffs: [
+      '네이티브 Android 앱 대신 Kotlin과 Swift 모듈이 있는 Expo를 택했습니다. iPhone과 웹을 위한 것이고, 대가는 TypeScript 옆의 네이티브 코드입니다.',
+      'JavaScript 호출어 대신 sherpa-onnx 포그라운드 서비스를 택해 화면이 꺼져도 듣습니다. 모델은 영어만 됩니다.',
+      'APK에 모델을 넣는 대신 기기 자체의 음성 인식기를 택했습니다. 기기에 영어와 러시아어가 이미 있어서 앱은 모델을 싣지 않습니다.',
+      '빌드 하나 대신 스스로 업데이트하는 GitHub APK와 스텁이 든 Play 빌드로 나눕니다. Play는 업데이트를 직접 설치하는 앱을 거부하기 때문입니다.',
+    ],
+  },
   features: {
     'Hey Keep':
       'Kotlin 포그라운드 서비스가 조용한 소리는 건너뛰고 큰 소리에만 sherpa-onnx 모델을 돌립니다. 대답은 목소리별로 녹음한 클립으로 나오고, 맞춤 설정이 문구별 기준값을 정합니다.',

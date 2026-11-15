@@ -45,6 +45,49 @@ const arch: Arch = {
     { to: 'Firebase', text: 'Firestore hält geteilte Notizen live, Hosting liefert die Website aus.' },
     { to: 'Google Play', text: 'AdMob zeigt das Banner, Play Billing verkauft Werbung entfernen und KeepPad Pro.' },
   ],
+  design: {
+    scale: [
+      'Eine Person pro Installation. Notizen bleiben auf dem Telefon, und nur eine geteilte Notiz erreicht Firestore, als Text mit bis zu 20.000 Zeichen.',
+      'Hey Keep läuft den ganzen Tag als Foreground-Dienst von Android, daher prägte der Akku den Entwurf: Ein Lautstärketor überspringt leise Frames.',
+    ],
+    data: [
+      'SQLite keeppad.db hält Notizen, exports (welche App welche Notiz bekam) und applied_inbox. PRAGMA user_version zählt die Migrationsschritte, die ein Telefon lief.',
+      'Aufnahmen sind WAV-Dateien in files/audio. Notizen, die Hey Keep bei geschlossener App aufnimmt, sind JSON-Dateien in files/keep-inbox.',
+      'Einstellungen liegen in localStorage. Tokens verknüpfter Apps liegen im Android-Keystore oder in der iOS-Keychain über expo-secure-store.',
+      'Eine geteilte Notiz in Firestore hält nur text, group und updated.',
+    ],
+    interfaces: [
+      'Der Kotlin-Dienst und die App reichen Notizen über den JSON-Posteingang und ein Watch-Ereignis weiter, da der Dienst SQLite nicht erreicht.',
+      'Verknüpfte Apps bekommen jede neue Notiz über ihre eigene Web-API. Obsidian bekommt eine Datei in einem gewählten Ordner, ein Memories-Journal bekommt sie über WebDAV.',
+      'expo-speech-recognition macht aus Sprache Text, über den Sprachdienst von Android oder den Erkenner von Apple.',
+    ],
+    reliability: [
+      'Eine lange Aufnahme schreibt laufend eine PCM-Datei und eine JSON-Datei, und nach einem Absturz macht die App daraus eine Notiz.',
+      'applied_inbox speichert die Posteingangs-ID in derselben Transaktion wie die Notiz, daher importiert ein Absturz keine Fortsetzungsnotiz doppelt.',
+      'Jede lokale Änderung speichert updated = MAX(now, updated + 1), daher gewinnt ein Telefon mit langsamer Uhr in Firestore trotzdem.',
+    ],
+    security: [
+      'Keine Konten und keine Cloud-Spracherkennung. Das Weckwort-Modell läuft auf dem Telefon, daher verlässt kein Ton das Gerät.',
+      'Die Firestore-Regeln verlangen eine Notiz-ID aus 32 Hex-Ziffern, verbieten das Auflisten und nehmen nur text, group und updated an. Niemand kann nach IDs suchen.',
+      'Tokens verknüpfter Apps liegen im sicheren Speicher, nicht in der Notizdatei.',
+    ],
+    performance: [
+      'In einem ruhigen Raum kostet jeder 100-ms-Frame eine Summe. Das sherpa-onnx-Modell mit 3,3 Mio. Parametern läuft nur bei lauten Frames.',
+      'Jeder Schreibvorgang erhöht notesVersion, und die Bildschirme laden neu. Die Notizliste mit FlashList zeichnet nur die sichtbaren Zeilen.',
+      'Ein Wortabgleich wählt die Gruppe sofort, und Gemini Nano oder Apple Foundation Models laufen nur bei offener App.',
+    ],
+    operations: [
+      'Checks und Release starten bei jedem Push auf main zusammen. Das Release veröffentlicht die APK, sobald Checks bestehen, und behält die letzten 3 Releases.',
+      'Ein Play-Bundle wird mit PLAY=1 einmal am Tag um 19:00 Sydney gebaut, wenn sich die App geändert hat. Die APK von GitHub aktualisiert sich selbst.',
+      'Firebase Hosting liefert die Website aus, und sie wird nach bestandenen Checks mit den Firestore-Regeln ausgerollt. Der iPhone-Build läuft nur von Hand auf macOS.',
+    ],
+    tradeoffs: [
+      'Expo mit Kotlin- und Swift-Modulen statt einer nativen Android-App, für das iPhone und das Web, zum Preis nativen Codes neben TypeScript.',
+      'Ein Foreground-Dienst mit sherpa-onnx statt eines Weckworts in JavaScript, damit es bei ausgeschaltetem Bildschirm hört. Das Modell kann nur Englisch.',
+      'Der eigene Spracherkenner des Telefons statt eines Modells in der APK. Englisch und Russisch hat das Telefon schon, daher liefert die App kein Modell mit.',
+      'Eine selbst aktualisierende GitHub-APK plus ein Play-Build mit Stubs statt eines Builds, weil Play Apps ablehnt, die Updates selbst installieren.',
+    ],
+  },
   features: {
     'Hey Keep':
       'Ein Kotlin-Vordergrunddienst überspringt Stille und lässt ein sherpa-onnx-Modell auf lauten Frames laufen. Antworten kommen aus Clips pro Stimme, und das Anpassen setzt eine Schwelle pro Phrase.',

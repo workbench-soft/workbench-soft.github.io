@@ -29,6 +29,48 @@ const arch: Arch = {
       text: 'Installasjonen og oppdateringsfilen ligger i en utgivelse i det offentlige nettstedrepoet.',
     },
   ],
+  design: {
+    scale: [
+      'Én person på én PC. Designstørrelsen er en mappe med 100 000 filer, så Rust holder postene og nettvisningen får bare ider.',
+      'Stedsdataene ligger i installasjonsprogrammet, som et GeoNames-utdrag og parkomriss. Å bygge dem på nytt laster ned omtrent 640 MB.',
+    ],
+    data: [
+      'Innstillinger ligger i én JSON-fil i appens datamappe. Historikken er én JSONL-fil per kjøring, pluss en index.json.',
+      'Postene, datoene og planene fra en skanning blir i skanneøkten i backend, så kommandoene tar fil-ider og planer.',
+      'Stedsdata er geodata.tsv.gz (byer med 1000 innbyggere eller flere og severdigheter) og parks.tsv.gz. Begge lastes inn i et rutenett på 1 grad.',
+    ],
+    interfaces: [
+      'Nettvisningen sender Tauri-kommandoer som start_scan og start_moves. Backend svarer med hendelser: scan:files, metadata:results, plan:files og move:file.',
+      'ts-rs skriver TypeScript-typene for nyttelastene fra Rust-modellene, så begge sider av en kommando stemmer overens.',
+      'ExifTool får én linje per forespørsel, med json-utdata, taggliste og absolutte stier. Oppdatereren leser latest.json fra en utgivelse.',
+    ],
+    reliability: [
+      'En flytting bruker en omdøping uten erstatning. En kopi mellom volumer sjekkes på størrelse og byte før kilden forsvinner.',
+      'Et krasj lar filen ligge ved kilden, ved målet eller under begge navnene til én hardlenke, og ingen fil går tapt.',
+      'En kjøring skriver én loggrad når hvert trinn er ferdig, og en logg som ikke lar seg skrive stopper kjøringen. En sen hendelse fra en erstattet skanning forkastes med scan_id.',
+    ],
+    security: [
+      'Nettvisningen har bare core:default-tillatelser, uten fs- eller shell-plugin. Rust gjør hver filendring.',
+      'En flytting starter bare fra en mappe valgt i den innebygde velgeren i denne økten. Et mål må ligge innenfor den valgte roten, og sjekkes på nytt før hver flytting.',
+      'Ingen GPS-punkter forlater PC-en, siden steder løses offline. ExifTool-stier sjekkes så et filnavn ikke kan sette inn en kommando.',
+    ],
+    performance: [
+      'Skanningen går utenfor UI-tråden og sender filer i bunker. Tabellen bufrer dem, så en stor mappe koster noen få omtegninger i sekundet.',
+      'ExifTool-arbeiderne blir åpne og kjører med lav prioritet, så det unngås å starte en prosess per fil.',
+      'Et stedsoppslag leser bare de nære cellene i rutenettet, og parkomriss testes gjennom bokser på 64 kanter.',
+    ],
+    operations: [
+      'Backend ligger i en egen crate ved siden av app-craten, så en utgivelse kompilerer en liten crate i stedet for 18 000 linjer.',
+      'CI kjører på en Windows-PC, så utgivelsene har et Windows-installasjonsprogram og ingen macOS-bygg. En Mac bygger det med pnpm tauri build.',
+      'Oppdatereren leser latest.json ved start, når vinduet kommer tilbake og på forespørsel. Den laster ned etter Update og installerer ved Restart now.',
+    ],
+    tradeoffs: [
+      'Tauri 2 framfor Electron: et mindre installasjonsprogram på systemets nettvisning og Rust som eier fillogikken, til prisen av at WebView2 og WebKit er ulike.',
+      'Planlegging i Rust framfor nettvisningen, den første versjonen, som ble treg på store mapper.',
+      'Bare disk/safe_fs endrer filer, håndhevet av clippy.toml, framfor std::fs-kall i hver modul som kunne overskrive en fil.',
+      'GeoNames i installasjonsprogrammet framfor en nettbasert geokoder, så ingen GPS-punkter forlater PC-en og ingen forespørselsgrense gjelder.',
+    ],
+  },
   features: {
     Scan: 'En Rust-gjennomgang går utenfor UI-tråden og sender filene i bunker. Tabellen samler dem, så en stor mappe koster bare noen få nytegninger i sekundet.',
     'Capture dates':

@@ -33,6 +33,49 @@ const arch: Arch = {
     { to: 'Google AdSense', text: 'AdSense zeigt das Banner auf der Website.' },
     { to: 'Google AdMob', text: 'AdMob zeigt das Banner in den Apps für Android und iOS.' },
   ],
+  design: {
+    scale: [
+      'Ein Raum fasst bis zu 12 Spieler, und das Hinweisduell braucht mindestens 4.',
+      'Workers Free gibt 100.000 Anfragen am Tag, etwa 40 Stunden Zeichnen am Tag.',
+      'Eine Nachricht ist auf 256 KB begrenzt, eine Zeichnung auf 3000 Aktionen.',
+    ],
+    data: [
+      'Jeder Raum ist ein Durable Object mit eigenem SQLite-Speicher und 3 Schlüsselarten: meta, canvas und chain:N.',
+      'meta hält Spieler, Punkte, Einstellungen, Phase, Chat und Spielzustand nach jeder Änderung. canvas wird höchstens alle 2 Sekunden gespeichert.',
+      'Eine Zeichnung ist eine Liste von Aktionen auf einem Raster von 800 mal 600. Der Browser hält ein Token und Einstellungen unter Schlüsseln, die mit wg- beginnen.',
+    ],
+    interfaces: [
+      'Ein WebSocket pro Spieler unter /games/ws/CODE. Der Worker ordnet den Code per idFromName dem Raumobjekt zu.',
+      'Die erste Nachricht, hello, trägt die Protokollversion, das Token, den Namen und die Farbe. Danach kommen state, chat und draw.',
+      'Die Android- und iOS-Apps öffnen dieselben Sockets am Games-Worker. Eine Origin-Prüfung lässt die Seite und die Apps ein.',
+    ],
+    reliability: [
+      'Die Hibernation API lässt einen ruhenden Raum den Speicher verlassen, und eine Socket-Nachricht oder ein Alarm weckt ihn aus dem Speicher.',
+      'Alarme steuern jede Frist und räumen einen Raum 30 Minuten nach dem Leerwerden auf.',
+      'Eine PROTOCOL-Nummer lässt den Worker einer alten App in ihrem Format antworten. Ein getrennter Spieler behält seinen Platz, bis der Raum bei 24 Plätzen voll ist.',
+    ],
+    security: [
+      'Kein Konto. Der Browser hält ein zufälliges Token, und der Raum speichert dessen Hash als Spieler-ID.',
+      'Das Raumobjekt wählt das Wort und prüft jeden Tipp, die Lösung bleibt also auf dem Server.',
+      'Sockets von fremden Seiten werden abgewiesen. Namen sind auf 20 Zeichen begrenzt, Chatzeilen auf 100.',
+    ],
+    performance: [
+      'Gezeichnet wird in kleinen Aktionslisten alle 80 ms, nicht in Pixeln.',
+      'Mit Hibernation zählen 20 WebSocket-Nachrichten als 1 Anfrage.',
+      'Statische Seiten kosten nichts, weil run_worker_first nur Raumlinks und Sockets durch den Worker-Code schickt.',
+    ],
+    operations: [
+      'Ein Worker wird mit wrangler ausgeliefert: der statische Ordner dist/ plus das Raumobjekt. Der Games-Workflow liefert bei jedem Push auf main aus.',
+      'mise run check führt oxlint, die Typprüfung und Vitest auf den Regeln jedes Spiels aus.',
+      'Die Worker-Beobachtung ist an. Die Android-App läuft über den geschlossenen Test von Google Play.',
+    ],
+    tradeoffs: [
+      'Durable Objects mit Hibernation statt Supabase Realtime, PartyKit oder eines VPS, also ohne Server und im Gratistarif. Der Raumcode ist für Cloudflare geschrieben.',
+      'Statische Astro-Seiten mit einer Preact-Insel statt einer Preact-Einzelseiten-App, damit Suchmaschinen volles HTML bekommen.',
+      'Zeichenaktionen auf festem Raster statt Pixeln, damit Nachrichten klein bleiben und Rückgängig ein Schritt ist.',
+      'Capacitor statt Trusted Web Activity oder React Native, damit dieselben Seiten in den Apps mit nativem AdMob-Banner laufen.',
+    ],
+  },
   features: {
     'Rooms by link':
       'Der Worker ordnet jedem Raumcode ein eigenes Durable Object zu. Ein zufälliges Token im Browser steht für den Spieler, und der Raum speichert nur seinen Hash.',

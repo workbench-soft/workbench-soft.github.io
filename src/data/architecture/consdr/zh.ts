@@ -26,6 +26,52 @@ const arch: Arch = {
     { to: 'Google Play', text: 'Android 应用里的 AdMob 横幅和去广告购买。' },
     { to: 'App Store', text: 'iPhone 应用上架 App Store 后，由 StoreKit 出售去广告。' },
   ],
+  design: {
+    scale: [
+      '每个浏览器一个人使用，一个计算器页面有 23 个输入项。每次修改都在浏览器里重新比较。',
+      '网站是 Cloudflare 上的静态文件，所以工作室自己没有服务器来承担负载。',
+      '税档、FBT 和印花税是代码里的固定数字，所以限制在于让它们保持最新，而不是负载。',
+    ],
+    data: [
+      '没有数据库，也没有账号。修改以 JSON 形式存在 localStorage 的 3 个键下：输入项（带版本字段）、主题和语言。',
+      '只保存被修改的字段，所以没动过的开始日期按今天读取，默认值跟随车型和规则。',
+      '税档、FBT 常量和各州印花税作为常量放在 src/rules，每个都附有来源链接。',
+    ],
+    interfaces: [
+      'compareOptions 接收一个 CalcInputs 对象，返回 Comparison：每个选项的成本、账户走势和成本构成。',
+      '页面通过 window.ConsdrApp 与 Android 应用通信，消息有 state、buy、privacy 和 devAds，回复为 JSON。',
+      'iPhone 应用用 Swift 响应同一座桥，Capacitor 从应用内部提供构建好的网站。',
+      '构建会写出 sitemap.xml、llms.txt、ads.txt 和常见问题的 JSON-LD。',
+    ],
+    reliability: [
+      '页面先走网络，3 秒后或遇到服务器错误时退回缓存副本。',
+      '网站数据被屏蔽时，读取返回 null，写入被跳过，页面在本次访问中仍可使用。',
+      '类型错误的已存值或未知的选项值在加载时被丢弃。一个标签页保存后，其他标签页会重新加载。',
+    ],
+    security: [
+      '没有登录，数字也不发往任何服务器，所以输入内容不会离开浏览器。',
+      '响应头设置 frame-ancestors none、object-src none、nosniff 和 HSTS，并关闭摄像头、麦克风和定位。',
+      'Android 签名密钥是 CI 密钥，在运行器上解码，仓库里没有密钥。',
+      'Android 应用通过 Google 的同意 SDK 征求广告同意。',
+    ],
+    performance: [
+      '英文放在主脚本里，其他 8 个语言包在选择时各自作为独立分块加载。',
+      '构建时用默认值预渲染计算器并预加载拉丁字体，内容出现得早，数字也不会跳动。',
+      '/assets/ 下的文件带内容哈希，获得一年的不可变缓存头，并由 worker 优先从缓存提供。',
+    ],
+    operations: [
+      '一个任务完成检查、测试和构建，然后每次推送到 main 时由 wrangler deploy 把 dist/ 发布到 Cloudflare。',
+      'CI 运行在工作室自己的 Windows 电脑运行器上，所以私有仓库不消耗 Actions 分钟数。',
+      '每晚悉尼时间 19:00 的运行会为 Google Play 构建签名的 Android 包，仅在 android/ 有变化时执行。',
+      'service worker 的缓存名由文件列表、页面文字和 worker 代码的哈希组成，所以每次部署都会替换旧缓存。',
+    ],
+    tradeoffs: [
+      '在浏览器里计算，而不是用服务器 API，这样数据不离开设备，托管只是静态文件。',
+      'Android 上用 WebView 包住线上网站，而不是原生界面，这样一套代码同时服务网站和应用，网站部署也立即到达应用。',
+      '页面先走网络而不是先用缓存，这样部署立刻可见，代价是慢网络下最多等 3 秒。',
+      '把带来源的固定规则写在代码里，而不是用利率 API，这样每个数字都可审查，但换税年需要发布新版本。',
+    ],
+  },
   features: {
     'Compare a lease, a loan and cash':
       '一个纯 TypeScript 函数读取字段，为每个方案算出一个总额。每次修改都在浏览器里运行，没有服务器看到这些数字。',

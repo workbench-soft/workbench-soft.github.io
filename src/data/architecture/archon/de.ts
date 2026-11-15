@@ -33,6 +33,47 @@ const arch: Arch = {
       text: 'Seine Regeln und Skills legen fest, wie jeder von Archon gestartete Agent eine Änderung ausliefert.',
     },
   ],
+  design: {
+    scale: [
+      'Der PC eines Entwicklers, einige Dutzend Repos und 5 bis 10 Agenten gleichzeitig.',
+      'Das Lauf-Register behält die letzten 200 Läufe, der Rest sind kleine JSON-Listen, daher braucht es keine Datenbank.',
+    ],
+    data: [
+      'JSON-Listen nennen die Repos, die Apps und die Agentenaufgaben, die Archon zeigt.',
+      'runs.json im lokalen App-Datenordner hält jeden Lauf mit Start, Ende und Ergebnis.',
+      'Die TODO.md jedes Repos und die Sitzungsdateien der Agenten werden an Ort und Stelle gelesen, Archon hält keine Kopie.',
+    ],
+    interfaces: [
+      'server.ts ordnet jedem Pfad eine Funktion zu: Lesezugriffe beantworten GET mit JSON, Aktionen beantworten POST mit einer Textzeile.',
+      'Ein Konsolenlauf endet mit einer Markierung done oder failed, die das Register liest.',
+      'Weitere Werkzeuge stehen hinter adb, git, der GitHub-Releases-API und den Registern npm, crates.io und PyPI. Einige Tabs binden lokale Seiten per HTTP ein.',
+    ],
+    reliability: [
+      'Der Server läuft bis zur Abmeldung, sodass Läufe und Updates bei allen geschlossenen Fenstern weitergehen.',
+      'Ein zweiter Start findet den Port belegt und öffnet ein weiteres Fenster auf demselben Server.',
+      'Die Seite startet mit eigenen Katalogen, daher funktionieren die Tab-Knöpfe offline, und ein Tab, der nicht lud, versucht es beim nächsten Klick erneut.',
+    ],
+    security: [
+      'Der Server lauscht nur auf Loopback, und das Handy erreicht ihn über Tailscale im Tailnet.',
+      'Eine Aktion braucht den Inhaltstyp JSON, sodass eine Seite einer anderen Site ohne Preflight nicht posten kann, den der Server nicht beantwortet.',
+      'Ask Archon erreicht weder das Löschen von Branches noch die Schlüsselrotation. Der Tab Keys zeigt das Alter jedes Geheimnisses, nicht seinen Wert.',
+    ],
+    performance: [
+      'Die Seite fragt die Läufe alle 5 Sekunden aus kleinen Dateien ab, daher braucht es keinen Push-Kanal.',
+      'Die Restzeit eines Laufs ist der Median früherer beendeter Läufe derselben Art.',
+      'Repo-Syncs und Paketscans laufen mit 8 Repos gleichzeitig.',
+    ],
+    operations: [
+      'Alle 2 Minuten zieht der Updater main und installiert neuere Desktop-Builds. Neuer Archon-Code startet den Server neu und lädt die Seite neu.',
+      'Eine versteckte Verknüpfung im Autostart-Ordner startet den Server bei der Anmeldung, ohne Fenster.',
+      'mise run test prüft, dass der englische und der russische Katalog dieselben Schlüssel haben, und startet dann den Node-Testrunner.',
+    ],
+    tradeoffs: [
+      'Eine lokale Webseite statt Tauri, weil sie allein auf Node läuft und sich am Handy öffnen lässt. Sie braucht Edge für das App-Fenster und die Sprache.',
+      'Keine Pakete und kein Build-Schritt, daher ist git pull das ganze Deploy. Das Routing ist von Hand geschrieben.',
+      'Eine sichtbare Konsole je Agentenlauf statt Headless-Läufen, damit die Person zusehen und Fragen beantworten kann.',
+    ],
+  },
   features: {
     'Ask Archon':
       'Edge macht aus Sprache Text. Claude Code auf Haiku wählt dann eine Launcher-Aktion, und der Server führt sie aus und öffnet ihren Tab.',

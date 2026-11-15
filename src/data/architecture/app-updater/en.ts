@@ -26,6 +26,48 @@ const arch: Arch = {
     { to: 'Workbench Soft site', text: 'The site builds the app catalog from its own project list.' },
     { to: 'archon', text: 'Archon ships no APK, so its card holds an Open link.' },
   ],
+  design: {
+    scale: [
+      "One screen on the developer's own phone, with a card per released studio app.",
+      'The GitHub API allows 60 unauthenticated calls an hour, which shaped the 10 minute list cache.',
+    ],
+    data: [
+      'No database. Shared preferences hold the last release list, with notes and names, and the package names learned in a run.',
+      'An asset key is the tag prefix plus the APK name without its version and platform suffix, such as farnear/farnear.',
+      'The installed apps come from the Android package manager on each check.',
+    ],
+    interfaces: [
+      'The GitHub Releases API of the shared public releases repo lists every APK page by page, and the compare API gives commit notes.',
+      'The studio site serves a catalog JSON with the name, platforms and link of each project.',
+      'Shizuku runs sh -c as the shell user, with pm install -r -d -S and pm uninstall.',
+    ],
+    reliability: [
+      'A failed GitHub check shows the saved list, and an open waits a minute before it asks again.',
+      'The update run lives outside the activity, so a turned screen keeps it, and Cancel stops before the next chunk.',
+      'A blocking build is removed only on a signature or version clash, and the exit status shows a failed reinstall.',
+    ],
+    security: [
+      'It reads public releases only and keeps no token or account.',
+      'Install rights come from the Shizuku grant the person gives, and the app runs no root command.',
+      'The own install checks the APK file size before it installs.',
+    ],
+    performance: [
+      'APKs download in 64 KB chunks with timeouts and a stop check.',
+      'The release list stays fresh for 10 minutes, so most opens skip the API.',
+      'Notes for cards without them load in the background from the compare API, after the cards show.',
+    ],
+    operations: [
+      'Checks run ktlint, shellcheck, shfmt, actionlint, markdownlint, the unit tests and the debug build on a self-hosted runner.',
+      'Release builds a signed APK beside Checks, and release-gate.sh publishes it once checks pass.',
+      'The job tags a date version and creates an updater release in the public releases repo, keeping the last 3.',
+    ],
+    tradeoffs: [
+      'Shizuku over the system installer, so installs need no prompt, at the cost of a start after each reboot.',
+      'Plain Views over Compose, for one screen and the Shizuku Java API, at the cost of hand built layout.',
+      'A public releases repo over private app repos, so the phone needs no token, at the cost of the 60 calls an hour limit.',
+      'The own APK installs last, through one shell command, since an install can kill the running process.',
+    ],
+  },
   features: {
     'Update all':
       'The update run queues each app that is behind and downloads it in 64 KB chunks. Shizuku installs each one as the shell user, and Cancel stops before the next chunk.',

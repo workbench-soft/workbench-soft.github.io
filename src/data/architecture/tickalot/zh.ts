@@ -30,6 +30,49 @@ const arch: Arch = {
     { to: 'OpenStreetMap', text: 'Nominatim 按名称找商店，Overpass 找附近的商店。' },
     { to: 'Google Play', text: 'AdMob 显示广告，Play Billing 出售去广告和 Pro。' },
   ],
+  design: {
+    scale: [
+      '私有清单只留在一部手机上，共享清单通过一条链接送到一个家庭或几位朋友手中。',
+      '应用没有服务器，所以 Firestore 免费套餐每天 50,000 次读取和 20,000 次写入，决定了共享清单的预算。',
+    ],
+    data: [
+      '手机上的 SQLite 保存清单、条目、商店、货架、走线、已知名称和价格。网页版在 wasm 上运行同一个 SQLite。',
+      '只有共享清单会进入 Firestore，存为 lists/{id}/items/{itemId}，商店的货架和走线存为 stores/{osmId}。',
+      '删除会设置 deleted = 1 并保留该行。dirty = 1 标记 Firestore 还没收到的更改。',
+      '照片是 360 像素的 JPEG，约 30 KB，保存在条目内部。',
+    ],
+    interfaces: [
+      '分享链接带有 32 位十六进制的随机清单 id，Android 的 intent filter 会在应用中打开它。',
+      'Tripforge 的行程链接带有 base64url 编码的 JSON，包含 v、place、start、nights 和最多 60 个地点。',
+      '价格来自 Woolworths 和 Coles 网站搜索背后的 JSON，商店来自 Nominatim 和 Overpass，景点来自 Tripforge Worker 或 Wikidata。',
+    ],
+    reliability: [
+      '每次更改先存入 SQLite，界面从中重绘，所以没有信号也能勾选。应用打开时，推送每 30 秒重试一次。',
+      '每个条目以较新的 updated 时间为准，手机上和 Firestore 规则里都一样。同一条目的两次离线编辑无法合并，后一次会取走整个条目。',
+      '应用进入后台后，监听器还会运行一分钟。已关闭的应用收不到通知，因为那需要推送服务器。',
+    ],
+    security: [
+      '每次安装都匿名登录 Firebase，链接里的随机清单 id 就是密钥。Firestore 拒绝列出清单。',
+      '规则会检查 32 位十六进制 id、已知字段、字段大小，以及不超过一天后的时间。照片必须是 JPEG 数据或 Wikimedia Commons 的图片。',
+      '拿到链接的人都能读取、修改和删除清单，Firebase App Check 目前关闭。',
+    ],
+    performance: [
+      '推送会等半秒，所以连续的勾选会合并成一次写入。',
+      '价格从 Woolworths 每次取 3 个名称，从 Coles 每次取 1 个。它们在 SQLite 里保留一天，只有价格会重绘。',
+      '手机读取商店货架的频率最多每 10 分钟一次。',
+    ],
+    operations: [
+      '每次推送到 main，Checks 和 Release 会一起启动。Checks 通过后，发布版会公开已签名的 APK，Checks 失败则取消构建。',
+      'Google Play 的 bundle 每天 19:00（悉尼时间）构建一次，并且只在应用有改动时构建。',
+      'Firebase Hosting 提供网页版，Checks 通过后会连同 Firestore 规则一起部署。GitHub 的 APK 会自我更新，Play 版本不含这段代码。',
+    ],
+    tradeoffs: [
+      '选 Expo 而不是原生 Kotlin 应用，这样一套代码也能提供共享链接打开的网页。',
+      '选 Firestore 的行而不是自建服务器或 WebRTC：无需运行服务器，勾选也不必等休眠的手机。',
+      '按条目取较新的更改，而不是逐字段合并：代码更少，代价是丢失较早的离线编辑。',
+      '选 Firebase Hosting 而不是 GitHub Pages，因为 wasm 版 SQLite 需要 COOP 和 COEP 头，而 Pages 设置不了。',
+    ],
+  },
   features: {
     'Share by link':
       'Firestore 存着每个共享清单的副本，链接里带着它的随机 id。每部手机先把改动存进 SQLite，网络恢复后再发出。',

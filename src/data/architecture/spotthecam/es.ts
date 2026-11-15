@@ -58,6 +58,49 @@ const arch: Arch = {
       text: 'Cada versión deja allí el APK, y el build de GitHub se actualiza solo desde allí.',
     },
   ],
+  design: {
+    scale: [
+      'Un conductor por instalación. El archivo de radares tiene unos 13 700 radares, uno por línea.',
+      'El sitio son archivos estáticos, así que solo compartir viajes necesita servidor. Un Worker pequeño se queda en el plan gratuito de Cloudflare.',
+      'Un viaje compartido está limitado a 1 MB y 100 000 puntos, y una dirección puede compartir 10 viajes por minuto.',
+    ],
+    data: [
+      'data/cameras.json guarda un radar por línea: tipo, estado, punto, calle, barrio, fuente, límite y dirección.',
+      'Los viajes están 400 días en el almacenamiento privado de la app. Los límites de las vías quedan 60 días en el teléfono.',
+      'Un viaje compartido vive en Cloudflare KV bajo un id de 10 caracteres, como líneas de ruta aligeradas y totales sin horas.',
+    ],
+    interfaces: [
+      'El Worker responde a POST /api/trips, y a GET y DELETE en /api/trips/<id>. Todo lo demás son archivos estáticos.',
+      'Los plugins de Capacitor unen la página web con los servicios de conducción en Kotlin y sus ports en Swift.',
+      'Las teselas de Overpass dan vías, ferrocarriles y pistas. Photon, Valhalla y TomTom responden por lugares, rutas y tráfico.',
+    ],
+    reliability: [
+      'El service worker prueba primero la red y recurre a la copia a los 4 segundos, con hasta 500 teselas del mapa guardadas sin conexión.',
+      'Un fallo del almacén en el Worker sale como 503 con cabeceras CORS, para que la app lo lea como fallo y no como falta de señal.',
+      'Si un servidor público de rutas no responde, la voz lo dice. Pasado el límite de TomTom, las rutas van sin tráfico.',
+    ],
+    security: [
+      'Compartir no pide iniciar sesión. KV guarda solo un hash SHA-256 de la clave de borrado, así que leer el almacén no permite borrar viajes.',
+      'El Worker revisa cada cuerpo con un analizador estricto y envía nosniff y una política default-src none.',
+      'Los viajes quedan en el teléfono hasta que se comparten. Un viaje compartido no lleva horas, y las velocidades en los radares quedan fuera sin permiso.',
+    ],
+    performance: [
+      'Servicios en Kotlin cruzan el GPS con las vías en caché del teléfono y avisan unos 20 segundos antes de un radar, sin red.',
+      'La compilación nocturna convierte los límites horarios en ventanas para los próximos 35 días, y el navegador solo elige la actual.',
+      'KV guarda en caché un viaje compartido un minuto cerca del lector, y las teselas se guardan sin la carpeta semanal de OpenFreeMap.',
+    ],
+    operations: [
+      'Una tarea de CI actualiza los radares a las 3 de la mañana de Sídney y sube el archivo con un radar por línea para que los diffs sean pequeños.',
+      'Cada push a main despliega el sitio en Cloudflare. Una tarea nocturna envía el bundle de Android a Google Play si la app cambió.',
+      'La versión APK de GitHub se actualiza sola desde GitHub Releases. La de Google Play no lleva ese código.',
+    ],
+    tradeoffs: [
+      'Un sitio Next.js estático en una carcasa de Capacitor en vez de Expo, para que el mapa y las páginas compartan código, a costa de un Worker para los viajes.',
+      'Un JSON diario en vez de una base de datos tras una API, para funcionar sin conexión y sin servidor, a costa de una lista de hasta un día.',
+      'Servicios de conducción nativos en Kotlin en vez de JavaScript en la WebView, porque Android pausa la WebView con la pantalla apagada.',
+      'Leaflet con teselas de OpenFreeMap en vez de Google Maps o Mapbox, porque no hay clave ni cuota.',
+    ],
+  },
   features: {
     'Camera map':
       'El build nocturno convierte los límites por horario de cada radar en ventanas para los próximos 35 días. El navegador elige la ventana del minuto actual.',

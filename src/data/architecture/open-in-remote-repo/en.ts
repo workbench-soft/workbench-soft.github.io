@@ -30,6 +30,43 @@ const arch: Arch = {
     { to: 'GitLab and Bitbucket', text: 'Link targets beside GitHub, built from the remote URL with no API call.' },
     { to: 'Visual Studio Marketplace', text: 'Lists the extension. Each publish there is done by hand.' },
   ],
+  design: {
+    scale: [
+      'One person per VS Code window, one link per click, so the work is a few git calls on one repo.',
+      'It runs in local, SSH and container windows, and a git call stops after 10 seconds so a slow remote can’t hang the editor.',
+    ],
+    data: [
+      'The extension keeps no state. Each command reads the settings, the selection and git, builds a link and forgets them.',
+      'The openInGitHub settings and the remote URL decide the host, the branch and any mapped address.',
+    ],
+    interfaces: [
+      'Commands come from the palette, the editor menu and the Explorer menu, 8 of them, and each calls the same link runner.',
+      'git gives the repo root, the remote URL and the branches through execFile, and the link builders write the file, blame and history URLs for each host.',
+      'vscode.env.openExternal opens the browser and vscode.env.clipboard copies, so both work in remote windows.',
+    ],
+    reliability: [
+      'The branch check tries the setting, the remote HEAD, main and master, then falls back to the current branch or the commit on a detached HEAD.',
+      'A git failure shows git’s own message, and git asks for no password in a terminal.',
+    ],
+    security: [
+      'The extension sends the hosts no requests, so it needs no token or login for GitHub, GitLab or Bitbucket.',
+      'git runs through execFile with no shell, so the defaultRemote setting can’t run a command.',
+    ],
+    performance: [
+      'esbuild bundles the sources into one file, which made the package smaller and the load faster.',
+      'Each git call is a short process through execFile with a 10 second limit, so a click costs a few small processes.',
+    ],
+    operations: [
+      'Checks run lint, the type check, the unit tests and the build on each push, and the release workflow builds the .vsix beside them.',
+      'A gate script publishes the build once Checks pass, and a failed Checks run cancels it. A Marketplace publish stays manual.',
+      'Plain TypeScript in git and links runs in Node under mise run test, and only the editor glue needs a VS Code test window.',
+    ],
+    tradeoffs: [
+      'Links from local git over each host’s REST API, so there is no token and no network call per click. The link can’t confirm the file exists on the host.',
+      'vscode.env.openExternal over the open package, which broke names such as users.$id.tsx and opened no browser from SSH windows.',
+      'A fork of an existing extension over a rewrite, which kept the host link code and its tests. The new id means people reinstall.',
+    ],
+  },
   features: {
     'Open a file, blame or history link':
       'The command reads the file and its selected lines from the editor and the remote from git. A host module writes the link, and VS Code opens it in the browser.',

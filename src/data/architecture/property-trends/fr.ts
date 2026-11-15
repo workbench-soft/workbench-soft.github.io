@@ -44,6 +44,49 @@ const arch: Arch = {
     { to: 'Google Play', text: 'Supprimer les pubs et Property Trends Pro se vendent en achat unique sur Android.' },
     { to: 'App Store', text: 'Les mêmes achats sur l’iPhone, une fois le compte développeur ouvert.' },
   ],
+  design: {
+    scale: [
+      'Un seul site statique sert tous les visiteurs, donc plus de lecteurs ne coûtent rien au studio.',
+      'Les ventes viennent de VIC, NSW et SA, et le fichier de formes découpe 15 358 banlieues ABS en un seul fichier PMTiles de 53 Mo.',
+      'Les autres États restent gris, faute de données de ventes gratuites.',
+    ],
+    data: [
+      "Chaque jeu de filtres a son propre fichier JSON, car les médianes ne s'additionnent pas entre groupes. Une cellule de moins de 5 ventes n'a pas de médiane.",
+      "Les formes sont dans boundaries.pmtiles, avec le code de la banlieue comme id d'objet et sans tags.",
+      'Un fichier de banlieue garde chaque type et chaque tranche de terrain en liste de période, médiane et ventes. Les fichiers du recensement ajoutent les chiffres du Census 2021 et de SEIFA.',
+    ],
+    interfaces: [
+      "L'app lit du JSON statique et des PMTiles par requêtes HTTP range, sans API propre.",
+      "Le pipeline Rust lit les listes VIC et SA depuis des API CKAN, les zips .DAT de NSW et les formes de l'ABS.",
+      'ts-rs écrit les types TypeScript de chaque fichier de données depuis les structs Rust.',
+    ],
+    reliability: [
+      "Un changement de licence dans une source arrête l'exécution du pipeline, donc aucune donnée sans licence n'est publiée.",
+      "Pages remplace tout le site d'un coup, donc un visiteur lit une version entière.",
+      "Pas encore de service worker, donc l'app web installée a besoin du réseau.",
+    ],
+    security: [
+      'Ni connexion ni serveur. Google Play vérifie les achats sur le téléphone, donc un téléphone rooté peut en falsifier un.',
+      "Seules des données ouvertes à licence listée entrent. Les ventes NSW s'affichent sur le site sans pub, car leur licence est non commerciale.",
+      "Un Worker Rust prévu garderait toute clé d'API dans un secret de Worker, hors du bundle. Il n'est pas construit.",
+    ],
+    performance: [
+      "Des fichiers précalculés font qu'un changement de filtre charge un seul JSON, et la carte web change les couleurs via feature-state.",
+      'Sur téléphone, MapLibre construit une expression match depuis le fichier, car 15 000 appels feature-state passeraient un à un par le pont.',
+      'PMTiles stocke une fois les tuiles identiques, et un déploiement saute le pipeline si ses entrées égalent celles du dernier run.',
+    ],
+    operations: [
+      'Checks lance côte à côte les jobs TypeScript et Rust sur le runner du PC : lint, types, tests et exports web et iOS.',
+      'Deploy web tourne après chaque Release verte et chaque lundi. Il publie une release du dépôt du site, et Pages décompresse la plus récente.',
+      "L'hébergement coûte 0 $ : GitHub Pages, un fond de carte OpenFreeMap sans clé et un runner auto-hébergé.",
+    ],
+    tradeoffs: [
+      "Des fichiers statiques sur GitHub Pages plutôt qu'une base de serveur, pour un hébergement à 0 $. Les filtres restent des choix fixes.",
+      "Des données publiques ouvertes plutôt que le scraping d'un portail, que ses conditions interdisent. Le coût : pas de chambres et des États gris.",
+      "Un pipeline Rust plutôt qu'un script Node, car NSW garde chaque vente depuis 1990 et les formes demandent un gros travail.",
+      "Une seule base Expo plutôt qu'un site web seul, pour que les builds des stores ne soient pas une seconde app. La carte exige 2 bibliothèques.",
+    ],
+  },
   features: {
     'Price map':
       'Le pipeline Rust calcule une médiane par banlieue et par type pour chaque période. MapLibre colore chaque contour de banlieue ABS en 7 paliers coupés aux quantiles.',

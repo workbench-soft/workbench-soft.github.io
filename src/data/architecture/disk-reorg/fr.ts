@@ -32,6 +32,48 @@ const arch: Arch = {
     'Le déplaceur applique le plan et journalise chaque déplacement pour l’annulation.',
   ],
   links: [{ to: 'GitHub', text: 'Lance les contrôles à chaque push sur main et publie une version avec des notes.' }],
+  design: {
+    scale: [
+      "Le PC d'un développeur et ses partages réseau, et chaque exécution couvre les dossiers d'une config.",
+      "Un gros partage a façonné la conception. Le hachage se fait par étapes, et une ligne de progression avec le temps restant s'affiche toutes les 5 secondes.",
+    ],
+    data: [
+      'Une config JSON hors de git contient les dossiers et les règles. Le dépôt fournit config.example.json avec des chemins inventés.',
+      'Chaque exécution écrit un CSV de plan avec From, To et une colonne Keep facultative, et un journal des déplacements avec From, To et Time.',
+      'La commande inventory écrit un rapport Markdown des nombres, tailles, années, types de fichiers et copies probables.',
+    ],
+    interfaces: [
+      'Une ligne de commande avec inventory, move, undo, dupes, candidates, sort et inbox, lue avec node:util parseArgs.',
+      "Le CSV de plan est le contrat entre les commandes et le déplaceur, si bien qu'une personne peut le modifier et l'appliquer avec move.",
+      "Chaque CSV commence par une marque d'ordre des octets UTF-8, pour qu'Excel et PowerShell 5.1 lisent bien les noms cyrilliques.",
+    ],
+    reliability: [
+      "Une exécution s'arrête si son journal ne peut pas s'écrire, de sorte que chaque déplacement reste annulable. La ligne entre dans le journal avant le déplacement suivant.",
+      "Entre lecteurs, un déplacement copie d'abord et supprime ensuite, donc une copie ratée laisse la source intacte.",
+      "Un doublon dont la copie gardée a disparu reste en place, et l'exécution se termine par 1 si une copie gardée manque ensuite.",
+    ],
+    security: [
+      "L'outil ne supprime aucun fichier. Une suppression le déplace sous la quarantaine avec son lecteur et son chemin conservés.",
+      'inventory, candidates, sort et inbox ne lisent que noms, tailles et dates. dupes ne lit le contenu que pour le hacher.',
+      "Il lit la config locale et les fichiers, n'appelle aucun réseau et ne stocke aucun jeton. Les vrais chemins restent hors de git.",
+    ],
+    performance: [
+      'dupes groupe par taille, hache le premier 1 Mo, et ne lit en entier que les fichiers qui concordent encore.',
+      'Le parcours lit les infos de fichiers 64 à la fois et compte chaque chemin une fois, donc des racines qui se recouvrent coûtent peu.',
+      'Le hachage lit 4 fichiers à la fois et indique fichiers, gigaoctets, pourcentage et temps restant.',
+    ],
+    operations: [
+      'Node 24 exécute les fichiers TypeScript tels quels, sans bundle, et mise lance chaque commande et chaque tâche.',
+      'Les contrôles tournent à chaque push sur main, puis Release publie une version GitHub une fois les contrôles passés. Les exécutions sur pull request sont coupées.',
+      'Un hook husky avant le push lance le lint et les tests. Les tests créent des dossiers temporaires et laissent les vrais tranquilles.',
+    ],
+    tradeoffs: [
+      "Une quarantaine plutôt que la suppression ou la corbeille, pour qu'une règle fausse ne coûte qu'un déplacement en arrière, au prix d'un espace libéré seulement quand la personne vide la quarantaine.",
+      "Un seul module de plan pour toutes les commandes plutôt que des contrôles dans chacune, pour qu'une copie gardée ou un déplacement en conflit arrête l'exécution à un seul endroit.",
+      "Une config privée hors de git plutôt que des règles dans le dépôt, pour que les noms de dossiers restent sur le PC, au prix d'une copie manuelle vers un nouveau PC.",
+      'TypeScript sur Node plutôt que les premiers scripts PowerShell, pour avoir des tests et des chemins dans la config.',
+    ],
+  },
   features: {
     'Folder report':
       'Le parcours lit les noms, tailles et dates des dossiers listés. L’outil écrit les comptes, années, types et copies probables dans un fichier Markdown.',

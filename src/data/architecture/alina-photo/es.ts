@@ -37,6 +37,52 @@ const arch: Arch = {
       text: 'Una versión aplica las migraciones de D1 y despliega cuando pasan las comprobaciones en main.',
     },
   ],
+  design: {
+    scale: [
+      'El sitio de estudio de una fotógrafa: los clientes reservan y abren galerías, y Alina lleva una zona de administración. El tráfico es pequeño.',
+      'Cada foto se guarda en 2 tamaños, 2400 px y 800 px, y un archivo de cámara de 25 MB se sube como menos de 1 MB.',
+      'Una petición del Worker tiene unos milisegundos de CPU y la compilación wasm pesa unos 2,5 MB, lo que llevó el trabajo pesado al navegador.',
+    ],
+    data: [
+      'D1 guarda photos, bookings, settings, sessions, login_links, galleries y gallery_files. Las horas van en texto UTC, así que el orden del texto es el orden del tiempo.',
+      'Las filas de settings son JSON sin versión. Una fila que ya no se analiza vuelve al valor por defecto y registra un error.',
+      'R2 guarda las fotos como p/<id>/l.webp y s.webp, una fuente subida y los archivos de galería bajo g/<gallery>/: prueba, miniatura de 160 px y original.',
+    ],
+    interfaces: [
+      'El Worker sirve JSON bajo /api para días, franjas, reservas, fotos, galerías e inicio de sesión, y un feed de calendario en /calendar/<token>.ics.',
+      'El calendario de entrada es la dirección iCal secreta de Alina, en caché 5 minutos. El de salida es el feed de reservas, y cada correo de reserva lleva booking.ics.',
+      'El correo sale por el enlace send_email de Email Routing, solo a la dirección verificada de Alina.',
+      'booking-core es un crate de Rust para franjas, la revisión de la reserva, la hora del atardecer e iCal, con el crate rrule para eventos repetidos.',
+    ],
+    reliability: [
+      'Un POST de reserva vuelve a comprobar que la franja sigue libre, así que una franja ocupada tras cargar la lista se rechaza.',
+      'Un feed de calendario suscrito se retrasa horas, así que cada correo de reserva también lleva el archivo iCal.',
+      'Las sesiones y los enlaces de acceso caducados se borran de D1, y una prueba guardada mantiene legibles las filas de settings de hoy.',
+      'La release migra D1 y despliega, y los tiempos de espera de Cloudflare dan 3 intentos a las migraciones y al despliegue.',
+    ],
+    security: [
+      'El inicio de sesión es un enlace por correo válido 15 minutos. Abre una página que envía el token por POST, porque los escáneres de correo abren los enlaces GET.',
+      'Una sesión dura 30 días en una cookie HttpOnly y SameSite Lax, y D1 guarda solo el hash del token.',
+      'Un enlace de límite de tasa de Workers permite 5 llamadas por minuto y por IP en los formularios de reserva y de envío de correo.',
+      'El id de la galería va en el hash del enlace, así que queda fuera de los registros del servidor y de los referrers. Quien tenga el enlace ve la galería.',
+    ],
+    performance: [
+      'El navegador reduce cada foto a 2 tamaños antes de subirla, así que un archivo de 25 MB sube como menos de 1 MB y sin datos GPS.',
+      'client-zip construye el zip de la galería en el navegador, porque el Worker no puede leer gigabytes dentro de su límite de CPU.',
+      'Las páginas son HTML estático de Astro servido por el Worker, y el texto del calendario se guarda en caché 5 minutos.',
+    ],
+    operations: [
+      'Un solo Worker sirve las páginas y la API. worker-build convierte el Rust en wasm, y mise fija Rust, Node y pnpm.',
+      'La release arranca con workflow_run cuando Checks pasa en main, una ejecución a la vez: compilación, migraciones de D1, despliegue, etiqueta.',
+      'Las migraciones son archivos SQL numerados en migrations/. El lint cubre oxlint, oxfmt, tsc, knip, rustfmt, clippy para el PC y para wasm, y cargo shear.',
+    ],
+    tradeoffs: [
+      'Un solo Worker para páginas y API en lugar de GitHub Pages más un Worker, para que la cookie de administración funcione en un solo origen sin CORS.',
+      'Inicio de sesión con enlace por correo en lugar de contraseña o Cloudflare Access, para que Alina no tenga contraseña que olvidar ni necesite configurar Zero Trust.',
+      'iCal de entrada y salida en lugar de la API de Google Calendar, para evitar app OAuth, revisión y renovación de token, pero un feed se retrasa horas.',
+      'Reducir, poner marca de agua y comprimir en el navegador en lugar de en el Worker, que va corto de CPU, a costa de que una prueba no se pueda remarcar sin su archivo original.',
+    ],
+  },
   features: {
     Portfolio:
       'La página carga la lista de fotos desde el Worker, que la lee de D1. Cada foto viene de R2 en 2 tamaños WebP, 800 y 2400 px.',

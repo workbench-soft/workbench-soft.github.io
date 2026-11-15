@@ -38,6 +38,52 @@ const arch: Arch = {
     { to: 'Google Play', text: "La bannière AdMob et l'achat Supprimer les pubs dans l'app Android." },
     { to: 'App Store', text: "StoreKit vend Supprimer les pubs dans l'app iPhone dès qu'elle sera sur l'App Store." },
   ],
+  design: {
+    scale: [
+      'Une personne par navigateur, 23 champs sur une seule page de calcul. La comparaison se recalcule dans le navigateur à chaque modification.',
+      'Le site est fait de fichiers statiques sur Cloudflare, donc aucun serveur du studio ne porte la charge.',
+      "Les tranches d'impôt, la FBT et les droits de timbre sont des nombres fixes dans le code : la limite est de les tenir à jour, pas la charge.",
+    ],
+    data: [
+      'Ni base de données ni compte. Les modifications sont dans localStorage en JSON sous 3 clés : champs (avec un numéro de version), thème et langue.',
+      "Seuls les champs modifiés sont enregistrés, donc une date de début intacte vaut aujourd'hui et une valeur par défaut suit le type de voiture et les règles.",
+      "Les tranches d'impôt, les constantes FBT et les droits de timbre par État sont des constantes dans src/rules, chacune avec un lien vers sa source.",
+    ],
+    interfaces: [
+      'compareOptions prend un objet CalcInputs et renvoie un Comparison : coût, évolution du compte et parts du coût par option.',
+      "La page parle à l'appli Android par window.ConsdrApp, avec les messages state, buy, privacy et devAds et des réponses en JSON.",
+      "L'appli iPhone répond au même pont depuis Swift, et Capacitor sert le site construit depuis l'intérieur de l'appli.",
+      'Le build écrit sitemap.xml, llms.txt, ads.txt et le JSON-LD des questions fréquentes.',
+    ],
+    reliability: [
+      "Les pages passent d'abord par le réseau et retombent sur la copie en cache après 3 secondes ou sur une erreur serveur.",
+      "Si les données du site sont bloquées, la lecture donne null et l'écriture est ignorée, et la page marche pour cette visite.",
+      'Une valeur enregistrée du mauvais type ou une valeur de liste inconnue est écartée au chargement. Un enregistrement dans un onglet recharge les autres.',
+    ],
+    security: [
+      'Pas de connexion, et les chiffres ne vont vers aucun serveur : les saisies ne quittent pas le navigateur.',
+      'Les en-têtes de réponse posent frame-ancestors none, object-src none, nosniff et HSTS, et coupent caméra, micro et position.',
+      'La clé de signature Android est un secret de CI déchiffré sur le runner, et le dépôt ne contient aucune clé.',
+      "L'appli Android demande le consentement aux publicités via le SDK de consentement de Google.",
+    ],
+    performance: [
+      "L'anglais est dans le script principal, et chacun des 8 autres catalogues se charge en morceau séparé quand on le choisit.",
+      'Le build prérend le calculateur avec les valeurs par défaut et précharge les polices latines, pour que le contenu apparaisse tôt et que les chiffres ne bougent pas.',
+      "Les fichiers de /assets/ portent un hash de contenu, reçoivent un en-tête de cache d'un an et sortent d'abord du cache dans le worker.",
+    ],
+    operations: [
+      'Un seul job vérifie, teste et construit, puis wrangler deploy publie dist/ sur Cloudflare à chaque push sur main.',
+      'La CI tourne sur le runner Windows du studio, donc le dépôt privé ne consomme aucune minute Actions.',
+      'Une exécution nocturne à 19 h, heure de Sydney, construit le bundle Android signé pour Google Play, seulement si android/ a changé.',
+      "Le nom du cache du service worker hache la liste des fichiers, le texte des pages et le code du worker, donc chaque déploiement remplace l'ancien cache.",
+    ],
+    tradeoffs: [
+      "Un calcul dans le navigateur plutôt qu'une API serveur, pour qu'aucune donnée ne quitte l'appareil et que l'hébergement se réduise à des fichiers statiques.",
+      "Sur Android, une WebView autour du site en ligne plutôt que des écrans natifs, pour qu'un seul code serve le web et l'appli, et qu'un déploiement du site arrive aussitôt.",
+      "Des pages d'abord par le réseau plutôt que par le cache, pour qu'un déploiement se voie tout de suite, au prix de 3 secondes sur une connexion lente.",
+      "Des règles fixes dans le code avec leurs sources plutôt qu'une API de taux, pour que chaque nombre se vérifie, mais un nouvel exercice fiscal demande une version.",
+    ],
+  },
   features: {
     'Compare a lease, a loan and cash':
       'Une simple fonction TypeScript prend les champs et rend un total par option. Elle tourne dans le navigateur à chaque modification, et aucun serveur ne voit les chiffres.',

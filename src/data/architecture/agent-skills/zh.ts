@@ -28,6 +28,44 @@ const arch: Arch = {
     { to: 'Codex', text: '同样的技能、钩子，以及从 Claude Code 复制的 MCP 服务器。' },
     { to: 'GitHub', text: '检查和带日期的发布在 GitHub Actions 上运行。' },
   ],
+  design: {
+    scale: [
+      '每台机器一个人，33 个技能，以及任意数量读取 Agent Skills 格式的智能体。',
+      '每次会话都会加载每个技能的描述，所以描述不超过 480 个字符，技能正文不超过 300 行。',
+    ],
+    data: [
+      '没有数据库。一个技能就是带 SKILL.md 和 front matter 的文件夹，外加按需加载的参考文件。',
+      '钩子分组放在 JSON 文件里，turn-voice 钩子把缓存的语音片段放在本地文件夹。',
+    ],
+    interfaces: [
+      '与智能体的约定是 front matter：name 等于文件夹名，description 说明何时加载这个技能。',
+      '安装器把钩子分组合并进 Claude Code 和 Codex 的设置，并为 Kimi Code 写入带标记的块。',
+      'turn-voice 钩子读取一轮最后一行的状态标记，并朗读对应的句子。',
+    ],
+    reliability: [
+      '克隆里的 git 钩子在 pull、merge、checkout 和 rebase 之后重新链接技能，所以新技能立刻出现。',
+      '合并钩子时会保留使用者自己的钩子。没有 Node 时，安装会跳过钩子并说明。',
+      '语音下载失败时只剩提示音，缓存里的片段无需网络也能播放。',
+    ],
+    security: [
+      '仓库是公开的，不存任何令牌。来自 fork 的 PR 在 GitHub 的 runner 上运行，所以它们的代码碰不到这台 PC。',
+      '网站类技能遇到登录、CAPTCHA、密钥和付款就停下，交给使用者。',
+    ],
+    performance: [
+      '每一轮只加载简短的写作规则。当请求匹配某个技能的描述时，才加载完整技能。',
+      '语音片段有缓存，提示音和语音合并成一次 PlaySound 调用，所以第一个词能完整播出。',
+    ],
+    operations: [
+      'check 工作流在 Windows 上测 PowerShell 安装，在 Linux 上测 shell 安装，并由 mise 固定每个工具的版本。',
+      'release 工作流在 main 上的 check 通过后，通过 workflow_run 启动，并打上日期标签，例如 v2026.10.30.1。',
+      'mise run test 检查技能格式、文本预算、单元测试，以及在临时 home 里的安装和卸载。',
+    ],
+    tradeoffs: [
+      '选每个技能一个 Markdown 文件夹，而不是每个智能体一份规则文件，所以一份副本可服务约 50 个智能体。规则只靠读它的智能体来执行。',
+      '选一个克隆链接到每个智能体，而不是每个智能体一份副本，所以一次修改立刻到达所有智能体。没有开发者模式的 Windows 用 junction。',
+      '选用 Windows 自带的 csc.exe 构建 C# 钩子，无需 SDK。它只在 Windows 上运行，Mac 由 Node 版本覆盖。',
+    ],
+  },
   features: {
     'Writing style':
       '一个简短的规则文件通过代理的主规则文件在每一轮加载。完整技能在第一段文字之前加载，带有词表和最后检查。',

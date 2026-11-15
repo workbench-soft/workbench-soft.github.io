@@ -39,6 +39,56 @@ const arch: Arch = {
     { to: 'Google Gemini', text: 'Gesprächsübung und Themenvorschläge rufen es mit dem eigenen Schlüssel der Person.' },
     { to: 'Google Play', text: 'AdMob zeigt die Werbung, und Play Billing verkauft Werbung entfernen und Pro.' },
   ],
+  design: {
+    scale: [
+      'Ein Lernender pro Installation, alle Karten liegen in SQLite auf dem Gerät. Ein eigener Server des Studios läuft nicht.',
+      'Die Wortbasis steckt als assets/words/en.json und ru.json in der App, gebaut aus CEFR-J, Octanove, Wiktionary und OpenRussian.',
+      'Kostenlose Dienste setzen die Grenzen: MyMemory liefert etwa 5.000 Wörter pro Tag und Gerät, und die GitHub-Releaseliste erlaubt 60 Aufrufe pro Stunde und Adresse.',
+      'Das Gesprächsmodell auf dem Handy braucht etwa 1,2 GB Speicher und 2 GB freien Arbeitsspeicher.',
+    ],
+    data: [
+      'Karten, Wiederholungen, bekannte Wörter und Bilder liegen über expo-sqlite in SQLite, auch im Web.',
+      'Eine Karte hält ihren FSRS-Zustand als JSON in memory, und due wird für den Index in eine eigene Spalte kopiert. (lang, term_key) ist eindeutig.',
+      'Eine gelöschte Karte bleibt als Flag erhalten, und updated_at lässt beim Sync die spätere Änderung gewinnen.',
+      'Einstellungen liegen in localStorage. Bilder bleiben auf jedem Gerät und gehen nicht in den Sync.',
+    ],
+    interfaces: [
+      'Der Sync schreibt jede Karte nach Firestore unter decks/{code}/cards/{lang}_{termKey}, und firestore.rules prüft die Codelänge und jedes Feld.',
+      'Ein getipptes Wort geht an die Basis, dann an Wiktionary über kaikki.org, dann an die MyMemory-API. Wikipedia liefert das Titelbild.',
+      'Gemini wird vom Gerät mit dem eigenen Schlüssel der Person aufgerufen, und Qwen 3 läuft über react-native-executorch auf dem Handy.',
+      'Ein Kotlin-Modul in modules/speaker/ rendert Sprache in eine Datei, und ein Hintergrund-Handler zeichnet das Android-Homescreen-Widget.',
+    ],
+    reliability: [
+      'Jedes Gerät arbeitet allein mit seiner SQLite-Datei, daher läuft die App offline, und der Sync ist eine optionale Schicht darüber.',
+      'Beim Sync gewinnt die spätere Änderung eines Worts, und eine gelöschte Karte bleibt als Flag, damit auch das Löschen synchronisiert wird.',
+      'Eine Suche fällt von der Basis auf Wiktionary und dann auf MyMemory zurück. kaikki.org sendet keine CORS-Header, daher überspringt der Web-Build es.',
+      'Eine reine, getestete Funktion plant eine Woche lokaler Benachrichtigungen, so dass wer die App auslässt, 7 Tage lang eine pro Tag bekommt.',
+    ],
+    security: [
+      'Die anonyme Firebase-Anmeldung gibt ein Konto pro Gerät, und ein Kopplungscode aus 80 Zufallsbits teilt ein Deck ohne Benutzerkonto.',
+      'Wer den Code hat, kann dieses Deck lesen und ändern. Wiederholungen, Einstellungen und bekannte Wörter bleiben auf jedem Gerät.',
+      'Gemini läuft mit dem eigenen Schlüssel der Person, und außer dem Aufruf der gewählten Engine verlässt keine Nachricht das Gerät.',
+      'Der Android-Keystore und sein Passwort sind CI-Geheimnisse, eine Kopie liegt außerhalb des Repos.',
+    ],
+    performance: [
+      'Die Batch-Abfrage liest fällige Karten über den Index cards_due und füllt dann neue Wörter bis zum Tageskontingent auf.',
+      'words/complete bietet Basiswörter nach den ersten Buchstaben ohne Netz an, und die Basis lädt bei der ersten Nutzung.',
+      'expo-image hält Bilder auf der Platte, und ein leeres Bildergebnis wird nach 30 Tagen erneut abgefragt.',
+      'Der Release-Build nutzt seinen behaltenen Ordner android/ wieder, wenn @expo/fingerprint passt, und baut nur das JS neu.',
+    ],
+    operations: [
+      'Die Checks führen Lint, Format, Typen, knip und Vitest zweimal aus: als Android und Web, dann mit Platform.OS auf ios.',
+      'Ein Push auf main baut die APK auf einem schweren Runner, und release-gate.sh veröffentlicht, sobald die Checks bestehen. Fehlgeschlagene Checks brechen den Build ab.',
+      'Mit gesetztem PLAY_TRACK lädt ein nächtlicher Lauf um 19:00 Sydney-Zeit ein Bundle zu Google Play hoch, und nur wenn sich die App geändert hat.',
+      'Die GitHub-APK prüft in der Releaseliste auf einen neueren memoire-v*-Tag. Die Play- und iOS-Builds lassen diesen Code weg.',
+    ],
+    tradeoffs: [
+      'Expo mit React Native statt einer nativen Kotlin-App, damit eine Codebasis Android, iOS und Web baut, auf Kosten einiger Teile nur fürs Handy.',
+      'SQLite auf dem Gerät statt Firestore als einziger Speicher, damit die App offline läuft und sofort öffnet, und der Sync optional bleibt.',
+      'Ein Kopplungscode statt Google-Anmeldung, damit sich Geräte ohne Konto koppeln, auf Kosten davon, dass jeder mit dem Code das Deck ändern kann.',
+      'Der FSRS-Zustand in einer JSON-Spalte statt einer Spalte pro Feld, damit eine Änderung bei ts-fsrs kein neues Schema braucht, doch das JSON ist nicht abfragbar.',
+    ],
+  },
   features: {
     'Word batches':
       'Ein Runden-Modul nimmt die fälligen Karten aus SQLite, dann neue Wörter aus der Basis bis zum Tagesziel. ts-fsrs legt fest, wann jede Karte wiederkommt.',

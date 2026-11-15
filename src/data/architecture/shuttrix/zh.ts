@@ -30,6 +30,51 @@ const arch: Arch = {
     { to: 'Google Play', text: 'Google Play Billing 出售 Plus 和去广告。' },
     { to: 'Google AdMob', text: 'AdMob 在同意表单之后显示相册横幅。' },
   ],
+  design: {
+    scale: [
+      '每部手机一个人，没有服务器：每张照片都在手机上合成并保存。',
+      '人像照片在 Pixel 7 Pro 的 CPU 上每 1200 万像素约需 7 秒，深度模型要下载 26 MB。',
+      '一张合并照片在内存里存着 5 帧全尺寸画面，每帧约 18 MB。',
+    ],
+    data: [
+      '设置是 Android shared preferences 里的一个 JSON 值，在第一次渲染时读取，所以相机按上次的样子打开。',
+      '成片是 DCIM/Camera 里的 WebP、JPEG、PNG 或 MP4 文件，通过属于应用的 MediaStore 行列出。RAW 会多出一个 DNG。',
+      '地点、白平衡校准和实时数值在相机打开期间留在内存里。',
+    ],
+    interfaces: [
+      'React Native 把转盘数值作为 props 传给 Kotlin 相机视图，模块每秒 4 次把实时数值送回来。',
+      'CameraX 管生命周期和用例，Camera2 互操作设置 ISO、快门、对焦距离和白平衡增益。',
+      '成片落进 DCIM/Camera 下的 MediaStore，Memories 从那里读取，应用还会响应 Android 的相机 intent。',
+    ],
+    reliability: [
+      '每次打开相机，转盘都会按保存的设置回到相机上。',
+      '512 px 的草稿会先显示在图库里，直到最终文件落地。',
+      '没有 Night 扩展的镜头会退到低帧率加强降噪，CameraX 则取最接近的受支持尺寸。',
+    ],
+    security: [
+      '照片留在手机上。应用没有账号，也没有自己的服务器。',
+      '只在相机打开期间读取位置，地点写进所保存文件的 EXIF 标签。',
+      'AdMob 在图库首次打开时才征求同意，而不是启动时，所以快速抓拍不会被拖慢。',
+    ],
+    performance: [
+      '零快门延迟在触摸按下时就触发，所以成片保留按下那一刻。',
+      '普通照片要求 60 帧的帧率范围，所以自动曝光把快门保持在 1/60 秒或更快。',
+      '人像虚化在 2048 px 的图层上渲染，Enhance 和 Mini 以 GPU 通道运行。',
+      '一个环形缓冲区保存合并照片用的最近 5 帧，以及 Rust 显影用的最近 8 帧 raw。',
+    ],
+    operations: [
+      '推送到 main 会同时启动相机检查和发布构建，只有检查通过 release-gate.sh 才发布。',
+      '标签是 shuttrix-v 加日期，APK 发到公开站点仓库的发布里，应用和更新器都在那里找到它。',
+      '相机有改动时，Play 包每天在悉尼时间 19:00 构建一次，Play 版本里更新器换成空桩。',
+      '另一个 workflow 构建 ONNX Runtime 和 OpenCV 库，并作为 prerelease 发布。',
+    ],
+    tradeoffs: [
+      '选 Expo 加 CameraX 之上的 Kotlin 模块，而不是 react-native-vision-camera，后者没有手动对焦距离、ISO、快门和开尔文。',
+      '夜景选 CameraX 扩展，而不是在 Kotlin 里叠帧，这样跑的是手机自己的管线，白平衡和 EV 交给它。',
+      '选 Depth Anything V2 Small 而不是更大的模型，因为它是 Apache 许可，代价是 26 MB 下载和每张约 7 秒。',
+      '选与 Memories 同一个单体仓库而不是独立仓库，以共用编辑器和查看器，代价是按路径划分的 CI。',
+    ],
+  },
   features: {
     'Simple and Pro': '两个模式驱动同一个相机视图。简单模式把对焦和曝光交给自动，Pro 模式交给拨盘。',
     'Simple mode': 'React Native 在相机视图上绘制镜头图标、变焦条和滑块。设置存储保存每个值，并把它转成相机属性。',

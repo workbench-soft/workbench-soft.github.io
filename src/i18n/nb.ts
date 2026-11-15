@@ -65,6 +65,16 @@ const nb: Catalog = {
         parts: 'Deler',
         flow: 'Dataflyt',
         links: 'Koblet til',
+        design: {
+          scale: 'Omfang og grenser',
+          data: 'Data',
+          interfaces: 'Grensesnitt',
+          reliability: 'Pålitelighet',
+          security: 'Sikkerhet og personvern',
+          performance: 'Ytelse',
+          operations: 'Bygg og utgivelse',
+          tradeoffs: 'Avveininger',
+        },
       },
       kinds: {
         app: 'Apper for folk',

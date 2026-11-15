@@ -37,6 +37,49 @@ const arch: Arch = {
     { to: 'GitHub', text: 'Die Quelle jedes PRs, Reviews und Kommentars, gelesen über die gh CLI.' },
     { to: 'Homebrew', text: 'Installiert jq und terminal-notifier bei der Einrichtung.' },
   ],
+  design: {
+    scale: [
+      'Eine Person an einem Mac. Die Suche umfasst offene PRs, die in den letzten 3 Tagen aktualisiert wurden.',
+      'Ein Lauf nach dem ersten dauert unter 10 Sekunden, weil nur PRs mit verändertem updatedAt neu geöffnet werden.',
+      'Das Werkzeug ist eine Bash-Datei mit unter 400 Zeilen.',
+    ],
+    data: [
+      'Flache Dateien im Cache-Ordner des Benutzers: seen.txt, pr-updated.tsv, review-requests.tsv und ein Sperrordner.',
+      'seen.txt hält die letzten 3000 Ereignisschlüssel. Ein Schlüssel ist die URL des Reviews oder Kommentars.',
+      'Der Ordner ist nur für das eigene Konto lesbar, weil er die URLs privater PRs auflistet.',
+    ],
+    interfaces: [
+      'gh search prs und gh api lesen GitHub, und jq liest die JSON-Antworten.',
+      'terminal-notifier zeigt jede Meldung und öffnet per Klick den Kommentar, mit osascript als Rückfall.',
+      'launchd startet den Agenten alle 180 Sekunden. GH_REVIEW_NOTIFY_INTERVAL und GH_REVIEW_NOTIFY_BOTS ändern Intervall und Bot-Filter.',
+    ],
+    reliability: [
+      'Ein Sperrordner lässt einen zweiten Lauf sofort enden.',
+      'Eine fehlgeschlagene PR-Suche stoppt den Lauf, bevor eine Cache-Datei sich ändert, und eine fehlgeschlagene Abfrage der Review-Anfragen bleibt aus dem Cache, der nächste Lauf fragt also erneut.',
+      'Ein Ereignis erscheint bis zu 3 Minuten später und nur bei wachem Mac. launchd holt nach dem Aufwachen auf.',
+    ],
+    security: [
+      'Es nutzt den Login von gh auth, das Werkzeug speichert also kein Token.',
+      'Die Cache-Dateien bleiben nur für das eigene Konto lesbar.',
+      'Es fragt github.com vom Mac aus ab, daher erreichen weder ein Webhook noch eine öffentliche Adresse die Maschine.',
+    ],
+    performance: [
+      'Reviews und Kommentare werden nur für PRs gelesen, deren updatedAt sich bewegt hat, oder bei einem Seed für jeden PR.',
+      'Review-Anfragen an Teams entfallen, und mehr als 4 Kommentare zu einem PR werden zu 1 Meldung gefaltet.',
+      'grep und awk prüfen jeden Ereignisschlüssel gegen seen.txt, ohne Datenbank.',
+    ],
+    operations: [
+      'install.sh kopiert das Skript in den lokalen bin-Ordner, schreibt die plist und lädt den Agenten. uninstall.sh macht es rückgängig.',
+      'tests/run.sh lässt das Skript auf vorbereiteten GitHub-Antworten laufen, mit Stubs für gh, date und terminal-notifier.',
+      'Die Prüfungen laufen auf einem macOS-Runner von GitHub, und jeder grüne Push bekommt ein datiertes Release. Die Installation holt das neueste main.',
+    ],
+    tradeoffs: [
+      'Abfrage alle 3 Minuten statt E-Mail, Slack-App oder Webhooks, also ohne Server und öffentliche Adresse, um den Preis einer Verzögerung bis zu 3 Minuten.',
+      'Die gh-CLI statt curl mit Token, damit kein Token zu speichern ist. Das Werkzeug stoppt, wenn gh den Login verliert.',
+      'Eine Bash-Datei statt TypeScript oder Rust, damit sie ohne Build hineinkopiert wird, und die Tests brauchen Stubs.',
+      'Flache Dateien statt SQLite, damit Bash nur grep und awk braucht. Ein neues Format braucht einen neuen Dateinamen.',
+    ],
+  },
   features: {
     'Review and comment notifications':
       'gh sucht die offenen PRs, die du geschrieben, geprüft oder kommentiert hast. Dann liest es Reviews und Kommentare jedes geänderten PRs, und jedes neue Ereignis wird eine Mitteilung.',

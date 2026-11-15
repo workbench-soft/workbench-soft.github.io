@@ -35,6 +35,52 @@ const arch: Arch = {
     { to: 'Google Play', text: 'Das AdMob-Banner und der Kauf Werbung entfernen in der Android-App.' },
     { to: 'App Store', text: 'StoreKit verkauft Werbung entfernen in der iPhone-App, sobald sie im App Store ist.' },
   ],
+  design: {
+    scale: [
+      'Eine Person pro Browser, 23 Eingaben auf einer Rechnerseite. Der Vergleich läuft bei jeder Änderung neu im Browser.',
+      'Die Seite besteht aus statischen Dateien auf Cloudflare, daher trägt kein eigener Server des Studios die Last.',
+      'Steuerstufen, FBT und Stempelsteuer sind feste Zahlen im Code, die Grenze ist also die Aktualität der Regeln, nicht die Last.',
+    ],
+    data: [
+      'Keine Datenbank und kein Konto. Änderungen liegen als JSON in localStorage unter 3 Schlüsseln: Eingaben (mit Versionsfeld), Design und Sprache.',
+      'Nur geänderte Felder werden gespeichert, daher gilt ein unberührtes Startdatum als heute, und ein Standardwert folgt Fahrzeugtyp und Regeln.',
+      'Steuerstufen, FBT-Konstanten und Stempelsteuer je Bundesstaat liegen als Konstanten in src/rules, jede mit Link zur Quelle.',
+    ],
+    interfaces: [
+      'compareOptions nimmt ein CalcInputs-Objekt und liefert einen Comparison: Kosten, Kontoverlauf und Kostenteile je Option.',
+      'Die Seite spricht über window.ConsdrApp mit der Android-App: Nachrichten state, buy, privacy und devAds, Antworten als JSON.',
+      'Die iPhone-App beantwortet dieselbe Brücke aus Swift, und Capacitor liefert die gebaute Seite aus der App selbst.',
+      'Der Build schreibt sitemap.xml, llms.txt, ads.txt und das JSON-LD der häufigen Fragen.',
+    ],
+    reliability: [
+      'Seiten gehen zuerst ins Netz und fallen nach 3 Sekunden oder bei einem Serverfehler auf die Kopie im Cache zurück.',
+      'Bei gesperrten Websitedaten liefert Lesen null und Schreiben wird übersprungen, die Seite läuft für diesen Besuch weiter.',
+      'Ein gespeicherter Wert vom falschen Typ oder ein unbekannter Auswahlwert fällt beim Laden weg. Ein Speichern in einem Tab lädt die anderen Tabs neu.',
+    ],
+    security: [
+      'Keine Anmeldung, und die Zahlen gehen an keinen Server, die Eingaben verlassen den Browser also nie.',
+      'Antwort-Header setzen frame-ancestors none, object-src none, nosniff und HSTS und sperren Kamera, Mikrofon und Standort.',
+      'Der Android-Signierschlüssel ist ein CI-Geheimnis, das auf dem Runner entschlüsselt wird, und das Repo enthält keinen Schlüssel.',
+      'Die Android-App fragt die Einwilligung für Werbung über das Consent-SDK von Google ab.',
+    ],
+    performance: [
+      'Englisch steckt im Hauptskript, und jeder der 8 anderen Kataloge lädt bei der Auswahl als eigener Chunk.',
+      'Der Build rendert den Rechner mit den Standardwerten vorab und lädt die lateinischen Schriften vor, damit Inhalt früh erscheint und Zahlen stillhalten.',
+      'Dateien unter /assets/ tragen einen Inhalts-Hash, bekommen einen einjährigen Cache-Header und kommen im Worker zuerst aus dem Cache.',
+    ],
+    operations: [
+      'Ein Job prüft, testet und baut, dann veröffentlicht wrangler deploy dist/ bei jedem Push auf main in Cloudflare.',
+      'CI läuft auf dem eigenen Windows-Runner des Studios, daher verbraucht das private Repo keine Actions-Minuten.',
+      'Ein nächtlicher Lauf um 19:00 Sydney-Zeit baut das signierte Android-Bundle für Google Play, nur wenn sich android/ geändert hat.',
+      'Der Cache-Name des Service Workers hasht Dateiliste, Seitentext und Worker-Code, daher ersetzt jedes Deploy den alten Cache.',
+    ],
+    tradeoffs: [
+      'Rechnen im Browser statt einer Server-API, damit keine Daten das Gerät verlassen und das Hosting aus statischen Dateien besteht.',
+      'Auf Android ein WebView um die Live-Seite statt nativer Bildschirme, damit ein Code für Web und App reicht und ein Seiten-Deploy die App sofort erreicht.',
+      'Seiten zuerst aus dem Netz statt aus dem Cache, damit ein Deploy sofort sichtbar ist, mit bis zu 3 Sekunden Wartezeit bei langsamer Verbindung.',
+      'Feste Regeln im Code mit Quellen statt einer Zins-API, damit jede Zahl prüfbar ist, doch ein neues Steuerjahr braucht ein Release.',
+    ],
+  },
   features: {
     'Compare a lease, a loan and cash':
       'Eine schlichte TypeScript-Funktion nimmt die Felder und gibt eine Summe pro Option zurück. Sie läuft bei jeder Änderung im Browser, und kein Server sieht die Zahlen.',

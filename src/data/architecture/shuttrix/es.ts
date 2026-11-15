@@ -51,6 +51,51 @@ const arch: Arch = {
     { to: 'Google Play', text: 'Google Play Billing vende Plus y Quitar anuncios.' },
     { to: 'Google AdMob', text: 'AdMob muestra el banner de la galería tras el formulario de consentimiento.' },
   ],
+  design: {
+    scale: [
+      'Una persona por teléfono, sin servidor: cada foto se construye y se guarda en el teléfono.',
+      'Una foto Retrato cuesta unos 7 s por 12 MP en la CPU de un Pixel 7 Pro, y el modelo de profundidad es una descarga de 26 MB.',
+      'Una foto fusionada guarda en memoria 5 fotogramas a tamaño completo de unos 18 MB cada uno.',
+    ],
+    data: [
+      'Los ajustes son un valor JSON en las shared preferences de Android, leído en el primer render, así que la cámara abre como se dejó.',
+      'Las tomas son archivos WebP, JPEG, PNG o MP4 en DCIM/Camera, listados por filas de MediaStore que son de la app. RAW añade un DNG.',
+      'El lugar, la calibración del balance de blancos y los valores en vivo se quedan en memoria mientras la cámara está abierta.',
+    ],
+    interfaces: [
+      'React Native pasa los valores de los diales a la vista de cámara en Kotlin como props, y el módulo devuelve los valores en vivo 4 veces por segundo.',
+      'CameraX lleva el ciclo de vida y los casos de uso, y la interoperabilidad con Camera2 fija ISO, obturador, distancia de enfoque y ganancias de balance de blancos.',
+      'Las tomas llegan a MediaStore bajo DCIM/Camera, donde Memories las lee, y la app responde a los intents de cámara de Android.',
+    ],
+    reliability: [
+      'Los diales vuelven a la cámara cada vez que se abre, desde los ajustes guardados.',
+      'Un borrador de 512 px se ve en la galería hasta que llega el archivo final.',
+      'Un objetivo sin la extensión Night cae a una tasa de fotogramas lenta con fuerte reducción de ruido, y CameraX toma el tamaño compatible más cercano.',
+    ],
+    security: [
+      'Las fotos se quedan en el teléfono. La app no tiene cuenta ni servidor propio.',
+      'La ubicación se lee solo mientras la cámara está abierta, y el lugar va a las etiquetas EXIF del archivo guardado.',
+      'AdMob pide el consentimiento en la galería la primera vez que se abre, no al iniciar, así que una toma rápida no se retrasa.',
+    ],
+    performance: [
+      'El retardo cero del obturador dispara al tocar, así que la toma conserva el instante de la pulsación.',
+      'Una foto simple pide un rango de 60 fotogramas, así que la exposición automática mantiene 1/60 s o menos.',
+      'El desenfoque del Retrato se renderiza en una capa de 2048 px, y Enhance y Mini van como pasadas de GPU.',
+      'Un anillo guarda los últimos 5 fotogramas para la foto fusionada y los últimos 8 fotogramas raw para el revelado en Rust.',
+    ],
+    operations: [
+      'Un push a main lanza los checks de la cámara y la compilación de release en paralelo, y release-gate.sh solo publica si los checks pasan.',
+      'Las etiquetas son shuttrix-v con fecha, y el APK va a una release del repositorio público del sitio, donde la app y el actualizador lo encuentran.',
+      'El bundle de Play se compila una vez al día a las 19:00 de Sídney si la cámara cambió, y la compilación de Play lleva un stub del actualizador.',
+      'Un workflow aparte compila las bibliotecas ONNX Runtime y OpenCV y las publica como prerelease.',
+    ],
+    tradeoffs: [
+      'Expo con un módulo Kotlin sobre CameraX en vez de react-native-vision-camera, que no tiene distancia de enfoque manual, ISO, obturador ni kelvin.',
+      'Noche con la extensión de CameraX en vez de apilar fotogramas en Kotlin, así corre el pipeline del propio teléfono y le deja el balance de blancos y el EV.',
+      'Depth Anything V2 Small en vez de un modelo mayor por su licencia Apache, con una descarga de 26 MB y unos 7 s por foto.',
+      'Un monorepo con Memories en vez de un repositorio propio, para compartir el editor y el visor, a costa de una CI por rutas.',
+    ],
+  },
   features: {
     'Simple and Pro':
       'Los 2 modos manejan una sola vista de cámara. Simple deja el enfoque y la exposición en automático, y Pro se los da a los diales.',

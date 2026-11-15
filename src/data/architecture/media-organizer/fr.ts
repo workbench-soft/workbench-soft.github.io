@@ -41,6 +41,48 @@ const arch: Arch = {
       text: 'L’installeur et le fichier de mise à jour sont sur une release du dépôt public du site.',
     },
   ],
+  design: {
+    scale: [
+      'Une personne sur un PC. La taille visée est un dossier de 100 000 fichiers, donc Rust garde les enregistrements et la webview ne reçoit que des ids.',
+      "Les données de lieux sont dans l'installeur, en extrait GeoNames et contours de parcs. La reconstruire télécharge environ 640 Mo.",
+    ],
+    data: [
+      "Les réglages sont dans un seul fichier JSON du dossier de données de l'app. L'historique est un fichier JSONL par exécution, plus un index.json.",
+      "Les enregistrements, les dates et les plans d'un scan restent dans la session de scan du backend, donc les commandes prennent des ids de fichiers et des plans.",
+      "Les données de lieux sont geodata.tsv.gz (villes de 1 000 habitants et plus, et sites d'intérêt) et parks.tsv.gz. Les deux se chargent dans une grille de 1 degré.",
+    ],
+    interfaces: [
+      'La webview envoie des commandes Tauri comme start_scan et start_moves. Le backend répond par des événements: scan:files, metadata:results, plan:files et move:file.',
+      "ts-rs écrit les types TypeScript des charges utiles depuis les modèles Rust, donc les deux côtés d'une commande concordent.",
+      "ExifTool reçoit une ligne par requête, avec sortie json, liste de tags et chemins absolus. Le programme de mise à jour lit latest.json d'une release.",
+    ],
+    reliability: [
+      'Un déplacement utilise un renommage sans remplacement. Une copie entre volumes est vérifiée en taille et en octets avant que la source parte.',
+      "Un plantage laisse le fichier à la source, à la destination ou sous les deux noms d'un lien physique, et aucun fichier n'est perdu.",
+      "Une exécution écrit une ligne de journal à la fin de chaque étape, et un journal qui ne s'écrit pas arrête l'exécution. Un événement tardif d'un scan remplacé est écarté par scan_id.",
+    ],
+    security: [
+      "La webview n'a que les permissions core:default, sans plugin fs ni shell. Rust fait chaque modification de fichier.",
+      "Un déplacement ne part que d'un dossier choisi dans le sélecteur natif pendant cette session. Une destination doit être dans la racine choisie, revérifiée avant chaque déplacement.",
+      "Aucun point GPS ne quitte le PC, car les lieux se résolvent hors ligne. Les chemins d'ExifTool sont vérifiés pour qu'un nom de fichier n'injecte pas de commande.",
+    ],
+    performance: [
+      "Le parcours du scan tourne hors du fil de l'interface et envoie les fichiers par lots. Le tableau les met en tampon, donc un gros dossier coûte quelques redessins par seconde.",
+      'Les workers ExifTool restent ouverts et tournent en basse priorité, ce qui évite un démarrage de processus par fichier.',
+      'Une recherche de lieu ne parcourt que les cellules voisines de la grille, et les contours de parcs sont testés par boîtes de 64 arêtes.',
+    ],
+    operations: [
+      "Le backend est dans son propre crate à côté du crate de l'app, donc une release compile un minuscule crate au lieu de 18 000 lignes.",
+      'La CI tourne sur un PC Windows, donc les releases contiennent un installeur Windows et pas de build macOS. Un Mac le construit avec pnpm tauri build.',
+      'Le programme de mise à jour lit latest.json au démarrage, au retour sur la fenêtre et sur demande. Il télécharge après Update et installe après Restart now.',
+    ],
+    tradeoffs: [
+      "Tauri 2 plutôt qu'Electron: un installeur plus petit sur la webview du système et Rust qui garde la logique des fichiers, au prix de WebView2 et WebKit qui diffèrent.",
+      'Planifier en Rust plutôt que dans la webview, la première version, qui ralentissait sur les gros dossiers.',
+      'Seul disk/safe_fs modifie les fichiers, imposé par clippy.toml, plutôt que des appels std::fs dans chaque module qui pourraient écraser un fichier.',
+      "GeoNames dans l'installeur plutôt qu'un géocodeur en ligne, donc aucun point GPS ne quitte le PC et aucune limite de requêtes ne s'applique.",
+    ],
+  },
   features: {
     Scan: 'Un parcours Rust tourne hors du fil de l’interface et envoie les fichiers par lots. La table les met en tampon, donc un gros dossier coûte peu de rendus par seconde.',
     'Capture dates':

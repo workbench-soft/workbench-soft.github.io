@@ -35,6 +35,49 @@ const arch: Arch = {
     { to: 'Google Play', text: 'Remove ads and Property Trends Pro sell as one time purchases on Android.' },
     { to: 'App Store', text: 'The same purchases on the iPhone, once the developer account opens.' },
   ],
+  design: {
+    scale: [
+      'One static site serves every visitor, so more readers add no cost for the studio.',
+      'Sales come from VIC, NSW and SA, and the shape file cuts 15,358 ABS suburbs into one 53 MB PMTiles file.',
+      'Other states show grey, since they publish no free sales data.',
+    ],
+    data: [
+      "Each filter set has its own JSON file, since medians don't add up across groups. A cell with under 5 sales gets no median.",
+      'Shapes sit in boundaries.pmtiles with the suburb code as the feature id and no tags.',
+      'A suburb file holds each type and land bucket as a list of period, median and sales. Census files add Census 2021 and SEIFA figures.',
+    ],
+    interfaces: [
+      'The app reads static JSON and PMTiles over HTTP range requests, with no API of its own.',
+      'The Rust pipeline reads the VIC and SA lists from CKAN APIs, NSW .DAT zips and the ABS shapes.',
+      'ts-rs writes the TypeScript types of each data file from the Rust structs.',
+    ],
+    reliability: [
+      'A licence change in a source stops the pipeline run, so no unlicensed data gets published.',
+      'Pages swaps the whole site at once, so a visitor reads one whole version.',
+      'No service worker yet, so the installed web app needs the network.',
+    ],
+    security: [
+      'No sign in and no server. Google Play checks purchases on the phone, so a rooted phone can fake one.',
+      'Only open data with a listed licence goes in. NSW sales show on the ad-free website, because their licence is non-commercial.',
+      "A planned Rust Worker would keep any API key in a Worker secret, off the bundle. It isn't built.",
+    ],
+    performance: [
+      'Precomputed files mean a filter change fetches one JSON file, and the web map swaps colours through feature-state.',
+      'On phones MapLibre builds one match expression from the file, since 15,000 feature-state calls would cross the bridge one by one.',
+      'PMTiles stores identical tiles once, and a deploy skips the pipeline when its inputs match the last run.',
+    ],
+    operations: [
+      'Checks runs the TypeScript and Rust jobs side by side on the PC runner: lint, types, tests and the web and iOS exports.',
+      'Deploy web runs after each green Release and each Monday. It publishes a release of the site repo, and Pages unpacks the newest one.',
+      'Hosting costs $0: GitHub Pages, an OpenFreeMap base map with no key, and a self-hosted runner.',
+    ],
+    tradeoffs: [
+      'Static files on GitHub Pages over a server database, so hosting costs $0. The filters stay fixed choices.',
+      'Open government data over scraping a portal, which its terms forbid. The cost is no bedrooms and grey states.',
+      'A Rust pipeline over a Node script, since NSW holds every sale since 1990 and the shapes need heavy work.',
+      "One Expo codebase over a web-only site, so the store builds aren't a second app. The map needs 2 libraries.",
+    ],
+  },
   features: {
     'Price map':
       'The Rust pipeline computes a median per suburb and type for each period. MapLibre colours each ABS suburb shape in 7 steps cut at the quantiles.',

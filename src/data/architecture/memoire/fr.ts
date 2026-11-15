@@ -36,6 +36,56 @@ const arch: Arch = {
     { to: 'Google Gemini', text: "La conversation et les sujets devinés l'appellent avec la clé de la personne." },
     { to: 'Google Play', text: 'AdMob affiche les pubs, et Play Billing vend Supprimer les pubs et Pro.' },
   ],
+  design: {
+    scale: [
+      "Un apprenant par installation, toutes les cartes sont dans SQLite sur l'appareil. Aucun serveur propre du studio ne tourne.",
+      "La base de mots est livrée dans l'appli sous assets/words/en.json et ru.json, construits à partir de CEFR-J, Octanove, Wiktionary et OpenRussian.",
+      'Des services gratuits fixent les limites : MyMemory donne environ 5 000 mots par jour et par appareil, et la liste des releases GitHub permet 60 appels par heure et par adresse.',
+      'Le modèle de conversation sur le téléphone prend environ 1,2 Go de stockage et 2 Go de mémoire libre.',
+    ],
+    data: [
+      'Les cartes, les révisions, les mots connus et les images sont dans SQLite via expo-sqlite, sur le web aussi.',
+      "Une carte garde son état FSRS en JSON dans memory, et due est copié dans sa propre colonne pour l'index. (lang, term_key) est unique.",
+      'Une carte supprimée reste avec un drapeau, et updated_at fait gagner la modification la plus récente à la synchronisation.',
+      'Les réglages sont dans localStorage. Les images restent sur chaque appareil, hors synchronisation.',
+    ],
+    interfaces: [
+      'La synchronisation écrit chaque carte dans Firestore sous decks/{code}/cards/{lang}_{termKey}, et firestore.rules vérifie la longueur du code et chaque champ.',
+      "Un mot saisi va à la base, puis à Wiktionary via kaikki.org, puis à l'API MyMemory. Wikipédia donne la photo principale.",
+      "Gemini est appelé depuis l'appareil avec la propre clé de la personne, et Qwen 3 tourne sur le téléphone via react-native-executorch.",
+      "Un module Kotlin dans modules/speaker/ rend la voix dans un fichier, et un gestionnaire en arrière-plan dessine le widget d'écran d'accueil Android.",
+    ],
+    reliability: [
+      "Chaque appareil travaille seul sur son fichier SQLite, donc l'appli marche hors ligne, et la synchronisation est une couche facultative au-dessus.",
+      "La modification la plus récente d'un mot l'emporte à la synchronisation, et une carte supprimée reste avec un drapeau pour que la suppression se synchronise aussi.",
+      "Une recherche retombe de la base sur Wiktionary puis sur MyMemory. kaikki.org n'envoie pas d'en-têtes CORS, donc la version web l'ignore.",
+      "Une fonction pure et testée planifie une semaine de notifications locales, si bien que qui délaisse l'appli en reçoit une par jour pendant 7 jours.",
+    ],
+    security: [
+      "La connexion anonyme Firebase donne un utilisateur par appareil, et un code d'appairage de 80 bits aléatoires partage un paquet sans compte.",
+      'Quiconque a le code peut lire et modifier ce paquet. Les révisions, les réglages et les mots connus restent sur chaque appareil.',
+      "Gemini tourne avec la propre clé de la personne, et aucun message ne quitte l'appareil hormis l'appel au moteur choisi.",
+      'Le keystore Android et son mot de passe sont des secrets de CI, avec une copie gardée hors du dépôt.',
+    ],
+    performance: [
+      "La requête de lot lit les cartes à réviser par l'index cards_due, puis ajoute de nouveaux mots jusqu'au quota du jour.",
+      'words/complete propose des mots de la base selon les premières lettres sans réseau, et la base se charge au premier usage.',
+      "expo-image garde les images sur le disque, et un résultat d'image vide est redemandé après 30 jours.",
+      'Le build de release réutilise son dossier android/ conservé quand @expo/fingerprint correspond, et ne reconstruit que le JS.',
+    ],
+    operations: [
+      'Les vérifications lancent lint, format, types, knip et Vitest deux fois : comme Android et le web, puis avec Platform.OS réglé sur ios.',
+      "Un push sur main construit l'APK sur un runner lourd, et release-gate.sh publie une fois les vérifications passées. Des vérifications en échec annulent le build.",
+      "Avec PLAY_TRACK défini, une exécution nocturne à 19 h, heure de Sydney, envoie un bundle à Google Play, et seulement si l'appli a changé.",
+      "L'APK GitHub cherche dans la liste des releases un tag memoire-v* plus récent. Les builds Play et iOS laissent ce code de côté.",
+    ],
+    tradeoffs: [
+      "Expo avec React Native plutôt qu'une appli Kotlin native, pour qu'un seul code construise Android, iOS et le web, au prix de quelques parties réservées au téléphone.",
+      "SQLite sur l'appareil plutôt que Firestore comme seul stockage, pour que l'appli marche hors ligne et s'ouvre aussitôt, et que la synchronisation reste facultative.",
+      "Un code d'appairage plutôt qu'une connexion Google, pour appairer les appareils sans compte, au prix que quiconque a le code peut modifier le paquet.",
+      "L'état FSRS dans une colonne JSON plutôt qu'une colonne par champ, pour qu'un changement de ts-fsrs n'exige pas de changer le schéma, mais le JSON ne se requête pas.",
+    ],
+  },
   features: {
     'Word batches':
       "Un module de séries prend les cartes dues dans SQLite, puis des mots nouveaux de la base jusqu'au quota du jour. ts-fsrs fixe le retour de chaque carte.",

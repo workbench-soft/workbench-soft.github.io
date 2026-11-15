@@ -27,6 +27,47 @@ const arch: Arch = {
     { to: 'songfactory', text: 'The Songs tab runs its pipeline tiles and shows each run.' },
     { to: 'agent-skills-private', text: 'Its rules and skills set how each agent that Archon starts ships a change.' },
   ],
+  design: {
+    scale: [
+      "One developer's PC, a few dozen repos, and 5 to 10 agents working at once.",
+      'The run registry keeps the last 200 runs, and the rest is small JSON lists, so no database is needed.',
+    ],
+    data: [
+      'JSON lists name the repos, the apps and the agent tasks that Archon shows.',
+      'runs.json in the local app data folder holds each run with its start, end and result.',
+      "Each repo's TODO.md and the agent session files are read in place, and Archon keeps no copy.",
+    ],
+    interfaces: [
+      'server.ts maps each path to one function: reads answer GET with JSON, and actions answer POST with a line of text.',
+      'A console run ends with a done or failed marker that the registry reads.',
+      'Other tools sit behind adb, git, the GitHub releases API and the npm, crates.io and PyPI registries. Some tabs frame local pages over HTTP.',
+    ],
+    reliability: [
+      'The server stays up until sign out, so runs and updates go on with every window closed.',
+      'A second start finds the port taken and opens one more window on the same server.',
+      'The page starts on its own catalogs, so the tab buttons work offline, and a tab that failed to load retries on the next click.',
+    ],
+    security: [
+      'The server listens on loopback only, and the phone reaches it through Tailscale inside the tailnet.',
+      "An action needs a JSON content type, so a page on another site can't post without a preflight, which the server doesn't answer.",
+      "Ask Archon can't reach branch deletes or key rotation. The Keys tab shows each secret's age, not its value.",
+    ],
+    performance: [
+      'The page polls the runs every 5 seconds from small files, so no push channel is needed.',
+      'The time left for a run is the median of past done runs of the same kind.',
+      'Repo syncs and package scans run 8 repos at a time.',
+    ],
+    operations: [
+      'Every 2 minutes the updater pulls main and installs newer desktop builds. New Archon code restarts the server and reloads the page.',
+      'A hidden shortcut in the Startup folder starts the server at sign in, with no window.',
+      'mise run test checks that the English and Russian catalogs hold the same keys, then runs the Node test runner.',
+    ],
+    tradeoffs: [
+      'A local web page over Tauri, since it runs on Node alone and opens on the phone. It needs Edge for the app window and speech.',
+      'No packages and no build step, so git pull is the whole deploy. Routing is written by hand.',
+      'A visible console per agent run over headless runs, so the person can watch and answer questions.',
+    ],
+  },
   features: {
     'Ask Archon':
       'Edge turns speech into text. Claude Code on Haiku then picks one launcher action, and the server runs it and opens its tab.',

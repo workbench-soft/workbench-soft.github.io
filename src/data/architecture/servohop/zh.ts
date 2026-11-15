@@ -51,6 +51,49 @@ const arch: Arch = {
     { to: 'Google Play', text: '去除广告和 ServoHop Pro 都是一次性购买。AdMob 显示横幅。' },
     { to: 'GitHub Releases', text: '每次发布都把 APK 放在这里，GitHub 版从这里自行更新。' },
   ],
+  design: {
+    scale: [
+      '每部手机一次安装、无需账号，所以负载只是司机和搜索引擎读取公开价格。',
+      '免费额度定下了形态：每天 10 万次 Pages 请求、10 万行 D1 写入，每次请求 10 毫秒 CPU。',
+      '一次地图应答最多带回屏幕范围内的 400 个加油站。',
+    ],
+    data: [
+      'D1 存放 station、price_now、price_daily、price_report、ev_site 和 ev_price。加油站 id 带着数据源，如 nsw-1234。',
+      'price_now 每个加油站和油品一行。触发器把每次变动汇入 price_daily，记下当天的最低、最高和次数。',
+      '手机只保存所选油品和设置，价格都在 D1。',
+    ],
+    interfaces: [
+      '应用调用 /api 下的 JSON 路由：地图范围内的加油站、单站历史、价格上报和充电桩。',
+      '同样的 Functions 在 /fuel 下输出纯 HTML，并为搜索引擎提供站点地图。',
+      '轮询程序读取 WA RSS、NSW、VIC 和 QLD 的 API、Open Charge Map 与 OpenStreetMap，并通过 wrangler d1 execute 写入。',
+    ],
+    reliability: [
+      '缺少密钥的数据源会被跳过，任务保持绿色，其他州照常更新。',
+      '每次 upsert 都以 WHERE price_now.cents <> excluded.cents 结尾，重跑不会重复写同一行。',
+      '自托管 runner 停机时轮询也停。价格最多晚 5 分钟显示，VIC 的价格晚 24 小时到。',
+    ],
+    security: [
+      '不登录，也没有账号。上报者是地址的加盐哈希，而不是地址本身。',
+      '上报要通过价格范围检查，并受每个发送者每小时 10 次的限制。',
+      '数据源密钥放在 GitHub Actions 的 secrets 里，只有轮询程序读取，应用里没有。',
+    ],
+    performance: [
+      'API 应答带 s-maxage=300，应用把范围取整到 2 位小数，所以相近的平移共用一份缓存应答。',
+      '搜索页缓存 30 分钟，历史缓存 1 小时，站点地图缓存 6 小时。',
+      '几 MB 的 NSW 列表在 runner 上解析，因为免费 Worker 只有 10 毫秒 CPU。',
+    ],
+    operations: [
+      '每次推送都跑检查。Release 同时构建 APK 和 Play 包，检查失败就取消它们。',
+      'Deploy web 把 db/schema.sql 应用到线上 D1，再发布 Pages。模式里每条语句都是 IF NOT EXISTS。',
+      '轮询按 cron 运行：NSW、VIC 和 QLD 每小时一次，塔斯马尼亚每 6 小时，WA 和充电桩每天。',
+    ],
+    tradeoffs: [
+      '选 Pages Functions 和 D1，不选 Firebase 或付费服务器，这样一个地图范围就是一次 SQL 查询，且在免费额度内。',
+      '选每日汇总，不选每次轮询一行，这样每小时轮询也不超写入上限。没有变动的一天没有行。',
+      '选 GitHub Actions 上的轮询程序，不选 Worker 的 cron，因为解析 NSW 列表要超过 10 毫秒。',
+      '选 OpenFreeMap 瓦片上的 MapLibre，不选 Google Maps，免密钥免账单，代价是两套地图构建。',
+    ],
+  },
   features: {
     'Fuel prices on a map':
       'Pages Function 从 D1 返回地图框内最多 400 个加油站。应用把屏幕上的价格分成三等份，并给图钉上色。',

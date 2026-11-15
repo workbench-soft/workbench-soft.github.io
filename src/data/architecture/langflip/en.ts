@@ -37,6 +37,54 @@ const arch: Arch = {
       text: 'The Windows exe ships there. Langflip checks once a day for a newer one and sends only its version.',
     },
   ],
+  design: {
+    scale: [
+      'One person per PC or Mac. Typed text stays on the machine, and the whole install is one exe.',
+      'The model covers 2 languages, English and Russian, each with a dictionary of the top 100,000 words and a table of letter triples.',
+      'Only 2 fixed layouts exist, US QWERTY and Russian ЙЦУКЕН. The hook must answer inside its callback, so a decision takes microseconds.',
+    ],
+    data: [
+      'Settings sit in settings.toml in the app data folder. The model file is built into the binary.',
+      'The model file starts with the magic LFM1, then per language an alphabet, letter triple log probabilities as f32 and a dictionary.',
+      'The Windows log keeps key counts, app names and decisions, with no letters, in 1 MB files that roll over to langflip.old.log.',
+    ],
+    interfaces: [
+      'The core crate takes key positions and the layout in use, and returns a fix or no fix. Both system layers call it.',
+      'Windows uses WH_KEYBOARD_LL and WH_MOUSE_LL hooks, SendInput for the fix and WM_INPUTLANGCHANGEREQUEST for the layout.',
+      'macOS uses a session CGEventTap, CGEvent posts for the fix and Text Input Sources for the layout.',
+      'The update check reads the GitHub releases API once a day for langflip-v* tags and sends only its version.',
+    ],
+    reliability: [
+      'Events the fix sends carry a Langflip tag, so the hook lets them through. Keys typed during a fix wait and replay after an end marker.',
+      'Held keys wait up to 500 ms for the window to take the new layout, and a stuck fix lets them go after 1 second.',
+      'Undo types the word back as typed, and a second Undo adds it to the keep list.',
+      'Autostart is a Run key entry backed by a Task Scheduler task, for when Explorer skips the Run key.',
+    ],
+    security: [
+      'No server and no account. The one network call is the update check, and it carries no typed text.',
+      'Password fields and admin windows are skipped, and the settings file lists more apps to skip.',
+      'The log holds no letters. Elevated windows stay out of reach unless Langflip runs as admin, and macOS needs Accessibility and Input Monitoring access.',
+      'The update swap checks HTTPS and the asset size, with no signature, and the exe is unsigned.',
+    ],
+    performance: [
+      'The core scores a word with a table lookup in microseconds, with no garbage collector pause inside the hook callback.',
+      'From the 4th letter the engine checks the word while it is typed, so the fix lands before the word ends.',
+      'The model is embedded and the sorted word list loads in about 20 ms. A set of every word start took 0.4 s at each start and lost.',
+      'caret.rs reads up to 40 characters before the caret through UI Automation, on its own thread, 40 ms after a click.',
+    ],
+    operations: [
+      'mise run lint covers rustfmt, clippy, cargo shear, ruff, shellcheck and actionlint, and CI checks the macOS build from Windows.',
+      'mise run eval measures false fixes and misses on 10,000 dictionary words and 10,000 rarer words per language.',
+      'A release workflow publishes langflip.exe on GitHub Releases with a date version passed in LANGFLIP_VERSION.',
+      'The app checks for a newer release, asks first, and self-replace swaps the running exe. mise run install needs no admin rights.',
+    ],
+    tradeoffs: [
+      'A Rust core crate and a thin layer per system over one mixed crate, so core tests run on any OS, at the cost of each fix made twice.',
+      "Low level hooks in Langflip's own process over a hook DLL, so no code loads into other apps, but elevated windows stay out of reach.",
+      'Letter triples plus a dictionary over a dictionary alone, so unknown words get caught, but a rare word can switch early and Undo puts it back.',
+      "Static tables for 2 layouts over reading any layout from the system, so Windows and macOS give the same letters, but other layouts don't work.",
+    ],
+  },
   features: {
     'Fix the layout of a word':
       'From the 4th letter the core compares the typed letters with the same keys in the other layout. The model scores both, and a clear winner gets typed again.',

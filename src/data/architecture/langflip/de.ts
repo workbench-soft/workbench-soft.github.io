@@ -37,6 +37,54 @@ const arch: Arch = {
       text: 'Dort liegt die exe für Windows. Langflip sucht einmal am Tag nach einer neueren und sendet nur seine Version.',
     },
   ],
+  design: {
+    scale: [
+      'Eine Person pro PC oder Mac. Der getippte Text bleibt auf dem Rechner, und die ganze Installation ist eine exe.',
+      'Das Modell deckt 2 Sprachen ab, Englisch und Russisch, je mit einem Wörterbuch der 100.000 häufigsten Wörter und einer Tabelle von Buchstabentripeln.',
+      'Es gibt nur 2 feste Layouts, US QWERTY und russisch ЙЦУКЕН. Der Hook muss in seinem Callback antworten, daher dauert eine Entscheidung Mikrosekunden.',
+    ],
+    data: [
+      'Einstellungen liegen in settings.toml im App-Datenordner. Die Modelldatei ist in die Binärdatei eingebaut.',
+      'Die Modelldatei beginnt mit dem Magic LFM1, dann folgen je Sprache ein Alphabet, Log-Wahrscheinlichkeiten der Buchstabentripel als f32 und ein Wörterbuch.',
+      'Das Windows-Log hält Tastenzahlen, App-Namen und Entscheidungen fest, ohne Buchstaben, in 1-MB-Dateien, die zu langflip.old.log wechseln.',
+    ],
+    interfaces: [
+      'Die Kern-Crate nimmt Tastenpositionen und das genutzte Layout und liefert eine Korrektur oder keine. Beide Systemschichten rufen sie auf.',
+      'Windows nutzt die Hooks WH_KEYBOARD_LL und WH_MOUSE_LL, SendInput für die Korrektur und WM_INPUTLANGCHANGEREQUEST für das Layout.',
+      'macOS nutzt einen Sitzungs-CGEventTap, CGEvent-Posts für die Korrektur und Text Input Sources für das Layout.',
+      'Die Update-Prüfung liest einmal am Tag die GitHub-Releases-API nach langflip-v*-Tags und sendet nur ihre Version.',
+    ],
+    reliability: [
+      'Ereignisse der Korrektur tragen ein Langflip-Tag, daher lässt der Hook sie durch. Tasten während einer Korrektur warten und laufen nach einer Endmarke erneut.',
+      'Gehaltene Tasten warten bis zu 500 ms, bis das Fenster das neue Layout übernimmt, und eine hängende Korrektur gibt sie nach 1 Sekunde frei.',
+      'Rückgängig tippt das Wort wie getippt zurück, und ein zweites Rückgängig nimmt es in die Behalten-Liste auf.',
+      'Der Autostart ist ein Run-Key-Eintrag, gestützt durch eine Aufgabe der Aufgabenplanung, falls der Explorer den Run-Key überspringt.',
+    ],
+    security: [
+      'Kein Server und kein Konto. Der einzige Netzaufruf ist die Update-Prüfung, und sie trägt keinen getippten Text.',
+      'Passwortfelder und Admin-Fenster werden übersprungen, und die Einstellungsdatei listet weitere Apps zum Überspringen.',
+      'Das Log enthält keine Buchstaben. Fenster mit erhöhten Rechten bleiben außer Reichweite, außer Langflip läuft als Admin, und macOS verlangt Zugriff auf Bedienungshilfen und Eingabeüberwachung.',
+      'Der Austausch beim Update prüft HTTPS und die Dateigröße, ohne Signatur, und die exe ist nicht signiert.',
+    ],
+    performance: [
+      'Der Kern bewertet ein Wort mit einem Tabellenzugriff in Mikrosekunden, ohne Pause durch einen Garbage Collector im Hook-Callback.',
+      'Ab dem 4. Buchstaben prüft die Engine das Wort beim Tippen, daher kommt die Korrektur vor dem Wortende.',
+      'Das Modell ist eingebettet, und die sortierte Wortliste lädt in etwa 20 ms. Eine Menge aller Wortanfänge brauchte bei jedem Start 0,4 s und verlor.',
+      'caret.rs liest bis zu 40 Zeichen vor dem Cursor über UI Automation, in einem eigenen Thread, 40 ms nach einem Klick.',
+    ],
+    operations: [
+      'mise run lint umfasst rustfmt, clippy, cargo shear, ruff, shellcheck und actionlint, und CI prüft den macOS-Build von Windows aus.',
+      'mise run eval misst Fehlkorrekturen und Auslassungen an 10.000 Wörterbuchwörtern und 10.000 selteneren Wörtern je Sprache.',
+      'Ein Release-Workflow veröffentlicht langflip.exe auf GitHub Releases mit einer Datumsversion, die in LANGFLIP_VERSION übergeben wird.',
+      'Die App prüft auf ein neueres Release, fragt zuerst, und self-replace tauscht die laufende exe aus. mise run install braucht keine Admin-Rechte.',
+    ],
+    tradeoffs: [
+      'Eine Rust-Kern-Crate und eine dünne Schicht je System statt einer gemischten Crate, damit Kerntests auf jedem OS laufen, auf Kosten jeder Korrektur in doppelter Ausführung.',
+      'Low-Level-Hooks im eigenen Prozess von Langflip statt einer Hook-DLL, damit kein Code in fremde Apps geladen wird, doch Fenster mit erhöhten Rechten bleiben außer Reichweite.',
+      'Buchstabentripel plus Wörterbuch statt nur eines Wörterbuchs, damit unbekannte Wörter erkannt werden, doch ein seltenes Wort kann früh umschalten, und Rückgängig stellt es wieder her.',
+      'Statische Tabellen für 2 Layouts statt jedes Layout aus dem System zu lesen, damit Windows und macOS dieselben Buchstaben liefern, doch andere Layouts funktionieren nicht.',
+    ],
+  },
   features: {
     'Fix the layout of a word':
       'Ab dem 4. Buchstaben vergleicht der Kern die getippten Buchstaben mit denselben Tasten im anderen Layout. Das Modell bewertet beide, und ein klarer Sieger wird neu getippt.',

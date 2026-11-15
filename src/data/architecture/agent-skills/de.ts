@@ -46,6 +46,44 @@ const arch: Arch = {
     { to: 'Codex', text: 'Dieselben Skills, die Hooks und eine Kopie der MCP-Server aus Claude Code.' },
     { to: 'GitHub', text: 'Die Prüfungen und die datierten Releases laufen auf GitHub Actions.' },
   ],
+  design: {
+    scale: [
+      'Eine Person pro Rechner, 33 Skills und beliebig viele Agenten, die das Agent-Skills-Format lesen.',
+      'Jede Sitzung lädt jede Skill-Beschreibung, daher bleibt eine Beschreibung unter 480 Zeichen und ein Skill-Text unter 300 Zeilen.',
+    ],
+    data: [
+      'Keine Datenbank. Ein Skill ist ein Ordner mit SKILL.md und Front Matter, dazu Referenzdateien, die bei Bedarf laden.',
+      'Hook-Gruppen liegen in JSON-Dateien, und der turn-voice-Hook hält seine gecachten Sprachclips in einem lokalen Ordner.',
+    ],
+    interfaces: [
+      'Der Vertrag mit einem Agenten ist das Front Matter: Der Name gleicht dem Ordner, und die Beschreibung sagt, wann der Skill lädt.',
+      'Der Installer führt Hook-Gruppen in die Einstellungen von Claude Code und Codex ein und schreibt einen markierten Block für Kimi Code.',
+      'Der turn-voice-Hook liest den Statusmarker in der letzten Zeile eines Zugs und spricht die passende Phrase.',
+    ],
+    reliability: [
+      'Git-Hooks im Klon verlinken die Skills nach pull, merge, checkout und rebase neu, sodass ein neuer Skill sofort erscheint.',
+      'Das Hook-Merge behält die eigenen Hooks der Person. Ohne Node überspringt die Installation die Hooks und sagt es.',
+      'Schlägt der Sprachabruf fehl, bleibt nur das Tonsignal, und ein gecachter Clip spielt ohne Netz.',
+    ],
+    security: [
+      'Das Repo ist öffentlich und enthält kein Token. Fork-PRs laufen auf GitHub-Runnern, ihr Code bleibt also vom PC fern.',
+      'Die Website-Skills halten bei Login, CAPTCHA, Geheimnis und Zahlung an und überlassen sie der Person.',
+    ],
+    performance: [
+      'Nur die kurzen Schreibregeln laden bei jedem Zug. Ein ganzer Skill lädt, wenn eine Anfrage zu seiner Beschreibung passt.',
+      'Sprachclips werden gecacht, und Signal und Stimme gehen in einem PlaySound-Aufruf, sodass das erste Wort ganz erklingt.',
+    ],
+    operations: [
+      'Der Check-Workflow läuft auf Windows für die PowerShell-Installation und auf Linux für die Shell-Installation, mit mise für feste Tool-Versionen.',
+      'Der Release-Workflow startet per workflow_run, wenn check auf main besteht, und setzt einen Datums-Tag wie v2026.10.30.1.',
+      'mise run test prüft das Skill-Format, das Textbudget, die Unit-Tests und eine Installation samt Deinstallation in einem temporären Home.',
+    ],
+    tradeoffs: [
+      'Ein Markdown-Ordner pro Skill statt einer Regeldatei pro Agent, sodass eine Kopie etwa 50 Agenten bedient. Nur der lesende Agent setzt eine Regel durch.',
+      'Ein Klon, der in jeden Agenten verlinkt ist, statt einer Kopie pro Agent, sodass eine Änderung alle sofort erreicht. Windows ohne Entwicklermodus bekommt Junctions.',
+      'Ein C#-Hook, gebaut mit dem csc.exe von Windows, damit kein SDK nötig ist. Er läuft nur unter Windows, ein Node-Zwilling deckt den Mac ab.',
+    ],
+  },
   features: {
     'Writing style':
       'Eine kurze Regeldatei lädt bei jedem Zug über die Haupt-Regeldatei des Agenten. Der volle Skill lädt vor dem ersten Text, mit Worttabellen und einer Schlussprüfung.',

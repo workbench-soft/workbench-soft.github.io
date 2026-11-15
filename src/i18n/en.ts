@@ -64,6 +64,16 @@ export const en = {
       parts: 'Parts',
       flow: 'Data flow',
       links: 'Connected to',
+      design: {
+        scale: 'Scale and limits',
+        data: 'Data',
+        interfaces: 'Interfaces',
+        reliability: 'Reliability',
+        security: 'Security and privacy',
+        performance: 'Performance',
+        operations: 'Build and release',
+        tradeoffs: 'Trade-offs',
+      },
     },
     kinds: {
       app: 'Apps for people',

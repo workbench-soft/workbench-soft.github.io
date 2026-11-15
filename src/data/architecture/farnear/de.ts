@@ -39,6 +39,47 @@ const arch: Arch = {
     { to: 'app-updater', text: 'WBS Updater vergleicht die installierte Version mit dem neuesten GitHub-Release.' },
     { to: 'Hugging Face', text: 'Der Protokollant lädt die Whisper-Gewichte einmal von dort.' },
   ],
+  design: {
+    scale: [
+      'Ein Anruf verbindet bis zu 4 Geräte als Mesh, jedes Gerät sendet sein Video an die anderen 3.',
+      'Ein Raumobjekt hält höchstens 6 Sockets, 64 KB pro Nachricht und 20 Nachrichten pro Sekunde, sodass eine Flut in einem Raum bleibt.',
+      'Worker, Durable Object und Relay laufen im kostenlosen Tarif, da nur kleine versiegelte Nachrichten hindurchgehen.',
+    ],
+    data: [
+      'Keine Konto-Datenbank. Name, Sprache, gespeicherte Räume und Push-Schlüssel liegen in localStorage unter einem versionierten Präfix.',
+      'Das Transkript und die Textnachrichten jedes Raums liegen in IndexedDB auf jedem Gerät.',
+      'Das Durable Object hält nur die Relay-Quote und eine gecachte Relay-Antwort für 90 Minuten. KV speichert Verbindungsberichte 14 Tage.',
+    ],
+    interfaces: [
+      'Die Signalisierung läuft über einen WebSocket zum Raumobjekt. Jede Nachricht ist ein AES-GCM-Umschlag mit Version, ID und Folgenummer.',
+      'Jedes Geräte-Paar öffnet 3 ausgehandelte Datenkanäle: Live-Punkte, Steuernachrichten und Dateiteile.',
+    ],
+    reliability: [
+      'Nach 3 Sekunden Trennung sendet die niedrigere Peer-ID ein ICE-Restart-Angebot, mit Wartezeiten von 12, 18 und 25 Sekunden.',
+      'Eine Prüfung liest jede Spur alle 3 Sekunden. Ein Stillstand von 15 Sekunden startet eine ICE-Reparatur, dann den Neuaufbau des Paars.',
+      'Die Umschlag-ID verwirft eine Kopie, die Folgenummer eine Wiederholung und die Angebots-ID eine überholte Antwort.',
+    ],
+    security: [
+      'Der Raumschlüssel steht hinter dem # im Link, daher sieht der Worker Chiffretext ohne Namen, Titel oder Angebote.',
+      'Medien laufen über DTLS-SRTP zwischen den Geräten, und ein TURN-Relay trägt nur verschlüsselte Pakete.',
+      'Die Raumseite lädt kein Werbeskript und trägt noindex, sodass neben dem Schlüssel kein fremder Code läuft.',
+    ],
+    performance: [
+      'Canvas und WebRTC-Aufrufe laufen in einfachen Modulen, und React liest kleine Stores über useSyncExternalStore.',
+      'Der Worker cacht Relay-Einstellungen 90 Minuten pro Raum und holt höchstens 20 pro Raum und Tag beim Anbieter.',
+      'Whisper läuft auf WebGPU, wo es vorhanden ist, sonst das kleine Modell auf WebAssembly. Große Dateien warten, bis der Kanal leer ist.',
+    ],
+    operations: [
+      'Checks führen bei jedem Push auf main Lint, Tests und Build aus, danach geht die Seite auf GitHub Pages und der Worker über wrangler live.',
+      'Das APK wird nur gebaut, wenn sich android/ änderte, da die App die Live-Seite lädt. Eine Web-Änderung bekommt einen Tag ohne schweren Runner.',
+      'Ein nächtlicher Lauf um 19:00 Sydney baut das Play-Bundle, wenn sich android/ änderte. Ein fehlgeschlagener Checks-Lauf bricht den Build ab.',
+    ],
+    tradeoffs: [
+      'Ein Mesh direkter Verbindungen statt eines Medienservers: Kein Video wird gehostet, und es kostet nichts. Der Upload wächst mit jeder Person, daher enden Anrufe bei 4.',
+      'Ein Wrapper um die Live-Seite statt nativer Screens: Eine Web-Korrektur erscheint ohne Store-Prüfung. Die App braucht das Netz.',
+      'Whisper im Browser statt einer Cloud-Spracherkennung, damit der Ton auf den Geräten bleibt. Die erste Nutzung lädt die Modellgewichte.',
+    ],
+  },
   features: {
     'Calls through a link':
       'Das Ende des Links trägt den Raumschlüssel, also sieht der Worker nur versiegelte Nachrichten. WebRTC verbindet dann bis zu 4 Geräte im Mesh.',

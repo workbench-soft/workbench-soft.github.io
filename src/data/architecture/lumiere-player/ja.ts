@@ -30,6 +30,49 @@ const arch: Arch = {
     { to: 'GitHub', text: 'APK とその更新は GitHub のリリースから届きます。' },
     { to: 'Google Play', text: 'Play 版、その更新、Pro と広告削除の購入です。' },
   ],
+  design: {
+    scale: [
+      'Android スマートフォンと Google TV 向けに APK は1つで、インストールごとに1人です。ライブラリは端末上で索引化します。',
+      '動画のスキャンは名前だけを読み、タグは読まないので、大きな共有でもファイルを1つずつ開かずに索引化できます。',
+      'ABI は armeabi-v7a と arm64-v8a の2つだけを出荷し、libVLC を含む APK を小さく保ちます。',
+    ],
+    data: [
+      '端末上の SQLite は positions.db、library.db、books.db、book-places.db、videos.db です。',
+      'positions.db は NAS のログインを除いた URI をキーにし、USB のファイルは名前とサイズもキーにします。',
+      'Android のバックアップは再生位置と本の位置を残し、nas.xml と NAS のログインを含むデータベースは除きます。',
+    ],
+    interfaces: [
+      'libVLC は file://、content://、smb:// を読みます。Media3 の MediaSessionService が通知、ロック画面、Bluetooth ボタンを担います。',
+      '音声は端末上の SpeechRecognizer を使い、sherpa-onnx が Hey Lumi の呼びかけを拾います。Guitar Upscale は Android の VIEW リンクで開きます。',
+      'オンラインモジュールは MusicBrainz と Wikidata、yt-dlp 経由の YouTube を呼びますが、GitHub の APK だけです。',
+    ],
+    reliability: [
+      'プレーヤーは5秒ごと、一時停止、停止、終了のときに位置を保存するので、クラッシュで失うのは数秒です。',
+      'ScanWorker は WorkManager 上で、新しいフォルダ、アプリ起動時、毎日の Wi-Fi 接続時に動き、問い合わせは1つのワーカースレッドでゆっくり進みます。',
+      '何も再生しない Bluetooth 機器があると、音をスピーカーに戻します。',
+    ],
+    security: [
+      'アカウントも専用サーバーもありません。名前とタグは端末に残ります。',
+      'パスワード付きの NAS 一覧は nas.xml にあり、Android のバックアップには入りません。',
+      'SponsorBlock に渡すのは YouTube ID のハッシュ先頭だけです。呼びかけ用のマイクはフォアグラウンドサービスで動きます。',
+    ],
+    performance: [
+      'libVLC が各ファイルを直接再生し、音声用に Media3 のプレーヤーで包むので、1つのエンジンが動画と音楽を受け持ちます。',
+      'LoudnessGate は大きな音のフレームとその直前の半秒だけをキーワードモデルに渡し、静かな部屋では動かしません。',
+      'カバーは必要なサイズでキャッシュ付きで復号し、単語の索引は各単語を1回だけ、その本の一覧とともに持ちます。',
+    ],
+    operations: [
+      'main への push で Checks と Release が並んで始まります。Checks が通ると、Release が APK に署名して公開します。',
+      '各ビルドランナーが Gradle の状態を保ち、Gradle は変更分だけ作り直します。リリース一覧は新しい3件を残します。',
+      'APK は起動時に GitHub Releases から更新します。Play 用バンドルには更新機能とオンラインモジュールを入れません。',
+    ],
+    tradeoffs: [
+      'Expo ではなく素の View のネイティブ Kotlin を選びました。プレーヤーはリモコンのキーとフォーカスで動かす libVLC のビューだからです。',
+      'Media3 ExoPlayer ではなく無改造の libVLC を選び、MKV のトラック、SMB の閲覧、Windows-1251 の字幕を得ました。代償は LGPL の表示と大きな APK です。',
+      '別ライブラリではなく libVLC 経由の SMB にして依存を増やしませんでしたが、NAS の一覧にはファイルサイズがありません。',
+      'アプリごとの購読ではなく Pro の買い切りにして、1つのチェック Entitled.pro() で全画面を制御します。',
+    ],
+  },
   features: {
     Sources:
       'USB のフォルダは Android のファイルシステムで開き、SMB 共有は libVLC が一覧にします。保存した NAS の一覧は端末に残り、Android のバックアップに入りません。',

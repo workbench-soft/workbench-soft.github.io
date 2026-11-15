@@ -42,6 +42,51 @@ const arch: Arch = {
     { to: 'Google Play', text: 'Google Play Billing selger Plus og Fjern reklame.' },
     { to: 'Google AdMob', text: 'AdMob viser banneret i galleriet etter samtykkeskjemaet.' },
   ],
+  design: {
+    scale: [
+      'En person per telefon, uten server: hvert bilde bygges og lagres på telefonen.',
+      'Et portrettbilde koster omtrent 7 s per 12 MP på prosessoren i en Pixel 7 Pro, og dybdemodellen er en nedlasting på 26 MB.',
+      'Et sammenslått bilde holder 5 bilder i full størrelse på rundt 18 MB hver i minnet.',
+    ],
+    data: [
+      'Innstillingene er én JSON-verdi i Android shared preferences, lest ved første tegning, så kameraet åpner slik det ble forlatt.',
+      'Opptak er WebP-, JPEG-, PNG- eller MP4-filer i DCIM/Camera, listet gjennom MediaStore-rader appen eier. RAW legger til en DNG.',
+      'Stedet, hvitbalansekalibreringen og live-verdiene blir i minnet mens kameraet er åpent.',
+    ],
+    interfaces: [
+      'React Native sender dial-verdiene som props til Kotlin-kameravisningen, og modulen sender live-verdier tilbake 4 ganger i sekundet.',
+      'CameraX styrer livssyklusen og bruksområdene, og Camera2-interop setter ISO, lukker, fokusavstand og hvitbalanse-forsterkning.',
+      'Opptak havner i MediaStore under DCIM/Camera, der Memories leser dem, og appen svarer på Androids kamera-intents.',
+    ],
+    reliability: [
+      'Dialene settes tilbake på kameraet hver gang det åpnes, fra de lagrede innstillingene.',
+      'Et utkast på 512 px vises i galleriet til den endelige filen er på plass.',
+      'En linse uten Night-utvidelsen faller tilbake til lav bildefrekvens med sterk støyreduksjon, og CameraX tar nærmeste støttede størrelse.',
+    ],
+    security: [
+      'Bildene blir på telefonen. Appen har ingen konto og ingen egen server.',
+      'Posisjonen leses bare mens kameraet er åpent, og stedet havner i EXIF-taggene i den lagrede filen.',
+      'AdMob ber om samtykke i galleriet ved første åpning, ikke ved oppstart, så et raskt skudd blir ikke forsinket.',
+    ],
+    performance: [
+      'Null lukkerforsinkelse utløser ved berøring, så bildet beholder øyeblikket for trykket.',
+      'Et vanlig bilde ber om et område på 60 bilder, så autoeksponeringen holder lukkeren på 1/60 s eller kortere.',
+      'Portrettuskarpheten tegnes på et lag på 2048 px, og Enhance og Mini kjører som GPU-pass.',
+      'En ring holder de siste 5 bildene til det sammenslåtte bildet og de siste 8 råbildene til fremkallingen i Rust.',
+    ],
+    operations: [
+      'Et push til main starter kamerasjekkene og utgivelsesbygget side om side, og release-gate.sh publiserer bare når sjekkene består.',
+      'Taggene heter shuttrix-v med dato, og APK-en går til en utgivelse i det offentlige nettstedsrepoet, der appen og oppdatereren finner den.',
+      'Play-pakken bygges én gang om dagen kl. 19:00 Sydney når kameraet er endret, og Play-bygget har en stubb for oppdatereren.',
+      'En egen workflow bygger bibliotekene ONNX Runtime og OpenCV og publiserer dem som prerelease.',
+    ],
+    tradeoffs: [
+      'Expo med en Kotlin-modul over CameraX framfor react-native-vision-camera, som mangler manuell fokusavstand, ISO, lukker og kelvin.',
+      'Natt gjennom CameraX-utvidelsen framfor å stable bilder i Kotlin, så telefonens egen pipeline kjører og beholder hvitbalanse og EV.',
+      'Depth Anything V2 Small framfor en større modell på grunn av Apache-lisensen, til pris av 26 MB nedlasting og omtrent 7 s per bilde.',
+      'Et monorepo med Memories framfor et eget repo, for å dele editoren og visningen, til pris av stibasert CI.',
+    ],
+  },
   features: {
     'Simple and Pro':
       'Begge modusene styrer én kameravisning. Enkel gir fokus og eksponering til automatikken, og Pro gir dem til hjulene.',

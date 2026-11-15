@@ -39,6 +39,49 @@ const arch: Arch = {
     { to: 'OpenStreetMap', text: 'Nominatim finds a shop by name, and Overpass finds the shop nearby.' },
     { to: 'Google Play', text: 'AdMob shows the ads, and Play Billing sells Remove ads and Pro.' },
   ],
+  design: {
+    scale: [
+      'A private list stays on one phone, and a shared list reaches a household or a few friends on one link.',
+      'The app has no server, so the free Firestore plan of 50,000 reads and 20,000 writes a day sets the budget for shared lists.',
+    ],
+    data: [
+      'SQLite on the phone holds lists, items, stores, aisles, walks, known names and prices. The web build runs the same SQLite on wasm.',
+      'Only shared lists reach Firestore, as lists/{id}/items/{itemId}, and the aisles and walks of a shop as stores/{osmId}.',
+      "A delete sets deleted = 1 and keeps the row. dirty = 1 marks a change Firestore hasn't received yet.",
+      'A photo is a 360 pixel JPEG of about 30 KB, kept inside the item.',
+    ],
+    interfaces: [
+      'A share link carries a random 32 digit hex list id, and an Android intent filter opens it in the app.',
+      'A Tripforge trip link carries base64url JSON with v, place, start, nights and up to 60 places.',
+      'Prices come from the JSON behind the Woolworths and Coles site search, shops from Nominatim and Overpass, sights from the Tripforge Worker or Wikidata.',
+    ],
+    reliability: [
+      'Each change saves to SQLite first and the screen redraws from it, so a tick works with no signal. The push retries every 30 seconds while the app is open.',
+      "The newer updated time wins per item, on the phone and in the Firestore rules. Two offline edits to one item can't merge, and the later one takes the whole item.",
+      'The listener runs for a minute after the app goes to the background. A closed app gets no notice, since that needs a push server.',
+    ],
+    security: [
+      'Each install signs in to Firebase anonymously, and the random list id in the link is the secret. Firestore refuses to list lists.',
+      'The rules check the 32 hex id, the known fields, their sizes and a time at most a day ahead. A photo must be JPEG data or a Wikimedia Commons picture.',
+      'Anyone with the link can read, change and delete the list, and Firebase App Check is off for now.',
+    ],
+    performance: [
+      'The push waits half a second, so a burst of ticks goes out in one write.',
+      'Prices load from Woolworths 3 names at a time and from Coles one at a time. They stay in SQLite for a day, and only the prices redraw.',
+      'The phone reads the aisles of a shop from Firestore at most once in 10 minutes.',
+    ],
+    operations: [
+      'Checks and Release start together on each push to main. The release publishes the signed APK once Checks pass, and a failed Checks run cancels the build.',
+      'A Google Play bundle builds once a day at 19:00 Sydney, and only when the app changed.',
+      'Firebase Hosting serves the web build, and it deploys with the Firestore rules after Checks pass. The GitHub APK updates itself, and the Play build leaves that code out.',
+    ],
+    tradeoffs: [
+      'Expo over a native Kotlin app, so one code base also gives the page a shared link opens on.',
+      'Firestore rows over a server of our own or WebRTC, so there is no server to run and a tick waits for a sleeping phone.',
+      'The newer change wins per item over a merge of fields, for less code, at the cost of an older offline edit.',
+      "Firebase Hosting over GitHub Pages, because wasm SQLite needs COOP and COEP headers that Pages can't set.",
+    ],
+  },
   features: {
     'Share by link':
       'Firestore holds a copy of each shared list, and the link carries its random id. Each phone saves a change in SQLite first and pushes it when the network is back.',

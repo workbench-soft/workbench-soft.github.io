@@ -36,6 +36,47 @@ const arch: Arch = {
     },
     { to: 'Hugging Face', text: 'Skriveren laster ned Whisper-vektene derfra én gang.' },
   ],
+  design: {
+    scale: [
+      'Én samtale kobler opptil 4 enheter i et mesh, og hver enhet sender videoen sin til de 3 andre.',
+      'Et romobjekt rommer høyst 6 sockets, 64 KB per melding og 20 meldinger i sekundet, så en flom blir i ett rom.',
+      'Worker, Durable Object og relé kjører på gratisnivå, siden bare små forseglede meldinger går gjennom dem.',
+    ],
+    data: [
+      'Ingen kontodatabase. Navn, språk, lagrede rom og push-nøkler ligger i localStorage under ett versjonert prefiks.',
+      'Transkripsjonen og tekstmeldingene i hvert rom ligger i IndexedDB på hver enhet.',
+      'Durable Object holder bare relékvoten og et bufret relésvar i 90 minutter. KV lagrer tilkoblingsrapporter i 14 dager.',
+    ],
+    interfaces: [
+      'Signaleringen går over en WebSocket til romobjektet. Hver melding er en AES-GCM-konvolutt med versjon, id og løpenummer.',
+      'Hvert par av enheter åpner 3 forhandlede datakanaler: levende punkter, kontrollmeldinger og filbiter.',
+    ],
+    reliability: [
+      'Etter 3 sekunders brudd sender den laveste peer-id-en et ICE-restart-tilbud, med ventetid på 12, 18 og 25 sekunder.',
+      'En helsesjekk leser hvert spor hvert 3. sekund. Stans i 15 sekunder starter en ICE-reparasjon, så en ombygging av paret.',
+      'Konvolutt-id-en kaster en kopi, løpenummeret en gjentakelse og tilbuds-id-en et foreldet svar.',
+    ],
+    security: [
+      'Romnøkkelen står etter # i lenken, så Worker ser chiffertekst uten navn, titler eller tilbud.',
+      'Media går over DTLS-SRTP mellom enhetene, og et TURN-relé bærer bare krypterte pakker.',
+      'Romsiden laster ikke noe annonseskript og har noindex, så ingen tredjepartskode kjører ved siden av nøkkelen.',
+    ],
+    performance: [
+      'Lerretet og WebRTC-kallene kjører i vanlige moduler, og React leser små lagre gjennom useSyncExternalStore.',
+      'Worker bufrer relé-innstillingene i 90 minutter per rom og henter høyst 20 per rom og dag hos leverandøren.',
+      'Whisper kjører på WebGPU der det finnes, ellers den lille modellen på WebAssembly. Store filer venter til kanalen er tom.',
+    ],
+    operations: [
+      'Checks kjører lint, tester og bygg ved hver push til main, så går siden til GitHub Pages og Worker ut med wrangler.',
+      'APK-en bygges bare når android/ er endret, siden appen laster den levende siden. En webendring får en tagg uten tung runner.',
+      'En nattkjøring kl. 19:00 Sydney bygger Play-pakken når android/ er endret. En mislykket Checks avbryter byggingen.',
+    ],
+    tradeoffs: [
+      'Et mesh av direkte lenker i stedet for en medieserver: ingen video lagres hos oss, og det koster ingenting. Opplastingen vokser med hver person, så samtaler stopper på 4.',
+      'Et skall rundt den levende siden i stedet for native skjermer: en nettrettelse går ut uten butikkgjennomgang. Appen trenger nett.',
+      'Whisper i nettleseren i stedet for skybasert talegjenkjenning, så lyden blir på enhetene. Første bruk laster ned modellvektene.',
+    ],
+  },
   features: {
     'Calls through a link':
       'Slutten av lenken bærer romnøkkelen, så Workeren ser bare forseglede meldinger. WebRTC kobler så opptil 4 enheter i et nett.',

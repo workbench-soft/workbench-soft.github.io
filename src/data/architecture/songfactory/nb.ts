@@ -26,6 +26,53 @@ const arch: Arch = {
     { to: 'YouTube', text: 'Videoene går opp via YouTube Data API, rundt 6 om dagen.' },
     { to: 'Claude', text: 'Claude CLI skriver teksten på abonnementet uten en API-konto.' },
   ],
+  design: {
+    scale: [
+      'Én skaper på én Windows-PC med GPU. Den daglige kjøringen laster opp omtrent 6 videoer som mest.',
+      'Hver opplasting koster omtrent 1600 av de 10 000 daglige kvoteenhetene hos YouTube, og kvoten setter taket.',
+      'Den lokale GPU-en lager omtrent 5 s video i 720p per kjøring, så hver bakgrunn er en løkkeklipp.',
+    ],
+    data: [
+      'Tilstanden er filer i temamappen: theme.toml holder innstillingene, out/upload.json markerer et tema som ferdig, og out/claude.json beholder teksten Claude skrev.',
+      'Et prosjekt har de ti flisene sine i pipeline.json, hver med kind, enabled og params.',
+      'Rensede sanger går til out/clean/ som FLAC, og originalene blir. Hemmeligheter ligger i en mappe utenfor repoet.',
+    ],
+    interfaces: [
+      'CLI-en har kommandoene bg, clean, build, upload, publish, run, enhance, clips og flisekommandoer. Songs-fanen i Archon leser songfactory project og kjører songfactory tile.',
+      'ffmpeg og ffprobe kjører som underprosesser, og ComfyUI får workflows/loop.json over HTTP med prompt og seed fylt inn.',
+      'upload.py kaller videos.insert og thumbnails.set i YouTube Data API etter en OAuth-pålogging for skrivebordsapper.',
+      'progress.py skriver linjer med step, file i/n og progress NN%, som oppstarteren gjør om til stolper.',
+    ],
+    reliability: [
+      'upload.json skrives så snart YouTube gir tilbake video-ID-en, så et mislykket miniatyrbilde gir ikke en ny opplasting.',
+      'run hopper over mapper som starter med _ eller punktum, og går videre til neste tema når ett feiler.',
+      'claude.py er valgfri. En manglende CLI eller et mislykket kall skriver én linje, og temaet fortsetter med mappenavnet som tittel.',
+      'En avslått flis sender inndataene videre, og en lydflis tar filene fra den nærmeste tidligere flisen som kjørte.',
+    ],
+    security: [
+      'OAuth-tokenet til YouTube og de andre hemmelighetene ligger i en mappe utenfor repoet.',
+      'claude -p kjører uten API-nøkkelvariabelen, så det belaster abonnementet det er logget inn med og ingen API-konto.',
+      'Opplastinger setter containsSyntheticMedia og blir private til Google har gjennomgått prosjektet.',
+    ],
+    performance: [
+      'h264_nvenc koder på GPU-en når PC-en har en, og libx264 tar over ellers.',
+      'Klippet går i løkke med -stream_loop og ping-pong, så et klipp på 5 s dekker en lang video uten lang rendering.',
+      'Rensingen er ett ffmpeg-kall med fast forsterkning, highpass, afftdn og et dynamisk kutt ved 7 kHz, uten nevral modell.',
+      'En enhance på mange filer går gjennom én CLI-prosess, så den skriver én compare.html for alle sangene.',
+    ],
+    operations: [
+      'En planlagt Windows-oppgave kjører mise run daily klokken 03:00 på PC-en som har sangene, tokenet og GPU-en.',
+      'checks.yml kjører lint, tester og uv build på den selvdrevne Windows-runneren ved hver push til main.',
+      'release.yml bygger wheel og sdist ved siden av Checks, og release-gate.sh publiserer når Checks består. En mislykket Checks-kjøring avbryter bygget.',
+      'mise run doctor skriver én linje per forutsetning, ok eller MISSING, og som JSON for oppstarteren.',
+    ],
+    tradeoffs: [
+      'ffmpeg på kommandolinjen i stedet for et Python-videobibliotek, så miksing, løkke og NVENC-koding ligger i ett verktøy, men filtergrafer er strenger, og en skrivefeil vises først ved kjøring.',
+      'Et kort løkkeklipp i stedet for et klipp like langt som sangene, siden GPU-en lager omtrent 5 s per kjøring.',
+      'Vanlige filer per tema i stedet for en database, så én fil svarer på om et tema er lastet opp, men å flytte en mappe mister koblingen til opplastingen.',
+      'Den lokale Oppgaveplanleggeren i stedet for en CI-cron, siden sangene og tokenet ligger utenfor git, men PC-en må være på klokken 03:00.',
+    ],
+  },
   features: {
     'Audio workbench':
       'Et vindu i tkinter kjører kommandoen for rensing eller forbedring på de valgte filene. En navnesjekk stopper bunken før to resultater kolliderer.',

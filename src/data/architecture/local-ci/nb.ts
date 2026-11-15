@@ -39,6 +39,49 @@ const arch: Arch = {
     },
     { to: 'Blacksmith', text: 'Skyløpere for lette og tunge jobber så lenge gratisminuttene varer.' },
   ],
+  design: {
+    scale: [
+      'Én PC og én Mac betjener de private repoene til én organisasjon, med 4 runnere som standard på PC-en.',
+      'GitHubs grense på 5000 API-kall i timen formet henteintervallet, etter at siden brukte den opp én dag.',
+      'Blacksmith gir 3000 gratis minutter i måneden, så ruteren slutter å bruke det ved 2700.',
+    ],
+    data: [
+      'Siden holder 90 dager med ferdige kjøringer i én JSON-fil, og cloud-usage.json teller Blacksmith-minuttene.',
+      'Runner-antallet står i en runner-count-fil i hjemmemappen. Ruten står i 3 repo-variabler: CI_RUNNER, CI_HEAVY_RUNNER og CI_WINDOWS_RUNNER.',
+    ],
+    interfaces: [
+      'GitHubs REST-API gir runnere, kjøringer, jobber, fakturering og utgivelser, og siden setter repo-variablene gjennom det.',
+      'En jobbs runs-on leser en repo-variabel, med PC-etikettene som reserve, og en runner tar jobben med etiketter som passer.',
+      'Serverhandlinger kjører PowerShell og adb, og adb installerer en release-APK på en telefon koblet til med USB.',
+    ],
+    reliability: [
+      'En vakthund starter en runner-oppgave på nytt når runneren vises frakoblet på GitHub i over 10 minutter.',
+      'En jobb som har stått i kø hos Blacksmith i 5 minutter, avbrytes og kjøres på nytt på neste runner.',
+      'Variablene beholder siste verdi mens PC-en er av, og en variabel som ikke er satt, faller tilbake til PC-etikettene.',
+      'En installasjonslås hindrer oppdateringsoppgaven og START.cmd i å kjøre installasjonsprogrammer samtidig.',
+    ],
+    security: [
+      'Runnere starter som personens egen planlagte oppgave og ikke som en tjeneste, så jobbene ser personens gh-innlogging og mise-oppsett.',
+      'Runner-nedlastingen sjekkes mot SHA256 før den registreres.',
+      'Dette repoet er offentlig, så dets egen CI kjører på GitHub-runnere. En fork-PR på PC-runneren ville kjørt koden sin på PC-en.',
+    ],
+    performance: [
+      'Serveren sender If-None-Match, siden en 304 ikke koster noe av grensen, og deler hvert svar i 20 sekunder mellom faner.',
+      'De 2 første runnerne har etiketten heavy, så Gradle-, Cargo- og Tauri-jobber ikke kryper når 8 kjører samtidig.',
+      'Dashbordet bygges til mappen som den kjørende siden ikke serverer, så siden stopper bare for byttet.',
+    ],
+    operations: [
+      'Oppdateringsoppgaven kjører hvert 5. minutt og ved pålogging, flytter utsjekkingen til den nyeste utgivelsestaggen og kjører bare om igjen installasjonsprogrammene der filene har flyttet seg.',
+      'Release starter etter Checks gjennom workflow_run, og mislykkede Checks avbryter bygget.',
+      'Sideserveren stopper hvert 10. sekund kjøringer som en nyere commit har erstattet, og logger årsaken til hver.',
+    ],
+    tradeoffs: [
+      'Egne runnere i stedet for GitHub-drevne, så private repoer koster 0 minutter. CI står når PC-en er av.',
+      'Repo-variabler i stedet for en rute-jobb per workflow, som ville lagt til en jobb ekstra i hver kjøring.',
+      'En planlagt oppgave i stedet for en Windows-tjeneste, som mangler personens mise og gh-innlogging. Siden kjenner en levende runner på loggfilene.',
+      'En Next.js-serverside i stedet for Grafana, med SVG-diagrammer fra egen historikk. De har ikke zoom.',
+    ],
+  },
   features: {
     'Mac setup':
       'Et POSIX sh-skript installerer Homebrew-verktøy, mise og skalloppsettet. Så setter det git-oppsettet og kloner repoene i organisasjonen. En ny kjøring hopper over det som er på plass.',
