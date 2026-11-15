@@ -38,7 +38,8 @@ mise run dev
 - **Check** `mise run check` type checks the pages and scripts.
 - **Test** `mise run test` checks that each language catalog holds the same keys, projects and features as English. It also checks that each project has its architecture in [src/data/architecture/](src/data/architecture/) in every language, with a line for each feature.
 - **Build** `mise run build` writes `dist/`. `mise run preview` serves it.
-- **Deploy** a push to `main` runs [pages.yml](.github/workflows/pages.yml). It builds the home page and the Memories site, then publishes both. A pull request runs the same build and skips the publish.
+- **Deploy** a push to `main` runs [pages.yml](.github/workflows/pages.yml). It builds the site and publishes it. A pull request runs the same build and skips the publish.
+- **Deploy from the PC** `CI=1 mise run deploy` starts `pages.yml` on `main` and waits for the run. The task stops when `HEAD` isn't `origin/main`, so run it after `git checkout --detach origin/main`.
 
 ## Who writes here
 

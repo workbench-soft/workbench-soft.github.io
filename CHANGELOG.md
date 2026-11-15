@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Deploy** `mise run deploy` puts the site live from the PC through the Pages workflow on `main`.
 - **Tickalot, KeepPad and Sky Altar** list the fast scroll thumb of their long lists and how it works, in every language.
 - **Projects** each panel shows how the project is built: its parts, the data flow and its links to other projects. Each feature opens to how it works, in every language. SpotTheCam, Tickalot, Consdr, Tripforge, Alina Photo, Aspiration Style and CI list the features their repos added.
 - **Testers page** workbench-soft.com/testers lists the steps to join the closed tests and the Join and Install links of the 16 Android apps, in every language.
