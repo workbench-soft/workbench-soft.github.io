@@ -415,5 +415,5 @@ The studio needed one public site for its apps and their installers.
 - **Changes**
   - **`scripts/deploy.ts`** new: the guard, the dispatch and the watch. In Actions it ends after the dispatch.
   - **`mise.toml`** the `deploy` task runs the script.
-  - **`.github/workflows/pages.yml`** later: the `redeploy` job checks out `main` and runs `mise run deploy`. It waits for the `shuttrix-native` PR, which holds the file.
+  - **`.github/workflows/pages.yml`** the `redeploy` job checks out `main` and runs `mise run deploy`. It landed in a second PR, after the `shuttrix-native` PR freed the file.
 - **Docs** the Deploy line of `README.md`, `CHANGELOG.md`.
