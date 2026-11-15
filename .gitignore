@@ -2,3 +2,5 @@ node_modules/
 dist/
 .astro/
 .claude/
+# pages.yml counts it from GitHub before each build.
+src/data/code-stats.json

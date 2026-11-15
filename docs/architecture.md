@@ -39,10 +39,11 @@ flowchart LR
   - **Helpers** `src/i18n/index.ts` merges a catalog into the data: `projectsIn`, `servicesIn`, `stepsIn` and `ui`.
   - **Test** `catalogs.test.ts` compares each catalog with English: keys, list lengths, `{placeholders}` and empty strings.
   - **SEO** `Base.astro` writes `<html lang>`, `hreflang` alternates and `og:locale`. `@astrojs/sitemap` writes `sitemap-index.xml` with the same alternates.
-- **Components** one Astro file per block: `Nav`, `Hero`, `Marquee`, `Services`, `Projects` with `ProjectPanel`, `Process`, `Contact` and `Palette`.
+- **Components** one Astro file per block: `Nav`, `Hero`, `Marquee`, `Services`, `Projects` with `ProjectPanel`, `Process`, `Engineering` with `EngineeringStats`, `Contact` and `Palette`.
 - **Scripts** each component bundles its own TypeScript. `field.ts` draws the hero terrain. The palette builds its index from the rendered panels, so it finds what the page shows.
 - **Styles** `src/styles/global.css` holds the colours, buttons and the reveal. Each component keeps its own scoped styles.
-- **Counts** the hero counts come from the data at build time, so the HTML holds them before any script runs. The lines of code come from `src/data/code-lines.json`, which `scripts/code-lines.ts` writes from the repo clones beside this one with `git grep`.
+- **Counts** the hero counts come from the data at build time, so the HTML holds them before any script runs. The lines of code come from `src/data/code-stats.json`.
+- **Code count** `scripts/code-stats/` lists the org repos through the GitHub GraphQL API, clones each one shallow and sparse, counts lines per language and parses functions, types and tests with ast-grep. `pages.yml` runs it before each build and each night, and git keeps no copy of the JSON. [specs/engineering.md](../specs/engineering.md) has the rules.
 
 ## A visit
 

@@ -1,5 +1,7 @@
 [tools]
 actionlint = "1.7.12"
+# ast-grep counts the functions, types and tests for the Engineering section.
+ast-grep = "0.51.2"
 # actionlint checks the run scripts with shellcheck only when it finds one on PATH.
 shellcheck = "0.11.0"
 node = "24"
@@ -34,9 +36,9 @@ run = "pnpm format"
 description = "Check that each language catalog matches English"
 run = "pnpm test"
 
-[tasks.code-lines]
-description = "Count the lines of code in every repo clone beside this one into src/data/code-lines.json"
-run = "node scripts/code-lines.ts"
+[tasks.code-stats]
+description = "Count the code of every org repo on GitHub into src/data/code-stats.json"
+run = "node scripts/code-stats/main.ts"
 
 [tasks.deploy]
 description = "Put the site live: start the Pages workflow on main and wait for it. Stops when HEAD isn't origin/main"

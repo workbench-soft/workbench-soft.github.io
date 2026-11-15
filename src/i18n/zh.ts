@@ -16,6 +16,7 @@ const zh: Catalog = {
       services: '服务',
       projects: '项目',
       process: '流程',
+      engineering: '工程',
       contact: '联系',
       main: '主菜单',
       search: '搜索',

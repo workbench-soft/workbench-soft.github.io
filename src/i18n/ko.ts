@@ -16,6 +16,7 @@ const ko: Catalog = {
       services: '서비스',
       projects: '프로젝트',
       process: '진행 방식',
+      engineering: '엔지니어링',
       contact: '연락처',
       main: '메인 메뉴',
       search: '검색',

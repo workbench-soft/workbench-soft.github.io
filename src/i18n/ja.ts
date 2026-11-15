@@ -16,6 +16,7 @@ const ja: Catalog = {
       services: 'サービス',
       projects: 'プロジェクト',
       process: '進め方',
+      engineering: '開発',
       contact: 'お問い合わせ',
       main: 'メインメニュー',
       search: '検索',

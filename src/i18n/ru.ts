@@ -16,6 +16,7 @@ const ru: Catalog = {
       services: 'Услуги',
       projects: 'Проекты',
       process: 'Процесс',
+      engineering: 'Разработка',
       contact: 'Контакты',
       main: 'Главное меню',
       search: 'Поиск',

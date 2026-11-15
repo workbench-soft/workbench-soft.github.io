@@ -15,6 +15,7 @@ export const en = {
     services: 'Services',
     projects: 'Projects',
     process: 'Process',
+    engineering: 'Engineering',
     contact: 'Contact',
     main: 'Main',
     search: 'Search',

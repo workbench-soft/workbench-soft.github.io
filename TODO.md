@@ -59,7 +59,6 @@ Workbench Games, `com.workbenchsoft.games`. Release builds of the Android app us
 - Left: the empty-room alarm can delete a room between a socket's accept and its hello, a window of milliseconds. The fix needs the room code inside the Durable Object.
 - Left: the games deploy has no smoke check and the browser reports no errors. A monitoring choice.
 - Left: the games apps ship Preact, Capacitor, canvas-confetti and Fredoka with no licence notices. A notices page or a file is a choice.
-- Left: scripts/code-lines.ts writes 0 for a clone on any git error. No clone is missing today and scripts/ has no tests.
 - Left: the hero shader in src/scripts/field.ts ignores WebGL context loss, and runs at full frame rate. Both change the look and need a GPU to check.
 - Left: the games Worker sends no CSP. A CSP that lets AdSense in is an ads choice.
 - Left: 2 moderate advisories in glob and minimatch via `@capacitor/cli`, dev only, waiting on an upstream release.
@@ -105,3 +104,7 @@ Found by the SEO audit of 2026-11-13. [specs/seo.md](specs/seo.md) has the fixes
 
 - [ ] **Property Trends** <https://workbench-soft.com/property-trends/> has no `h1` and 25 words of text. Agent work in the private `property-trends` repo, whose release the Pages build unpacks: add a heading and a paragraph on what the data shows.
 - [ ] **Rich Results Test** agent work: run <https://search.google.com/test/rich-results> on `https://workbench-soft.com/` and `https://workbench-soft.com/skyaltar/astrology/signs/aries/` in Chrome, and fix any error it names.
+
+## engineering: live code numbers
+
+- [ ] Add the `CODE_STATS_TOKEN` secret, so the Engineering numbers count the private repos too. Until then the nightly count covers the public repos only. Tell an agent "rotate the secrets for workbench-soft.github.io": it opens the token page in Chrome with the settings from `.github/secret-rotation.json`, and you press Generate.

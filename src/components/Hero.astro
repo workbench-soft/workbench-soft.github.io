@@ -1,7 +1,7 @@
 ---
 import { projects, featureCount } from "../data/projects";
 import { devicePlatforms } from "../data/studio";
-import codeLines from "../data/code-lines.json";
+import { codeStats } from "../data/code-stats";
 import { langOf, tags } from "../i18n/locales";
 import { ui } from "../i18n";
 
@@ -11,7 +11,7 @@ const platforms = new Set(projects.flatMap((p) => p.platforms).filter((p) => dev
 const stats = [
   { value: projects.length, label: t.hero.projects },
   { value: projects.reduce((n, p) => n + featureCount(p), 0), label: t.hero.features },
-  { value: codeLines.total, label: t.hero.code },
+  ...(codeStats ? [{ value: codeStats.lines, label: t.hero.code }] : []),
   { value: platforms.size, label: t.hero.platforms },
   { value: 0, label: t.hero.ads },
 ];

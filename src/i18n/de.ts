@@ -16,6 +16,7 @@ const de: Catalog = {
       services: 'Leistungen',
       projects: 'Projekte',
       process: 'Ablauf',
+      engineering: 'Technik',
       contact: 'Kontakt',
       main: 'Hauptmenü',
       search: 'Suche',

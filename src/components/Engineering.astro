@@ -1,0 +1,60 @@
+---
+import EngineeringStats from "./EngineeringStats.astro";
+import { engineeringIn } from "../data/engineering";
+import { langOf } from "../i18n/locales";
+import { ui } from "../i18n";
+
+const lang = langOf(Astro.currentLocale);
+const t = engineeringIn(lang);
+---
+
+<section class="block" id="engineering">
+  <div class="wrap">
+    <div class="eyebrow rv">04 / {ui(lang).nav.engineering}</div>
+    <h2 class="rv">{t.title}</h2>
+    <p class="intro rv">{t.intro}</p>
+    <EngineeringStats />
+    <div class="grid">
+      {
+        t.topics.map((topic) => (
+          <article class="card spot rv" id={`engineering-${topic.id}`}>
+            <h3>{topic.title}</h3>
+            <p>{topic.lead}</p>
+            <ul>
+              {topic.points.map(([head, text]) => (
+                <li><b>{head}</b> {text}</li>
+              ))}
+            </ul>
+          </article>
+        ))
+      }
+    </div>
+    <h3 class="stack-title rv">{t.stack.title}</h3>
+    <div class="table rv">
+      <table>
+        <thead><tr><th>{t.stack.head[0]}</th><th>{t.stack.head[1]}</th></tr></thead>
+        <tbody>{t.stack.rows.map(([job, pick]) => <tr><td>{job}</td><td>{pick}</td></tr>)}</tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<style>
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 16px; }
+  .card { border: 1px solid var(--line); border-radius: 18px; padding: 26px; background: linear-gradient(180deg, rgb(14 20 36 / 0.7), rgb(8 12 22 / 0.7)); }
+  h3 { font-size: 1.25rem; letter-spacing: -0.02em; margin: 0 0 8px; }
+  .card > p { color: var(--muted); margin: 0 0 16px; }
+  ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+  li { color: var(--soft); font-size: 0.95rem; padding-left: 16px; position: relative; }
+  li::before { content: ""; position: absolute; left: 0; top: 0.6em; width: 6px; height: 6px; border-radius: 2px; background: var(--cyan); }
+  b { color: var(--text); }
+  .stack-title { margin: 56px 0 16px; }
+  .table { overflow-x: auto; border: 1px solid var(--line); border-radius: 14px; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+  th, td { text-align: left; padding: 12px 18px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font: 500 11px var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+  td:first-child { color: var(--text); white-space: nowrap; }
+  td { color: var(--soft); }
+  tr:last-child td { border-bottom: 0; }
+  @media (max-width: 640px) { td:first-child { white-space: normal; } }
+</style>

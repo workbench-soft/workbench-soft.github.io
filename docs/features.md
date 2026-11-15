@@ -6,9 +6,18 @@ The features of <https://workbench-soft.com>. The Memories site and the Langflip
 
 - **What it does** names the studio and what it builds, with a button that starts an email and counts of projects, features, lines of code and platforms.
 - **Where** the top of the home page. A WebGL2 shader draws a moving grid terrain behind the text, and the pointer tilts it.
-- **Limits** a browser without WebGL2 shows a still gradient. The terrain stops while the hero is off screen and under reduced motion. The lines of code change only when someone runs `mise run code-lines` and commits the result.
+- **Limits** a browser without WebGL2 shows a still gradient. The terrain stops while the hero is off screen and under reduced motion. The lines of code come from the same count as the Engineering section.
 
 Spec: [workbench-soft-site](../specs/workbench-soft-site.md).
+
+## Engineering
+
+- **What it does** shows how the studio builds software: live numbers about the code, a card per topic (code, tests, specs, docs, coding agents, tools) and the stack table.
+- **Where** the Engineering link in the header, section 04.
+- **Numbers** lines of code, source files, functions, types, tests, modules, files under 100 lines, the median file, specs, doc pages, commits and merged PRs in 30 days, and lines per language.
+- **Limits** the count reads private repos only with the `CODE_STATS_TOKEN` secret. A local build without `src/data/code-stats.json` hides the numbers.
+
+Spec: [engineering](../specs/engineering.md).
 
 ## Services
 

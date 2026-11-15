@@ -16,6 +16,7 @@ const nb: Catalog = {
       services: 'Tjenester',
       projects: 'Prosjekter',
       process: 'Prosess',
+      engineering: 'Utvikling',
       contact: 'Kontakt',
       main: 'Hovedmeny',
       search: 'Søk',

@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Engineering** section 04 of the home page shows how the studio builds software: code rules, tests, specs, docs, coding agents and the stack, in 9 languages. Its numbers come from GitHub on each deploy and each night: lines, files, functions, types, tests, modules, files under 100 lines, specs, docs, commits and merged PRs.
 - **Lumiere Player** the Audiobooks feature says a wrong skip back to a chapter goes on where it left off, in every language.
 - **Property Trends** a new web release redeploys the site through `mise run deploy`, the same task the PC runs.
 - **Shuttrix** a workflow builds the small ONNX Runtime and OpenCV that make the Shuttrix APK smaller.

@@ -16,6 +16,7 @@ const es: Catalog = {
       services: 'Servicios',
       projects: 'Proyectos',
       process: 'Proceso',
+      engineering: 'Ingeniería',
       contact: 'Contacto',
       main: 'Menú principal',
       search: 'Buscar',
