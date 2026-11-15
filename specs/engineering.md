@@ -10,7 +10,7 @@
   PRs in the last 30 days, and lines per language.
 - **Source** `pages.yml` counts them from the org repos on GitHub before each
   build and each night. No count sits in git.
-- **Access** the count reads private repos with the org secret
+- **Access** the count reads private repos with the repo secret
   `CODE_STATS_TOKEN`. Without it, the build skips the count and the site
   hides the numbers, since the public repos alone undercount.
 

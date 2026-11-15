@@ -6,8 +6,11 @@ export const org = 'workbench-soft';
 // Built copies of other repos and code that moved to another repo.
 const skip = new Set(['aspirationstyle-site', 'farnear-site', 'media-organizer', 'shuttrix', 'workbench-soft']);
 
+// A secret set from a Windows PowerShell pipe starts with a BOM, which breaks the header.
 export const token = () =>
-  process.env.CODE_STATS_TOKEN || process.env.GH_TOKEN || execFileSync('gh', ['auth', 'token']).toString().trim();
+  (process.env.CODE_STATS_TOKEN || process.env.GH_TOKEN || execFileSync('gh', ['auth', 'token']).toString())
+    .replace(/^﻿/, '')
+    .trim();
 
 async function query<T>(text: string, variables: Record<string, unknown>): Promise<T> {
   const res = await fetch('https://api.github.com/graphql', {
