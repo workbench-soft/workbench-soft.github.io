@@ -1517,7 +1517,7 @@ const nb: Catalog = {
             ],
             [
               'Talekommandoer',
-              'Si Hey Lumi, så play og en sang, eller volume 40, på engelsk eller russisk, også med låst telefon. En puls viser at den lytter. Turn on Bluetooth kobler til høyttaleren eller hodetelefonene og sier navnet.',
+              'Si Hey Lumi, så play og en sang, eller volume 40, på engelsk eller russisk, også med låst telefon. En puls viser at den lytter. Turn on Bluetooth kobler til høyttaleren eller hodetelefonene og sier navnet. Play the last album of In Flames spiller det albumet, og et årstall som 2016 spiller albumet fra det året.',
             ],
             [
               'Musikk på nett',

@@ -1085,7 +1085,7 @@ const zh: Catalog = {
             ['Google Play 版本', '由 Google Play 更新，用媒体权限代替访问全部文件。'],
             [
               '语音命令',
-              '说 Hey Lumi，再说播放和歌名，或“音量 40”，英语或俄语都行，锁屏也能用。脉动动画表示正在听。说“Turn on Bluetooth”会连接音箱或耳机，并说出它的名字。',
+              '说 Hey Lumi，再说播放和歌名，或“音量 40”，英语或俄语都行，锁屏也能用。脉动动画表示正在听。说“Turn on Bluetooth”会连接音箱或耳机，并说出它的名字。说“play the last album of In Flames”播放最新专辑，说出年份如 2016 则播放那一年的专辑。',
             ],
             [
               '在线音乐',

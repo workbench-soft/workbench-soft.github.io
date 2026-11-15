@@ -1305,7 +1305,7 @@ const ko: Catalog = {
             ['Google Play 버전', 'Google Play가 업데이트하고, 모든 파일 접근 대신 미디어 권한을 씁니다.'],
             [
               '음성 명령',
-              'Hey Lumi라고 한 뒤 play와 노래 이름, 또는 volume 40이라고 말합니다. 영어나 러시아어로, 잠긴 휴대폰에서도 됩니다. 맥박 표시가 듣는 중임을 보여 줍니다. Turn on Bluetooth라고 하면 스피커나 헤드폰을 연결하고 이름을 알려 줍니다.',
+              'Hey Lumi라고 한 뒤 play와 노래 이름, 또는 volume 40이라고 말합니다. 영어나 러시아어로, 잠긴 휴대폰에서도 됩니다. 맥박 표시가 듣는 중임을 보여 줍니다. Turn on Bluetooth라고 하면 스피커나 헤드폰을 연결하고 이름을 알려 줍니다. play the last album of In Flames라고 하면 최신 앨범을, 2016처럼 연도를 말하면 그해 앨범을 재생합니다.',
             ],
             [
               '온라인 음악',

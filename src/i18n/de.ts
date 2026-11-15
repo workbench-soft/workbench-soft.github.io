@@ -1648,7 +1648,7 @@ const de: Catalog = {
             ],
             [
               'Sprachbefehle',
-              'Sag Hey Lumi, dann play und einen Song oder volume 40, auf Englisch oder Russisch, auch bei gesperrtem Telefon. Ein Pulsieren zeigt, dass es zuhört. Turn on Bluetooth verbindet Lautsprecher oder Kopfhörer und nennt sie.',
+              'Sag Hey Lumi, dann play und einen Song oder volume 40, auf Englisch oder Russisch, auch bei gesperrtem Telefon. Ein Pulsieren zeigt, dass es zuhört. Turn on Bluetooth verbindet Lautsprecher oder Kopfhörer und nennt sie. Play the last album of In Flames spielt genau dieses Album, ebenso das Album eines Jahres wie 2016.',
             ],
             [
               'Online-Musik',
