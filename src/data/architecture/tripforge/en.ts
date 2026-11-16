@@ -86,6 +86,8 @@ const arch: Arch = {
       'Google Play Billing sells the product, and the app keeps the flag on the phone. One module decides each lock, and the limits sit in one file.',
     'Website pages for search':
       'Expo writes an HTML page per route and language at build time. A script then sets the page language, writes the 404 page and builds the sitemap.',
+    'Dark mode':
+      'Each colour is a token with a light and a dark value. The phone picks the set from the system theme, and the website uses CSS variables with prefers-color-scheme.',
   },
 };
 

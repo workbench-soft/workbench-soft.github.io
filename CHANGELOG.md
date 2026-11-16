@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Tripforge** a feature for dark mode, which follows the phone or browser theme, in 9 languages.
 - **Memories** a feature for event folders: a word in brackets on a folder name puts a link to it in a view folder on the NAS, which any file browser opens, in 9 languages.
 - **ServoHop** links open the Google Play build of the app too, in 9 languages.
 - **Tripforge** the privacy policy names the 3 day server logs, why each piece of data is used, how to see, correct or delete it and where to complain, as the app's own policy does.

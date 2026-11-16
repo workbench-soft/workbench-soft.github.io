@@ -1249,6 +1249,7 @@ export const projects: Project[] = [
             name: 'Website pages for search',
             text: 'A home page per language with the ask form, its own title, preview picture and data for search engines, listed in the sitemap.',
           },
+          { name: 'Dark mode', text: 'The app and the website follow the phone or browser theme.' },
         ],
       },
     ],

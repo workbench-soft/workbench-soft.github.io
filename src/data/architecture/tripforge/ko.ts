@@ -79,6 +79,8 @@ const arch: Arch = {
       'Google Play Billing이 상품을 팔고 앱은 구매 표시를 휴대폰에 저장합니다. 잠금은 모듈 하나가 정하고 한도는 파일 하나에 있습니다.',
     'Website pages for search':
       'Expo가 빌드할 때 경로와 언어마다 HTML 페이지를 씁니다. 이어서 스크립트가 페이지 언어를 정하고 404 페이지와 사이트맵을 만듭니다.',
+    'Dark mode':
+      '각 색은 밝은 값과 어두운 값을 가진 토큰입니다. 휴대폰은 시스템 테마로 세트를 고르고, 웹사이트는 prefers-color-scheme와 CSS 변수를 씁니다.',
   },
 };
 

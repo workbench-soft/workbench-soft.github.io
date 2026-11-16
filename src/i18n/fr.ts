@@ -1780,6 +1780,7 @@ const fr: Catalog = {
               'Pages du site pour la recherche',
               'Une page d’accueil par langue avec le formulaire, son titre, son aperçu et des données pour les moteurs, chacune dans le plan du site.',
             ],
+            ['Mode sombre', 'L’app et le site suivent le thème du téléphone ou du navigateur.'],
           ],
         },
       ],

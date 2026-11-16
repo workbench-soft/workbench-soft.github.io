@@ -79,6 +79,8 @@ const arch: Arch = {
       'Google Play Billing 负责出售，应用把购买标记存在手机上。一个模块决定每处锁定，限额写在同一个文件里。',
     'Website pages for search':
       'Expo 在构建时为每条路由和每种语言写出一个 HTML 页面。之后一个脚本设置页面语言、生成 404 页面并写出站点地图。',
+    'Dark mode':
+      '每种颜色都是一个带浅色和深色值的令牌。手机按系统主题选择一组，网站用带 prefers-color-scheme 的 CSS 变量。',
   },
 };
 
