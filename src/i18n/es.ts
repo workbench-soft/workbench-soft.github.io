@@ -599,12 +599,12 @@ const es: Catalog = {
           features: [
             [
               'Precios en el mapa',
-              'Marcadores verdes para el tercio más barato, amarillos para el medio y rojos para el más caro. Del precio más bajo salen ondas de colores como un terremoto.',
+              'Marcadores verdes para el tercio más barato, amarillos para el medio y rojos para el más caro. Del precio más bajo salen ondas de colores como un terremoto. Un precio que un feed deja de enviar sale del mapa a los 3 días.',
             ],
             ['Tu lugar en el mapa', 'Un punto azul te marca, con una flecha que gira con la brújula.'],
             [
               'Lista de gasolineras',
-              'Las gasolineras a la vista, la más barata primero, con marca, barrio y cuándo cambió el precio.',
+              'Las gasolineras a la vista, la más barata primero, con marca, barrio y cuándo cambió el precio. Avisa cuando los precios de un estado llegan tarde. Sin conexión muestra la última zona con sus precios guardados y Reintentar.',
             ],
             ['Historial de precios', 'La media diaria sobre una franja del mínimo al máximo, para 30, 90 o 365 días.'],
             ['Avisos de conductores', 'Donde el estado no publica datos, los conductores envían el precio del cartel.'],
@@ -637,6 +637,14 @@ const es: Catalog = {
             ['Panel de combustible', 'Elige gasolina, diésel, gas o cargadores, AC lento o DC rápido.'],
             ['Anuncios', 'Un banner bajo la lista: AdMob en la app, AdSense en la web.'],
             ['Idiomas', 'Las pantallas vienen en 9 idiomas y siguen al teléfono o al navegador.'],
+            [
+              'Los enlaces abren la app',
+              'Un enlace de servohop.com a una gasolinera, un barrio, un estado o la portada abre la app de Android en esa pantalla. La versión de Google Play aún abre el navegador.',
+            ],
+            [
+              'Licencias de código abierto',
+              'Ajustes lista cada paquete de código abierto de la app con su licencia. Al tocarlo se abre su página de npm.',
+            ],
           ],
         },
       ],

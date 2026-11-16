@@ -621,12 +621,12 @@ const fr: Catalog = {
           features: [
             [
               'Prix sur la carte',
-              'Repères verts pour le tiers le moins cher, jaunes pour le milieu et rouges pour le plus cher. Des ondes colorées partent du prix le plus bas comme un séisme.',
+              'Repères verts pour le tiers le moins cher, jaunes pour le milieu et rouges pour le plus cher. Des ondes colorées partent du prix le plus bas comme un séisme. Un prix qu’un flux n’envoie plus quitte la carte après 3 jours.',
             ],
             ['Votre position sur la carte', 'Un point bleu vous situe, avec une flèche qui tourne avec la boussole.'],
             [
               'Liste des stations',
-              'Les stations visibles, les moins chères d’abord, avec enseigne, quartier et heure du dernier changement de prix.',
+              'Les stations visibles, les moins chères d’abord, avec enseigne, quartier et heure du dernier changement de prix. Elle signale quand les prix d’un État sont en retard. Sans connexion, elle garde la dernière zone avec ses prix et Réessayer.',
             ],
             [
               'Historique des prix',
@@ -659,6 +659,14 @@ const fr: Catalog = {
             ['Panneau carburant', 'Choisir essence, diesel, gaz ou bornes, AC lente ou DC rapide.'],
             ['Publicité', "Une bannière sous la liste : AdMob dans l'app, AdSense sur le site."],
             ['Langues', 'Les écrans existent en 9 langues et suivent le téléphone ou le navigateur.'],
+            [
+              'Les liens ouvrent l’app',
+              'Un lien servohop.com vers une station, un quartier, un État ou l’accueil ouvre l’app Android sur cet écran. La version Google Play ouvre encore le navigateur.',
+            ],
+            [
+              'Licences open source',
+              'Les réglages listent chaque paquet open source de l’app avec sa licence. Un appui ouvre sa page npm.',
+            ],
           ],
         },
       ],

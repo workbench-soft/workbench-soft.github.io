@@ -122,6 +122,10 @@ const arch: Arch = {
       'The pick sets the fuel in each call to the API, and the app keeps it for the next start. A charger counts by its strongest plug.',
     Ads: 'react-native-google-mobile-ads shows the banner in the app after the consent form. AdSense fills it on the site and the search pages.',
     Languages: 'i18next holds the 9 catalogs, and expo-localization reads the language of the phone or browser.',
+    'Links open the app':
+      'intentFilters with autoVerify in app.config.ts claim servohop.com, servohop.com/.well-known/assetlinks.json proves it, and src/links/site-link.ts maps each address to a route.',
+    'Open source licences':
+      'At build time scripts/licences.ts reads package.json and writes src/licences/licences.json, which Settings lists.',
   },
 };
 

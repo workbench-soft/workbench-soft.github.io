@@ -124,6 +124,10 @@ const arch: Arch = {
       '選んだ燃料が API への各呼び出しに入り、アプリは次の起動まで覚えます。充電器はいちばん強いプラグで分けます。',
     Ads: 'react-native-google-mobile-ads が同意フォームの後にアプリでバナーを出します。サイトと検索ページでは AdSense が埋めます。',
     Languages: 'i18next が 9 つのカタログを持ち、expo-localization がスマホやブラウザの言語を読みます。',
+    'Links open the app':
+      'app.config.ts の autoVerify 付き intentFilters が servohop.com を受け持ち、servohop.com/.well-known/assetlinks.json がそれを確かめ、src/links/site-link.ts がアドレスをルートに変換します。',
+    'Open source licences':
+      'ビルド時に scripts/licences.ts が package.json を読み、設定が表示する src/licences/licences.json を書き出します。',
   },
 };
 

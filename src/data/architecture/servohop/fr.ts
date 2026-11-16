@@ -131,6 +131,10 @@ const arch: Arch = {
       'Le choix fixe le carburant de chaque appel à l’API, et l’app le garde pour le prochain lancement. Une borne compte selon sa prise la plus puissante.',
     Ads: 'react-native-google-mobile-ads affiche la bannière dans l’app après le formulaire de consentement. AdSense la remplit sur le site et les pages de recherche.',
     Languages: 'i18next tient les 9 catalogues, et expo-localization lit la langue du téléphone ou du navigateur.',
+    'Links open the app':
+      'Des intentFilters avec autoVerify dans app.config.ts revendiquent servohop.com, servohop.com/.well-known/assetlinks.json le confirme, et src/links/site-link.ts associe chaque adresse à une route.',
+    'Open source licences':
+      'Au build, scripts/licences.ts lit package.json et écrit src/licences/licences.json, que les réglages affichent.',
   },
 };
 

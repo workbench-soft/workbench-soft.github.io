@@ -115,6 +115,10 @@ const arch: Arch = {
     'Fuel panel': '所选燃料写进每次 API 请求，应用会记住它直到下次启动。充电桩按功率最大的插头归类。',
     Ads: 'react-native-google-mobile-ads 在同意表单之后于应用里显示横幅。网站和搜索页面上的横幅由 AdSense 填充。',
     Languages: 'i18next 保存 9 份目录，expo-localization 读取手机或浏览器的语言。',
+    'Links open the app':
+      'app.config.ts 中带 autoVerify 的 intentFilters 认领 servohop.com，servohop.com/.well-known/assetlinks.json 加以验证，src/links/site-link.ts 把地址映射到路由。',
+    'Open source licences':
+      '构建时 scripts/licences.ts 读取 package.json，写出设置页显示的 src/licences/licences.json。',
   },
 };
 

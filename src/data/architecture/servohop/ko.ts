@@ -124,6 +124,10 @@ const arch: Arch = {
       '고른 연료가 API 요청마다 들어가고, 앱은 다음 실행까지 기억합니다. 충전기는 가장 센 플러그로 분류합니다.',
     Ads: 'react-native-google-mobile-ads가 동의 양식 뒤에 앱에서 배너를 띄웁니다. 사이트와 검색 페이지에서는 AdSense가 채웁니다.',
     Languages: 'i18next가 카탈로그 9개를 담고, expo-localization이 휴대폰이나 브라우저의 언어를 읽습니다.',
+    'Links open the app':
+      'app.config.ts에서 autoVerify가 붙은 intentFilters가 servohop.com을 맡고, servohop.com/.well-known/assetlinks.json이 이를 확인하며, src/links/site-link.ts가 주소를 경로로 바꿉니다.',
+    'Open source licences':
+      '빌드할 때 scripts/licences.ts가 package.json을 읽어, 설정이 보여 주는 src/licences/licences.json을 씁니다.',
   },
 };
 

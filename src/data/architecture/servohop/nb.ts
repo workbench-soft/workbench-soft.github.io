@@ -125,6 +125,10 @@ const arch: Arch = {
       'Valget setter drivstoffet i hvert kall til API-et, og appen husker det til neste start. En lader telles etter sin sterkeste kontakt.',
     Ads: 'react-native-google-mobile-ads viser banneret i appen etter samtykkeskjemaet. På nettsiden og søkesidene fyller AdSense det.',
     Languages: 'i18next holder de 9 katalogene, og expo-localization leser språket på telefonen eller i nettleseren.',
+    'Links open the app':
+      'intentFilters med autoVerify i app.config.ts gjør krav på servohop.com, servohop.com/.well-known/assetlinks.json bekrefter det, og src/links/site-link.ts gjør hver adresse om til en rute.',
+    'Open source licences':
+      'Ved bygging leser scripts/licences.ts package.json og skriver src/licences/licences.json, som Innstillinger viser.',
   },
 };
 

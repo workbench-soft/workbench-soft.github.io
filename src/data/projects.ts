@@ -985,12 +985,12 @@ export const projects: Project[] = [
         features: [
           {
             name: 'Fuel prices on a map',
-            text: 'Green pins for the cheapest third, yellow for the middle and red for the dearest. Coloured waves roll out from the cheapest price like an earthquake.',
+            text: 'Green pins for the cheapest third, yellow for the middle and red for the dearest. Coloured waves roll out from the cheapest price like an earthquake. A price a feed stops sending leaves the map after 3 days.',
           },
           { name: 'Your place on the map', text: 'A blue dot marks you, with an arrow that turns with the compass.' },
           {
             name: 'Station list',
-            text: 'The servos in view, cheapest first, with brand, suburb and when the price changed.',
+            text: "The servos in view, cheapest first, with brand, suburb and when the price changed. It says when a state's prices are late. With no connection it keeps the last area and its prices, with Try again.",
           },
           {
             name: 'Price history chart',
@@ -1026,6 +1026,14 @@ export const projects: Project[] = [
           { name: 'Fuel panel', text: 'Pick petrol, diesel, gas or chargers, slow AC or fast DC.' },
           { name: 'Ads', text: 'One banner under the list: AdMob in the app, AdSense on the site.' },
           { name: 'Languages', text: 'The screens come in 9 languages and follow the phone or browser.' },
+          {
+            name: 'Links open the app',
+            text: 'A servohop.com link to a servo, suburb, state or the home page opens the Android app on that screen. The Google Play build still opens the browser for now.',
+          },
+          {
+            name: 'Open source licences',
+            text: 'Settings lists each open source package in the app with its licence. A tap opens its npm page.',
+          },
         ],
       },
     ],

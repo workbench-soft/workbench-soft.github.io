@@ -128,6 +128,10 @@ const arch: Arch = {
       'Die Wahl setzt den Kraftstoff in jedem API-Aufruf, und die App merkt sie sich für den nächsten Start. Eine Ladesäule zählt nach ihrem stärksten Stecker.',
     Ads: 'react-native-google-mobile-ads zeigt das Banner in der App nach dem Einwilligungsformular. Auf der Website und den Suchseiten füllt es AdSense.',
     Languages: 'i18next hält die 9 Kataloge, und expo-localization liest die Sprache von Handy oder Browser.',
+    'Links open the app':
+      'intentFilters mit autoVerify in app.config.ts beanspruchen servohop.com, servohop.com/.well-known/assetlinks.json bestätigt das, und src/links/site-link.ts ordnet jeder Adresse eine Route zu.',
+    'Open source licences':
+      'Beim Build liest scripts/licences.ts die package.json und schreibt src/licences/licences.json, die die Einstellungen anzeigen.',
   },
 };
 

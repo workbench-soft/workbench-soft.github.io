@@ -599,7 +599,7 @@ const de: Catalog = {
           features: [
             [
               'Preise auf der Karte',
-              'Grüne Pins für das günstigste Drittel, gelbe für die Mitte und rote für das teuerste. Vom günstigsten Preis rollen bunte Wellen aus wie bei einem Erdbeben.',
+              'Grüne Pins für das günstigste Drittel, gelbe für die Mitte und rote für das teuerste. Vom günstigsten Preis rollen bunte Wellen aus wie bei einem Erdbeben. Ein Preis, den ein Feed nicht mehr schickt, verschwindet nach 3 Tagen von der Karte.',
             ],
             [
               'Dein Standort auf der Karte',
@@ -607,7 +607,7 @@ const de: Catalog = {
             ],
             [
               'Tankstellenliste',
-              'Die Tankstellen im Bild, günstigste zuerst, mit Marke, Vorort und Zeit der letzten Preisänderung.',
+              'Die Tankstellen im Bild, günstigste zuerst, mit Marke, Vorort und Zeit der letzten Preisänderung. Sie zeigt, wenn die Preise eines Bundesstaats verspätet sind. Ohne Verbindung bleiben das letzte Gebiet und seine Preise, mit Erneut versuchen.',
             ],
             ['Preisverlauf', 'Der Tagesdurchschnitt über einem Band vom Tief bis zum Hoch, für 30, 90 oder 365 Tage.'],
             [
@@ -646,6 +646,14 @@ const de: Catalog = {
             ['Kraftstoffpanel', 'Benzin, Diesel, Gas oder Ladesäulen wählen, langsames AC oder schnelles DC.'],
             ['Werbung', 'Ein Banner unter der Liste: AdMob in der App, AdSense auf der Seite.'],
             ['Sprachen', 'Die Bildschirme gibt es in 9 Sprachen, sie folgen dem Telefon oder Browser.'],
+            [
+              'Links öffnen die App',
+              'Ein Link von servohop.com zu einer Tankstelle, einem Vorort, einem Bundesstaat oder der Startseite öffnet die Android-App auf diesem Bildschirm. Die Google-Play-Version öffnet vorerst noch den Browser.',
+            ],
+            [
+              'Open-Source-Lizenzen',
+              'Die Einstellungen listen jedes Open-Source-Paket der App mit seiner Lizenz. Ein Tippen öffnet seine npm-Seite.',
+            ],
           ],
         },
       ],

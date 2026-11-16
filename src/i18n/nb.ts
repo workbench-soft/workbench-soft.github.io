@@ -567,10 +567,13 @@ const nb: Catalog = {
           features: [
             [
               'Priser på kartet',
-              'Grønne nåler for den billigste tredjedelen, gule for midten og røde for den dyreste. Fargede bølger ruller ut fra den laveste prisen som et jordskjelv.',
+              'Grønne nåler for den billigste tredjedelen, gule for midten og røde for den dyreste. Fargede bølger ruller ut fra den laveste prisen som et jordskjelv. En pris som en feed slutter å sende, forsvinner fra kartet etter 3 dager.',
             ],
             ['Din plass på kartet', 'En blå prikk viser deg, med en pil som snur seg etter kompasset.'],
-            ['Stasjonsliste', 'Stasjonene i bildet, billigst først, med merke, forstad og når prisen endret seg.'],
+            [
+              'Stasjonsliste',
+              'Stasjonene i bildet, billigst først, med merke, forstad og når prisen endret seg. Den sier fra når prisene i en delstat er sene. Uten nett viser den det siste området med lagrede priser og Prøv igjen.',
+            ],
             ['Prishistorikk', 'Dagssnittet over et bånd fra laveste til høyeste, for 30, 90 eller 365 dager.'],
             ['Meldinger fra sjåfører', 'Der det ikke finnes data fra delstaten, sender sjåfører prisen fra skiltet.'],
             [
@@ -599,6 +602,14 @@ const nb: Catalog = {
             ['Drivstoffpanel', 'Velg bensin, diesel, gass eller ladere, treg AC eller rask DC.'],
             ['Reklame', 'Ett banner under listen: AdMob i appen, AdSense på nettstedet.'],
             ['Språk', 'Skjermene finnes på 9 språk og følger telefonen eller nettleseren.'],
+            [
+              'Lenker åpner appen',
+              'En servohop.com-lenke til en stasjon, en forstad, en delstat eller forsiden åpner Android-appen på den skjermen. Google Play-versjonen åpner fortsatt nettleseren.',
+            ],
+            [
+              'Lisenser for åpen kildekode',
+              'Innstillinger viser hver pakke med åpen kildekode i appen med lisensen. Et trykk åpner npm-siden.',
+            ],
           ],
         },
       ],
