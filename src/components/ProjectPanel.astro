@@ -128,9 +128,9 @@ let n = 0;
 
 <style>
   .proj {
-    --acc: oklch(0.85 0.14 var(--hue));
-    --acc-a: oklch(0.85 0.14 var(--hue) / 0.14);
-    --glow: oklch(0.85 0.14 var(--hue) / 0.12);
+    --acc: oklch(var(--acc-l) 0.14 var(--hue));
+    --acc-a: oklch(var(--acc-l) 0.14 var(--hue) / 0.14);
+    --glow: oklch(var(--acc-l) 0.14 var(--hue) / 0.12);
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     gap: 28px;
@@ -159,7 +159,7 @@ let n = 0;
   dl { margin: 0 0 22px; display: grid; gap: 12px; }
   dt { font: 500 10.5px var(--mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--dim); margin-bottom: 4px; }
   dd { margin: 0; display: flex; flex-wrap: wrap; gap: 5px; }
-  dd span { font: 500 11.5px var(--mono); color: var(--soft); padding: 3px 8px; border-radius: 6px; background: rgb(255 255 255 / 0.04); border: 1px solid var(--line); }
+  dd span { font: 500 11.5px var(--mono); color: var(--soft); padding: 3px 8px; border-radius: 6px; background: rgb(var(--tint) / 0.04); border: 1px solid var(--line); }
   .links { display: flex; flex-wrap: wrap; gap: 8px; }
   .links a {
     font: 600 13px var(--sans);

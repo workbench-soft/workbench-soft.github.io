@@ -9,6 +9,7 @@ precision highp float;
 uniform vec2 uRes;
 uniform float uTime;
 uniform vec2 uPointer;
+uniform float uLight;
 out vec4 color;
 
 float hash(vec2 p) { return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
@@ -49,7 +50,14 @@ void main() {
     tint = mix(tint, vec3(0.77, 1.0, 0.29), peak * 0.6);
     col = vec3(0.015, 0.022, 0.045) + tint * (line * 0.85 + node * 1.6) * fog;
   }
-  col *= 1.0 - 0.4 * dot(uv, uv);
+  if (uLight > 0.5) {
+    // The glow over the dark base keeps its hue, darkened, as ink on paper.
+    vec3 glow = max(col - vec3(0.012, 0.018, 0.035), 0.0);
+    float k = clamp(max(glow.r, max(glow.g, glow.b)), 0.0, 1.0);
+    col = mix(vec3(0.965, 0.973, 0.988), normalize(glow + 1e-4) * 0.55, k);
+  } else {
+    col *= 1.0 - 0.4 * dot(uv, uv);
+  }
   color = vec4(col, 1.0);
 }`;
 
@@ -80,6 +88,10 @@ export function startField(canvas: HTMLCanvasElement, still: boolean) {
   const uRes = gl.getUniformLocation(prog, 'uRes');
   const uTime = gl.getUniformLocation(prog, 'uTime');
   const uPointer = gl.getUniformLocation(prog, 'uPointer');
+  const light = matchMedia('(prefers-color-scheme: light)');
+  const setLight = () => gl.uniform1f(gl.getUniformLocation(prog, 'uLight'), light.matches ? 1 : 0);
+  setLight();
+  light.addEventListener('change', setLight);
 
   // The march is heavy, so phones render fewer pixels and the browser scales them up.
   const scale = Math.min(devicePixelRatio || 1, 1.5) * (matchMedia('(pointer: coarse)').matches ? 0.5 : 0.75);

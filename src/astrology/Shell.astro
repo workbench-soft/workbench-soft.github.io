@@ -58,7 +58,7 @@ const t = text(lang);
   .skip { position: absolute; left: -999px; }
   .skip:focus { left: 16px; top: 16px; z-index: 10; background: var(--bg-3); padding: 8px 12px; }
   .astro-page, .top .wrap, .foot { max-width: 820px; margin: 0 auto; padding: 0 var(--gutter); }
-  .top { border-bottom: 1px solid var(--line); background: rgb(4 6 11 / 0.8); position: sticky; top: 0; z-index: 5; backdrop-filter: blur(8px); }
+  .top { border-bottom: 1px solid var(--line); background: rgb(var(--bg-rgb) / 0.8); position: sticky; top: 0; z-index: 5; backdrop-filter: blur(8px); }
   .bar { display: flex; align-items: center; gap: 20px; min-height: 56px; }
   .bar a { color: var(--soft); text-decoration: none; font-weight: 500; }
   .bar a:hover { color: var(--text); }

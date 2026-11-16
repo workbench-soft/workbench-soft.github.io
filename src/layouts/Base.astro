@@ -64,7 +64,8 @@ const site = {
     {!noindex && <link rel="canonical" href={url} />}
     {!noindex && langs.map((l) => <link rel="alternate" hreflang={tags[l]} href={at(l)} />)}
     {!noindex && <link rel="alternate" hreflang="x-default" href={at("en")} />}
-    <meta name="theme-color" content="#04060b" />
+    <meta name="theme-color" content="#04060b" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f6f8fc" media="(prefers-color-scheme: light)" />
     <meta name="generator" content={Astro.generator} />
     <meta property="og:site_name" content="Workbench Soft" />
     <meta property="og:type" content={type} />
