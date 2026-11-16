@@ -2,52 +2,41 @@
 
 ## feat/games: party games at games.workbench-soft.com/games
 
-The games run at <https://games.workbench-soft.com/games/>.
+The games run at <https://games.workbench-soft.com/games/>. Android App Links work since 2026-11-17: `/.well-known/assetlinks.json` holds the Play app signing certificate.
 
-- [ ] **Apple account** join the Apple Developer Program (99 USD a year). Without a Mac, the iOS app builds on Codemagic, free for 500 macOS minutes a month.
+- [ ] **Apple account** join the Apple Developer Program, 99 USD a year (payment).
   1. Open <https://developer.apple.com/programs/enroll/> and enroll as Workbench Soft.
   2. Open <https://codemagic.io/signup> and sign up with GitHub.
-  3. Tell an agent "set up the iOS build of the games".
-- [ ] **iOS AdMob app** add the iOS app at AdMob once the Apple account exists.
-  1. Open <https://apps.admob.com>, Apps, Add app, iOS, "Workbench Games".
-  2. Add a banner ad unit.
-  3. Tell an agent both IDs. It puts the app ID into `GADApplicationIdentifier` in `apps/games/ios/App/App/Info.plist` and the unit into `REAL_BANNER.ios` in `apps/games/src/game/ad-unit.ts`.
-- [ ] **Phone test** install the closed testing build of Workbench Games from Google Play, check each step, then tell an agent what failed:
-  1. The lobby opens and shows a banner.
-  2. A room with a friend connects.
-  3. A mistyped room code shows "This room link is broken".
+  3. Tell an agent "set up the iOS build of the games". It adds the iOS AdMob app, Universal Links, the tracking prompt and `PrivacyInfo.xcprivacy`.
+- [ ] **Phone test** once build 2 is on closed testing, install Workbench Games from Google Play and check (wait):
+  1. The lobby shows a banner and a Remove ads button.
+  2. A room link from a chat opens the app on that room.
+  3. Kids mode on: the banner goes away.
   4. Lock the phone for a minute: the room comes back.
-  5. Play a telephone round with a big drawing and switch from wifi to mobile data: the drawing arrives and the room is back within about 75 seconds.
-- [ ] **Room links in the apps** Android App Links with `/.well-known/assetlinks.json` and iOS Universal Links with `apple-app-site-association`. Android can start now that the upload key sits in `%USERPROFILE%\.android-keys\games`; iOS waits for the Apple account. Agent work.
 
 ## play-release
 
-"Workbench Games" (`com.workbenchsoft.games`, app 4975626241785530007) went to Google review for closed testing on 2026-11-13: build 1 (1.0), 178 countries, the "Workbench Soft testers" list, all App content, target age 13 and up, website `https://workbench-soft.com` for `app-ads.txt`. The upload key sits in `%USERPROFILE%\.android-keys\games`, and Bitwarden holds `GAMES_ANDROID_KEYSTORE_BASE64` and `GAMES_ANDROID_KEYSTORE_PASSWORD`.
+"Workbench Games" (`com.workbenchsoft.games`, app 4975626241785530007) is on closed testing with build 1 since 2026-11-13. The Play API reads the app, and the alpha track uses the testers groups of the other apps.
 
-- [ ] **Play API access** auto mode denied the agent this click.
-  1. Open <https://play.google.com/console>, Users and permissions.
-  2. Pick `mcp-play@workbench-soft-play.iam.gserviceaccount.com`, App permissions, Add app, Workbench Games.
-  3. Pick Admin, press Apply, then Save changes.
-- [ ] **Testers** production waits for 12 testers over 14 days of closed testing. Add 12 people to the "Workbench Soft testers" list in Play Console, Testing, Closed testing.
+- [ ] **Upload build 2** the permission check denied the agent the Play upload on 2026-11-17 (denied). The signed AAB sits in `%USERPROFILE%\Downloads\workbench-games-2.aab`.
+  1. Open <https://play.google.com/console>, Workbench Games, Test and release, Closed testing, Alpha.
+  2. Press Create new release, then Upload, and pick `workbench-games-2.aab`.
+  3. Release notes: "Remove ads purchase, room links open the app, and kids mode shows no ads."
+  4. Press Next, then Save and publish.
+- [ ] **Testers** production waits for 12 testers over 14 days of closed testing (wait).
 
 ## ads-setup
 
-Workbench Games, `com.workbenchsoft.games`. Release builds of the Android app use the real AdMob app `ca-app-pub-8598703460892343~1509665312` and its banner since 2026-11-03. The "Workbench Games GDPR" message went live on 2026-11-14.
+Workbench Games, `com.workbenchsoft.games`. Release builds use the real AdMob app `ca-app-pub-8598703460892343~1509665312`. The "Workbench Games GDPR" message went live on 2026-11-14. Remove ads is built and merged (PR #175).
 
-- [ ] **Remove ads** agent work, the plan sits in `specs/party-games.md`, 2026-11-13. Play Console takes no product until a build with the BILLING permission is uploaded, so the order is:
-  1. An agent builds Remove ads in the games and uploads that build to closed testing.
-  2. An agent creates `remove_ads` in Play Console, Monetize with Play, One-time products, at A$2.99 like Tickalot, and activates it.
+- [ ] **Remove ads product** after build 2 is uploaded, Play Console takes the product (wait).
+  1. Open <https://play.google.com/console>, Workbench Games, Monetize with Play, One-time products.
+  2. Press Create one-time product. Product ID `remove_ads`, name "Remove ads", price A$2.99.
+  3. Press Save, then Activate.
 
 ## app-audit
 
-- [ ] **Kids mode, ads and privacy** decide 3 linked questions, then tell an agent the answers:
-  1. Kids mode is for children under 13, while the Play target audience is 13 and up. Listing under 13 means the Families policy: child-safe AdMob requests, no personal ads, a stricter review. Keep 13 and up, or list under 13?
-  2. AdMob starts with no child-directed tag or content rating cap, and the policy says "general audience". Tag the kids mode requests as child-directed?
-  3. Kids mode uses the browser's speech recognition, which Google processes in Chrome. Add a line on it to the policy in `apps/games/src/site/info.ts`? The web build also sends `Permissions-Policy: microphone=()` from `apps/games/scripts/finish-build.ts`, which may block that mic button.
-- [ ] **iOS tracking prompt** before the iOS release, an agent shows the App Tracking Transparency prompt or drops `NSUserTrackingUsageDescription` from `apps/games/ios/App/App/Info.plist`. The same release needs a `PrivacyInfo.xcprivacy` and the real `GADApplicationIdentifier`. Waits for the Apple account.
-- [ ] **Ad privacy choices** on an Android phone in the EEA (or with a VPN there), open the games app, Privacy, and press Ad privacy choices: the AdMob consent form opens (audit 2026-11-14).
-- [ ] **"No ads" on the home page** `src/i18n/en.ts` says "This site shows no ads" and "Ads on this site: 0", while the astrology pages load AdSense. Decide the wording, then tell an agent.
-- [ ] **Site privacy notice** the order form sends name, email and message to formsubmit.co, and `public/privacy.html` covers only Workbench MCP. Decide whether the site gets its own privacy page and footer link.
+- [ ] **Ad privacy choices** on an Android phone with a VPN in the EEA, open the games app, Privacy, and press Ad privacy choices: the AdMob consent form opens (wait, needs build 2 on the phone).
 - Left: one pnpm version and one workspace for the root, apps/games and apps/edge. It is a tooling migration across 3 lockfiles.
 - Left: root astro 7.4.4 has 2 advisories that a static build can't reach. 7.4.7 and up pulls a beta `@emnapi/runtime` that crashes `astro check`, so it waits on a newer `@astrojs/check`.
 - Left: TypeScript 7 in apps/games and apps/edge while the stack table pins 6. An org version call.
@@ -75,43 +64,22 @@ Workbench Games, `com.workbenchsoft.games`. Release builds of the Android app us
 
 ## marketing
 
-- [ ] **Reddit posts** post the drafts you like.
-  1. Open Reddit Desk, Posts tab.
-  2. Post r/selfhosted for Memories and the 2 test-for-test posts.
-  3. On r/selfhosted a bot asks how AI was involved. Reply to it, and the post goes live.
+- [ ] **Reddit posts** pick which drafts of Reddit Desk, Posts tab, go out: r/selfhosted for Memories, and the 2 test-for-test posts in r/AndroidClosedTesting and r/TestersCommunity (decision). On r/selfhosted a bot asks how AI was involved; the reply makes the post go live.
 
 ## header-sites: Sites menu in the header
 
-- [ ] **Alina Photography** once Alina has her own domain, tell an agent the domain. It swaps the Worker address in `clientSites` of `src/data/studio.ts`.
+- [ ] **Alina Photography** once Alina has her own domain, tell an agent the domain. It swaps the Worker address in `clientSites` of `src/data/studio.ts` (wait).
 
 ## AdSense for workbench-soft.com
 
-The pages carry the `google-adsense-account` meta tag and `/ads.txt` serves the publisher line. The games and the astrology articles share the publisher `ca-pub-8598703460892343`.
+The site has About and Privacy pages in 9 languages since 2026-11-17, the `google-adsense-account` meta tag and `/ads.txt`. On 2026-11-17 the AdSense MCP answered `invalid_grant`, and Chrome didn't render the Add site dialog, so the steps below wait for the person (login).
 
-- [ ] **Trust pages** decide whether workbench-soft.com gets its own About page and privacy policy. The footer links the Memories policy today, and AdSense review looks for both. Tell an agent yes or no; a yes means a page in 9 languages.
 - [ ] **Add the site**
-  1. Open <https://adsense.google.com>, Sites, Add site, `workbench-soft.com`.
-  2. Pick the ads.txt check and press Request review.
-- [ ] **Consent message** in AdSense, Privacy and messaging, European regulations, create a message for `workbench-soft.com` and press Publish.
-- [ ] **Ad units** once AdSense approves the site:
+  1. Open <https://adsense.google.com/adsense/u/1/pub-8598703460892343/sites/list> with the Workbench Soft Google account.
+  2. Press New site, type `workbench-soft.com`, press Save.
+  3. Pick the ads.txt check and press Request review.
+- [ ] **Consent message** Privacy and messaging, European regulations, create a message for `workbench-soft.com` and press Publish.
+- [ ] **Ad units** once AdSense approves the site (wait):
   1. Make 3 display ad units: the article, a games page and a games room.
   2. Open <https://github.com/workbench-soft/workbench-soft.github.io/settings/variables/actions>.
   3. Set `ADSENSE_CLIENT` to `ca-pub-8598703460892343`, then `ADSENSE_SLOT_ARTICLE`, `ADSENSE_SLOT_PAGE` and `ADSENSE_SLOT_ROOM` to the unit IDs.
-
-## seo
-
-Found by the SEO audit of 2026-11-13. [specs/seo.md](specs/seo.md) has the fixes made in code.
-
-- [ ] **Property Trends** <https://workbench-soft.com/property-trends/> has no `h1` and 25 words of text. Agent work in the private `property-trends` repo, whose release the Pages build unpacks: add a heading and a paragraph on what the data shows.
-- [ ] **Rich Results Test** agent work: run <https://search.google.com/test/rich-results> on `https://workbench-soft.com/` and `https://workbench-soft.com/skyaltar/astrology/signs/aries/` in Chrome, and fix any error it names.
-
-## UX audit
-
-Found by the UX audit of 2026-11-16 (PR #171), with Playwright at 320, 390 and 1280 px.
-
-- [ ] **Phone menu** below 980 px the header hides Services, Projects, Process, Engineering and Contact, with no menu in their place. A phone reaches them only by scrolling, the hero buttons, Order an app and search. Decide on a menu button, then tell an agent. (decision)
-- [ ] **One contact email** the testers page asks for feedback at `workbench.soft@gmail.com` (`src/testers/apps.ts`), while the home page, Langflip and the privacy pages use `hello@workbench-soft.com`. Pick one, then tell an agent. (decision)
-- [ ] **Light and dark** the studio pages are dark only, while Langflip and the Jekyll pages (Memories and each privacy policy) are light only and ignore the phone's dark mode. Decide whether they follow the system theme. (decision)
-- [ ] **Search hint on phones** the Projects intro says "Press / to search any feature" and the Find a feature chip shows a `/` key, on phones too. Decide on touch wording in 9 languages, then tell an agent. (decision)
-- [ ] **Order an app button** on a phone the floating button covers the right edge of the content under it, such as the feature count of a project row. Decide whether it hides near the order form and the footer, or moves. (decision)
-- [ ] **Privacy pages** each Jekyll privacy policy links only Workbench Soft and Contact at the foot, with no link to the app's own page or store listing. A link there changes the policy pages, so a person decides. (decision)
