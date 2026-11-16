@@ -468,3 +468,21 @@ The studio needed one public site for its apps and their installers.
 - **Changes** `src/components/Nav.astro`, `src/components/Projects.astro`,
   `src/components/Contact.astro`, the 9 catalogs of `src/i18n/`.
 - **Docs** `CHANGELOG.md`.
+
+### 2026-11-17 Light and dark follow the system on every page
+
+- **Why** the owner chose on 2026-11-17 that each page follows the light or
+  dark theme of the system: the studio pages were dark only, while Langflip
+  and the Jekyll pages were light only.
+- **Studio pages** `src/styles/global.css` keeps the dark palette and adds a
+  light one under `prefers-color-scheme: light`. Each colour passes WCAG AA on
+  the three backgrounds. Hard-coded panels, tints and the astrology accents
+  became tokens: `--panel`, `--panel-2`, `--bg-rgb`, `--menu`, `--tint`,
+  `--sun`, `--moon`, `--yours`, `--err` and `--acc-l` for the project accents.
+- **Hero** `src/scripts/field.ts` draws the grid as dark ink on paper when the
+  system is light, through a `uLight` uniform that follows the system.
+- **Jekyll pages** the layouts of Memories, Memoire, Shuttrix, Sky Altar,
+  Tripforge and Lumiere add GitHub's dark colours for a dark system, and the
+  footer links the app's project on workbench-soft.com.
+- **Langflip** `langflip/index.html` gets a dark palette.
+- **Docs** `CHANGELOG.md`.
