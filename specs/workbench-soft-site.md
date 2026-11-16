@@ -432,3 +432,21 @@ The studio needed one public site for its apps and their installers.
 - **Changes** `src/components/Nav.astro`, `src/components/Palette.astro`, `src/components/Contact.astro`, `src/components/ProjectPanel.astro`, `src/pages/[...lang].astro`, a new `src/components/LangPicker.astro` for `src/astrology/Shell.astro` and `src/testers/TestersPage.astro`, and the `palette.close` key in the 9 catalogs of `src/i18n/`.
 - **Left** findings that need a decision sit in the `UX audit` section of `TODO.md`.
 - **Docs** `CHANGELOG.md`.
+
+### 2026-11-17 About and Privacy pages, one contact email
+
+- **Why** the owner chose on 2026-11-17: the site gets its own About and
+  Privacy pages for AdSense review, the footer stops saying "no ads" while
+  the astrology articles show AdSense, and every page uses
+  `hello@workbench-soft.com`.
+- **Pages** `/about/` and `/privacy-policy/`, and `/<lang>/` versions in the
+  9 languages, from `src/legal/LegalPage.astro` and `src/legal/i18n/`. The
+  privacy page names FormSubmit, AdSense, GitHub Pages and Cloudflare, and
+  links `/privacy` for Workbench MCP, which stays as it is.
+- **Footer** About and Privacy replace the Memories policy link. The hero
+  stat reads "Ads on the studio pages", and the footer line says the
+  astrology articles show ads.
+- **Email** the testers page takes `email` from `src/data/studio.ts`.
+- **Check** `src/legal/legal.test.ts` keeps the sections and links of each
+  catalog in step with English.
+- **Docs** `CHANGELOG.md`.
