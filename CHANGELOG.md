@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **Site** the Workbench MCP privacy page at `/privacy` gives `hello@workbench-soft.com` as its contact, like every other page.
+- **Site** the touch wording of the feature search keeps its space after the sentence before it.
 - **Search** the astrology articles give their dates with a time zone, as Google asks for Article markup.
 - **Site** every page follows the light or dark theme of the system, and each privacy page links its app on workbench-soft.com.
 - **Site** phones get a menu for the sections, touch wording for the feature search, and an order button that hides at the form and the footer.
