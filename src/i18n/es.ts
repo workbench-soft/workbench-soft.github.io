@@ -38,7 +38,7 @@ const es: Catalog = {
       features: 'Funciones lanzadas',
       code: 'Líneas de código',
       platforms: 'Plataformas',
-      ads: 'Anuncios en este sitio',
+      ads: 'Anuncios en las páginas del estudio',
     },
     services: {
       title: 'Lo que el estudio crea para ti',
@@ -113,7 +113,12 @@ const es: Catalog = {
       feature: 'Función',
       close: 'Cerrar',
     },
-    footer: { noAds: 'Este sitio no muestra anuncios.', releases: 'Versiones', privacy: 'Privacidad de Memories' },
+    footer: {
+      noAds: 'Las páginas del estudio no muestran anuncios, solo los artículos de astrología.',
+      releases: 'Versiones',
+      privacy: 'Privacidad',
+      about: 'Sobre nosotros',
+    },
     technologies: 'Tecnologías',
   },
   services: [

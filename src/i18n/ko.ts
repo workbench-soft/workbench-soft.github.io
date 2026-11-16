@@ -38,7 +38,7 @@ const ko: Catalog = {
       features: '출시한 기능',
       code: '코드 줄 수',
       platforms: '플랫폼',
-      ads: '이 사이트의 광고',
+      ads: '스튜디오 페이지 광고',
     },
     services: {
       title: '스튜디오가 만들어 드리는 것',
@@ -113,7 +113,12 @@ const ko: Catalog = {
       feature: '기능',
       close: '닫기',
     },
-    footer: { noAds: '이 사이트에는 광고가 없습니다.', releases: '릴리스', privacy: 'Memories 개인정보처리방침' },
+    footer: {
+      noAds: '스튜디오 페이지에는 광고가 없고, 점성술 글에만 있습니다.',
+      releases: '릴리스',
+      privacy: '개인정보처리방침',
+      about: '소개',
+    },
     technologies: '기술',
   },
   services: [

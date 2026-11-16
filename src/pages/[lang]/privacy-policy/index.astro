@@ -1,0 +1,10 @@
+---
+import LegalPage from "../../../legal/LegalPage.astro";
+import { locales, type Lang } from "../../../i18n/locales";
+
+export function getStaticPaths() {
+  return locales.filter((l) => l !== "en").map((lang) => ({ params: { lang } }));
+}
+---
+
+<LegalPage lang={Astro.params.lang as Lang} page="privacy" />

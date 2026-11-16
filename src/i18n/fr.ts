@@ -38,7 +38,7 @@ const fr: Catalog = {
       features: 'Fonctions livrées',
       code: 'Lignes de code',
       platforms: 'Plateformes',
-      ads: 'Pubs sur ce site',
+      ads: 'Pubs sur les pages du studio',
     },
     services: {
       title: 'Ce que le studio crée pour vous',
@@ -114,7 +114,12 @@ const fr: Catalog = {
       feature: 'Fonction',
       close: 'Fermer',
     },
-    footer: { noAds: 'Ce site n’affiche aucune publicité.', releases: 'Versions', privacy: 'Confidentialité Memories' },
+    footer: {
+      noAds: 'Les pages du studio n’affichent aucune pub, seuls les articles d’astrologie en ont.',
+      releases: 'Versions',
+      privacy: 'Confidentialité',
+      about: 'À propos',
+    },
     technologies: 'Technologies',
   },
   services: [

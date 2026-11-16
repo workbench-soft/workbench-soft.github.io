@@ -38,7 +38,7 @@ const ru: Catalog = {
       features: 'Функций выпущено',
       code: 'Строк кода',
       platforms: 'Платформ',
-      ads: 'Рекламы на сайте',
+      ads: 'Рекламы на страницах студии',
     },
     services: {
       title: 'Что студия сделает для вас',
@@ -113,7 +113,12 @@ const ru: Catalog = {
       feature: 'Функция',
       close: 'Закрыть',
     },
-    footer: { noAds: 'На этом сайте нет рекламы.', releases: 'Релизы', privacy: 'Приватность Memories' },
+    footer: {
+      noAds: 'На страницах студии нет рекламы, она есть только в статьях по астрологии.',
+      releases: 'Релизы',
+      privacy: 'Конфиденциальность',
+      about: 'О студии',
+    },
     technologies: 'Технологии',
   },
   services: [
