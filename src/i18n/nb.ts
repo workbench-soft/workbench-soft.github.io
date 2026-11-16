@@ -254,6 +254,10 @@ const nb: Catalog = {
               'Personer',
               'NAS-en grupperer ansikter etter person, navngitte først. En ukjent person kan slås sammen med en navngitt person direkte fra kortet.',
             ],
+            [
+              'Hendelsesmapper i hvilken som helst filutforsker',
+              'Legg et ord i hakeparentes til et mappenavn, så samler NAS-en lenker til disse mappene, slik at Windows Utforsker, en Mac eller en filapp på telefonen åpner dem. Kameraklipp får en lenke inne i hendelsen sin.',
+            ],
             ['Side for indeksering', 'En side på NAS-en viser hvor langt ansiktsmotoren og indeksereren har kommet.'],
             ['Album om en person', 'Et album om ett barn åpnes som en utklippsbok, ett kapittel per leveår.'],
             ['Snu et bilde', 'Et bilde som ligger på siden, rettes opp i filen på NAS-en.'],

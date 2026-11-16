@@ -131,6 +131,8 @@ const arch: Arch = {
       '여행 목록은 날짜별 집계에서 해외여행과 국내 자동차 여행을 모읍니다. WebView의 Leaflet이 작은 칸별 사진 수로 지도를 그립니다.',
     People:
       'NAS의 Rust 엔진이 YuNet과 SFace로 얼굴을 묶습니다. 휴대폰이 결과를 받아 이름과 합치기를 NAS에 다시 씁니다.',
+    'Event folders in any file browser':
+      'NAS의 Node 컨테이너가 매일 밤 폴더 이름의 태그를 읽고 그 폴더로 가는 심볼릭 링크를 만듭니다. Samba가 링크를 따라가므로 SMB 클라이언트에는 일반 폴더로 보입니다.',
     'Indexing progress page':
       '얼굴 엔진과 색인기가 NAS에 상태 파일을 씁니다. Node 서버가 이를 서버 전송 이벤트로 갱신되는 페이지로 만듭니다.',
     'Albums about a person':

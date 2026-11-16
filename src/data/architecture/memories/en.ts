@@ -133,6 +133,8 @@ const arch: Arch = {
       'The trip list joins trips abroad with road trips found in the counts per day. Leaflet in a WebView draws the map from photo counts per small grid cell.',
     People:
       'A Rust engine on the NAS groups faces with YuNet and SFace. The phone downloads the result and writes names and merges back to the NAS.',
+    'Event folders in any file browser':
+      'A Node container on the NAS reads the tags in folder names each night and makes symlinks to them. Samba follows the links, so an SMB client sees plain folders.',
     'Indexing progress page':
       'The face engine and the indexer write status files on the NAS. A Node server turns them into a live page with server-sent events.',
     'Albums about a person':

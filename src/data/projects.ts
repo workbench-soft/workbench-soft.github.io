@@ -157,6 +157,10 @@ export const projects: Project[] = [
             text: 'The NAS groups faces by person, named people first. Merge an unknown face into a named person directly from their card.',
           },
           {
+            name: 'Event folders in any file browser',
+            text: 'Add a word in brackets to a folder name and the NAS gathers links to those folders, so Windows Explorer, a Mac or a phone file app opens them. Camera clips get a link inside their event.',
+          },
+          {
             name: 'Indexing progress page',
             text: 'A page on the NAS shows how far the face engine and the indexer got.',
           },

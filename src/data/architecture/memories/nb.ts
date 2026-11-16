@@ -136,6 +136,8 @@ const arch: Arch = {
       'Turlisten slår sammen utenlandsturer og bilturer i landet fra tallene per dag. Leaflet i en WebView tegner kartet fra antall bilder per liten rute.',
     People:
       'En Rust-motor på NAS-en grupperer ansikter med YuNet og SFace. Telefonen laster ned resultatet og skriver navn og sammenslåinger tilbake til NAS-en.',
+    'Event folders in any file browser':
+      'En Node-container på NAS-en leser hver natt taggene i mappenavnene og lager symbolske lenker til dem. Samba følger lenkene, så en SMB-klient ser vanlige mapper.',
     'Indexing progress page':
       'Ansiktsmotoren og indekseren skriver statusfiler på NAS-en. En Node-server gjør dem til en levende side med hendelser fra serveren.',
     'Albums about a person':

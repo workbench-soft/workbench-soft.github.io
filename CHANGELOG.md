@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Memories** a feature for event folders: a word in brackets on a folder name puts a link to it in a view folder on the NAS, which any file browser opens, in 9 languages.
 - **ServoHop** links open the Google Play build of the app too, in 9 languages.
 - **Tripforge** the privacy policy names the 3 day server logs, why each piece of data is used, how to see, correct or delete it and where to complain, as the app's own policy does.
 - **ServoHop** features for links that open the app and the open source licences in Settings. The station list says when a state's prices are late and keeps the last area offline, and old prices leave the map after 3 days, in 9 languages.

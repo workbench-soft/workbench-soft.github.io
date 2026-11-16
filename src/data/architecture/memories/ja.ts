@@ -137,6 +137,8 @@ const arch: Arch = {
       '旅行の一覧は、日ごとの集計から海外旅行と国内のドライブ旅行をまとめます。WebView の Leaflet が小さなマスごとの写真数で地図を描きます。',
     People:
       'NAS の Rust エンジンが YuNet と SFace で顔をまとめます。スマホは結果を落とし、名前と統合を NAS に書き戻します。',
+    'Event folders in any file browser':
+      'NAS の Node コンテナが毎晩フォルダ名のタグを読み、そこへのシンボリックリンクを作ります。Samba がリンクをたどるので、SMB クライアントには普通のフォルダに見えます。',
     'Indexing progress page':
       '顔エンジンとインデクサーが NAS に状態ファイルを書きます。Node サーバーがそれをサーバー送信イベントで動くページにします。',
     'Albums about a person':

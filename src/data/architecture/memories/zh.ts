@@ -112,6 +112,8 @@ const arch: Arch = {
     'Trip list and places map':
       '旅行列表把出国旅行和国内自驾合在一起，都来自按天统计。WebView 里的 Leaflet 按小网格的照片数画出地图。',
     People: 'NAS 上的 Rust 引擎用 YuNet 和 SFace 分组人脸。手机下载结果，再把名字和合并写回 NAS。',
+    'Event folders in any file browser':
+      'NAS 上的 Node 容器每晚读取文件夹名中的标签，并为它们建立符号链接。Samba 跟随这些链接，SMB 客户端看到的是普通文件夹。',
     'Indexing progress page':
       '人脸引擎和索引器在 NAS 上写状态文件。Node 服务器把它们变成一个用服务器推送事件更新的实时页面。',
     'Albums about a person': '相册文件记下这个人、出生日期和笔记。NAS 上的相册服务器按年龄的每一年排列照片。',

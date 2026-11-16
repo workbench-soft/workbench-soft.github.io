@@ -267,6 +267,10 @@ const fr: Catalog = {
               "Le NAS regroupe les visages par personne, les personnes nommées d'abord. Une personne inconnue peut être fusionnée avec une personne nommée depuis sa fiche.",
             ],
             [
+              'Dossiers d’événements dans tout explorateur de fichiers',
+              'Ajoutez un mot entre crochets au nom d’un dossier, et le NAS rassemble des liens vers ces dossiers, pour que l’Explorateur Windows, un Mac ou une app de fichiers du téléphone les ouvre. Les clips de caméra ont un lien dans leur événement.',
+            ],
+            [
               "Page d'avancement de l'index",
               "Une page sur le NAS montre où en sont la détection des visages et l'indexeur.",
             ],

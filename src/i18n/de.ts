@@ -263,6 +263,10 @@ const de: Catalog = {
               'Das NAS gruppiert Gesichter nach Person, benannte zuerst. Unbekannte Gesichter lassen sich direkt auf ihrer Karte mit einer benannten Person zusammenführen.',
             ],
             [
+              'Ereignisordner in jedem Dateibrowser',
+              'Ein Wort in Klammern an den Ordnernamen hängen, und das NAS sammelt Links auf diese Ordner, sodass der Windows Explorer, ein Mac oder eine Datei-App auf dem Handy sie öffnet. Kameraclips bekommen einen Link in ihrem Ereignis.',
+            ],
+            [
               'Seite zum Indexfortschritt',
               'Eine Seite auf dem NAS zeigt, wie weit Gesichtserkennung und Indexer sind.',
             ],
