@@ -13,6 +13,7 @@ const zh: Catalog = {
       home: '返回首页',
     },
     nav: {
+      menu: '菜单',
       services: '服务',
       projects: '项目',
       process: '流程',
@@ -50,6 +51,7 @@ const zh: Catalog = {
       filter: '筛选项目',
       all: '全部',
       find: '查找功能',
+      searchTouch: '点按“查找功能”即可搜索任意功能。',
       index: '项目索引',
       features: '功能',
       platforms: '平台',

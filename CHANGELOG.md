@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Site** phones get a menu for the sections, touch wording for the feature search, and an order button that hides at the form and the footer.
 - **Memories** the privacy policy covers album links and person albums, and says the app asks once before auto upload and auto sort.
 - **Site** About and Privacy pages in 9 languages, linked from the footer. The ad wording names the astrology articles, and the testers page uses `hello@workbench-soft.com`.
 - **Shuttrix** Raw photo leaves beta: it is on by default and keeps a room in front of a bright window bright, in 9 languages.

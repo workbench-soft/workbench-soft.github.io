@@ -46,7 +46,7 @@ const [orBefore, orAfter] = t.or.split("{email}");
   </div>
 </section>
 
-<a class="fab" href="#order" data-order>
+<a class="fab" href="#order" data-order aria-label={t.order}>
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16v4ZM13.5 6.5l4 4"></path></svg>
   <span>{t.order}</span>
 </a>
@@ -77,8 +77,21 @@ const [orBefore, orAfter] = t.or.split("{email}");
   fromHash();
   addEventListener("hashchange", fromHash);
 
-  // The corner button hides while the form is on screen.
-  new IntersectionObserver(([e]) => fab.classList.toggle("away", e.isIntersecting), { threshold: 0.25 }).observe(section);
+  // The corner button hides while the form or the footer is on screen, so it covers neither.
+  const seen = new Set<Element>();
+  const watch = new IntersectionObserver(
+    (entries) => {
+      for (const e of entries) {
+        if (e.isIntersecting) seen.add(e.target);
+        else seen.delete(e.target);
+      }
+      fab.classList.toggle("away", seen.size > 0);
+    },
+    { threshold: 0.1 },
+  );
+  watch.observe(section);
+  const foot = [...document.querySelectorAll("footer")].at(-1);
+  if (foot) watch.observe(foot);
 
   form.message.addEventListener("keydown", (e: KeyboardEvent) => {
     if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) form.requestSubmit();
@@ -184,7 +197,9 @@ const [orBefore, orAfter] = t.or.split("{email}");
   .fab.away { opacity: 0; translate: 0 12px; visibility: hidden; }
   @media (max-width: 640px) {
     form { grid-template-columns: 1fr; }
-    .fab { padding: 12px 14px; }
+    /* On a phone the button is a round icon, so it covers less of the rows under it. */
+    .fab { padding: 14px; }
+    .fab span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
   }
   @media print {
     .fab { display: none; }

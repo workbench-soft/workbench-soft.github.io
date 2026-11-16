@@ -8,20 +8,23 @@ const lang = langOf(Astro.currentLocale);
 const t = ui(lang);
 const numbered = projectsIn(lang).map((p, i) => ({ p, n: i + 1 }));
 const [before, after] = t.projects.intro.split("{key}");
+// A phone has no / key, so the sentence with it gives way to one that names the Find button.
+const touch = t.projects.intro.replace(/[^.。]*{key}[^.。]*[.。]/, t.projects.searchTouch);
 ---
 
 <section class="block" id="projects">
   <div class="wrap">
     <div class="eyebrow rv">02 / {t.nav.projects}</div>
     <h2 class="rv">{t.projects.title}</h2>
-    <p class="intro rv">{before}<kbd>/</kbd>{after}</p>
+    <p class="intro rv key-hint">{before}<kbd>/</kbd>{after}</p>
+    <p class="intro rv touch-hint">{touch}</p>
 
     <div class="bar" role="toolbar" aria-label={t.projects.filter}>
       <button class="chip" type="button" data-filter="all" aria-pressed="true">{t.projects.all}</button>
       {kinds.map((k) => <button class="chip" type="button" data-filter={k} aria-pressed="false">{t.projects.kinds[k]}</button>)}
       <button class="kbtn" type="button" data-palette>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
-        <span>{t.projects.find}</span><kbd>/</kbd>
+        <span>{t.projects.find}</span><kbd class="key-hint">/</kbd>
       </button>
     </div>
 
@@ -80,6 +83,11 @@ const [before, after] = t.projects.intro.split("{key}");
 </script>
 
 <style>
+  .touch-hint { display: none; }
+  @media (hover: none) and (pointer: coarse) {
+    .key-hint { display: none; }
+    .touch-hint { display: block; }
+  }
   .bar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 22px; }
   .chip {
     cursor: pointer;

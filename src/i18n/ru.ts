@@ -13,6 +13,7 @@ const ru: Catalog = {
       home: 'На главную',
     },
     nav: {
+      menu: 'Меню',
       services: 'Услуги',
       projects: 'Проекты',
       process: 'Процесс',
@@ -52,6 +53,7 @@ const ru: Catalog = {
       filter: 'Фильтр проектов',
       all: 'Все',
       find: 'Найти функцию',
+      searchTouch: 'Коснитесь «Найти функцию», чтобы найти любую функцию.',
       index: 'Список проектов',
       features: 'Функции',
       platforms: 'Платформы',

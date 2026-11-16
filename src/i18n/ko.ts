@@ -13,6 +13,7 @@ const ko: Catalog = {
       home: '홈으로 가기',
     },
     nav: {
+      menu: '메뉴',
       services: '서비스',
       projects: '프로젝트',
       process: '진행 방식',
@@ -51,6 +52,7 @@ const ko: Catalog = {
       filter: '프로젝트 필터',
       all: '전체',
       find: '기능 찾기',
+      searchTouch: '"기능 찾기"를 누르면 기능을 검색할 수 있습니다.',
       index: '프로젝트 목록',
       features: '기능',
       platforms: '플랫폼',
