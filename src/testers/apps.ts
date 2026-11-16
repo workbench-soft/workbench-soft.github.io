@@ -21,7 +21,7 @@ export const apps = [
 export type AppId = (typeof apps)[number]['id'];
 
 export const group = 'https://groups.google.com/g/workbench-soft-testers';
-export const feedback = 'workbench.soft@gmail.com';
+export { email as feedback } from '../data/studio';
 const pkg = (id: AppId) => `com.workbenchsoft.${id}`;
 export const joinUrl = (id: AppId) => `https://play.google.com/apps/testing/${pkg(id)}`;
 export const installUrl = (id: AppId) => `https://play.google.com/store/apps/details?id=${pkg(id)}`;

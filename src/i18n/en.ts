@@ -37,7 +37,7 @@ export const en = {
     features: 'Features shipped',
     code: 'Lines of code',
     platforms: 'Platforms',
-    ads: 'Ads on this site',
+    ads: 'Ads on the studio pages',
   },
   services: {
     title: 'What the studio builds for you',
@@ -112,9 +112,10 @@ export const en = {
     close: 'Close',
   },
   footer: {
-    noAds: 'This site shows no ads.',
+    noAds: 'The studio pages show no ads. The astrology articles do.',
     releases: 'Releases',
-    privacy: 'Memories privacy',
+    privacy: 'Privacy',
+    about: 'About',
   },
   technologies: 'Technologies',
 };

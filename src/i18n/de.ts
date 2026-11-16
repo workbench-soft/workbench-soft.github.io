@@ -38,7 +38,7 @@ const de: Catalog = {
       features: 'Funktionen ausgeliefert',
       code: 'Zeilen Code',
       platforms: 'Plattformen',
-      ads: 'Werbung auf dieser Seite',
+      ads: 'Werbung auf den Studioseiten',
     },
     services: {
       title: 'Was das Studio für Sie baut',
@@ -113,7 +113,12 @@ const de: Catalog = {
       feature: 'Funktion',
       close: 'Schließen',
     },
-    footer: { noAds: 'Diese Seite zeigt keine Werbung.', releases: 'Releases', privacy: 'Datenschutz Memories' },
+    footer: {
+      noAds: 'Die Studioseiten zeigen keine Werbung, nur die Astrologie-Artikel.',
+      releases: 'Releases',
+      privacy: 'Datenschutz',
+      about: 'Über uns',
+    },
     technologies: 'Technologien',
   },
   services: [

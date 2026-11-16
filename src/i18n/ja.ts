@@ -38,7 +38,7 @@ const ja: Catalog = {
       features: 'リリースした機能',
       code: 'コード行数',
       platforms: 'プラットフォーム',
-      ads: 'このサイトの広告',
+      ads: 'スタジオのページの広告',
     },
     services: {
       title: 'スタジオがあなたのために作るもの',
@@ -112,7 +112,12 @@ const ja: Catalog = {
       feature: '機能',
       close: '閉じる',
     },
-    footer: { noAds: 'このサイトに広告はありません。', releases: 'リリース', privacy: 'Memories のプライバシー' },
+    footer: {
+      noAds: 'スタジオのページに広告はありません。広告は占星術の記事だけです。',
+      releases: 'リリース',
+      privacy: 'プライバシー',
+      about: '概要',
+    },
     technologies: '技術',
   },
   services: [

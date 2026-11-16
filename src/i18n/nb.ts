@@ -38,7 +38,7 @@ const nb: Catalog = {
       features: 'Funksjoner levert',
       code: 'Kodelinjer',
       platforms: 'Plattformer',
-      ads: 'Annonser på dette nettstedet',
+      ads: 'Annonser på studiosidene',
     },
     services: {
       title: 'Hva studioet bygger for deg',
@@ -114,9 +114,10 @@ const nb: Catalog = {
       close: 'Lukk',
     },
     footer: {
-      noAds: 'Dette nettstedet viser ingen annonser.',
+      noAds: 'Studiosidene viser ingen annonser, bare astrologiartiklene gjør det.',
       releases: 'Utgivelser',
-      privacy: 'Personvern for Memories',
+      privacy: 'Personvern',
+      about: 'Om oss',
     },
     technologies: 'Teknologier',
   },

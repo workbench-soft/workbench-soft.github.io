@@ -38,7 +38,7 @@ const zh: Catalog = {
       features: '已上线功能',
       code: '代码行数',
       platforms: '平台',
-      ads: '本站广告',
+      ads: '工作室页面广告',
     },
     services: {
       title: '工作室能为你做什么',
@@ -105,7 +105,12 @@ const zh: Catalog = {
       subject: '给 Workbench Soft 的项目',
     },
     palette: { results: '结果', empty: '没有匹配。换个词试试。', project: '项目', feature: '功能', close: '关闭' },
-    footer: { noAds: '本站不展示广告。', releases: '发布版本', privacy: 'Memories 隐私政策' },
+    footer: {
+      noAds: '工作室页面不展示广告，只有星座文章展示。',
+      releases: '发布版本',
+      privacy: '隐私政策',
+      about: '关于',
+    },
     technologies: '技术',
   },
   services: [

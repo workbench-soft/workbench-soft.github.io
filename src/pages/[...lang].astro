@@ -10,7 +10,7 @@ import Engineering from "../components/Engineering.astro";
 import Contact from "../components/Contact.astro";
 import Palette from "../components/Palette.astro";
 import { email } from "../data/studio";
-import { defaultLang, langOf, locales } from "../i18n/locales";
+import { defaultLang, langOf, locales, pathOf } from "../i18n/locales";
 import { ui } from "../i18n";
 
 // English builds at /, each other language at /<code>/.
@@ -18,7 +18,8 @@ export function getStaticPaths() {
   return locales.map((l) => ({ params: { lang: l === defaultLang ? undefined : l } }));
 }
 
-const t = ui(langOf(Astro.currentLocale));
+const lang = langOf(Astro.currentLocale);
+const t = ui(lang);
 ---
 
 <Base title={t.meta.title} description={t.meta.description}>
@@ -38,7 +39,8 @@ const t = ui(langOf(Astro.currentLocale));
       <span>© {new Date().getFullYear()} Workbench Soft. {t.footer.noAds}</span>
       <ul class="foot-links">
         <li><a href="https://github.com/workbench-soft/workbench-soft.github.io/releases">{t.footer.releases}</a></li>
-        <li><a href="/memories-mobile/privacy-policy.html">{t.footer.privacy}</a></li>
+        <li><a href={`${pathOf(lang)}about/`}>{t.footer.about}</a></li>
+        <li><a href={`${pathOf(lang)}privacy-policy/`}>{t.footer.privacy}</a></li>
         <li><a href={`mailto:${email}`}>{email}</a></li>
       </ul>
     </div>
