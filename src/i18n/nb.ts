@@ -604,7 +604,7 @@ const nb: Catalog = {
             ['Språk', 'Skjermene finnes på 9 språk og følger telefonen eller nettleseren.'],
             [
               'Lenker åpner appen',
-              'En servohop.com-lenke til en stasjon, en forstad, en delstat eller forsiden åpner Android-appen på den skjermen. Google Play-versjonen åpner fortsatt nettleseren.',
+              'En servohop.com-lenke til en stasjon, en forstad, en delstat eller forsiden åpner Android-appen på den skjermen.',
             ],
             [
               'Lisenser for åpen kildekode',

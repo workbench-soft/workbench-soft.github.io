@@ -1028,7 +1028,7 @@ export const projects: Project[] = [
           { name: 'Languages', text: 'The screens come in 9 languages and follow the phone or browser.' },
           {
             name: 'Links open the app',
-            text: 'A servohop.com link to a servo, suburb, state or the home page opens the Android app on that screen. The Google Play build still opens the browser for now.',
+            text: 'A servohop.com link to a servo, suburb, state or the home page opens the Android app on that screen.',
           },
           {
             name: 'Open source licences',

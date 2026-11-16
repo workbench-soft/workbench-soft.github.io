@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **ServoHop** links open the Google Play build of the app too, in 9 languages.
 - **Tripforge** the privacy policy names the 3 day server logs, why each piece of data is used, how to see, correct or delete it and where to complain, as the app's own policy does.
 - **ServoHop** features for links that open the app and the open source licences in Settings. The station list says when a state's prices are late and keeps the last area offline, and old prices leave the map after 3 days, in 9 languages.
 - **UX audit 2026-11-16** on a phone the Games and Sites menus open inside the screen, the header menus, footer links and language picker take a bigger tap, the testers and astrology pages get a globe language button that closes on a tap outside, the search box gets a Close button, and the Sites menu lists Aspiration Style once, in 9 languages.

@@ -639,7 +639,7 @@ const es: Catalog = {
             ['Idiomas', 'Las pantallas vienen en 9 idiomas y siguen al teléfono o al navegador.'],
             [
               'Los enlaces abren la app',
-              'Un enlace de servohop.com a una gasolinera, un barrio, un estado o la portada abre la app de Android en esa pantalla. La versión de Google Play aún abre el navegador.',
+              'Un enlace de servohop.com a una gasolinera, un barrio, un estado o la portada abre la app de Android en esa pantalla.',
             ],
             [
               'Licencias de código abierto',

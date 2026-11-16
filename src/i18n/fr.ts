@@ -661,7 +661,7 @@ const fr: Catalog = {
             ['Langues', 'Les écrans existent en 9 langues et suivent le téléphone ou le navigateur.'],
             [
               'Les liens ouvrent l’app',
-              'Un lien servohop.com vers une station, un quartier, un État ou l’accueil ouvre l’app Android sur cet écran. La version Google Play ouvre encore le navigateur.',
+              'Un lien servohop.com vers une station, un quartier, un État ou l’accueil ouvre l’app Android sur cet écran.',
             ],
             [
               'Licences open source',

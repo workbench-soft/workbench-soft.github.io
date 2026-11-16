@@ -648,7 +648,7 @@ const de: Catalog = {
             ['Sprachen', 'Die Bildschirme gibt es in 9 Sprachen, sie folgen dem Telefon oder Browser.'],
             [
               'Links öffnen die App',
-              'Ein Link von servohop.com zu einer Tankstelle, einem Vorort, einem Bundesstaat oder der Startseite öffnet die Android-App auf diesem Bildschirm. Die Google-Play-Version öffnet vorerst noch den Browser.',
+              'Ein Link von servohop.com zu einer Tankstelle, einem Vorort, einem Bundesstaat oder der Startseite öffnet die Android-App auf diesem Bildschirm.',
             ],
             [
               'Open-Source-Lizenzen',
