@@ -131,7 +131,7 @@ const arch: Arch = {
       'A ring holds the last 5 full size frames while the camera runs. A press merges the frames from before the touch, with the newest one as the reference.',
     'Enhance photos':
       'With Enhance on, a GPU shader lifts shadows and adds colour and sharpness to the saved JPEG. With it off, Camera2 asks for a plain sRGB tone curve where the camera allows.',
-    'Raw photo (beta)':
+    'Raw photo':
       'A Camera2 session of its own holds the last 8 raw sensor frames. A Rust crate aligns and merges them, then develops the photo on the phone.',
     'QR codes':
       'The bundled ML Kit scanner reads each preview frame on the phone. CameraX maps the box of each code to the screen for the brackets.',

@@ -1258,8 +1258,8 @@ const nb: Catalog = {
               'Enhance forsterker farger, skarphet og skygger. Av bruker en fast sRGB-kurve på støttede vanlige kameraer. Natt og andre kameraer beholder egen behandling.',
             ],
             [
-              'Raw-bilde (beta)',
-              'Lager bildet av sensorens råbilder fram til trykket, med mindre støy og mer detaljer. Av som standard.',
+              'Raw-bilde',
+              'Lager bildet av sensorens råbilder fram til trykket, med mindre støy og mer detaljer. Et rom foran et lyst vindu blir lyst. På som standard.',
             ],
             ['QR-koder', 'En kode i forhåndsvisningen får klammer og en knapp for å åpne den.'],
             ['Klokke', 'Klokkeslettet øverst til venstre, der telefonens klokke pleier å stå, unna knappene.'],

@@ -1347,8 +1347,8 @@ const es: Catalog = {
               'Enhance refuerza color, nitidez y sombras. Al desactivarlo, las cámaras normales compatibles usan una curva sRGB fija. Noche y las demás cámaras conservan su procesamiento.',
             ],
             [
-              'Foto raw (beta)',
-              'Crea la foto con los fotogramas en bruto del sensor hasta la pulsación, con menos ruido y más detalle. Desactivado por defecto.',
+              'Foto raw',
+              'Crea la foto con los fotogramas en bruto del sensor hasta la pulsación, con menos ruido y más detalle. Una habitación ante una ventana luminosa sale clara. Activado por defecto.',
             ],
             ['Códigos QR', 'Un código en la vista previa recibe un marco y un botón para abrirlo.'],
             [

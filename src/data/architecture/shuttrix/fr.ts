@@ -140,7 +140,7 @@ const arch: Arch = {
       'Un anneau garde les 5 dernières images pleine taille pendant que la caméra tourne. Un appui fond les images d’avant le toucher, avec la plus récente comme référence.',
     'Enhance photos':
       'Avec Améliorer, un shader GPU éclaircit les ombres et ajoute couleur et netteté au JPEG enregistré. Sans lui, Camera2 demande une courbe sRGB simple quand la caméra le permet.',
-    'Raw photo (beta)':
+    'Raw photo':
       'Une session Camera2 à part garde les 8 dernières images brutes du capteur. Un crate Rust les aligne et les fond, puis développe la photo sur le téléphone.',
     'QR codes':
       'Le lecteur ML Kit intégré lit chaque image de l’aperçu sur le téléphone. CameraX place le cadre de chaque code à l’écran pour les crochets.',

@@ -105,8 +105,7 @@ const arch: Arch = {
     'Multi-frame photo': '相机运行时，环形缓存保留最近 5 帧全尺寸画面。按下快门会合并按下之前的帧，以最新一帧为基准。',
     'Enhance photos':
       '开启增强时，GPU 着色器提亮阴影，并给保存的 JPEG 增加色彩和锐度。关闭时，Camera2 在相机允许的地方使用普通 sRGB 色调曲线。',
-    'Raw photo (beta)':
-      '一个独立的 Camera2 会话保留传感器最近 8 帧原始数据。Rust 库对齐并合并它们，再在手机上冲洗出照片。',
+    'Raw photo': '一个独立的 Camera2 会话保留传感器最近 8 帧原始数据。Rust 库对齐并合并它们，再在手机上冲洗出照片。',
     'QR codes': '内置的 ML Kit 扫描器在手机上读取每一帧预览。CameraX 把每个码的方框映射到屏幕上，用来画角标。',
     Clock: 'React Native 图层在隐藏的状态栏留下的位置绘制时间。计时器每分钟触发一次，点按会穿过时钟落到预览上。',
     Gallery:

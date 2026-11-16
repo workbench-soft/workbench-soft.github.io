@@ -1368,8 +1368,8 @@ const de: Catalog = {
               'Enhance verstärkt Farben, Schärfe und Schatten. Ohne Enhance nutzen unterstützte normale Kameras eine feste sRGB-Kurve. Nachtmodus und andere Kameras behalten ihre Verarbeitung.',
             ],
             [
-              'Raw-Foto (Beta)',
-              'Baut das Foto aus den Rohbildern des Sensors bis zum Auslösen, mit weniger Rauschen und mehr Details. Standardmäßig aus.',
+              'Raw-Foto',
+              'Baut das Foto aus den Rohbildern des Sensors bis zum Auslösen, mit weniger Rauschen und mehr Details. Ein Raum vor einem hellen Fenster bleibt hell. Standardmäßig an.',
             ],
             ['QR-Codes', 'Ein Code in der Vorschau bekommt Klammern und einen Knopf zum Öffnen.'],
             ['Uhr', 'Die Uhrzeit oben links, wo sonst die Uhr des Telefons steht, abseits der Tasten.'],

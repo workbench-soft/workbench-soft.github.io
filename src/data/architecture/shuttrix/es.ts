@@ -143,7 +143,7 @@ const arch: Arch = {
       'Un anillo guarda los últimos 5 fotogramas a tamaño completo mientras la cámara funciona. Un toque une los fotogramas previos al contacto, con el más reciente como referencia.',
     'Enhance photos':
       'Con Mejorar activo, un shader de GPU aclara las sombras y da color y nitidez al JPEG guardado. Sin él, Camera2 pide una curva sRGB simple donde la cámara lo permite.',
-    'Raw photo (beta)':
+    'Raw photo':
       'Una sesión de Camera2 propia guarda los últimos 8 fotogramas en bruto del sensor. Un crate de Rust los alinea y los une, y luego revela la foto en el teléfono.',
     'QR codes':
       'El lector integrado de ML Kit lee cada fotograma de la vista previa en el teléfono. CameraX lleva el recuadro de cada código a la pantalla para las esquinas.',

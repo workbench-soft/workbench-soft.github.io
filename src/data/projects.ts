@@ -387,8 +387,8 @@ export const projects: Project[] = [
             text: 'Enhance adds colour, sharpness and lifted shadows. With Enhance off, supported ordinary camera sessions use a fixed sRGB tone curve. Night and unsupported cameras keep their own processing.',
           },
           {
-            name: 'Raw photo (beta)',
-            text: 'Builds the photo from the raw sensor frames up to the press, with less noise and more detail. Off by default.',
+            name: 'Raw photo',
+            text: 'Builds the photo from the raw sensor frames up to the press, with less noise and more detail. A room in front of a bright window stays bright. On by default.',
           },
           { name: 'QR codes', text: 'A code in the preview gets brackets and a pill to open it.' },
           {

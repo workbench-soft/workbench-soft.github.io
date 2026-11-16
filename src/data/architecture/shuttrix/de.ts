@@ -137,7 +137,7 @@ const arch: Arch = {
       'Ein Ring hält die letzten 5 Bilder in voller Größe, solange die Kamera läuft. Ein Druck verbindet die Bilder vor der Berührung, mit dem neuesten als Referenz.',
     'Enhance photos':
       'Mit Verbessern hebt ein GPU-Shader die Schatten und gibt dem gespeicherten JPEG Farbe und Schärfe. Ohne verlangt Camera2 eine schlichte sRGB-Tonkurve, wo die Kamera es erlaubt.',
-    'Raw photo (beta)':
+    'Raw photo':
       'Eine eigene Camera2-Sitzung hält die letzten 8 Rohbilder des Sensors. Ein Rust-Crate richtet sie aus, verbindet sie und entwickelt das Foto auf dem Handy.',
     'QR codes':
       'Der eingebaute Scanner von ML Kit liest jedes Vorschaubild auf dem Handy. CameraX überträgt den Rahmen jedes Codes für die Klammern auf den Bildschirm.',

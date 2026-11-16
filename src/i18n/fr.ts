@@ -1396,8 +1396,8 @@ const fr: Catalog = {
               'Enhance renforce couleurs, netteté et ombres. Désactivé, il laisse une courbe sRGB fixe aux caméras ordinaires compatibles. Le mode Nuit et les autres caméras gardent leur traitement.',
             ],
             [
-              'Photo raw (bêta)',
-              'Construit la photo à partir des images brutes du capteur jusqu’à l’appui, avec moins de bruit et plus de détails. Désactivé par défaut.',
+              'Photo raw',
+              'Construit la photo à partir des images brutes du capteur jusqu’à l’appui, avec moins de bruit et plus de détails. Une pièce devant une fenêtre lumineuse reste claire. Activé par défaut.',
             ],
             ['Codes QR', "Un code dans l'aperçu reçoit un cadre et une pastille pour l'ouvrir."],
             ['Horloge', 'L’heure en haut à gauche, à la place de l’horloge du téléphone, loin des commandes.'],

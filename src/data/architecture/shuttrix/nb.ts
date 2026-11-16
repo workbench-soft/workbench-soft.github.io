@@ -134,7 +134,7 @@ const arch: Arch = {
       'En ring holder de siste 5 bildene i full størrelse mens kameraet går. Et trykk slår sammen bildene fra før berøringen, med det nyeste som referanse.',
     'Enhance photos':
       'Med Forbedre på løfter en GPU-shader skyggene og gir den lagrede JPEG-en farge og skarphet. Uten den ber Camera2 om en enkel sRGB-tonekurve der kameraet tillater det.',
-    'Raw photo (beta)':
+    'Raw photo':
       'En egen Camera2-økt holder de siste 8 råbildene fra sensoren. En Rust-crate retter dem inn og slår dem sammen, og fremkaller så bildet på telefonen.',
     'QR codes':
       'Den innebygde ML Kit-skanneren leser hvert bilde i forhåndsvisningen på telefonen. CameraX flytter rammen til hver kode til skjermen for hjørnemerkene.',
