@@ -13,6 +13,7 @@ const ja: Catalog = {
       home: 'ホームへ戻る',
     },
     nav: {
+      menu: 'メニュー',
       services: 'サービス',
       projects: 'プロジェクト',
       process: '進め方',
@@ -51,6 +52,7 @@ const ja: Catalog = {
       filter: 'プロジェクトを絞り込む',
       all: 'すべて',
       find: '機能を探す',
+      searchTouch: '「機能を探す」をタップすると機能を検索できます。',
       index: 'プロジェクト一覧',
       features: '機能',
       platforms: 'プラットフォーム',

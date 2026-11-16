@@ -12,6 +12,7 @@ export const en = {
     home: 'Go to the home page',
   },
   nav: {
+    menu: 'Menu',
     services: 'Services',
     projects: 'Projects',
     process: 'Process',
@@ -50,6 +51,7 @@ export const en = {
     filter: 'Filter the projects',
     all: 'All',
     find: 'Find a feature',
+    searchTouch: 'Tap Find a feature to search any feature.',
     index: 'Project index',
     features: 'Features',
     platforms: 'Platforms',

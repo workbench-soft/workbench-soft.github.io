@@ -13,6 +13,7 @@ const nb: Catalog = {
       home: 'Til forsiden',
     },
     nav: {
+      menu: 'Meny',
       services: 'Tjenester',
       projects: 'Prosjekter',
       process: 'Prosess',
@@ -51,6 +52,7 @@ const nb: Catalog = {
       filter: 'Filtrer prosjektene',
       all: 'Alle',
       find: 'Finn en funksjon',
+      searchTouch: 'Trykk på «Finn en funksjon» for å søke etter en funksjon.',
       index: 'Prosjektoversikt',
       features: 'Funksjoner',
       platforms: 'Plattformer',

@@ -30,6 +30,14 @@ const links = [
     <ul class="links">
       {links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
     </ul>
+    <details class="menu sections">
+      <summary class="kbtn" aria-label={t.menu} title={t.menu}>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+      </summary>
+      <ul>
+        {links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+      </ul>
+    </details>
     <details class="menu games">
       <summary>{t.games}<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary>
       <ul>
@@ -155,19 +163,28 @@ const links = [
   .sep { margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--line); }
   .head { padding: 12px 12px 4px; font: 500 11px var(--mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
   .games ul { max-height: calc(100svh - 80px); overflow-y: auto; }
+  /* Below 980 px the section links fold into the menu button, the first item on the right. */
+  .sections { display: none; }
   @media (max-width: 980px) {
     .links { display: none; }
-    .games:first-of-type { margin-left: auto; }
+    .sections { display: block; margin-left: auto; }
+    .sections ul { left: 0; right: auto; }
     .games ul { left: auto; right: 0; }
   }
   @media (max-width: 640px) {
     .label, .kbtn[data-palette] kbd { display: none; }
     /* A list hung from its button ran off the left edge, so on a phone it spans the screen under the header. */
-    .games ul { position: fixed; top: 72px; left: var(--gutter); right: var(--gutter); min-width: 0; }
+    .games ul, .sections ul { position: fixed; top: 72px; left: var(--gutter); right: var(--gutter); min-width: 0; }
   }
   /* Phones from 320 px: the mark stands for the name, so the language button stays on screen. */
   @media (max-width: 480px) {
     .wrap { gap: 14px; }
     .brand .name { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  }
+  /* The menu button took 40 px, so the narrowest phones keep search in the Find chip of Projects, and the language button stays on screen. */
+  @media (max-width: 400px) {
+    .wrap { gap: 10px; }
+    .kbtn[data-palette] { display: none; }
+    .lang { margin-left: 0; }
   }
 </style>

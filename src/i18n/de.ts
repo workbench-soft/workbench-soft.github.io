@@ -13,6 +13,7 @@ const de: Catalog = {
       home: 'Zur Startseite',
     },
     nav: {
+      menu: 'Menü',
       services: 'Leistungen',
       projects: 'Projekte',
       process: 'Ablauf',
@@ -51,6 +52,7 @@ const de: Catalog = {
       filter: 'Projekte filtern',
       all: 'Alle',
       find: 'Funktion finden',
+      searchTouch: 'Tippen Sie auf „Funktion finden“, um jede Funktion zu finden.',
       index: 'Projektübersicht',
       features: 'Funktionen',
       platforms: 'Plattformen',
