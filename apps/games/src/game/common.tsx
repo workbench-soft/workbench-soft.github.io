@@ -4,6 +4,7 @@ import { setDevAdsShown } from './admob.ts';
 import { devAdsShown, isDevDevice } from './dev-device.ts';
 import { t } from './i18n.ts';
 import { isNative, roomLink } from './platform.ts';
+import { adsRemoved, buyRemoveAds } from './purchase.ts';
 import { editingProfile, room, send, serverNow } from './store.ts';
 
 /** Copies the room link, or shows it in a prompt where the clipboard is blocked. */
@@ -141,7 +142,7 @@ export function AdSlot() {
     }
     (window.adsbygoogle ??= []).push({});
   }, []);
-  if (!CLIENT || !SLOT || isNative()) return null;
+  if (!CLIENT || !SLOT || isNative() || room.value?.settings.kids) return null;
   return (
     <div class="ad">
       <ins
@@ -158,6 +159,16 @@ export function AdSlot() {
 }
 
 /** The developer's phone only, in the app. Brings Google's test banner back or hides it. */
+/** The Remove ads chip under the lobby, in the Android app only. */
+export function RemoveAdsChip() {
+  if (!isNative() || adsRemoved.value || room.value?.settings.kids) return null;
+  return (
+    <button type="button" class="btn btn-ghost remove-ads" onClick={() => void buyRemoveAds()}>
+      {t('removeAds')}
+    </button>
+  );
+}
+
 export function DevAdsSwitch() {
   if (!isNative() || !isDevDevice()) return null;
   return (

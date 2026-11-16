@@ -1,5 +1,5 @@
 // Astro writes the pages to dist/games/. This adds the files that sit above them in dist/.
-import { writeFileSync } from 'node:fs';
+import { cpSync, writeFileSync } from 'node:fs';
 import { BASE, DEFAULT_SITE } from '../src/shared/paths.ts';
 
 // Cache rules for the Worker's static files. Built assets carry a hash in the name, so they never go stale.
@@ -11,7 +11,7 @@ writeFileSync(
 /*
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Permissions-Policy: camera=(), microphone=(self), geolocation=()
 `,
 );
 
@@ -31,3 +31,6 @@ writeFileSync(
   'dist/index.html',
   '<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=games/index.html"><title>Workbench Games</title>\n',
 );
+
+// Android App Links: the file proves the app may open /games/r/ links. It holds the Play app signing certificates.
+cpSync('well-known', 'dist/.well-known', { recursive: true });

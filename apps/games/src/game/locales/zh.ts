@@ -59,6 +59,7 @@ export default {
   customWordsHint: '用逗号隔开，会加进内置词库。',
   customOnly: '只用我的词（12 个以上）',
   devAds: '显示测试广告（开发者手机）',
+  removeAds: '移除广告',
   speed: '节奏',
   fast: '快',
   normal: '普通',

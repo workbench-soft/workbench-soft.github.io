@@ -3,6 +3,7 @@ import { COLORS } from '../shared/canvas.ts';
 import { AVATARS } from '../shared/avatars.ts';
 import { LANG_NAMES, LANGS, MAX_NAME, siteLang, type Lang, type Mode } from '../shared/protocol.ts';
 import { syncBanner } from './admob.ts';
+import { adsRemoved, restoreRemoveAds } from './purchase.ts';
 import { DuelScreen } from './DuelScreen.tsx';
 import { GuessScreen } from './GuessScreen.tsx';
 import { lang, setLang, t } from './i18n.ts';
@@ -135,6 +136,8 @@ export function App() {
   }, [joined, code]);
   const phase = room.value?.phase;
   const albumDone = room.value?.album?.done ?? false;
+  const kids = room.value?.settings.kids ?? false;
+  const removed = adsRemoved.value;
   const you = room.value?.you;
 
   // The game started while a player was still picking an animal: the room only takes changes in the lobby.
@@ -168,10 +171,13 @@ export function App() {
     }
   }, [you]);
 
+  useEffect(() => void restoreRemoveAds(), []);
+
   // In the apps the AdMob banner shows where the site shows AdSense: the lobby and the results.
+  // Kids mode and a bought Remove ads show none.
   useEffect(() => {
-    if (isNative()) void syncBanner(phase === 'lobby' || phase === 'gameEnd' || albumDone);
-  }, [phase, albumDone]);
+    if (isNative()) void syncBanner(!kids && !removed && (phase === 'lobby' || phase === 'gameEnd' || albumDone));
+  }, [phase, albumDone, kids, removed]);
 
   const home = isNative() ? `${ROUTES.home[siteLang(lang.value)]}index.html` : ROUTES.home[siteLang(lang.value)];
   return (

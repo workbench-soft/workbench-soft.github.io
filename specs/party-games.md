@@ -157,6 +157,8 @@ score, since the browser keeps a secret token.
   - `apps/games/src/game/admob.ts` reads the link, skips the banner on the developer's phone, and picks the test unit there.
   - `apps/games/package.json` gets `@capacitor/app`, and the Android and iOS projects list it.
 - **Steps** this entry, then the code with its test, then the docs.
+- **Default** the owner chose on 2026-11-17 that a new room starts with kids mode off, so the banner shows unless the host turns it on.
+- **App Links** `well-known/assetlinks.json` holds the Play app signing certificate, read from the generated APK of build 1. The manifest opens `/games/r/` links in the app.
 - **Docs** `apps/games/docs/features.md`, `CHANGELOG.md`.
 
 ### 2026-11-02 Move the games to games.workbench-soft.com
@@ -421,3 +423,20 @@ score, since the browser keeps a secret token.
 - **Left** Play Console takes no product before a build with the BILLING
   permission is on a track, so the build ships first, then `remove_ads` at
   A$2.99, the Tickalot price. `TODO.md` holds both steps.
+
+### 2026-11-17 Kids mode without ads, and Remove ads
+
+- **Why** the owner chose on 2026-11-17: Play stays at 13 and up, kids mode
+  gets no personal ads, and the policy names the speech recognition. The
+  `remove_ads` product needs a build with the billing permission first.
+- **Kids mode** a room with kids mode on shows no banner at all, which is
+  stricter than a child-directed tag: AdMob takes that tag only at start.
+- **Policy** the Children section of `src/site/info.ts`, in English and
+  Russian, says kids mode shows no ads and that the voice button uses the
+  browser's speech recognition, which Chrome sends to Google.
+- **Mic** `scripts/finish-build.ts` sends `microphone=(self)`, so the voice
+  button works on the web.
+- **Remove ads** as planned on 2026-11-13, with `@capgo/native-purchases`:
+  `src/game/purchase.ts`, a chip in the lobby, the flag in `storage.ts`.
+- **Release** build 2 goes to closed testing, then `remove_ads` at A$2.99.
+- **Steps** this entry, then the code with its test, then the docs.

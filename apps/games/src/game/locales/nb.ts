@@ -60,6 +60,7 @@ export default {
   customWordsHint: 'Skill med komma. De legges til den innebygde listen.',
   customOnly: 'Bare mine ord (12 eller flere)',
   devAds: 'Vis testannonser (utviklertelefon)',
+  removeAds: 'Fjern reklame',
   speed: 'Tempo',
   fast: 'Raskt',
   normal: 'Normalt',

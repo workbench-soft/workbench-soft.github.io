@@ -11,7 +11,7 @@ Spec: [party-games](../../../specs/party-games.md).
 ## Rooms by link
 
 - **For the person** one link brings friends into the same room, with no account.
-- **Where** "Create a room" on `/games/` and on each game page. The lobby has Copy and Share, and the room code in the header copies the link in every phase.
+- **Where** "Create a room" on `/games/` and on each game page. In the Android app a tapped room link opens the app on that room. The lobby has Copy and Share, and the room code in the header copies the link in every phase.
 - **Join** everyone who opens a room in a new tab, the host too, picks an animal, types a name if they like and picks the language. Change in the lobby opens it again.
 - **Limits** 2 to 12 players. A room forgets everything 30 minutes after the last player leaves.
 
@@ -20,7 +20,7 @@ Spec: [party-games](../../../specs/party-games.md).
 ## Kids mode
 
 - **For the person** a child who can't read or type still plays. A tap on an animal joins, words come with a picture and a speaker button, guessers tap 1 of 4 pictures, timers are rings that empty, and a right guess plays a chime with confetti and stars.
-- **Where** "For little ones" in the lobby, on by default. The microphone beside the text fields and the "How to play" pictures show in both modes.
+- **Where** "For little ones" in the lobby, off by default. A room in kids mode shows no ads. The microphone beside the text fields and the "How to play" pictures show in both modes.
 - **Limits** picture words exist for guess the drawing only, 80 in each of the 9 languages. Kids mode guess skips the host's own words. Speech and the microphone need the browser's support, and the microphone hides where it is missing.
 
 Spec: [party-games](../../../specs/party-games.md).
@@ -69,7 +69,8 @@ Spec: [party-games](../../../specs/party-games.md).
 - **For the person** the games stay free. A banner sits on the content pages, in the lobby and on the results.
 - **Where** AdSense on the site, AdMob in the apps.
 - **Units** a release build of the Android app shows the banner "Games lobby banner" of the AdMob app "Workbench Games". Debug builds and the iOS app show Google's test banner.
-- **Limits** no ad shows while someone draws or guesses.
+- **Limits** no ad shows while someone draws or guesses, nor in a room in kids mode.
+- **Remove ads** the Android lobby shows a Remove ads button. A one-time A$2.99 purchase hides the banner for good, and the app restores it on a new phone.
 - **Consent** in the EEA, the UK and Switzerland the apps ask before ads load. The privacy page of the apps shows an Ad privacy choices button there, which opens Google's form to change the answer.
 - **Developer's phone** the apps hide the banner on a phone that got the developer key from `mise run dev-phone` in the `workspace` repo. There the lobby shows "Show test ads (developer phone)": ticked, Google's test banner comes back, cleared, it hides again. `--ads on` and `--ads off` set the same box.
 

@@ -6,6 +6,7 @@
 - **Shuttrix** Raw photo leaves beta: it is on by default and keeps a room in front of a bright window bright, in 9 languages.
 - **Tripforge** a feature for dark mode, which follows the phone or browser theme, in 9 languages.
 - **Memories** a feature for event folders: a word in brackets on a folder name puts a link to it in a view folder on the NAS, which any file browser opens, in 9 languages.
+- **Games** the Android app sells Remove ads, a tapped room link opens the app, and a room in kids mode shows no ads. Kids mode starts off, and the privacy page names the speech recognition.
 - **ServoHop** links open the Google Play build of the app too, in 9 languages.
 - **Tripforge** the privacy policy names the 3 day server logs, why each piece of data is used, how to see, correct or delete it and where to complain, as the app's own policy does.
 - **ServoHop** features for links that open the app and the open source licences in Settings. The station list says when a state's prices are late and keeps the last area offline, and old prices leave the map after 3 days, in 9 languages.

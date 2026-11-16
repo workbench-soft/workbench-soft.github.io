@@ -243,10 +243,10 @@ describe('guess the drawing', () => {
 });
 
 describe('kids mode', () => {
-  it('is on in a new room', () => {
+  it('is off in a new room, so the banner shows', () => {
     const { view, join } = makeRoom();
     join(['a']);
-    expect(view('a').settings.kids).toBe(true);
+    expect(view('a').settings.kids).toBe(false);
   });
 
   it('deals picture words, waits longer and gives the guessers 4 pictures to tap', () => {

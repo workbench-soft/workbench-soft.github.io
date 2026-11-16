@@ -60,6 +60,7 @@ export default {
   customWordsHint: 'Mit Komma getrennt. Sie kommen zur eingebauten Liste dazu.',
   customOnly: 'Nur meine Wörter (12 oder mehr)',
   devAds: 'Testwerbung zeigen (Entwicklerhandy)',
+  removeAds: 'Werbung entfernen',
   speed: 'Tempo',
   fast: 'Schnell',
   normal: 'Normal',
