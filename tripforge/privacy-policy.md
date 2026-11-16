@@ -1,12 +1,12 @@
 ---
 title: Tripforge Privacy Policy
 description: Tripforge sends the places and dates you search to its own server to find fares and sights. Saved trips and settings stay on your phone. Google AdMob shows the ads.
-last_modified_at: 2026-11-14
+last_modified_at: 2026-11-16
 ---
 
 # Tripforge Privacy Policy
 
-Last updated: 14 November 2026
+Last updated: 16 November 2026
 
 Tripforge finds cheap round trips around the dates you ask for, and the
 sights and secret spots of the city. To do that it sends what you search
@@ -19,7 +19,11 @@ The ads come from Google AdMob, which collects the data listed under
 - **Your search** the places, the date, how far the dates may shift, the
   nights away, the number of adults and children and the home airport go
   to the Tripforge server at `tripforge-api.workbench-soft.com`. It runs on
-  Cloudflare and keeps no record of who searched.
+  Cloudflare.
+- **Server logs** Cloudflare keeps a log of each request to the server,
+  with the search in its address and the network details of the request,
+  for up to 3 days. Workbench Soft reads it only to find faults and block
+  abuse.
 - **Fares** the server asks the Travelpayouts Data API for recent Aviasales
   fares on the route. It sends the airports and the dates only. See the
   [Travelpayouts privacy policy](https://www.travelpayouts.com/en/privacy-policy).
@@ -77,6 +81,17 @@ Uninstall the app, or clear its storage in Android Settings, Apps,
 Tripforge, Storage. Either removes the settings and the saved trips.
 Google Play keeps the record of your purchases, so they come back after a
 reinstall.
+
+## Your rights
+
+- **Why the data is used** the server uses your search to answer it. The
+  server logs and the network data find faults and block abuse. AdMob uses
+  the advertising ID for ads, with your consent where the law asks for it.
+- **Your data** write to us to see, correct or delete the data Workbench
+  Soft holds about you, or to object to its use. Tripforge has no accounts,
+  so that is the server log of up to 3 days.
+- **Complaints** you can complain to the data protection authority of your
+  country, such as the ICO in the UK or the OAIC in Australia.
 
 ## Children
 
