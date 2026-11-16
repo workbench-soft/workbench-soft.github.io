@@ -450,3 +450,21 @@ The studio needed one public site for its apps and their installers.
 - **Check** `src/legal/legal.test.ts` keeps the sections and links of each
   catalog in step with English.
 - **Docs** `CHANGELOG.md`.
+
+### 2026-11-17 Phone menu, touch search hint, a smaller order button
+
+- **Why** the owner chose on 2026-11-17 to settle the UX audit of
+  2026-11-16: a menu for the hidden section links, touch wording for the
+  search hint, and an order button that covers less.
+- **Menu** below 980 px a menu button in the header lists Services,
+  Projects, Process, Engineering and Contact. The `nav.menu` key holds its
+  label in the 9 catalogs. Below 400 px the header search button gives way to
+  the Find chip of Projects, so the language button stays on a 320 px screen.
+- **Search hint** a touch screen with no hover reads the `projects.searchTouch`
+  sentence in place of the one with the `/` key, and the Find chip drops its
+  `/`.
+- **Order button** it hides while the order form or the footer is on screen,
+  and on a phone it is a round icon with its label for screen readers.
+- **Changes** `src/components/Nav.astro`, `src/components/Projects.astro`,
+  `src/components/Contact.astro`, the 9 catalogs of `src/i18n/`.
+- **Docs** `CHANGELOG.md`.
