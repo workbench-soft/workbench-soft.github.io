@@ -35,6 +35,8 @@ const image = new URL(asset('/og.png'), Astro.site!).href;
     <div id="app"></div>
     <script>
       import '../game/main.tsx';
+      import { followRoomLinks } from '../game/room-links.ts';
+      void followRoomLinks();
     </script>
   </body>
 </html>

@@ -60,6 +60,7 @@ export default {
   customWordsHint: 'カンマで区切ってね。元のリストに追加されます。',
   customOnly: '自分の言葉だけ（12個以上）',
   devAds: 'テスト広告を表示（開発用スマホ）',
+  removeAds: '広告を削除',
   speed: 'テンポ',
   fast: '速い',
   normal: 'ふつう',

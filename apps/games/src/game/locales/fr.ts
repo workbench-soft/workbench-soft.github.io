@@ -60,6 +60,7 @@ export default {
   customWordsHint: 'Séparés par des virgules. Ils s’ajoutent à la liste intégrée.',
   customOnly: 'Seulement mes mots (12 ou plus)',
   devAds: 'Afficher les pubs de test (téléphone développeur)',
+  removeAds: 'Retirer les pubs',
   speed: 'Rythme',
   fast: 'Rapide',
   normal: 'Normal',

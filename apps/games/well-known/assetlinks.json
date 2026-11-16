@@ -1,0 +1,13 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.workbenchsoft.games",
+      "sha256_cert_fingerprints": [
+        "DC:5C:F4:75:FF:20:DA:D4:A8:42:26:32:49:DA:A1:70:1D:09:9D:70:A8:CE:F7:81:02:07:1D:83:03:6D:E5:8F",
+        "A8:0C:42:50:EA:C6:93:A9:D4:C0:69:AE:E6:95:C9:AE:97:DF:19:35:5B:CA:63:6E:69:94:5E:56:85:64:68:AB"
+      ]
+    }
+  }
+]

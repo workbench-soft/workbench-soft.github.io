@@ -86,6 +86,8 @@ const image = new URL(asset('/og.png'), site).href;
       // Points a reader to the page in their own language. Search engines get the same page for every visitor.
       const hint = document.querySelector<HTMLElement>('[data-lang-hint]');
       if (hint && navigator.language.toLowerCase().startsWith(hint.dataset.langHint!)) hint.hidden = false;
+      import { followRoomLinks } from '../game/room-links.ts';
+      void followRoomLinks();
     </script>
   </body>
 </html>

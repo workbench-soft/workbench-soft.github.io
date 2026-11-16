@@ -157,6 +157,8 @@ score, since the browser keeps a secret token.
   - `apps/games/src/game/admob.ts` reads the link, skips the banner on the developer's phone, and picks the test unit there.
   - `apps/games/package.json` gets `@capacitor/app`, and the Android and iOS projects list it.
 - **Steps** this entry, then the code with its test, then the docs.
+- **Default** the owner chose on 2026-11-17 that a new room starts with kids mode off, so the banner shows unless the host turns it on.
+- **App Links** `well-known/assetlinks.json` holds the Play app signing certificate, read from the generated APK of build 1. The manifest opens `/games/r/` links in the app.
 - **Docs** `apps/games/docs/features.md`, `CHANGELOG.md`.
 
 ### 2026-11-02 Move the games to games.workbench-soft.com

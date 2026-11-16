@@ -11,7 +11,7 @@ import {
 } from '../shared/protocol.ts';
 import { Chat } from './Chat.tsx';
 import { GAME_EMOJI } from '../site/routes.ts';
-import { AdSlot, Avatar, DevAdsSwitch, PlayerList, useCopyLink } from './common.tsx';
+import { AdSlot, Avatar, DevAdsSwitch, PlayerList, RemoveAdsChip, useCopyLink } from './common.tsx';
 import { HowTo } from './kids.tsx';
 import { t } from './i18n.ts';
 import { room, send } from './store.ts';
@@ -232,6 +232,7 @@ export function Lobby() {
           <SettingsForm s={s} host={host} key={s.mode} />
         </section>
         <AdSlot />
+        <RemoveAdsChip />
         <DevAdsSwitch />
       </div>
       <aside class="lobby-side">

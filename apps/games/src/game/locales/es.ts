@@ -60,6 +60,7 @@ export default {
   customWordsHint: 'Separadas por comas. Se suman a la lista incluida.',
   customOnly: 'Solo mis palabras (12 o más)',
   devAds: 'Mostrar anuncios de prueba (móvil de desarrollo)',
+  removeAds: 'Quitar anuncios',
   speed: 'Ritmo',
   fast: 'Rápido',
   normal: 'Normal',

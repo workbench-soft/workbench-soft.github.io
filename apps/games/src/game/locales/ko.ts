@@ -59,6 +59,7 @@ export default {
   customWordsHint: '쉼표로 나눠요. 기본 목록에 더해져요.',
   customOnly: '내 단어만 (12개 이상)',
   devAds: '테스트 광고 보기 (개발자 폰)',
+  removeAds: '광고 제거',
   speed: '속도',
   fast: '빠르게',
   normal: '보통',

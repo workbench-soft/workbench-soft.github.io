@@ -12,7 +12,7 @@ export const INFO: Record<InfoKey, Record<SiteLang, Info>> = {
       title: 'Privacy policy',
       description: 'What Workbench Games stores, what the ads use, and how to ask for your data to be removed.',
       sections: [
-        { p: ['Last updated: 14 November 2026.'] },
+        { p: ['Last updated: 17 November 2026.'] },
         {
           h: 'What the games store',
           p: [
@@ -31,7 +31,13 @@ export const INFO: Record<InfoKey, Record<SiteLang, Info>> = {
           h: 'Hosting',
           p: ['Cloudflare hosts the site and the rooms. Cloudflare keeps short term request logs for security.'],
         },
-        { h: 'Children', p: ['The games are for a general audience and do not ask for personal information.'] },
+        {
+          h: 'Children',
+          p: [
+            'The games are for a general audience and do not ask for personal information.',
+            'A room in kids mode shows no ads. Its voice button uses the speech recognition of the browser or the phone. In Chrome and on Android, Google turns the speech into text.',
+          ],
+        },
         { h: 'Contact', p: [`Questions or a removal request: <a href="mailto:${CONTACT}">${CONTACT}</a>.`] },
       ],
     },
@@ -39,7 +45,7 @@ export const INFO: Record<InfoKey, Record<SiteLang, Info>> = {
       title: 'Политика конфиденциальности',
       description: 'Что хранит Workbench Games, какие данные использует реклама и как попросить удалить ваши данные.',
       sections: [
-        { p: ['Обновлено: 14 ноября 2026.'] },
+        { p: ['Обновлено: 17 ноября 2026.'] },
         {
           h: 'Что хранят игры',
           p: [
@@ -58,7 +64,13 @@ export const INFO: Record<InfoKey, Record<SiteLang, Info>> = {
           h: 'Хостинг',
           p: ['Сайт и комнаты работают на Cloudflare. Cloudflare хранит короткие журналы запросов для защиты.'],
         },
-        { h: 'Дети', p: ['Игры рассчитаны на широкую аудиторию и не просят личных данных.'] },
+        {
+          h: 'Дети',
+          p: [
+            'Игры рассчитаны на широкую аудиторию и не просят личных данных.',
+            'В комнате с детским режимом нет рекламы. Кнопка голоса использует распознавание речи браузера или телефона. В Chrome и на Android речь в текст переводит Google.',
+          ],
+        },
         { h: 'Связь', p: [`Вопросы и просьбы об удалении: <a href="mailto:${CONTACT}">${CONTACT}</a>.`] },
       ],
     },

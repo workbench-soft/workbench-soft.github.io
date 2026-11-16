@@ -69,7 +69,7 @@ export const DEFAULT_SETTINGS: Settings = {
   customWords: '',
   customOnly: false,
   speed: 'normal',
-  kids: true,
+  kids: false,
 };
 
 export const ROUND_OPTIONS = [1, 2, 3, 4, 5, 6, 8, 10];
