@@ -89,6 +89,8 @@ const arch: Arch = {
       "Google Play Billing vend le produit, et l'app garde l'indicateur sur le téléphone. Un seul module décide chaque verrou, et les limites tiennent dans un fichier.",
     'Website pages for search':
       'Au build, Expo écrit une page HTML par route et par langue. Un script règle ensuite la langue de la page, écrit la page 404 et construit le sitemap.',
+    'Dark mode':
+      'Chaque couleur est un jeton avec une valeur claire et une sombre. Le téléphone choisit le jeu selon le thème du système, le site utilise des variables CSS avec prefers-color-scheme.',
   },
 };
 

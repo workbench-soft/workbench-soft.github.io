@@ -1743,6 +1743,7 @@ const de: Catalog = {
               'Webseiten für die Suche',
               'Eine Startseite pro Sprache mit Suchformular, eigenem Titel, Vorschaubild und Daten für Suchmaschinen, jede in der Sitemap.',
             ],
+            ['Dunkelmodus', 'App und Website folgen dem Design von Telefon oder Browser.'],
           ],
         },
       ],

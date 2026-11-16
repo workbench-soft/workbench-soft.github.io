@@ -1609,6 +1609,7 @@ const nb: Catalog = {
               'Nettsider for søk',
               'En forside per språk med skjemaet, egen tittel, forhåndsbilde og data for søkemotorer, hver i nettstedskartet.',
             ],
+            ['Mørk modus', 'Appen og nettsiden følger temaet på telefonen eller i nettleseren.'],
           ],
         },
       ],

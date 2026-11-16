@@ -92,6 +92,8 @@ const arch: Arch = {
       'Google Play Billing verkauft das Produkt, und die App speichert das Kennzeichen auf dem Handy. Ein Modul entscheidet jede Sperre, und die Grenzen stehen in einer Datei.',
     'Website pages for search':
       'Expo schreibt beim Build eine HTML-Seite pro Route und Sprache. Ein Skript setzt dann die Seitensprache, schreibt die 404-Seite und baut die Sitemap.',
+    'Dark mode':
+      'Jede Farbe ist ein Token mit hellem und dunklem Wert. Das Telefon wählt den Satz nach dem Systemdesign, die Website nutzt CSS-Variablen mit prefers-color-scheme.',
   },
 };
 

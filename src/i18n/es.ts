@@ -1728,6 +1728,7 @@ const es: Catalog = {
               'Páginas web para buscadores',
               'Una portada por idioma con el formulario, su título, su imagen de vista previa y datos para buscadores, cada una en el mapa del sitio.',
             ],
+            ['Modo oscuro', 'La app y la web siguen el tema del teléfono o del navegador.'],
           ],
         },
       ],

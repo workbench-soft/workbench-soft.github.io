@@ -89,6 +89,8 @@ const arch: Arch = {
       'Google Play Billing vende el producto, y la app guarda la marca en el teléfono. Un módulo decide cada bloqueo, y los límites están en un archivo.',
     'Website pages for search':
       'Al compilar, Expo escribe una página HTML por ruta e idioma. Luego un script fija el idioma de la página, escribe la página 404 y arma el sitemap.',
+    'Dark mode':
+      'Cada color es un token con un valor claro y uno oscuro. El teléfono elige el juego según el tema del sistema, y la web usa variables CSS con prefers-color-scheme.',
   },
 };
 

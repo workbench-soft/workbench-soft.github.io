@@ -82,6 +82,8 @@ const arch: Arch = {
       'Google Play Billing selger produktet, og appen lagrer merket på telefonen. Én modul avgjør hver lås, og grensene står i én fil.',
     'Website pages for search':
       'Expo skriver en HTML-side per rute og språk når appen bygges. Et skript setter så sidespråket, skriver 404-siden og lager sitemapen.',
+    'Dark mode':
+      'Hver farge er et token med en lys og en mørk verdi. Telefonen velger settet etter systemtemaet, og nettsiden bruker CSS-variabler med prefers-color-scheme.',
   },
 };
 
