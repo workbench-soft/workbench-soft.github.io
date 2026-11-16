@@ -9,7 +9,7 @@ const t = ui(lang);
 const numbered = projectsIn(lang).map((p, i) => ({ p, n: i + 1 }));
 const [before, after] = t.projects.intro.split("{key}");
 // A phone has no / key, so the sentence with it gives way to one that names the Find button.
-const touch = t.projects.intro.replace(/[^.。]*{key}[^.。]*[.。]/, t.projects.searchTouch);
+const touch = t.projects.intro.replace(/(\s*)(?!\s)[^.。]*{key}[^.。]*[.。]/, (_, gap: string) => gap + t.projects.searchTouch);
 ---
 
 <section class="block" id="projects">
