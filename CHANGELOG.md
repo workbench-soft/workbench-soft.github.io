@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Memories** the privacy policy covers album links and person albums, and says the app asks once before auto upload and auto sort.
 - **Shuttrix** Raw photo leaves beta: it is on by default and keeps a room in front of a bright window bright, in 9 languages.
 - **Tripforge** a feature for dark mode, which follows the phone or browser theme, in 9 languages.
 - **Memories** a feature for event folders: a word in brackets on a folder name puts a link to it in a view folder on the NAS, which any file browser opens, in 9 languages.

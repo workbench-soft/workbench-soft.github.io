@@ -1,12 +1,12 @@
 ---
 title: Memories Privacy Policy
 description: Memories keeps your photos, their places and your NAS login on your phone and your NAS. Google AdMob shows the ads in the app.
-last_modified_at: 2026-11-14
+last_modified_at: 2026-11-17
 ---
 
 # Memories Privacy Policy
 
-Last updated: 14 November 2026
+Last updated: 17 November 2026
 
 Memories shows "on this day" photo memories from your own NAS. The app
 sends no data to the developer. Your photos, their places and your NAS
@@ -34,7 +34,8 @@ Google AdMob, which collects the data listed under "Ads".
   this folder it reads the
   date and GPS point of your camera photos and uploads them to your NAS
   when you ask. Phone sort and auto sort rename the camera files and move
-  them into dated folders inside DCIM. After an upload the app deletes
+  them into dated folders inside DCIM. The app asks once before auto
+  upload and auto sort run, and either runs only after you say yes. After an upload the app deletes
   the phone copy, unless you turn on "Keep a copy on the phone". Free up
   moves the phone copies to the trash or deletes them when you ask. You
   can take the grant back in Android Settings, Apps, Memories.
@@ -72,6 +73,18 @@ Google AdMob, which collects the data listed under "Ads".
 GPS points from your photos are turned into place names by a database
 inside the app. The app sends no photo location to the developer. A map
 you open loads its area from OpenStreetMap.
+
+## Album links and person albums
+
+An album link is a public address on your NAS, through Tailscale Funnel.
+You make each link yourself, and anyone who has it can open the album.
+
+- **The photos** in an album link are the original files, with the GPS
+  point and camera details inside them.
+- **A person album** can hold the person's name, birth date, your notes
+  and voice recordings. When you share it, the link shows them too.
+- **Where it lives** the album and the link stay on your NAS. Delete the
+  album in Shared albums, and the link stops working.
 
 ## Ads
 
