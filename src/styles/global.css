@@ -18,11 +18,51 @@
   --cyan: #5cf2ff;
   --violet: #a98bff;
   --lime: #c5ff4a;
+  --bg-rgb: 4 6 11;
+  --panel: 8 12 22;
+  --panel-2: 14 20 36;
+  --menu: 10 14 26;
+  --tint: 255 255 255;
+  --sun: #8fe3ff;
+  --moon: #dfe6ff;
+  --yours: #ff8fb8;
+  --err: #ff8a8a;
+  /* The lightness of the per-project accent colour. */
+  --acc-l: 0.85;
   --mono: var(--font-mono);
   --sans: var(--font-sans);
   --wrap: 1240px;
   --gutter: clamp(16px, 4vw, 40px);
   --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* A light system theme gets a light palette. Each colour passes WCAG AA on the three backgrounds. */
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+    --bg: #f6f8fc;
+    --bg-2: #ebeff7;
+    --bg-3: #e0e6f2;
+    --bg-rgb: 246 248 252;
+    --line: rgb(30 50 120 / 0.12);
+    --line-2: rgb(30 50 120 / 0.24);
+    --text: #0b1020;
+    --soft: #2a3352;
+    --muted: #475275;
+    --dim: #56617f;
+    --cyan: #00708f;
+    --violet: #5b3cc4;
+    --lime: #3f6b00;
+    --panel: 255 255 255;
+    --panel-2: 250 251 255;
+    --menu: 255 255 255;
+    --tint: 20 30 80;
+    --sun: #0a6684;
+    --moon: #4b5578;
+    --yours: #b0164f;
+    --err: #b3261e;
+    --acc-l: 0.48;
+  }
 }
 
 * {
@@ -149,7 +189,7 @@ kbd {
   padding: 14px 22px;
   border-radius: 12px;
   border: 1px solid var(--line-2);
-  background: rgb(255 255 255 / 0.03);
+  background: rgb(var(--tint) / 0.03);
   color: var(--text);
   transition:
     translate 0.2s,
@@ -194,7 +234,7 @@ kbd {
   cursor: pointer;
   color: var(--muted);
   font: 500 12px var(--mono);
-  background: rgb(255 255 255 / 0.03);
+  background: rgb(var(--tint) / 0.03);
   border: 1px solid var(--line-2);
   border-radius: 10px;
   padding: 7px 10px;

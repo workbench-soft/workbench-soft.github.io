@@ -29,10 +29,10 @@ const steps = stepsIn(lang);
 
 <style>
   .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 16px; list-style: none; margin: 0; padding: 0; }
-  .step { padding: 26px 24px; border: 1px solid var(--line); border-radius: 18px; background: rgb(8 12 22 / 0.7); }
+  .step { padding: 26px 24px; border: 1px solid var(--line); border-radius: 18px; background: rgb(var(--panel) / 0.7); }
   .n {
     font: 700 42px/1 var(--mono);
-    background: linear-gradient(180deg, var(--text), rgb(232 238 255 / 0.1));
+    background: linear-gradient(180deg, var(--text), rgb(var(--tint) / 0.1));
     background-clip: text;
     color: transparent;
   }

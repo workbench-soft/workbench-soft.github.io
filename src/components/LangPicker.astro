@@ -58,6 +58,6 @@ const { lang, items, label } = Astro.props;
   }
   ul { position: absolute; right: 0; z-index: 5; margin: 8px 0 0; padding: 8px; list-style: none; background: var(--bg-3); border: 1px solid var(--line-2); border-radius: 10px; min-width: 160px; }
   .langs a { display: block; padding: 8px 10px; border-radius: 6px; color: var(--soft); text-decoration: none; }
-  .langs a:hover { color: var(--text); background: rgb(255 255 255 / 0.05); }
+  .langs a:hover { color: var(--text); background: rgb(var(--tint) / 0.05); }
   .langs a[aria-current] { color: var(--cyan); }
 </style>

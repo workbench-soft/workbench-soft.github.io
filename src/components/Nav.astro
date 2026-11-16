@@ -112,7 +112,7 @@ const links = [
     inset: 0 0 auto;
     z-index: 40;
     height: 64px;
-    background: rgb(4 6 11 / 0.6);
+    background: rgb(var(--bg-rgb) / 0.6);
     backdrop-filter: blur(14px) saturate(140%);
     border-bottom: 1px solid var(--line);
   }
@@ -152,13 +152,13 @@ const links = [
     margin: 0;
     padding: 6px;
     list-style: none;
-    background: rgb(10 14 26 / 0.97);
+    background: rgb(var(--menu) / 0.97);
     border: 1px solid var(--line-2);
     border-radius: 12px;
     box-shadow: 0 20px 60px -10px rgb(0 0 0 / 0.8);
   }
   .menu a { display: block; padding: 8px 12px; border-radius: 8px; text-decoration: none; color: var(--soft); font-size: 14px; }
-  .menu a:hover { background: rgb(255 255 255 / 0.05); color: var(--text); }
+  .menu a:hover { background: rgb(var(--tint) / 0.05); color: var(--text); }
   .lang a[aria-current] { color: var(--cyan); }
   .sep { margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--line); }
   .head { padding: 12px 12px 4px; font: 500 11px var(--mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
