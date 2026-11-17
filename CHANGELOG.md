@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Tripforge** the privacy policy says Tripforge may earn a Travelpayouts commission on Aviasales bookings, and your price stays the same.
 - **Tripforge** the Ask feature says the places come from a list of countries and cities, and the date from a calendar.
 - **Site** each privacy policy footer links the app on Google Play, and on a phone the page scrolls search results and fields to stop above the order button. The open phone menu gets a solid panel.
 - **Site** the Workbench MCP privacy page at `/privacy` gives `hello@workbench-soft.com` as its contact, like every other page.
