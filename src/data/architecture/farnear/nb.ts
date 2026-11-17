@@ -133,6 +133,8 @@ const arch: Arch = {
       'Et Vite-tillegg gjengir forsiden på hvert av de 9 språkene ved bygging. Et annet skriver nettstedskartet, og hver side har sine forhåndsvisningstagger.',
     'Messages in a call':
       'En linje går forseglet over romsignaleringen, atskilt fra videoveien. Hver enhet holder den i IndexedDB og bytter manglende linjer ved neste samtale.',
+    'Reactions and raised hands':
+      'Hver reaksjon går som en forseglet melding over rommets signalering, høyst 3 i sekundet. En hånd i været følger deltakerstatusen som listen gjentar hvert 5. sekund, så de som kommer sent ser den. CSS-keyframes tegner stigningen og glimtene.',
     'Button hints':
       'Én felles modul viser boblen etter en hover eller et langt trykk. Et langt trykk viser navnet og trykker ikke på knappen.',
     'Close Farnear and take back its permissions':

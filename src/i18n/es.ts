@@ -1498,6 +1498,10 @@ const es: Catalog = {
               'Cerrar Farnear y retirar sus permisos',
               'Un botón de apagado termina la llamada y el timbre. Desde Android 13, la app también retira sus permisos de cámara, micrófono y notificaciones.',
             ],
+            [
+              'Reacciones y manos levantadas',
+              'Un corazón, aplausos, risa, fiesta o fuegos artificiales suben desde tu recuadro y sobre la pizarra. Una mano levantada sigue ahí hasta que la bajas.',
+            ],
           ],
         },
       ],

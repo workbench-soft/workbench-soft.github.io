@@ -143,6 +143,8 @@ const arch: Arch = {
       'Un plugin de Vite prerenderiza la portada en cada uno de los 9 idiomas al compilar. Otro escribe el mapa del sitio, y cada página lleva sus etiquetas de vista previa.',
     'Messages in a call':
       'Una línea va sellada por la señalización de la sala, aparte del camino del vídeo. Cada dispositivo la guarda en IndexedDB y cambia las líneas que faltan en la siguiente llamada.',
+    'Reactions and raised hands':
+      'Cada reacción va como mensaje sellado por la señalización de la sala, 3 por segundo como máximo. Una mano levantada viaja en el estado del participante que la lista repite cada 5 segundos, así la ven quienes llegan tarde. Keyframes de CSS dibujan la subida y los destellos.',
     'Button hints':
       'Un módulo compartido muestra la burbuja tras pasar el ratón o una pulsación larga. La pulsación larga muestra el nombre y no pulsa el botón.',
     'Close Farnear and take back its permissions':

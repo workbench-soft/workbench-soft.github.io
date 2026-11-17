@@ -130,6 +130,8 @@ const arch: Arch = {
       'A Vite plugin prerenders the home page in each of the 9 languages at build time. Another writes the sitemap, and each page carries its preview tags.',
     'Messages in a call':
       'A line goes sealed over the room signalling, apart from the video path. Each device keeps it in IndexedDB and swaps missing lines on the next call.',
+    'Reactions and raised hands':
+      'Each reaction goes as a sealed message over the room signalling, 3 a second at most. A raised hand rides in the participant state the roster repeats every 5 seconds, so late joiners see it. CSS keyframes draw the rise and the bursts.',
     'Button hints':
       'One shared module shows the bubble after a hover or a long press. A long press shows the name and holds back the tap.',
     'Close Farnear and take back its permissions':

@@ -110,6 +110,8 @@ const arch: Arch = {
       'Vite 插件在构建时把首页预先渲染成 9 种语言。另一个插件写出站点地图，每个页面带有自己的预览标签。',
     'Messages in a call':
       '消息加密后走房间信令，与视频路径分开。每台设备把它存进 IndexedDB，并在下次通话时补齐缺少的消息。',
+    'Reactions and raised hands':
+      '每个回应作为加密消息经房间信令发送，每秒最多 3 个。举手放在参与者状态里，名单每 5 秒重发一次，所以后加入的人也能看到。上升和迸发效果由 CSS 关键帧绘制。',
     'Button hints': '一个共享模块在鼠标悬停或长按后显示气泡。长按只显示名字，不会触发按钮。',
     'Close Farnear and take back its permissions':
       '页面结束通话和来电，然后请 Android 外壳收回权限并关闭。浏览器会显示手动重置权限的步骤。',

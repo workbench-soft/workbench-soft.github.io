@@ -137,6 +137,8 @@ const arch: Arch = {
       'Ein Vite-Plugin rendert die Startseite beim Build in jeder der 9 Sprachen vor. Ein anderes schreibt die Sitemap, und jede Seite trägt ihre Vorschau-Tags.',
     'Messages in a call':
       'Eine Zeile geht versiegelt über die Raumsignalisierung, getrennt vom Videoweg. Jedes Gerät hält sie in IndexedDB und tauscht fehlende Zeilen beim nächsten Anruf.',
+    'Reactions and raised hands':
+      'Jede Reaktion geht als versiegelte Nachricht über die Signalisierung des Raums, höchstens 3 pro Sekunde. Eine gehobene Hand steckt im Teilnehmerstatus, den die Teilnehmerliste alle 5 Sekunden wiederholt, so sehen sie auch Nachzügler. CSS-Keyframes zeichnen das Aufsteigen und die Funken.',
     'Button hints':
       'Ein gemeinsames Modul zeigt die Blase nach einem Hover oder langem Drücken. Langes Drücken zeigt den Namen und löst die Taste nicht aus.',
     'Close Farnear and take back its permissions':
