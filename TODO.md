@@ -62,7 +62,7 @@ Workbench Games, `com.workbenchsoft.games`. Release builds use the real AdMob ap
 
 ## marketing
 
-- [ ] **Reddit posts** pick which drafts of Reddit Desk, Posts tab, go out: r/selfhosted for Memories, and the 2 test-for-test posts in r/AndroidClosedTesting and r/TestersCommunity (decision). On r/selfhosted a bot asks how AI was involved; the reply makes the post go live.
+- [ ] **Reddit posts** the owner picked on 2026-11-17: post the 2 test-for-test drafts of Reddit Desk, Posts tab, in r/AndroidClosedTesting and r/TestersCommunity. The r/selfhosted post for Memories stays unposted. An agent session posts them next (wait)
 
 ## header-sites: Sites menu in the header
 
