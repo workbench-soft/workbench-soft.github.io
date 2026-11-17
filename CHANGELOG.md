@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Farnear** the Board line says each person can zoom in on a page on their own screen, in the 9 languages.
 - **Farnear** the project lists Reactions and raised hands: emoji that rise over the tiles and the board, and a hand that stays up until it goes down.
 - **Tripforge** the privacy policy names the Travelpayouts Drive script that the Tripforge website loads.
 - **Memories** the project lists Search by what a photo shows: things, people and places in one search.
