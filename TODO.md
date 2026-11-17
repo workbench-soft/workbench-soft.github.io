@@ -8,10 +8,6 @@ The games run at <https://games.workbench-soft.com/games/>. Android App Links wo
   1. Open <https://developer.apple.com/programs/enroll/> and enroll as Workbench Soft.
   2. Open <https://codemagic.io/signup> and sign up with GitHub.
   3. Tell an agent "set up the iOS build of the games". It adds the iOS AdMob app, Universal Links, the tracking prompt and `PrivacyInfo.xcprivacy`.
-  1. The lobby shows a banner and a Remove ads button.
-  2. A room link from a chat opens the app on that room.
-  3. Kids mode on: the banner goes away.
-  4. Lock the phone for a minute: the room comes back.
 
 ## play-release
 
