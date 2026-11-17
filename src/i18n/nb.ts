@@ -1322,7 +1322,7 @@ const nb: Catalog = {
             ['Lagrede rom', 'En romlenke lagret under et navn, som Mamma. Samme lenke virker hver gang.'],
             [
               'Tavle',
-              'Alle tegner med penn, merkepenn eller en laser som viskes ut. Et drag tegner linje, pil, rektangel eller sirkel. Egne streker kan slettes og angres.',
+              'Alle tegner med penn, merkepenn eller en laser som viskes ut. Et drag tegner linje, pil, rektangel eller sirkel. Egne streker kan slettes og angres, og hver person zoomer inn på en side på sin egen skjerm.',
             ],
             [
               'Del et bilde eller en video',
