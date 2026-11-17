@@ -778,6 +778,10 @@ export const projects: Project[] = [
             name: 'Close Farnear and take back its permissions',
             text: 'A power button ends the call and the ring. On Android 13 and later the app also drops its camera, microphone and notification permissions.',
           },
+          {
+            name: 'Reactions and raised hands',
+            text: 'A heart, clap, laugh, party or fireworks rises from your tile and over the board. A raised hand stays until you lower it.',
+          },
         ],
       },
     ],

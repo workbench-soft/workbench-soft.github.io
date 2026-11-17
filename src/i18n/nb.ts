@@ -1393,6 +1393,10 @@ const nb: Catalog = {
               'Lukk Farnear og trekk tilbake tillatelsene',
               'En av-knapp avslutter samtalen og ringingen. Fra Android 13 trekker appen også tilbake tilgang til kamera, mikrofon og varsler.',
             ],
+            [
+              'Reaksjoner og hender i været',
+              'Et hjerte, klapp, latter, fest eller fyrverkeri stiger fra flisen din og over tavlen. En hånd i været blir til du senker den.',
+            ],
           ],
         },
       ],

@@ -1525,6 +1525,10 @@ const de: Catalog = {
               'Farnear schließen und Berechtigungen entziehen',
               'Ein Aus-Knopf beendet den Anruf und das Klingeln. Ab Android 13 entzieht sich die App auch Kamera, Mikrofon und Benachrichtigungen.',
             ],
+            [
+              'Reaktionen und gehobene Hände',
+              'Ein Herz, Applaus, Lachen, Party oder Feuerwerk steigt von deiner Kachel und über der Tafel auf. Eine gehobene Hand bleibt, bis du sie senkst.',
+            ],
           ],
         },
       ],

@@ -1553,6 +1553,10 @@ const fr: Catalog = {
               'Fermer Farnear et retirer ses autorisations',
               'Un bouton marche-arrêt termine l’appel et la sonnerie. Dès Android 13, l’app retire aussi ses accès à la caméra, au micro et aux notifications.',
             ],
+            [
+              'Réactions et mains levées',
+              'Un cœur, un bravo, un rire, une fête ou un feu d’artifice s’élève de votre vignette et au-dessus du tableau. Une main levée reste jusqu’à ce que vous la baissiez.',
+            ],
           ],
         },
       ],
