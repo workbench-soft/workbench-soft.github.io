@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Tripforge** the privacy policy names the Travelpayouts Drive script that the Tripforge website loads.
 - **Memories** the project lists Search by what a photo shows: things, people and places in one search.
 - **Tripforge** the privacy policy says Tripforge may earn a Travelpayouts commission on Aviasales bookings, and your price stays the same.
 - **Tripforge** the Ask feature says the places come from a list of countries and cities, and the date from a calendar.
