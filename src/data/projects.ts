@@ -157,6 +157,10 @@ export const projects: Project[] = [
             text: 'The NAS groups faces by person, named people first. Merge an unknown face into a named person directly from their card.',
           },
           {
+            name: 'Search by what a photo shows',
+            text: 'Find a dog, a church, a passport, red or clouds, and join it with a person or a place such as Kiama. The NAS finds the things on its own, with no cloud.',
+          },
+          {
             name: 'Event folders in any file browser',
             text: 'Add a word in brackets to a folder name and the NAS gathers links to those folders, so Windows Explorer, a Mac or a phone file app opens them. Camera clips get a link inside their event.',
           },

@@ -149,6 +149,8 @@ const arch: Arch = {
       'Die Reiseliste verbindet Auslandsreisen mit Fahrten im Inland aus den Zahlen pro Tag. Leaflet in einem WebView zeichnet die Karte aus Fotozahlen pro kleiner Rasterzelle.',
     People:
       'Eine Rust-Engine auf dem NAS gruppiert Gesichter mit YuNet und SFace. Das Handy lädt das Ergebnis und schreibt Namen und Zusammenführungen zurück auf das NAS.',
+    'Search by what a photo shows':
+      'Die Gesichter-Engine auf dem NAS lässt jedes Foto durch CLIP laufen und behält die besten von 362 Labels. Das Handy lädt sie und verbindet sie mit Gesichtern und Orten.',
     'Event folders in any file browser':
       'Ein Node-Container auf dem NAS liest jede Nacht die Tags in den Ordnernamen und legt symbolische Links darauf an. Samba folgt den Links, sodass ein SMB-Client normale Ordner sieht.',
     'Indexing progress page':

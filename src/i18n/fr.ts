@@ -274,6 +274,10 @@ const fr: Catalog = {
               "Le NAS regroupe les visages par personne, les personnes nommées d'abord. Une personne inconnue peut être fusionnée avec une personne nommée depuis sa fiche.",
             ],
             [
+              'Recherche par ce que montre une photo',
+              'Trouvez un chien, une église, un passeport, du rouge ou des nuages, et ajoutez une personne ou un lieu comme Kiama. Le NAS repère les objets seul, sans cloud.',
+            ],
+            [
               'Dossiers d’événements dans tout explorateur de fichiers',
               'Ajoutez un mot entre crochets au nom d’un dossier, et le NAS rassemble des liens vers ces dossiers, pour que l’Explorateur Windows, un Mac ou une app de fichiers du téléphone les ouvre. Les clips de caméra ont un lien dans leur événement.',
             ],

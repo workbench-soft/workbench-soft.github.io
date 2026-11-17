@@ -270,6 +270,10 @@ const es: Catalog = {
               'El NAS agrupa las caras por persona, primero las que tienen nombre. Una persona desconocida se puede unir a una con nombre desde su ficha.',
             ],
             [
+              'Buscar por lo que muestra una foto',
+              'Encuentra un perro, una iglesia, un pasaporte, el rojo o las nubes, y súmale una persona o un lugar como Kiama. El NAS reconoce las cosas solo, sin nube.',
+            ],
+            [
               'Carpetas de eventos en cualquier explorador de archivos',
               'Añade una palabra entre corchetes al nombre de una carpeta y el NAS reúne enlaces a esas carpetas, para que el Explorador de Windows, un Mac o una app de archivos del móvil las abra. Los clips de cámara tienen un enlace dentro de su evento.',
             ],
