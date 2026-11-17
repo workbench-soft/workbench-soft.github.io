@@ -1714,7 +1714,7 @@ const es: Catalog = {
           features: [
             [
               'Preguntar',
-              'Escribe los lugares, una fecha aproximada, las noches y quién va, o abre un enlace de Tick-a-Lot.',
+              'Elige los lugares de una lista de países y ciudades, un mes o un día en el calendario, las noches y quién va, o abre un enlace de Tick-a-Lot.',
             ],
             [
               'Vuelos',

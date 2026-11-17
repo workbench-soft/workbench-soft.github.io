@@ -1594,7 +1594,7 @@ const nb: Catalog = {
           features: [
             [
               'Spør',
-              'Skriv stedene, en omtrentlig dato, antall netter og hvem som drar, eller åpne en lenke fra Tick-a-Lot.',
+              'Velg stedene fra en liste over land og byer, en måned eller en dag i kalenderen, antall netter og hvem som drar, eller åpne en lenke fra Tick-a-Lot.',
             ],
             [
               'Fly',

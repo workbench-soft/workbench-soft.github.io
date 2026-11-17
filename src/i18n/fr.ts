@@ -1766,7 +1766,7 @@ const fr: Catalog = {
           features: [
             [
               'Demander',
-              'Tapez les lieux, une date approximative, le nombre de nuits et qui part, ou ouvrez un lien de Tick-a-Lot.',
+              'Choisissez les lieux dans une liste de pays et de villes, un mois ou un jour dans le calendrier, le nombre de nuits et qui part, ou ouvrez un lien de Tick-a-Lot.',
             ],
             [
               'Vols',

@@ -1726,7 +1726,7 @@ const de: Catalog = {
           features: [
             [
               'Fragen',
-              'Orte, ein ungefähres Datum, die Nächte und wer mitkommt eintippen, oder einen Link aus Tick-a-Lot öffnen.',
+              'Orte aus einer Liste von Ländern und Städten wählen, einen Monat oder Tag im Kalender, die Nächte und wer mitkommt, oder einen Link aus Tick-a-Lot öffnen.',
             ],
             [
               'Flüge',
