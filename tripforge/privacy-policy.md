@@ -1,12 +1,12 @@
 ---
 title: Tripforge Privacy Policy
 description: Tripforge sends the places and dates you search to its own server to find fares and sights. Saved trips and settings stay on your phone. Google AdMob shows the ads.
-last_modified_at: 2026-11-16
+last_modified_at: 2026-11-17
 ---
 
 # Tripforge Privacy Policy
 
-Last updated: 16 November 2026
+Last updated: 17 November 2026
 
 Tripforge finds cheap round trips around the dates you ask for, and the
 sights and secret spots of the city. To do that it sends what you search
@@ -53,6 +53,16 @@ the route, the dates and the group filled in. A tap on a place opens its
 page. The Tickalot button opens tickalot.web.app with the city, the
 dates and the nights in the link. Those sites have their own privacy
 policies.
+
+## Partner commission
+
+Tripforge is a Travelpayouts partner. The Aviasales links carry the
+Tripforge partner code, and when you book through one, Travelpayouts may
+pay Workbench Soft a commission. Your price stays the same. The link
+carries no personal data from Tripforge, only the partner code and the
+trip you asked for. Aviasales and Travelpayouts may use cookies to credit
+the booking, under their own privacy policies. Google Flights links carry
+no partner code.
 
 ## Ads
 
