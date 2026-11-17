@@ -1231,7 +1231,7 @@ export const projects: Project[] = [
         features: [
           {
             name: 'Ask',
-            text: 'Type the places, a rough date, the nights and who goes, or open a link from Tick-a-Lot.',
+            text: 'Pick the places from a list of countries and cities, a month or a day in the calendar, the nights and who goes, or open a link from Tick-a-Lot.',
           },
           {
             name: 'Flights',
