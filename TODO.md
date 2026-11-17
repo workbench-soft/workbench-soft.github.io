@@ -48,7 +48,7 @@ Workbench Games, `com.workbenchsoft.games`. Release builds use the real AdMob ap
 
 ## marketing
 
-- [ ] **Reddit posts** both test-for-test posts went out on 2026-11-17 from u/workbench_soft. r/TestersCommunity is live: https://old.reddit.com/r/TestersCommunity/comments/1xyi3kf/. The r/AndroidClosedTesting post sits on the account's submitted list but not in the sub, so its spam filter holds it. Check the sub on 2026-11-18 and remove this line once it shows. The r/selfhosted post for Memories stays unposted (wait).
+- [ ] **Reddit posts** both test-for-test posts went out on 2026-11-17 from u/workbench_soft. r/TestersCommunity is live: <https://old.reddit.com/r/TestersCommunity/comments/1xyi3kf/>. The r/AndroidClosedTesting post sits on the account's submitted list but not in the sub, so its spam filter holds it. Check the sub on 2026-11-18 and remove this line once it shows. The r/selfhosted post for Memories stays unposted (wait).
 
 ## header-sites: Sites menu in the header
 
