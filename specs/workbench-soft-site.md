@@ -499,6 +499,8 @@ The studio needed one public site for its apps and their installers.
   field or an anchor to sit above the round button, through
   `scroll-padding-bottom`, so the button covers no row the page brings into
   view.
-- **Changes** the 6 `_layouts/default.html` files and
-  `src/components/Contact.astro`.
+- **Menu panel** the header menus get a solid panel, since the hero
+  headline showed through the open phone menu.
+- **Changes** the 6 `_layouts/default.html` files,
+  `src/components/Contact.astro` and `src/components/Nav.astro`.
 - **Docs** `CHANGELOG.md`.
