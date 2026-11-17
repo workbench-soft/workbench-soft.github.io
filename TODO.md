@@ -8,7 +8,6 @@ The games run at <https://games.workbench-soft.com/games/>. Android App Links wo
   1. Open <https://developer.apple.com/programs/enroll/> and enroll as Workbench Soft.
   2. Open <https://codemagic.io/signup> and sign up with GitHub.
   3. Tell an agent "set up the iOS build of the games". It adds the iOS AdMob app, Universal Links, the tracking prompt and `PrivacyInfo.xcprivacy`.
-- [ ] **Phone test** once build 2 is on closed testing, install Workbench Games from Google Play and check (wait):
   1. The lobby shows a banner and a Remove ads button.
   2. A room link from a chat opens the app on that room.
   3. Kids mode on: the banner goes away.
@@ -36,7 +35,6 @@ Workbench Games, `com.workbenchsoft.games`. Release builds use the real AdMob ap
 
 ## app-audit
 
-- [ ] **Ad privacy choices** on an Android phone with a VPN in the EEA, open the games app, Privacy, and press Ad privacy choices: the AdMob consent form opens (wait, needs build 2 on the phone).
 - Left: one pnpm version and one workspace for the root, apps/games and apps/edge. It is a tooling migration across 3 lockfiles.
 - Left: root astro 7.4.4 has 2 advisories that a static build can't reach. 7.4.7 and up pulls a beta `@emnapi/runtime` that crashes `astro check`, so it waits on a newer `@astrojs/check`.
 - Left: TypeScript 7 in apps/games and apps/edge while the stack table pins 6. An org version call.
