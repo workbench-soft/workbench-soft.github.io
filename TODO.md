@@ -11,23 +11,13 @@ The games run at <https://games.workbench-soft.com/games/>. Android App Links wo
 
 ## play-release
 
-"Workbench Games" (`com.workbenchsoft.games`, app 4975626241785530007) is on closed testing with build 1 since 2026-11-13. The Play API reads the app, and the alpha track uses the testers groups of the other apps.
+"Workbench Games" (`com.workbenchsoft.games`, app 4975626241785530007) is on closed testing: build 1 since 2026-11-13, build 2 with Remove ads and App Links since 2026-11-17. The Play API reads the app, and the alpha track uses the testers groups of the other apps.
 
-- [ ] **Upload build 2** the permission check denied the agent the Play upload on 2026-11-17 (denied). The signed AAB sits in `%USERPROFILE%\Downloads\workbench-games-2.aab`.
-  1. Open <https://play.google.com/console>, Workbench Games, Test and release, Closed testing, Alpha.
-  2. Press Create new release, then Upload, and pick `workbench-games-2.aab`.
-  3. Release notes: "Remove ads purchase, room links open the app, and kids mode shows no ads."
-  4. Press Next, then Save and publish.
 - [ ] **Testers** production waits for 12 testers over 14 days of closed testing (wait).
 
 ## ads-setup
 
-Workbench Games, `com.workbenchsoft.games`. Release builds use the real AdMob app `ca-app-pub-8598703460892343~1509665312`. The "Workbench Games GDPR" message went live on 2026-11-14. Remove ads is built and merged (PR #175).
-
-- [ ] **Remove ads product** after build 2 is uploaded, Play Console takes the product (wait).
-  1. Open <https://play.google.com/console>, Workbench Games, Monetize with Play, One-time products.
-  2. Press Create one-time product. Product ID `remove_ads`, name "Remove ads", price A$2.99.
-  3. Press Save, then Activate.
+Workbench Games, `com.workbenchsoft.games`. Release builds use the real AdMob app `ca-app-pub-8598703460892343~1509665312`. The "Workbench Games GDPR" message went live on 2026-11-14. Remove ads is built (PR #175), and the `remove_ads` product is active at A$2.99 since 2026-11-17.
 
 ## app-audit
 
@@ -58,7 +48,10 @@ Workbench Games, `com.workbenchsoft.games`. Release builds use the real AdMob ap
 
 ## marketing
 
-- [ ] **Reddit posts** the owner picked on 2026-11-17: post the 2 test-for-test drafts of Reddit Desk, Posts tab, in r/AndroidClosedTesting and r/TestersCommunity. The r/selfhosted post for Memories stays unposted. An agent session posts them next (wait)
+- [ ] **Reddit posts** the owner picked all 3 drafts on 2026-11-17, and the test-for-test drafts now list Workbench Games too. Chrome blocks reddit.com for the agent, so the person posts them (denied).
+  1. Open Reddit Desk, Posts tab.
+  2. Press Post on r/AndroidClosedTesting, r/TestersCommunity and r/selfhosted.
+  3. On r/selfhosted a bot asks how AI was involved. Reply: "I write it with Claude Code and review every change myself."
 
 ## header-sites: Sites menu in the header
 
@@ -66,13 +59,8 @@ Workbench Games, `com.workbenchsoft.games`. Release builds use the real AdMob ap
 
 ## AdSense for workbench-soft.com
 
-The site has About and Privacy pages in 9 languages since 2026-11-17, the `google-adsense-account` meta tag and `/ads.txt`. On 2026-11-17 the AdSense MCP answered `invalid_grant`, and Chrome didn't render the Add site dialog, so the steps below wait for the person (login).
+The site has About and Privacy pages in 9 languages. On 2026-11-17 `workbench-soft.com` was added and verified through ads.txt, review was requested, and the "workbench-soft.com GDPR" consent message was published.
 
-- [ ] **Add the site**
-  1. Open <https://adsense.google.com/adsense/u/1/pub-8598703460892343/sites/list> with the Workbench Soft Google account.
-  2. Press New site, type `workbench-soft.com`, press Save.
-  3. Pick the ads.txt check and press Request review.
-- [ ] **Consent message** Privacy and messaging, European regulations, create a message for `workbench-soft.com` and press Publish.
 - [ ] **Ad units** once AdSense approves the site (wait):
   1. Make 3 display ad units: the article, a games page and a games room.
   2. Open <https://github.com/workbench-soft/workbench-soft.github.io/settings/variables/actions>.
