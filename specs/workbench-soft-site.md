@@ -486,3 +486,21 @@ The studio needed one public site for its apps and their installers.
   footer links the app's project on workbench-soft.com.
 - **Langflip** `langflip/index.html` gets a dark palette.
 - **Docs** `CHANGELOG.md`.
+
+### 2026-11-17 Privacy pages link Google Play, the order button keeps room
+
+- **Why** the owner's UX audit answers of 2026-11-17 ask for two things the
+  earlier entries left out: each privacy policy footer links the app's Google
+  Play listing, and the page keeps room at the bottom for the order button.
+- **Privacy pages** the footer of each Jekyll layout adds a Google Play link
+  to `https://play.google.com/store/apps/details?id=com.workbenchsoft.<id>`,
+  the same package names `src/testers/apps.ts` uses. The policy text stays.
+- **Order button** on a phone the page scrolls a search result, a focused
+  field or an anchor to sit above the round button, through
+  `scroll-padding-bottom`, so the button covers no row the page brings into
+  view.
+- **Menu panel** the header menus get a solid panel, since the hero
+  headline showed through the open phone menu.
+- **Changes** the 6 `_layouts/default.html` files,
+  `src/components/Contact.astro` and `src/components/Nav.astro`.
+- **Docs** `CHANGELOG.md`.

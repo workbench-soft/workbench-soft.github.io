@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Site** each privacy policy footer links the app on Google Play, and on a phone the page scrolls search results and fields to stop above the order button. The open phone menu gets a solid panel.
 - **Site** the Workbench MCP privacy page at `/privacy` gives `hello@workbench-soft.com` as its contact, like every other page.
 - **Site** the touch wording of the feature search keeps its space after the sentence before it.
 - **Search** the astrology articles give their dates with a time zone, as Google asks for Article markup.

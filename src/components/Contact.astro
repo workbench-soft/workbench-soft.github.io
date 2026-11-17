@@ -200,6 +200,8 @@ const [orBefore, orAfter] = t.or.split("{email}");
     /* On a phone the button is a round icon, so it covers less of the rows under it. */
     .fab { padding: 14px; }
     .fab span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+    /* A search result, a focused field or an anchor stops above the round button. */
+    :global(html) { scroll-padding-bottom: calc(76px + env(safe-area-inset-bottom)); }
   }
   @media print {
     .fab { display: none; }
