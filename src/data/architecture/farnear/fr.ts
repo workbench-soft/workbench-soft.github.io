@@ -134,6 +134,8 @@ const arch: Arch = {
       'Le titre passe dans la signalisation scellée avec un compteur de révision. La révision la plus récente gagne sur chaque appareil, et le Worker ne peut pas le lire.',
     'Shared documents on the board':
       'PDF.js peint une page PDF et un moteur PowerPoint peint une diapo sur l’appareil. Pages tournées et retraits passent par le canal de contrôle.',
+    'Board text':
+      'Un texte est un trait du tableau avec des mots et un point, il se synchronise, s’efface et s’annule comme l’encre. Sa taille suit la hauteur du tableau, il garde sa place à tout zoom.',
     'Contacts and rooms':
       'Contacts et salles partagent une liste enregistrée dans le navigateur, chacun avec son type. Un nom de contact reste sur l’appareil, un titre de salle se synchronise.',
     'Search and share preview':

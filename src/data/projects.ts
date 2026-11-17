@@ -762,6 +762,10 @@ export const projects: Project[] = [
             text: 'Share PDF or PowerPoint slides, turn pages together and remove the file while keeping the ink.',
           },
           {
+            name: 'Board text',
+            text: 'The T button types text on the board, over a file or a screen. Each person sees it and can edit, erase or undo it.',
+          },
+          {
             name: 'Contacts and rooms',
             text: 'The home page lists contacts and rooms. A contact is a person, a room is a link many people open.',
           },
