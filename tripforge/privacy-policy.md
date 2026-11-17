@@ -62,7 +62,9 @@ pay Workbench Soft a commission. Your price stays the same. The link
 carries no personal data from Tripforge, only the partner code and the
 trip you asked for. Aviasales and Travelpayouts may use cookies to credit
 the booking, under their own privacy policies. Google Flights links carry
-no partner code.
+no partner code. The website, not the phone app, also loads the
+Travelpayouts Drive script from tpembars.com, which may set its own
+cookies and turn travel links on the page into partner links.
 
 ## Ads
 
