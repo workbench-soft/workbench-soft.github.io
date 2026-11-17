@@ -48,10 +48,7 @@ Workbench Games, `com.workbenchsoft.games`. Release builds use the real AdMob ap
 
 ## marketing
 
-- [ ] **Reddit posts** the owner picked all 3 drafts on 2026-11-17, and the test-for-test drafts now list Workbench Games too. Chrome blocks reddit.com for the agent, so the person posts them (denied).
-  1. Open Reddit Desk, Posts tab.
-  2. Press Post on r/AndroidClosedTesting, r/TestersCommunity and r/selfhosted.
-  3. On r/selfhosted a bot asks how AI was involved. Reply: "I write it with Claude Code and review every change myself."
+- [ ] **Reddit posts** both test-for-test posts went out on 2026-11-17 from u/workbench_soft. r/TestersCommunity is live: https://old.reddit.com/r/TestersCommunity/comments/1xyi3kf/. The r/AndroidClosedTesting post sits on the account's submitted list but not in the sub, so its spam filter holds it. Check the sub on 2026-11-18 and remove this line once it shows. The r/selfhosted post for Memories stays unposted (wait).
 
 ## header-sites: Sites menu in the header
 
