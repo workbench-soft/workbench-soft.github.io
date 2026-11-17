@@ -1509,6 +1509,10 @@ const de: Catalog = {
               'PDF oder PowerPoint teilen, Seiten gemeinsam wechseln und die Datei entfernen, ohne Zeichnungen zu löschen.',
             ],
             [
+              'Text auf dem Board',
+              'Die T-Taste schreibt Text auf das Board, über eine Datei oder einen Bildschirm. Alle sehen ihn und können ihn ändern, radieren oder rückgängig machen.',
+            ],
+            [
               'Kontakte und Räume',
               'Die Startseite listet Kontakte und Räume. Ein Kontakt ist eine Person, ein Raum ist ein Link für mehrere Leute.',
             ],

@@ -1537,6 +1537,10 @@ const fr: Catalog = {
               'Partagez un PDF ou des diapositives PowerPoint, tournez les pages ensemble et retirez le fichier en gardant les dessins.',
             ],
             [
+              'Texte sur le tableau',
+              'Le bouton T écrit du texte sur le tableau, sur un fichier ou un écran. Chacun le voit, peut le corriger, l’effacer ou l’annuler.',
+            ],
+            [
               'Contacts et salons',
               'L’accueil liste les contacts et les salons. Un contact est une personne, un salon est un lien que plusieurs personnes ouvrent.',
             ],

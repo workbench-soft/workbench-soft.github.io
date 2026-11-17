@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Farnear** the project lists Board text: the T button types text on the board, over a file or a screen, for each person to see, edit, erase or undo.
 - **Farnear** the Board line says each person can zoom in on a page on their own screen, in the 9 languages.
 - **Farnear** the project lists Reactions and raised hands: emoji that rise over the tiles and the board, and a hand that stays up until it goes down.
 - **Tripforge** the privacy policy names the Travelpayouts Drive script that the Tripforge website loads.

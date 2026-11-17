@@ -131,6 +131,8 @@ const arch: Arch = {
       'Der Titel geht mit einem Versionszähler in der versiegelten Signalisierung. Auf jedem Gerät gewinnt die neueste Version, und der Worker kann ihn nicht lesen.',
     'Shared documents on the board':
       'PDF.js malt eine PDF-Seite und ein PowerPoint-Renderer eine Folie auf dem Gerät. Blättern und Entfernen laufen über den Steuerkanal.',
+    'Board text':
+      'Ein Text ist eine Board-Linie mit Wörtern und einem Punkt. So wird er wie Tinte synchronisiert, radiert und rückgängig gemacht. Die Schrifthöhe ist ein Anteil der Board-Höhe, also bleibt er bei jedem Zoom an seinem Platz.',
     'Contacts and rooms':
       'Kontakte und Räume teilen eine gespeicherte Liste im Browser, jeder Eintrag mit seiner Art. Ein Kontaktname bleibt auf dem Gerät, ein Raumtitel wird abgeglichen.',
     'Search and share preview':

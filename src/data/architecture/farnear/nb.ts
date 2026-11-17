@@ -127,6 +127,8 @@ const arch: Arch = {
       'Tittelen går i den forseglede signaleringen med en versjonsteller. Den nyeste versjonen vinner på hver enhet, og Workeren kan ikke lese den.',
     'Shared documents on the board':
       'PDF.js maler en PDF-side og en PowerPoint-gjengiver maler et lysbilde på enheten. Sidebytter og fjerning går over kontrollkanalen.',
+    'Board text':
+      'En tekst er en tavlelinje med ord og ett punkt, så den synkroniseres, viskes ut og angres som blekk. Skrifthøyden er en andel av tavlehøyden, så den holder plassen ved all zoom.',
     'Contacts and rooms':
       'Kontakter og rom deler én lagret liste i nettleseren, hver oppføring med sin type. Et kontaktnavn blir på enheten, og en romtittel synkroniseres.',
     'Search and share preview':

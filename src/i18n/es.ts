@@ -1482,6 +1482,10 @@ const es: Catalog = {
               'Comparte PDF o diapositivas PowerPoint, cambia de página con los demás y retira el archivo sin borrar los dibujos.',
             ],
             [
+              'Texto en la pizarra',
+              'El botón T escribe texto en la pizarra, sobre un archivo o una pantalla. Todos lo ven y pueden corregirlo, borrarlo o deshacerlo.',
+            ],
+            [
               'Contactos y salas',
               'El inicio lista contactos y salas. Un contacto es una persona, una sala es un enlace que abren varias personas.',
             ],

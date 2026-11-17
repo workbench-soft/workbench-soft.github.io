@@ -1377,6 +1377,10 @@ const nb: Catalog = {
               'Del PDF eller PowerPoint, bla sammen og fjern filen mens tegningene blir værende.',
             ],
             [
+              'Tekst på tavla',
+              'T-knappen skriver tekst på tavla, over en fil eller en skjerm. Alle ser den og kan rette, viske ut eller angre den.',
+            ],
+            [
               'Kontakter og rom',
               'Startsiden viser kontakter og rom. En kontakt er en person, et rom er en lenke flere åpner.',
             ],

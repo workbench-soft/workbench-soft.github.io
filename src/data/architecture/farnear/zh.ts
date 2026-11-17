@@ -104,6 +104,8 @@ const arch: Arch = {
     'Shared call titles': '标题带着版本计数器，走加密的信令。每台设备上最新的版本胜出，Worker 读不到标题。',
     'Shared documents on the board':
       'PDF.js 在设备上绘制 PDF 页面，PowerPoint 渲染器绘制幻灯片。翻页和移除走控制通道。',
+    'Board text':
+      '文字是带有文字和一个点的白板线条，所以它像笔迹一样同步、擦除和撤销。字高按白板高度的比例计算，任何缩放下都在原位。',
     'Contacts and rooms':
       '联系人和房间共用浏览器里的一份保存列表，每条记录有自己的类型。联系人名字留在设备上，房间标题会同步。',
     'Search and share preview':
