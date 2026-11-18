@@ -1716,7 +1716,7 @@ const es: Catalog = {
             ['Lumiere Pro', 'Un solo pago desbloquea los comandos de voz y Hey Lumi, y quita los anuncios.'],
             [
               'App para LG webOS',
-              'Una app webOS para teles LG abre una memoria USB o una carpeta del NAS por WebDAV y reproduce vídeos con el Magic Remote desde donde se pararon.',
+              'Una app webOS para teles LG muestra memorias USB y carpetas del NAS como un árbol, encuentra el NAS en la red para que solo escriba el usuario, y reproduce con botones en pantalla, selección de subtítulos y audio, y el título de una película dicho al Magic Remote.',
             ],
           ],
         },

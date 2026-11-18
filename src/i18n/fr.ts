@@ -1768,7 +1768,7 @@ const fr: Catalog = {
             ['Lumiere Pro', 'Un seul achat débloque les commandes vocales et Hey Lumi, et retire la pub.'],
             [
               'App pour LG webOS',
-              'Une app webOS pour télé LG ouvre une clé USB ou un partage NAS en WebDAV et lit les vidéos à la Magic Remote, là où elles s’étaient arrêtées.',
+              'Une app webOS pour télé LG affiche clés USB et dossiers NAS en arbre, trouve le NAS sur le réseau pour ne saisir que l’identifiant, et lit avec des boutons à l’écran, le choix des sous-titres et de la piste audio, et un titre de film dit à la Magic Remote.',
             ],
           ],
         },

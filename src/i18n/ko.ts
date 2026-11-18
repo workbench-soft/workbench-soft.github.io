@@ -1382,7 +1382,7 @@ const ko: Catalog = {
             ['Lumiere Pro', '한 번 구매로 음성 명령과 Hey Lumi를 쓰고 광고가 사라집니다.'],
             [
               'LG webOS 앱',
-              'LG TV용 webOS 앱이 USB 메모리나 NAS 공유 폴더를 WebDAV로 열고, Magic Remote로 멈춘 곳부터 동영상을 재생해요.',
+              'LG TV용 webOS 앱이 USB 메모리와 NAS 폴더를 트리로 보여 주고, 네트워크에서 NAS를 찾아 로그인만 입력하면 됩니다. 화면 버튼, 자막과 오디오 트랙 선택, Magic Remote에 말한 영화 제목으로 재생합니다.',
             ],
           ],
         },

@@ -1140,7 +1140,7 @@ const zh: Catalog = {
             ['Lumiere Pro', '一次购买，解锁语音命令和 Hey Lumi，并去除广告。'],
             [
               'LG webOS 应用',
-              'LG 电视上的 webOS 应用通过 WebDAV 打开 U 盘或 NAS 共享，用 Magic Remote 从上次停下的地方播放视频。',
+              'LG 电视上的 webOS 应用以树形显示 U 盘和 NAS 文件夹，在网络中自动找到 NAS，只需输入登录信息，并提供屏幕按钮、字幕和音轨选择，对 Magic Remote 说出片名即可播放。',
             ],
           ],
         },

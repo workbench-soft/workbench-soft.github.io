@@ -1465,7 +1465,7 @@ const ja: Catalog = {
             ['Lumiere Pro', '一度の購入で音声コマンドと Hey Lumi が使え、広告が消えます。'],
             [
               'LG webOS アプリ',
-              'LG テレビ用の webOS アプリが USB メモリや NAS の共有フォルダを WebDAV で開き、Magic Remote で止めた所から動画を再生します。',
+              'LG テレビ用の webOS アプリが USB メモリと NAS のフォルダーをツリーで表示し、ネットワークで NAS を見つけてログインだけで追加できます。画面のボタン、字幕と音声トラックの選択、Magic Remote に話した映画名での再生に対応します。',
             ],
           ],
         },

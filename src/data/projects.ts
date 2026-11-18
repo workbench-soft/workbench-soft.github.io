@@ -1017,7 +1017,7 @@ export const projects: Project[] = [
           { name: 'Lumiere Pro', text: 'One payment unlocks the voice commands and Hey Lumi, and hides the ads.' },
           {
             name: 'LG webOS app',
-            text: 'A webOS app for an LG TV browses a USB stick or a NAS share over WebDAV and plays videos with the Magic Remote, from the place it stopped.',
+            text: 'A webOS app for an LG TV shows USB sticks and NAS folders as one tree, finds the NAS on the network so you type only the login, and plays with on-screen buttons, subtitle and audio pickers, and a film name said into the Magic Remote.',
           },
         ],
       },

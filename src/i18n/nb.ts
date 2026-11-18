@@ -1596,7 +1596,7 @@ const nb: Catalog = {
             ['Lumiere Pro', 'Ett kjøp låser opp talekommandoer og Hey Lumi og fjerner reklamen.'],
             [
               'App for LG webOS',
-              'En webOS-app for LG-TV åpner en USB-pinne eller en NAS-deling over WebDAV og spiller av videoer med Magic Remote fra der de stoppet.',
+              'En webOS-app for LG-TV viser USB-pinner og NAS-mapper som et tre, finner NAS-en på nettverket så du bare skriver inn påloggingen, og spiller av med knapper på skjermen, valg av undertekster og lydspor, og en filmtittel sagt inn i Magic Remote.',
             ],
           ],
         },
