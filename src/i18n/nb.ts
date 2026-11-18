@@ -1330,7 +1330,7 @@ const nb: Catalog = {
             ],
             [
               'Undervisning',
-              'Et undervisningsrom: lysbilder klare før samtalen, låst penn, tidtaker, og elevene følger siden og zoomen.',
+              'Et undervisningsrom: lysbilder klare før samtalen, låst penn, tidtaker, og elevene følger siden og zoomen. Lysbildene beholder strekene til neste time, kan eksporteres til en annen enhet, og eleven får bare nye filer.',
             ],
             [
               'Kontakter og ringing',

@@ -706,7 +706,7 @@ export const projects: Project[] = [
           },
           {
             name: 'Lessons',
-            text: 'A lesson room for a teacher: slides prepared before the call, a pen lock, a timer, and students who follow the page and zoom.',
+            text: 'A lesson room for a teacher: slides prepared before the call, a pen lock, a timer, and students who follow the page and zoom. The slides keep their lines for the next lesson, export to another device, and the student gets only new files.',
           },
           {
             name: 'Contacts and ringing',

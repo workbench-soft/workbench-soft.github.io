@@ -1450,7 +1450,7 @@ const de: Catalog = {
             ],
             [
               'Unterricht',
-              'Ein Unterrichtsraum: Folien vor dem Anruf vorbereiten, Stift sperren, Timer, und die Schüler folgen Seite und Zoom.',
+              'Ein Unterrichtsraum: Folien vor dem Anruf vorbereiten, Stift sperren, Timer, und die Schüler folgen Seite und Zoom. Die Folien behalten ihre Linien für die nächste Stunde, lassen sich auf ein anderes Gerät exportieren, und der Schüler lädt nur neue Dateien.',
             ],
             [
               'Kontakte und Klingeln',

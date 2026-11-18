@@ -1478,7 +1478,7 @@ const fr: Catalog = {
             ],
             [
               'Cours',
-              'Une salle de cours : diapos préparées avant l’appel, crayon bloqué, minuteur, et les élèves suivent la page et le zoom.',
+              'Une salle de cours : diapos préparées avant l’appel, crayon bloqué, minuteur, et les élèves suivent la page et le zoom. Les diapos gardent leurs traits pour le cours suivant, s’exportent vers un autre appareil, et l’élève ne reçoit que les nouveaux fichiers.',
             ],
             [
               'Contacts et sonnerie',

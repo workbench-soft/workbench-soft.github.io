@@ -1429,7 +1429,7 @@ const es: Catalog = {
             ],
             [
               'Clases',
-              'Una sala de clase: diapositivas preparadas antes de la llamada, lápiz bloqueado, temporizador, y los alumnos siguen la página y el zoom.',
+              'Una sala de clase: diapositivas preparadas antes de la llamada, lápiz bloqueado, temporizador, y los alumnos siguen la página y el zoom. Las diapositivas guardan sus trazos para la próxima clase, se exportan a otro dispositivo, y el alumno solo recibe los archivos nuevos.',
             ],
             [
               'Contactos y timbre',

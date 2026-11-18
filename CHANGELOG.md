@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Farnear** the Lessons line adds lines kept for the next lesson, export to another device, and a student who gets only new files.
 - **Farnear** the project lists Board stamps: a star, a tick, a cross, a heart or a Well done badge put on the board with a tap.
 - **Farnear** the project lists Lessons in place of Lessons (planned): slides prepared before the call, a pen lock, a timer, and students who follow the page and zoom.
 - **Deploys only what changed** a push that changes no page of the site, such as a `TODO.md` edit, builds and deploys nothing, and the games deploy only when `apps/` changed.
