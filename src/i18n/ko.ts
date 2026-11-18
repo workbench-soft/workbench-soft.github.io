@@ -1376,6 +1376,10 @@ const ko: Catalog = {
               'GitHub APK에서 Hey Lumi는 폴더에 없는 노래, 아티스트, 앨범, 장르를 MusicBrainz 카탈로그에서 찾아 재생합니다.',
             ],
             ['Lumiere Pro', '한 번 구매로 음성 명령과 Hey Lumi를 쓰고 광고가 사라집니다.'],
+            [
+              'LG webOS 앱',
+              'LG TV용 webOS 앱이 USB 메모리나 NAS 공유 폴더를 WebDAV로 열고, Magic Remote로 멈춘 곳부터 동영상을 재생해요.',
+            ],
           ],
         },
       ],

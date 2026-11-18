@@ -128,6 +128,8 @@ const arch: Arch = {
       'Das Online-Modul startet yt-dlp in Python über Chaquopy. MusicBrainz nennt die Songs und YouTube liefert den Ton, in der GitHub-APK auf einem 64-Bit-Handy.',
     'Lumiere Pro':
       'Google Play Billing verkauft ein Pro-Produkt, und die App fragt Google Play bei jedem Start. Eine Prüfung in der App öffnet die Sprachfunktionen und blendet das Banner aus.',
+    'LG webOS app':
+      'Eine Webseite in TypeScript spielt über den Player des Fernsehers. Ein Node-Dienst im selben webOS-Paket liest USB-Sticks und das NAS über WebDAV und streamt die Dateien zur Seite.',
   },
 };
 

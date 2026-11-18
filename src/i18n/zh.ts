@@ -1134,6 +1134,10 @@ const zh: Catalog = {
               '在 GitHub 的 APK 中，Hey Lumi 可播放文件夹里没有的歌曲、艺人、专辑或风格，通过 MusicBrainz 目录查找。',
             ],
             ['Lumiere Pro', '一次购买，解锁语音命令和 Hey Lumi，并去除广告。'],
+            [
+              'LG webOS 应用',
+              'LG 电视上的 webOS 应用通过 WebDAV 打开 U 盘或 NAS 共享，用 Magic Remote 从上次停下的地方播放视频。',
+            ],
           ],
         },
       ],
