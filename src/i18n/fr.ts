@@ -1481,6 +1481,10 @@ const fr: Catalog = {
               'Une salle de cours : diapos préparées avant l’appel, crayon bloqué, minuteur, et les élèves suivent la page et le zoom. Les diapos gardent leurs traits pour le cours suivant, s’exportent vers un autre appareil, et l’élève ne reçoit que les nouveaux fichiers.',
             ],
             [
+              'Exercices du cours',
+              'Une question rapide avec oui ou non ou jusqu’à 4 réponses, un cahier à soi pour chaque élève que l’enseignant voit en grille, et des mots et des tampons que les élèves glissent à leur place.',
+            ],
+            [
               'Contacts et sonnerie',
               'Un appui sur une personne fait sonner son téléphone, avec Répondre et Refuser. Sans inscription. Un message texte arrive en notification.',
             ],

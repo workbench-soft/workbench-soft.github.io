@@ -93,6 +93,8 @@ const arch: Arch = {
       'The file goes in chunks over its own data channel to each person. The play, pause and seek of the sharer go over the control channel.',
     Lessons:
       'The owner device of a lesson room sends the lock, the time left and its zoom over the control channel. The board keeps the lines of each page, and the slides wait in IndexedDB.',
+    'Lesson tasks':
+      "The question and the answers ride the control channel. Each student's notebook is a board of its own that only the teacher gets, and a dragged word or stamp goes out as a newer copy of the item.",
     'Contacts and ringing':
       'The ring is a web push sealed for the other device and sent through the Worker. The Android app takes it through Google Play services, with no Firebase.',
     'Ads and remove ads':

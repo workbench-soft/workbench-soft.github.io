@@ -1333,6 +1333,10 @@ const nb: Catalog = {
               'Et undervisningsrom: lysbilder klare før samtalen, låst penn, tidtaker, og elevene følger siden og zoomen. Lysbildene beholder strekene til neste time, kan eksporteres til en annen enhet, og eleven får bare nye filer.',
             ],
             [
+              'Oppgaver i timen',
+              'Et raskt spørsmål med ja eller nei eller opptil 4 svar, en egen skrivebok for hver elev som læreren ser i et rutenett, og ord og stempler elevene drar på plass.',
+            ],
+            [
               'Kontakter og ringing',
               'Et trykk på en person ringer telefonen deres, med Svar og Avvis. Uten registrering. En tekstmelding kommer som et varsel.',
             ],

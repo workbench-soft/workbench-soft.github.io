@@ -99,6 +99,8 @@ const arch: Arch = {
       'Die Datei geht in Stücken über einen eigenen Datenkanal an jede Person. Abspielen, Pause und Springen der teilenden Person laufen über den Steuerkanal.',
     Lessons:
       'Das Gerät des Besitzers sendet Sperre, Restzeit und Zoom über den Steuerkanal. Die Tafel hält die Linien jeder Seite, und die Folien warten in IndexedDB.',
+    'Lesson tasks':
+      'Frage und Antworten laufen über den Steuerkanal. Das Heft jedes Schülers ist eine eigene Tafel, die nur die Lehrkraft bekommt, und ein gezogenes Wort oder ein Stempel geht als neuere Kopie hinaus.',
     'Contacts and ringing':
       'Das Klingeln ist ein Web-Push, versiegelt für das andere Gerät und über den Worker gesendet. Die Android-App empfängt ihn über die Google Play-Dienste, ohne Firebase.',
     'Ads and remove ads':

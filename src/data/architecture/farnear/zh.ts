@@ -80,6 +80,8 @@ const arch: Arch = {
     Board: '纯模块把线条和已擦除的线条存成 2 个集合，经 WebRTC 数据通道发送。画布在 React 之外画出它们。',
     'Share an image or video': '文件分块经专用数据通道发给每个人。分享者的播放、暂停和跳转走控制通道。',
     Lessons: '房主设备通过控制通道发送画笔锁定、剩余时间和缩放。白板按页保存线条，幻灯片保存在 IndexedDB 中。',
+    'Lesson tasks':
+      '问题和答案走控制通道。每个学生的练习本是一块只发给老师的独立白板，拖动的文字或贴纸以更新的副本发出。',
     'Contacts and ringing':
       '来电提醒是为对方设备加密的网页推送，经 Worker 发出。Android 应用通过 Google Play 服务接收，不用 Firebase。',
     'Ads and remove ads': 'AdMob 显示 Android 横幅和通话后的广告。Play Billing 出售去除广告，房间页不加载广告脚本。',

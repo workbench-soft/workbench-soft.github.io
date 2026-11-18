@@ -1453,6 +1453,10 @@ const de: Catalog = {
               'Ein Unterrichtsraum: Folien vor dem Anruf vorbereiten, Stift sperren, Timer, und die Schüler folgen Seite und Zoom. Die Folien behalten ihre Linien für die nächste Stunde, lassen sich auf ein anderes Gerät exportieren, und der Schüler lädt nur neue Dateien.',
             ],
             [
+              'Unterrichtsaufgaben',
+              'Eine schnelle Frage mit Ja oder Nein oder bis zu 4 Antworten, ein eigenes Heft für jeden Schüler, das die Lehrkraft im Raster sieht, und Wörter und Stempel, die die Schüler an ihren Platz ziehen.',
+            ],
+            [
               'Kontakte und Klingeln',
               'Ein Tippen auf eine Person lässt ihr Telefon klingeln, mit Annehmen und Ablehnen. Ohne Anmeldung. Eine Textnachricht kommt als Benachrichtigung an.',
             ],

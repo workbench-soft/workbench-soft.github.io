@@ -90,6 +90,8 @@ const arch: Arch = {
       '파일은 전용 데이터 채널로 나뉘어 사람마다 갑니다. 공유한 사람의 재생, 일시 정지, 이동은 제어 채널로 갑니다.',
     Lessons:
       '방 주인의 기기가 잠금, 남은 시간, 확대 상태를 제어 채널로 보내요. 보드는 페이지마다 선을 따로 두고, 슬라이드는 IndexedDB에서 기다려요.',
+    'Lesson tasks':
+      '질문과 답은 제어 채널로 오가요. 학생 공책은 선생님만 받는 별도 보드이고, 끌어 옮긴 글자나 도장은 새 사본으로 전송돼요.',
     'Contacts and ringing':
       '전화 알림은 상대 기기용으로 봉인한 웹 푸시이며 Worker를 거쳐 갑니다. Android 앱은 Firebase 없이 Google Play 서비스로 받습니다.',
     'Ads and remove ads':

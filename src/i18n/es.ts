@@ -1432,6 +1432,10 @@ const es: Catalog = {
               'Una sala de clase: diapositivas preparadas antes de la llamada, lápiz bloqueado, temporizador, y los alumnos siguen la página y el zoom. Las diapositivas guardan sus trazos para la próxima clase, se exportan a otro dispositivo, y el alumno solo recibe los archivos nuevos.',
             ],
             [
+              'Tareas de clase',
+              'Una pregunta rápida con sí o no o hasta 4 respuestas, un cuaderno propio para cada alumno que el profe ve en una cuadrícula, y palabras y sellos que los alumnos arrastran a su sitio.',
+            ],
+            [
               'Contactos y timbre',
               'Un toque en una persona hace sonar su teléfono, con Responder y Rechazar. Sin registro. Un mensaje de texto llega como notificación.',
             ],

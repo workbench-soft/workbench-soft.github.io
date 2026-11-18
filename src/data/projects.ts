@@ -709,6 +709,10 @@ export const projects: Project[] = [
             text: 'A lesson room for a teacher: slides prepared before the call, a pen lock, a timer, and students who follow the page and zoom. The slides keep their lines for the next lesson, export to another device, and the student gets only new files.',
           },
           {
+            name: 'Lesson tasks',
+            text: 'A quick question with yes or no or up to 4 answers, a private notebook for each student that the teacher sees in a grid, and words and stamps the students drag to their places.',
+          },
+          {
             name: 'Contacts and ringing',
             text: 'A tap on a person rings their phone, with Answer and Decline. No sign up. A text message reaches them as a notification.',
           },

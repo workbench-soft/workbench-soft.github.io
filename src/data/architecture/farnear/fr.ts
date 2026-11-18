@@ -102,6 +102,8 @@ const arch: Arch = {
       'Le fichier part en morceaux par son propre canal de données vers chaque personne. Lecture, pause et saut de la personne qui partage passent par le canal de contrôle.',
     Lessons:
       'L’appareil du propriétaire envoie le blocage, le temps restant et son zoom sur le canal de contrôle. Le tableau garde les traits de chaque page, et les diapos attendent dans IndexedDB.',
+    'Lesson tasks':
+      'La question et les réponses passent par le canal de contrôle. Le cahier de chaque élève est un tableau à part que seul l’enseignant reçoit, et un mot ou un tampon glissé part en copie plus récente.',
     'Contacts and ringing':
       'La sonnerie est un push web scellé pour l’autre appareil et envoyé via le Worker. L’app Android le reçoit par les services Google Play, sans Firebase.',
     'Ads and remove ads':

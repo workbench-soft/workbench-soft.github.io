@@ -96,6 +96,8 @@ const arch: Arch = {
       'Filen går i biter over sin egen datakanal til hver person. Avspilling, pause og hopp fra den som deler går over kontrollkanalen.',
     Lessons:
       'Eierens enhet sender låsen, tiden som er igjen og zoomen over kontrollkanalen. Tavlen holder strekene for hver side, og lysbildene venter i IndexedDB.',
+    'Lesson tasks':
+      'Spørsmålet og svarene går over kontrollkanalen. Skriveboka til hver elev er en egen tavle bare læreren får, og et ord eller stempel som dras, sendes som en nyere kopi.',
     'Contacts and ringing':
       'Ringingen er et web-push forseglet for den andre enheten og sendt gjennom Workeren. Android-appen tar imot det gjennom Google Play-tjenester, uten Firebase.',
     'Ads and remove ads':

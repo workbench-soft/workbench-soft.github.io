@@ -105,6 +105,8 @@ const arch: Arch = {
       'El archivo va a trozos por su propio canal de datos a cada persona. Reproducir, pausar y saltar de quien comparte van por el canal de control.',
     Lessons:
       'El dispositivo del dueño envía el bloqueo, el tiempo restante y su zoom por el canal de control. La pizarra guarda las líneas de cada página, y las diapositivas esperan en IndexedDB.',
+    'Lesson tasks':
+      'La pregunta y las respuestas van por el canal de control. El cuaderno de cada alumno es una pizarra propia que solo recibe el profe, y una palabra o un sello arrastrado sale como copia más nueva.',
     'Contacts and ringing':
       'El timbre es un push web sellado para el otro dispositivo y enviado por el Worker. La app de Android lo recibe por los servicios de Google Play, sin Firebase.',
     'Ads and remove ads':
