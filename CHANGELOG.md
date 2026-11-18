@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Farnear family extras** the Farnear page lists board pages, colouring, noughts and crosses and YouTube together, in the 9 languages.
 - **Farnear** Lesson tasks: a quick question, a private notebook per student, and words and stamps the students drag to their places.
 - **Songfactory** the project lists ComfyStack video and robot pictures: the clips tile animates the cover with LTX 2.3, lip syncs it to each song, loops it with Wan 2.2 and upscales it to 1080p, and a robot draws a missing cover.
 - **Farnear** the Lessons line adds lines kept for the next lesson, export to another device, and a student who gets only new files.

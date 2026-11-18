@@ -1556,6 +1556,22 @@ const fr: Catalog = {
               'Une étoile, une coche, une croix, un cœur ou un badge Bravo se posent sur le tableau d’un toucher, dans la couleur et la taille du moment, pour chacun.',
             ],
             [
+              'Pages du tableau',
+              'Nouvelle page ouvre une page vide sur le tableau pour tous. Les flèches tournent les pages, et chaque page garde ses traits.',
+            ],
+            [
+              'Coloriage',
+              'Un chat, un poisson, une maison, une voiture et une fleur à colorier. Un toucher avec Remplir colore une zone pour tous.',
+            ],
+            [
+              'Morpion',
+              'Un jeu à 2 sur le tableau. Chaque écran montre à qui le tour, qui gagne et la ligne gagnante.',
+            ],
+            [
+              'YouTube ensemble',
+              'Un lien YouTube collé se lit sur le tableau pour tous. Lecture, pause et saut sur un appareil les font bouger tous.',
+            ],
+            [
               'Contacts et salons',
               'L’accueil liste les contacts et les salons. Un contact est une personne, un salon est un lien que plusieurs personnes ouvrent.',
             ],

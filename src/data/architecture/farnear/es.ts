@@ -145,6 +145,14 @@ const arch: Arch = {
       'Un texto es un trazo de la pizarra con palabras y un punto, así que se sincroniza, se borra y se deshace como la tinta. Su altura sigue la de la pizarra y conserva su lugar con cualquier zoom.',
     'Board stamps':
       'Un sello es una línea de la pizarra con un punto y un tipo, así que se sincroniza, se borra y se deshace como la tinta. Su tamaño es una parte de la altura de la pizarra.',
+    'Board pages':
+      'Una pizarra vacía usa el id de página blank, y cada mensaje de página lleva la página más alta, así quien llega tarde sabe cuántas hay. Los trazos guardan su página como en las diapositivas.',
+    Colouring:
+      'Los dibujos son trazados SVG cerrados, dibujados para Farnear. El dibujo de cada página y el color de cada zona van por el canal de control, gana el último.',
+    'Noughts and crosses':
+      'Cada jugada lleva su número, así una jugada fuera de turno o en una casilla ocupada se descarta en cada dispositivo. El estado del juego va a quien abre un canal.',
+    'YouTube together':
+      'La API YouTube IFrame Player solo se carga cuando alguien comparte un enlace, desde el host sin cookies. Reproducir, pausar y saltar salen como un estado, gana el último.',
     'Contacts and rooms':
       'Contactos y salas comparten una lista guardada en el navegador, cada uno con su tipo. Un nombre de contacto se queda en el dispositivo, y un título de sala se sincroniza.',
     'Search and share preview':

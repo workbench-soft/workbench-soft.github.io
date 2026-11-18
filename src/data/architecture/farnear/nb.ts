@@ -135,6 +135,14 @@ const arch: Arch = {
       'En tekst er en tavlelinje med ord og ett punkt, så den synkroniseres, viskes ut og angres som blekk. Skrifthøyden er en andel av tavlehøyden, så den holder plassen ved all zoom.',
     'Board stamps':
       'Et stempel er en tavlestrek med ett punkt og en type, så det synkroniseres, viskes ut og angres som blekk. Størrelsen er en andel av tavlehøyden.',
+    'Board pages':
+      'En tom tavle bruker side-id-en blank, og hver sidemelding har den høyeste siden, så en som kommer sent får vite antallet. Strekene husker siden sin som på lysbilder.',
+    Colouring:
+      'Bildene er lukkede SVG-baner tegnet for Farnear. Bildet på hver side og fargen på hvert felt går over kontrollkanalen, siste skriving vinner.',
+    'Noughts and crosses':
+      'Hvert trekk har nummeret sitt, så et trekk utenfor tur eller i en opptatt rute faller bort på hver enhet. Spilltilstanden går til hver som åpner en kanal.',
+    'YouTube together':
+      'YouTube IFrame Player API lastes først når noen deler en lenke, fra verten uten informasjonskapsler. Spill av, pause og hopp går ut som én tilstand, den siste vinner.',
     'Contacts and rooms':
       'Kontakter og rom deler én lagret liste i nettleseren, hver oppføring med sin type. Et kontaktnavn blir på enheten, og en romtittel synkroniseres.',
     'Search and share preview':

@@ -142,6 +142,14 @@ const arch: Arch = {
       'Un texte est un trait du tableau avec des mots et un point, il se synchronise, s’efface et s’annule comme l’encre. Sa taille suit la hauteur du tableau, il garde sa place à tout zoom.',
     'Board stamps':
       'Un tampon est un trait du tableau avec un point et un type, il se synchronise, s’efface et s’annule comme l’encre. Sa taille est une part de la hauteur du tableau.',
+    'Board pages':
+      'Un tableau vide prend l’identifiant de page blank, et chaque message de page porte la page la plus haute, pour qu’un retardataire sache combien il y en a. Les traits gardent leur page comme sur les diapositives.',
+    Colouring:
+      'Les dessins sont des tracés SVG fermés, dessinés pour Farnear. Le dessin de chaque page et la couleur de chaque zone passent par le canal de contrôle, le dernier gagne.',
+    'Noughts and crosses':
+      'Chaque coup porte son numéro, si bien qu’un coup hors tour ou sur une case prise tombe sur chaque appareil. L’état du jeu part vers chaque pair qui ouvre un canal.',
+    'YouTube together':
+      'L’API YouTube IFrame Player ne se charge qu’une fois un lien partagé, depuis l’hôte sans cookies. Lecture, pause et saut partent en un seul état, le dernier gagne.',
     'Contacts and rooms':
       'Contacts et salles partagent une liste enregistrée dans le navigateur, chacun avec son type. Un nom de contact reste sur l’appareil, un titre de salle se synchronise.',
     'Search and share preview':

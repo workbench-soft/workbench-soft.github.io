@@ -1528,6 +1528,22 @@ const de: Catalog = {
               'Ein Stern, ein Haken, ein Kreuz, ein Herz oder ein Gut-gemacht-Abzeichen landet mit einem Tipp auf der Tafel, in Farbe und Größe des Stifts, für alle.',
             ],
             [
+              'Seiten der Tafel',
+              'Neue Seite öffnet für alle eine leere Seite auf der Tafel. Die Pfeile blättern, und jede Seite behält ihre Linien.',
+            ],
+            [
+              'Ausmalen',
+              'Eine Katze, ein Fisch, ein Haus, ein Auto und eine Blume zum Ausmalen. Ein Tipp mit Füllen färbt eine Fläche für alle.',
+            ],
+            [
+              'Tic-Tac-Toe',
+              'Ein Spiel für 2 auf der Tafel. Jeder Bildschirm zeigt, wer dran ist, wer gewinnt und die Gewinnreihe.',
+            ],
+            [
+              'YouTube gemeinsam',
+              'Ein eingefügter YouTube-Link läuft für alle auf der Tafel. Abspielen, Pause und Springen auf einem Gerät bewegen alle.',
+            ],
+            [
               'Kontakte und Räume',
               'Die Startseite listet Kontakte und Räume. Ein Kontakt ist eine Person, ein Raum ist ein Link für mehrere Leute.',
             ],

@@ -1501,6 +1501,22 @@ const es: Catalog = {
               'Una estrella, un visto, una cruz, un corazón o una insignia de Bien hecho aparecen en la pizarra con un toque, en el color y tamaño actuales, para todos.',
             ],
             [
+              'Páginas de la pizarra',
+              'Página nueva abre una página vacía en la pizarra para todos. Las flechas pasan las páginas y cada una guarda sus trazos.',
+            ],
+            [
+              'Colorear',
+              'Un gato, un pez, una casa, un coche y una flor para colorear. Un toque con Rellenar colorea una zona para todos.',
+            ],
+            [
+              'Tres en raya',
+              'Un juego para 2 en la pizarra. Cada pantalla muestra de quién es el turno, quién gana y la línea ganadora.',
+            ],
+            [
+              'YouTube juntos',
+              'Un enlace de YouTube pegado se reproduce en la pizarra para todos. Reproducir, pausar y saltar en un dispositivo mueve a todos.',
+            ],
+            [
               'Contactos y salas',
               'El inicio lista contactos y salas. Un contacto es una persona, una sala es un enlace que abren varias personas.',
             ],

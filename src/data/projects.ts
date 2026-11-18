@@ -781,6 +781,22 @@ export const projects: Project[] = [
             text: 'A star, a tick, a cross, a heart or a Well done badge lands on the board with a tap, in the current colour and size, for each person.',
           },
           {
+            name: 'Board pages',
+            text: 'New page opens an empty page on the blank board for everyone. The arrows flip the pages, and each page keeps its lines.',
+          },
+          {
+            name: 'Colouring',
+            text: 'A cat, a fish, a house, a car and a flower to colour in. A Fill tap colours an area for everyone.',
+          },
+          {
+            name: 'Noughts and crosses',
+            text: 'A game for 2 on the board, with whose turn it is, the winner and the winning row on each screen.',
+          },
+          {
+            name: 'YouTube together',
+            text: 'A pasted YouTube link plays on the board for everyone. Play, pause and seek on any device move all of them.',
+          },
+          {
             name: 'Contacts and rooms',
             text: 'The home page lists contacts and rooms. A contact is a person, a room is a link many people open.',
           },

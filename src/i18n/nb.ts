@@ -1396,6 +1396,22 @@ const nb: Catalog = {
               'En stjerne, en hake, et kryss, et hjerte eller et Bra jobba-merke havner på tavlen med et trykk, i fargen og størrelsen du har valgt, for alle.',
             ],
             [
+              'Tavlesider',
+              'Ny side åpner en tom side på tavlen for alle. Pilene blar mellom sidene, og hver side beholder strekene sine.',
+            ],
+            [
+              'Fargelegging',
+              'En katt, en fisk, et hus, en bil og en blomst å fargelegge. Et trykk med Fyll farger et felt for alle.',
+            ],
+            [
+              'Bondesjakk',
+              'Et spill for 2 på tavlen. Hver skjerm viser hvem sin tur det er, hvem som vant og vinnerrekken.',
+            ],
+            [
+              'YouTube sammen',
+              'En limt inn YouTube-lenke spilles av på tavlen for alle. Spill av, pause og hopp på én enhet flytter alle.',
+            ],
+            [
               'Kontakter og rom',
               'Startsiden viser kontakter og rom. En kontakt er en person, et rom er en lenke flere åpner.',
             ],

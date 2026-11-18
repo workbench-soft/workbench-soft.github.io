@@ -132,6 +132,14 @@ const arch: Arch = {
       'A text is a board line with words and one point, so it syncs, erases and undoes like ink. Its font height is a share of the board height, so it keeps its place at any zoom.',
     'Board stamps':
       'A stamp is a board line with one point and a kind, so it syncs, erases and undoes like ink. Its size is a share of the board height, so it keeps its place at any zoom.',
+    'Board pages':
+      'A blank board takes the page sync id blank, and each page message carries the highest page, so a late joiner learns the page count. Lines keep their page as slide lines do.',
+    Colouring:
+      'The pictures are closed SVG paths drawn for Farnear. The picture of each page and the colour of each area go over the control channel, last write wins.',
+    'Noughts and crosses':
+      'Each move carries its number, so a move out of turn or on a taken cell drops on every device. The game state goes to a peer that opens a channel.',
+    'YouTube together':
+      'The YouTube IFrame Player API loads only once a link is shared, from the no-cookie host. Play, pause and seek go out as one state, last write wins.',
     'Contacts and rooms':
       'Contacts and rooms share one saved list in the browser, each with its kind. A contact name stays on the device, and a room title syncs.',
     'Search and share preview':

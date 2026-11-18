@@ -139,6 +139,14 @@ const arch: Arch = {
       'Ein Text ist eine Board-Linie mit Wörtern und einem Punkt. So wird er wie Tinte synchronisiert, radiert und rückgängig gemacht. Die Schrifthöhe ist ein Anteil der Board-Höhe, also bleibt er bei jedem Zoom an seinem Platz.',
     'Board stamps':
       'Ein Stempel ist eine Tafellinie mit einem Punkt und einer Art, daher synchronisiert, radiert und widerruft er sich wie Tinte. Seine Größe ist ein Anteil der Tafelhöhe.',
+    'Board pages':
+      'Eine leere Tafel nutzt die Seiten-ID blank, und jede Seitennachricht trägt die höchste Seite, so erfährt ein Nachzügler die Seitenzahl. Linien behalten ihre Seite wie auf Folien.',
+    Colouring:
+      'Die Bilder sind geschlossene SVG-Pfade, für Farnear gezeichnet. Das Bild jeder Seite und die Farbe jeder Fläche laufen über den Steuerkanal, der letzte Stand gewinnt.',
+    'Noughts and crosses':
+      'Jeder Zug trägt seine Nummer, so fällt ein Zug außer der Reihe oder auf ein belegtes Feld auf jedem Gerät weg. Der Spielstand geht an jeden, der einen Kanal öffnet.',
+    'YouTube together':
+      'Die YouTube IFrame Player API lädt erst, wenn jemand einen Link teilt, vom Host ohne Cookies. Abspielen, Pause und Springen gehen als ein Stand raus, der letzte gewinnt.',
     'Contacts and rooms':
       'Kontakte und Räume teilen eine gespeicherte Liste im Browser, jeder Eintrag mit seiner Art. Ein Kontaktname bleibt auf dem Gerät, ein Raumtitel wird abgeglichen.',
     'Search and share preview':
