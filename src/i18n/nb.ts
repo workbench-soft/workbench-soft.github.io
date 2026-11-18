@@ -1317,7 +1317,11 @@ const nb: Catalog = {
             ['Relé for blokkerte nett', 'Cloudflare TURN tar over når den direkte veien mellom nettene feiler.'],
             [
               'Del samtalelenken',
-              'Kopier lenken, eller send den med Gmail, e-post, WhatsApp, Telegram eller en annen app.',
+              'Alle i samtalen kan kopiere lenken, eller sende den med Gmail, e-post, WhatsApp, Telegram eller en annen app.',
+            ],
+            [
+              'Bli med med romkode',
+              'En kode på 6 tegn, lest opp eller skrevet på startsiden, åpner samtalen mens noen er i den.',
             ],
             ['Lagrede rom', 'En romlenke lagret under et navn, som Mamma. Samme lenke virker hver gang.'],
             [

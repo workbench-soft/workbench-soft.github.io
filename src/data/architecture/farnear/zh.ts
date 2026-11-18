@@ -76,6 +76,8 @@ const arch: Arch = {
     'Relay for blocked networks':
       'Worker 通过套接字给每个浏览器发放短期的 TURN 设置。ICE 先试直连路径，不通再改走中继。',
     'Share the call link': '邀请面板按应用语言为 Gmail、WhatsApp 或 Telegram 生成草稿。“其他应用”打开系统的分享菜单。',
+    'Join with a room code':
+      '房间码是房间密钥的哈希。房间里的设备在 Nostr 大厅里用 CPace 握手回应，监听的中继读不到链接。',
     'Saved rooms': '房间链接以名字存在浏览器存储里，服务器不保存这份列表。同一个密钥每次都打开同一个房间。',
     Board: '纯模块把线条和已擦除的线条存成 2 个集合，经 WebRTC 数据通道发送。画布在 React 之外画出它们。',
     'Share an image or video': '文件分块经专用数据通道发给每个人。分享者的播放、暂停和跳转走控制通道。',

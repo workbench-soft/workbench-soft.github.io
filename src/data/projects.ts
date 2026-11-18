@@ -693,7 +693,11 @@ export const projects: Project[] = [
           },
           {
             name: 'Share the call link',
-            text: 'Copy the link, or send it by Gmail, email, WhatsApp, Telegram or another app.',
+            text: 'Each person in the call can copy the link or send it by Gmail, email, WhatsApp, Telegram or another app.',
+          },
+          {
+            name: 'Join with a room code',
+            text: 'A 6 symbol code, read aloud or typed on the home page, opens the call while someone is in it.',
           },
           { name: 'Saved rooms', text: 'A room link saved under a name, such as Mum. The same link works every time.' },
           {

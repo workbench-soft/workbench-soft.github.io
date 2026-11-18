@@ -88,6 +88,8 @@ const arch: Arch = {
       'Workeren gir hver nettleser kortvarige TURN-innstillinger over sin socket. ICE prøver direkte veier først og går så over til et relé.',
     'Share the call link':
       'Invitasjonspanelet lager et utkast for Gmail, WhatsApp eller Telegram på appspråket. Andre apper åpner delingsarket i systemet.',
+    'Join with a room code':
+      'Koden er en hash av romnøkkelen. En enhet i rommet svarer med et CPace-håndtrykk i en Nostr-lobby, så et relé som ser på, kan ikke lese lenken.',
     'Saved rooms':
       'En romlenke ligger i nettleserlageret under et navn, og ingen server har listen. Den samme nøkkelen åpner det samme rommet hver gang.',
     Board:

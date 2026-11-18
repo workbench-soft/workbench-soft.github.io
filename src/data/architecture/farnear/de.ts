@@ -91,6 +91,8 @@ const arch: Arch = {
       'Der Worker gibt jedem Browser kurzlebige TURN-Daten über seinen Socket. ICE versucht zuerst direkte Wege und fällt dann auf ein Relay zurück.',
     'Share the call link':
       'Das Einladungsfeld baut einen Entwurf für Gmail, WhatsApp oder Telegram in der App-Sprache. Andere Apps öffnet das Teilen-Menü des Systems.',
+    'Join with a room code':
+      'Der Code ist ein Hash des Raumschlüssels. Ein Gerät im Raum antwortet über einen CPace-Handschlag in einer Nostr-Lobby, so liest ein mithörendes Relay den Link nicht.',
     'Saved rooms':
       'Ein Raumlink liegt unter einem Namen im Browserspeicher, und kein Server führt die Liste. Derselbe Schlüssel öffnet jedes Mal denselben Raum.',
     Board:

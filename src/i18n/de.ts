@@ -1437,7 +1437,11 @@ const de: Catalog = {
             ],
             [
               'Anruflink teilen',
-              'Den Link kopieren oder per Gmail, E-Mail, WhatsApp, Telegram oder einer anderen App senden.',
+              'Jede Person im Anruf kann den Link kopieren oder per Gmail, E-Mail, WhatsApp, Telegram oder einer anderen App senden.',
+            ],
+            [
+              'Mit Raumcode beitreten',
+              'Ein Code aus 6 Zeichen, vorgelesen oder auf der Startseite getippt, öffnet den Anruf, solange jemand darin ist.',
             ],
             ['Gespeicherte Räume', 'Ein Raumlink unter einem Namen wie Mama. Derselbe Link geht jedes Mal.'],
             [

@@ -82,6 +82,8 @@ const arch: Arch = {
       'Worker가 소켓으로 브라우저마다 짧게 쓰는 TURN 설정을 줍니다. ICE는 먼저 직접 경로를 시도하고 안 되면 릴레이로 넘어갑니다.',
     'Share the call link':
       '초대 패널이 앱 언어로 Gmail, WhatsApp, Telegram용 초안을 만듭니다. 다른 앱은 시스템 공유 시트를 엽니다.',
+    'Join with a room code':
+      '코드는 방 키의 해시입니다. 방 안의 기기가 Nostr 로비에서 CPace 핸드셰이크로 응답하므로, 지켜보는 릴레이는 링크를 읽지 못합니다.',
     'Saved rooms':
       '방 링크는 이름과 함께 브라우저 저장소에 있고, 목록을 가진 서버는 없습니다. 같은 열쇠가 매번 같은 방을 엽니다.',
     Board:

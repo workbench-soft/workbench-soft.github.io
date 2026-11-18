@@ -1462,7 +1462,11 @@ const fr: Catalog = {
             ],
             [
               'Partager le lien d’appel',
-              'Copiez le lien, ou envoyez-le par Gmail, e-mail, WhatsApp, Telegram ou une autre app.',
+              'Chaque personne de l’appel peut copier le lien, ou l’envoyer par Gmail, e-mail, WhatsApp, Telegram ou une autre app.',
+            ],
+            [
+              'Rejoindre avec un code',
+              'Un code de 6 signes, dicté ou saisi sur l’accueil, ouvre l’appel tant que quelqu’un y est.',
             ],
             [
               'Salles enregistrées',

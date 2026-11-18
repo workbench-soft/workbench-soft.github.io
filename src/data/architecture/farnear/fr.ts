@@ -94,6 +94,8 @@ const arch: Arch = {
       'Le Worker donne à chaque navigateur des réglages TURN de courte durée par son socket. ICE essaie d’abord les chemins directs puis passe par un relais.',
     'Share the call link':
       'Le panneau d’invitation prépare un brouillon pour Gmail, WhatsApp ou Telegram dans la langue de l’app. Autres apps ouvre la feuille de partage du système.',
+    'Join with a room code':
+      'Le code est un hachage de la clé de la salle. Un appareil de la salle y répond par un échange CPace dans un salon Nostr, et un relais qui observe ne lit pas le lien.',
     'Saved rooms':
       'Un lien de salle reste dans le stockage du navigateur sous un nom, et aucun serveur ne garde la liste. La même clé ouvre la même salle à chaque fois.',
     Board:

@@ -85,6 +85,8 @@ const arch: Arch = {
       'The Worker hands each browser short lived TURN settings over its socket. ICE tries direct paths first and falls back to a relay.',
     'Share the call link':
       'The invite panel builds a draft for Gmail, WhatsApp or Telegram in the app language. Other apps opens the share sheet of the system.',
+    'Join with a room code':
+      "The code is a hash of the room key. A device in the room answers it through a CPace handshake in a Nostr lobby, so a relay that watches can't read the link.",
     'Saved rooms':
       'A room link sits in the browser storage under a name, and no server keeps the list. The same key opens the same room each time.',
     Board:

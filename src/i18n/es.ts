@@ -1416,7 +1416,11 @@ const es: Catalog = {
             ['Relé para redes bloqueadas', 'Cloudflare TURN entra cuando falla la ruta directa entre las redes.'],
             [
               'Compartir el enlace de la llamada',
-              'Copia el enlace o envíalo por Gmail, correo, WhatsApp, Telegram u otra app.',
+              'Cada persona de la llamada puede copiar el enlace o enviarlo por Gmail, correo, WhatsApp, Telegram u otra app.',
+            ],
+            [
+              'Unirse con un código',
+              'Un código de 6 símbolos, dictado o escrito en el inicio, abre la llamada mientras haya alguien en ella.',
             ],
             ['Salas guardadas', 'Un enlace guardado con un nombre, como Mamá. El mismo enlace sirve siempre.'],
             [
