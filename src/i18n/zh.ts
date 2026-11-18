@@ -1224,6 +1224,10 @@ const zh: Catalog = {
             ['定时上传', '一条命令上传，带 AI 标签和发布时间。'],
             ['Claude 写文字', 'Claude 根据歌曲写 YouTube 标题和简介。'],
             ['ComfyUI 生成背景', '主题文件里的提示词让 ComfyUI 画背景片段。'],
+            [
+              'ComfyStack 视频与机器人配图',
+              '片段方块在本地 ComfyUI 里用 LTX 2.3 让封面动起来，按每首歌对口型，用 Wan 2.2 接成无缝循环，再用 SeedVR2 放大到 1080p。没有封面时，机器人会在 Gemini、Google Flow、Krea 或 SeaArt 上画一张。',
+            ],
           ],
         },
       ],

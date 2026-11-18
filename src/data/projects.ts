@@ -1905,6 +1905,10 @@ export const projects: Project[] = [
             name: 'Background from ComfyUI',
             text: 'A prompt in the theme file makes ComfyUI draw the background clip.',
           },
+          {
+            name: 'ComfyStack video and robot pictures',
+            text: 'The clips tile animates the cover with LTX 2.3 in a local ComfyUI, lip syncs it to each song, closes the loop with Wan 2.2 and upscales it to 1080p with SeedVR2. With no cover, a robot draws one on Gemini, Google Flow, Krea or SeaArt.',
+          },
         ],
       },
     ],

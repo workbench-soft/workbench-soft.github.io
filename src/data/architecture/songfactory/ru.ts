@@ -98,6 +98,8 @@ const arch: Arch = {
       'Claude CLI пишет пустые название, описание и теги по названиям песен. Файл в папке темы хранит ответ для следующей сборки.',
     'Background from ComfyUI':
       'Инструмент отправляет промпт в сценарий ComfyUI на локальной видеокарте. Полученный клип становится зацикленным фоном.',
+    'ComfyStack video and robot pictures':
+      'songfactory workflows sync нажимает кнопки загрузки на comfystack.online через Playwright и хранит каждый сценарий в workflows/comfystack/, в форматах UI и API. comfy_graph.py подставляет картинку, кусок песни и промпт по типу узла, а pictures.py просит обложку у робота aspirationstyle и при ответе 429 или 502 переходит к следующему сайту.',
   },
 };
 

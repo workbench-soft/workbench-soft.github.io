@@ -98,6 +98,8 @@ const arch: Arch = {
       'Claude CLI が曲名から空のタイトル、説明、タグを書きます。テーマのフォルダーにあるファイルが答えを残し、次のビルドで使います。',
     'Background from ComfyUI':
       'ツールがローカルの GPU の ComfyUI ワークフローにプロンプトを送ります。返ってきたクリップがループする背景になります。',
+    'ComfyStack video and robot pictures':
+      'songfactory workflows sync は Playwright で comfystack.online のダウンロードボタンを押し、各ワークフローを UI 形式と API 形式で workflows/comfystack/ に保存します。comfy_graph.py はノードの種類ごとに画像、曲の一部、プロンプトを入れ、pictures.py は aspirationstyle のロボットにカバーを頼み、429 か 502 なら次のサイトに回します。',
   },
 };
 
