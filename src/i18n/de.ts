@@ -367,8 +367,8 @@ const de: Catalog = {
             ],
             ['Stimme des Autors', 'Eine Pro-Stimme, aufgenommen mit der eigenen Stimme des App-Machers.'],
             [
-              'Straßen in Maisies Stimme',
-              'Mit Maisie klingen auch Straßennamen und ihr Tempolimit in ihrer Stimme. Die Aufnahmen kommen von spotthecam.com, eine Straße ohne Aufnahme liest die Stimme des Telefons.',
+              'Straßen in der gewählten Stimme',
+              'Mit Maisie, Ava oder Andrew klingen auch Straßennamen und ihr Tempolimit in dieser Stimme. Die Aufnahmen kommen von spotthecam.com, eine Straße ohne Aufnahme liest die Stimme des Telefons.',
             ],
             [
               'Fahrtenbuch',

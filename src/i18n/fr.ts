@@ -368,8 +368,8 @@ const fr: Catalog = {
             ],
             ['Voix de l’auteur', 'Une voix Pro enregistrée avec la propre voix du créateur de l’app.'],
             [
-              'Les rues avec la voix de Maisie',
-              'Avec Maisie, les noms de rue et leur limite passent aussi avec sa voix. Les enregistrements viennent de spotthecam.com, et une rue sans enregistrement passe avec la voix du téléphone.',
+              'Les rues avec la voix choisie',
+              'Avec Maisie, Ava ou Andrew, les noms de rue et leur limite passent aussi avec cette voix. Les enregistrements viennent de spotthecam.com, et une rue sans enregistrement passe avec la voix du téléphone.',
             ],
             [
               'Journal de trajets',

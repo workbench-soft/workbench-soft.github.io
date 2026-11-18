@@ -105,7 +105,7 @@ const arch: Arch = {
       '道路限速经 Overpass 来自 OpenStreetMap，在手机上保留 60 天。超速 5 秒后，Kotlin 检查会发出语音。',
     'School zones': 'OpenStreetMap 的分时限速给出区域时段。应用内一份已公布的 NSW 学期表给出上学日。',
     'Loud warnings': '每个声音都以闹钟方式从内置扬声器播放，应用在语音结束前调高音量。设置里的开关把输出交还手机。',
-    "Streets in Maisie's voice":
+    'Streets in the recorded voice':
       'PC 用 edge-tts 读出澳大利亚和新西兰每条有名字的道路，并把录音放进 Cloudflare R2。手机下载附近街道的录音，存在缓存里。',
     "Author's voice": 'PC 上的开源语音模型用作者本人的声音生成提醒词。这些录音随应用一起发布，Pro 解锁它们。',
     'Trip log': 'Kotlin 服务记录每次驾车和步行，以及经过每个摄像头时的车速。行程在应用的私有存储里保留 400 天。',

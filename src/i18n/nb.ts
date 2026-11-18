@@ -340,8 +340,8 @@ const nb: Catalog = {
             ],
             ['Forfatterens stemme', 'En Pro-stemme spilt inn med appskaperens egen stemme.'],
             [
-              'Gater med Maisies stemme',
-              'Med Maisie leses gatenavn og fartsgrensen deres også med hennes stemme. Opptakene kommer fra spotthecam.com, og en gate uten opptak leses med telefonens stemme.',
+              'Gater med den valgte stemmen',
+              'Med Maisie, Ava eller Andrew leses gatenavn og fartsgrensen deres også med den stemmen. Opptakene kommer fra spotthecam.com, og en gate uten opptak leses med telefonens stemme.',
             ],
             [
               'Kjørelogg',

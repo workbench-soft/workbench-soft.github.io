@@ -265,8 +265,8 @@ export const projects: Project[] = [
           },
           { name: "Author's voice", text: 'A Pro voice recorded from the app maker’s own voice.' },
           {
-            name: "Streets in Maisie's voice",
-            text: "With Maisie, street names and their limit play in her voice too. The clips come from spotthecam.com, and a street without one uses the phone's voice.",
+            name: 'Streets in the recorded voice',
+            text: "With Maisie, Ava or Andrew, street names and their limit play in that voice too. The clips come from spotthecam.com, and a street without one uses the phone's voice.",
           },
           {
             name: 'Trip log',

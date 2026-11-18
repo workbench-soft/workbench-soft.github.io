@@ -361,8 +361,8 @@ const es: Catalog = {
             ],
             ['Voz del autor', 'Una voz Pro grabada con la voz del propio creador de la app.'],
             [
-              'Calles con la voz de Maisie',
-              'Con Maisie, los nombres de calle y su límite también suenan con su voz. Las grabaciones llegan de spotthecam.com, y una calle sin grabación usa la voz del teléfono.',
+              'Calles con la voz elegida',
+              'Con Maisie, Ava o Andrew, los nombres de calle y su límite también suenan con esa voz. Las grabaciones llegan de spotthecam.com, y una calle sin grabación usa la voz del teléfono.',
             ],
             [
               'Registro de viajes',
