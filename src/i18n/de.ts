@@ -1728,7 +1728,7 @@ const de: Catalog = {
             ['Lumiere Pro', 'Ein Kauf schaltet Sprachbefehle und Hey Lumi frei und entfernt die Werbung.'],
             [
               'App für LG webOS',
-              'Eine webOS-App für LG-Fernseher zeigt USB-Sticks und NAS-Ordner als Baum, findet das NAS im Netzwerk, sodass nur der Login fehlt, und spielt mit Tasten auf dem Bildschirm, Untertitel- und Tonspurwahl und einem Filmtitel, den Sie in die Magic Remote sagen.',
+              'Eine webOS-App für LG-Fernseher zeigt USB-Sticks und NAS-Ordner als Baum, findet das NAS im Netzwerk, sodass nur der Login fehlt, und spielt mit Tasten auf dem Bildschirm, Untertitel- und Tonspurwahl und einem Filmtitel, den Sie in die Magic Remote sagen. Beim ersten Start wählen Sie die Ordner mit Filmen oder Musik, Lumiere indexiert sie einmal, und ein Titel wie Paddington startet sofort.',
             ],
           ],
         },
