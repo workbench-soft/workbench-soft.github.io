@@ -90,6 +90,8 @@ const arch: Arch = {
     'Text from Claude':
       'Claude CLI 根据歌曲名填写空着的标题、描述和标签。主题文件夹里的一个文件保存回答，供下次构建使用。',
     'Background from ComfyUI': '工具把提示词发给本地 GPU 上的 ComfyUI 工作流。返回的片段成为循环背景。',
+    'ComfyStack video and robot pictures':
+      'songfactory workflows sync 用 Playwright 点 comfystack.online 的下载按钮，把每个工作流以 UI 和 API 两种格式存进 workflows/comfystack/。comfy_graph.py 按节点类型填入图片、歌曲片段和提示词，pictures.py 向 aspirationstyle 机器人要封面，遇到 429 或 502 就换下一个网站。',
   },
 };
 

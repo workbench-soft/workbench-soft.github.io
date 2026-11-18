@@ -98,6 +98,8 @@ const arch: Arch = {
       'La Claude CLI remplit le titre, la description et les tags vides à partir des noms des morceaux. Un fichier du dossier de thème garde la réponse pour le build suivant.',
     'Background from ComfyUI':
       'L’outil envoie le prompt à un workflow ComfyUI sur le GPU local. Le clip renvoyé devient le fond en boucle.',
+    'ComfyStack video and robot pictures':
+      'songfactory workflows sync appuie sur les boutons de téléchargement de comfystack.online avec Playwright et garde chaque workflow dans workflows/comfystack/, aux formats UI et API. comfy_graph.py remplit l’image, le morceau de chanson et le prompt selon le type de nœud, et pictures.py demande une couverture au robot aspirationstyle, puis passe au site suivant sur un 429 ou un 502.',
   },
 };
 

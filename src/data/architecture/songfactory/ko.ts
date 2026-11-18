@@ -98,6 +98,8 @@ const arch: Arch = {
       'Claude CLI가 곡 이름으로 빈 제목과 설명과 태그를 씁니다. 주제 폴더의 파일이 답을 보관해 다음 빌드에 씁니다.',
     'Background from ComfyUI':
       '도구가 로컬 GPU의 ComfyUI 워크플로에 프롬프트를 보냅니다. 돌아온 클립이 반복 배경이 됩니다.',
+    'ComfyStack video and robot pictures':
+      'songfactory workflows sync는 Playwright로 comfystack.online의 다운로드 버튼을 눌러 각 워크플로를 UI와 API 형식으로 workflows/comfystack/에 저장합니다. comfy_graph.py는 노드 종류에 따라 그림, 노래 조각, 프롬프트를 채우고, pictures.py는 aspirationstyle 로봇에게 커버를 받으며 429나 502가 오면 다음 사이트로 넘어갑니다.',
   },
 };
 

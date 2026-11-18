@@ -1698,6 +1698,10 @@ const nb: Catalog = {
             ['Planlagt opplasting', 'Én kommando laster opp med KI-merke og publiseringstid.'],
             ['Tekst fra Claude', 'Claude skriver YouTube-tittel og beskrivelse ut fra sangene.'],
             ['Bakgrunn fra ComfyUI', 'En prompt i temafilen får ComfyUI til å tegne bakgrunnsklippet.'],
+            [
+              'ComfyStack-video og bilder fra roboten',
+              'Klippflisen animerer omslaget med LTX 2.3 i en lokal ComfyUI, synker leppene til hver sang, lukker loopen med Wan 2.2 og skalerer til 1080p med SeedVR2. Uten omslag tegner en robot ett i Gemini, Google Flow, Krea eller SeaArt.',
+            ],
           ],
         },
       ],

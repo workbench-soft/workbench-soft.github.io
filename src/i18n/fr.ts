@@ -1879,6 +1879,10 @@ const fr: Catalog = {
             ['Mise en ligne planifiée', 'Une commande publie avec le label IA et une heure de sortie.'],
             ['Texte de Claude', 'Claude écrit le titre et la description YouTube à partir des chansons.'],
             ['Fond par ComfyUI', 'Un prompt dans le fichier du thème fait dessiner le fond par ComfyUI.'],
+            [
+              'Vidéo ComfyStack et images du robot',
+              'La tuile des clips anime la couverture avec LTX 2.3 dans un ComfyUI local, cale les lèvres sur chaque chanson, ferme la boucle avec Wan 2.2 et passe en 1080p avec SeedVR2. Sans couverture, un robot en dessine une sur Gemini, Google Flow, Krea ou SeaArt.',
+            ],
           ],
         },
       ],

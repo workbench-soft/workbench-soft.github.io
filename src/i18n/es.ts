@@ -1821,6 +1821,10 @@ const es: Catalog = {
             ['Subida programada', 'Un comando sube con la etiqueta de IA y una hora de publicación.'],
             ['Texto de Claude', 'Claude escribe el título y la descripción de YouTube a partir de las canciones.'],
             ['Fondo con ComfyUI', 'Un prompt en el archivo del tema hace que ComfyUI dibuje el fondo.'],
+            [
+              'Vídeo con ComfyStack e imágenes del robot',
+              'El bloque de clips anima la portada con LTX 2.3 en un ComfyUI local, sincroniza los labios con cada canción, cierra el bucle con Wan 2.2 y la escala a 1080p con SeedVR2. Sin portada, un robot dibuja una en Gemini, Google Flow, Krea o SeaArt.',
+            ],
           ],
         },
       ],

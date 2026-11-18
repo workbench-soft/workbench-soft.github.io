@@ -1842,6 +1842,10 @@ const de: Catalog = {
             ['Geplanter Upload', 'Ein Befehl lädt mit KI-Kennzeichen und Veröffentlichungszeit hoch.'],
             ['Text von Claude', 'Claude schreibt Titel und Beschreibung für YouTube aus den Songs.'],
             ['Hintergrund aus ComfyUI', 'Ein Prompt in der Themendatei lässt ComfyUI den Hintergrund malen.'],
+            [
+              'Video mit ComfyStack und Bilder vom Roboter',
+              'Die Clip-Kachel animiert das Cover mit LTX 2.3 in einem lokalen ComfyUI, macht es lippensynchron zu jedem Song, schließt die Schleife mit Wan 2.2 und skaliert es mit SeedVR2 auf 1080p. Ohne Cover malt ein Roboter eines in Gemini, Google Flow, Krea oder SeaArt.',
+            ],
           ],
         },
       ],

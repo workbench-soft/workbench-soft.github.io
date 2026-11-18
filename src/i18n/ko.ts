@@ -1478,6 +1478,10 @@ const ko: Catalog = {
             ['예약 업로드', '명령 하나로 AI 표시와 공개 시각을 붙여 올립니다.'],
             ['Claude의 글', 'Claude가 노래로 YouTube 제목과 설명을 씁니다.'],
             ['ComfyUI 배경', '주제 파일의 프롬프트로 ComfyUI가 배경 클립을 그립니다.'],
+            [
+              'ComfyStack 영상과 로봇 그림',
+              '클립 타일이 로컬 ComfyUI에서 LTX 2.3으로 커버를 움직이고, 노래마다 입 모양을 맞추고, Wan 2.2로 반복을 잇고, SeedVR2로 1080p까지 키웁니다. 커버가 없으면 로봇이 Gemini, Google Flow, Krea나 SeaArt에서 그립니다.',
+            ],
           ],
         },
       ],
