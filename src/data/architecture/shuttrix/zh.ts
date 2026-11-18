@@ -117,6 +117,8 @@ const arch: Arch = {
     'Quick start':
       '应用响应 Android 的相机意图，所以双击电源键就能打开它。快速设置磁贴和锁屏上的界面也能在锁屏时打开它。',
     Updates: '共享的更新包在启动和每次回到应用时检查 GitHub 发布。Google Play 版本用不做检查的空实现替换它。',
+    'Bug reports':
+      'Kotlin 处理器把崩溃和它的 logcat 行一起保存，原生崩溃由 Android 记到下次启动。应用把日志发给一个 Rust Worker，它在 KV 中保存 30 天。',
     Languages: 'i18next 为每种语言保存一份目录，测试会核对每个键。相机模块把设置里选的语言存在拨盘数值旁边。',
     'Light, blur and fonts':
       '共享照片编辑器处理的是成片像素，所以它的虚化用椭圆形区域，没有深度数据。只在拍摄时生效的设置不放进编辑器。',

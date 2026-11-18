@@ -156,6 +156,8 @@ const arch: Arch = {
       'L’app répond aux intents caméra d’Android, donc un double appui sur le bouton marche l’ouvre. Une tuile de réglages rapides et une activité sur l’écran verrouillé l’ouvrent aussi verrouillé.',
     Updates:
       'Un paquet de mise à jour partagé vérifie les versions GitHub au lancement et à chaque retour. La version Google Play le remplace par un bouchon sans vérification.',
+    'Bug reports':
+      'Un gestionnaire Kotlin garde un plantage avec ses lignes logcat, et Android note les plantages natifs pour le démarrage suivant. L’app envoie le journal à un Worker en Rust qui le garde 30 jours dans KV.',
     Languages:
       'i18next garde un catalogue par langue, et un test vérifie chaque clé. Le module caméra garde le choix des réglages à côté des molettes.',
     'Light, blur and fonts':

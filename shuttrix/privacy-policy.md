@@ -1,16 +1,17 @@
 ---
 title: Shuttrix Privacy Policy
 description: Shuttrix keeps your photos, videos and their place tags on your phone. Google AdMob shows a banner in the gallery.
-last_modified_at: 2026-11-14
+last_modified_at: 2026-11-19
 ---
 
 # Shuttrix Privacy Policy
 
-Last updated: 14 November 2026
+Last updated: 19 November 2026
 
-Shuttrix is a camera app for Android. The app sends no data to the
-developer. Your photos and videos, and the date, camera and GPS tags in
-them, stay on your phone. The banner in the gallery comes from Google
+Shuttrix is a camera app for Android. Your photos and videos, and the
+date, camera and GPS tags in them, stay on your phone. The app sends the
+developer its own log when you report a bug, and after a crash, as "Bug
+and crash reports" below says. The banner in the gallery comes from Google
 AdMob, which collects the data listed under "Ads".
 
 ## What the app stores, and where
@@ -58,8 +59,26 @@ AdMob, which collects the data listed under "Ads".
   request. The version from Google Play doesn't make this check.
 - **The share sheet**, when you share a photo, sends it to the app you
   pick.
+- **The developer's report server** at shuttrix-logs.workbench-soft.com,
+  on Cloudflare, gets the bug and crash reports. See "Bug and crash
+  reports" below.
 
 The app sends no photo, video or location to the developer.
+
+## Bug and crash reports
+
+- **Report a bug** in Settings sends a report when you tap it.
+- **Crash reports** after Shuttrix crashes, the next start sends a report.
+  Settings, "Send crash reports" turns this off.
+- **What a report holds** the recent lines Shuttrix wrote to the Android
+  log, such as camera errors and file names, the Shuttrix version, the
+  phone model, the Android version, and the note you typed. Android gives
+  the app only its own log lines. A report holds no photo or video.
+- **What for** to find and fix bugs. The developer doesn't share reports
+  and doesn't use them for ads.
+- **How long** the server deletes each report after 30 days. Cloudflare
+  sees your IP address as with any web request, and the report doesn't
+  keep it.
 
 ## Ads
 
@@ -93,7 +112,8 @@ Google account.
 
 ## Analytics, accounts
 
-The app has no analytics of its own and no user accounts.
+The app has no analytics of its own and no user accounts. A bug or crash
+report carries no account, name or advertising ID.
 
 ## Deleting your data
 
@@ -111,7 +131,7 @@ data from them.
 This website counts visits with Cloudflare Web Analytics. It sets no
 cookies and keeps no data that tells one visitor from another. Read the
 [Cloudflare privacy policy](https://www.cloudflare.com/privacypolicy/).
-The app sends no data to Cloudflare.
+The app sends only its bug and crash reports to Cloudflare.
 
 ## Contact
 

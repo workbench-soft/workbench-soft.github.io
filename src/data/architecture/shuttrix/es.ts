@@ -159,6 +159,8 @@ const arch: Arch = {
       'La app responde a los intents de cámara de Android, así que una doble pulsación del botón de encendido la abre. Un mosaico de ajustes rápidos y una actividad sobre la pantalla de bloqueo la abren también bloqueado.',
     Updates:
       'Un paquete de actualización compartido revisa las versiones de GitHub al abrir y en cada regreso. La versión de Google Play lo cambia por un sustituto sin revisión.',
+    'Bug reports':
+      'Un manejador en Kotlin guarda un fallo con sus líneas de logcat, y Android anota los fallos nativos para el siguiente inicio. La app envía el registro a un Worker en Rust que lo guarda 30 días en KV.',
     Languages:
       'i18next guarda un catálogo por idioma, y una prueba revisa cada clave. El módulo de cámara guarda la elección de los ajustes junto a los diales.',
     'Light, blur and fonts':

@@ -1388,6 +1388,10 @@ const es: Catalog = {
               'Dos pulsaciones del botón de encendido abren Shuttrix, también sobre la pantalla bloqueada.',
             ],
             ['Actualizaciones', 'Un build fuera de una tienda recibe su nueva versión desde GitHub.'],
+            [
+              'Informes de errores',
+              'Ajustes envía el registro reciente con una nota. Tras un fallo, el siguiente inicio envía el registro de ese momento.',
+            ],
             ['Idiomas', 'En 9 idiomas, según el teléfono o el navegador.'],
             [
               'Luz, desenfoque y fuentes',

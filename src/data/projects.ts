@@ -418,6 +418,10 @@ export const projects: Project[] = [
           },
           { name: 'Quick start', text: 'A double press of the power button opens Shuttrix, over the lock screen too.' },
           { name: 'Updates', text: 'A build from outside a store gets its new version from GitHub.' },
+          {
+            name: 'Bug reports',
+            text: 'Settings sends the recent log with a note. After a crash, the next start sends the log of that moment.',
+          },
           { name: 'Languages', text: 'The app in 9 languages, following the phone or browser.' },
           {
             name: 'Light, blur and fonts',

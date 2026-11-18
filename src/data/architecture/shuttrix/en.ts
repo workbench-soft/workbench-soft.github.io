@@ -147,6 +147,8 @@ const arch: Arch = {
       'The app answers the Android camera intents, so a double press of power opens it. A Quick Settings tile and a lock screen activity open it over the lock screen.',
     Updates:
       'A shared update package checks the GitHub releases at launch and on each return. The Google Play build swaps it for a stub with no check.',
+    'Bug reports':
+      'A Kotlin handler saves a crash with its logcat lines, and Android notes native crashes for the next start. The app posts the log to a Rust Worker that keeps it in KV for 30 days.',
     Languages:
       'i18next holds a catalog per language, and a test checks each one has every key. The camera module keeps the Settings pick next to the dials.',
     'Light, blur and fonts':

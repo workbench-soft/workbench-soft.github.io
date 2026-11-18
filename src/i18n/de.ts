@@ -1403,6 +1403,10 @@ const de: Catalog = {
             ],
             ['Schnellstart', 'Zweimal die Ein-Taste öffnet Shuttrix, auch über dem Sperrbildschirm.'],
             ['Updates', 'Ein Build außerhalb eines Stores holt seine neue Version von GitHub.'],
+            [
+              'Fehlerberichte',
+              'Die Einstellungen senden das aktuelle Protokoll mit einer Notiz. Nach einem Absturz sendet der nächste Start das Protokoll dieses Moments.',
+            ],
             ['Sprachen', 'In 9 Sprachen, nach der Sprache von Telefon oder Browser.'],
             [
               'Licht, Unschärfe und Schriften',

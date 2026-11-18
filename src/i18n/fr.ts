@@ -1431,6 +1431,10 @@ const fr: Catalog = {
             ],
             ['Démarrage rapide', "Deux appuis sur le bouton marche ouvrent Shuttrix, même sur l'écran verrouillé."],
             ['Mises à jour', 'Un build hors store récupère sa nouvelle version sur GitHub.'],
+            [
+              'Rapports de bug',
+              'Les réglages envoient le journal récent avec une note. Après un plantage, le démarrage suivant envoie le journal de ce moment.',
+            ],
             ['Langues', 'En 9 langues, selon le téléphone ou le navigateur.'],
             [
               'Lumière, flou et polices',

@@ -138,6 +138,8 @@ const arch: Arch = {
       '앱이 Android 카메라 인텐트에 응답하므로 전원 버튼을 두 번 누르면 열립니다. 빠른 설정 타일과 잠금 화면용 화면으로 잠긴 상태에서도 열 수 있습니다.',
     Updates:
       '공유 업데이트 패키지가 앱을 켤 때와 돌아올 때마다 GitHub 릴리스를 확인합니다. Google Play 빌드는 확인하지 않는 대체 모듈로 바꿉니다.',
+    'Bug reports':
+      'Kotlin 핸들러가 비정상 종료를 logcat 줄과 함께 저장하고, 네이티브 비정상 종료는 Android가 다음 실행까지 기록합니다. 앱은 로그를 Rust Worker로 보내고, Worker는 KV에 30일 동안 보관합니다.',
     Languages:
       'i18next가 언어마다 카탈로그를 두고 테스트가 각 키를 확인합니다. 설정에서 고른 언어는 카메라 모듈이 다이얼 값 옆에 저장합니다.',
     'Light, blur and fonts':

@@ -153,6 +153,8 @@ const arch: Arch = {
       'Die App beantwortet die Kamera-Intents von Android, daher öffnet ein doppelter Druck auf die Ein-Taste sie. Eine Schnelleinstellungskachel und eine Activity über dem Sperrbildschirm öffnen sie auch gesperrt.',
     Updates:
       'Ein gemeinsames Update-Paket prüft die GitHub-Releases beim Start und bei jeder Rückkehr. Der Build für Google Play tauscht es gegen einen Platzhalter ohne Prüfung.',
+    'Bug reports':
+      'Ein Kotlin-Handler speichert einen Absturz mit seinen Logcat-Zeilen, und Android merkt sich native Abstürze für den nächsten Start. Die App sendet das Protokoll an einen Rust-Worker, der es 30 Tage in KV hält.',
     Languages:
       'i18next hält einen Katalog pro Sprache, und ein Test prüft jeden Schlüssel. Das Kamera-Modul speichert die Wahl aus den Einstellungen neben den Rädern.',
     'Light, blur and fonts':

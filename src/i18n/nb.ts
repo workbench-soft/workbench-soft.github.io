@@ -1289,6 +1289,10 @@ const nb: Catalog = {
             ],
             ['Hurtigstart', 'To trykk på av/på-knappen åpner Shuttrix, også over låseskjermen.'],
             ['Oppdateringer', 'Et bygg utenfor en butikk henter ny versjon fra GitHub.'],
+            [
+              'Feilrapporter',
+              'Innstillinger sender den siste loggen med et notat. Etter et krasj sender neste oppstart loggen fra det øyeblikket.',
+            ],
             ['Språk', 'På 9 språk, etter telefonen eller nettleseren.'],
             [
               'Lys, uskarphet og skrifter',

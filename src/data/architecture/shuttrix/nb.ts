@@ -150,6 +150,8 @@ const arch: Arch = {
       'Appen svarer på kamera-intentene i Android, så et dobbelttrykk på av/på-knappen åpner den. En hurtiginnstillingsflis og en aktivitet over låseskjermen åpner den også låst.',
     Updates:
       'En delt oppdateringspakke sjekker GitHub-utgivelsene ved oppstart og hver gang du kommer tilbake. Google Play-bygget bytter den ut med en erstatning uten sjekk.',
+    'Bug reports':
+      'En Kotlin-handler lagrer et krasj med logcat-linjene, og Android noterer native krasj til neste oppstart. Appen sender loggen til en Rust-Worker som holder den i KV i 30 dager.',
     Languages:
       'i18next holder én katalog per språk, og en test sjekker hver nøkkel. Kameramodulen lagrer valget fra innstillingene ved siden av hjulene.',
     'Light, blur and fonts':
