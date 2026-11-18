@@ -1,0 +1,30 @@
+{
+  "ignore": ["README.md", "CHANGELOG.md", "TODO.md", "docs/**", "specs/**", "design/**"],
+  "products": {
+    "site": {
+      "paths": [
+        "src/**",
+        "public/**",
+        "scripts/**",
+        "langflip/**",
+        "lumiere/**",
+        "media-organizer/**",
+        "memoire/**",
+        "memories-mobile/**",
+        "shuttrix/**",
+        "skyaltar/**",
+        "tripforge/**",
+        "app-ads.txt",
+        "robots.txt",
+        "astro.config.mjs",
+        "tsconfig.json",
+        ".github/workflows/pages.yml"
+      ]
+    },
+    "games": { "paths": ["apps/**", "registry.json", ".github/workflows/games.yml"] },
+    "shuttrix-native": {
+      "paths": ["native/**", ".github/workflows/shuttrix-native.yml"],
+      "tag": "shuttrix-native-*"
+    }
+  }
+}

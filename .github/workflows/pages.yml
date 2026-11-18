@@ -1,6 +1,6 @@
 name: Pages
 
-# Publishes https://workbench-soft.com on each push to main.
+# Publishes https://workbench-soft.com on each push to main that changes a file of the site, from .github/affected.json.
 # A pull request runs the same checks and build, and skips the deploy.
 # The repo is public, so the hosted runner spends no Actions minutes.
 on:
@@ -40,8 +40,32 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: mise run deploy
 
+  # Says whether a file of the site changed since the commit of the last green run on main. Only a push asks.
+  # A pull request, a run by hand and the nightly run build everything.
+  affected:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      actions: read
+      contents: read
+    outputs:
+      run: ${{ steps.affected.outputs.run }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - id: affected
+        uses: workbench-soft/ci/actions/affected@main
+        with:
+          since: checks
+          product: site
+
   checks:
-    if: github.event_name != 'release'
+    needs: affected
+    # A skipped affected job leaves run empty, so every run but a push with no site change goes on.
+    if: ${{ !cancelled() && github.event_name != 'release' && needs.affected.outputs.run != 'false' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
@@ -53,7 +77,8 @@ jobs:
           mise run check
 
   build:
-    if: github.event_name != 'release'
+    needs: affected
+    if: ${{ !cancelled() && github.event_name != 'release' && needs.affected.outputs.run != 'false' }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
