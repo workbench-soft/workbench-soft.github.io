@@ -120,6 +120,8 @@ const arch: Arch = {
       'OpenStreetMap의 시간대별 제한이 구역의 시간을 줍니다. 앱 안의 NSW 공개 학기 목록이 등교일을 줍니다.',
     'Loud warnings':
       '소리마다 내장 스피커에서 알람으로 울리고, 앱은 말이 끝날 때까지 볼륨을 올립니다. 설정의 스위치로 출력을 휴대폰에 돌려줍니다.',
+    "Streets in Maisie's voice":
+      'PC가 edge-tts로 호주와 뉴질랜드의 이름 있는 도로를 모두 읽고 녹음을 Cloudflare R2에 올립니다. 휴대폰은 주변 거리의 녹음을 받아 캐시에 둡니다.',
     "Author's voice":
       'PC의 공개 음성 모델이 제작자 본인의 목소리로 경고 문구를 만들었습니다. 녹음은 앱 안에 들어 있고 Pro가 잠금을 풉니다.',
     'Trip log':

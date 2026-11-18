@@ -114,6 +114,8 @@ const arch: Arch = {
       'The timed limits in OpenStreetMap give the zone hours. A list of the published NSW school terms inside the app gives the school days.',
     'Loud warnings':
       'Each sound plays as an alarm on the built-in speaker, and the app raises the volume until the words end. The switches in Settings hand the output back.',
+    "Streets in Maisie's voice":
+      'The PC speaks each named road of Australia and New Zealand with edge-tts and puts the clips in Cloudflare R2. The phone fetches the clips of the streets around it and keeps them in its cache.',
     "Author's voice":
       "An open voice model on a PC made the warning words from the owner's own voice. The clips ship inside the app, and Pro unlocks them.",
     'Trip log':

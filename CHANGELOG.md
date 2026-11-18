@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **SpotTheCam** the project lists Streets in Maisie's voice: with Maisie, street names and their limit play in her voice from clips on spotthecam.com, in the 9 languages.
 - **Lumiere Player** the project lists the LG webOS app, which browses a USB stick or a NAS share over WebDAV and plays videos on an LG TV, in the 9 languages.
 - **Farnear family extras** the Farnear page lists board pages, colouring, noughts and crosses and YouTube together, in the 9 languages.
 - **Farnear** Lesson tasks: a quick question, a private notebook per student, and words and stamps the students drag to their places.

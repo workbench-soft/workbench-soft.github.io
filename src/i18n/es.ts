@@ -361,6 +361,10 @@ const es: Catalog = {
             ],
             ['Voz del autor', 'Una voz Pro grabada con la voz del propio creador de la app.'],
             [
+              'Calles con la voz de Maisie',
+              'Con Maisie, los nombres de calle y su límite también suenan con su voz. Las grabaciones llegan de spotthecam.com, y una calle sin grabación usa la voz del teléfono.',
+            ],
+            [
               'Registro de viajes',
               'Trayectos en coche y paseos se graban solos. Cada viaje separa los km en coche y los km a pie. Cada ruta muestra tu velocidad en cada radar, en verde o rojo. La velocidad se queda en tu teléfono.',
             ],

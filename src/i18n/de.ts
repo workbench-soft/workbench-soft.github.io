@@ -367,6 +367,10 @@ const de: Catalog = {
             ],
             ['Stimme des Autors', 'Eine Pro-Stimme, aufgenommen mit der eigenen Stimme des App-Machers.'],
             [
+              'Straßen in Maisies Stimme',
+              'Mit Maisie klingen auch Straßennamen und ihr Tempolimit in ihrer Stimme. Die Aufnahmen kommen von spotthecam.com, eine Straße ohne Aufnahme liest die Stimme des Telefons.',
+            ],
+            [
               'Fahrtenbuch',
               'Fahrten und Spaziergänge zeichnen sich selbst auf. Jede Fahrt zeigt gefahrene und gelaufene Kilometer getrennt. Jede Route zeigt Ihr Tempo an jedem Blitzer, grün oder rot. Das Tempo bleibt auf Ihrem Handy.',
             ],

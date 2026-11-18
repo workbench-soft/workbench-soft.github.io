@@ -116,6 +116,8 @@ const arch: Arch = {
       'De tidsstyrte grensene i OpenStreetMap gir tidene for sonen. En liste over de publiserte skoleterminene i NSW inne i appen gir skoledagene.',
     'Loud warnings':
       'Hver lyd spilles som alarm i den innebygde høyttaleren, og appen skrur opp volumet til ordene er ferdige. Bryterne i Innstillinger gir utgangen tilbake.',
+    "Streets in Maisie's voice":
+      'PC-en leser hver navngitte vei i Australia og New Zealand med edge-tts og legger opptakene i Cloudflare R2. Telefonen henter opptakene av gatene rundt seg og holder dem i hurtigbufferen.',
     "Author's voice":
       'En åpen talemodell på en PC laget varselordene av utviklerens egen stemme. Opptakene ligger i appen, og Pro låser dem opp.',
     'Trip log':

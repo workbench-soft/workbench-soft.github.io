@@ -132,6 +132,8 @@ const arch: Arch = {
       'Los límites por horario de OpenStreetMap dan las horas de la zona. Una lista de los trimestres escolares publicados de NSW dentro de la app da los días lectivos.',
     'Loud warnings':
       'Cada sonido suena como alarma por el altavoz integrado, y la app sube el volumen hasta que terminan las palabras. Los interruptores de Ajustes devuelven la salida al teléfono.',
+    "Streets in Maisie's voice":
+      'El PC pronuncia cada calle de Australia y Nueva Zelanda con edge-tts y pone los clips en Cloudflare R2. El teléfono baja los clips de las calles cercanas y los guarda en caché.',
     "Author's voice":
       'Un modelo de voz abierto en un PC creó las palabras de aviso con la voz del propio autor. Los clips van dentro de la app, y Pro los desbloquea.',
     'Trip log':

@@ -265,6 +265,10 @@ export const projects: Project[] = [
           },
           { name: "Author's voice", text: 'A Pro voice recorded from the app maker’s own voice.' },
           {
+            name: "Streets in Maisie's voice",
+            text: "With Maisie, street names and their limit play in her voice too. The clips come from spotthecam.com, and a street without one uses the phone's voice.",
+          },
+          {
             name: 'Trip log',
             text: 'Drives and walks record on their own. Each trip gives the km driven and the km walked apart. Each route shows your speed at each camera, green or red. The speeds stay on your phone.',
           },

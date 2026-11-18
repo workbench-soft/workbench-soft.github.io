@@ -368,6 +368,10 @@ const fr: Catalog = {
             ],
             ['Voix de l’auteur', 'Une voix Pro enregistrée avec la propre voix du créateur de l’app.'],
             [
+              'Les rues avec la voix de Maisie',
+              'Avec Maisie, les noms de rue et leur limite passent aussi avec sa voix. Les enregistrements viennent de spotthecam.com, et une rue sans enregistrement passe avec la voix du téléphone.',
+            ],
+            [
               'Journal de trajets',
               'Trajets et marches s’enregistrent seuls. Chaque trajet sépare les km en voiture et les km à pied. Chaque parcours montre votre vitesse à chaque radar, en vert ou en rouge. Vos vitesses restent sur votre téléphone.',
             ],

@@ -340,6 +340,10 @@ const nb: Catalog = {
             ],
             ['Forfatterens stemme', 'En Pro-stemme spilt inn med appskaperens egen stemme.'],
             [
+              'Gater med Maisies stemme',
+              'Med Maisie leses gatenavn og fartsgrensen deres også med hennes stemme. Opptakene kommer fra spotthecam.com, og en gate uten opptak leses med telefonens stemme.',
+            ],
+            [
               'Kjørelogg',
               'Kjøreturer og gåturer registreres av seg selv. Hver tur viser kjørte og gåtte kilometer hver for seg. Hver rute viser farten din ved hvert kamera, grønt eller rødt. Farten blir på telefonen din.',
             ],
