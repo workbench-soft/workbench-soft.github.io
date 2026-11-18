@@ -14,9 +14,33 @@ permissions:
   contents: read
 
 jobs:
+  # Says whether a file of the games or the edge changed since the commit of the last green run on main.
+  # Only a push asks, so a pull request and a run by hand check everything.
+  affected:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      actions: read
+      contents: read
+    outputs:
+      run: ${{ steps.affected.outputs.run }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - id: affected
+        uses: workbench-soft/ci/actions/affected@main
+        with:
+          since: checks
+          product: games
+
   # The Pages workflow skips pull requests that touch only apps/, but its lint on main checks the format
   # and the Markdown of apps/ too. So the same lint runs here first.
   site-lint:
+    needs: affected
+    if: ${{ !cancelled() && needs.affected.outputs.run != 'false' }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -27,6 +51,8 @@ jobs:
           mise run lint
 
   check:
+    needs: affected
+    if: ${{ !cancelled() && needs.affected.outputs.run != 'false' }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
     strategy:

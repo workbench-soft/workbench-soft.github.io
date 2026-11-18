@@ -504,3 +504,20 @@ The studio needed one public site for its apps and their installers.
 - **Changes** the 6 `_layouts/default.html` files,
   `src/components/Contact.astro` and `src/components/Nav.astro`.
 - **Docs** `CHANGELOG.md`.
+
+### 2026-11-18 a push deploys only the part it changed
+
+- **Why** each push to `main` built and deployed the whole site, a `TODO.md` edit too. The org moves each repo to the shared `affected` step of `workbench-soft/ci`.
+- **Products** `.github/affected.json` names 3: `site` (the Astro pages, `public/`, the app folders such as `tripforge/`, the root files), `games` (`apps/**`, `registry.json`) and `shuttrix-native` (`native/**`, tag `shuttrix-native-*`). Its `ignore` holds the repo docs only: `README.md`, `CHANGELOG.md`, `TODO.md`, `docs/`, `specs/`, `design/`. The default ignore of all Markdown would skip the app pages, which are Markdown. The lint configs belong to no product, so a change to one checks everything.
+- **Pages** `pages.yml` starts with an `affected` job on a push, `since: checks` and `product: site`, against the last green Pages run on `main`. On `run=false` the checks, the build and the deploy skip. A pull request, a run by hand, the nightly code count and the property-trends redeploy build as before.
+- **Games** `games.yml` does the same with `product: games` on a push.
+- **Shuttrix native** `shuttrix-native.yml` runs by hand only, which counts as everything, so it keeps no step.
+- **Proof** `mise x -- node ci/scripts/affected.ts --since checks`:
+
+| HEAD      | Base       | Change                           | Product           | Result      |
+| --------- | ---------- | -------------------------------- | ----------------- | ----------- |
+| `60eb6a9` | `60eb6a9^` | `tripforge/privacy-policy.md`    | `site`            | `run=true`  |
+| `04b6748` | `60eb6a9`  | `TODO.md` only                   | `site`            | `run=false` |
+| `13b227c` | `13b227c^` | `src/data` and `src/i18n` (#190) | `site`            | `run=true`  |
+| `13b227c` | `13b227c^` | the same                         | `games`           | `run=false` |
+| `13b227c` | `13b227c^` | the same                         | `shuttrix-native` | `run=false` |
