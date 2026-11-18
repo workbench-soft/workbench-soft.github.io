@@ -1544,6 +1544,10 @@ const fr: Catalog = {
               'Le bouton T écrit du texte sur le tableau, sur un fichier ou un écran. Chacun le voit, peut le corriger, l’effacer ou l’annuler.',
             ],
             [
+              'Tampons sur le tableau',
+              'Une étoile, une coche, une croix, un cœur ou un badge Bravo se posent sur le tableau d’un toucher, dans la couleur et la taille du moment, pour chacun.',
+            ],
+            [
               'Contacts et salons',
               'L’accueil liste les contacts et les salons. Un contact est une personne, un salon est un lien que plusieurs personnes ouvrent.',
             ],

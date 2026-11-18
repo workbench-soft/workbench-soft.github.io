@@ -1489,6 +1489,10 @@ const es: Catalog = {
               'El botón T escribe texto en la pizarra, sobre un archivo o una pantalla. Todos lo ven y pueden corregirlo, borrarlo o deshacerlo.',
             ],
             [
+              'Sellos en la pizarra',
+              'Una estrella, un visto, una cruz, un corazón o una insignia de Bien hecho aparecen en la pizarra con un toque, en el color y tamaño actuales, para todos.',
+            ],
+            [
               'Contactos y salas',
               'El inicio lista contactos y salas. Un contacto es una persona, una sala es un enlace que abren varias personas.',
             ],

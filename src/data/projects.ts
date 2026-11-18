@@ -769,6 +769,10 @@ export const projects: Project[] = [
             text: 'The T button types text on the board, over a file or a screen. Each person sees it and can edit, erase or undo it.',
           },
           {
+            name: 'Board stamps',
+            text: 'A star, a tick, a cross, a heart or a Well done badge lands on the board with a tap, in the current colour and size, for each person.',
+          },
+          {
             name: 'Contacts and rooms',
             text: 'The home page lists contacts and rooms. A contact is a person, a room is a link many people open.',
           },

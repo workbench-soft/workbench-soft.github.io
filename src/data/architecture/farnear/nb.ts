@@ -129,6 +129,8 @@ const arch: Arch = {
       'PDF.js maler en PDF-side og en PowerPoint-gjengiver maler et lysbilde på enheten. Sidebytter og fjerning går over kontrollkanalen.',
     'Board text':
       'En tekst er en tavlelinje med ord og ett punkt, så den synkroniseres, viskes ut og angres som blekk. Skrifthøyden er en andel av tavlehøyden, så den holder plassen ved all zoom.',
+    'Board stamps':
+      'Et stempel er en tavlestrek med ett punkt og en type, så det synkroniseres, viskes ut og angres som blekk. Størrelsen er en andel av tavlehøyden.',
     'Contacts and rooms':
       'Kontakter og rom deler én lagret liste i nettleseren, hver oppføring med sin type. Et kontaktnavn blir på enheten, og en romtittel synkroniseres.',
     'Search and share preview':

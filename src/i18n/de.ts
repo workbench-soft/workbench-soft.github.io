@@ -1516,6 +1516,10 @@ const de: Catalog = {
               'Die T-Taste schreibt Text auf das Board, über eine Datei oder einen Bildschirm. Alle sehen ihn und können ihn ändern, radieren oder rückgängig machen.',
             ],
             [
+              'Stempel auf der Tafel',
+              'Ein Stern, ein Haken, ein Kreuz, ein Herz oder ein Gut-gemacht-Abzeichen landet mit einem Tipp auf der Tafel, in Farbe und Größe des Stifts, für alle.',
+            ],
+            [
               'Kontakte und Räume',
               'Die Startseite listet Kontakte und Räume. Ein Kontakt ist eine Person, ein Raum ist ein Link für mehrere Leute.',
             ],

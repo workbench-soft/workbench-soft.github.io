@@ -139,6 +139,8 @@ const arch: Arch = {
       'PDF.js pinta una página PDF y un motor de PowerPoint pinta una diapositiva en el dispositivo. Pasar página y quitar archivos van por el canal de control.',
     'Board text':
       'Un texto es un trazo de la pizarra con palabras y un punto, así que se sincroniza, se borra y se deshace como la tinta. Su altura sigue la de la pizarra y conserva su lugar con cualquier zoom.',
+    'Board stamps':
+      'Un sello es una línea de la pizarra con un punto y un tipo, así que se sincroniza, se borra y se deshace como la tinta. Su tamaño es una parte de la altura de la pizarra.',
     'Contacts and rooms':
       'Contactos y salas comparten una lista guardada en el navegador, cada uno con su tipo. Un nombre de contacto se queda en el dispositivo, y un título de sala se sincroniza.',
     'Search and share preview':

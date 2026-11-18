@@ -133,6 +133,8 @@ const arch: Arch = {
       'PDF.js malt eine PDF-Seite und ein PowerPoint-Renderer eine Folie auf dem Gerät. Blättern und Entfernen laufen über den Steuerkanal.',
     'Board text':
       'Ein Text ist eine Board-Linie mit Wörtern und einem Punkt. So wird er wie Tinte synchronisiert, radiert und rückgängig gemacht. Die Schrifthöhe ist ein Anteil der Board-Höhe, also bleibt er bei jedem Zoom an seinem Platz.',
+    'Board stamps':
+      'Ein Stempel ist eine Tafellinie mit einem Punkt und einer Art, daher synchronisiert, radiert und widerruft er sich wie Tinte. Seine Größe ist ein Anteil der Tafelhöhe.',
     'Contacts and rooms':
       'Kontakte und Räume teilen eine gespeicherte Liste im Browser, jeder Eintrag mit seiner Art. Ein Kontaktname bleibt auf dem Gerät, ein Raumtitel wird abgeglichen.',
     'Search and share preview':

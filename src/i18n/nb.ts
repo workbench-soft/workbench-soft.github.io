@@ -1384,6 +1384,10 @@ const nb: Catalog = {
               'T-knappen skriver tekst på tavla, over en fil eller en skjerm. Alle ser den og kan rette, viske ut eller angre den.',
             ],
             [
+              'Stempler på tavlen',
+              'En stjerne, en hake, et kryss, et hjerte eller et Bra jobba-merke havner på tavlen med et trykk, i fargen og størrelsen du har valgt, for alle.',
+            ],
+            [
               'Kontakter og rom',
               'Startsiden viser kontakter og rom. En kontakt er en person, et rom er en lenke flere åpner.',
             ],

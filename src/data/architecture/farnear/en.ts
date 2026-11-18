@@ -126,6 +126,8 @@ const arch: Arch = {
       'PDF.js paints a PDF page and a PowerPoint renderer paints a slide on the device. Page turns and removals go over the control channel.',
     'Board text':
       'A text is a board line with words and one point, so it syncs, erases and undoes like ink. Its font height is a share of the board height, so it keeps its place at any zoom.',
+    'Board stamps':
+      'A stamp is a board line with one point and a kind, so it syncs, erases and undoes like ink. Its size is a share of the board height, so it keeps its place at any zoom.',
     'Contacts and rooms':
       'Contacts and rooms share one saved list in the browser, each with its kind. A contact name stays on the device, and a room title syncs.',
     'Search and share preview':
