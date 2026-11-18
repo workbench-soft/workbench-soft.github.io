@@ -123,7 +123,7 @@ const arch: Arch = {
     Audiobooks:
       'Une analyse regroupe les fichiers audio en livres selon le fichier OPF, les tags et les noms de dossiers. Wikidata nomme l’auteur, et SQLite garde la position dans chaque livre.',
     'Video library':
-      'L’analyse garde seulement le chemin de chaque vidéo dans SQLite. Un analyseur lit la série, la saison et l’épisode dans les noms, et Wikidata ajoute leurs autres noms.',
+      'L’analyse garde seulement le chemin de chaque vidéo dans SQLite. Un analyseur lit la série, la saison et l’épisode dans les noms, et Wikidata ajoute leurs autres noms. Le téléphone lit et écrit les fiches de films du téléviseur LG dans un fichier à côté des films sur le NAS, en SMB avec smbj.',
     'Find tabs':
       'La barre du lecteur envoie un lien Android avec l’artiste et le titre à Guitar Upscale. Le bouton apparaît seulement quand Android trouve cette app.',
     'Google Play build':

@@ -1582,7 +1582,7 @@ const nb: Catalog = {
             ],
             [
               'Videobibliotek',
-              'Videomapper viser serier, sesonger og episoder, også med rotete filnavn. Si «Hey Lumi, spill tegnefilmer» eller en serie med sesong og episode. Søket finner filmer og sanger, skrevet eller sagt til Google TV-fjernkontrollen.',
+              'Videomapper viser serier, sesonger og episoder, også med rotete filnavn. Si «Hey Lumi, spill tegnefilmer» eller en serie med sesong og episode. Søket finner filmer og sanger, skrevet eller sagt til Google TV-fjernkontrollen. Søket finner også en film etter regissør, skuespiller, sjanger eller år. LG-TV-en lagrer disse dataene på NAS-en.',
             ],
             ['Finn tabulatur', 'Med Guitar Upscale åpner en gitarknapp tabulaturen til sangen som spilles.'],
             [

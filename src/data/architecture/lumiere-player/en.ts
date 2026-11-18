@@ -111,7 +111,7 @@ const arch: Arch = {
     Audiobooks:
       'A scan groups the audio files into books from the OPF file, the tags and the folder names. Wikidata names the author, and SQLite keeps the place in each book.',
     'Video library':
-      'The scan keeps only the path of each video in SQLite. A parser reads the show, season and episode from the names, and Wikidata adds their other names.',
+      'The scan keeps only the path of each video in SQLite. A parser reads the show, season and episode from the names, and Wikidata adds their other names. The phone reads and writes the film facts of the LG TV in a file beside the films on the NAS, over SMB with smbj.',
     'Find tabs':
       'The player bar sends an Android link with the artist and title to Guitar Upscale. The button shows only when Android finds that app.',
     'Google Play build':

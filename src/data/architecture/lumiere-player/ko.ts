@@ -104,7 +104,7 @@ const arch: Arch = {
     Audiobooks:
       '스캔이 OPF 파일, 태그, 폴더 이름으로 오디오 파일을 책으로 묶습니다. Wikidata가 저자를 알려 주고 SQLite가 책마다 위치를 담습니다.',
     'Video library':
-      '스캔은 영상마다 경로만 SQLite에 저장합니다. 파서가 이름에서 시리즈, 시즌, 회차를 읽고 Wikidata가 다른 이름을 더합니다.',
+      '스캔은 영상마다 경로만 SQLite에 저장합니다. 파서가 이름에서 시리즈, 시즌, 회차를 읽고 Wikidata가 다른 이름을 더합니다. 휴대폰은 smbj로 SMB를 통해 LG TV가 NAS의 영화 옆에 두는 영화 정보 파일을 읽고 씁니다.',
     'Find tabs':
       '플레이어 바가 아티스트와 제목이 담긴 Android 링크를 Guitar Upscale에 보냅니다. Android가 그 앱을 찾을 때만 버튼이 보입니다.',
     'Google Play build':

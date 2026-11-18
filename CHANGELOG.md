@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Lumiere Player** the Video library line says the search finds a film by its director, an actor, a genre or a year, from the facts the LG TV keeps on the NAS, in the 9 languages.
 - **Shuttrix** the project lists Bug reports, in the 9 languages, and the privacy policy says what a bug or crash report holds and that the server deletes it after 30 days.
 - **SpotTheCam** Streets in the recorded voice replaces Streets in Maisie's voice: Ava and Andrew read street names too, in the 9 languages.
 - **Lumiere Player** the Video library line names the search panel: films and songs, typed or said into the Google TV remote, in the 9 languages.

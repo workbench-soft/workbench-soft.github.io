@@ -1000,7 +1000,7 @@ export const projects: Project[] = [
           },
           {
             name: 'Video library',
-            text: 'Video folders list shows, seasons and episodes, crooked file names too. Say Hey Lumi, play cartoons, or a show with its season and episode. The search panel finds films and songs, typed or said into the Google TV remote.',
+            text: 'Video folders list shows, seasons and episodes, crooked file names too. Say Hey Lumi, play cartoons, or a show with its season and episode. The search panel finds films and songs, typed or said into the Google TV remote. It also finds a film by its director, an actor, a genre or a year, from the facts the LG TV keeps on the NAS.',
           },
           {
             name: 'Find tabs',

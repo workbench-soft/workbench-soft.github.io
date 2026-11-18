@@ -117,7 +117,7 @@ const arch: Arch = {
     Audiobooks:
       'Un escaneo agrupa los archivos de audio en libros según el archivo OPF, las etiquetas y los nombres de carpeta. Wikidata nombra al autor, y SQLite guarda el punto de cada libro.',
     'Video library':
-      'El escaneo guarda solo la ruta de cada vídeo en SQLite. Un analizador lee la serie, la temporada y el episodio de los nombres, y Wikidata suma sus otros nombres.',
+      'El escaneo guarda solo la ruta de cada vídeo en SQLite. Un analizador lee la serie, la temporada y el episodio de los nombres, y Wikidata suma sus otros nombres. El teléfono lee y escribe los datos de películas del televisor LG en un archivo junto a las películas en el NAS, por SMB con smbj.',
     'Find tabs':
       'La barra del reproductor envía a Guitar Upscale un enlace de Android con el artista y el título. El botón aparece solo cuando Android encuentra esa app.',
     'Google Play build':

@@ -1751,7 +1751,7 @@ const fr: Catalog = {
             ],
             [
               'Vidéothèque',
-              'Les dossiers vidéo listent séries, saisons et épisodes, même aux noms de fichiers bancals. Dites « Hey Lumi, mets les dessins animés » ou une série avec sa saison et son épisode. La recherche trouve films et titres, tapés ou dits à la télécommande Google TV.',
+              'Les dossiers vidéo listent séries, saisons et épisodes, même aux noms de fichiers bancals. Dites « Hey Lumi, mets les dessins animés » ou une série avec sa saison et son épisode. La recherche trouve films et titres, tapés ou dits à la télécommande Google TV. Elle trouve aussi un film par son réalisateur, un acteur, un genre ou une année. Le téléviseur LG garde ces données sur le NAS.',
             ],
             [
               'Trouver les tablatures',

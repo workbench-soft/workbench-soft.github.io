@@ -117,7 +117,7 @@ const arch: Arch = {
     Audiobooks:
       'Ein Scan fasst die Audiodateien zu Büchern zusammen, nach OPF-Datei, Tags und Ordnernamen. Wikidata nennt den Autor, und SQLite hält die Stelle in jedem Buch.',
     'Video library':
-      'Der Scan speichert nur den Pfad jedes Videos in SQLite. Ein Parser liest Serie, Staffel und Folge aus den Namen, und Wikidata ergänzt weitere Namen.',
+      'Der Scan speichert nur den Pfad jedes Videos in SQLite. Ein Parser liest Serie, Staffel und Folge aus den Namen, und Wikidata ergänzt weitere Namen. Das Handy liest und schreibt die Filmdaten des LG-Fernsehers in einer Datei neben den Filmen auf dem NAS, über SMB mit smbj.',
     'Find tabs':
       'Die Player-Leiste schickt einen Android-Link mit Künstler und Titel an Guitar Upscale. Die Taste erscheint nur, wenn Android diese App findet.',
     'Google Play build':

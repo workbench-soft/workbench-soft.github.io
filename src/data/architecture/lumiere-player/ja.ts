@@ -105,7 +105,7 @@ const arch: Arch = {
     Audiobooks:
       'スキャンが OPF ファイル、タグ、フォルダ名で音声ファイルを本にまとめます。Wikidata が著者を示し、SQLite が本ごとの位置を持ちます。',
     'Video library':
-      'スキャンは各動画のパスだけを SQLite に保存します。パーサーが名前から番組、シーズン、話数を読み、Wikidata が別名を加えます。',
+      'スキャンは各動画のパスだけを SQLite に保存します。パーサーが名前から番組、シーズン、話数を読み、Wikidata が別名を加えます。スマホは smbj を使い SMB で、LG テレビが NAS の映画の横に置く映画情報ファイルを読み書きします。',
     'Find tabs':
       'プレーヤーバーがアーティストと曲名入りの Android リンクを Guitar Upscale に送ります。Android がそのアプリを見つけたときだけボタンが出ます。',
     'Google Play build':

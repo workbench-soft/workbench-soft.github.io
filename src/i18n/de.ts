@@ -1714,7 +1714,7 @@ const de: Catalog = {
             ],
             [
               'Videothek',
-              'Videoordner zeigen Serien, Staffeln und Folgen, auch bei krummen Dateinamen. Sag „Hey Lumi, spiel Zeichentrick“ oder eine Serie mit Staffel und Folge. Die Suche findet Filme und Titel, getippt oder in die Google-TV-Fernbedienung gesagt.',
+              'Videoordner zeigen Serien, Staffeln und Folgen, auch bei krummen Dateinamen. Sag „Hey Lumi, spiel Zeichentrick“ oder eine Serie mit Staffel und Folge. Die Suche findet Filme und Titel, getippt oder in die Google-TV-Fernbedienung gesagt. Sie findet Filme auch nach Regie, Besetzung, Genre oder Jahr. Die Daten dazu legt der LG-Fernseher auf dem NAS ab.',
             ],
             ['Tabs finden', 'Mit Guitar Upscale öffnet ein Gitarrenknopf die Tabs des laufenden Songs.'],
             [

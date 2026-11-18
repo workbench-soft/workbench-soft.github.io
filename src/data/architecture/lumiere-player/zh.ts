@@ -92,7 +92,8 @@ const arch: Arch = {
     'MusicBrainz and YouTube':
       'MusicBrainz 提供歌曲、歌手和专辑的名称。yt-dlp 通过 Chaquopy 在 Python 中运行，从 YouTube 取声音，仅限 GitHub APK。',
     Audiobooks: '扫描根据 OPF 文件、标签和文件夹名把音频文件归成书。Wikidata 给出作者，SQLite 保存每本书的进度。',
-    'Video library': '扫描只把每个视频的路径存进 SQLite。解析器从名称里读出剧集、季和集数，Wikidata 补充其他名称。',
+    'Video library':
+      '扫描只把每个视频的路径存进 SQLite。解析器从名称里读出剧集、季和集数，Wikidata 补充其他名称。手机通过 smbj 用 SMB 读写 LG 电视放在 NAS 电影旁的电影信息文件。',
     'Find tabs': '播放栏把带歌手和歌名的 Android 链接发给 Guitar Upscale。只有 Android 找到这个应用时按钮才会出现。',
     'Google Play build': '第二种构建类型去掉自更新、完整文件访问和在线模块。之后由 Google Play 负责更新。',
     'Voice commands':

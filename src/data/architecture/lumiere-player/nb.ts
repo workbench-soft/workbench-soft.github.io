@@ -108,7 +108,7 @@ const arch: Arch = {
     Audiobooks:
       'En skanning samler lydfilene i bøker etter OPF-filen, taggene og mappenavnene. Wikidata navngir forfatteren, og SQLite holder stedet i hver bok.',
     'Video library':
-      'Skanningen lagrer bare stien til hver video i SQLite. En tolker leser serie, sesong og episode fra navnene, og Wikidata legger til andre navn.',
+      'Skanningen lagrer bare stien til hver video i SQLite. En tolker leser serie, sesong og episode fra navnene, og Wikidata legger til andre navn. Telefonen leser og skriver filmdataene til LG-TV-en i en fil ved siden av filmene på NAS-en, over SMB med smbj.',
     'Find tabs':
       'Spillerlinjen sender en Android-lenke med artist og tittel til Guitar Upscale. Knappen vises bare når Android finner den appen.',
     'Google Play build':
