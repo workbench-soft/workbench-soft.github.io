@@ -1328,7 +1328,10 @@ const nb: Catalog = {
               'Del et bilde eller en video',
               'Én person laster opp et bilde eller en video på opptil 100 MB. Alle ser det og tegner oppå.',
             ],
-            ['Undervisning (planlagt)', 'Undervisningsrom med lysbilder, tegning og tidtaker er planlagt.'],
+            [
+              'Undervisning',
+              'Et undervisningsrom: lysbilder klare før samtalen, låst penn, tidtaker, og elevene følger siden og zoomen.',
+            ],
             [
               'Kontakter og ringing',
               'Et trykk på en person ringer telefonen deres, med Svar og Avvis. Uten registrering. En tekstmelding kommer som et varsel.',

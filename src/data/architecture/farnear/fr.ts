@@ -100,8 +100,8 @@ const arch: Arch = {
       'Des modules purs gardent les traits et les traits effacés en 2 ensembles, envoyés par les canaux de données WebRTC. Un canvas les dessine hors de React.',
     'Share an image or video':
       'Le fichier part en morceaux par son propre canal de données vers chaque personne. Lecture, pause et saut de la personne qui partage passent par le canal de contrôle.',
-    'Lessons (planned)':
-      'Une spec prévoit des diapos envoyées à chaque appareil avant la leçon, avec les outils du tableau sur chacune. L’app n’a pas encore de code de leçon.',
+    Lessons:
+      'L’appareil du propriétaire envoie le blocage, le temps restant et son zoom sur le canal de contrôle. Le tableau garde les traits de chaque page, et les diapos attendent dans IndexedDB.',
     'Contacts and ringing':
       'La sonnerie est un push web scellé pour l’autre appareil et envoyé via le Worker. L’app Android le reçoit par les services Google Play, sans Firebase.',
     'Ads and remove ads':

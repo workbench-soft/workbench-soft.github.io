@@ -103,8 +103,8 @@ const arch: Arch = {
       'Módulos puros guardan los trazos y los trazos borrados como 2 conjuntos, enviados por canales de datos WebRTC. Un canvas los dibuja fuera de React.',
     'Share an image or video':
       'El archivo va a trozos por su propio canal de datos a cada persona. Reproducir, pausar y saltar de quien comparte van por el canal de control.',
-    'Lessons (planned)':
-      'Una especificación plantea diapositivas enviadas a cada dispositivo antes de la clase, con las herramientas de la pizarra en cada una. La app aún no tiene código de clases.',
+    Lessons:
+      'El dispositivo del dueño envía el bloqueo, el tiempo restante y su zoom por el canal de control. La pizarra guarda las líneas de cada página, y las diapositivas esperan en IndexedDB.',
     'Contacts and ringing':
       'El timbre es un push web sellado para el otro dispositivo y enviado por el Worker. La app de Android lo recibe por los servicios de Google Play, sin Firebase.',
     'Ads and remove ads':

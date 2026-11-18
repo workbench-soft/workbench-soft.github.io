@@ -97,8 +97,8 @@ const arch: Arch = {
       'Reine Module halten Linien und gelöschte Linien als 2 Mengen und senden sie über WebRTC-Datenkanäle. Ein Canvas zeichnet sie außerhalb von React.',
     'Share an image or video':
       'Die Datei geht in Stücken über einen eigenen Datenkanal an jede Person. Abspielen, Pause und Springen der teilenden Person laufen über den Steuerkanal.',
-    'Lessons (planned)':
-      'Eine Spezifikation plant Folien, die vor der Stunde auf jedes Gerät gehen, mit den Tafelwerkzeugen auf jeder Folie. Die App hat noch keinen Code für Stunden.',
+    Lessons:
+      'Das Gerät des Besitzers sendet Sperre, Restzeit und Zoom über den Steuerkanal. Die Tafel hält die Linien jeder Seite, und die Folien warten in IndexedDB.',
     'Contacts and ringing':
       'Das Klingeln ist ein Web-Push, versiegelt für das andere Gerät und über den Worker gesendet. Die Android-App empfängt ihn über die Google Play-Dienste, ohne Firebase.',
     'Ads and remove ads':

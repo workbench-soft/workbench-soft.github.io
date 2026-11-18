@@ -91,8 +91,8 @@ const arch: Arch = {
       'Plain modules hold the lines and the erased lines as 2 sets, sent over WebRTC data channels. A canvas draws them outside React.',
     'Share an image or video':
       'The file goes in chunks over its own data channel to each person. The play, pause and seek of the sharer go over the control channel.',
-    'Lessons (planned)':
-      'A spec plans slides sent to each device before the lesson, with the board tools on each slide. The app has no lesson code yet.',
+    Lessons:
+      'The owner device of a lesson room sends the lock, the time left and its zoom over the control channel. The board keeps the lines of each page, and the slides wait in IndexedDB.',
     'Contacts and ringing':
       'The ring is a web push sealed for the other device and sent through the Worker. The Android app takes it through Google Play services, with no Firebase.',
     'Ads and remove ads':

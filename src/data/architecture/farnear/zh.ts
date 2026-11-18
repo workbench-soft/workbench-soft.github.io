@@ -79,7 +79,7 @@ const arch: Arch = {
     'Saved rooms': '房间链接以名字存在浏览器存储里，服务器不保存这份列表。同一个密钥每次都打开同一个房间。',
     Board: '纯模块把线条和已擦除的线条存成 2 个集合，经 WebRTC 数据通道发送。画布在 React 之外画出它们。',
     'Share an image or video': '文件分块经专用数据通道发给每个人。分享者的播放、暂停和跳转走控制通道。',
-    'Lessons (planned)': '规格计划在上课前把幻灯片发到每台设备，每张幻灯片上都能用白板工具。应用里还没有课程代码。',
+    Lessons: '房主设备通过控制通道发送画笔锁定、剩余时间和缩放。白板按页保存线条，幻灯片保存在 IndexedDB 中。',
     'Contacts and ringing':
       '来电提醒是为对方设备加密的网页推送，经 Worker 发出。Android 应用通过 Google Play 服务接收，不用 Firebase。',
     'Ads and remove ads': 'AdMob 显示 Android 横幅和通话后的广告。Play Billing 出售去除广告，房间页不加载广告脚本。',

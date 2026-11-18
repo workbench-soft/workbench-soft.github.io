@@ -1448,7 +1448,10 @@ const de: Catalog = {
               'Bild oder Video teilen',
               'Eine Person lädt ein Bild oder Video bis 100 MB hoch. Alle sehen es und zeichnen darauf.',
             ],
-            ['Unterricht (geplant)', 'Unterrichtsräume mit Folien, Zeichnen und Timer sind geplant.'],
+            [
+              'Unterricht',
+              'Ein Unterrichtsraum: Folien vor dem Anruf vorbereiten, Stift sperren, Timer, und die Schüler folgen Seite und Zoom.',
+            ],
             [
               'Kontakte und Klingeln',
               'Ein Tippen auf eine Person lässt ihr Telefon klingeln, mit Annehmen und Ablehnen. Ohne Anmeldung. Eine Textnachricht kommt als Benachrichtigung an.',

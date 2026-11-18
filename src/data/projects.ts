@@ -704,7 +704,10 @@ export const projects: Project[] = [
             name: 'Share an image or video',
             text: 'One person loads an image or video up to 100 MB. Everyone sees it and draws over it.',
           },
-          { name: 'Lessons (planned)', text: 'Lesson rooms are planned, with slides, drawing and a timer.' },
+          {
+            name: 'Lessons',
+            text: 'A lesson room for a teacher: slides prepared before the call, a pen lock, a timer, and students who follow the page and zoom.',
+          },
           {
             name: 'Contacts and ringing',
             text: 'A tap on a person rings their phone, with Answer and Decline. No sign up. A text message reaches them as a notification.',

@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Farnear** the project lists Lessons in place of Lessons (planned): slides prepared before the call, a pen lock, a timer, and students who follow the page and zoom.
 - **Deploys only what changed** a push that changes no page of the site, such as a `TODO.md` edit, builds and deploys nothing, and the games deploy only when `apps/` changed.
 - **Farnear** the project lists Board text: the T button types text on the board, over a file or a screen, for each person to see, edit, erase or undo.
 - **Farnear** the Board line says each person can zoom in on a page on their own screen, in the 9 languages.

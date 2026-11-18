@@ -88,8 +88,8 @@ const arch: Arch = {
       '순수 모듈이 선과 지운 선을 2개의 집합으로 갖고 WebRTC 데이터 채널로 보냅니다. 캔버스가 React 밖에서 그립니다.',
     'Share an image or video':
       '파일은 전용 데이터 채널로 나뉘어 사람마다 갑니다. 공유한 사람의 재생, 일시 정지, 이동은 제어 채널로 갑니다.',
-    'Lessons (planned)':
-      '사양은 수업 전에 슬라이드를 기기마다 보내고 슬라이드마다 보드 도구를 쓰는 계획입니다. 앱에는 아직 수업 코드가 없습니다.',
+    Lessons:
+      '방 주인의 기기가 잠금, 남은 시간, 확대 상태를 제어 채널로 보내요. 보드는 페이지마다 선을 따로 두고, 슬라이드는 IndexedDB에서 기다려요.',
     'Contacts and ringing':
       '전화 알림은 상대 기기용으로 봉인한 웹 푸시이며 Worker를 거쳐 갑니다. Android 앱은 Firebase 없이 Google Play 서비스로 받습니다.',
     'Ads and remove ads':

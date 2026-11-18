@@ -1427,7 +1427,10 @@ const es: Catalog = {
               'Compartir una imagen o un vídeo',
               'Una persona carga una imagen o un vídeo de hasta 100 MB. Los demás lo ven y dibujan encima.',
             ],
-            ['Clases (previstas)', 'Las salas de clase con diapositivas, dibujo y temporizador están previstas.'],
+            [
+              'Clases',
+              'Una sala de clase: diapositivas preparadas antes de la llamada, lápiz bloqueado, temporizador, y los alumnos siguen la página y el zoom.',
+            ],
             [
               'Contactos y timbre',
               'Un toque en una persona hace sonar su teléfono, con Responder y Rechazar. Sin registro. Un mensaje de texto llega como notificación.',

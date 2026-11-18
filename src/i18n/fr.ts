@@ -1476,7 +1476,10 @@ const fr: Catalog = {
               'Partager une image ou une vidéo',
               'Une personne charge une image ou une vidéo de 100 Mo maximum. Les autres la voient et dessinent dessus.',
             ],
-            ['Cours (prévus)', 'Les salles de cours avec diapos, dessin et minuteur sont prévus.'],
+            [
+              'Cours',
+              'Une salle de cours : diapos préparées avant l’appel, crayon bloqué, minuteur, et les élèves suivent la page et le zoom.',
+            ],
             [
               'Contacts et sonnerie',
               'Un appui sur une personne fait sonner son téléphone, avec Répondre et Refuser. Sans inscription. Un message texte arrive en notification.',

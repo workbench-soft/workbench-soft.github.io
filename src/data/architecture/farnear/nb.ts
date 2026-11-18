@@ -94,8 +94,8 @@ const arch: Arch = {
       'Rene moduler holder strekene og de slettede strekene som 2 mengder og sender dem over WebRTC-datakanaler. Et lerret tegner dem utenfor React.',
     'Share an image or video':
       'Filen går i biter over sin egen datakanal til hver person. Avspilling, pause og hopp fra den som deler går over kontrollkanalen.',
-    'Lessons (planned)':
-      'En spesifikasjon planlegger lysbilder sendt til hver enhet før timen, med tavleverktøyene på hvert bilde. Appen har ingen timekode ennå.',
+    Lessons:
+      'Eierens enhet sender låsen, tiden som er igjen og zoomen over kontrollkanalen. Tavlen holder strekene for hver side, og lysbildene venter i IndexedDB.',
     'Contacts and ringing':
       'Ringingen er et web-push forseglet for den andre enheten og sendt gjennom Workeren. Android-appen tar imot det gjennom Google Play-tjenester, uten Firebase.',
     'Ads and remove ads':
