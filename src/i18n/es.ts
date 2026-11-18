@@ -1695,7 +1695,7 @@ const es: Catalog = {
             ],
             [
               'Videoteca',
-              'Las carpetas de vídeo muestran series, temporadas y episodios, incluso con nombres de archivo torcidos. Di «Hey Lumi, pon dibujos animados» o una serie con su temporada y episodio.',
+              'Las carpetas de vídeo muestran series, temporadas y episodios, incluso con nombres de archivo torcidos. Di «Hey Lumi, pon dibujos animados» o una serie con su temporada y episodio. El buscador encuentra películas y canciones, escritas o dichas al mando de Google TV.',
             ],
             [
               'Buscar tablaturas',

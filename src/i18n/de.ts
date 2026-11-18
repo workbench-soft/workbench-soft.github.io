@@ -1710,7 +1710,7 @@ const de: Catalog = {
             ],
             [
               'Videothek',
-              'Videoordner zeigen Serien, Staffeln und Folgen, auch bei krummen Dateinamen. Sag „Hey Lumi, spiel Zeichentrick“ oder eine Serie mit Staffel und Folge.',
+              'Videoordner zeigen Serien, Staffeln und Folgen, auch bei krummen Dateinamen. Sag „Hey Lumi, spiel Zeichentrick“ oder eine Serie mit Staffel und Folge. Die Suche findet Filme und Titel, getippt oder in die Google-TV-Fernbedienung gesagt.',
             ],
             ['Tabs finden', 'Mit Guitar Upscale öffnet ein Gitarrenknopf die Tabs des laufenden Songs.'],
             [

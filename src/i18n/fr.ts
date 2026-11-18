@@ -1747,7 +1747,7 @@ const fr: Catalog = {
             ],
             [
               'Vidéothèque',
-              'Les dossiers vidéo listent séries, saisons et épisodes, même aux noms de fichiers bancals. Dites « Hey Lumi, mets les dessins animés » ou une série avec sa saison et son épisode.',
+              'Les dossiers vidéo listent séries, saisons et épisodes, même aux noms de fichiers bancals. Dites « Hey Lumi, mets les dessins animés » ou une série avec sa saison et son épisode. La recherche trouve films et titres, tapés ou dits à la télécommande Google TV.',
             ],
             [
               'Trouver les tablatures',
