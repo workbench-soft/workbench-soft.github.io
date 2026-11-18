@@ -947,8 +947,8 @@ export const projects: Project[] = [
     tagline:
       'An Android player with voice control for video, music and audiobooks, which also installs on a Google TV.',
     lede: 'Lumiere Player plays your own files from the phone, a USB stick or an SMB share on libVLC, so it opens what VLC opens. Each video, song and book keeps its place, and voice commands find them by name.',
-    platforms: ['Android', 'Google TV', 'Android TV'],
-    stack: ['Kotlin', 'Android Views', 'libVLC'],
+    platforms: ['Android', 'Google TV', 'Android TV', 'LG webOS'],
+    stack: ['Kotlin', 'Android Views', 'libVLC', 'TypeScript'],
     links: [],
     groups: [
       {
@@ -1011,6 +1011,10 @@ export const projects: Project[] = [
             text: 'In the APK from GitHub, Hey Lumi plays a song, an artist, an album or a style that no folder holds, found in the MusicBrainz catalog.',
           },
           { name: 'Lumiere Pro', text: 'One payment unlocks the voice commands and Hey Lumi, and hides the ads.' },
+          {
+            name: 'LG webOS app',
+            text: 'A webOS app for an LG TV browses a USB stick or a NAS share over WebDAV and plays videos with the Magic Remote, from the place it stopped.',
+          },
         ],
       },
     ],

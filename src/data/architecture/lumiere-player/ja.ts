@@ -116,6 +116,8 @@ const arch: Arch = {
       'オンラインモジュールが Chaquopy の Python で yt-dlp を動かします。MusicBrainz が曲名を出し、YouTube が音を出します。64 ビットのスマホの GitHub APK だけです。',
     'Lumiere Pro':
       'Google Play Billing が Pro を 1 つ売り、アプリは起動のたびに Google Play に聞きます。アプリ内の 1 つのチェックが音声機能を開き、バナーを隠します。',
+    'LG webOS app':
+      'TypeScript の Web ページがテレビ内蔵のプレーヤーで再生します。同じ webOS パッケージの Node サービスが USB メモリと NAS を WebDAV で一覧にし、ファイルをページに送ります。',
   },
 };
 

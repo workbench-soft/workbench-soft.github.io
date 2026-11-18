@@ -1762,6 +1762,10 @@ const fr: Catalog = {
               'Dans l’APK de GitHub, Hey Lumi joue un titre, un artiste, un album ou un style absent des dossiers, trouvé dans le catalogue MusicBrainz.',
             ],
             ['Lumiere Pro', 'Un seul achat débloque les commandes vocales et Hey Lumi, et retire la pub.'],
+            [
+              'App pour LG webOS',
+              'Une app webOS pour télé LG ouvre une clé USB ou un partage NAS en WebDAV et lit les vidéos à la Magic Remote, là où elles s’étaient arrêtées.',
+            ],
           ],
         },
       ],

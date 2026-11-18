@@ -119,6 +119,8 @@ const arch: Arch = {
       'Nettmodulen kjører yt-dlp i Python gjennom Chaquopy. MusicBrainz navngir sangene og YouTube gir lyden, i APK-en fra GitHub på en 64-bits telefon.',
     'Lumiere Pro':
       'Google Play Billing selger ett Pro-produkt, og appen spør Google Play ved hver oppstart. Én sjekk i appen åpner talefunksjonene og skjuler banneret.',
+    'LG webOS app':
+      'En nettside i TypeScript spiller av med TV-ens egen spiller. En Node-tjeneste i den samme webOS-pakken leser USB-pinner og NAS-en over WebDAV og strømmer filene til siden.',
   },
 };
 
