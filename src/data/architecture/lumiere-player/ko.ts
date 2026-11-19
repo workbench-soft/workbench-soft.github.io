@@ -117,6 +117,8 @@ const arch: Arch = {
       'Google Play Billing이 Pro 상품 하나를 팔고 앱은 시작할 때마다 Google Play에 묻습니다. 앱 안의 검사 하나가 음성 기능을 열고 배너를 숨깁니다.',
     'LG webOS app':
       'TypeScript 웹 페이지가 TV 내장 플레이어로 재생해요. 같은 webOS 패키지의 Node 서비스가 USB 메모리와 NAS를 WebDAV로 읽고 파일을 페이지로 보내요.',
+    'Library setup and NAS finder':
+      'NasFind는 TV의 /24 네트워크 전체에서 445 포트를 확인하고 NetBIOS로 각 이름을 묻습니다. 로그인 후 libVLC가 공유 폴더를 나열하고, 라이브러리 폴더는 폴더마다 종류를 SharedPreferences에 저장합니다.',
   },
 };
 

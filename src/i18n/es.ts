@@ -1658,6 +1658,10 @@ const es: Catalog = {
         {
           features: [
             ['Fuentes', 'Memorias USB y carpetas SMB, en la pantalla principal.'],
+            [
+              'Configurar la biblioteca y buscar el NAS',
+              'Encuentra el NAS en la red para que solo escribas el acceso, deja marcar sus carpetas compartidas y en el primer inicio pide las carpetas de películas, series, dibujos animados, música y audiolibros, como en el televisor LG.',
+            ],
             ['Reanudar', 'Cada archivo recuerda su posición y la lista muestra cuánto se vio.'],
             ['Subtítulos y audio', 'Pistas incrustadas y archivos de la misma carpeta, cirílico incluido.'],
             ['Controles', 'Saltar 10 o 30 segundos, cambiar velocidad, aleatorio y repetir.'],

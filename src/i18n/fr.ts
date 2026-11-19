@@ -1710,6 +1710,10 @@ const fr: Catalog = {
         {
           features: [
             ['Sources', "Clés USB et partages SMB, listés sur l'accueil."],
+            [
+              'Configuration de la bibliothèque et recherche du NAS',
+              'Trouve le NAS sur le réseau pour ne saisir que l’identifiant, fait cocher ses partages et demande au premier lancement les dossiers de films, séries, dessins animés, musique et livres audio, comme sur le téléviseur LG.',
+            ],
             ['Reprise', 'Chaque fichier garde sa position, et la liste montre où vous en êtes.'],
             ['Sous-titres et audio', 'Pistes intégrées et fichiers du même dossier, cyrillique compris.'],
             ['Commandes', 'Sauter de 10 ou 30 secondes, changer la vitesse, aléatoire et répétition.'],

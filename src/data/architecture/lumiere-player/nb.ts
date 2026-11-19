@@ -121,6 +121,8 @@ const arch: Arch = {
       'Google Play Billing selger ett Pro-produkt, og appen spør Google Play ved hver oppstart. Én sjekk i appen åpner talefunksjonene og skjuler banneret.',
     'LG webOS app':
       'En nettside i TypeScript spiller av med TV-ens egen spiller. En Node-tjeneste i den samme webOS-pakken leser USB-pinner og NAS-en over WebDAV og strømmer filene til siden.',
+    'Library setup and NAS finder':
+      'NasFind banker på port 445 over hele TV-ens /24-nett og spør NetBIOS om hvert navn. Etter innloggingen lister libVLC de delte mappene, og biblioteksmappene lagrer typen til hver mappe i SharedPreferences.',
   },
 };
 

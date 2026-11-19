@@ -130,6 +130,8 @@ const arch: Arch = {
       'Google Play Billing vende un solo producto Pro, y la app consulta Google Play en cada inicio. Una sola comprobación abre las funciones de voz y oculta el banner.',
     'LG webOS app':
       'Una página web en TypeScript reproduce con el reproductor de la tele. Un servicio Node en el mismo paquete webOS lista las memorias USB y el NAS por WebDAV, y envía los archivos a la página.',
+    'Library setup and NAS finder':
+      'NasFind llama al puerto 445 en toda la red /24 del televisor y pide cada nombre por NetBIOS. Tras el acceso, libVLC lista las carpetas compartidas, y las carpetas de la biblioteca guardan el tipo de cada carpeta en SharedPreferences.',
   },
 };
 

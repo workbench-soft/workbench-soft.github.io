@@ -104,6 +104,8 @@ const arch: Arch = {
       'Google Play Billing 出售一个 Pro 商品，应用每次启动都向 Google Play 查询。应用里的一项检查打开语音功能并隐藏横幅。',
     'LG webOS app':
       '一个 TypeScript 网页用电视自带的播放器播放。同一 webOS 包里的 Node 服务通过 WebDAV 列出 U 盘和 NAS 的文件，并把文件传给网页。',
+    'Library setup and NAS finder':
+      'NasFind 在电视所在的 /24 网络中逐个探测 445 端口，并通过 NetBIOS 获取每台设备的名称。登录后由 libVLC 列出共享文件夹，媒体库文件夹把每个文件夹的类型存入 SharedPreferences。',
   },
 };
 

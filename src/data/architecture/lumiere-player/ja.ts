@@ -118,6 +118,8 @@ const arch: Arch = {
       'Google Play Billing が Pro を 1 つ売り、アプリは起動のたびに Google Play に聞きます。アプリ内の 1 つのチェックが音声機能を開き、バナーを隠します。',
     'LG webOS app':
       'TypeScript の Web ページがテレビ内蔵のプレーヤーで再生します。同じ webOS パッケージの Node サービスが USB メモリと NAS を WebDAV で一覧にし、ファイルをページに送ります。',
+    'Library setup and NAS finder':
+      'NasFind はテレビの /24 ネットワーク全体で 445 番ポートを確認し、NetBIOS で各機器の名前を尋ねます。ログイン後は libVLC が共有フォルダーを一覧にし、ライブラリのフォルダーは各フォルダーの種類を SharedPreferences に保存します。',
   },
 };
 

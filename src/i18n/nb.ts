@@ -1547,6 +1547,10 @@ const nb: Catalog = {
         {
           features: [
             ['Kilder', 'USB-pinner og SMB-delinger, listet på startskjermen.'],
+            [
+              'Biblioteksoppsett og NAS-søk',
+              'Finner NAS-en på nettverket, så du bare skriver innloggingen, lar deg krysse av delte mapper og spør ved første start etter mappene med filmer, serier, tegnefilmer, musikk og lydbøker, som på LG-TV-en.',
+            ],
             ['Fortsett', 'Hver fil husker posisjonen, og listen viser hvor langt du kom.'],
             ['Undertekster og lyd', 'Innebygde spor og filer i samme mappe, kyrillisk også.'],
             ['Kontroller', 'Hopp 10 eller 30 sekunder, endre fart, tilfeldig og gjenta.'],

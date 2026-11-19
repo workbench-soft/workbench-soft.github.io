@@ -962,6 +962,10 @@ export const projects: Project[] = [
       {
         features: [
           { name: 'Sources', text: 'USB sticks and SMB shares, listed on the home screen.' },
+          {
+            name: 'Library setup and NAS finder',
+            text: 'Finds the NAS on the network so you type only the login, lets you tick its shares, and asks for the folders of films, series, cartoons, music and audiobooks at the first start, as on the LG TV.',
+          },
           { name: 'Resume', text: 'Each file keeps its position, and the list shows how far you got.' },
           { name: 'Subtitles and audio', text: 'Embedded tracks and files in the same folder, Cyrillic included.' },
           { name: 'Controls', text: 'Skip 10 or 30 seconds, change speed, shuffle and repeat.' },

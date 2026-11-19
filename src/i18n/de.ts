@@ -1679,6 +1679,10 @@ const de: Catalog = {
         {
           features: [
             ['Quellen', 'USB-Sticks und SMB-Freigaben, auf dem Startbildschirm gelistet.'],
+            [
+              'Mediathek einrichten und NAS finden',
+              'Findet das NAS im Netzwerk, sodass nur die Anmeldung fehlt, lässt seine Freigaben anhaken und fragt beim ersten Start nach den Ordnern mit Filmen, Serien, Zeichentrick, Musik und Hörbüchern, wie auf dem LG-Fernseher.',
+            ],
             ['Fortsetzen', 'Jede Datei merkt sich die Stelle, die Liste zeigt den Fortschritt.'],
             ['Untertitel und Ton', 'Eingebettete Spuren und Dateien im selben Ordner, auch Kyrillisch.'],
             ['Steuerung', '10 oder 30 Sekunden springen, Tempo ändern, Zufall und Wiederholen.'],

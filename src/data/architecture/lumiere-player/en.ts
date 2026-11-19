@@ -124,6 +124,8 @@ const arch: Arch = {
       'Google Play Billing sells one Pro product, and the app asks Google Play at each start. One check in the app opens the voice features and hides the banner.',
     'LG webOS app':
       "A web page in TypeScript plays through the TV's own video player. A Node service in the same webOS package lists USB sticks and the NAS over WebDAV, and streams the files to the page.",
+    'Library setup and NAS finder':
+      "NasFind knocks on port 445 across the TV's /24 network and asks NetBIOS for each name. The login lists the shares through libVLC, and Library folders keeps a kind per folder in SharedPreferences.",
   },
 };
 
