@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **Baristep** a project page and architecture in all 9 languages, with coffee steps, cup angle and jug height, circle and heart videos, and Android updates. The remaining scenes use pictures.
+
 - **Lumiere Player** a Library setup and NAS finder line: the Google TV finds the NAS, lets you tick its shares and asks for the library folders at the first start, as the LG TV does, in the 9 languages.
 - **Lumiere Player** the Video library line says the search finds a film by its director, an actor, a genre or a year, from the facts the LG TV keeps on the NAS, in the 9 languages.
 - **Shuttrix** the project lists Bug reports, in the 9 languages, and the privacy policy says what a bug or crash report holds and that the server deletes it after 30 days.

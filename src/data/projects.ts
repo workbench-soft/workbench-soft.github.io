@@ -39,6 +39,35 @@ export const kinds: Kind[] = ['app', 'tool', 'client', 'internal', 'archive'];
 
 export const projects: Project[] = [
   {
+    id: 'baristep',
+    kind: 'app',
+    repo: 'baristep',
+    hue: 55,
+    code: 'BAR',
+    name: 'Baristep',
+    tagline: 'Coffee, one step at a time.',
+    lede: 'A coffee guide for an office espresso machine, on Android, iOS and the web.',
+    platforms: ['Android', 'iOS', 'Web'],
+    stack: ['Expo', 'React Native', 'TypeScript', 'Cloudflare R2'],
+    links: [
+      { href: 'https://github.com/workbench-soft/workbench-soft.github.io/releases?q=baristep-v', label: 'Downloads' },
+    ],
+    groups: [
+      {
+        features: [
+          {
+            name: 'Coffee guide',
+            text: 'Cappuccino with chocolate and latte hearts, tulips and leaves, for 1 or 2 cups. Painted steps, timers and saved ticks guide each drink. Cup angle and jug height appear on pour steps. Circle and heart steps have muted loop videos; the other 33 scenes have pictures.',
+          },
+          {
+            name: 'Releases and updates',
+            text: 'Android checks for a new GitHub APK at start and on return. The menu checks by hand and shows the version; downloads show progress. iOS and web carry no APK updater.',
+          },
+        ],
+      },
+    ],
+  },
+  {
     id: 'memories',
     kind: 'app',
     repo: 'memories',

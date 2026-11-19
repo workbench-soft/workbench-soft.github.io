@@ -168,6 +168,25 @@ const de: Catalog = {
     },
   ],
   projects: {
+    baristep: {
+      tagline: 'Kaffee, Schritt für Schritt.',
+      lede: 'Eine Anleitung für die Büro-Espressomaschine auf Android, iOS und im Web.',
+      links: ['Downloads'],
+      groups: [
+        {
+          features: [
+            [
+              'Kaffeeanleitung',
+              'Cappuccino mit Schokolade und Latte mit Herz, Tulpe oder Blatt für 1 oder 2 Tassen. Gemalte Schritte, Timer und gespeicherte Häkchen führen durch jedes Getränk. Beim Gießen stehen Tassenwinkel und Kannenhöhe dabei. Kreis und Herz haben stumme Videos in Schleife; die anderen 33 Szenen zeigen Bilder.',
+            ],
+            [
+              'Versionen und Updates',
+              'Android sucht beim Start und bei der Rückkehr nach einem neuen GitHub-APK. Das Menü zeigt die Version und prüft manuell; Downloads zeigen den Fortschritt. iOS und Web enthalten keinen APK-Updater.',
+            ],
+          ],
+        },
+      ],
+    },
     memories: {
       tagline: 'Fotos von diesem Tag, von Ihrem eigenen NAS.',
       lede: 'Memories zeigt diesen Tag in früheren Jahren, aus den Fotos und Videos auf einem NAS zu Hause. Es funktioniert wie die Rückblicke in Google Fotos, und die Fotos bleiben auf Hardware, die zu Hause steht.',
