@@ -169,6 +169,25 @@ const fr: Catalog = {
     },
   ],
   projects: {
+    baristep: {
+      tagline: 'Le café, pas à pas.',
+      lede: 'Un guide pour la machine à espresso du bureau, sur Android, iOS et le Web.',
+      links: ['Téléchargements'],
+      groups: [
+        {
+          features: [
+            [
+              'Guide du café',
+              'Cappuccino au chocolat et latte avec cœur, tulipe ou feuille pour 1 ou 2 tasses. Dessins, minuteries et coches enregistrées guident chaque boisson. Les étapes de versement indiquent l’angle de la tasse et la hauteur du pichet. Le cercle et le cœur ont des vidéos muettes en boucle; les 33 autres scènes ont des images.',
+            ],
+            [
+              'Versions et mises à jour',
+              'Android cherche un nouvel APK GitHub au démarrage et au retour. Le menu affiche la version et permet une vérification manuelle; le téléchargement affiche sa progression. iOS et le Web ne contiennent pas de mise à jour APK.',
+            ],
+          ],
+        },
+      ],
+    },
     memories: {
       tagline: 'Les photos de ce jour, depuis votre propre NAS.',
       lede: 'Memories montre ce jour dans les années passées, à partir des photos et vidéos d’un NAS à la maison. Il fonctionne comme les souvenirs de Google Photos, et les photos restent sur un matériel gardé chez soi.',

@@ -168,6 +168,25 @@ const es: Catalog = {
     },
   ],
   projects: {
+    baristep: {
+      tagline: 'Café, paso a paso.',
+      lede: 'Una guía para la cafetera espresso de la oficina en Android, iOS y la web.',
+      links: ['Descargas'],
+      groups: [
+        {
+          features: [
+            [
+              'Guía de café',
+              'Capuchino con chocolate y latte con corazón, tulipán u hoja para 1 o 2 tazas. Dibujos, temporizadores y marcas guardadas guían cada bebida. Al verter se indica el ángulo de la taza y la altura de la jarra. El círculo y el corazón tienen vídeos mudos en bucle; las otras 33 escenas tienen imágenes.',
+            ],
+            [
+              'Versiones y actualizaciones',
+              'Android busca un APK nuevo en GitHub al iniciar y al volver. El menú muestra la versión y permite comprobarla a mano; la descarga muestra el progreso. iOS y la web no incluyen actualizador de APK.',
+            ],
+          ],
+        },
+      ],
+    },
     memories: {
       tagline: 'Fotos de un día como hoy, desde tu propio NAS.',
       lede: 'Memories muestra este día en años anteriores, con las fotos y vídeos de un NAS en casa. Funciona como los recuerdos de Google Fotos, y las fotos se quedan en un equipo que guardas en casa.',

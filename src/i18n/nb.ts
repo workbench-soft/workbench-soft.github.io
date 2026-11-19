@@ -168,6 +168,25 @@ const nb: Catalog = {
     },
   ],
   projects: {
+    baristep: {
+      tagline: 'Kaffe, steg for steg.',
+      lede: 'En guide til espressomaskinen på kontoret, på Android, iOS og nett.',
+      links: ['Nedlastinger'],
+      groups: [
+        {
+          features: [
+            [
+              'Kaffeguide',
+              'Cappuccino med sjokolade og latte med hjerte, tulipan eller blad til 1 eller 2 kopper. Malte steg, tidtakere og lagrede avkrysninger viser veien. Hellesteg viser koppvinkel og kannehøyde. Sirkel og hjerte har lydløse videoløkker; de andre 33 scenene har bilder.',
+            ],
+            [
+              'Utgivelser og oppdateringer',
+              'Android ser etter en ny APK på GitHub ved start og når du kommer tilbake. Menyen viser versjonen og lar deg sjekke selv; nedlastingen viser fremdrift. iOS og nett har ingen APK-oppdatering.',
+            ],
+          ],
+        },
+      ],
+    },
     memories: {
       tagline: 'Bilder fra denne dagen, fra din egen NAS.',
       lede: 'Memories viser denne dagen i tidligere år, fra bildene og videoene på en NAS hjemme. Den fungerer som minnene i Google Foto, og bildene blir på maskinvare eieren har hjemme.',
