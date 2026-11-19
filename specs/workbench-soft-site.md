@@ -19,6 +19,14 @@ None written down yet.
 
 ## Changes
 
+### 2026-11-20 Baristep coffee guide
+
+- **Why** the released coffee guide has no studio project page.
+- **Content** add Baristep in all 9 languages, with its coffee guide and Android updates. Describe the circle and heart clips only; the remaining scenes use painted pictures. Name the cup angle and jug height guidance.
+- **Architecture** add matching translated architecture records from the app's docs. Expo shares the UI across Android, iOS and web, while GitHub APK updates run on Android only.
+- **Docs** update the README and changelog. Run catalog tests, lint, type checks and a static build, then deploy and verify the live HTML through HTTP.
+- **Limit** this change publishes the studio page, not a hosted Baristep web app.
+
 ### 2025-10-28 The Workbench Soft site, the Memories site and the Media Organizer installer
 
 Done on 2025-10-28, before the history was reset to one commit. The old commits sit under `refs/backup/main` in the local backup mirror of `workbench-soft.github.io`.
