@@ -28,4 +28,14 @@ if (!id) {
 // In Actions the started run reports for itself, so the job ends here.
 if (!process.env.GITHUB_ACTIONS) {
   execFileSync('gh', ['run', 'watch', id, '--repo', repo, '--exit-status', '--compact'], { stdio: 'inherit' });
+  const { jobs } = JSON.parse(run('gh', ['run', 'view', id, '--repo', repo, '--json', 'jobs']));
+  const published = jobs.some(
+    (job: { name: string; steps: { name: string; conclusion: string }[] }) =>
+      job.name === 'deploy' &&
+      job.steps.some((step) => step.name.includes('actions/deploy-pages@') && step.conclusion === 'success'),
+  );
+  if (!published) {
+    console.error('Pages finished without publishing this build. Check the deploy job and the current main commit.');
+    process.exit(1);
+  }
 }

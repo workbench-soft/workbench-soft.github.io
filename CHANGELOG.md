@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **PC deploy** manual Pages runs publish after their checks and build pass, even though the push-only affected job is skipped. The deploy task fails when no Pages publication step succeeds.
+
 - **Baristep** a project page and architecture in all 9 languages, with coffee steps, cup angle and jug height, circle and heart videos, and Android updates. The remaining scenes use pictures.
 
 - **Lumiere Player** a Library setup and NAS finder line: the Google TV finds the NAS, lets you tick its shares and asks for the library folders at the first start, as the LG TV does, in the 9 languages.
