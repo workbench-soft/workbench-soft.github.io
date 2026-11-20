@@ -161,7 +161,8 @@ jobs:
 
   deploy:
     needs: [build, checks]
-    if: github.event_name != 'pull_request'
+    # A manual run skips affected. Override the implicit success() guard on that skipped ancestor.
+    if: ${{ !cancelled() && github.event_name != 'pull_request' && needs.build.result == 'success' && needs.checks.result == 'success' }}
     runs-on: ubuntu-latest
     # Builds run side by side and deploys queue. A build of an older commit skips the deploy,
     # since the run of the newer commit publishes the site.

@@ -21,6 +21,8 @@ Public files for the Workbench Soft apps. The code sits in private repos in this
 
 The home page is the studio's business card: what it builds for clients, and each project with each of its features. It shows no ads.
 
+`mise run deploy` starts Pages on the current `origin/main` and waits for a successful publication step. A skipped deploy fails the command.
+
 Baristep has a project page in all 9 languages, with the coffee guide, cup angle and jug height, the circle and heart videos, and Android APK updates. The other 33 scenes use painted pictures.
 
 - **Stack** Astro 7 and TypeScript build it into static HTML in `dist/`. A WebGL2 shader draws the hero.
