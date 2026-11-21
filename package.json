@@ -13,13 +13,13 @@
     "test": "vitest run --dir src"
   },
   "dependencies": {
-    "@astrojs/sitemap": "3.7.4",
-    "astro": "7.4.7"
+    "@astrojs/sitemap": "3.7.5",
+    "astro": "7.4.12"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.12",
-    "oxfmt": "^0.77.0",
-    "oxlint": "^1.92.0",
+    "oxfmt": "^0.78.0",
+    "oxlint": "^1.93.0",
     "typescript": "^6.0.3",
     "vitest": "5.1.0"
   },
