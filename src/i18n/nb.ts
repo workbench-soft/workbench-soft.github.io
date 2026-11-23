@@ -648,6 +648,56 @@ const nb: Catalog = {
         },
       ],
     },
+    songcatcher: {
+      tagline: 'Si «Shazam», så havner sangen i likte sanger.',
+      lede: 'SongCatcher er en Android app som lytter etter ett ord. Si «Shazam» med låst telefon, så havner sangen som spilles rundt deg i Likte sanger i Spotify og i Lumiere. Mikrofonen deler den med de andre appene med vekkeord.',
+      links: [],
+      groups: [
+        {
+          title: 'Fang en sang',
+          features: [
+            [
+              'Vekking med stemmen',
+              'Si «Shazam», også med låst telefon i lomma. Et pip svarer. Gjenkjenn nå på skjermen leter uten ordet.',
+            ],
+            [
+              'Sanggjenkjenning',
+              'Telefonen lager selv lydfingeravtrykket til Shazam og spør Shazam etter 3 sekunder musikk, så ved 6, 9 og 12. Bare fingeravtrykket forlater telefonen.',
+            ],
+            [
+              'Likte sanger i Spotify og Lumiere',
+              'Hver sang havner i Likte sanger i Spotify og Lumiere, merket Fra SongCatcher.',
+            ],
+            [
+              'Svar med stemme',
+              'En stemme sier hvilken sang som ble lagret, eller at ingen ble funnet. Musikken dempes så lenge.',
+            ],
+            [
+              'Fangst uten nett',
+              'Uten internett venter fingeravtrykket på telefonen og sendes senere, i opptil en uke.',
+            ],
+            [
+              'Fangede sanger',
+              'De siste 50 sangene, hver merket i Spotify eller venter. Én knapp lagrer de ventende uten nytt opptak.',
+            ],
+            ['Språk', 'Skjermene og stemmen på 9 språk, etter språket på telefonen.'],
+          ],
+        },
+        {
+          title: 'Delt med de andre appene',
+          features: [
+            [
+              'Delt mikrofon',
+              'keepPad, Lumiere, SongCatcher, SpotTheCam og ServoHop hører vekkeordene sine samtidig. Én app holder mikrofonen og gir hver vekking videre til appen den hører til.',
+            ],
+            [
+              'Vekkemotor',
+              'Én motor hører hvert vekkeord: en liten modell per frase, tilpasset eierens stemme, og en nøkkelordsøker for fraser uten modell.',
+            ],
+          ],
+        },
+      ],
+    },
     consdr: {
       tagline: 'Leasing, lån eller kontant: hva en bil koster i Australia.',
       lede: 'Consdr viser totalkostnaden for den samme bilen over den samme perioden som novated lease, billån og kontantkjøp. Hvert faste tall i utregningen lenker til kilden sin.',

@@ -709,6 +709,56 @@ const fr: Catalog = {
         },
       ],
     },
+    songcatcher: {
+      tagline: 'Dites « Shazam » et le morceau rejoint vos titres likés.',
+      lede: 'SongCatcher est une app Android qui écoute un seul mot. Dites « Shazam », téléphone verrouillé, et le morceau qui passe autour de vous rejoint les titres likés de Spotify et Lumiere. Il partage le micro avec les autres apps à mot de réveil.',
+      links: [],
+      groups: [
+        {
+          title: 'Attraper un morceau',
+          features: [
+            [
+              'Réveil à la voix',
+              'Dites « Shazam », même téléphone verrouillé dans la poche. Un bip répond. Reconnaître maintenant, à l’écran, lance une recherche sans le mot.',
+            ],
+            [
+              'Reconnaissance du morceau',
+              'Le téléphone calcule lui même l’empreinte audio de Shazam et interroge Shazam après 3 secondes de musique, puis à 6, 9 et 12. Seule l’empreinte quitte le téléphone.',
+            ],
+            [
+              'Titres likés dans Spotify et Lumiere',
+              'Chaque morceau rejoint les titres likés de Spotify et de Lumiere, avec la mention De SongCatcher.',
+            ],
+            [
+              'Réponse à voix haute',
+              'Une voix dit le morceau enregistré, ou qu’aucun n’a été trouvé. La musique baisse pendant ce temps.',
+            ],
+            [
+              'Recherche hors ligne',
+              'Sans internet, l’empreinte attend sur le téléphone et part plus tard, pendant une semaine au plus.',
+            ],
+            [
+              'Morceaux attrapés',
+              'Les 50 derniers morceaux, chacun marqué dans Spotify ou en attente. Un bouton enregistre ceux en attente sans nouvel enregistrement.',
+            ],
+            ['Langues', 'Les écrans et la voix en 9 langues, selon la langue du téléphone.'],
+          ],
+        },
+        {
+          title: 'Partagé avec les autres apps',
+          features: [
+            [
+              'Micro partagé',
+              'keepPad, Lumiere, SongCatcher, SpotTheCam et ServoHop entendent leurs mots de réveil en même temps. Une app tient le micro et passe chaque réveil à son app.',
+            ],
+            [
+              'Moteur de réveil',
+              'Un seul moteur entend chaque phrase : un petit modèle par phrase, réglé sur la voix du propriétaire, et un repérage de mots clés pour les phrases sans modèle.',
+            ],
+          ],
+        },
+      ],
+    },
     consdr: {
       tagline: 'Leasing, crédit ou comptant : ce que coûte une voiture en Australie.',
       lede: 'Consdr montre le coût total d’une même voiture sur une même durée en novated lease, en crédit auto et au comptant. Chaque chiffre fixe du calcul renvoie à sa source.',

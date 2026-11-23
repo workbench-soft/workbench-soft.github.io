@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **SongCatcher** a panel in Apps, in the 9 languages: say "Shazam" with the phone locked, and the phone fingerprints the song, asks Shazam and saves it to Spotify and Lumiere. The panel also covers the shared microphone and the wake engine of `wake-share`.
+
 - **МедПоиск** a panel in Development for clients, in the 9 languages: an Android app that searches medical supply prices across Moscow pharmacies and marketplaces, filters them by okrug, keeps a shopping list and opens distributor portals. Its code is private, so the panel has no Source link and no download.
 
 - **PC deploy** manual Pages runs publish after their checks and build pass, even though the push-only affected job is skipped. The deploy task fails when no Pages publication step succeeds.

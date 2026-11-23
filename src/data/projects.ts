@@ -1131,6 +1131,64 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: 'songcatcher',
+    kind: 'app',
+    repo: 'wake-share',
+    hue: 140,
+    code: 'SNG',
+    name: 'SongCatcher',
+    tagline: 'Say "Shazam" and the song lands in your Liked Songs.',
+    lede: 'SongCatcher is an Android app that listens for one word. Say "Shazam" with the phone locked, and the song that plays around you goes to Spotify Liked Songs and to Lumiere. It shares the microphone with the other wake phrase apps.',
+    platforms: ['Android'],
+    stack: ['Kotlin', 'sherpa-onnx', 'Shazam', 'Spotify Web API'],
+    links: [],
+    groups: [
+      {
+        title: 'Catch a song',
+        features: [
+          {
+            name: 'Wake by voice',
+            text: 'Say "Shazam" with the phone locked in a pocket, and a beep answers. Recognize now on the screen starts a catch with no word.',
+          },
+          {
+            name: 'Song recognition',
+            text: "The phone builds Shazam's audio fingerprint itself and asks Shazam after 3 seconds of music, then at 6, 9 and 12. Only the fingerprint leaves the phone.",
+          },
+          {
+            name: 'Liked Songs in Spotify and Lumiere',
+            text: 'Each song goes to Spotify Liked Songs and to Lumiere Liked Songs, marked From SongCatcher.',
+          },
+          {
+            name: 'Spoken answer',
+            text: 'A voice says the song it saved, or that it found none, while the music ducks.',
+          },
+          {
+            name: 'Offline catches',
+            text: 'With no internet the fingerprint waits on the phone and goes out later, for up to a week.',
+          },
+          {
+            name: 'Caught songs',
+            text: 'The last 50 songs, each marked in Spotify or waiting. One button saves the waiting ones with no new recording.',
+          },
+          { name: 'Languages', text: 'The screens and the voice come in 9 languages and follow the phone.' },
+        ],
+      },
+      {
+        title: 'Shared with the other apps',
+        features: [
+          {
+            name: 'Shared microphone',
+            text: 'keepPad, Lumiere, SongCatcher, SpotTheCam and ServoHop hear their own phrases at the same time. One app holds the microphone and hands each wake to its app.',
+          },
+          {
+            name: 'Wake engine',
+            text: 'One engine hears every phrase: a small model per phrase tuned to the owner, and a keyword spotter for phrases without one.',
+          },
+        ],
+      },
+    ],
+  },
+  {
     id: 'consdr',
     kind: 'app',
     repo: 'consdr',
