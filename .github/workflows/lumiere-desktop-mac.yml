@@ -30,6 +30,8 @@ defaults:
 env:
   SOURCE_SHA: ${{ github.event.client_payload.sha || inputs.sha }}
   VERSION: ${{ github.event.client_payload.version || inputs.version }}
+  # The repo pins Android tools, such as a Java build with no macOS arm64 file. The Mac build needs only node and pnpm.
+  MISE_TASK_RUN_AUTO_INSTALL: 'false'
 
 jobs:
   build:
