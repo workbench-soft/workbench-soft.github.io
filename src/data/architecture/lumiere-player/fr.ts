@@ -92,7 +92,7 @@ const arch: Arch = {
     ],
   },
   features: {
-    Sources:
+    'Direct folder browsing and playback':
       'Les dossiers USB s’ouvrent par le système de fichiers d’Android, et libVLC parcourt les partages SMB. La liste des NAS reste sur l’appareil, hors de la sauvegarde Android.',
     Resume:
       'Le lecteur enregistre chaque position dans SQLite par intervalles de 5 secondes et à la sortie. La liste des fichiers lit la même table pour la barre sous chaque fichier.',
@@ -136,10 +136,18 @@ const arch: Arch = {
       'Google Play Billing vend un seul produit Pro, et l’app interroge Google Play à chaque lancement. Un seul test dans l’app ouvre les fonctions vocales et masque la bannière.',
     'LG webOS app':
       'Une page web en TypeScript lit les vidéos avec le lecteur de la télé. Un service Node du même paquet webOS liste les clés USB et le NAS en WebDAV, et envoie les fichiers à la page.',
-    'Library setup and NAS finder':
+    'Optional library setup and NAS finder':
       'NasFind frappe au port 445 sur tout le réseau /24 du téléviseur et demande chaque nom par NetBIOS. Après la connexion, libVLC liste les partages, et les dossiers de la bibliothèque gardent le type de chaque dossier dans SharedPreferences.',
     'Windows and Mac app':
       'Electron exécute la page webOS et son service Node sans changement. La page se charge depuis sa propre origine lumiere://, et le service liste le dossier personnel et les disques à la place des clés USB.',
+    'Continue Watching':
+      'Les deux apps construisent les lignes à partir des positions enregistrées, les plus récentes en haut, jusqu’à 20. Une position à 95 % compte comme vue, et un épisode vu laisse place au suivant.',
+    'Film look':
+      'Une couche de grain dessinée au-dessus de la vidéo ne coûte rien au décodeur, donc le HDR et le décodage matériel restent. Sur Android 12 et plus, le lecteur passe la cadence du film à Surface.setFrameRate.',
+    'Caught songs':
+      'Un récepteur de l’APK GitHub vérifie que SongCatcher a envoyé la prise, puis l’enregistre dans liked-songs.db. Une chanson des dossiers pointe vers son fichier, une autre garde son adresse YouTube.',
+    'Titles of films, series and books':
+      'La recherche de films demande à Wikidata le titre russe et anglais et l’année. Une fonction par app construit la ligne : Titles.label sur Android, titleLine sur webOS.',
   },
 };
 

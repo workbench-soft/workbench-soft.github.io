@@ -1798,10 +1798,13 @@ const de: Catalog = {
       groups: [
         {
           features: [
-            ['Quellen', 'USB-Sticks und SMB-Freigaben, auf dem Startbildschirm gelistet.'],
             [
-              'Mediathek einrichten und NAS finden',
-              'Findet das NAS im Netzwerk, sodass nur die Anmeldung fehlt, lässt seine Freigaben anhaken und fragt beim ersten Start nach den Ordnern mit Filmen, Serien, Zeichentrick, Musik und Hörbüchern, wie auf dem LG-Fernseher.',
+              'Ordner direkt öffnen und abspielen',
+              'Öffnet sofort einen Ordnerbaum von Handy, USB-Sticks und NAS und spielt eine Datei ohne Einrichtung oder Scan.',
+            ],
+            [
+              'Optionale Bibliothek und NAS-Suche',
+              'Findet das NAS im Netzwerk, sodass nur die Anmeldung fehlt, und lässt seine Freigaben ankreuzen. Ordner für Filme, Serien, Zeichentrick, Musik und Hörbücher sind optional und füllen die Suche.',
             ],
             ['Fortsetzen', 'Jede Datei merkt sich die Stelle, die Liste zeigt den Fortschritt.'],
             ['Untertitel und Ton', 'Eingebettete Spuren und Dateien im selben Ordner, auch Kyrillisch.'],
@@ -1861,6 +1864,22 @@ const de: Catalog = {
             [
               'App für Windows und Mac',
               'Die LG-TV-App als Desktop-App für Windows und Mac. Sie zeigt den persönlichen Ordner, jedes Laufwerk und jedes NAS und spielt mit Tastatur oder Maus. Unter Windows aktualisiert sie sich selbst.',
+            ],
+            [
+              'Weiterschauen',
+              'Bis zu 20 zuletzt gesehene Filme, Folgen und Bücher mit Fortschritt. Eine Zeile spielt dort weiter, wo du aufgehört hast, und nach einer fertigen Folge kommt die nächste.',
+            ],
+            [
+              'Filmlook',
+              'Ein leichtes bewegtes Korn über dem Bild, gemerkt für den nächsten Film. Google TV schaltet zudem auf die Bildrate des Films.',
+            ],
+            [
+              'Gefangene Songs',
+              'Jeder Song, den SongCatcher erkennt, landet in den Lieblingssongs, auch bei geschlossener App. Einen Song, den kein Ordner hat, spielt YouTube.',
+            ],
+            [
+              'Titel von Filmen, Serien und Büchern',
+              'Der russische und englische Titel mit Jahr aus Wikidata, darunter klein und grau der Dateiname.',
             ],
           ],
         },

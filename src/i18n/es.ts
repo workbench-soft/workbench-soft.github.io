@@ -1774,10 +1774,13 @@ const es: Catalog = {
       groups: [
         {
           features: [
-            ['Fuentes', 'Memorias USB y carpetas SMB, en la pantalla principal.'],
             [
-              'Configurar la biblioteca y buscar el NAS',
-              'Encuentra el NAS en la red para que solo escribas el acceso, deja marcar sus carpetas compartidas y en el primer inicio pide las carpetas de películas, series, dibujos animados, música y audiolibros, como en el televisor LG.',
+              'Carpetas y reproducción al momento',
+              'Abre directamente un árbol de carpetas del teléfono, memorias USB y NAS, y reproduce un archivo sin configurar ni escanear.',
+            ],
+            [
+              'Biblioteca opcional y búsqueda de NAS',
+              'Encuentra el NAS en la red, así que solo falta el usuario, y deja marcar sus carpetas compartidas. Las carpetas de películas, series, dibujos, música y audiolibros son opcionales y alimentan la búsqueda.',
             ],
             ['Reanudar', 'Cada archivo recuerda su posición y la lista muestra cuánto se vio.'],
             ['Subtítulos y audio', 'Pistas incrustadas y archivos de la misma carpeta, cirílico incluido.'],
@@ -1846,6 +1849,22 @@ const es: Catalog = {
             [
               'App para Windows y Mac',
               'La app de LG TV como app de escritorio para Windows y Mac. Muestra la carpeta personal, cada disco y cada NAS, y se maneja con el teclado o el ratón. En Windows se actualiza sola.',
+            ],
+            [
+              'Seguir viendo',
+              'Hasta 20 películas, episodios y libros recientes con su progreso. Una fila sigue donde lo dejaste, y un episodio terminado ofrece el siguiente.',
+            ],
+            [
+              'Aspecto de cine',
+              'Un grano ligero en movimiento sobre la imagen, guardado para la próxima película. Google TV además cambia a la frecuencia de fotogramas de la película.',
+            ],
+            [
+              'Canciones captadas',
+              'Cada canción que capta SongCatcher se suma a Me gusta, incluso con la app cerrada. Una canción que no está en las carpetas suena desde YouTube.',
+            ],
+            [
+              'Títulos de películas, series y libros',
+              'El título ruso e inglés con el año desde Wikidata, y debajo el nombre del archivo en gris pequeño.',
             ],
           ],
         },

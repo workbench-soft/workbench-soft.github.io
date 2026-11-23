@@ -1829,10 +1829,13 @@ const fr: Catalog = {
       groups: [
         {
           features: [
-            ['Sources', "Clés USB et partages SMB, listés sur l'accueil."],
             [
-              'Configuration de la bibliothèque et recherche du NAS',
-              'Trouve le NAS sur le réseau pour ne saisir que l’identifiant, fait cocher ses partages et demande au premier lancement les dossiers de films, séries, dessins animés, musique et livres audio, comme sur le téléviseur LG.',
+              'Dossiers et lecture directe',
+              'S’ouvre directement sur l’arbre des dossiers du téléphone, des clés USB et du NAS, et lit un fichier sans réglage ni analyse.',
+            ],
+            [
+              'Bibliothèque facultative et recherche du NAS',
+              'Trouve le NAS sur le réseau, il ne reste que l’identifiant, et permet de cocher ses partages. Les dossiers de films, séries, dessins animés, musique et livres audio sont facultatifs et alimentent la recherche.',
             ],
             ['Reprise', 'Chaque fichier garde sa position, et la liste montre où vous en êtes.'],
             ['Sous-titres et audio', 'Pistes intégrées et fichiers du même dossier, cyrillique compris.'],
@@ -1901,6 +1904,22 @@ const fr: Catalog = {
             [
               'Application Windows et Mac',
               "L'application LG TV en application de bureau pour Windows et Mac. Elle affiche le dossier personnel, chaque disque et chaque NAS, et se pilote au clavier ou à la souris. Sous Windows, elle se met à jour toute seule.",
+            ],
+            [
+              'Reprendre la lecture',
+              'Jusqu’à 20 films, épisodes et livres récents avec leur progression. Une ligne reprend là où vous vous êtes arrêté, et un épisode fini propose le suivant.',
+            ],
+            [
+              'Look cinéma',
+              'Un léger grain animé sur l’image, gardé pour le film suivant. Google TV passe aussi à la cadence d’origine du film.',
+            ],
+            [
+              'Chansons captées',
+              'Chaque chanson que SongCatcher capte rejoint les titres aimés, même app fermée. Une chanson absente des dossiers se lit sur YouTube.',
+            ],
+            [
+              'Titres des films, séries et livres',
+              'Le titre russe et anglais avec l’année depuis Wikidata, et le nom du fichier en petit gris dessous.',
             ],
           ],
         },

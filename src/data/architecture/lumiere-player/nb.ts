@@ -77,7 +77,7 @@ const arch: Arch = {
     ],
   },
   features: {
-    Sources:
+    'Direct folder browsing and playback':
       'USB-mapper åpnes gjennom filsystemet i Android, og libVLC blar i SMB-delingene. Den lagrede NAS-listen blir på enheten, utenfor Android-sikkerhetskopien.',
     Resume:
       'Spilleren lagrer hver posisjon i SQLite hvert 5. sekund og ved avslutning. Fillisten leser samme tabell for linjen under hver fil.',
@@ -121,10 +121,18 @@ const arch: Arch = {
       'Google Play Billing selger ett Pro-produkt, og appen spør Google Play ved hver oppstart. Én sjekk i appen åpner talefunksjonene og skjuler banneret.',
     'LG webOS app':
       'En nettside i TypeScript spiller av med TV-ens egen spiller. En Node-tjeneste i den samme webOS-pakken leser USB-pinner og NAS-en over WebDAV og strømmer filene til siden.',
-    'Library setup and NAS finder':
+    'Optional library setup and NAS finder':
       'NasFind banker på port 445 over hele TV-ens /24-nett og spør NetBIOS om hvert navn. Etter innloggingen lister libVLC de delte mappene, og biblioteksmappene lagrer typen til hver mappe i SharedPreferences.',
     'Windows and Mac app':
       'Electron kjører webOS-siden og Node-tjenesten uendret. Siden lastes fra sin egen lumiere://-opprinnelse, og tjenesten viser hjemmemappen og diskene i stedet for USB-pinner.',
+    'Continue Watching':
+      'Begge appene bygger radene fra de lagrede posisjonene, nyeste øverst, opptil 20. En posisjon på 95 % teller som sett, og en sett episode viker for den neste.',
+    'Film look':
+      'Et kornlag tegnet over videoen belaster ikke dekoderen, så HDR og maskinvaredekoding blir værende. På Android 12 og nyere gir spilleren filmens bildefrekvens til Surface.setFrameRate.',
+    'Caught songs':
+      'En mottaker i GitHub-APK-en sjekker at SongCatcher sendte fangsten, og lagrer den i liked-songs.db. En sang fra mappene peker på filen sin, en annen beholder YouTube-adressen.',
+    'Titles of films, series and books':
+      'Filmoppslaget henter russisk og engelsk tittel og år fra Wikidata. Én funksjon per app bygger linjen: Titles.label på Android, titleLine på webOS.',
   },
 };
 

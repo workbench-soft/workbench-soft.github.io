@@ -74,7 +74,7 @@ const arch: Arch = {
     ],
   },
   features: {
-    Sources:
+    'Direct folder browsing and playback':
       'USB 폴더는 Android 파일 시스템으로 열고 SMB 공유는 libVLC가 탐색합니다. 저장된 NAS 목록은 기기에 남고 Android 백업에서 빠집니다.',
     Resume:
       '플레이어는 5초마다 그리고 종료할 때 위치를 SQLite에 저장합니다. 파일 목록은 같은 표를 읽어 파일 아래에 막대를 보여 줍니다.',
@@ -117,10 +117,18 @@ const arch: Arch = {
       'Google Play Billing이 Pro 상품 하나를 팔고 앱은 시작할 때마다 Google Play에 묻습니다. 앱 안의 검사 하나가 음성 기능을 열고 배너를 숨깁니다.',
     'LG webOS app':
       'TypeScript 웹 페이지가 TV 내장 플레이어로 재생해요. 같은 webOS 패키지의 Node 서비스가 USB 메모리와 NAS를 WebDAV로 읽고 파일을 페이지로 보내요.',
-    'Library setup and NAS finder':
+    'Optional library setup and NAS finder':
       'NasFind는 TV의 /24 네트워크 전체에서 445 포트를 확인하고 NetBIOS로 각 이름을 묻습니다. 로그인 후 libVLC가 공유 폴더를 나열하고, 라이브러리 폴더는 폴더마다 종류를 SharedPreferences에 저장합니다.',
     'Windows and Mac app':
       'Electron이 webOS 페이지와 Node 서비스를 그대로 실행합니다. 페이지는 자체 lumiere:// 출처에서 열리고, 서비스는 USB 대신 홈 폴더와 드라이브를 나열합니다.',
+    'Continue Watching':
+      '두 앱 모두 저장된 재생 위치로 행을 만들고, 최신 순으로 최대 20개를 보여 줍니다. 95%에 이른 위치는 본 것으로 치고, 다 본 에피소드는 다음 화로 바뀝니다.',
+    'Film look':
+      '그레인 레이어는 영상 위에 그려 디코더에 부담을 주지 않으므로 HDR과 하드웨어 디코딩이 그대로 유지됩니다. Android 12 이상에서는 영화의 프레임 레이트를 Surface.setFrameRate에 넘깁니다.',
+    'Caught songs':
+      'GitHub APK의 리시버가 SongCatcher가 보낸 것인지 확인한 뒤 노래를 liked-songs.db에 저장합니다. 폴더에 있는 노래는 그 파일을 가리키고, 다른 노래는 YouTube 주소를 저장합니다.',
+    'Titles of films, series and books':
+      '영화 조회가 Wikidata에서 러시아어와 영어 제목, 연도를 가져옵니다. 앱마다 함수 하나가 줄을 만듭니다. Android는 Titles.label, webOS는 titleLine입니다.',
   },
 };
 
