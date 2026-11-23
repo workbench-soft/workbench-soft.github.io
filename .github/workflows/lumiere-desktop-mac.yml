@@ -1,0 +1,70 @@
+name: Lumiere desktop for Mac
+
+# Builds the Lumiere Mac dmg from the private lumiere-player repo and adds it to its desktop release.
+# The repo is public, so the macOS runner spends no Actions minutes. lumiere-player's
+# desktop-release.yml starts it after each push to main, and specs/desktop.md there has the plan.
+on:
+  repository_dispatch:
+    types: [lumiere-desktop-mac]
+  workflow_dispatch:
+    inputs:
+      sha:
+        description: lumiere-player commit to build
+        required: true
+      version:
+        description: Version, such as 0.1.2
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: lumiere-desktop-mac
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+    working-directory: desktop
+
+env:
+  SOURCE_SHA: ${{ github.event.client_payload.sha || inputs.sha }}
+  VERSION: ${{ github.event.client_payload.version || inputs.version }}
+
+jobs:
+  build:
+    runs-on: macos-latest
+    timeout-minutes: 40
+    steps:
+      - name: Check the inputs
+        working-directory: .
+        run: |
+          [[ "$SOURCE_SHA" =~ ^[0-9a-f]{40}$ ]] || { echo "::error::sha must be a full commit"; exit 1; }
+          [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || { echo "::error::version must be x.y.z"; exit 1; }
+      # CODE_STATS_TOKEN reads every workbench-soft repo and writes none, so the source stays private.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: workbench-soft/lumiere-player
+          ref: ${{ env.SOURCE_SHA }}
+          token: ${{ secrets.CODE_STATS_TOKEN }}
+          persist-credentials: false
+      - uses: jdx/mise-action@82a612c5ab8bcda7cc5db6b7e81a8e7584c3dc6e # v5.2.3
+        with:
+          cache: false
+          working_directory: desktop
+          install_args: node pnpm
+      - run: mise run install-deps
+      - name: Stamp the version
+        run: node -e 'const fs=require("node:fs"); const p=JSON.parse(fs.readFileSync("package.json","utf8")); p.version=process.argv[1]; fs.writeFileSync("package.json", JSON.stringify(p,null,2)+"\n");' "$VERSION"
+      - run: mise run package
+      # A build that crashes at start stops here, before it reaches the release.
+      - run: mise run launch-check release/mac-universal/Lumiere.app/Contents/MacOS/Lumiere
+      - name: Publish to GitHub Releases
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="lumiere-desktop-v${VERSION}"
+          # The Windows job in lumiere-player races to create the release, so a lost race uploads.
+          gh release create "$tag" release/*.dmg --repo "$GITHUB_REPOSITORY" --title "Lumiere desktop v${VERSION}" \
+            --notes "Lumiere for Windows and Mac. Source: workbench-soft/lumiere-player@${SOURCE_SHA}" \
+            --latest=false 2>/dev/null || gh release upload "$tag" release/*.dmg --repo "$GITHUB_REPOSITORY" --clobber

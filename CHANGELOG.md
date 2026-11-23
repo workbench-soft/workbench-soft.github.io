@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Lumiere Mac build** `lumiere-desktop-mac.yml` builds the Lumiere dmg from lumiere-player on the free macOS runner of this public repo.
 - **SongCatcher Find tabs** the panel adds Find tabs in Guitar Upscale, with its architecture line in 9 languages.
 
 - **SongCatcher 0.3** the panel adds Lyrics, the song cards with covers, the live catch button and the voice in the language of the song name.
