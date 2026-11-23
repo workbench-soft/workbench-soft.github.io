@@ -1843,6 +1843,10 @@ const es: Catalog = {
               'App para LG webOS',
               'Una app webOS para teles LG muestra memorias USB y carpetas del NAS como un árbol, encuentra el NAS en la red para que solo escriba el usuario, y reproduce con botones en pantalla, selección de subtítulos y audio, y el título de una película dicho al Magic Remote. Al primer inicio elige las carpetas de películas, series, dibujos animados, música y audiolibros, y el árbol las agrupa por tipo. Lumiere mantiene el índice al día por sí sola y un título como Paddington empieza al instante.',
             ],
+            [
+              'App para Windows y Mac',
+              'La app de LG TV como app de escritorio para Windows y Mac. Muestra la carpeta personal, cada disco y cada NAS, y se maneja con el teclado o el ratón. En Windows se actualiza sola.',
+            ],
           ],
         },
       ],

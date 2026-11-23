@@ -132,6 +132,8 @@ const arch: Arch = {
       'Eine Webseite in TypeScript spielt über den Player des Fernsehers. Ein Node-Dienst im selben webOS-Paket liest USB-Sticks und das NAS über WebDAV und streamt die Dateien zur Seite.',
     'Library setup and NAS finder':
       'NasFind klopft im /24-Netz des Fernsehers an Port 445 und fragt per NetBIOS nach jedem Namen. Nach der Anmeldung listet libVLC die Freigaben, und die Mediathek-Ordner speichern die Art jedes Ordners in SharedPreferences.',
+    'Windows and Mac app':
+      'Electron führt die webOS-Seite und ihren Node-Dienst unverändert aus. Die Seite lädt von ihrem eigenen Ursprung lumiere://, und der Dienst zeigt den persönlichen Ordner und die Laufwerke statt USB-Sticks.',
   },
 };
 
