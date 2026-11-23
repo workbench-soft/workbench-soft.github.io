@@ -1039,11 +1039,19 @@ const nb: Catalog = {
           features: [
             [
               'Prissøk',
-              'Ett søk spør АптекаМос, Мегаптека, Wildberries og Ozon samtidig, med en statuslinje per kilde. Prisene havner i én liste, billigst først. Et trykk åpner tilbudet i appen.',
+              'Ett søk spør АптекаМос, Мегаптека, ДеалМед, IMSSTORE, Wildberries og Ozon samtidig, med en statuslinje per kilde. Prisene havner i én liste, billigst først. Et trykk åpner tilbudet i appen.',
             ],
             [
               'Bydeler i Moskva',
               'Knapper for de 12 bydelene og Подмосковье beholder apotekene i de valgte. T-banestasjonen gir hvert apotek sin bydel. Markedsplasser blir stående med merket levering.',
+            ],
+            [
+              'Kart og kjøpested',
+              'Skriv inn en bydel eller en stasjon, som Жулебино, eller trykk Nær meg. Hvert apotek viser avstanden, Nærmest sorterer etter den, og et kart viser laveste pris ved hver stasjon og grossistenes lagre.',
+            ],
+            [
+              'Engrospriser',
+              'ДеалМед og IMSSTORE blir med i søket med et «опт»-merke og lageret sitt. Et antall gir summen for hvert tilbud.',
             ],
             [
               'Sjekker fra nettsteder',
@@ -1055,7 +1063,7 @@ const nb: Catalog = {
             ],
             [
               'Grossister',
-              'Grossistportalene til Протек, Катрен, Пульс, СИА Интернейшнл og Фармкомплект åpnes i appen og holder innkjøperen innlogget.',
+              'Engrosportalene til Протек, Катрен, Пульс og Фармкомплект åpnes i appen og holder deg innlogget.',
             ],
             [
               'Språk og oppdateringer',

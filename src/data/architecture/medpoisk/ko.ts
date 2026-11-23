@@ -101,6 +101,10 @@ const arch: Arch = {
       '출처마다 확인 페이지와 결과 페이지를 구분하는 테스트가 있습니다. CheckSheet.tsx가 확인을 보여 주고, 쿠키는 공용 WebView 저장소에 남으며, 그 출처는 다시 숨어서 돌아갑니다.',
     'Shopping list':
       'items.ts가 입력한 단어를 SQLite에 저장합니다. check-all.ts가 품목을 차례로 검색하고 고른 행정구의 최저가 상품 정보를 남깁니다.',
+    'Map and the place to buy':
+      'places.json은 모스크바의 구역과 역을 Wikidata 좌표와 함께 담습니다. offer-sections.ts는 약국 역까지의 거리로 정렬하고, OfferMap은 MapLibre로 OpenFreeMap 타일 위에 핀을 그립니다.',
+    'Wholesale prices':
+      'dealmed.ts와 imsstore.ts는 휴대폰과 검색 Worker에서 각 검색 페이지의 도매가와 재고를 읽습니다.',
     Distributors: 'distributors.ts가 회사마다 첫 페이지를 나열합니다. browser.tsx가 쿠키를 유지하는 WebView로 엽니다.',
     'Languages and updates':
       'i18n.ts가 i18next를 바로 바꾸고 선택을 기억합니다. newer-release.ts가 시작할 때와 돌아올 때 GitHub에 새 medpoisk APK를 묻습니다.',

@@ -100,6 +100,9 @@ const arch: Arch = {
       '每个来源有一个测试，能分辨检查页和结果页。CheckSheet.tsx 显示检查页，cookie 留在共用的 WebView 存储里，然后这个来源重新在后台搜索。',
     'Shopping list':
       'items.ts 把输入的词存进 SQLite。check-all.ts 逐个搜索每件商品，保留它在选中行政区里最便宜的报价。',
+    'Map and the place to buy':
+      'places.json 保存莫斯科各区和车站及其来自 Wikidata 的坐标。offer-sections.ts 按到药店车站的距离排序，OfferMap 用 MapLibre 在 OpenFreeMap 瓦片上绘制标记。',
+    'Wholesale prices': 'dealmed.ts 和 imsstore.ts 在手机和搜索 Worker 中从搜索页读取批发价和库存。',
     Distributors: 'distributors.ts 列出每家公司的首页。browser.tsx 在保留 cookie 的 WebView 里打开它。',
     'Languages and updates':
       'i18n.ts 立即切换 i18next 并记住选择。newer-release.ts 在启动和回到应用时向 GitHub 查询更新的 medpoisk APK。',

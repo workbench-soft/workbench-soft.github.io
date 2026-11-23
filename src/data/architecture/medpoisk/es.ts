@@ -101,6 +101,10 @@ const arch: Arch = {
       'Cada fuente tiene un test que distingue su página de control de una de resultados. CheckSheet.tsx muestra el control, las cookies quedan en el almacén común de las WebView, y la fuente vuelve a correr oculta.',
     'Shopping list':
       'items.ts guarda las palabras escritas en SQLite. check-all.ts busca cada artículo por turno y se queda con su oferta más barata en los distritos elegidos.',
+    'Map and the place to buy':
+      'places.json guarda los distritos y estaciones de Moscú con coordenadas de Wikidata. offer-sections.ts ordena por la distancia a la estación de cada farmacia, y OfferMap dibuja los marcadores con MapLibre sobre teselas de OpenFreeMap.',
+    'Wholesale prices':
+      'dealmed.ts e imsstore.ts leen el precio mayorista y las existencias de cada página de búsqueda, en el teléfono y en el Worker de búsqueda.',
     Distributors:
       'distributors.ts lista la página de inicio de cada empresa. browser.tsx la abre en una WebView que guarda sus cookies.',
     'Languages and updates':

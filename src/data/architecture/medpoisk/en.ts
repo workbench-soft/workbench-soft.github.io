@@ -101,6 +101,10 @@ const arch: Arch = {
       'Each source has a test that tells its check page from a results page. CheckSheet.tsx shows the check, the cookies stay in the shared WebView store, and the source runs again hidden.',
     'Shopping list':
       'items.ts saves the typed words in SQLite. check-all.ts runs the search for each item in turn and keeps its cheapest offer in the chosen okrugs.',
+    'Map and the place to buy':
+      "places.json holds the Moscow districts and stations with coordinates from Wikidata. offer-sections.ts sorts by the distance to each pharmacy's station, and OfferMap draws the pins with MapLibre and OpenFreeMap tiles.",
+    'Wholesale prices':
+      'dealmed.ts and imsstore.ts read the wholesale price and the stock off each search page, on the phone and in the search Worker.',
     Distributors:
       'distributors.ts lists the home page of each company. browser.tsx opens it in a WebView that keeps its cookies.',
     'Languages and updates':

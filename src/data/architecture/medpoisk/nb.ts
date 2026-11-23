@@ -101,6 +101,10 @@ const arch: Arch = {
       'Hver kilde har en test som skiller sjekksiden fra en resultatside. CheckSheet.tsx viser sjekken, informasjonskapslene blir i det delte WebView-lageret, og kilden kjører igjen i skjul.',
     'Shopping list':
       'items.ts lagrer de skrevne ordene i SQLite. check-all.ts søker etter hver vare etter tur og beholder det billigste tilbudet i de valgte bydelene.',
+    'Map and the place to buy':
+      'places.json har Moskvas bydeler og stasjoner med koordinater fra Wikidata. offer-sections.ts sorterer etter avstanden til apotekets stasjon, og OfferMap tegner nålene med MapLibre på OpenFreeMap-fliser.',
+    'Wholesale prices':
+      'dealmed.ts og imsstore.ts leser engrosprisen og lageret fra hver søkeside, på telefonen og i søke-Workeren.',
     Distributors:
       'distributors.ts lister startsiden til hvert firma. browser.tsx åpner den i en WebView som beholder informasjonskapslene.',
     'Languages and updates':

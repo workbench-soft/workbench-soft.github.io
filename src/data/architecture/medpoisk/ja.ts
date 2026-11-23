@@ -101,6 +101,10 @@ const arch: Arch = {
       '各情報源には、確認ページと結果ページを見分けるテストがあります。CheckSheet.tsx が確認を表示し、cookie は共有の WebView ストアに残り、情報源は再び裏で動きます。',
     'Shopping list':
       'items.ts が入力した言葉を SQLite に保存します。check-all.ts が品目を順に検索し、選んだ管区での最安の商品情報を残します。',
+    'Map and the place to buy':
+      'places.json はモスクワの地区と駅を Wikidata の座標付きで持ちます。offer-sections.ts は薬局の駅までの距離で並べ替え、OfferMap は MapLibre で OpenFreeMap のタイル上にピンを描きます。',
+    'Wholesale prices':
+      'dealmed.ts と imsstore.ts は、端末と検索 Worker で各検索ページから卸売価格と在庫を読み取ります。',
     Distributors:
       'distributors.ts が各社のトップページを並べます。browser.tsx が cookie を保つ WebView でそれを開きます。',
     'Languages and updates':

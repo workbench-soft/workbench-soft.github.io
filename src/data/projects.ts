@@ -1861,11 +1861,19 @@ export const projects: Project[] = [
         features: [
           {
             name: 'Price search',
-            text: 'One search asks АптекаМос, Мегаптека, Wildberries and Ozon at once, with a status row per source. Prices land in one list, cheapest first, and a tap opens the offer in the app.',
+            text: 'One search asks АптекаМос, Мегаптека, ДеалМед, IMSSTORE, Wildberries and Ozon at once, with a status row per source. Prices land in one list, cheapest first, and a tap opens the offer in the app.',
           },
           {
             name: 'Moscow okrugs',
             text: 'Chips for the 12 okrugs and Подмосковье keep the pharmacies in the ones picked. A metro station gives each pharmacy its okrug, and marketplaces stay with a delivery tag.',
+          },
+          {
+            name: 'Map and the place to buy',
+            text: 'Type a district or a station, such as Жулебино, or tap Near me. Each pharmacy shows how far it is, Nearest sorts by it, and a map shows the lowest price at each station with the wholesalers’ warehouses.',
+          },
+          {
+            name: 'Wholesale prices',
+            text: 'ДеалМед and IMSSTORE join the search with an "опт" tag and their stock. A quantity gives the total of each offer.',
           },
           {
             name: 'Site checks',
@@ -1877,7 +1885,7 @@ export const projects: Project[] = [
           },
           {
             name: 'Distributors',
-            text: 'The wholesale portals of Протек, Катрен, Пульс, СИА Интернейшнл and Фармкомплект open in the app and keep the buyer signed in.',
+            text: 'The wholesale portals of Протек, Катрен, Пульс and Фармкомплект open in the app and keep the buyer signed in.',
           },
           {
             name: 'Languages and updates',

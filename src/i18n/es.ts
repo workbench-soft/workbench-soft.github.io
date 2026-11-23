@@ -1111,11 +1111,19 @@ const es: Catalog = {
           features: [
             [
               'Búsqueda de precios',
-              'Una búsqueda consulta АптекаМос, Мегаптека, Wildberries y Ozon a la vez, con una línea de estado por fuente. Los precios llegan en una sola lista, del más barato al más caro. Un toque abre la oferta en la app.',
+              'Una búsqueda consulta АптекаМос, Мегаптека, ДеалМед, IMSSTORE, Wildberries y Ozon a la vez, con una línea de estado por fuente. Los precios llegan en una sola lista, del más barato al más caro. Un toque abre la oferta en la app.',
             ],
             [
               'Distritos de Moscú',
               'Los chips de los 12 distritos y Подмосковье dejan las farmacias de los distritos elegidos. La estación de metro da a cada farmacia su distrito. Los marketplaces siguen con la etiqueta de envío.',
+            ],
+            [
+              'Mapa y lugar de compra',
+              'Escribe un distrito o una estación, como Жулебино, o toca Cerca de mí. Cada farmacia muestra su distancia, Más cerca ordena por ella y un mapa muestra el precio más bajo en cada estación con los almacenes de los mayoristas.',
+            ],
+            [
+              'Precios mayoristas',
+              'ДеалМед e IMSSTORE entran en la búsqueda con una etiqueta «опт» y sus existencias. Una cantidad da el total de cada oferta.',
             ],
             [
               'Controles de los sitios',
@@ -1127,7 +1135,7 @@ const es: Catalog = {
             ],
             [
               'Distribuidores',
-              'Los portales mayoristas de Протек, Катрен, Пульс, СИА Интернейшнл y Фармкомплект se abren en la app y mantienen la sesión del comprador.',
+              'Los portales mayoristas de Протек, Катрен, Пульс y Фармкомплект se abren en la app y mantienen la sesión.',
             ],
             [
               'Idiomas y actualizaciones',

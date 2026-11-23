@@ -1145,11 +1145,19 @@ const fr: Catalog = {
           features: [
             [
               'Recherche de prix',
-              'Une recherche interroge АптекаМос, Мегаптека, Wildberries et Ozon en même temps, avec une ligne d’état par source. Les prix arrivent dans une seule liste, du moins cher au plus cher. Un appui ouvre l’offre dans l’app.',
+              'Une recherche interroge АптекаМос, Мегаптека, ДеалМед, IMSSTORE, Wildberries et Ozon en même temps, avec une ligne d’état par source. Les prix arrivent dans une seule liste, du moins cher au plus cher. Un appui ouvre l’offre dans l’app.',
             ],
             [
               'Districts de Moscou',
               'Des puces pour les 12 districts et Подмосковье gardent les pharmacies des districts choisis. La station de métro donne son district à chaque pharmacie. Les marketplaces restent avec une étiquette livraison.',
+            ],
+            [
+              'Carte et lieu d’achat',
+              'Saisissez un quartier ou une station, comme Жулебино, ou touchez Près de moi. Chaque pharmacie montre sa distance, Plus proche trie par elle, et une carte montre le prix le plus bas à chaque station avec les entrepôts des grossistes.',
+            ],
+            [
+              'Prix de gros',
+              'ДеалМед et IMSSTORE rejoignent la recherche avec une étiquette « опт » et leur stock. Une quantité donne le total de chaque offre.',
             ],
             [
               'Contrôles des sites',
@@ -1161,7 +1169,7 @@ const fr: Catalog = {
             ],
             [
               'Distributeurs',
-              'Les portails de gros de Протек, Катрен, Пульс, СИА Интернейшнл et Фармкомплект s’ouvrent dans l’app et gardent l’acheteur connecté.',
+              'Les portails de gros de Протек, Катрен, Пульс et Фармкомплект s’ouvrent dans l’app et gardent la connexion.',
             ],
             [
               'Langues et mises à jour',
