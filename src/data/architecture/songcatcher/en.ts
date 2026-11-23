@@ -80,6 +80,8 @@ const arch: Arch = {
       'History.kt keeps the fingerprint and its length. After each catch and at start the service sends the waiting ones and saves each match quietly.',
     'Caught songs':
       'History.kt keeps the last 50 songs and their Spotify state. retryPending saves the waiting songs and reports how many went in.',
+    Lyrics:
+      'Lyrics.kt asks LRCLIB for the song by artist, title and album, then searches, and keeps the answer in the cache folder. SongSheet in Compose shows a spinner, the words or a retry.',
     Languages:
       'Each visible and spoken text sits in res/values strings.xml in 9 languages, and CatalogTest checks the keys match.',
     'Shared microphone':

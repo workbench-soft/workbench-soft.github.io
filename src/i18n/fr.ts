@@ -719,7 +719,7 @@ const fr: Catalog = {
           features: [
             [
               'Réveil à la voix',
-              'Dites « Shazam », même téléphone verrouillé dans la poche. Un bip répond. Reconnaître maintenant, à l’écran, lance une recherche sans le mot.',
+              'Dites « Shazam », téléphone verrouillé dans la poche, et un bip répond. À l’écran, un grand bouton brille en attendant, remplit un anneau pendant l’écoute et tourne pendant l’enregistrement.',
             ],
             [
               'Reconnaissance du morceau',
@@ -731,7 +731,7 @@ const fr: Catalog = {
             ],
             [
               'Réponse à voix haute',
-              'Une voix dit le morceau enregistré, ou qu’aucun n’a été trouvé. La musique baisse pendant ce temps.',
+              'Une voix annonce la chanson enregistrée, ou qu’aucune n’a été trouvée, pendant que la musique baisse. Un titre russe, japonais, coréen ou chinois est lu par une voix de cette langue.',
             ],
             [
               'Recherche hors ligne',
@@ -739,7 +739,11 @@ const fr: Catalog = {
             ],
             [
               'Morceaux attrapés',
-              'Les 50 derniers morceaux, chacun marqué dans Spotify ou en attente. Un bouton enregistre ceux en attente sans nouvel enregistrement.',
+              'La dernière chanson s’affiche sur une carte avec sa pochette, son album et son année. Les précédentes, jusqu’à 50, suivent en liste. Un bouton enregistre les chansons en attente de Spotify sans nouvel enregistrement.',
+            ],
+            [
+              'Paroles',
+              'Toucher une chanson ouvre ses paroles depuis LRCLIB, gardées sur le téléphone après le premier chargement.',
             ],
             ['Langues', 'Les écrans et la voix en 9 langues, selon la langue du téléphone.'],
           ],

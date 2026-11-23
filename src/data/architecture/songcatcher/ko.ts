@@ -71,6 +71,8 @@ const arch: Arch = {
       'History.kt가 지문과 길이를 남깁니다. 잡기 때마다와 시작할 때 서비스가 대기 중인 지문을 보내고 찾은 곡을 조용히 저장합니다.',
     'Caught songs':
       'History.kt가 최근 50곡과 Spotify 상태를 남깁니다. retryPending이 대기 중인 곡을 저장하고 몇 곡이 들어갔는지 알립니다.',
+    Lyrics:
+      'Lyrics.kt는 아티스트, 제목, 앨범으로 LRCLIB에 묻고, 이어서 검색하며, 답을 캐시 폴더에 저장합니다. Compose의 SongSheet는 로딩 표시, 가사 또는 재시도를 보여 줍니다.',
     Languages: '보이고 말하는 텍스트는 모두 res/values의 strings.xml에 9개 언어로 있고, CatalogTest가 키를 맞춥니다.',
     'Shared microphone':
       'WakeShare가 바인드 서비스로 호출어 앱을 잇습니다. 패키지 이름이 가장 작은 앱이 마이크를 잡고, 들은 문구의 앱에 WAKE를 보냅니다.',

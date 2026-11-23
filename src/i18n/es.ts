@@ -697,7 +697,7 @@ const es: Catalog = {
           features: [
             [
               'Activación por voz',
-              'Di «Shazam», incluso con el móvil bloqueado en el bolsillo. Un pitido responde. Reconocer ahora, en la pantalla, busca sin la palabra.',
+              'Di «Shazam» con el teléfono bloqueado en el bolsillo y un pitido responde. En la pantalla un gran botón brilla mientras espera, llena un anillo mientras escucha y gira mientras guarda.',
             ],
             [
               'Reconocimiento de canciones',
@@ -709,7 +709,7 @@ const es: Catalog = {
             ],
             [
               'Respuesta en voz alta',
-              'Una voz dice la canción guardada, o que no encontró ninguna. La música baja mientras habla.',
+              'Una voz dice la canción guardada, o que no encontró ninguna, mientras la música baja. Un título ruso, japonés, coreano o chino suena con una voz de ese idioma.',
             ],
             [
               'Búsqueda sin conexión',
@@ -717,8 +717,9 @@ const es: Catalog = {
             ],
             [
               'Canciones atrapadas',
-              'Las 50 últimas canciones, cada una marcada en Spotify o en espera. Un botón guarda las que esperan sin grabar de nuevo.',
+              'La última canción aparece en una tarjeta con su portada, álbum y año. Las anteriores, hasta 50, siguen en una lista. Un botón guarda las canciones que esperan a Spotify sin grabar de nuevo.',
             ],
+            ['Letras', 'Tocar una canción abre su letra desde LRCLIB, guardada en el teléfono tras la primera carga.'],
             ['Idiomas', 'Las pantallas y la voz en 9 idiomas, según el idioma del móvil.'],
           ],
         },

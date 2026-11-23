@@ -1140,7 +1140,7 @@ export const projects: Project[] = [
     tagline: 'Say "Shazam" and the song lands in your Liked Songs.',
     lede: 'SongCatcher is an Android app that listens for one word. Say "Shazam" with the phone locked, and the song that plays around you goes to Spotify Liked Songs and to Lumiere. It shares the microphone with the other wake phrase apps.',
     platforms: ['Android'],
-    stack: ['Kotlin', 'sherpa-onnx', 'Shazam', 'Spotify Web API'],
+    stack: ['Kotlin', 'Jetpack Compose', 'sherpa-onnx', 'Shazam', 'Spotify Web API', 'LRCLIB'],
     links: [],
     groups: [
       {
@@ -1148,7 +1148,7 @@ export const projects: Project[] = [
         features: [
           {
             name: 'Wake by voice',
-            text: 'Say "Shazam" with the phone locked in a pocket, and a beep answers. Recognize now on the screen starts a catch with no word.',
+            text: 'Say "Shazam" with the phone locked in a pocket, and a beep answers. On the screen one big button glows while it waits, fills a ring over the catch and spins while it saves.',
           },
           {
             name: 'Song recognition',
@@ -1160,7 +1160,7 @@ export const projects: Project[] = [
           },
           {
             name: 'Spoken answer',
-            text: 'A voice says the song it saved, or that it found none, while the music ducks.',
+            text: 'A voice says the song it saved, or that it found none, while the music ducks. A Russian, Japanese, Korean or Chinese name is spoken by a voice of that language.',
           },
           {
             name: 'Offline catches',
@@ -1168,7 +1168,11 @@ export const projects: Project[] = [
           },
           {
             name: 'Caught songs',
-            text: 'The last 50 songs, each marked in Spotify or waiting. One button saves the waiting ones with no new recording.',
+            text: 'The latest song sits on a card with its cover, album and year. Earlier ones, up to 50, follow in a list. One button saves the songs waiting for Spotify with no new recording.',
+          },
+          {
+            name: 'Lyrics',
+            text: 'A tap on a song opens its words from LRCLIB, kept on the phone after the first load.',
           },
           { name: 'Languages', text: 'The screens and the voice come in 9 languages and follow the phone.' },
         ],

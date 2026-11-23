@@ -86,6 +86,8 @@ const arch: Arch = {
       'History.kt garde l’empreinte et sa durée. Après chaque capture et au démarrage, le service envoie celles en attente et enregistre chaque résultat sans voix.',
     'Caught songs':
       'History.kt garde les 50 derniers morceaux et leur état Spotify. retryPending enregistre les morceaux en attente et dit combien sont passés.',
+    Lyrics:
+      'Lyrics.kt demande à LRCLIB l’artiste, le titre et l’album, puis cherche, et garde la réponse dans le dossier de cache. SongSheet en Compose montre un indicateur, les paroles ou un nouvel essai.',
     Languages:
       'Chaque texte affiché ou dit est dans res/values strings.xml en 9 langues, et CatalogTest vérifie les clés.',
     'Shared microphone':

@@ -77,6 +77,8 @@ const arch: Arch = {
       'History.kt がフィンガープリントと長さを残します。キャッチのたびと起動時に、サービスが待機分を送り、見つかった曲を声なしで保存します。',
     'Caught songs':
       'History.kt が最新 50 曲と Spotify の状態を残します。retryPending が待機中の曲を保存し、何曲入ったかを伝えます。',
+    Lyrics:
+      'Lyrics.kt はアーティスト、曲名、アルバムで LRCLIB に問い合わせ、次に検索し、結果をキャッシュフォルダに保存します。Compose の SongSheet は読み込み表示、歌詞、再試行を出します。',
     Languages:
       '表示と音声のテキストはすべて res/values の strings.xml に 9 言語であり、CatalogTest がキーをそろえます。',
     'Shared microphone':

@@ -65,6 +65,8 @@ const arch: Arch = {
     'Spoken answer': 'Voice.kt 发出提示音，并用 Android 语音合成说话，同时压低音乐。屏幕上的开关可关掉语音。',
     'Offline catches': 'History.kt 保存指纹和时长。每次抓歌后和启动时，服务发出等待中的指纹，并静默保存找到的歌。',
     'Caught songs': 'History.kt 保存最近 50 首歌和 Spotify 状态。retryPending 保存等待中的歌，并报告存进了几首。',
+    Lyrics:
+      'Lyrics.kt 按艺人、歌名和专辑向 LRCLIB 查询，然后搜索，并把结果存在缓存文件夹。Compose 的 SongSheet 显示加载圈、歌词或重试。',
     Languages: '所有显示和朗读的文字都在 res/values 的 strings.xml 里，共 9 种语言，CatalogTest 检查键是否一致。',
     'Shared microphone':
       'WakeShare 通过绑定服务连接各唤醒词应用。包名最小的应用占用麦克风，把 WAKE 发给它听到的唤醒词所属的应用。',

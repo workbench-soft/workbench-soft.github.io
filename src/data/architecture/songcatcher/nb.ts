@@ -80,6 +80,8 @@ const arch: Arch = {
       'History.kt tar vare på fingeravtrykket og lengden. Etter hver fangst og ved oppstart sender tjenesten de ventende og lagrer hvert treff uten stemme.',
     'Caught songs':
       'History.kt tar vare på de siste 50 sangene og Spotify status. retryPending lagrer de ventende sangene og sier hvor mange som kom inn.',
+    Lyrics:
+      'Lyrics.kt spør LRCLIB etter artist, tittel og album, søker så, og lagrer svaret i hurtigbufferen. SongSheet i Compose viser en spinner, teksten eller et nytt forsøk.',
     Languages:
       'Hver tekst som vises eller sies ligger i res/values strings.xml på 9 språk, og CatalogTest sjekker nøklene.',
     'Shared microphone':

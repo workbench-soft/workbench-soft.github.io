@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **SongCatcher 0.3** the panel adds Lyrics, the song cards with covers, the live catch button and the voice in the language of the song name.
+
 - **SongCatcher** a panel in Apps, in the 9 languages: say "Shazam" with the phone locked, and the phone fingerprints the song, asks Shazam and saves it to Spotify and Lumiere. The panel also covers the shared microphone and the wake engine of `wake-share`.
 
 - **МедПоиск** a panel in Development for clients, in the 9 languages: an Android app that searches medical supply prices across Moscow pharmacies and marketplaces, filters them by okrug, keeps a shopping list and opens distributor portals. Its code is private, so the panel has no Source link and no download.

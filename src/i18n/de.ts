@@ -706,7 +706,7 @@ const de: Catalog = {
           features: [
             [
               'Wecken per Stimme',
-              'Sagen Sie „Shazam“, auch mit gesperrtem Handy in der Tasche. Ein Piepton antwortet. Jetzt erkennen auf dem Bildschirm startet die Suche ohne Wort.',
+              'Sagen Sie bei gesperrtem Handy in der Tasche „Shazam“, und ein Piepton antwortet. Ein großer Knopf auf dem Bildschirm leuchtet beim Warten, füllt beim Zuhören einen Ring und dreht sich beim Speichern.',
             ],
             [
               'Songerkennung',
@@ -718,7 +718,7 @@ const de: Catalog = {
             ],
             [
               'Antwort per Stimme',
-              'Eine Stimme nennt den gespeicherten Song oder sagt, dass keiner gefunden wurde. Die Musik wird dabei leiser.',
+              'Eine Stimme nennt den gespeicherten Song oder sagt, dass keiner gefunden wurde, während die Musik leiser wird. Ein russischer, japanischer, koreanischer oder chinesischer Titel klingt in dieser Sprache.',
             ],
             [
               'Fangen ohne Netz',
@@ -726,7 +726,11 @@ const de: Catalog = {
             ],
             [
               'Gefangene Songs',
-              'Die letzten 50 Songs, jeder markiert als in Spotify oder wartend. Ein Knopf speichert die wartenden ohne neue Aufnahme.',
+              'Der letzte Song steht auf einer Karte mit Cover, Album und Jahr. Frühere, bis zu 50, folgen in einer Liste. Ein Knopf speichert die Songs, die auf Spotify warten, ohne neue Aufnahme.',
+            ],
+            [
+              'Songtexte',
+              'Ein Tipp auf einen Song öffnet seinen Text von LRCLIB, nach dem ersten Laden auf dem Handy gespeichert.',
             ],
             ['Sprachen', 'Bildschirme und Stimme in 9 Sprachen, nach der Sprache des Handys.'],
           ],

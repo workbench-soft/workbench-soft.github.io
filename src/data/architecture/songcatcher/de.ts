@@ -86,6 +86,8 @@ const arch: Arch = {
       'History.kt behält den Fingerabdruck und seine Länge. Nach jedem Fang und beim Start sendet der Dienst die wartenden und speichert jeden Treffer leise.',
     'Caught songs':
       'History.kt behält die letzten 50 Songs und ihren Spotify Stand. retryPending speichert die wartenden Songs und meldet, wie viele durchgingen.',
+    Lyrics:
+      'Lyrics.kt fragt LRCLIB nach Künstler, Titel und Album, sucht danach und legt die Antwort im Cache Ordner ab. SongSheet in Compose zeigt einen Ladekreis, den Text oder einen neuen Versuch.',
     Languages:
       'Jeder sichtbare und gesprochene Text liegt in res/values strings.xml in 9 Sprachen, und CatalogTest prüft die Schlüssel.',
     'Shared microphone':

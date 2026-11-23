@@ -658,7 +658,7 @@ const nb: Catalog = {
           features: [
             [
               'Vekking med stemmen',
-              'Si «Shazam», også med låst telefon i lomma. Et pip svarer. Gjenkjenn nå på skjermen leter uten ordet.',
+              'Si «Shazam» med telefonen låst i lomma, og et pip svarer. På skjermen lyser en stor knapp mens den venter, fyller en ring mens den lytter og snurrer mens den lagrer.',
             ],
             [
               'Sanggjenkjenning',
@@ -670,7 +670,7 @@ const nb: Catalog = {
             ],
             [
               'Svar med stemme',
-              'En stemme sier hvilken sang som ble lagret, eller at ingen ble funnet. Musikken dempes så lenge.',
+              'En stemme sier sangen den lagret, eller at den ikke fant noen, mens musikken dempes. Et russisk, japansk, koreansk eller kinesisk navn leses av en stemme på det språket.',
             ],
             [
               'Fangst uten nett',
@@ -678,8 +678,9 @@ const nb: Catalog = {
             ],
             [
               'Fangede sanger',
-              'De siste 50 sangene, hver merket i Spotify eller venter. Én knapp lagrer de ventende uten nytt opptak.',
+              'Den siste sangen vises på et kort med omslag, album og år. Tidligere sanger, opptil 50, følger i en liste. Én knapp lagrer sangene som venter på Spotify uten nytt opptak.',
             ],
+            ['Sangtekster', 'Et trykk på en sang åpner teksten fra LRCLIB, lagret på telefonen etter første lasting.'],
             ['Språk', 'Skjermene og stemmen på 9 språk, etter språket på telefonen.'],
           ],
         },
