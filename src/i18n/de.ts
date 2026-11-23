@@ -732,6 +732,10 @@ const de: Catalog = {
               'Songtexte',
               'Ein Tipp auf einen Song öffnet seinen Text von LRCLIB, nach dem ersten Laden auf dem Handy gespeichert.',
             ],
+            [
+              'Tabs in Guitar Upscale suchen',
+              'Mit Guitar Upscale auf dem Handy öffnet ein Gitarrenknopf auf der Songkarte die Tabs des Songs, wie in Lumiere.',
+            ],
             ['Sprachen', 'Bildschirme und Stimme in 9 Sprachen, nach der Sprache des Handys.'],
           ],
         },

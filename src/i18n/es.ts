@@ -720,6 +720,10 @@ const es: Catalog = {
               'La última canción aparece en una tarjeta con su portada, álbum y año. Las anteriores, hasta 50, siguen en una lista. Un botón guarda las canciones que esperan a Spotify sin grabar de nuevo.',
             ],
             ['Letras', 'Tocar una canción abre su letra desde LRCLIB, guardada en el teléfono tras la primera carga.'],
+            [
+              'Buscar tablaturas en Guitar Upscale',
+              'Con Guitar Upscale en el móvil, un botón de guitarra en la tarjeta abre las tablaturas de la canción, como en Lumiere.',
+            ],
             ['Idiomas', 'Las pantallas y la voz en 9 idiomas, según el idioma del móvil.'],
           ],
         },

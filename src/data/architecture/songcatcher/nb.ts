@@ -82,6 +82,8 @@ const arch: Arch = {
       'History.kt tar vare på de siste 50 sangene og Spotify status. retryPending lagrer de ventende sangene og sier hvor mange som kom inn.',
     Lyrics:
       'Lyrics.kt spør LRCLIB etter artist, tittel og album, søker så, og lagrer svaret i hurtigbufferen. SongSheet i Compose viser en spinner, teksten eller et nytt forsøk.',
+    'Find tabs in Guitar Upscale':
+      'GuitarTabs.kt sender https://guitar-upscale.com/?song=<artist tittel> som en VIEW intent til pakken til Guitar Upscale, samme lenke som Lumiere. Knappen vises bare når appen tar imot lenken.',
     Languages:
       'Hver tekst som vises eller sies ligger i res/values strings.xml på 9 språk, og CatalogTest sjekker nøklene.',
     'Shared microphone':

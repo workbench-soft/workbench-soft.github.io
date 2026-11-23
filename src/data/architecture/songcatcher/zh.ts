@@ -67,6 +67,8 @@ const arch: Arch = {
     'Caught songs': 'History.kt 保存最近 50 首歌和 Spotify 状态。retryPending 保存等待中的歌，并报告存进了几首。',
     Lyrics:
       'Lyrics.kt 按艺人、歌名和专辑向 LRCLIB 查询，然后搜索，并把结果存在缓存文件夹。Compose 的 SongSheet 显示加载圈、歌词或重试。',
+    'Find tabs in Guitar Upscale':
+      'GuitarTabs.kt 以 VIEW intent 把 https://guitar-upscale.com/?song=<艺人 歌名> 发给 Guitar Upscale 的包，与 Lumiere 发送的链接相同。只有该应用能接收链接时才显示按钮。',
     Languages: '所有显示和朗读的文字都在 res/values 的 strings.xml 里，共 9 种语言，CatalogTest 检查键是否一致。',
     'Shared microphone':
       'WakeShare 通过绑定服务连接各唤醒词应用。包名最小的应用占用麦克风，把 WAKE 发给它听到的唤醒词所属的应用。',

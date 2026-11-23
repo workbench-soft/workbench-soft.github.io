@@ -79,6 +79,8 @@ const arch: Arch = {
       'History.kt が最新 50 曲と Spotify の状態を残します。retryPending が待機中の曲を保存し、何曲入ったかを伝えます。',
     Lyrics:
       'Lyrics.kt はアーティスト、曲名、アルバムで LRCLIB に問い合わせ、次に検索し、結果をキャッシュフォルダに保存します。Compose の SongSheet は読み込み表示、歌詞、再試行を出します。',
+    'Find tabs in Guitar Upscale':
+      'GuitarTabs.kt は https://guitar-upscale.com/?song=<アーティスト 曲名> を VIEW インテントで Guitar Upscale のパッケージに送ります。Lumiere と同じリンクです。アプリがリンクを受け取れるときだけボタンが出ます。',
     Languages:
       '表示と音声のテキストはすべて res/values の strings.xml に 9 言語であり、CatalogTest がキーをそろえます。',
     'Shared microphone':

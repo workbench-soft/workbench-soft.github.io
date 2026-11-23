@@ -681,6 +681,10 @@ const nb: Catalog = {
               'Den siste sangen vises på et kort med omslag, album og år. Tidligere sanger, opptil 50, følger i en liste. Én knapp lagrer sangene som venter på Spotify uten nytt opptak.',
             ],
             ['Sangtekster', 'Et trykk på en sang åpner teksten fra LRCLIB, lagret på telefonen etter første lasting.'],
+            [
+              'Finn tabulatur i Guitar Upscale',
+              'Med Guitar Upscale på telefonen åpner en gitarknapp på sangkortet sangens tabulatur, som i Lumiere.',
+            ],
             ['Språk', 'Skjermene og stemmen på 9 språk, etter språket på telefonen.'],
           ],
         },

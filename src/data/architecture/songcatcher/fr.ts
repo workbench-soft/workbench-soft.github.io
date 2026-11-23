@@ -88,6 +88,8 @@ const arch: Arch = {
       'History.kt garde les 50 derniers morceaux et leur état Spotify. retryPending enregistre les morceaux en attente et dit combien sont passés.',
     Lyrics:
       'Lyrics.kt demande à LRCLIB l’artiste, le titre et l’album, puis cherche, et garde la réponse dans le dossier de cache. SongSheet en Compose montre un indicateur, les paroles ou un nouvel essai.',
+    'Find tabs in Guitar Upscale':
+      'GuitarTabs.kt envoie https://guitar-upscale.com/?song=<artiste titre> en intent VIEW au paquet de Guitar Upscale, le même lien que Lumiere. Le bouton n’apparaît que si l’app accepte le lien.',
     Languages:
       'Chaque texte affiché ou dit est dans res/values strings.xml en 9 langues, et CatalogTest vérifie les clés.',
     'Shared microphone':

@@ -1174,6 +1174,10 @@ export const projects: Project[] = [
             name: 'Lyrics',
             text: 'A tap on a song opens its words from LRCLIB, kept on the phone after the first load.',
           },
+          {
+            name: 'Find tabs in Guitar Upscale',
+            text: 'With Guitar Upscale on the phone, a guitar button on the song card opens the tabs of that song, as in Lumiere.',
+          },
           { name: 'Languages', text: 'The screens and the voice come in 9 languages and follow the phone.' },
         ],
       },

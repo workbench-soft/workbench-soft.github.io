@@ -82,6 +82,8 @@ const arch: Arch = {
       'History.kt keeps the last 50 songs and their Spotify state. retryPending saves the waiting songs and reports how many went in.',
     Lyrics:
       'Lyrics.kt asks LRCLIB for the song by artist, title and album, then searches, and keeps the answer in the cache folder. SongSheet in Compose shows a spinner, the words or a retry.',
+    'Find tabs in Guitar Upscale':
+      'GuitarTabs.kt sends https://guitar-upscale.com/?song=<artist title> as a VIEW intent to the Guitar Upscale package, the link Lumiere sends. The button shows only when that app takes the link.',
     Languages:
       'Each visible and spoken text sits in res/values strings.xml in 9 languages, and CatalogTest checks the keys match.',
     'Shared microphone':

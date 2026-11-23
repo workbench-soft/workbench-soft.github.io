@@ -745,6 +745,10 @@ const fr: Catalog = {
               'Paroles',
               'Toucher une chanson ouvre ses paroles depuis LRCLIB, gardées sur le téléphone après le premier chargement.',
             ],
+            [
+              'Chercher les tablatures dans Guitar Upscale',
+              'Avec Guitar Upscale sur le téléphone, un bouton guitare sur la carte ouvre les tablatures de la chanson, comme dans Lumiere.',
+            ],
             ['Langues', 'Les écrans et la voix en 9 langues, selon la langue du téléphone.'],
           ],
         },
