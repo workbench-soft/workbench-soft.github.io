@@ -86,7 +86,7 @@ const arch: Arch = {
     ],
   },
   features: {
-    Sources:
+    'Direct folder browsing and playback':
       'USB-Ordner öffnen sich über das Dateisystem von Android, und libVLC durchsucht die SMB-Freigaben. Die gespeicherte NAS-Liste bleibt auf dem Gerät und außerhalb der Android-Sicherung.',
     Resume:
       'Der Player speichert jede Position im Abstand von 5 Sekunden und beim Beenden in SQLite. Die Dateiliste liest dieselbe Tabelle für den Balken unter jeder Datei.',
@@ -130,10 +130,18 @@ const arch: Arch = {
       'Google Play Billing verkauft ein Pro-Produkt, und die App fragt Google Play bei jedem Start. Eine Prüfung in der App öffnet die Sprachfunktionen und blendet das Banner aus.',
     'LG webOS app':
       'Eine Webseite in TypeScript spielt über den Player des Fernsehers. Ein Node-Dienst im selben webOS-Paket liest USB-Sticks und das NAS über WebDAV und streamt die Dateien zur Seite.',
-    'Library setup and NAS finder':
+    'Optional library setup and NAS finder':
       'NasFind klopft im /24-Netz des Fernsehers an Port 445 und fragt per NetBIOS nach jedem Namen. Nach der Anmeldung listet libVLC die Freigaben, und die Mediathek-Ordner speichern die Art jedes Ordners in SharedPreferences.',
     'Windows and Mac app':
       'Electron führt die webOS-Seite und ihren Node-Dienst unverändert aus. Die Seite lädt von ihrem eigenen Ursprung lumiere://, und der Dienst zeigt den persönlichen Ordner und die Laufwerke statt USB-Sticks.',
+    'Continue Watching':
+      'Beide Apps bauen die Zeilen aus den gespeicherten Positionen, die neuesten oben, bis zu 20. Ab 95 % gilt eine Position als gesehen, und nach einer gesehenen Folge kommt die nächste.',
+    'Film look':
+      'Eine Kornschicht über dem Video belastet den Decoder nicht, daher bleiben HDR und Hardware-Dekodierung. Ab Android 12 gibt der Player die Bildrate des Films an Surface.setFrameRate.',
+    'Caught songs':
+      'Ein Receiver im GitHub-APK prüft, dass SongCatcher den Fang geschickt hat, und speichert ihn in liked-songs.db. Ein Song aus den Ordnern verweist auf seine Datei, ein anderer behält seine YouTube-Adresse.',
+    'Titles of films, series and books':
+      'Die Filmsuche holt aus Wikidata den russischen und englischen Titel und das Jahr. Eine Funktion pro App baut die Zeile: Titles.label auf Android, titleLine auf webOS.',
   },
 };
 

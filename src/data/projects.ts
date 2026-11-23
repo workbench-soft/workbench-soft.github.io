@@ -990,10 +990,13 @@ export const projects: Project[] = [
     groups: [
       {
         features: [
-          { name: 'Sources', text: 'USB sticks and SMB shares, listed on the home screen.' },
           {
-            name: 'Library setup and NAS finder',
-            text: 'Finds the NAS on the network so you type only the login, lets you tick its shares, and asks for the folders of films, series, cartoons, music and audiobooks at the first start, as on the LG TV.',
+            name: 'Direct folder browsing and playback',
+            text: 'Opens straight into a tree of the phone, USB and NAS folders, and plays a file with no setup or scan.',
+          },
+          {
+            name: 'Optional library setup and NAS finder',
+            text: 'Finds the NAS on the network so you type only the login, and lets you tick its shares. Folders of films, series, cartoons, music and audiobooks are optional and fill the search.',
           },
           { name: 'Resume', text: 'Each file keeps its position, and the list shows how far you got.' },
           { name: 'Subtitles and audio', text: 'Embedded tracks and files in the same folder, Cyrillic included.' },
@@ -1059,6 +1062,22 @@ export const projects: Project[] = [
           {
             name: 'Windows and Mac app',
             text: 'The LG TV app as a desktop app for Windows and Mac. It lists the home folder, each drive and each NAS, and plays with the keyboard or the mouse. Windows updates itself.',
+          },
+          {
+            name: 'Continue Watching',
+            text: 'Up to 20 recent films, episodes and books with their progress. A row resumes where you stopped, and a finished episode offers the next one.',
+          },
+          {
+            name: 'Film look',
+            text: "A light moving grain over the picture, kept for the next film. Google TV also switches to the film's own frame rate.",
+          },
+          {
+            name: 'Caught songs',
+            text: 'Each song SongCatcher catches joins Liked songs, with the app closed. A song no folder holds plays from YouTube.',
+          },
+          {
+            name: 'Titles of films, series and books',
+            text: 'The Russian and English title with the year from Wikidata, and the file name in small grey type under it.',
           },
         ],
       },

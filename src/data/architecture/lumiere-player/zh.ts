@@ -71,7 +71,7 @@ const arch: Arch = {
     ],
   },
   features: {
-    Sources:
+    'Direct folder browsing and playback':
       'U 盘文件夹通过 Android 文件系统打开，SMB 共享由 libVLC 浏览。保存的 NAS 列表留在设备上，不进入 Android 备份。',
     Resume: '播放器每 5 秒和退出时把位置存进 SQLite。文件列表读取同一张表，显示每个文件下方的进度条。',
     'Subtitles and audio':
@@ -104,10 +104,18 @@ const arch: Arch = {
       'Google Play Billing 出售一个 Pro 商品，应用每次启动都向 Google Play 查询。应用里的一项检查打开语音功能并隐藏横幅。',
     'LG webOS app':
       '一个 TypeScript 网页用电视自带的播放器播放。同一 webOS 包里的 Node 服务通过 WebDAV 列出 U 盘和 NAS 的文件，并把文件传给网页。',
-    'Library setup and NAS finder':
+    'Optional library setup and NAS finder':
       'NasFind 在电视所在的 /24 网络中逐个探测 445 端口，并通过 NetBIOS 获取每台设备的名称。登录后由 libVLC 列出共享文件夹，媒体库文件夹把每个文件夹的类型存入 SharedPreferences。',
     'Windows and Mac app':
       'Electron 原样运行 webOS 页面及其 Node 服务。页面从自己的 lumiere:// 源加载，服务用主文件夹和磁盘代替 U 盘。',
+    'Continue Watching':
+      '两个应用都用保存的播放位置生成列表，最新的在前，最多 20 行。进度达到 95% 视为看完，看完的一集由下一集替代。',
+    'Film look':
+      '颗粒层画在视频上方，不占用解码器，因此 HDR 和硬件解码保持不变。在 Android 12 及以上，播放器把影片帧率传给 Surface.setFrameRate。',
+    'Caught songs':
+      'GitHub APK 中的接收器确认消息来自 SongCatcher 后，将歌曲存入 liked-songs.db。文件夹里有的歌指向其文件，其他歌保存 YouTube 地址。',
+    'Titles of films, series and books':
+      '电影查询从 Wikidata 获取俄文和英文标题及年份。每个应用用一个函数拼出标题行：Android 上是 Titles.label，webOS 上是 titleLine。',
   },
 };
 

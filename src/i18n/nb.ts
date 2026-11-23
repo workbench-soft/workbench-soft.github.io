@@ -1663,10 +1663,13 @@ const nb: Catalog = {
       groups: [
         {
           features: [
-            ['Kilder', 'USB-pinner og SMB-delinger, listet på startskjermen.'],
             [
-              'Biblioteksoppsett og NAS-søk',
-              'Finner NAS-en på nettverket, så du bare skriver innloggingen, lar deg krysse av delte mapper og spør ved første start etter mappene med filmer, serier, tegnefilmer, musikk og lydbøker, som på LG-TV-en.',
+              'Mapper og avspilling med en gang',
+              'Åpner rett i et mappetre fra telefonen, USB-pinner og NAS, og spiller en fil uten oppsett eller skanning.',
+            ],
+            [
+              'Valgfritt bibliotek og NAS-søk',
+              'Finner NAS-en på nettverket, så du bare skriver innloggingen, og lar deg krysse av for delte mapper. Mapper for filmer, serier, tegnefilm, musikk og lydbøker er valgfrie og fyller søket.',
             ],
             ['Fortsett', 'Hver fil husker posisjonen, og listen viser hvor langt du kom.'],
             ['Undertekster og lyd', 'Innebygde spor og filer i samme mappe, kyrillisk også.'],
@@ -1726,6 +1729,22 @@ const nb: Catalog = {
             [
               'App for Windows og Mac',
               'LG TV-appen som skrivebordsapp for Windows og Mac. Den viser hjemmemappen, hver disk og hver NAS, og spilles av med tastatur eller mus. På Windows oppdaterer den seg selv.',
+            ],
+            [
+              'Fortsett å se',
+              'Opptil 20 nylige filmer, episoder og bøker med fremdrift. En rad fortsetter der du stoppet, og en ferdig episode foreslår den neste.',
+            ],
+            [
+              'Filmpreg',
+              'Et lett bevegelig korn over bildet, husket til neste film. Google TV bytter også til filmens egen bildefrekvens.',
+            ],
+            [
+              'Fangede sanger',
+              'Hver sang SongCatcher fanger havner i Likte sanger, også når appen er lukket. En sang som ingen mappe har, spilles fra YouTube.',
+            ],
+            [
+              'Titler på filmer, serier og bøker',
+              'Russisk og engelsk tittel med år fra Wikidata, og filnavnet i liten grå skrift under.',
             ],
           ],
         },

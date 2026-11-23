@@ -80,7 +80,7 @@ const arch: Arch = {
     ],
   },
   features: {
-    Sources:
+    'Direct folder browsing and playback':
       'USB folders open through the Android file system, and libVLC browses the SMB shares. The saved NAS list stays on the device, out of Android backup.',
     Resume:
       'The player saves each position to SQLite every 5 seconds and on exit. The file list reads the same table for the bar under each file.',
@@ -124,10 +124,18 @@ const arch: Arch = {
       'Google Play Billing sells one Pro product, and the app asks Google Play at each start. One check in the app opens the voice features and hides the banner.',
     'LG webOS app':
       "A web page in TypeScript plays through the TV's own video player. A Node service in the same webOS package lists USB sticks and the NAS over WebDAV, and streams the files to the page.",
-    'Library setup and NAS finder':
+    'Optional library setup and NAS finder':
       "NasFind knocks on port 445 across the TV's /24 network and asks NetBIOS for each name. The login lists the shares through libVLC, and Library folders keeps a kind per folder in SharedPreferences.",
     'Windows and Mac app':
       'Electron runs the webOS page and its Node service unchanged. The page loads from its own lumiere:// origin, and the service lists the home folder and drives in place of USB sticks.',
+    'Continue Watching':
+      'Both apps build the rows from the saved places, newest first, up to 20. A place at 95% counts as watched, and a watched episode gives way to the next one.',
+    'Film look':
+      "A grain layer drawn above the video costs the decoder nothing, so HDR and hardware decoding stay. On Android 12 and newer the player passes the film's frame rate to Surface.setFrameRate.",
+    'Caught songs':
+      'A receiver in the GitHub APK checks that SongCatcher sent the catch, then saves it in liked-songs.db. A song the folders hold points at its file, and another keeps its YouTube address.',
+    'Titles of films, series and books':
+      'The film lookup asks Wikidata for the Russian and English title and the year. One function per app builds the line: Titles.label on Android, titleLine on webOS.',
   },
 };
 

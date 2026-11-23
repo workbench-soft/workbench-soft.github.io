@@ -74,7 +74,7 @@ const arch: Arch = {
     ],
   },
   features: {
-    Sources:
+    'Direct folder browsing and playback':
       'USB のフォルダは Android のファイルシステムで開き、SMB 共有は libVLC が一覧にします。保存した NAS の一覧は端末に残り、Android のバックアップに入りません。',
     Resume:
       'プレーヤーは 5 秒ごとと終了時に再生位置を SQLite に保存します。ファイル一覧は同じ表を読み、各ファイルの下にバーを出します。',
@@ -118,10 +118,18 @@ const arch: Arch = {
       'Google Play Billing が Pro を 1 つ売り、アプリは起動のたびに Google Play に聞きます。アプリ内の 1 つのチェックが音声機能を開き、バナーを隠します。',
     'LG webOS app':
       'TypeScript の Web ページがテレビ内蔵のプレーヤーで再生します。同じ webOS パッケージの Node サービスが USB メモリと NAS を WebDAV で一覧にし、ファイルをページに送ります。',
-    'Library setup and NAS finder':
+    'Optional library setup and NAS finder':
       'NasFind はテレビの /24 ネットワーク全体で 445 番ポートを確認し、NetBIOS で各機器の名前を尋ねます。ログイン後は libVLC が共有フォルダーを一覧にし、ライブラリのフォルダーは各フォルダーの種類を SharedPreferences に保存します。',
     'Windows and Mac app':
       'Electron が webOS のページと Node サービスをそのまま動かします。ページは独自の lumiere:// オリジンから読み込まれ、サービスは USB メモリの代わりにホームフォルダーとドライブを一覧にします。',
+    'Continue Watching':
+      '両方のアプリが保存した再生位置から行を作り、新しい順に最大 20 行並べます。95% に達した位置は視聴済みとし、視聴済みのエピソードは次の話に置き換えます。',
+    'Film look':
+      '粒子のレイヤーは映像の上に描くのでデコーダーに負荷をかけず、HDR とハードウェアデコードはそのままです。Android 12 以降では映画のフレームレートを Surface.setFrameRate に渡します。',
+    'Caught songs':
+      'GitHub 版 APK のレシーバーが SongCatcher からの送信だと確かめ、曲を liked-songs.db に保存します。フォルダーにある曲はそのファイルを指し、ほかの曲は YouTube のアドレスを持ちます。',
+    'Titles of films, series and books':
+      '映画の検索が Wikidata からロシア語と英語のタイトルと年を取ります。各アプリの 1 つの関数が行を組み立てます。Android は Titles.label、webOS は titleLine です。',
   },
 };
 
