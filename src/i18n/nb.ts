@@ -975,6 +975,41 @@ const nb: Catalog = {
         },
       ],
     },
+    medpoisk: {
+      tagline: 'Priser på medisinsk forbruksmateriell i apotek og markedsplasser i Moskva.',
+      lede: 'En Android-app for innkjøperen i en godkjent medisinsk virksomhet i Moskva. Ett søk sjekker apotek og markedsplasser rett fra telefonen, uten server. Den beholder apotekene i bydelene innkjøperen velger.',
+      links: [],
+      groups: [
+        {
+          features: [
+            [
+              'Prissøk',
+              'Ett søk spør АптекаМос, Мегаптека, Wildberries og Ozon samtidig, med en statuslinje per kilde. Prisene havner i én liste, billigst først. Et trykk åpner tilbudet i appen.',
+            ],
+            [
+              'Bydeler i Moskva',
+              'Knapper for de 12 bydelene og Подмосковье beholder apotekene i de valgte. T-banestasjonen gir hvert apotek sin bydel. Markedsplasser blir stående med merket levering.',
+            ],
+            [
+              'Sjekker fra nettsteder',
+              'Et nettsted som ber deg bevise at du ikke er en robot, viser siden sin i et panel. Når innkjøperen har bestått, går søket videre i skjul.',
+            ],
+            [
+              'Handleliste',
+              'En stjerne lagrer varen. Sjekk alle søker etter hver lagrede vare etter tur, med fremdriften på skjermen. Den beholder den laveste prisen i de valgte bydelene.',
+            ],
+            [
+              'Grossister',
+              'Grossistportalene til Протек, Катрен, Пульс, СИА Интернейшнл og Фармкомплект åpnes i appen og holder innkjøperen innlogget.',
+            ],
+            [
+              'Språk og oppdateringer',
+              'Appen følger språket på telefonen, og Innstillinger har 9 å velge mellom. Ved hver start ser den etter en nyere APK og tilbyr å installere den.',
+            ],
+          ],
+        },
+      ],
+    },
     'app-updater': {
       tagline: 'Oppdaterer hver Workbench Soft-app på telefonen med ett trykk.',
       lede: 'En Android-app som viser hver Workbench Soft-app med installert og nyeste versjon, og installerer hver nye utgivelse via Shizuku uten spørsmål.',

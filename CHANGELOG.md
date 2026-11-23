@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **МедПоиск** a panel in Development for clients, in the 9 languages: an Android app that searches medical supply prices across Moscow pharmacies and marketplaces, filters them by okrug, keeps a shopping list and opens distributor portals. Its code is private, so the panel has no Source link and no download.
+
 - **PC deploy** manual Pages runs publish after their checks and build pass, even though the push-only affected job is skipped. The deploy task fails when no Pages publication step succeeds.
 
 - **Baristep** a project page and architecture in all 9 languages, with coffee steps, cup angle and jug height, circle and heart videos, and Android updates. The remaining scenes use pictures.

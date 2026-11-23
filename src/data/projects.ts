@@ -1779,6 +1779,49 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: 'medpoisk',
+    kind: 'client',
+    repo: 'medpoisk',
+    hue: 165,
+    code: 'MED',
+    name: 'МедПоиск',
+    tagline: 'Prices of medical supplies across Moscow pharmacies and marketplaces.',
+    lede: 'An Android app for a buyer at a licensed medical organisation in Moscow. One search checks pharmacies and marketplaces from the phone itself, with no server, and keeps the pharmacies in the okrugs the buyer picks.',
+    platforms: ['Android'],
+    stack: ['Expo', 'React Native', 'TypeScript', 'WebView', 'SQLite'],
+    links: [],
+    groups: [
+      {
+        features: [
+          {
+            name: 'Price search',
+            text: 'One search asks АптекаМос, Мегаптека, Wildberries and Ozon at once, with a status row per source. Prices land in one list, cheapest first, and a tap opens the offer in the app.',
+          },
+          {
+            name: 'Moscow okrugs',
+            text: 'Chips for the 12 okrugs and Подмосковье keep the pharmacies in the ones picked. A metro station gives each pharmacy its okrug, and marketplaces stay with a delivery tag.',
+          },
+          {
+            name: 'Site checks',
+            text: 'A site that asks for a robot check shows its page in a sheet. Once the buyer passes it, the search runs again out of sight.',
+          },
+          {
+            name: 'Shopping list',
+            text: 'A star saves the item. Check all searches each saved item in turn, with its progress on screen, and keeps the cheapest price in the chosen okrugs.',
+          },
+          {
+            name: 'Distributors',
+            text: 'The wholesale portals of Протек, Катрен, Пульс, СИА Интернейшнл and Фармкомплект open in the app and keep the buyer signed in.',
+          },
+          {
+            name: 'Languages and updates',
+            text: 'The app follows the phone language, with 9 to pick in Settings. At each start it looks for a newer APK and offers to install it.',
+          },
+        ],
+      },
+    ],
+  },
+  {
     id: 'app-updater',
     kind: 'internal',
     repo: 'app-updater',

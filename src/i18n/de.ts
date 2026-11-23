@@ -1062,6 +1062,41 @@ const de: Catalog = {
         },
       ],
     },
+    medpoisk: {
+      tagline: 'Preise für medizinisches Verbrauchsmaterial in Moskauer Apotheken und Marktplätzen.',
+      lede: 'Eine Android-App für den Einkäufer einer zugelassenen medizinischen Einrichtung in Moskau. Eine Suche prüft Apotheken und Marktplätze direkt vom Telefon, ohne Server. Sie zeigt nur Apotheken in den Bezirken, die der Einkäufer wählt.',
+      links: [],
+      groups: [
+        {
+          features: [
+            [
+              'Preissuche',
+              'Eine Suche fragt АптекаМос, Мегаптека, Wildberries und Ozon zugleich, mit einer Statuszeile je Quelle. Die Preise kommen in eine Liste, die günstigsten zuerst. Ein Tippen öffnet das Angebot in der App.',
+            ],
+            [
+              'Moskauer Bezirke',
+              'Chips für die 12 Bezirke und Подмосковье behalten die Apotheken der gewählten Bezirke. Die Metrostation gibt jeder Apotheke ihren Bezirk. Marktplätze bleiben mit dem Hinweis Lieferung in der Liste.',
+            ],
+            [
+              'Prüfungen der Seiten',
+              'Eine Seite, die nach einem Robotertest fragt, zeigt ihre Seite in einem Fenster. Hat der Einkäufer ihn bestanden, läuft die Suche wieder unsichtbar.',
+            ],
+            [
+              'Einkaufsliste',
+              'Ein Stern speichert den Artikel. Alle prüfen sucht jeden gespeicherten Artikel der Reihe nach, mit dem Fortschritt auf dem Bildschirm. Es behält den günstigsten Preis in den gewählten Bezirken.',
+            ],
+            [
+              'Großhändler',
+              'Die Großhandelsportale von Протек, Катрен, Пульс, СИА Интернейшнл und Фармкомплект öffnen sich in der App und halten den Einkäufer angemeldet.',
+            ],
+            [
+              'Sprachen und Updates',
+              'Die App folgt der Sprache des Telefons, und in den Einstellungen stehen 9 zur Wahl. Bei jedem Start sucht sie eine neuere APK und bietet die Installation an.',
+            ],
+          ],
+        },
+      ],
+    },
     'app-updater': {
       tagline: 'Aktualisiert jede Workbench Soft App auf dem Handy mit einem Tipp.',
       lede: 'Eine Android-App listet jede Workbench Soft App mit installierter und neuester Version und installiert jedes neue Release über Shizuku ohne Rückfragen.',
