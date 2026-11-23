@@ -696,6 +696,56 @@ const de: Catalog = {
         },
       ],
     },
+    songcatcher: {
+      tagline: 'Sagen Sie „Shazam“, und der Song landet in Ihren Lieblingssongs.',
+      lede: 'SongCatcher ist eine Android App, die auf ein Wort hört. Sagen Sie bei gesperrtem Handy „Shazam“, und der Song, der gerade läuft, landet in den Spotify Lieblingssongs und in Lumiere. Das Mikrofon teilt es mit den anderen Apps mit Weckwort.',
+      links: [],
+      groups: [
+        {
+          title: 'Einen Song fangen',
+          features: [
+            [
+              'Wecken per Stimme',
+              'Sagen Sie „Shazam“, auch mit gesperrtem Handy in der Tasche. Ein Piepton antwortet. Jetzt erkennen auf dem Bildschirm startet die Suche ohne Wort.',
+            ],
+            [
+              'Songerkennung',
+              'Das Handy berechnet den Audio Fingerabdruck von Shazam selbst und fragt Shazam nach 3 Sekunden Musik, dann bei 6, 9 und 12. Nur der Fingerabdruck verlässt das Handy.',
+            ],
+            [
+              'Lieblingssongs in Spotify und Lumiere',
+              'Jeder Song landet in den Lieblingssongs von Spotify und Lumiere, markiert mit Von SongCatcher.',
+            ],
+            [
+              'Antwort per Stimme',
+              'Eine Stimme nennt den gespeicherten Song oder sagt, dass keiner gefunden wurde. Die Musik wird dabei leiser.',
+            ],
+            [
+              'Fangen ohne Netz',
+              'Ohne Internet wartet der Fingerabdruck auf dem Handy und geht später raus, bis zu einer Woche lang.',
+            ],
+            [
+              'Gefangene Songs',
+              'Die letzten 50 Songs, jeder markiert als in Spotify oder wartend. Ein Knopf speichert die wartenden ohne neue Aufnahme.',
+            ],
+            ['Sprachen', 'Bildschirme und Stimme in 9 Sprachen, nach der Sprache des Handys.'],
+          ],
+        },
+        {
+          title: 'Geteilt mit den anderen Apps',
+          features: [
+            [
+              'Geteiltes Mikrofon',
+              'keepPad, Lumiere, SongCatcher, SpotTheCam und ServoHop hören ihre Weckwörter gleichzeitig. Eine App hält das Mikrofon und reicht jedes Wecken an seine App weiter.',
+            ],
+            [
+              'Weckwort Engine',
+              'Eine Engine hört jedes Weckwort: ein kleines Modell pro Phrase, auf die Stimme des Besitzers abgestimmt, und ein Keyword Spotter für Phrasen ohne Modell.',
+            ],
+          ],
+        },
+      ],
+    },
     consdr: {
       tagline: 'Leasing, Kredit oder bar: was ein Auto in Australien kostet.',
       lede: 'Consdr zeigt die Gesamtkosten desselben Autos über dieselbe Laufzeit als Novated Lease, als Autokredit und als Barkauf. Jede feste Zahl der Rechnung verlinkt ihre Quelle.',

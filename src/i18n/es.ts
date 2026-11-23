@@ -687,6 +687,56 @@ const es: Catalog = {
         },
       ],
     },
+    songcatcher: {
+      tagline: 'Di «Shazam» y la canción llega a tus Me gusta.',
+      lede: 'SongCatcher es una app de Android que escucha una sola palabra. Di «Shazam» con el móvil bloqueado y la canción que suena a tu alrededor llega a Tus me gusta de Spotify y a Lumiere. Comparte el micrófono con las demás apps de frase de activación.',
+      links: [],
+      groups: [
+        {
+          title: 'Atrapar una canción',
+          features: [
+            [
+              'Activación por voz',
+              'Di «Shazam», incluso con el móvil bloqueado en el bolsillo. Un pitido responde. Reconocer ahora, en la pantalla, busca sin la palabra.',
+            ],
+            [
+              'Reconocimiento de canciones',
+              'El móvil calcula él mismo la huella de audio de Shazam y pregunta a Shazam tras 3 segundos de música, luego a los 6, 9 y 12. Solo la huella sale del móvil.',
+            ],
+            [
+              'Me gusta en Spotify y Lumiere',
+              'Cada canción llega a Tus me gusta de Spotify y de Lumiere, marcada De SongCatcher.',
+            ],
+            [
+              'Respuesta en voz alta',
+              'Una voz dice la canción guardada, o que no encontró ninguna. La música baja mientras habla.',
+            ],
+            [
+              'Búsqueda sin conexión',
+              'Sin internet la huella espera en el móvil y sale más tarde, durante una semana como mucho.',
+            ],
+            [
+              'Canciones atrapadas',
+              'Las 50 últimas canciones, cada una marcada en Spotify o en espera. Un botón guarda las que esperan sin grabar de nuevo.',
+            ],
+            ['Idiomas', 'Las pantallas y la voz en 9 idiomas, según el idioma del móvil.'],
+          ],
+        },
+        {
+          title: 'Compartido con las demás apps',
+          features: [
+            [
+              'Micrófono compartido',
+              'keepPad, Lumiere, SongCatcher, SpotTheCam y ServoHop oyen sus frases a la vez. Una app tiene el micrófono y pasa cada activación a su app.',
+            ],
+            [
+              'Motor de activación',
+              'Un solo motor oye cada frase: un modelo pequeño por frase, ajustado a la voz del dueño, y un detector de palabras clave para las frases sin modelo.',
+            ],
+          ],
+        },
+      ],
+    },
     consdr: {
       tagline: 'Leasing, préstamo o contado: lo que cuesta un coche en Australia.',
       lede: 'Consdr muestra el coste total del mismo coche en el mismo plazo como novated lease, préstamo de coche y compra al contado. Cada cifra fija del cálculo enlaza a su fuente.',

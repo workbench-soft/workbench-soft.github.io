@@ -19,6 +19,17 @@ None written down yet.
 
 ## Changes
 
+### 2026-11-23 SongCatcher in apps
+
+- **Why** SongCatcher merged in `wake-share`, and each heading of its `docs/features.md` needs a line on the site.
+- **What the visitor gets** a SongCatcher panel after ServoHop in Apps, in all 9 languages. One group covers the catch: wake by voice, song recognition, Liked Songs in Spotify and Lumiere, the spoken answer, offline catches, caught songs and languages. A second group covers the shared microphone and the wake engine.
+- **Private** `wake-share` is private, so the panel carries no Source link. The APK comes from CI artifacts, so it links no download.
+- **Changes**
+  - **`src/data/projects.ts`** the `songcatcher` entry, kind `app`, with `repo` set to `wake-share`.
+  - **`src/data/architecture/songcatcher/`** how the app is built, in 9 languages.
+  - **`src/i18n/`** the SongCatcher text in the 8 other catalogs.
+- **Docs** `CHANGELOG.md`.
+
 ### 2026-11-23 МедПоиск in clients
 
 - **Why** the owner wants МедПоиск, a private Android app made for a client, shown the same way as Aspiration Style.
