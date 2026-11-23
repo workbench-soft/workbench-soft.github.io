@@ -1051,7 +1051,7 @@ const nb: Catalog = {
             ],
             [
               'Engrospriser',
-              'ДеалМед og IMSSTORE blir med i søket med et «опт»-merke og lageret sitt. Et antall gir summen for hvert tilbud.',
+              'ДеалМед, IMSSTORE og Кронаs daglige legemiddelliste blir med i søket med et «опт»-merke og lageret sitt. Et antall gir summen for hvert tilbud.',
             ],
             [
               'Sjekker fra nettsteder',

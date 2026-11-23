@@ -1157,7 +1157,7 @@ const fr: Catalog = {
             ],
             [
               'Prix de gros',
-              'ДеалМед et IMSSTORE rejoignent la recherche avec une étiquette « опт » et leur stock. Une quantité donne le total de chaque offre.',
+              'ДеалМед, IMSSTORE et la liste quotidienne de médicaments de Крона rejoignent la recherche avec une étiquette « опт » et leur stock. Une quantité donne le total de chaque offre.',
             ],
             [
               'Contrôles des sites',

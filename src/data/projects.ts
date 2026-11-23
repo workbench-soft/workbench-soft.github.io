@@ -1896,7 +1896,7 @@ export const projects: Project[] = [
           },
           {
             name: 'Wholesale prices',
-            text: 'ДеалМед and IMSSTORE join the search with an "опт" tag and their stock. A quantity gives the total of each offer.',
+            text: 'ДеалМед, IMSSTORE and Крона’s daily drug price list join the search with an "опт" tag and their stock. A quantity gives the total of each offer.',
           },
           {
             name: 'Site checks',

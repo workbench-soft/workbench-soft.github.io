@@ -1123,7 +1123,7 @@ const es: Catalog = {
             ],
             [
               'Precios mayoristas',
-              'ДеалМед e IMSSTORE entran en la búsqueda con una etiqueta «опт» y sus existencias. Una cantidad da el total de cada oferta.',
+              'ДеалМед, IMSSTORE y la lista diaria de medicamentos de Крона entran en la búsqueda con una etiqueta «опт» y sus existencias. Una cantidad da el total de cada oferta.',
             ],
             [
               'Controles de los sitios',

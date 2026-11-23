@@ -1141,7 +1141,7 @@ const de: Catalog = {
             ],
             [
               'Großhandelspreise',
-              'ДеалМед und IMSSTORE kommen mit dem Zeichen «опт» und ihrem Bestand in die Suche. Eine Menge ergibt die Summe jedes Angebots.',
+              'ДеалМед, IMSSTORE und die tägliche Arzneimittelliste von Крона kommen mit dem Zeichen «опт» und ihrem Bestand in die Suche. Eine Menge ergibt die Summe jedes Angebots.',
             ],
             [
               'Prüfungen der Seiten',
