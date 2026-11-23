@@ -123,6 +123,8 @@ const arch: Arch = {
       'En nettside i TypeScript spiller av med TV-ens egen spiller. En Node-tjeneste i den samme webOS-pakken leser USB-pinner og NAS-en over WebDAV og strømmer filene til siden.',
     'Library setup and NAS finder':
       'NasFind banker på port 445 over hele TV-ens /24-nett og spør NetBIOS om hvert navn. Etter innloggingen lister libVLC de delte mappene, og biblioteksmappene lagrer typen til hver mappe i SharedPreferences.',
+    'Windows and Mac app':
+      'Electron kjører webOS-siden og Node-tjenesten uendret. Siden lastes fra sin egen lumiere://-opprinnelse, og tjenesten viser hjemmemappen og diskene i stedet for USB-pinner.',
   },
 };
 

@@ -1898,6 +1898,10 @@ const fr: Catalog = {
               'App pour LG webOS',
               'Une app webOS pour télé LG affiche clés USB et dossiers NAS en arbre, trouve le NAS sur le réseau pour ne saisir que l’identifiant, et lit avec des boutons à l’écran, le choix des sous-titres et de la piste audio, et un titre de film dit à la Magic Remote. Au premier lancement, vous choisissez les dossiers de films, séries, dessins animés, musique et livres audio, et l’arbre les range par genre. Lumiere tient l’index à jour tout seul, et un titre comme Paddington démarre aussitôt.',
             ],
+            [
+              'Application Windows et Mac',
+              "L'application LG TV en application de bureau pour Windows et Mac. Elle affiche le dossier personnel, chaque disque et chaque NAS, et se pilote au clavier ou à la souris. Sous Windows, elle se met à jour toute seule.",
+            ],
           ],
         },
       ],

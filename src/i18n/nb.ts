@@ -1723,6 +1723,10 @@ const nb: Catalog = {
               'App for LG webOS',
               'En webOS-app for LG-TV viser USB-pinner og NAS-mapper som et tre, finner NAS-en på nettverket så du bare skriver inn påloggingen, og spiller av med knapper på skjermen, valg av undertekster og lydspor, og en filmtittel sagt inn i Magic Remote. Ved første oppstart velger du mappene med filmer, serier, tegnefilmer, musikk og lydbøker, og treet viser dem etter type. Lumiere holder indeksen oppdatert selv, og en tittel som Paddington starter med en gang.',
             ],
+            [
+              'App for Windows og Mac',
+              'LG TV-appen som skrivebordsapp for Windows og Mac. Den viser hjemmemappen, hver disk og hver NAS, og spilles av med tastatur eller mus. På Windows oppdaterer den seg selv.',
+            ],
           ],
         },
       ],

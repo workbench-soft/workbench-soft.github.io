@@ -984,8 +984,8 @@ export const projects: Project[] = [
     tagline:
       'An Android player with voice control for video, music and audiobooks, which also installs on a Google TV.',
     lede: 'Lumiere Player plays your own files from the phone, a USB stick or an SMB share on libVLC, so it opens what VLC opens. Each video, song and book keeps its place, and voice commands find them by name.',
-    platforms: ['Android', 'Google TV', 'Android TV', 'LG webOS'],
-    stack: ['Kotlin', 'Android Views', 'libVLC', 'TypeScript'],
+    platforms: ['Android', 'Google TV', 'Android TV', 'LG webOS', 'Windows', 'macOS'],
+    stack: ['Kotlin', 'Android Views', 'libVLC', 'TypeScript', 'Electron'],
     links: [],
     groups: [
       {
@@ -1055,6 +1055,10 @@ export const projects: Project[] = [
           {
             name: 'LG webOS app',
             text: 'A webOS app for an LG TV shows USB sticks and NAS folders as one tree, finds the NAS on the network so you type only the login, and plays with on-screen buttons, subtitle and audio pickers, and a film name said into the Magic Remote. At the first start you pick the folders of films, series, cartoons, music and audiobooks, and the tree shows them by kind. Lumiere keeps the index fresh by itself, so a title such as Paddington plays at once.',
+          },
+          {
+            name: 'Windows and Mac app',
+            text: 'The LG TV app as a desktop app for Windows and Mac. It lists the home folder, each drive and each NAS, and plays with the keyboard or the mouse. Windows updates itself.',
           },
         ],
       },

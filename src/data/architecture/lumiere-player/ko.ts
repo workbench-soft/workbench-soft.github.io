@@ -119,6 +119,8 @@ const arch: Arch = {
       'TypeScript 웹 페이지가 TV 내장 플레이어로 재생해요. 같은 webOS 패키지의 Node 서비스가 USB 메모리와 NAS를 WebDAV로 읽고 파일을 페이지로 보내요.',
     'Library setup and NAS finder':
       'NasFind는 TV의 /24 네트워크 전체에서 445 포트를 확인하고 NetBIOS로 각 이름을 묻습니다. 로그인 후 libVLC가 공유 폴더를 나열하고, 라이브러리 폴더는 폴더마다 종류를 SharedPreferences에 저장합니다.',
+    'Windows and Mac app':
+      'Electron이 webOS 페이지와 Node 서비스를 그대로 실행합니다. 페이지는 자체 lumiere:// 출처에서 열리고, 서비스는 USB 대신 홈 폴더와 드라이브를 나열합니다.',
   },
 };
 

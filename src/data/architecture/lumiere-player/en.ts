@@ -126,6 +126,8 @@ const arch: Arch = {
       "A web page in TypeScript plays through the TV's own video player. A Node service in the same webOS package lists USB sticks and the NAS over WebDAV, and streams the files to the page.",
     'Library setup and NAS finder':
       "NasFind knocks on port 445 across the TV's /24 network and asks NetBIOS for each name. The login lists the shares through libVLC, and Library folders keeps a kind per folder in SharedPreferences.",
+    'Windows and Mac app':
+      'Electron runs the webOS page and its Node service unchanged. The page loads from its own lumiere:// origin, and the service lists the home folder and drives in place of USB sticks.',
   },
 };
 
