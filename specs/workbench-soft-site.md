@@ -19,6 +19,18 @@ None written down yet.
 
 ## Changes
 
+### 2026-11-23 МедПоиск in clients
+
+- **Why** the owner wants МедПоиск, a private Android app made for a client, shown the same way as Aspiration Style.
+- **What the visitor gets** a МедПоиск panel after Aspiration Style in Development for clients, in all 9 languages: price search over АптекаМос, Мегаптека, Wildberries and Ozon, Moscow okrugs, site checks, the shopping list, distributor portals, languages and updates.
+- **Private** the code sits in the private `medpoisk` repo, so the panel carries no open source mark and no Source link. The text calls the client a buyer for a Moscow medical organisation and names no person or company.
+- **No download** the panel links no APK. The releases stay in this repo as `medpoisk-v*` for the buyer's phone, and the app catalog skips clients.
+- **Changes**
+  - **`src/data/projects.ts`** the `medpoisk` entry, kind `client`.
+  - **`src/data/architecture/medpoisk/`** how the app is built, in 9 languages.
+  - **`src/i18n/`** the МедПоиск text in the 8 other catalogs.
+- **Docs** `CHANGELOG.md`.
+
 ### 2026-11-20 Baristep coffee guide
 
 - **Why** the released coffee guide has no studio project page.
