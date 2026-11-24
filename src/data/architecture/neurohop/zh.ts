@@ -46,7 +46,7 @@ const arch: Arch = {
     ],
     operations: [
       '每次推送到 main 时，Checks 在 PC 运行器上运行 lint 和测试。',
-      'Release 构建已签名的 APK，在模拟器上打开，并以 neuroigry-v<version> 发布。Deploy 上线 Worker。',
+      'Release 构建已签名的 APK，在模拟器上打开，并以 neurohop-v<version> 发布。Deploy 上线 Worker。',
     ],
     tradeoffs: [
       '网站和手机共用一个 Expo 应用而不是原生应用，这样每个功能只需发布一次。',

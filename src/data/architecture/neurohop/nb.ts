@@ -49,7 +49,7 @@ const arch: Arch = {
     ],
     operations: [
       'Checks kjører lint og tester på PC-runnerne ved hver push til main.',
-      'Release bygger den signerte APK-en, åpner den i en emulator og publiserer den som neuroigry-v<version>. Deploy sender ut workeren.',
+      'Release bygger den signerte APK-en, åpner den i en emulator og publiserer den som neurohop-v<version>. Deploy sender ut workeren.',
     ],
     tradeoffs: [
       'Én Expo-app for nettstedet og telefonene i stedet for en native app, så hver funksjon kommer ut én gang.',

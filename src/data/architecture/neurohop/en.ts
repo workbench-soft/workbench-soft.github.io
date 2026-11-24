@@ -52,7 +52,7 @@ const arch: Arch = {
     ],
     operations: [
       'Checks run lint and tests on the PC runners on each push to main.',
-      'Release builds the signed APK, opens it on an emulator, and publishes it as neuroigry-v<version>. Deploy ships the Worker.',
+      'Release builds the signed APK, opens it on an emulator, and publishes it as neurohop-v<version>. Deploy ships the Worker.',
     ],
     tradeoffs: [
       'One Expo app for the site and the phones over a native app, so each feature ships once.',

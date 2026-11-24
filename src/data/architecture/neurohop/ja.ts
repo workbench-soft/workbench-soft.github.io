@@ -55,7 +55,7 @@ const arch: Arch = {
     ],
     operations: [
       'Checks は main への各プッシュで PC のランナー上で lint とテストを実行します。',
-      'Release は署名済み APK をビルドし、エミュレーターで開き、neuroigry-v<version> として公開します。Deploy が Worker を公開します。',
+      'Release は署名済み APK をビルドし、エミュレーターで開き、neurohop-v<version> として公開します。Deploy が Worker を公開します。',
     ],
     tradeoffs: [
       'ネイティブアプリではなく、サイトとスマホで1つの Expo アプリ。各機能を一度で出せます。',

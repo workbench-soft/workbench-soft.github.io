@@ -58,7 +58,7 @@ const arch: Arch = {
     ],
     operations: [
       'Checks ejecuta el lint y las pruebas en los runners del PC en cada push a main.',
-      'Release construye el APK firmado, lo abre en un emulador y lo publica como neuroigry-v<version>. Deploy pone el Worker en línea.',
+      'Release construye el APK firmado, lo abre en un emulador y lo publica como neurohop-v<version>. Deploy pone el Worker en línea.',
     ],
     tradeoffs: [
       'Una app de Expo para el sitio y los teléfonos en vez de una app nativa, para que cada función salga una vez.',

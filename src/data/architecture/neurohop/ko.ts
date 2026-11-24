@@ -49,7 +49,7 @@ const arch: Arch = {
     ],
     operations: [
       'Checks는 main에 푸시할 때마다 PC 러너에서 린트와 테스트를 실행합니다.',
-      'Release는 서명된 APK를 빌드해 에뮬레이터에서 열고 neuroigry-v<version>으로 게시합니다. Deploy가 Worker를 배포합니다.',
+      'Release는 서명된 APK를 빌드해 에뮬레이터에서 열고 neurohop-v<version>으로 게시합니다. Deploy가 Worker를 배포합니다.',
     ],
     tradeoffs: [
       '네이티브 앱 대신 사이트와 휴대폰에 하나의 Expo 앱을 써서 각 기능을 한 번에 냅니다.',

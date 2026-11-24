@@ -58,7 +58,7 @@ const arch: Arch = {
     ],
     operations: [
       'Checks lance le lint et les tests sur les runners du PC à chaque push sur main.',
-      'Release construit l’APK signé, l’ouvre sur un émulateur et le publie en neuroigry-v<version>. Deploy met le Worker en ligne.',
+      'Release construit l’APK signé, l’ouvre sur un émulateur et le publie en neurohop-v<version>. Deploy met le Worker en ligne.',
     ],
     tradeoffs: [
       'Une appli Expo pour le site et les téléphones plutôt qu’une appli native, pour que chaque fonction sorte une fois.',
