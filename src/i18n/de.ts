@@ -1919,6 +1919,39 @@ const de: Catalog = {
         },
       ],
     },
+    neuroigry: {
+      tagline: 'Neuropsychologische Spiele für Kinder von 2 bis 12, mit Schritt-für-Schritt-Anleitung.',
+      lede: 'Eine Spielesammlung für Eltern und Fachleute. Wähle das Alter, den Hirnblock nach Lurija und das Ziel, etwa Aufmerksamkeit oder Selbstkontrolle, und erhalte Spiele mit den Schritten, dem Ziel und Wegen, sie leichter oder schwerer zu machen.',
+      links: ['neuroigry.workbench-soft.com', 'Datenschutzerklärung'],
+      groups: [
+        {
+          features: [
+            [
+              'Katalog mit Filtern und Suche',
+              'Karten mit Bild, Alter, kurzem Text und Hauptziel. Filter nach Alter, Hirnblock, Ziel, Format und Material lassen sich kombinieren, und die Suche findet schon beim Tippen.',
+            ],
+            [
+              'Spielseite',
+              'Jedes Spiel in Abschnitten: Alter, Beschreibung, Ziel, Material, Schritte, leichter, schwerer, Varianten und Tipps. Jedes Spiel hat einen eigenen Link. Die Spieltexte sind russisch, die Oberfläche gibt es in 9 Sprachen.',
+            ],
+            ['Premium-Spiele', 'Eine Premium-Karte zeigt ein Schloss. Das Workbench-Abo öffnet das ganze Spiel.'],
+            ['Werbung', 'AdMob-Banner in der App und AdSense auf der Website. Das Abo blendet sie aus.'],
+            [
+              'Einstellungen und der Workbench-Plan',
+              'Anmeldung mit Google, die Sprache, der Plan mit Kaufen und Wiederherstellen auf Android, Werbe-Datenschutz und Konto löschen.',
+            ],
+            [
+              'Admin',
+              'Jedes Spiel bearbeiten, sein Bild hochladen, die Listen der Ziele und Formate pflegen und viele Spiele aus einer CSV-Datei importieren.',
+            ],
+            [
+              'App-Symbol und Store-Eintrag',
+              'Ein weiches, lächelndes Gehirn auf pfirsichfarbener Kachel. Die Android-App kommt nach der Prüfung zu Google Play, die iPhone-App folgt.',
+            ],
+          ],
+        },
+      ],
+    },
     tripforge: {
       tagline: 'Eine ganze Reise aus ein paar Worten: Flüge, Route, Hotels und Auto, mit Preisen.',
       lede: 'Tripforge plant eine Reise aus den Orten, einem groben Datum und der Gruppe. Heraus kommt ein Plan mit Preisen für Flüge, Route, Hotels und Auto, dazu günstigere Daten in der Nähe.',

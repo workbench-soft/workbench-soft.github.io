@@ -1392,6 +1392,53 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: 'neuroigry',
+    kind: 'app',
+    repo: 'neuroigry',
+    hue: 35,
+    code: 'NRG',
+    name: 'НейроИгры',
+    tagline: 'Neuropsychological games for children 2 to 12, with step by step instructions.',
+    lede: 'A library of games for parents and specialists. Pick the age, the brain block after Luria and the target, such as attention or self-control, and get games with the steps, the goal and ways to make them easier or harder.',
+    platforms: ['Web', 'Android', 'iPhone'],
+    stack: ['Expo', 'React Native', 'Rust', 'Cloudflare Workers', 'Cloudflare R2'],
+    links: [
+      { href: 'https://neuroigry.workbench-soft.com', label: 'neuroigry.workbench-soft.com' },
+      { href: 'https://neuroigry.workbench-soft.com/privacy', label: 'Privacy policy' },
+    ],
+    groups: [
+      {
+        features: [
+          {
+            name: 'Catalog with filters and search',
+            text: 'Cards with a picture, the ages, a short text and the main target. Filters by age, brain block, target, format and equipment combine, and the search matches as you type.',
+          },
+          {
+            name: 'Game page',
+            text: 'Each game in sections: age, description, goal, equipment, steps, easier, harder, ways to play and tips. Each game has its own link. The game texts are Russian, the screens come in 9 languages.',
+          },
+          {
+            name: 'Premium games',
+            text: 'A premium card shows a lock. The Workbench subscription opens the full game.',
+          },
+          { name: 'Ads', text: 'AdMob banners in the app and AdSense on the site. The subscription hides them.' },
+          {
+            name: 'Settings and the Workbench plan',
+            text: 'Google sign in, the language, the plan with Buy and Restore on Android, ad privacy choices and Delete account.',
+          },
+          {
+            name: 'Admin',
+            text: 'The owner edits each game, uploads its picture, edits the lists of targets and formats, and imports many games from a CSV file.',
+          },
+          {
+            name: 'App icon and store listing',
+            text: 'A soft smiling brain on a peach tile. The Android app goes to Google Play once its review passes, and the iPhone app follows.',
+          },
+        ],
+      },
+    ],
+  },
+  {
     id: 'tripforge',
     kind: 'app',
     repo: 'tripforge',

@@ -1904,6 +1904,42 @@ const es: Catalog = {
         },
       ],
     },
+    neuroigry: {
+      tagline: 'Juegos neuropsicológicos para niños de 2 a 12 años, con instrucciones paso a paso.',
+      lede: 'Una biblioteca de juegos para padres y especialistas. Elige la edad, el bloque cerebral según Luria y el objetivo, como la atención o el autocontrol, y obtén juegos con los pasos, la meta y formas de hacerlos más fáciles o más difíciles.',
+      links: ['neuroigry.workbench-soft.com', 'Política de privacidad'],
+      groups: [
+        {
+          features: [
+            [
+              'Catálogo con filtros y búsqueda',
+              'Tarjetas con una imagen, las edades, un texto breve y el objetivo principal. Los filtros por edad, bloque cerebral, objetivo, formato y material se combinan, y la búsqueda encuentra mientras escribes.',
+            ],
+            [
+              'Página del juego',
+              'Cada juego por secciones: edad, descripción, meta, material, pasos, más fácil, más difícil, variantes y consejos. Cada juego tiene su propio enlace. Los textos de los juegos están en ruso y las pantallas en 9 idiomas.',
+            ],
+            [
+              'Juegos premium',
+              'Una tarjeta premium muestra un candado. La suscripción Workbench abre el juego completo.',
+            ],
+            ['Anuncios', 'Banners de AdMob en la app y AdSense en el sitio. La suscripción los oculta.'],
+            [
+              'Ajustes y el plan Workbench',
+              'Inicio de sesión con Google, el idioma, el plan con Comprar y Restaurar en Android, la privacidad de los anuncios y Eliminar cuenta.',
+            ],
+            [
+              'Administración',
+              'Editar cada juego, subir su imagen, editar las listas de objetivos y formatos e importar muchos juegos desde un archivo CSV.',
+            ],
+            [
+              'Icono y ficha de la tienda',
+              'Un cerebro suave y sonriente sobre un fondo melocotón. La app de Android llega a Google Play cuando pase la revisión, y después la de iPhone.',
+            ],
+          ],
+        },
+      ],
+    },
     tripforge: {
       tagline: 'Un viaje entero en pocas palabras: vuelos, ruta, hoteles y coche, con precios.',
       lede: 'Tripforge planea un viaje con los lugares, una fecha aproximada y el grupo. La respuesta es un plan con precios de vuelos, ruta, hoteles y coche, y fechas cercanas más baratas.',
