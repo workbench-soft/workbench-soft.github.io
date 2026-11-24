@@ -44,3 +44,8 @@
 - **Changes** `Base.astro`, the 9 catalogs in `src/i18n/`, the astrology catalogs, `src/pages/404.astro`, `src/pages/llms.txt.ts`, `public/og.png`, `langflip/index.html`, `apps/games/src/site/text.ts`, `apps/games/astro.config.mjs`, `apps/games/scripts/finish-build.ts`.
 - **Steps** this spec, then the home site fixes, then the games fixes, then `TODO.md`.
 - **Docs** `README.md` gets a Search section, `CHANGELOG.md` an entry.
+
+### 2026-11-24 Visitor counter
+
+- **Why** GitHub Pages serves workbench-soft.com past the Cloudflare proxy, so Cloudflare Web Analytics can't add its counter to the pages and no visit got counted.
+- **Changes** the Cloudflare Web Analytics script goes before `</head>` in `Base.astro`, the games `Page.astro`, each Jekyll `_layouts/default.html`, `langflip/index.html` and `public/privacy.html`. It uses the site token of the `workbench-soft.com` zone, sets no cookie and sends visits to the Web Analytics page of the Cloudflare account.

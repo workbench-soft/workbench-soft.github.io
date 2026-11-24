@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Visitor counter** each page loads the Cloudflare Web Analytics script, so the studio site, the games and the app pages get their visits counted. It sets no cookie.
 - **NeuroHop** НейроИгры is now NeuroHop: the panel takes the new name in the 9 languages, the `#neurohop` anchor, and links <https://neurohop.workbench-soft.com> and its privacy policy.
 - **SongCatcher ShazamKit** Song recognition says a build with Apple's ShazamKit and a developer token asks the official catalog, the legal path for a paid Google Play release. The architecture adds `Recognizer.kt`, the ShazamKit link, the token script and the trade-off, in 9 languages.
 - **НейроИгры** a panel in Apps, in the 9 languages: neuropsychological games for kids 2 to 12 with filters by age, Luria block and target, step by step game pages, premium games, ads and the admin. It links the live site and its privacy policy; Android waits for Google Play.
