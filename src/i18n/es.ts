@@ -289,6 +289,10 @@ const es: Catalog = {
               'El NAS agrupa las caras por persona, primero las que tienen nombre. Una persona desconocida se puede unir a una con nombre desde su ficha.',
             ],
             [
+              'Diario de una persona',
+              'Notas sobre lo que una persona hizo y dijo, con la fecha y la edad. Toca una nota para editarla o borrarla, y añade fotos y vídeos del móvil o de la biblioteca. Junto a cada nota salen las fotos de ese día, y un Google Doc vinculado se actualiza en ambos sentidos.',
+            ],
+            [
               'Buscar por lo que muestra una foto',
               'Encuentra un perro, una iglesia, un pasaporte, el rojo o las nubes, y súmale una persona o un lugar como Kiama. El NAS reconoce las cosas solo, sin nube.',
             ],

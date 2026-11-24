@@ -133,6 +133,8 @@ const arch: Arch = {
       'The trip list joins trips abroad with road trips found in the counts per day. Leaflet in a WebView draws the map from photo counts per small grid cell.',
     People:
       'A Rust engine on the NAS groups faces with YuNet and SFace. The phone downloads the result and writes names and merges back to the NAS.',
+    'Journal about a person':
+      "Each person has a JSON file on the NAS, written with If-Match so two apps can add notes. Picked media upload beside it, the day's photos come from the face groups, and a Cloudflare Worker rewrites Google Doc notes and sends app edits back.",
     'Search by what a photo shows':
       'The face engine on the NAS also runs the image side of CLIP on each photo and keeps its best labels out of 362. The phone downloads them and joins them with faces and places.',
     'Event folders in any file browser':

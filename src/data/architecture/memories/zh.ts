@@ -112,6 +112,8 @@ const arch: Arch = {
     'Trip list and places map':
       '旅行列表把出国旅行和国内自驾合在一起，都来自按天统计。WebView 里的 Leaflet 按小网格的照片数画出地图。',
     People: 'NAS 上的 Rust 引擎用 YuNet 和 SFace 分组人脸。手机下载结果，再把名字和合并写回 NAS。',
+    'Journal about a person':
+      '每个人在 NAS 上有一个 JSON 文件，用 If-Match 写入，两个应用都能添加记录。选中的照片和视频上传到旁边，当天的照片来自人脸分组，Cloudflare Worker 改写 Google 文档里的记录，并把应用里的修改写回去。',
     'Search by what a photo shows':
       'NAS 上的人脸引擎也用 CLIP 处理每张照片，从 362 个标签中保留最合适的。手机下载后把它们和人脸、地点结合起来。',
     'Event folders in any file browser':

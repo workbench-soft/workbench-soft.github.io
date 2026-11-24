@@ -186,6 +186,10 @@ export const projects: Project[] = [
             text: 'The NAS groups faces by person, named people first. Merge an unknown face into a named person directly from their card.',
           },
           {
+            name: 'Journal about a person',
+            text: 'Notes on what a person did and said, with the date and age. Tap a note to edit or delete it, and add photos and videos from the phone or the library. Photos of that day show beside each note, and a linked Google Doc stays in step both ways.',
+          },
+          {
             name: 'Search by what a photo shows',
             text: 'Find a dog, a church, a passport, red or clouds, and join it with a person or a place such as Kiama. The NAS finds the things on its own, with no cloud.',
           },

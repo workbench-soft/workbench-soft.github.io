@@ -131,6 +131,8 @@ const arch: Arch = {
       '여행 목록은 날짜별 집계에서 해외여행과 국내 자동차 여행을 모읍니다. WebView의 Leaflet이 작은 칸별 사진 수로 지도를 그립니다.',
     People:
       'NAS의 Rust 엔진이 YuNet과 SFace로 얼굴을 묶습니다. 휴대폰이 결과를 받아 이름과 합치기를 NAS에 다시 씁니다.',
+    'Journal about a person':
+      '사람마다 NAS에 JSON 파일이 있고, If-Match로 써서 두 앱이 기록을 추가할 수 있습니다. 고른 사진과 동영상은 그 옆에 올라가고, 그날의 사진은 얼굴 그룹에서 고릅니다. Cloudflare Worker가 Google 문서의 기록을 다듬고 앱의 수정을 되돌려 보냅니다.',
     'Search by what a photo shows':
       'NAS의 얼굴 엔진이 사진마다 CLIP도 돌려 362개 라벨 중 맞는 것을 남깁니다. 휴대폰이 이를 받아 얼굴, 장소와 함께 찾습니다.',
     'Event folders in any file browser':

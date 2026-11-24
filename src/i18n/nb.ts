@@ -277,6 +277,10 @@ const nb: Catalog = {
               'NAS-en grupperer ansikter etter person, navngitte først. En ukjent person kan slås sammen med en navngitt person direkte fra kortet.',
             ],
             [
+              'Dagbok om en person',
+              'Notater om hva en person gjorde og sa, med dato og alder. Trykk på et notat for å endre eller slette det, og legg til bilder og videoer fra telefonen eller biblioteket. Bildene fra den dagen vises ved hvert notat, og et koblet Google-dokument holdes likt begge veier.',
+            ],
+            [
               'Søk etter det et bilde viser',
               'Finn en hund, en kirke, et pass, rødt eller skyer, og kombiner med en person eller et sted som Kiama. NAS-en finner tingene selv, uten sky.',
             ],

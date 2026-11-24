@@ -293,6 +293,10 @@ const fr: Catalog = {
               "Le NAS regroupe les visages par personne, les personnes nommées d'abord. Une personne inconnue peut être fusionnée avec une personne nommée depuis sa fiche.",
             ],
             [
+              'Journal d’une personne',
+              'Des notes sur ce qu’une personne a fait et dit, avec la date et l’âge. Touchez une note pour la modifier ou la supprimer, et ajoutez des photos et vidéos du téléphone ou de la bibliothèque. Les photos du jour s’affichent à côté de chaque note, et un Google Doc lié se met à jour dans les deux sens.',
+            ],
+            [
               'Recherche par ce que montre une photo',
               'Trouvez un chien, une église, un passeport, du rouge ou des nuages, et ajoutez une personne ou un lieu comme Kiama. Le NAS repère les objets seul, sans cloud.',
             ],

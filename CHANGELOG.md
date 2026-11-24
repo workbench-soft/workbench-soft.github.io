@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Memories journal** the panel adds Journal about a person: edit or delete a note, add photos and videos, see the photos of that day, and keep a linked Google Doc in step both ways. Its architecture line is in the 9 languages.
 - **Visitor counter** each page loads the Cloudflare Web Analytics script, so the studio site, the games and the app pages get their visits counted. It sets no cookie.
 - **NeuroHop** НейроИгры is now NeuroHop: the panel takes the new name in the 9 languages, the `#neurohop` anchor, and links <https://neurohop.workbench-soft.com> and its privacy policy.
 - **SongCatcher ShazamKit** Song recognition says a build with Apple's ShazamKit and a developer token asks the official catalog, the legal path for a paid Google Play release. The architecture adds `Recognizer.kt`, the ShazamKit link, the token script and the trade-off, in 9 languages.

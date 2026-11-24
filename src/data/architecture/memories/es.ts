@@ -149,6 +149,8 @@ const arch: Arch = {
       'La lista de viajes une los viajes al extranjero con las escapadas por el país sacadas de los recuentos por día. Leaflet en una WebView dibuja el mapa con recuentos por celda pequeña.',
     People:
       'Un motor en Rust en el NAS agrupa las caras con YuNet y SFace. El móvil descarga el resultado y devuelve al NAS los nombres y las fusiones.',
+    'Journal about a person':
+      'Cada persona tiene un archivo JSON en el NAS, escrito con If-Match para que dos apps puedan añadir notas. Los archivos elegidos se suben a su lado, las fotos del día salen de los grupos de caras y un Cloudflare Worker reescribe las notas del Google Doc y le devuelve los cambios de la app.',
     'Search by what a photo shows':
       'El motor de caras del NAS pasa cada foto por CLIP y guarda sus mejores etiquetas de 362. El móvil las descarga y las cruza con las caras y los lugares.',
     'Event folders in any file browser':

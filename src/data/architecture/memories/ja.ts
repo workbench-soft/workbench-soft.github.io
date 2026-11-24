@@ -137,6 +137,8 @@ const arch: Arch = {
       '旅行の一覧は、日ごとの集計から海外旅行と国内のドライブ旅行をまとめます。WebView の Leaflet が小さなマスごとの写真数で地図を描きます。',
     People:
       'NAS の Rust エンジンが YuNet と SFace で顔をまとめます。スマホは結果を落とし、名前と統合を NAS に書き戻します。',
+    'Journal about a person':
+      '人物ごとに NAS 上の JSON ファイルがあり、If-Match で書き込むので二つのアプリから記録を追加できます。選んだ写真や動画はその横にアップロードされ、その日の写真は顔のグループから選ばれます。Cloudflare Worker が Google ドキュメントの記録を書き直し、アプリでの変更を送り返します。',
     'Search by what a photo shows':
       'NAS の顔エンジンが各写真を CLIP にもかけ、362 のラベルから合うものを残します。スマホはそれを落とし、顔や場所と組み合わせます。',
     'Event folders in any file browser':

@@ -289,6 +289,10 @@ const de: Catalog = {
               'Das NAS gruppiert Gesichter nach Person, benannte zuerst. Unbekannte Gesichter lassen sich direkt auf ihrer Karte mit einer benannten Person zusammenführen.',
             ],
             [
+              'Tagebuch über eine Person',
+              'Notizen dazu, was eine Person getan und gesagt hat, mit Datum und Alter. Tippe auf eine Notiz, um sie zu ändern oder zu löschen, und füge Fotos und Videos vom Handy oder aus der Bibliothek hinzu. Neben jeder Notiz stehen die Fotos dieses Tages, und ein verknüpftes Google Doc bleibt in beide Richtungen gleich.',
+            ],
+            [
               'Suche nach dem, was ein Foto zeigt',
               'Finde einen Hund, eine Kirche, einen Pass, Rot oder Wolken und kombiniere das mit einer Person oder einem Ort wie Kiama. Das NAS erkennt die Dinge selbst, ohne Cloud.',
             ],
