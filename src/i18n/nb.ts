@@ -1784,6 +1784,39 @@ const nb: Catalog = {
         },
       ],
     },
+    neuroigry: {
+      tagline: 'Nevropsykologiske leker for barn fra 2 til 12 år, med trinnvise instruksjoner.',
+      lede: 'Et bibliotek med leker for foreldre og fagfolk. Velg alder, hjerneblokk etter Luria og mål, som oppmerksomhet eller selvkontroll, og få leker med trinnene, målet og måter å gjøre dem lettere eller vanskeligere på.',
+      links: ['neuroigry.workbench-soft.com', 'Personvernerklæring'],
+      groups: [
+        {
+          features: [
+            [
+              'Katalog med filtre og søk',
+              'Kort med bilde, alder, kort tekst og hovedmål. Filtre for alder, hjerneblokk, mål, format og utstyr kan kombineres, og søket finner mens du skriver.',
+            ],
+            [
+              'Lekeside',
+              'Hver lek i deler: alder, beskrivelse, mål, utstyr, trinn, lettere, vanskeligere, varianter og tips. Hver lek har sin egen lenke. Lekene er skrevet på russisk, skjermene finnes på 9 språk.',
+            ],
+            ['Premium-leker', 'Et premium-kort viser en lås. Workbench-abonnementet åpner hele leken.'],
+            ['Annonser', 'AdMob-bannere i appen og AdSense på nettstedet. Abonnementet skjuler dem.'],
+            [
+              'Innstillinger og Workbench-planen',
+              'Google-innlogging, språket, planen med Kjøp og Gjenopprett på Android, personvernvalg for annonser og Slett konto.',
+            ],
+            [
+              'Admin',
+              'Eieren redigerer hver lek, laster opp bildet, redigerer listene over mål og formater og importerer mange leker fra en CSV-fil.',
+            ],
+            [
+              'Appikon og butikkoppføring',
+              'En myk, smilende hjerne på en ferskenfarget flis. Android-appen kommer på Google Play når gjennomgangen er godkjent, og iPhone-appen følger etter.',
+            ],
+          ],
+        },
+      ],
+    },
     tripforge: {
       tagline: 'En hel reise fra noen få ord: fly, rute, hotell og bil, med priser.',
       lede: 'Tripforge planlegger en reise ut fra stedene, en omtrentlig dato og gruppen. Svaret er en priset plan med fly, rute, hotell og bil, og billigere datoer rundt.',

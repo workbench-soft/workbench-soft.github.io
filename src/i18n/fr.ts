@@ -1959,6 +1959,39 @@ const fr: Catalog = {
         },
       ],
     },
+    neuroigry: {
+      tagline: 'Des jeux neuropsychologiques pour les enfants de 2 à 12 ans, avec des consignes pas à pas.',
+      lede: 'Une bibliothèque de jeux pour les parents et les spécialistes. Choisissez l’âge, le bloc cérébral selon Luria et l’objectif, comme l’attention ou la maîtrise de soi, et obtenez des jeux avec les étapes, le but et des façons de les rendre plus faciles ou plus difficiles.',
+      links: ['neuroigry.workbench-soft.com', 'Politique de confidentialité'],
+      groups: [
+        {
+          features: [
+            [
+              'Catalogue avec filtres et recherche',
+              'Des cartes avec une image, les âges, un court texte et l’objectif principal. Les filtres par âge, bloc cérébral, objectif, format et matériel se combinent, et la recherche trouve dès la saisie.',
+            ],
+            [
+              'Page du jeu',
+              'Chaque jeu en sections : âge, description, but, matériel, étapes, plus facile, plus difficile, variantes et conseils. Chaque jeu a son propre lien. Les textes des jeux sont en russe, les écrans en 9 langues.',
+            ],
+            ['Jeux premium', 'Une carte premium affiche un cadenas. L’abonnement Workbench ouvre le jeu complet.'],
+            ['Publicité', 'Des bannières AdMob dans l’appli et AdSense sur le site. L’abonnement les masque.'],
+            [
+              'Réglages et forfait Workbench',
+              'Connexion Google, la langue, le forfait avec Acheter et Restaurer sur Android, les choix de confidentialité des pubs et Supprimer le compte.',
+            ],
+            [
+              'Administration',
+              'Modifier chaque jeu, envoyer son image, modifier les listes d’objectifs et de formats, et importer de nombreux jeux depuis un fichier CSV.',
+            ],
+            [
+              'Icône et fiche du store',
+              'Un cerveau doux et souriant sur une tuile pêche. L’appli Android arrive sur Google Play après sa validation, l’appli iPhone suivra.',
+            ],
+          ],
+        },
+      ],
+    },
     tripforge: {
       tagline: 'Tout un voyage en quelques mots : vols, itinéraire, hôtels et voiture, avec les prix.',
       lede: "Tripforge planifie un voyage à partir des lieux, d'une date approximative et du groupe. La réponse est un plan chiffré avec vols, itinéraire, hôtels et voiture, et des dates moins chères autour.",

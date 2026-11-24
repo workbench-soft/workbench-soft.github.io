@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **НейроИгры** a panel in Apps, in the 9 languages: neuropsychological games for kids 2 to 12 with filters by age, Luria block and target, step by step game pages, premium games, ads and the admin. It links the live site and its privacy policy; Android waits for Google Play.
 - **Lumiere Mac build** `lumiere-desktop-mac.yml` builds the Lumiere dmg from lumiere-player on the free macOS runner of this public repo.
 - **SongCatcher Find tabs** the panel adds Find tabs in Guitar Upscale, with its architecture line in 9 languages.
 
