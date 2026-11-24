@@ -1644,10 +1644,10 @@ const ja: Catalog = {
         },
       ],
     },
-    neuroigry: {
+    neurohop: {
       tagline: '2〜12歳の子ども向けの神経心理学的な遊び。手順つき。',
       lede: '保護者と専門家のための遊びのライブラリ。年齢、ルリヤの脳の機能単位、注意力や自己コントロールなどの目的を選ぶと、手順と目標、やさしくする方法と難しくする方法つきの遊びが出てきます。',
-      links: ['neuroigry.workbench-soft.com', 'プライバシーポリシー'],
+      links: ['neurohop.workbench-soft.com', 'プライバシーポリシー'],
       groups: [
         {
           features: [

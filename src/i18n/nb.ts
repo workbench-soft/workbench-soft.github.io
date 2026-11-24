@@ -1784,10 +1784,10 @@ const nb: Catalog = {
         },
       ],
     },
-    neuroigry: {
+    neurohop: {
       tagline: 'Nevropsykologiske leker for barn fra 2 til 12 år, med trinnvise instruksjoner.',
       lede: 'Et bibliotek med leker for foreldre og fagfolk. Velg alder, hjerneblokk etter Luria og mål, som oppmerksomhet eller selvkontroll, og få leker med trinnene, målet og måter å gjøre dem lettere eller vanskeligere på.',
-      links: ['neuroigry.workbench-soft.com', 'Personvernerklæring'],
+      links: ['neurohop.workbench-soft.com', 'Personvernerklæring'],
       groups: [
         {
           features: [

@@ -1919,10 +1919,10 @@ const de: Catalog = {
         },
       ],
     },
-    neuroigry: {
+    neurohop: {
       tagline: 'Neuropsychologische Spiele für Kinder von 2 bis 12, mit Schritt-für-Schritt-Anleitung.',
       lede: 'Eine Spielesammlung für Eltern und Fachleute. Wähle das Alter, den Hirnblock nach Lurija und das Ziel, etwa Aufmerksamkeit oder Selbstkontrolle, und erhalte Spiele mit den Schritten, dem Ziel und Wegen, sie leichter oder schwerer zu machen.',
-      links: ['neuroigry.workbench-soft.com', 'Datenschutzerklärung'],
+      links: ['neurohop.workbench-soft.com', 'Datenschutzerklärung'],
       groups: [
         {
           features: [

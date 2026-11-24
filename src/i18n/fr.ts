@@ -1959,10 +1959,10 @@ const fr: Catalog = {
         },
       ],
     },
-    neuroigry: {
+    neurohop: {
       tagline: 'Des jeux neuropsychologiques pour les enfants de 2 à 12 ans, avec des consignes pas à pas.',
       lede: 'Une bibliothèque de jeux pour les parents et les spécialistes. Choisissez l’âge, le bloc cérébral selon Luria et l’objectif, comme l’attention ou la maîtrise de soi, et obtenez des jeux avec les étapes, le but et des façons de les rendre plus faciles ou plus difficiles.',
-      links: ['neuroigry.workbench-soft.com', 'Politique de confidentialité'],
+      links: ['neurohop.workbench-soft.com', 'Politique de confidentialité'],
       groups: [
         {
           features: [
