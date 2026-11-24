@@ -19,6 +19,17 @@ None written down yet.
 
 ## Changes
 
+### 2026-11-24 SongCatcher: the ShazamKit path
+
+- **Why** `wake-share` PR 20 (`a824f01`) adds Apple's ShazamKit as the legal path for a paid Google Play release. The site still names only the private Shazam endpoint.
+- **What the visitor gets** the Song recognition line says a build with ShazamKit and an Apple developer token asks the official ShazamKit catalog, in all 9 languages.
+- **Architecture** a `Recognizer.kt` part, a ShazamKit link, a ShazamKit line in the Song recognition feature, the token script and `mise run songcatcher:kit` in operations, and the ShazamKit choice in trade-offs.
+- **Changes**
+  - **`src/data/projects.ts`** the English Song recognition text.
+  - **`src/i18n/`** the same line in the 8 other catalogs.
+  - **`src/data/architecture/songcatcher/`** the lines above, in 9 languages.
+- **Docs** `CHANGELOG.md`.
+
 ### 2026-11-23 SongCatcher in apps
 
 - **Why** SongCatcher merged in `wake-share`, and each heading of its `docs/features.md` needs a line on the site.
