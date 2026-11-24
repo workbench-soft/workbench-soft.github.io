@@ -8,6 +8,7 @@ const arch: Arch = {
     { name: 'sherpa-onnx', role: '关键词检测器，靠一行短语就能听到“Shazam”，不用训练。' },
     { name: 'Signature.kt', role: 'shazamio 指纹的 Kotlin 移植：16 kHz 单声道的 FFT 和 4 个频段的峰值。' },
     { name: 'Shazam', role: '识别服务，在第 3、6、9、12 秒用指纹询问。' },
+    { name: 'Recognizer.kt', role: '选择识别方式：版本带有 SDK 和开发者令牌时用 ShazamKit，否则用 Shazam 接口。' },
     { name: 'Spotify.kt', role: 'PKCE 登录、按 ISRC 查歌，并存入已点赞歌曲。' },
     { name: 'wakeshare', role: '本仓库的共用麦克风模块，让其他唤醒词应用保留各自的唤醒词。' },
   ],
@@ -19,6 +20,7 @@ const arch: Arch = {
   ],
   links: [
     { to: 'Shazam', text: '接收指纹，返回歌名、艺人、专辑和 ISRC。' },
+    { to: 'ShazamKit', text: 'Apple 的官方曲库，用于带 SDK 和令牌的版本。它自己生成指纹，返回歌曲。' },
     { to: 'Spotify', text: '先按 ISRC，再按艺人和歌名找歌，存入已点赞歌曲。' },
     { to: 'lumiere-player', text: '通过 broadcast LIKE_CAUGHT_SONG 收到每首歌，加入它的已点赞歌曲。' },
     { to: 'keeppad', text: '通过 wakeshare 与 SongCatcher、SpotTheCam 和 ServoHop 共用麦克风。' },
@@ -48,18 +50,20 @@ const arch: Arch = {
     operations: [
       'CI 运行单元测试，并把 APK 构建为 songcatcher 构件。',
       'SignatureTest 让指纹与 shazamio 的字节一致，CatalogTest 检查 9 个字符串目录。',
+      'scripts/shazamkit-token.ts 签发 ES256 开发者令牌，mise run songcatcher:kit 构建带 ShazamKit 的 APK。Apple 没有公开它的许可，所以 AAR 不进 git。',
     ],
     tradeoffs: [
       '选了免费的 Shazam 接口，没选每次询问都要付费令牌的 AudD，也没选需要 Apple 开发者年费的 ShazamKit。该接口不公开，可能会变。',
       '用 sherpa 的一行短语，没用训练好的 openWakeWord 模型，这样不用训练就能发布。模型以后再加。',
       '做成独立应用，没做成 Lumiere 里的功能，这样 Lumiere 没开也能抓歌。代价是多装一个 APK。',
+      'ShazamKit 在等 Apple 开发者密钥。带它的版本查询官方曲库，这是在 Google Play 付费上架的合规途径。CI 构建继续用原接口。',
     ],
   },
   features: {
     'Wake by voice':
       'KeywordAudio.kt 用 keywords.txt 的那一行运行 sherpa-onnx。ListenService.kt 在抓歌期间占用共用麦克风，并通过 Voice.kt 发出提示音。',
     'Song recognition':
-      'Catch.kt 每次把 100 毫秒交给 Signature.kt，在第 3、6、9、12 秒发出指纹。Shazam.kt 读取歌名、艺人、专辑和 ISRC。',
+      'Catch.kt 每次把 100 毫秒交给 Signature.kt，在第 3、6、9、12 秒发出指纹。Shazam.kt 读取歌名、艺人、专辑和 ISRC。有 ShazamKit SDK 和令牌时，Recognizer.pick() 选用 KitRecognizer.kt，在 ShazamKit 曲库中匹配。',
     'Liked Songs in Spotify and Lumiere':
       'Lumiere.kt 发送带艺人、歌名、专辑、ISRC 和时间的 broadcast。Spotify.kt 先按 ISRC 再按名称搜索，存入资料库。',
     'Spoken answer': 'Voice.kt 发出提示音，并用 Android 语音合成说话，同时压低音乐。屏幕上的开关可关掉语音。',

@@ -17,6 +17,10 @@ const arch: Arch = {
       role: 'un portage Kotlin de l’empreinte shazamio : une FFT du son 16 kHz mono et des pics dans 4 bandes.',
     },
     { name: 'Shazam', role: 'le service de reconnaissance, interrogé avec l’empreinte à 3, 6, 9 et 12 secondes.' },
+    {
+      name: 'Recognizer.kt',
+      role: 'choisit la reconnaissance : ShazamKit quand la version a son SDK et un jeton de développeur, sinon l’adresse Shazam.',
+    },
     { name: 'Spotify.kt', role: 'la connexion PKCE, la recherche du titre par ISRC et l’ajout aux titres likés.' },
     {
       name: 'wakeshare',
@@ -31,6 +35,10 @@ const arch: Arch = {
   ],
   links: [
     { to: 'Shazam', text: 'Reçoit l’empreinte et répond avec le titre, l’artiste, l’album et l’ISRC.' },
+    {
+      to: 'ShazamKit',
+      text: 'Le catalogue officiel d’Apple, dans une version avec son SDK et son jeton. Il calcule sa propre empreinte et répond avec le titre.',
+    },
     { to: 'Spotify', text: 'Trouve le titre par ISRC, puis par artiste et titre, et l’ajoute aux titres likés.' },
     {
       to: 'lumiere-player',
@@ -66,18 +74,20 @@ const arch: Arch = {
     operations: [
       'La CI lance les tests unitaires et construit l’APK comme artefact songcatcher.',
       'SignatureTest tient l’empreinte aux octets de shazamio, et CatalogTest les 9 catalogues de textes.',
+      'scripts/shazamkit-token.ts signe le jeton de développeur ES256, et mise run songcatcher:kit construit l’APK avec ShazamKit. L’AAR reste hors de git, car Apple ne publie aucune licence pour lui.',
     ],
     tradeoffs: [
       'L’adresse Shazam gratuite plutôt qu’AudD, un jeton payant par requête, et ShazamKit, qui demande les frais de développeur Apple. L’adresse n’est pas publique et peut changer.',
       'Une ligne de phrase sherpa plutôt qu’une tête openWakeWord entraînée, pour sortir sans entraînement. La tête viendra plus tard.',
       'Une app à part plutôt qu’une fonction dans Lumiere, pour qu’une capture marche Lumiere fermé. Un APK de plus à installer.',
+      'ShazamKit attend la clé de développeur Apple. Une version avec lui interroge le catalogue officiel, la voie légale pour une version payante sur Google Play. Les versions de la CI gardent l’adresse.',
     ],
   },
   features: {
     'Wake by voice':
       'KeywordAudio.kt fait tourner sherpa-onnx sur la ligne de keywords.txt. ListenService.kt tient le micro partagé pendant la capture et émet le bip par Voice.kt.',
     'Song recognition':
-      'Catch.kt passe des trames de 100 ms à Signature.kt et envoie l’empreinte à 3, 6, 9 et 12 secondes. Shazam.kt lit le titre, l’artiste, l’album et l’ISRC.',
+      'Catch.kt passe des trames de 100 ms à Signature.kt et envoie l’empreinte à 3, 6, 9 et 12 secondes. Shazam.kt lit le titre, l’artiste, l’album et l’ISRC. Avec le SDK ShazamKit et un jeton, Recognizer.pick() prend KitRecognizer.kt et cherche dans le catalogue ShazamKit.',
     'Liked Songs in Spotify and Lumiere':
       'Lumiere.kt envoie le broadcast avec l’artiste, le titre, l’album, l’ISRC et l’heure. Spotify.kt cherche par ISRC, puis par nom, et ajoute à la bibliothèque.',
     'Spoken answer':

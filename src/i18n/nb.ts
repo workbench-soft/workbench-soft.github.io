@@ -662,7 +662,7 @@ const nb: Catalog = {
             ],
             [
               'Sanggjenkjenning',
-              'Telefonen lager selv lydfingeravtrykket til Shazam og spør Shazam etter 3 sekunder musikk, så ved 6, 9 og 12. Bare fingeravtrykket forlater telefonen.',
+              'Telefonen lager selv lydfingeravtrykket til Shazam og spør Shazam etter 3 sekunder musikk, så ved 6, 9 og 12. Bare fingeravtrykket forlater telefonen. En versjon med Apples ShazamKit og et utviklertoken spør heller den offisielle ShazamKit-katalogen. Det er den lovlige veien til en betalt utgivelse på Google Play.',
             ],
             [
               'Likte sanger i Spotify og Lumiere',

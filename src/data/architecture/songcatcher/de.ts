@@ -14,6 +14,10 @@ const arch: Arch = {
       role: 'eine Kotlin Portierung des shazamio Fingerabdrucks: eine FFT von 16 kHz Mono und Spitzen in 4 Bändern.',
     },
     { name: 'Shazam', role: 'der Erkennungsdienst, gefragt mit dem Fingerabdruck bei 3, 6, 9 und 12 Sekunden.' },
+    {
+      name: 'Recognizer.kt',
+      role: 'wählt die Erkennung: ShazamKit, wenn der Build sein SDK und ein Entwicklertoken hat, sonst den Shazam Endpunkt.',
+    },
     { name: 'Spotify.kt', role: 'PKCE Anmeldung, die Suche per ISRC und das Speichern in den Lieblingssongs.' },
     {
       name: 'wakeshare',
@@ -28,6 +32,10 @@ const arch: Arch = {
   ],
   links: [
     { to: 'Shazam', text: 'Nimmt den Fingerabdruck und antwortet mit Titel, Künstler, Album und ISRC.' },
+    {
+      to: 'ShazamKit',
+      text: 'Der offizielle Katalog von Apple, in einem Build mit SDK und Token. Er berechnet seinen eigenen Fingerabdruck und antwortet mit dem Titel.',
+    },
     {
       to: 'Spotify',
       text: 'Findet den Titel per ISRC, dann per Künstler und Titel, und speichert ihn in den Lieblingssongs.',
@@ -66,18 +74,20 @@ const arch: Arch = {
     operations: [
       'CI führt die Unit Tests aus und baut das APK als songcatcher Artefakt.',
       'SignatureTest hält den Fingerabdruck an den Bytes von shazamio, CatalogTest die 9 Stringkataloge.',
+      'scripts/shazamkit-token.ts signiert das ES256 Entwicklertoken, und mise run songcatcher:kit baut das APK mit ShazamKit. Das AAR bleibt außerhalb von git, da Apple keine Lizenz dafür veröffentlicht.',
     ],
     tradeoffs: [
       'Der kostenlose Shazam Endpunkt statt AudD mit bezahltem Token pro Anfrage und ShazamKit mit Apple Entwicklergebühr. Der Endpunkt ist nicht öffentlich und kann sich ändern.',
       'Eine sherpa Phrasenzeile statt eines trainierten openWakeWord Kopfs, so kam die App ohne Training. Der Kopf folgt später.',
       'Eine eigene App statt einer Funktion in Lumiere, so klappt ein Fang auch ohne Lumiere. Ein APK mehr zu installieren.',
+      'ShazamKit wartet auf den Apple Entwicklerschlüssel. Ein Build damit fragt den offiziellen Katalog, der legale Weg zu einer kostenpflichtigen Version bei Google Play. CI Builds bleiben beim Endpunkt.',
     ],
   },
   features: {
     'Wake by voice':
       'KeywordAudio.kt lässt sherpa-onnx auf der Zeile aus keywords.txt laufen. ListenService.kt hält während des Fangs das geteilte Mikrofon und piept über Voice.kt.',
     'Song recognition':
-      'Catch.kt gibt Blöcke von 100 ms an Signature.kt und sendet den Fingerabdruck bei 3, 6, 9 und 12 Sekunden. Shazam.kt liest Titel, Künstler, Album und ISRC.',
+      'Catch.kt gibt Blöcke von 100 ms an Signature.kt und sendet den Fingerabdruck bei 3, 6, 9 und 12 Sekunden. Shazam.kt liest Titel, Künstler, Album und ISRC. Mit dem ShazamKit SDK und einem Token nimmt Recognizer.pick() KitRecognizer.kt und sucht im ShazamKit-Katalog.',
     'Liked Songs in Spotify and Lumiere':
       'Lumiere.kt sendet den Broadcast mit Künstler, Titel, Album, ISRC und Zeit. Spotify.kt sucht per ISRC, dann per Name, und speichert in die Bibliothek.',
     'Spoken answer':

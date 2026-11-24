@@ -710,7 +710,7 @@ const de: Catalog = {
             ],
             [
               'Songerkennung',
-              'Das Handy berechnet den Audio Fingerabdruck von Shazam selbst und fragt Shazam nach 3 Sekunden Musik, dann bei 6, 9 und 12. Nur der Fingerabdruck verlässt das Handy.',
+              'Das Handy berechnet den Audio Fingerabdruck von Shazam selbst und fragt Shazam nach 3 Sekunden Musik, dann bei 6, 9 und 12. Nur der Fingerabdruck verlässt das Handy. Ein Build mit Apples ShazamKit und einem Entwicklertoken fragt stattdessen den offiziellen ShazamKit-Katalog. Das ist der legale Weg zu einer kostenpflichtigen Version bei Google Play.',
             ],
             [
               'Lieblingssongs in Spotify und Lumiere',

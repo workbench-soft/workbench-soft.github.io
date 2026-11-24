@@ -8,6 +8,10 @@ const arch: Arch = {
     { name: 'sherpa-onnx', role: '한 줄의 문구로 "Shazam"을 듣는 키워드 검출기. 학습이 필요 없습니다.' },
     { name: 'Signature.kt', role: 'shazamio 지문의 Kotlin 이식. 16 kHz 모노 FFT와 4개 대역의 피크입니다.' },
     { name: 'Shazam', role: '인식 서비스. 3, 6, 9, 12초에 지문으로 묻습니다.' },
+    {
+      name: 'Recognizer.kt',
+      role: '인식 방법을 고릅니다. 빌드에 SDK와 개발자 토큰이 있으면 ShazamKit, 없으면 Shazam 엔드포인트입니다.',
+    },
     { name: 'Spotify.kt', role: 'PKCE 로그인, ISRC로 곡 찾기, 좋아요 표시한 곡에 저장.' },
     { name: 'wakeshare', role: '이 저장소의 공유 마이크 모듈. 다른 호출어 앱도 자기 문구를 지킵니다.' },
   ],
@@ -19,6 +23,10 @@ const arch: Arch = {
   ],
   links: [
     { to: 'Shazam', text: '지문을 받아 제목, 아티스트, 앨범, ISRC로 답합니다.' },
+    {
+      to: 'ShazamKit',
+      text: 'Apple 공식 카탈로그. SDK와 토큰을 넣은 빌드에서 씁니다. 직접 지문을 만들고 곡으로 답합니다.',
+    },
     { to: 'Spotify', text: 'ISRC로, 다음에 아티스트와 제목으로 곡을 찾아 좋아요 표시한 곡에 저장합니다.' },
     { to: 'lumiere-player', text: 'broadcast LIKE_CAUGHT_SONG으로 노래를 받아 좋아요 표시한 곡에 넣습니다.' },
     { to: 'keeppad', text: 'wakeshare로 SongCatcher, SpotTheCam, ServoHop과 마이크를 함께 씁니다.' },
@@ -51,18 +59,20 @@ const arch: Arch = {
     operations: [
       'CI가 단위 테스트를 돌리고 APK를 songcatcher 아티팩트로 빌드합니다.',
       'SignatureTest는 지문을 shazamio 바이트에, CatalogTest는 9개 문자열 카탈로그를 맞춥니다.',
+      'scripts/shazamkit-token.ts가 ES256 개발자 토큰에 서명하고, mise run songcatcher:kit가 ShazamKit APK를 빌드합니다. Apple이 라이선스를 공개하지 않아 AAR은 git에 넣지 않습니다.',
     ],
     tradeoffs: [
       '묻기마다 유료 토큰이 드는 AudD와 Apple 개발자 비용이 드는 ShazamKit 대신 무료 Shazam 엔드포인트를 골랐습니다. 공개 API가 아니라 바뀔 수 있습니다.',
       '학습된 openWakeWord 헤드 대신 sherpa 문구 한 줄로, 학습 없이 냈습니다. 헤드는 나중에 옵니다.',
       'Lumiere 안의 기능 대신 별도 앱으로, Lumiere가 꺼져도 잡기가 됩니다. 설치할 APK가 하나 늘어납니다.',
+      'ShazamKit은 Apple 개발자 키를 기다립니다. 그 키를 넣은 빌드는 공식 카탈로그에 묻습니다. Google Play 유료 출시를 위한 정식 방법입니다. CI 빌드는 엔드포인트를 그대로 씁니다.',
     ],
   },
   features: {
     'Wake by voice':
       'KeywordAudio.kt가 keywords.txt의 줄로 sherpa-onnx를 돌립니다. ListenService.kt는 잡는 동안 공유 마이크를 잡고 Voice.kt로 삐 소리를 냅니다.',
     'Song recognition':
-      'Catch.kt가 100 ms씩 Signature.kt에 넘기고 3, 6, 9, 12초에 지문을 보냅니다. Shazam.kt는 제목, 아티스트, 앨범, ISRC를 읽습니다.',
+      'Catch.kt가 100 ms씩 Signature.kt에 넘기고 3, 6, 9, 12초에 지문을 보냅니다. Shazam.kt는 제목, 아티스트, 앨범, ISRC를 읽습니다. ShazamKit SDK와 토큰이 있으면 Recognizer.pick()이 KitRecognizer.kt를 골라 ShazamKit 카탈로그에서 찾습니다.',
     'Liked Songs in Spotify and Lumiere':
       'Lumiere.kt가 아티스트, 제목, 앨범, ISRC, 시각이 담긴 broadcast를 보냅니다. Spotify.kt는 ISRC로, 다음에 이름으로 찾아 라이브러리에 저장합니다.',
     'Spoken answer':

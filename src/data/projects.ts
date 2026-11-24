@@ -1175,7 +1175,7 @@ export const projects: Project[] = [
           },
           {
             name: 'Song recognition',
-            text: "The phone builds Shazam's audio fingerprint itself and asks Shazam after 3 seconds of music, then at 6, 9 and 12. Only the fingerprint leaves the phone.",
+            text: "The phone builds Shazam's audio fingerprint itself and asks Shazam after 3 seconds of music, then at 6, 9 and 12. Only the fingerprint leaves the phone. A build with Apple's ShazamKit and a developer token asks the official ShazamKit catalog instead, the legal path for a paid Google Play release.",
           },
           {
             name: 'Liked Songs in Spotify and Lumiere',

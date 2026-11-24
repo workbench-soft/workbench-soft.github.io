@@ -11,6 +11,10 @@ const arch: Arch = {
     { name: 'sherpa-onnx', role: 'поиск ключевых слов, который слышит «Shazam» по одной строке фразы, без обучения.' },
     { name: 'Signature.kt', role: 'перенос отпечатка shazamio на Kotlin: БПФ звука 16 кГц моно и пики в 4 полосах.' },
     { name: 'Shazam', role: 'служба распознавания, её спрашивают отпечатком на 3, 6, 9 и 12 секунде.' },
+    {
+      name: 'Recognizer.kt',
+      role: 'выбирает распознавание: ShazamKit, когда в сборке есть его SDK и токен разработчика, иначе адрес Shazam.',
+    },
     { name: 'Spotify.kt', role: 'вход через PKCE, поиск трека по ISRC и сохранение в любимые треки.' },
     {
       name: 'wakeshare',
@@ -25,6 +29,10 @@ const arch: Arch = {
   ],
   links: [
     { to: 'Shazam', text: 'Принимает отпечаток и отвечает названием, исполнителем, альбомом и ISRC.' },
+    {
+      to: 'ShazamKit',
+      text: 'Официальный каталог Apple в сборке с его SDK и токеном. Сам строит отпечаток и отвечает треком.',
+    },
     { to: 'Spotify', text: 'Находит трек по ISRC, затем по исполнителю и названию, и сохраняет его в любимые треки.' },
     {
       to: 'lumiere-player',
@@ -60,18 +68,20 @@ const arch: Arch = {
     operations: [
       'CI гоняет модульные тесты и собирает APK как артефакт songcatcher.',
       'SignatureTest сверяет отпечаток с байтами shazamio, а CatalogTest проверяет 9 каталогов строк.',
+      'scripts/shazamkit-token.ts подписывает токен разработчика ES256, а mise run songcatcher:kit собирает APK с ShazamKit. AAR не лежит в git, у Apple нет опубликованной лицензии на него.',
     ],
     tradeoffs: [
       'Бесплатный адрес Shazam вместо AudD с платным токеном за запрос и ShazamKit со взносом разработчика Apple. Адрес не публичный и может измениться.',
       'Строка фразы sherpa вместо обученной модели openWakeWord, так приложение вышло без обучения. Модель придёт позже.',
       'Отдельное приложение вместо функции в Lumiere, так поиск работает и без Lumiere. Ещё один APK для установки.',
+      'ShazamKit ждёт ключа разработчика Apple. Сборка с ним спрашивает официальный каталог, это законный путь к платной версии в Google Play. Сборки CI остаются на адресе Shazam.',
     ],
   },
   features: {
     'Wake by voice':
       'KeywordAudio.kt запускает sherpa-onnx на строке из keywords.txt. ListenService.kt держит общий микрофон во время поиска и подаёт сигнал через Voice.kt.',
     'Song recognition':
-      'Catch.kt подаёт кадры по 100 мс в Signature.kt и шлёт отпечаток на 3, 6, 9 и 12 секунде. Shazam.kt читает название, исполнителя, альбом и ISRC.',
+      'Catch.kt подаёт кадры по 100 мс в Signature.kt и шлёт отпечаток на 3, 6, 9 и 12 секунде. Shazam.kt читает название, исполнителя, альбом и ISRC. С SDK ShazamKit и токеном Recognizer.pick() берёт KitRecognizer.kt и ищет песню в каталоге ShazamKit.',
     'Liked Songs in Spotify and Lumiere':
       'Lumiere.kt шлёт broadcast с исполнителем, названием, альбомом, ISRC и временем. Spotify.kt ищет по ISRC, затем по имени, и сохраняет в библиотеку.',
     'Spoken answer':

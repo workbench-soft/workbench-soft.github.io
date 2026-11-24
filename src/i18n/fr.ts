@@ -723,7 +723,7 @@ const fr: Catalog = {
             ],
             [
               'Reconnaissance du morceau',
-              'Le téléphone calcule lui même l’empreinte audio de Shazam et interroge Shazam après 3 secondes de musique, puis à 6, 9 et 12. Seule l’empreinte quitte le téléphone.',
+              'Le téléphone calcule lui même l’empreinte audio de Shazam et interroge Shazam après 3 secondes de musique, puis à 6, 9 et 12. Seule l’empreinte quitte le téléphone. Une version avec ShazamKit d’Apple et un jeton de développeur interroge à la place le catalogue officiel de ShazamKit. C’est la voie légale pour une version payante sur Google Play.',
             ],
             [
               'Titres likés dans Spotify et Lumiere',

@@ -474,7 +474,7 @@ const zh: Catalog = {
             ],
             [
               '歌曲识别',
-              '手机自己算出 Shazam 的音频指纹，在音乐响起 3 秒后询问 Shazam，再在 6、9、12 秒时询问。离开手机的只有指纹。',
+              '手机自己算出 Shazam 的音频指纹，在音乐响起 3 秒后询问 Shazam，再在 6、9、12 秒时询问。离开手机的只有指纹。带有 Apple ShazamKit 和开发者令牌的版本改为查询官方 ShazamKit 曲库，这是在 Google Play 付费上架的合规途径。',
             ],
             [
               'Spotify 和 Lumiere 的已点赞歌曲',

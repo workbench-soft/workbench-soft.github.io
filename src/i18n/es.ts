@@ -701,7 +701,7 @@ const es: Catalog = {
             ],
             [
               'Reconocimiento de canciones',
-              'El móvil calcula él mismo la huella de audio de Shazam y pregunta a Shazam tras 3 segundos de música, luego a los 6, 9 y 12. Solo la huella sale del móvil.',
+              'El móvil calcula él mismo la huella de audio de Shazam y pregunta a Shazam tras 3 segundos de música, luego a los 6, 9 y 12. Solo la huella sale del móvil. Una versión con ShazamKit de Apple y un token de desarrollador consulta en su lugar el catálogo oficial de ShazamKit. Es el camino legal para una versión de pago en Google Play.',
             ],
             [
               'Me gusta en Spotify y Lumiere',

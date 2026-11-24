@@ -14,6 +14,10 @@ const arch: Arch = {
       role: 'en Kotlin port av shazamio fingeravtrykket: en FFT av 16 kHz mono og topper i 4 bånd.',
     },
     { name: 'Shazam', role: 'gjenkjenningstjenesten, spurt med fingeravtrykket ved 3, 6, 9 og 12 sekunder.' },
+    {
+      name: 'Recognizer.kt',
+      role: 'velger gjenkjenningen: ShazamKit når versjonen har SDK og et utviklertoken, ellers Shazam endepunktet.',
+    },
     { name: 'Spotify.kt', role: 'PKCE innlogging, søk etter låten med ISRC og lagring i Likte sanger.' },
     {
       name: 'wakeshare',
@@ -28,6 +32,10 @@ const arch: Arch = {
   ],
   links: [
     { to: 'Shazam', text: 'Tar imot fingeravtrykket og svarer med tittel, artist, album og ISRC.' },
+    {
+      to: 'ShazamKit',
+      text: 'Den offisielle katalogen til Apple, i en versjon med SDK og token. Den lager sitt eget fingeravtrykk og svarer med låten.',
+    },
     { to: 'Spotify', text: 'Finner låten med ISRC, så med artist og tittel, og lagrer den i Likte sanger.' },
     { to: 'lumiere-player', text: 'Får hver sang med broadcast LIKE_CAUGHT_SONG og legger den i sine Likte sanger.' },
     { to: 'keeppad', text: 'Deler mikrofonen med SongCatcher gjennom wakeshare, sammen med SpotTheCam og ServoHop.' },
@@ -60,18 +68,20 @@ const arch: Arch = {
     operations: [
       'CI kjører enhetstestene og bygger APK som songcatcher artefakt.',
       'SignatureTest holder fingeravtrykket til bytene fra shazamio, og CatalogTest de 9 tekstkatalogene.',
+      'scripts/shazamkit-token.ts signerer ES256 utviklertokenet, og mise run songcatcher:kit bygger APK med ShazamKit. AAR holdes utenfor git, siden Apple ikke har publisert en lisens for den.',
     ],
     tradeoffs: [
       'Det gratis Shazam endepunktet framfor AudD med betalt token per spørring og ShazamKit med Apple utvikleravgift. Endepunktet er ikke offentlig og kan endres.',
       'En sherpa fraselinje framfor et trent openWakeWord hode, så appen kom uten trening. Hodet kommer senere.',
       'En egen app framfor en funksjon i Lumiere, så en fangst virker med Lumiere av. Én APK mer å installere.',
+      'ShazamKit venter på utviklernøkkelen fra Apple. En versjon med den spør den offisielle katalogen, den lovlige veien til en betalt utgivelse på Google Play. CI versjonene beholder endepunktet.',
     ],
   },
   features: {
     'Wake by voice':
       'KeywordAudio.kt kjører sherpa-onnx på linjen i keywords.txt. ListenService.kt holder den delte mikrofonen under fangsten og piper gjennom Voice.kt.',
     'Song recognition':
-      'Catch.kt gir rammer på 100 ms til Signature.kt og sender fingeravtrykket ved 3, 6, 9 og 12 sekunder. Shazam.kt leser tittel, artist, album og ISRC.',
+      'Catch.kt gir rammer på 100 ms til Signature.kt og sender fingeravtrykket ved 3, 6, 9 og 12 sekunder. Shazam.kt leser tittel, artist, album og ISRC. Med ShazamKit SDK og et token tar Recognizer.pick() KitRecognizer.kt og søker i ShazamKit-katalogen.',
     'Liked Songs in Spotify and Lumiere':
       'Lumiere.kt sender broadcast med artist, tittel, album, ISRC og tid. Spotify.kt søker med ISRC, så med navn, og lagrer i biblioteket.',
     'Spoken answer':

@@ -14,6 +14,10 @@ const arch: Arch = {
       role: 'shazamio のフィンガープリントの Kotlin 移植。16 kHz モノラルの FFT と 4 帯域のピークです。',
     },
     { name: 'Shazam', role: '認識サービス。3、6、9、12 秒の時点でフィンガープリントを送って問い合わせます。' },
+    {
+      name: 'Recognizer.kt',
+      role: '認識の方法を選びます。ビルドに SDK と開発者トークンがあれば ShazamKit、なければ Shazam エンドポイントです。',
+    },
     { name: 'Spotify.kt', role: 'PKCE ログイン、ISRC による曲の検索、お気に入りへの保存。' },
     { name: 'wakeshare', role: 'このリポジトリの共有マイクモジュール。ほかのウェイクアプリもフレーズを保てます。' },
   ],
@@ -25,6 +29,10 @@ const arch: Arch = {
   ],
   links: [
     { to: 'Shazam', text: 'フィンガープリントを受け取り、曲名、アーティスト、アルバム、ISRC を返します。' },
+    {
+      to: 'ShazamKit',
+      text: 'Apple の公式カタログ。SDK とトークンを入れたビルドで使います。自分でフィンガープリントを作り、曲を返します。',
+    },
     { to: 'Spotify', text: 'ISRC で、次にアーティストと曲名で曲を探し、お気に入りに保存します。' },
     { to: 'lumiere-player', text: 'broadcast LIKE_CAUGHT_SONG で曲を受け取り、お気に入りに加えます。' },
     { to: 'keeppad', text: 'wakeshare を通じて SongCatcher、SpotTheCam、ServoHop とマイクを共有します。' },
@@ -57,18 +65,20 @@ const arch: Arch = {
     operations: [
       'CI が単体テストを走らせ、APK を songcatcher アーティファクトとしてビルドします。',
       'SignatureTest がフィンガープリントを shazamio のバイトに、CatalogTest が 9 つの文字列カタログを合わせます。',
+      'scripts/shazamkit-token.ts が ES256 の開発者トークンに署名し、mise run songcatcher:kit が ShazamKit 入りの APK をビルドします。Apple がライセンスを公開していないので、AAR は git に入れません。',
     ],
     tradeoffs: [
       '問い合わせごとに有料トークンが要る AudD や、Apple の開発者費用が要る ShazamKit ではなく、無料の Shazam エンドポイントを選びました。公開 API ではないので変わる可能性があります。',
       '学習済みの openWakeWord ヘッドではなく sherpa のフレーズ定義を使い、学習なしで出しました。ヘッドはあとで入ります。',
       'Lumiere の中の機能ではなく独立アプリにし、Lumiere が止まっていてもキャッチできます。入れる APK は 1 つ増えます。',
+      'ShazamKit は Apple の開発者キーを待っています。それを入れたビルドは公式カタログに問い合わせます。Google Play で有料公開するための正規の方法です。CI のビルドはエンドポイントのままです。',
     ],
   },
   features: {
     'Wake by voice':
       'KeywordAudio.kt が keywords.txt の行で sherpa-onnx を走らせます。ListenService.kt はキャッチ中に共有マイクを持ち、Voice.kt でビープ音を鳴らします。',
     'Song recognition':
-      'Catch.kt が 100 ms ずつ Signature.kt に渡し、3、6、9、12 秒でフィンガープリントを送ります。Shazam.kt は曲名、アーティスト、アルバム、ISRC を読みます。',
+      'Catch.kt が 100 ms ずつ Signature.kt に渡し、3、6、9、12 秒でフィンガープリントを送ります。Shazam.kt は曲名、アーティスト、アルバム、ISRC を読みます。ShazamKit の SDK とトークンがあれば、Recognizer.pick() が KitRecognizer.kt を選び、ShazamKit カタログで照合します。',
     'Liked Songs in Spotify and Lumiere':
       'Lumiere.kt がアーティスト、曲名、アルバム、ISRC、時刻付きの broadcast を送ります。Spotify.kt は ISRC で、次に名前で探し、ライブラリに保存します。',
     'Spoken answer':

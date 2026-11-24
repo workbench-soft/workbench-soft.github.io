@@ -17,6 +17,10 @@ const arch: Arch = {
       role: 'una versión en Kotlin de la huella de shazamio: una FFT del sonido 16 kHz mono y picos en 4 bandas.',
     },
     { name: 'Shazam', role: 'el servicio de reconocimiento, consultado con la huella a los 3, 6, 9 y 12 segundos.' },
+    {
+      name: 'Recognizer.kt',
+      role: 'elige el reconocimiento: ShazamKit cuando la versión tiene su SDK y un token de desarrollador, si no la dirección de Shazam.',
+    },
     { name: 'Spotify.kt', role: 'el inicio de sesión PKCE, la búsqueda por ISRC y el guardado en Tus me gusta.' },
     {
       name: 'wakeshare',
@@ -31,6 +35,10 @@ const arch: Arch = {
   ],
   links: [
     { to: 'Shazam', text: 'Recibe la huella y responde con el título, el artista, el álbum y el ISRC.' },
+    {
+      to: 'ShazamKit',
+      text: 'El catálogo oficial de Apple, en una versión con su SDK y su token. Calcula su propia huella y responde con la pista.',
+    },
     { to: 'Spotify', text: 'Busca la pista por ISRC, luego por artista y título, y la guarda en Tus me gusta.' },
     { to: 'lumiere-player', text: 'Recibe cada canción por el broadcast LIKE_CAUGHT_SONG y la añade a sus Me gusta.' },
     { to: 'keeppad', text: 'Comparte el micrófono con SongCatcher por wakeshare, junto con SpotTheCam y ServoHop.' },
@@ -63,18 +71,20 @@ const arch: Arch = {
     operations: [
       'La CI pasa las pruebas unitarias y construye el APK como artefacto songcatcher.',
       'SignatureTest ata la huella a los bytes de shazamio, y CatalogTest los 9 catálogos de textos.',
+      'scripts/shazamkit-token.ts firma el token de desarrollador ES256, y mise run songcatcher:kit construye el APK con ShazamKit. El AAR queda fuera de git, ya que Apple no publica una licencia para él.',
     ],
     tradeoffs: [
       'La dirección gratuita de Shazam en vez de AudD, con un token de pago por consulta, y de ShazamKit, que pide la cuota de desarrollador de Apple. La dirección no es pública y puede cambiar.',
       'Una línea de frase de sherpa en vez de un modelo openWakeWord entrenado, para salir sin entrenamiento. El modelo llega después.',
       'Una app aparte en vez de una función en Lumiere, para que una captura funcione con Lumiere cerrado. Un APK más que instalar.',
+      'ShazamKit espera la clave de desarrollador de Apple. Una versión con él consulta el catálogo oficial, el camino legal para una versión de pago en Google Play. Las versiones de la CI siguen con la dirección.',
     ],
   },
   features: {
     'Wake by voice':
       'KeywordAudio.kt ejecuta sherpa-onnx con la línea de keywords.txt. ListenService.kt toma el micrófono compartido durante la captura y pita con Voice.kt.',
     'Song recognition':
-      'Catch.kt pasa bloques de 100 ms a Signature.kt y envía la huella a los 3, 6, 9 y 12 segundos. Shazam.kt lee el título, el artista, el álbum y el ISRC.',
+      'Catch.kt pasa bloques de 100 ms a Signature.kt y envía la huella a los 3, 6, 9 y 12 segundos. Shazam.kt lee el título, el artista, el álbum y el ISRC. Con el SDK de ShazamKit y un token, Recognizer.pick() toma KitRecognizer.kt y busca en el catálogo de ShazamKit.',
     'Liked Songs in Spotify and Lumiere':
       'Lumiere.kt envía el broadcast con el artista, el título, el álbum, el ISRC y la hora. Spotify.kt busca por ISRC, luego por nombre, y guarda en la biblioteca.',
     'Spoken answer':
