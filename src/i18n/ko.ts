@@ -1561,10 +1561,10 @@ const ko: Catalog = {
         },
       ],
     },
-    neuroigry: {
+    neurohop: {
       tagline: '2~12세 아이를 위한 신경심리 놀이, 단계별 안내 포함.',
       lede: '부모와 전문가를 위한 놀이 모음입니다. 나이, 루리야의 뇌 기능 단위, 주의력이나 자기 조절 같은 목표를 고르면 단계, 목표, 더 쉽게 또는 더 어렵게 하는 방법이 담긴 놀이가 나옵니다.',
-      links: ['neuroigry.workbench-soft.com', '개인정보처리방침'],
+      links: ['neurohop.workbench-soft.com', '개인정보처리방침'],
       groups: [
         {
           features: [

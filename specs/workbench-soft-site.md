@@ -563,3 +563,11 @@ The studio needed one public site for its apps and their installers.
 | `13b227c` | `13b227c^` | `src/data` and `src/i18n` (#190) | `site`            | `run=true`  |
 | `13b227c` | `13b227c^` | the same                         | `games`           | `run=false` |
 | `13b227c` | `13b227c^` | the same                         | `shuttrix-native` | `run=false` |
+
+### 2026-11-24 НейроИгры becomes NeuroHop
+
+- **Why** the app got a new name, NeuroHop, and a new domain.
+- **Panel** the project id and anchor go from `neuroigry` to `neurohop`, and the name shows as NeuroHop in all 9 languages. The site keeps one name per project, so `/ru/` shows NeuroHop too.
+- **Links** the site link is <https://neurohop.workbench-soft.com>, the privacy link <https://neurohop.workbench-soft.com/privacy>. Android stays coming soon.
+- **Kept** `repo: 'neuroigry'` and the `neuroigry-v<version>` release tag, since the GitHub repo keeps its name.
+- **Changes** `src/data/projects.ts`, the 8 catalogs in `src/i18n/`, `src/data/architecture/neurohop/`, `src/assets/icons/neurohop.png`, `CHANGELOG.md`.

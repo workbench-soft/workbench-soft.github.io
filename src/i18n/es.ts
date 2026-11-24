@@ -1904,10 +1904,10 @@ const es: Catalog = {
         },
       ],
     },
-    neuroigry: {
+    neurohop: {
       tagline: 'Juegos neuropsicológicos para niños de 2 a 12 años, con instrucciones paso a paso.',
       lede: 'Una biblioteca de juegos para padres y especialistas. Elige la edad, el bloque cerebral según Luria y el objetivo, como la atención o el autocontrol, y obtén juegos con los pasos, la meta y formas de hacerlos más fáciles o más difíciles.',
-      links: ['neuroigry.workbench-soft.com', 'Política de privacidad'],
+      links: ['neurohop.workbench-soft.com', 'Política de privacidad'],
       groups: [
         {
           features: [

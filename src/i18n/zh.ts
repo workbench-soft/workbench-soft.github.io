@@ -1286,10 +1286,10 @@ const zh: Catalog = {
         },
       ],
     },
-    neuroigry: {
+    neurohop: {
       tagline: '面向 2 至 12 岁儿童的神经心理游戏，附分步说明。',
       lede: '为家长和专业人士准备的游戏库。选择年龄、鲁利亚的脑功能区和目标，例如注意力或自控力，即可得到带步骤、目标以及降低或提高难度方法的游戏。',
-      links: ['neuroigry.workbench-soft.com', '隐私政策'],
+      links: ['neurohop.workbench-soft.com', '隐私政策'],
       groups: [
         {
           features: [

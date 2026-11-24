@@ -1392,19 +1392,19 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 'neuroigry',
+    id: 'neurohop',
     kind: 'app',
     repo: 'neuroigry',
     hue: 35,
     code: 'NRG',
-    name: 'НейроИгры',
+    name: 'NeuroHop',
     tagline: 'Neuropsychological games for children 2 to 12, with step by step instructions.',
     lede: 'A library of games for parents and specialists. Pick the age, the brain block after Luria and the target, such as attention or self-control, and get games with the steps, the goal and ways to make them easier or harder.',
     platforms: ['Web', 'Android', 'iPhone'],
     stack: ['Expo', 'React Native', 'Rust', 'Cloudflare Workers', 'Cloudflare R2'],
     links: [
-      { href: 'https://neuroigry.workbench-soft.com', label: 'neuroigry.workbench-soft.com' },
-      { href: 'https://neuroigry.workbench-soft.com/privacy', label: 'Privacy policy' },
+      { href: 'https://neurohop.workbench-soft.com', label: 'neurohop.workbench-soft.com' },
+      { href: 'https://neurohop.workbench-soft.com/privacy', label: 'Privacy policy' },
     ],
     groups: [
       {
