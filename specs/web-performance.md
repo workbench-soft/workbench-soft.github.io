@@ -79,5 +79,15 @@ Before against after, 6 runs each in turns (median):
 
 - **Home HTML weight** 695 KB raw, 134 KB gzip, mostly app text in the
   project panels. That text belongs to the app pages' own sessions.
-- **Other pages with the beacon** `apps/games`, `langflip/` and the Jekyll
-  app sites still load it with `defer`. They can take the same change.
+
+### 2026-11-26 the counter after the first paint on every page
+
+The games, `langflip/`, `public/privacy.html` and the Jekyll app sites of
+lumiere, memoire, memories-mobile, shuttrix, skyaltar and tripforge load the
+beacon the way `src/layouts/Base.astro` does. Each tag keeps its own token,
+and the Jekyll `analytics.html` includes keep `site.cloudflare_analytics_token`.
+
+- **Check** `git grep beacon.min.js` finds no `defer` tag, and a live page
+  serves the `supportedEntryTypes` loader.
+- **Left** each Jekyll layout loads the beacon twice, once through
+  `analytics.html` with its own token and once inline with the studio token.
