@@ -1,12 +1,12 @@
 ---
 title: Memoire Privacy Policy
 description: Memoire keeps your words, answers and settings on your device. Google AdMob shows ads, and Sync shares cards only with the devices you pair.
-last_modified_at: 2026-11-04
+last_modified_at: 2026-11-26
 ---
 
 # Memoire Privacy Policy
 
-Last updated: 4 November 2026
+Last updated: 26 November 2026
 
 Memoire teaches English and Russian words in short batches of cards. The
 app has no user accounts and sends no data to the developer. Your cards,
@@ -25,9 +25,9 @@ Google collects the data listed under "Ads".
   secure store. It goes only to Google's Gemini service.
 - **Settings** such as the language, the theme, the sound, the reminders
   and the ads choices, in the app's storage.
-- **Purchases** "Remove ads" and "Memoire Pro" are Google Play purchases.
-  Google Play keeps the record, and the app asks Google Play for it on
-  each start.
+- **Purchases** "Remove ads" and "Memoire Pro" are Google Play purchases
+  on Android and App Store purchases on the iPhone and iPad. The store
+  keeps the record, and the app asks the store for it on each start.
 
 ## What the app does with device permissions
 
@@ -55,8 +55,8 @@ Google collects the data listed under "Ads".
   an anonymous sign in that holds no name or email. Anyone with the code
   sees those cards. Answers and settings stay on each device.
 - **Google AdMob**, to load the ads. See "Ads" below.
-- **Google Play**, to sell "Remove ads" and "Memoire Pro" and check that
-  you bought them.
+- **Google Play** or the **App Store**, to sell "Remove ads" and
+  "Memoire Pro" and check that you bought them.
 - **GitHub**, in the version from workbench-soft.com only, to look for a
   newer version and download it. The version from Google Play doesn't make
   this check.
@@ -79,6 +79,10 @@ them off on your Google account.
   consent before an ad loads. Settings, "Ad privacy" changes the answer.
   Elsewhere, Android Settings, Privacy, Ads resets or deletes the
   advertising ID.
+- **iPhone and iPad** the app asks through App Tracking Transparency
+  before AdMob may use the advertising ID. With "Ask App Not to Track"
+  Google gets no advertising ID. iOS Settings, Privacy & Security,
+  Tracking changes the answer.
 - **No words or answers** go to Google through the ads code.
 
 ## Analytics, accounts
@@ -88,9 +92,9 @@ The app has no analytics of its own and no user accounts.
 ## Deleting your data
 
 Uninstall the app, or clear its storage in Android Settings, Apps,
-Memoire, Storage. Either removes the cards, answers, settings and the
+Memoire, Storage. On the iPhone and iPad, delete the app. Either removes the cards, answers, settings and the
 Gemini key. To remove synced cards, delete them in the app while Sync is
-on, then turn Sync off. Google Play keeps the record of your purchases, so
+on, then turn Sync off. Google Play and the App Store keep the record of your purchases, so
 they come back after a reinstall. Email <hello@workbench-soft.com> to ask
 for a synced deck to be deleted.
 
