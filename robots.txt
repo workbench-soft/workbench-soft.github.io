@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+# The insiders page sits behind Cloudflare Access and stays out of search.
+Disallow: /private
 
 Sitemap: https://workbench-soft.com/sitemap-index.xml
 Sitemap: https://workbench-soft.com/memories-mobile/sitemap.xml

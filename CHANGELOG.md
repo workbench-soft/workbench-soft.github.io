@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Insiders page** a private page at insiders.workbench-soft.com/private lists the apps kept off the public site, starting with Suno Download, in the 9 languages. Cloudflare Access lets in only invited emails, and the Worker checks the Access token too.
 - **Memories journal** the panel adds Journal about a person: edit or delete a note, add photos and videos, see the photos of that day, and keep a linked Google Doc in step both ways. Its architecture line is in the 9 languages.
 - **Visitor counter** each page loads the Cloudflare Web Analytics script, so the studio site, the games and the app pages get their visits counted. It sets no cookie.
 - **NeuroHop** НейроИгры is now NeuroHop: the panel takes the new name in the 9 languages, the `#neurohop` anchor, and links <https://neurohop.workbench-soft.com> and its privacy policy.

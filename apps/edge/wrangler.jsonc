@@ -5,7 +5,10 @@
   "main": "src/index.ts",
   "compatibility_date": "2026-10-20",
   // One binding per app in registry.json. A call through a binding costs no extra request.
-  "services": [{ "binding": "GAMES", "service": "workbench-games" }],
+  "services": [
+    { "binding": "GAMES", "service": "workbench-games" },
+    { "binding": "PRIVATE", "service": "workbench-private" },
+  ],
   // Cloudflare makes the DNS records and the certificates once the domain's DNS sits on Cloudflare.
   "routes": [
     { "pattern": "workbenchsoft.com", "custom_domain": true },

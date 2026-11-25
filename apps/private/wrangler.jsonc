@@ -1,0 +1,18 @@
+// insiders.workbench-soft.com/private: the page of private apps. Cloudflare Access guards the whole host.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "workbench-private",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-20",
+  // Neither is a secret: the Worker checks the Access token against the team's public keys and this audience.
+  // scripts/access.ts prints both after it makes the Access app.
+  "vars": {
+    "ACCESS_TEAM": "workbench-soft.cloudflareaccess.com",
+    "ACCESS_AUD": "",
+  },
+  // Cloudflare makes the DNS record and the certificate on deploy. The apex stays on GitHub Pages.
+  "routes": [{ "pattern": "insiders.workbench-soft.com", "custom_domain": true }],
+  "workers_dev": false,
+  "preview_urls": false,
+  "observability": { "enabled": true },
+}

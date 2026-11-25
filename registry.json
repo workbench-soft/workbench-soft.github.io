@@ -7,6 +7,13 @@
       "dir": "apps/games",
       "binding": "GAMES",
       "worker": "workbench-games"
+    },
+    {
+      "name": "private",
+      "path": "/private",
+      "dir": "apps/private",
+      "binding": "PRIVATE",
+      "worker": "workbench-private"
     }
   ],
   "fallback": {

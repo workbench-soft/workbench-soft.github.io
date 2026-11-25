@@ -1,0 +1,23 @@
+[tools]
+node = "24"
+pnpm = "11.22.0"
+
+[tasks.dev]
+description = "Run the Worker on port 8789. Without the Access header it answers 403"
+run = "pnpm dev"
+
+[tasks.check]
+description = "Lint, typecheck and test"
+run = "pnpm lint && pnpm typecheck && pnpm test"
+
+[tasks.deploy]
+description = "Deploy the Worker to Cloudflare"
+run = "pnpm exec wrangler deploy"
+
+[tasks.access]
+description = "Make or update the Access app and its policy. Run through bws run for the token"
+run = "node scripts/access.ts"
+
+[tasks.invite]
+description = "Add an email to the Access policy: mise run invite friend@example.com"
+run = "node scripts/invite.ts"
