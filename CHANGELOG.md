@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **Faster first paint** the visit counter loads after the page, so its connection to Cloudflare no longer holds back the text on a slow phone network.
+
 - **Guitar Upscale voice card** the Voice search line says a card plays the match after 4 s unless you pick another or cancel, in the 9 languages.
 - **Insiders downloads** each app on the insiders page has a Download button that serves its newest release with no GitHub account. Site Sources, Reddit Desk, Songfactory and Disk Reorg join Suno Download.
 - **Insiders page** a private page at insiders.workbench-soft.com/private lists the apps kept off the public site, starting with Suno Download, in the 9 languages. Cloudflare Access lets in only invited emails, and the Worker checks the Access token too.
