@@ -5,7 +5,12 @@ export const prerender = true;
 // Public metadata only: the phone can list apps even if they have no APK release.
 export function GET(): Response {
   const apps = projects
-    .filter((project) => ['app', 'tool', 'internal'].includes(project.kind))
+    // A client app joins when it ships on Android, so the updater offers its APK. Client sites stay out.
+    .filter(
+      (project) =>
+        ['app', 'tool', 'internal'].includes(project.kind) ||
+        (project.kind === 'client' && project.platforms.includes('Android')),
+    )
     .map((project) => {
       const repo = project.repo?.split('/')[0];
       const link = project.links[0]?.href ?? (repo ? `https://github.com/workbench-soft/${repo}` : null);

@@ -10,6 +10,9 @@ describe('public app catalog', () => {
     expect(names).toContain('guitarup-tuner');
     expect(names).toContain('shuttrix');
     expect(names).toContain('memories');
+    expect(names).toContain('neurohop');
+    expect(names).toContain('medpoisk');
+    expect(names).not.toContain('aspirationstyle');
     expect(names.size).toBe(apps.length);
     expect(apps.find((app) => app.id === 'archon')).toMatchObject({
       name: 'Archon',
