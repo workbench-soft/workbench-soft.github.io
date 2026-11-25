@@ -495,7 +495,10 @@ export const projects: Project[] = [
           { name: 'Chords', text: 'One chord per scale note, such as Em F#dim G Am Bm C D for E minor.' },
           { name: 'Strumming', text: 'A held chord strums a pattern in time with the clock. Patterns are editable.' },
           { name: 'Song list', text: 'Built-in songs and your own. Songs that fit the current scale show in green.' },
-          { name: 'Voice search', text: 'Say a song name. The words fill the search as you speak.' },
+          {
+            name: 'Voice search',
+            text: 'Say a song name. The words fill the search, and a card plays the match after 4 s unless you pick another or cancel.',
+          },
           { name: 'Hey Guitar', text: '"Hey Guitar, play Metallica One." The app answers "Listening" and plays it.' },
           {
             name: 'MIDI recording',

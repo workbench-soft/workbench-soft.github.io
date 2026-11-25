@@ -433,7 +433,10 @@ const nb: Catalog = {
             ['Akkorder i tonearten', 'Én akkord per skalatone, for eksempel Em F#dim G Am Bm C D for e-moll.'],
             ['Klimpring', 'En holdt akkord klimprer et mønster i takt med klokken. Mønstrene kan redigeres.'],
             ['Sangliste', 'Innebygde sanger og dine egne. Sanger som passer skalaen nå, vises i grønt.'],
-            ['Talesøk', 'Si et sangnavn. Ordene fyller søket mens du snakker.'],
+            [
+              'Talesøk',
+              'Si et sangnavn. Ordene fyller søket, og et kort spiller treffet etter 4 s, med mindre du velger et annet eller avbryter.',
+            ],
             ['Hey Guitar', '«Hey Guitar, play Metallica One.» Appen svarer «Listening» og spiller den.'],
             ['MIDI-opptak', 'Tar opp tonene og akkordene du spiller. Toner appen spiller av, holdes utenfor opptaket.'],
             ['Looper', 'Korte looper på flere kanaler spiller sammen.'],

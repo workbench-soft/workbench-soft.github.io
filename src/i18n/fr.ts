@@ -464,7 +464,10 @@ const fr: Catalog = {
               'Liste de morceaux',
               'Morceaux intégrés et les vôtres. Ceux qui vont avec la gamme actuelle s’affichent en vert.',
             ],
-            ['Recherche vocale', 'Dites un titre. Les mots remplissent la recherche pendant que vous parlez.'],
+            [
+              'Recherche vocale',
+              'Dites un titre. Les mots remplissent la recherche, et une carte lance le résultat après 4 s, sauf si vous en choisissez un autre ou annulez.',
+            ],
             ['Hey Guitar', '« Hey Guitar, play Metallica One. » L’app répond « Listening » et le joue.'],
             [
               'Enregistrement MIDI',
