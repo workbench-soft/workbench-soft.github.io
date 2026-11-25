@@ -5,10 +5,10 @@
   "main": "src/index.ts",
   "compatibility_date": "2026-10-20",
   // Neither is a secret: the Worker checks the Access token against the team's public keys and this audience.
-  // scripts/access.ts prints both after it makes the Access app.
+  // The tag is the kid of the Access login redirect, and scripts/access.ts prints it too.
   "vars": {
     "ACCESS_TEAM": "workbench-soft.cloudflareaccess.com",
-    "ACCESS_AUD": "",
+    "ACCESS_AUD": "9eaeb12bc8ca5080f218502702426293c3da1dc68db2c8403ad07a6d6bbbfdcc",
   },
   // Cloudflare makes the DNS record and the certificate on deploy. The apex stays on GitHub Pages.
   "routes": [{ "pattern": "insiders.workbench-soft.com", "custom_domain": true }],

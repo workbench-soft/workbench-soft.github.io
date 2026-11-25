@@ -81,6 +81,22 @@ Free party games live in [apps/games/](apps/games/) and run at <https://games.wo
 - **Checks and deploy** the [Games workflow](.github/workflows/games.yml) checks both apps on pull requests and deploys the games from main.
 - **Docs** [architecture](apps/games/docs/architecture.md), [user flows](apps/games/docs/user-flows.md), [features](apps/games/docs/features.md).
 
+## Insiders page
+
+Apps kept off the public site, such as Suno Download, sit at <https://insiders.workbench-soft.com/private/>. Only the emails on the Cloudflare Access list can open it. [apps/private/](apps/private/) holds the Worker, and [the spec](specs/private-apps.md) holds the design.
+
+- **Sign in** the visitor types an invited email, gets a 6-digit PIN by mail and types it. The session lasts 24 hours.
+- **New app** add one entry to [apps/private/src/apps.ts](apps/private/src/apps.ts), with its line and install steps in the 9 languages.
+- **Checks and deploy** the [Private workflow](.github/workflows/private.yml) checks the app on pull requests and deploys it from main.
+
+### Invite someone
+
+1. Open the [Invited insiders policy](https://dash.cloudflare.com/021a5552010625b00e5e81cfd41e9437/one/access-controls/policies) and press **Edit**.
+2. Under **Include**, **Emails**, type the person's email and press Enter. To take someone off, press the cross on their email.
+3. Press **Save policy**, then send them <https://insiders.workbench-soft.com/private/>.
+
+With the Access permission on the deploy token, `mise run invite friend@example.com` in `apps/private` does the same through `bws run`. The emails live only in Cloudflare, so none lands in this public repo.
+
 ## Builds side by side
 
 - **No cancel** each push runs its checks and build to the end, also when a newer push starts.

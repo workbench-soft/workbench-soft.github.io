@@ -15,8 +15,9 @@
   its repo and its line in the 9 languages. A new app is one entry.
 - **Out of search** no sitemap, no `llms.txt`, no catalog entry, a
   `noindex` tag and header, and `robots.txt` disallows `/private`.
-- **Invite** an email goes on the allow list through
-  `apps/private/scripts/invite.ts`, or the Zero Trust dashboard.
+- **Invite** an email goes on the allow list in the Zero Trust dashboard, as
+  the README says, or through `apps/private/scripts/invite.ts` once the
+  token has the Access permission.
 
 ## What it does for the person
 
@@ -31,11 +32,11 @@
 
 ## User flows
 
-1. The owner adds a friend's email: `mise run invite friend@example.com` in
-   `apps/private`.
+1. The owner adds a friend's email to the "Invited insiders" policy in the
+   Zero Trust dashboard.
 2. The owner sends the friend <https://insiders.workbench-soft.com/private/>.
 3. The friend types the email on the Access page and gets a 6-digit PIN.
-4. The friend types the PIN and lands on the page for 30 days.
+4. The friend types the PIN and lands on the page for 24 hours.
 5. The friend presses "Latest release" or follows the install steps.
 
 ## How it works: modules, files, data
@@ -67,7 +68,13 @@
   access to the repo. An invited person without one follows the steps or
   gets the zip from the owner. A download route through the Worker with a
   read-only GitHub token is the next step.
-- **Free plan** Zero Trust Free covers 50 users.
+- **Free plan** Zero Trust Free covers 50 users. The checkout keeps the card
+  on file for use past the free limits.
+- **Token** the deploy token can deploy the Worker but has no Access
+  permission, so the Access app and policy were made in the dashboard. The
+  scripts work once "Access: Apps and Policies Edit" is on the token.
+- **Edge path** a request through the edge to `/private` would skip Access,
+  so the Worker answers it 403 until an Access app also covers that path.
 
 ## Changes
 
@@ -78,7 +85,8 @@
 - **Changes** a new `apps/private` Worker, its CI workflow, a line in
   `registry.json`, a `robots.txt` disallow, the Access setup and invite
   scripts, and the invite steps in the README.
-- **Steps** the spec, then the Worker and its tests, then the Access app
-  and policy, then the deploy and a check with an invited email and an
-  anonymous request.
+- **Steps** the spec, then the Worker and its tests, then Zero Trust Free
+  with the team `workbench-soft`, the "Invited insiders" policy and the
+  Access app in the dashboard, then the deploy and a check with an invited
+  email and an anonymous request.
 - **Docs** `README.md`, `apps/private/README.md`, `CHANGELOG.md`.
