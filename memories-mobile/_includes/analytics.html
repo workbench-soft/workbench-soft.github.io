@@ -1,3 +1,17 @@
 {% if site.cloudflare_analytics_token %}
-    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ site.cloudflare_analytics_token }}"}'></script>
+    <script>
+      // The visit counter loads once the page has loaded and painted. Its connection to a second host would otherwise delay the first paint on a slow network.
+      {
+        const counter = () => {
+          const s = document.createElement("script");
+          s.src = "https://static.cloudflareinsights.com/beacon.min.js";
+          s.dataset.cfBeacon = '{"token": "{{ site.cloudflare_analytics_token }}"}';
+          document.head.append(s);
+        };
+        const loaded = () => (document.readyState === "complete" ? counter() : addEventListener("load", counter, { once: true }));
+        if (PerformanceObserver.supportedEntryTypes?.includes("paint")) {
+          new PerformanceObserver((_, o) => (o.disconnect(), loaded())).observe({ type: "paint", buffered: true });
+        } else loaded();
+      }
+    </script>
 {% endif %}
