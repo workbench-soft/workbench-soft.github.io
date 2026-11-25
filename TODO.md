@@ -9,6 +9,11 @@ The games run at <https://games.workbench-soft.com/games/>. Android App Links wo
   2. Open <https://codemagic.io/signup> and sign up with GitHub.
   3. Tell an agent "set up the iOS build of the games". It adds the iOS AdMob app, Universal Links, the tracking prompt and `PrivacyInfo.xcprivacy`.
 
+## private-apps: the insiders page
+
+- [ ] **Token** give the deploy token "Access: Apps and Policies" Edit, so `mise run invite` works (denied). Until then invites go through the dashboard, as the README says.
+      `powershell -NoProfile -ExecutionPolicy Bypass -File "$env:WBS_ROOT\workbench-soft.github.io\scripts\person-steps\private-access-token.ps1"`
+
 ## play-release
 
 "Workbench Games" (`com.workbenchsoft.games`, app 4975626241785530007) is on closed testing: build 1 since 2026-11-13, build 2 with Remove ads and App Links since 2026-11-17. The Play API reads the app, and the alpha track uses the testers groups of the other apps.
