@@ -1892,7 +1892,10 @@ export const projects: Project[] = [
             name: 'Fonts',
             text: 'Alina picks the heading, text and label fonts from 10 free fonts, or uploads her own.',
           },
-          { name: 'Client galleries', text: 'A private link with watermarked proofs, then every original as one zip.' },
+          {
+            name: 'Client galleries',
+            text: 'A private link with small watermarked previews of the whole session. The client picks photos to keep and to retouch, sees the amount to pay, and downloads the bought files once Alina ticks Paid. Alina retouches a pick with Auto and sliders.',
+          },
           {
             name: 'Reviews',
             text: 'Clients leave a review with stars, and only the ones Alina approves show on the site.',

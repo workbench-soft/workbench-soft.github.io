@@ -97,7 +97,7 @@ const arch: Arch = {
     Fonts:
       'Las 10 fuentes vienen con el sitio, y una fuente subida va a R2. El Worker sirve una hoja de tema según la elección en D1, en caché 1 minuto.',
     'Client galleries':
-      'El navegador dibuja la marca de agua en cada prueba antes de subirla, y R2 guarda pruebas y originales. El navegador del cliente arma el zip de originales con client-zip.',
+      'El navegador dibuja la marca de agua en una vista previa pequeña de cada foto antes de subirla, y R2 guarda vistas previas, originales y copias editadas. El Worker entrega un original o una copia editada solo después de la marca de Pagado y solo si el archivo está comprado. El navegador del cliente arma el zip de los archivos comprados con client-zip.',
     Reviews:
       'El Worker guarda cada reseña en D1 como pendiente, tras un honeypot y un límite de envíos, y avisa a Alina por correo. Solo las filas aprobadas salen por la API, y la página añade datos Review y AggregateRating.',
     Search:

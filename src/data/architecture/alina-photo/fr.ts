@@ -100,7 +100,7 @@ const arch: Arch = {
     Fonts:
       'Les 10 polices sont livrées avec le site, et une police importée va dans R2. Le Worker sert une feuille de thème selon le choix dans D1, en cache 1 minute.',
     'Client galleries':
-      'Le navigateur dessine le filigrane sur chaque épreuve avant l’envoi, et R2 garde les épreuves et les originaux. Le navigateur du client construit le zip des originaux avec client-zip.',
+      'Le navigateur dessine le filigrane sur un petit aperçu de chaque photo avant l’envoi, et R2 garde les aperçus, les originaux et les copies retouchées. Le Worker ne donne un original ou une copie retouchée qu’après la coche Payé, et seulement pour un fichier acheté. Le navigateur du client construit le zip des fichiers achetés avec client-zip.',
     Reviews:
       "Le Worker garde chaque avis dans D1 en attente, derrière un honeypot et une limite d'envois, et écrit à Alina. Seules les lignes validées sortent par l'API, et la page ajoute les données Review et AggregateRating.",
     Search:

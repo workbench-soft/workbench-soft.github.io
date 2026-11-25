@@ -1109,7 +1109,10 @@ const de: Catalog = {
               'Schriften',
               'Alina wählt die Schriften für Überschriften, Text und Beschriftungen aus 10 freien Schriften oder lädt eigene hoch.',
             ],
-            ['Kundengalerien', 'Ein privater Link mit Probefotos unter Wasserzeichen, danach alle Originale als ZIP.'],
+            [
+              'Kundengalerien',
+              'Ein privater Link mit kleinen Vorschauen des ganzen Shootings unter Wasserzeichen. Der Kunde wählt Fotos zum Behalten und zum Retuschieren, sieht den offenen Betrag und lädt die gekauften Dateien herunter, sobald Alina „Bezahlt“ anhakt. Alina retuschiert ein gewähltes Foto mit Auto und Reglern.',
+            ],
             [
               'Bewertungen',
               'Kunden schreiben eine Bewertung mit Sternen, und nur die von Alina freigegebenen erscheinen auf der Seite.',
