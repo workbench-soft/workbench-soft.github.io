@@ -1111,6 +1111,10 @@ const de: Catalog = {
             ],
             ['Kundengalerien', 'Ein privater Link mit Probefotos unter Wasserzeichen, danach alle Originale als ZIP.'],
             [
+              'Bewertungen',
+              'Kunden schreiben eine Bewertung mit Sternen, und nur die von Alina freigegebenen erscheinen auf der Seite.',
+            ],
+            [
               'Suche',
               'Jede Seite hat Titel, Beschreibung und Fotokarte für Suche und Linkvorschau. Eine eigene Seite gilt dem Sutherland Shire.',
             ],

@@ -1124,6 +1124,10 @@ const fr: Catalog = {
             ],
             ['Galeries clients', 'Un lien privé avec des épreuves filigranées, puis tous les originaux en un ZIP.'],
             [
+              'Avis',
+              'Les clients laissent un avis avec des étoiles, et seuls ceux validés par Alina apparaissent sur le site.',
+            ],
+            [
               'Recherche',
               'Chaque page a un titre, une description et une photo pour la recherche et les aperçus de lien. Une page locale couvre le Sutherland Shire.',
             ],

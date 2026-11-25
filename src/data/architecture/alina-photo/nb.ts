@@ -95,6 +95,8 @@ const arch: Arch = {
       'De 10 fontene følger med nettstedet, og en opplastet font går til R2. Workeren leverer et temastilark fra valget i D1, bufret i 1 minutt.',
     'Client galleries':
       'Nettleseren tegner vannmerket på hvert prøvebilde før opplasting, og R2 holder prøvebilder og originaler. Kundens nettleser bygger zip-filen med originalene med client-zip.',
+    Reviews:
+      'Workeren lagrer hver omtale i D1 som ventende, bak en honningkrukke og en grense for innsendinger, og sender Alina e-post. Bare godkjente rader går ut gjennom API-et, og siden legger til Review- og AggregateRating-data.',
     Search:
       'Astro skriver tittel, beskrivelse, bildekort og strukturerte data inn i hver side ved bygging. Nettstedskartet kommer fra de bygde sidene.',
   },
