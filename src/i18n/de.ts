@@ -457,7 +457,10 @@ const de: Catalog = {
             ['Akkorde der Tonart', 'Ein Akkord pro Skalenton, etwa Em F#dim G Am Bm C D für e-Moll.'],
             ['Anschlag', 'Ein gehaltener Akkord schlägt ein Muster im Takt der Uhr an. Muster lassen sich bearbeiten.'],
             ['Songliste', 'Eingebaute Songs und Ihre eigenen. Songs, die zur aktuellen Skala passen, erscheinen grün.'],
-            ['Sprachsuche', 'Sagen Sie einen Songnamen. Die Wörter füllen die Suche, während Sie sprechen.'],
+            [
+              'Sprachsuche',
+              'Sagen Sie einen Songnamen. Die Wörter füllen die Suche, und eine Karte spielt den Treffer nach 4 s, außer Sie wählen einen anderen oder brechen ab.',
+            ],
             ['Hey Guitar', '„Hey Guitar, play Metallica One.“ Die App antwortet „Listening“ und spielt ihn.'],
             [
               'MIDI-Aufnahme',

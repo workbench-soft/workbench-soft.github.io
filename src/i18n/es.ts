@@ -454,7 +454,10 @@ const es: Catalog = {
               'Lista de canciones',
               'Canciones incluidas y las tuyas. Las que encajan con la escala actual salen en verde.',
             ],
-            ['Búsqueda por voz', 'Di el nombre de una canción. Las palabras llenan la búsqueda mientras hablas.'],
+            [
+              'Búsqueda por voz',
+              'Di el nombre de una canción. Las palabras llenan la búsqueda y una tarjeta pone la coincidencia a los 4 s, salvo que elijas otra o canceles.',
+            ],
             ['Hey Guitar', '«Hey Guitar, play Metallica One». La app responde «Listening» y la toca.'],
             [
               'Grabación MIDI',
