@@ -103,7 +103,7 @@ const arch: Arch = {
     Fonts:
       'Die 10 Schriften kommen mit der Seite, und eine hochgeladene geht nach R2. Der Worker liefert ein Theme-Stylesheet aus der Wahl in D1, 1 Minute zwischengespeichert.',
     'Client galleries':
-      'Der Browser zeichnet das Wasserzeichen vor dem Hochladen auf jeden Probeabzug, und R2 hält Probeabzüge und Originale. Der Browser des Kunden baut das Zip der Originale mit client-zip.',
+      'Der Browser zeichnet das Wasserzeichen vor dem Hochladen auf eine kleine Vorschau jedes Fotos, und R2 hält Vorschauen, Originale und bearbeitete Kopien. Der Worker gibt ein Original oder eine bearbeitete Kopie erst nach dem Haken bei „Bezahlt“ heraus, und nur für eine gekaufte Datei. Der Browser des Kunden baut das Zip der gekauften Dateien mit client-zip.',
     Reviews:
       'Der Worker legt jede Bewertung als ausstehend in D1 ab, hinter einem Honeypot und einem Rate Limit, und schreibt Alina. Nur freigegebene Zeilen gehen über die API hinaus, und die Seite ergänzt Review- und AggregateRating-Daten.',
     Search:

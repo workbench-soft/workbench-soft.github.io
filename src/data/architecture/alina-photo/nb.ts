@@ -94,7 +94,7 @@ const arch: Arch = {
     Fonts:
       'De 10 fontene følger med nettstedet, og en opplastet font går til R2. Workeren leverer et temastilark fra valget i D1, bufret i 1 minutt.',
     'Client galleries':
-      'Nettleseren tegner vannmerket på hvert prøvebilde før opplasting, og R2 holder prøvebilder og originaler. Kundens nettleser bygger zip-filen med originalene med client-zip.',
+      'Nettleseren tegner vannmerket på en liten forhåndsvisning av hvert bilde før opplasting, og R2 holder forhåndsvisninger, originaler og redigerte kopier. Workeren gir ut en original eller en redigert kopi først etter haken for Betalt, og bare for en kjøpt fil. Kundens nettleser bygger zip-filen med de kjøpte filene med client-zip.',
     Reviews:
       'Workeren lagrer hver omtale i D1 som ventende, bak en honningkrukke og en grense for innsendinger, og sender Alina e-post. Bare godkjente rader går ut gjennom API-et, og siden legger til Review- og AggregateRating-data.',
     Search:

@@ -1022,7 +1022,10 @@ const nb: Catalog = {
               'Skrifter',
               'Alina velger skrift for overskrifter, tekst og etiketter blant 10 gratis skrifter, eller laster opp sine egne.',
             ],
-            ['Kundegallerier', 'En privat lenke med prøvebilder med vannmerke, deretter alle originalene som ZIP.'],
+            [
+              'Kundegallerier',
+              'En privat lenke med små forhåndsvisninger av hele fotograferingen, med vannmerke. Kunden velger bilder å beholde og å retusjere, ser beløpet å betale og laster ned de kjøpte filene når Alina haker av for Betalt. Alina retusjerer et valgt bilde med Auto og glidebrytere.',
+            ],
             ['Omtaler', 'Kunder skriver en omtale med stjerner, og bare de Alina godkjenner vises på siden.'],
             [
               'Søk',

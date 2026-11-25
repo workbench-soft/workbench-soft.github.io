@@ -1090,7 +1090,7 @@ const es: Catalog = {
             ],
             [
               'Galerías de clientes',
-              'Un enlace privado con pruebas con marca de agua y luego todos los originales en un ZIP.',
+              'Un enlace privado con vistas previas pequeñas y con marca de agua de toda la sesión. El cliente elige las fotos que se queda y las que quiere retocar, ve el importe a pagar y descarga los archivos comprados cuando Alina marca Pagado. Alina retoca una foto elegida con Auto y controles deslizantes.',
             ],
             ['Reseñas', 'Los clientes dejan una reseña con estrellas, y solo las que Alina aprueba salen en el sitio.'],
             [

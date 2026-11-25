@@ -1122,7 +1122,10 @@ const fr: Catalog = {
               'Polices',
               'Alina choisit les polices des titres, du texte et des libellés parmi 10 polices libres, ou importe les siennes.',
             ],
-            ['Galeries clients', 'Un lien privé avec des épreuves filigranées, puis tous les originaux en un ZIP.'],
+            [
+              'Galeries clients',
+              'Un lien privé avec de petits aperçus filigranés de toute la séance. Le client choisit les photos à garder et à retoucher, voit le montant à payer et télécharge les fichiers achetés une fois qu’Alina a coché Payé. Alina retouche une photo choisie avec Auto et des curseurs.',
+            ],
             [
               'Avis',
               'Les clients laissent un avis avec des étoiles, et seuls ceux validés par Alina apparaissent sur le site.',
