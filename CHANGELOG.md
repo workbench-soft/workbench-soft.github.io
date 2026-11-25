@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Faster first paint everywhere** the games, LangFlip, the privacy page and the app sites load the visit counter after the page too.
 - **Faster first paint** the visit counter loads after the page, so its connection to Cloudflare no longer holds back the text on a slow phone network.
 
 - **Guitar Upscale voice card** the Voice search line says a card plays the match after 4 s unless you pick another or cancel, in the 9 languages.

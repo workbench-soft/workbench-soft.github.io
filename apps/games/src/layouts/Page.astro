@@ -56,7 +56,22 @@ const image = new URL(asset('/og.png'), site).href;
     {canonical && <meta property="og:url" content={canonical} />}
     <meta name="twitter:card" content="summary_large_image" />
     {jsonLd.map((data) => <script type="application/ld+json" set:html={JSON.stringify(data)} />)}
-    <script defer is:inline src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "f5de78701e794dfc9e06d753109f57d5"}'></script>
+    <script is:inline>
+      // The visit counter loads once the page has loaded and painted. Its connection to a second host would otherwise delay the first paint on a slow network.
+      {
+        const beacon = "https://static.cloudflareinsights.com/beacon.min.js";
+        const counter = () => {
+          const s = document.createElement("script");
+          s.src = beacon;
+          s.dataset.cfBeacon = '{"token": "f5de78701e794dfc9e06d753109f57d5"}';
+          document.head.append(s);
+        };
+        const loaded = () => (document.readyState === "complete" ? counter() : addEventListener("load", counter, { once: true }));
+        if (PerformanceObserver.supportedEntryTypes?.includes("paint")) {
+          new PerformanceObserver((_, o) => (o.disconnect(), loaded())).observe({ type: "paint", buffered: true });
+        } else loaded();
+      }
+    </script>
   </head>
   <body>
     <header class="site-header">
