@@ -45,11 +45,22 @@ export function pick(app: PrivateApp, release: Release): { path: string; name: s
  * which the Worker follows itself, so the visitor never sees GitHub.
  */
 export async function download(app: PrivateApp, env: DownloadEnv): Promise<Response | null> {
-  if (!env.GITHUB_TOKEN) return null;
-  const release = await newest(app, env.GITHUB_TOKEN);
+  // A secret piped in from PowerShell keeps its line break, which a header value refuses.
+  const token = env.GITHUB_TOKEN?.trim();
+  if (!token) return null;
+  try {
+    return await stream(app, token);
+  } catch (error) {
+    console.error(`download ${app.id} failed`, error);
+    return null;
+  }
+}
+
+async function stream(app: PrivateApp, token: string): Promise<Response | null> {
+  const release = await newest(app, token);
   if (!release) return null;
   const file = pick(app, release);
-  let response = await api(file.path, env.GITHUB_TOKEN, file.accept);
+  let response = await api(file.path, token, file.accept);
   const location = response.headers.get('Location');
   if (location) response = await fetch(location);
   if (!response.ok || !response.body) return null;
