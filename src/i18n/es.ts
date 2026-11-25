@@ -1092,6 +1092,7 @@ const es: Catalog = {
               'Galerías de clientes',
               'Un enlace privado con pruebas con marca de agua y luego todos los originales en un ZIP.',
             ],
+            ['Reseñas', 'Los clientes dejan una reseña con estrellas, y solo las que Alina aprueba salen en el sitio.'],
             [
               'Búsqueda',
               'Cada página tiene título, descripción y foto para buscadores y vistas previas. Una página local cubre el Sutherland Shire.',

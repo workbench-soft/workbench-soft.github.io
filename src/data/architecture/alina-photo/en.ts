@@ -98,6 +98,8 @@ const arch: Arch = {
       'The 10 fonts ship with the site, and an uploaded one goes to R2. The Worker serves a theme stylesheet from the pick in D1, cached for 1 minute.',
     'Client galleries':
       "The browser draws the watermark on each proof before upload, and R2 keeps the proofs and originals. The client's browser builds the zip of originals with client-zip.",
+    Reviews:
+      'The Worker keeps each review in D1 as pending, behind a honeypot and a rate limit, and emails Alina. Only approved rows leave through the API, and the page adds Review and AggregateRating data.',
     Search:
       'Astro writes the title, description, photo card and structured data into each page at build time. The sitemap comes from the pages the build renders.',
   },

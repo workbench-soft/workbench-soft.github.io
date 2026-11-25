@@ -80,6 +80,8 @@ const arch: Arch = {
       'Worker 读取 Alina 的 Google 日历私人 iCal 地址，缓存 5 分钟。私人订阅和每封预约邮件里的文件把预约送回日历。',
     Fonts: '10 种字体随网站一起发布，上传的字体存到 R2。Worker 按 D1 中的选择提供主题样式表，缓存 1 分钟。',
     'Client galleries': '浏览器在上传前给每张样片加水印，R2 保存样片和原图。客户的浏览器用 client-zip 打包原图。',
+    Reviews:
+      'Worker 在蜜罐字段和频率限制之后把每条评价以待审状态存入 D1，并发邮件给 Alina。只有已批准的行会通过 API 输出，页面再加上 Review 和 AggregateRating 数据。',
     Search: 'Astro 在构建时把标题、描述、照片卡片和结构化数据写进每个页面。站点地图来自构建生成的页面。',
   },
 };

@@ -1894,6 +1894,10 @@ export const projects: Project[] = [
           },
           { name: 'Client galleries', text: 'A private link with watermarked proofs, then every original as one zip.' },
           {
+            name: 'Reviews',
+            text: 'Clients leave a review with stars, and only the ones Alina approves show on the site.',
+          },
+          {
             name: 'Search',
             text: 'Each page has a title, a description and a photo card for search and link previews. A local page covers the Sutherland Shire.',
           },

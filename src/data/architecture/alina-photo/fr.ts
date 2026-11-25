@@ -101,6 +101,8 @@ const arch: Arch = {
       'Les 10 polices sont livrées avec le site, et une police importée va dans R2. Le Worker sert une feuille de thème selon le choix dans D1, en cache 1 minute.',
     'Client galleries':
       'Le navigateur dessine le filigrane sur chaque épreuve avant l’envoi, et R2 garde les épreuves et les originaux. Le navigateur du client construit le zip des originaux avec client-zip.',
+    Reviews:
+      "Le Worker garde chaque avis dans D1 en attente, derrière un honeypot et une limite d'envois, et écrit à Alina. Seules les lignes validées sortent par l'API, et la page ajoute les données Review et AggregateRating.",
     Search:
       'Astro écrit le titre, la description, la carte photo et les données structurées dans chaque page au build. Le plan du site vient des pages construites.',
   },

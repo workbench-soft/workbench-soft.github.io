@@ -1023,6 +1023,7 @@ const nb: Catalog = {
               'Alina velger skrift for overskrifter, tekst og etiketter blant 10 gratis skrifter, eller laster opp sine egne.',
             ],
             ['Kundegallerier', 'En privat lenke med prøvebilder med vannmerke, deretter alle originalene som ZIP.'],
+            ['Omtaler', 'Kunder skriver en omtale med stjerner, og bare de Alina godkjenner vises på siden.'],
             [
               'Søk',
               'Hver side har tittel, beskrivelse og bildekort for søk og lenkeforhåndsvisning. En egen side dekker Sutherland Shire.',
