@@ -21,3 +21,7 @@ run = "node scripts/access.ts"
 [tasks.invite]
 description = "Add an email to the Access policy: mise run invite friend@example.com"
 run = "node scripts/invite.ts"
+
+[tasks.github-token]
+description = "Copy the read-only GitHub token from Bitwarden into the Worker. Run through bws run"
+run = "node scripts/put-github-token.ts"

@@ -13,8 +13,6 @@ The games run at <https://games.workbench-soft.com/games/>. Android App Links wo
 
 - [ ] **Token** give the deploy token "Access: Apps and Policies" Edit, so `mise run invite` works (denied). Until then invites go through the dashboard, as the README says.
       `powershell -NoProfile -ExecutionPolicy Bypass -File "$env:WBS_ROOT\workbench-soft.github.io\scripts\person-steps\private-access-token.ps1"`
-- [ ] **GitHub token** make a read-only GitHub token for the Download buttons; the script stores it in Bitwarden and the Worker (secret).
-      `powershell -NoProfile -ExecutionPolicy Bypass -File "$env:WBS_ROOT\workbench-soft.github.io\scripts\person-steps\private-github-token.ps1"`
 
 ## play-release
 

@@ -23,6 +23,6 @@ if ($saved) {
 
 Push-Location $app
 try {
-  mise x -- bws run --project-id $project -- powershell -NoProfile -Command "`$env:$key | mise x -- pnpm exec wrangler secret put GITHUB_TOKEN" | Out-Null
-  Write-Host 'done: the Worker has GITHUB_TOKEN'
+  # Node sends the value as plain ASCII. A PowerShell pipe would send UTF-16 and break the header.
+  mise x -- bws run --project-id $project -- mise x -- node scripts/put-github-token.ts
 } finally { Pop-Location }
