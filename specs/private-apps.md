@@ -4,8 +4,8 @@
 
 - **What** <https://insiders.workbench-soft.com/private/> lists the apps
   Workbench Soft keeps off the public site, starting with Suno Download, in
-  the 9 site languages: Suno Download, Chrome Site Sources, Songfactory,
-  Disk Reorg and Reddit Desk.
+  the 9 site languages: Suno Download, MP3 Upscaler, Chrome Site Sources,
+  Songfactory, Disk Reorg and Reddit Desk.
 - **Who** the owner and each email on the Cloudflare Access allow list.
   Anyone else gets the Access login and no page.
 - **How** a Worker in `apps/private` serves the page. Cloudflare Access

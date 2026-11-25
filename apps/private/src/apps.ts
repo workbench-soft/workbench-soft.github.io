@@ -1,6 +1,7 @@
 import type { Lang } from '../../../src/i18n/locales.ts';
 import { chromeSiteSources } from './apps/chrome-site-sources.ts';
 import { diskReorg } from './apps/disk-reorg.ts';
+import { mp3Upscaler } from './apps/mp3-upscaler.ts';
 import { redditDesk } from './apps/reddit-desk.ts';
 import { songfactory } from './apps/songfactory.ts';
 import { sunoDownload } from './apps/suno-download.ts';
@@ -21,4 +22,4 @@ export interface PrivateApp {
 }
 
 // The apps the page lists, in this order. A new app is one more file in apps/ and one line here.
-export const apps: PrivateApp[] = [sunoDownload, chromeSiteSources, redditDesk, songfactory, diskReorg];
+export const apps: PrivateApp[] = [sunoDownload, mp3Upscaler, chromeSiteSources, redditDesk, songfactory, diskReorg];

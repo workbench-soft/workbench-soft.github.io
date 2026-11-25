@@ -12,7 +12,7 @@ if ($saved) {
 } else {
   Start-Process 'https://github.com/settings/personal-access-tokens/new'
   Write-Host 'Fine-grained token: Resource owner workbench-soft, Expiration 1 year, Only select repositories:'
-  Write-Host '  suno-download, chrome-site-sources, songfactory, disk-reorg, workbench-soft.github.io'
+  Write-Host '  suno-download, mp3-upscaler, chrome-site-sources, songfactory, disk-reorg, workbench-soft.github.io'
   Write-Host 'Repository permissions: Contents Read-only. Press Generate token and copy it.'
   $secure = Read-Host 'Paste the token (hidden)' -AsSecureString
   $value = [Runtime.InteropServices.Marshal]::PtrToStringBSTR([Runtime.InteropServices.Marshal]::SecureStringToBSTR($secure))
