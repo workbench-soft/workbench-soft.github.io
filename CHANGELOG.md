@@ -3,6 +3,7 @@
 ## Unreleased
 
 - **Guitar Upscale voice card** the Voice search line says a card plays the match after 4 s unless you pick another or cancel, in the 9 languages.
+- **Insiders downloads** each app on the insiders page has a Download button that serves its newest release with no GitHub account. Site Sources, Reddit Desk, Songfactory and Disk Reorg join Suno Download.
 - **Insiders page** a private page at insiders.workbench-soft.com/private lists the apps kept off the public site, starting with Suno Download, in the 9 languages. Cloudflare Access lets in only invited emails, and the Worker checks the Access token too.
 - **Memories journal** the panel adds Journal about a person: edit or delete a note, add photos and videos, see the photos of that day, and keep a linked Google Doc in step both ways. Its architecture line is in the 9 languages.
 - **Visitor counter** each page loads the Cloudflare Web Analytics script, so the studio site, the games and the app pages get their visits counted. It sets no cookie.

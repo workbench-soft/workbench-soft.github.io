@@ -11,7 +11,8 @@ body{font:16px/1.5 system-ui,'Segoe UI',sans-serif;max-width:44rem;margin:2rem a
 header{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:baseline}
 nav a{margin-right:.5rem}nav a[aria-current]{font-weight:700}
 article{border:1px solid #8884;border-radius:12px;padding:1rem 1.25rem;margin:1.25rem 0}
-.who{opacity:.7;font-size:.9rem}`;
+.who{opacity:.7;font-size:.9rem}
+.download{display:inline-block;padding:.5rem 1rem;border-radius:8px;background:#2563eb;color:#fff;text-decoration:none;font-weight:600}`;
 
 /** The whole page in one language, for the signed-in email. */
 export function page(lang: Lang, email: string): string {
@@ -24,7 +25,7 @@ export function page(lang: Lang, email: string): string {
       (app) => `<article>
 <h2>${escape(app.name)}</h2>
 <p>${escape(app.about[lang])}</p>
-<p><a href="https://github.com/${app.repo}/releases/latest" rel="noreferrer">${escape(t.release)}</a></p>
+<p><a class="download" href="download/${app.id}?lang=${lang}" download>${escape(t.download)}</a></p>
 <h3>${escape(t.install)}</h3>
 <ol>${app.steps[lang].map((s) => `<li>${escape(s)}</li>`).join('')}</ol>
 </article>`,

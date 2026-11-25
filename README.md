@@ -83,10 +83,12 @@ Free party games live in [apps/games/](apps/games/) and run at <https://games.wo
 
 ## Insiders page
 
-Apps kept off the public site, such as Suno Download, sit at <https://insiders.workbench-soft.com/private/>. Only the emails on the Cloudflare Access list can open it. [apps/private/](apps/private/) holds the Worker, and [the spec](specs/private-apps.md) holds the design.
+Apps kept off the public site sit at <https://insiders.workbench-soft.com/private/>. Only the emails on the Cloudflare Access list can open it. [apps/private/](apps/private/) holds the Worker, and [the spec](specs/private-apps.md) holds the design.
 
 - **Sign in** the visitor types an invited email, gets a 6-digit PIN by mail and types it. The session lasts 24 hours.
-- **New app** add one entry to [apps/private/src/apps.ts](apps/private/src/apps.ts), with its line and install steps in the 9 languages.
+- **Apps** Suno Download, Site Sources, Reddit Desk, Songfactory and Disk Reorg.
+- **Download** each app has a Download button. The Worker streams the newest release file from GitHub with a read-only token, so a friend needs no GitHub account.
+- **New app** add one file to [apps/private/src/apps/](apps/private/src/apps/) and a line to [apps.ts](apps/private/src/apps.ts), with its line and install steps in the 9 languages.
 - **Checks and deploy** the [Private workflow](.github/workflows/private.yml) checks the app on pull requests and deploys it from main.
 
 ### Invite someone

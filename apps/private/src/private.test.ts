@@ -5,6 +5,7 @@ import { apps } from './apps.ts';
 import { catalogs, en, pickLang } from './i18n/index.ts';
 import worker from './index.ts';
 import { page } from './page.ts';
+import { pick } from './download.ts';
 
 const env = { ACCESS_TEAM: 'example.cloudflareaccess.com', ACCESS_AUD: 'aud' };
 const call = (path: string, headers: Record<string, string> = {}) =>
@@ -48,6 +49,30 @@ describe('page', () => {
     const html = page('en', '<b>@x');
     expect(html).toContain('name="robots" content="noindex,nofollow"');
     expect(html).toContain('&lt;b&gt;@x');
-    expect(html).toContain('https://github.com/workbench-soft/suno-download/releases/latest');
+    expect(html).toContain('href="download/suno-download?lang=en"');
+    expect(html).not.toContain('github.com');
+  });
+});
+
+describe('download', () => {
+  const release = (tag: string, names: string[]) => ({
+    tag_name: tag,
+    draft: false,
+    assets: names.map((name, i) => ({ name, url: `https://api.github.com/repos/o/r/releases/assets/${i}` })),
+  });
+
+  it('serves the matching release file', () => {
+    const app = apps.find((a) => a.id === 'reddit-desk')!;
+    const file = pick(app, release('reddit-desk-v1', ['latest.json', 'RedditDesk-1-windows-x64-setup.exe']));
+    expect(file).toMatchObject({ name: 'RedditDesk-1-windows-x64-setup.exe', path: '/repos/o/r/releases/assets/1' });
+  });
+
+  it('serves the source zip when no file matches', () => {
+    const app = apps.find((a) => a.id === 'disk-reorg')!;
+    expect(pick(app, release('v2', [])).name).toBe('disk-reorg-v2.zip');
+  });
+
+  it('still asks Access before a download', async () => {
+    expect((await call('/private/download/suno-download')).status).toBe(403);
   });
 });
