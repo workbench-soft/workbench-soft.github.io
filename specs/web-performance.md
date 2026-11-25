@@ -30,12 +30,12 @@ so the app panels keep their text.
 
 Baseline, median of 5 runs:
 
-| Page                   | FCP    | LCP    | TBT    | CLS | Bytes  |
-| ---------------------- | ------ | ------ | ------ | --- | ------ |
-| `/`                    | 2.4 s  | 3.9 s  | 3.8 s  | 0   | 213 KB |
-| `/about/`              | 0.8 s  | 2.1 s  | 0 ms   | 0   | 73 KB  |
-| `/testers/`            | 0.8 s  | 2.1 s  | 56 ms  | 0   | 74 KB  |
-| `/skyaltar/astrology/` | 0.8 s  | 2.2 s  | 200 ms | 0   | 77 KB  |
+| Page                   | FCP   | LCP   | TBT    | CLS | Bytes  |
+| ---------------------- | ----- | ----- | ------ | --- | ------ |
+| `/`                    | 2.4 s | 3.9 s | 3.8 s  | 0   | 213 KB |
+| `/about/`              | 0.8 s | 2.1 s | 0 ms   | 0   | 73 KB  |
+| `/testers/`            | 0.8 s | 2.1 s | 56 ms  | 0   | 74 KB  |
+| `/skyaltar/astrology/` | 0.8 s | 2.2 s | 200 ms | 0   | 77 KB  |
 
 - **Home page** 8,960 DOM nodes, 652 KB of them in the project panels. Style,
   layout and paint of the whole list make one 5.5 s task.
