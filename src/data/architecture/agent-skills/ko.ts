@@ -140,6 +140,12 @@ const arch: Arch = {
       'Node 스크립트가 훅 그룹을 Claude Code와 Codex 설정에 합칩니다. Claude Code의 MCP 서버도 Codex와 Kimi Code로 복사합니다.',
     Releases:
       'main에 push하고 검사가 통과하면 GitHub Actions 워크플로가 시작됩니다. 커밋에 날짜 버전 태그를 달고 커밋에서 노트를 씁니다.',
+    'Progress bars':
+      'Claude Code 모드가 진행 도구와 패널을 등록합니다. 훅이 마지막 보고 이후의 초를 세고 에이전트에게 알립니다.',
+    'Feature queue':
+      '각 세션은 저장소마다 수정할 파일을 적은 점유 파일을 씁니다. 스킬은 main이나 워크트리를 고르기 전에 다른 점유를 읽습니다.',
+    'Workflow and code rules':
+      'install.sh가 규칙 파일을 홈 폴더에 연결하고, 각 에이전트는 매 턴 읽습니다. 스킬마다 한 가지 작업의 규칙을 담습니다.',
   },
 };
 

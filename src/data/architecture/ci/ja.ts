@@ -81,6 +81,8 @@ const arch: Arch = {
       'main への push で Lint が通ると、リリースの workflow が始まります。2 本の shell スクリプトが日付のタグを決め、前のタグからのコミットでノートを書きます。',
     'iOS check and simulator build':
       'Node スクリプトがパッケージ、ネイティブモジュール、Gradle のファイルから Android 専用の部分を探します。次に再利用 workflow が GitHub の macOS ランナーでビルドし、Maestro がスクリーンショットを撮ります。',
+    'Affected step':
+      'コンポジットアクションは、チェックでは main の直近の成功した実行と、リリースでは直近のリリースタグとプッシュを比べ、ファイルを affected.json のパスに当てはめます。',
   },
 };
 

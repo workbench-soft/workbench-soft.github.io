@@ -111,6 +111,8 @@ const arch: Arch = {
       'i18next tient les 9 catalogues dans la fenêtre. Le choix est gardé dans le fichier de réglages, donc la fenêtre Tauri et le cadre Archon le partagent.',
     'Done list':
       "Les fils publiés et ignorés passent dans un fichier d'historique avec la date. La recherche suivante les donne à Claude pour qu'il les saute.",
+    Activity:
+      'Le côté Rust envoie à la fenêtre chaque étape et chaque ligne de sortie de Claude Code sous forme d’événements. Le panneau garde les 500 dernières en mémoire.',
   },
 };
 

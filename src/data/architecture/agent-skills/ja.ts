@@ -146,6 +146,12 @@ const arch: Arch = {
       'Node のスクリプトがフックのグループを Claude Code と Codex の設定に組み込みます。Claude Code の MCP サーバーも Codex と Kimi Code にコピーします。',
     Releases:
       'main への push でチェックが通ると GitHub Actions のワークフローが動きます。コミットに日付のバージョンのタグを付け、コミットからノートを書きます。',
+    'Progress bars':
+      'Claude Code の mod が進捗ツールとペインを登録します。フックが最後の報告からの秒数を数えてエージェントに知らせます。',
+    'Feature queue':
+      '各セッションはリポジトリごとに、編集するファイルを書いた確保ファイルを作ります。スキルは main かワークツリーを選ぶ前にほかの確保を読みます。',
+    'Workflow and code rules':
+      'install.sh がルールファイルをホームフォルダにリンクし、各エージェントは毎ターン読み込みます。スキルは1つの作業のルールをそれぞれ持ちます。',
   },
 };
 

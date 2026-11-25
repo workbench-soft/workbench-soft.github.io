@@ -104,6 +104,8 @@ const arch: Arch = {
       'i18next holds the 9 catalogs in the window. The pick saves in the settings file, so the Tauri window and the Archon frame share it.',
     'Done list':
       'Posted and skipped threads move to a history file with the date. The next Find passes them to Claude to skip.',
+    Activity:
+      'The Rust side streams each step and each stdout line of Claude Code to the window as events. The panel keeps the last 500 in memory.',
   },
 };
 

@@ -124,6 +124,10 @@ const arch: Arch = {
       'expo-iap verkauft Pro über Google Play, und ein Pro-Modul prüft es vor jeder gesperrten Aktion. Nach einer Erstattung ist Pro beim nächsten Start aus.',
     'Fast scroll':
       'Das Studiopaket fast-scroll umhüllt die Notizliste. Die Liste folgt dem Regler in jedem Frame. iOS und das Web behalten ihre eigene Scrollleiste.',
+    'Notes in the phone backup':
+      'Android Auto Backup kopiert die Notizdatenbank und die Einstellungen in Google Drive. Backup-Regeln in der App-Konfiguration lassen Aufnahmen und Anmeldetokens draußen.',
+    'Crash reports':
+      'React Native Firebase Crashlytics fängt jede nicht abgefangene Ausnahme, auch im Kotlin-Dienst. Ein Bericht enthält Trace, Telefonmodell und Versionen, ohne Notiztext.',
   },
 };
 

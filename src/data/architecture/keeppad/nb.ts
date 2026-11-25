@@ -124,6 +124,10 @@ const arch: Arch = {
       'expo-iap selger Pro gjennom Google Play, og én Pro-modul sjekker det før hver låst handling. En refusjon slår av Pro ved neste start.',
     'Fast scroll':
       'Studioets fast-scroll-pakke pakker inn notatlisten. Listen følger knotten hvert bilde. iOS og nettet beholder sitt eget rullefelt.',
+    'Notes in the phone backup':
+      'Android Auto Backup kopierer notatdatabasen og innstillingene til Google Disk. Regler for sikkerhetskopi i appkonfigurasjonen holder opptak og påloggingstokener utenfor.',
+    'Crash reports':
+      'React Native Firebase Crashlytics fanger hvert uhåndterte unntak, også i Kotlin-tjenesten. En rapport har sporet, telefonmodellen og versjonene, uten notattekst.',
   },
 };
 

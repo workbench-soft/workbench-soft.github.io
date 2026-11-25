@@ -117,6 +117,10 @@ const arch: Arch = {
       'expo-iap が Google Play で Pro を売り、Pro のモジュールがロックされた操作の前に確かめます。返金されると、次の起動で Pro が切れます。',
     'Fast scroll':
       'スタジオ共通の fast-scroll パッケージがメモ一覧を包みます。リストは毎フレームつまみに追従し、iOS と Web は標準のスクロールバーのままです。',
+    'Notes in the phone backup':
+      'Android 自動バックアップがメモのデータベースと設定を Google ドライブにコピーします。アプリ設定のバックアップルールが録音とサインイントークンを除外します。',
+    'Crash reports':
+      'React Native Firebase Crashlytics が、Kotlin サービスも含めて未処理の例外をすべて捕まえます。レポートにはトレース、機種、バージョンが入り、メモの本文は入りません。',
   },
 };
 

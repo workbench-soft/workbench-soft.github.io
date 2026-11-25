@@ -595,6 +595,14 @@ const nb: Catalog = {
               'Rask rulling',
               'På Android drar en finger rulleknotten i notatlisten til hvilket som helst punkt, helt ned til siste notat.',
             ],
+            [
+              'Notater i telefonens sikkerhetskopi',
+              'Androids sikkerhetskopi til Google Disk tar vare på notater, grupper og innstillinger, så en ny telefon får dem tilbake. Opptak er ikke med.',
+            ],
+            [
+              'Krasjrapporter',
+              'Et krasj på Android sender sporet til Firebase Crashlytics, uten notattekst eller opptak.',
+            ],
           ],
         },
       ],
@@ -939,6 +947,18 @@ const nb: Catalog = {
               'Klokkeslett i hver melding, sperrer for den innebygde nettleseren og arkivering, og MCP-serverne kopiert til Codex og Kimi.',
             ],
             ['Utgivelser', 'Hver push til main som består sjekkene, blir en datert utgivelse med notater.'],
+            [
+              'Fremdriftslinjer',
+              'En lang Claude Code-tur viser hvert minutt tekstlinjer for skriptet, steget og hele oppgaven, med minuttene som gjenstår.',
+            ],
+            [
+              'Funksjonskø',
+              'Hver økt reserverer filene den endrer. Økter med felles filer venter på tur, resten pusher rett til main.',
+            ],
+            [
+              'Arbeids- og koderegler',
+              'Hver økt planlegger, leverer og rapporterer likt: først en spesifikasjon, en PR som flettes med en gang og ett skript for stegene som blir igjen til en person.',
+            ],
           ],
         },
       ],
@@ -1134,6 +1154,10 @@ const nb: Catalog = {
             [
               'iOS-sjekk og simulatorbygg',
               'Lister hver del som bare finnes på Android uten iOS-plan, og bygger appen for iPhone-simulatoren med skjermbilder av testflytene.',
+            ],
+            [
+              'Affected-steg',
+              'Sjekkene og utgivelsen av et produkt kjører bare når filene eller pakkene dets er endret. En push med bare dokumentasjon gir ingen utgivelse.',
             ],
           ],
         },
@@ -1883,6 +1907,10 @@ const nb: Catalog = {
             ],
             ['Språk', 'Innstillingene har en språkliste: systemets eller ett av 9.'],
             ['Ferdigliste', 'Hver postet og hoppet over tråd med dato.'],
+            [
+              'Aktivitet',
+              'Et panel nederst logger hvert trykk, hvert steg og hver linje Claude skriver, med tid og resultat.',
+            ],
           ],
         },
       ],

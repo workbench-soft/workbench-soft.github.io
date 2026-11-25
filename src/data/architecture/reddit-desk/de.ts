@@ -111,6 +111,8 @@ const arch: Arch = {
       'i18next hält die 9 Kataloge im Fenster. Die Wahl steht in der Einstellungsdatei, also teilen sich Tauri-Fenster und Archon-Rahmen sie.',
     'Done list':
       'Gepostete und übersprungene Threads wandern mit Datum in eine Verlaufsdatei. Die nächste Suche gibt sie Claude zum Überspringen mit.',
+    Activity:
+      'Die Rust-Seite streamt jeden Schritt und jede Ausgabezeile von Claude Code als Ereignis ins Fenster. Der Bereich hält die letzten 500 im Speicher.',
   },
 };
 

@@ -96,6 +96,8 @@ const arch: Arch = {
       'Ein Release-Workflow startet, sobald Lint auf einem Push nach main besteht. Zwei Shell-Skripte wählen das Datums-Tag und schreiben die Notizen aus den Commits seit dem letzten Tag.',
     'iOS check and simulator build':
       'Ein Node-Skript sucht in Paketen, nativen Modulen und Gradle-Dateien nach reinen Android-Teilen. Dann baut ein wiederverwendbarer Workflow auf einem macOS-Runner von GitHub, und Maestro macht die Screenshots.',
+    'Affected step':
+      'Eine zusammengesetzte Action vergleicht den Push für Prüfungen mit dem letzten grünen Lauf auf main, für ein Release mit dem letzten Release-Tag. Dann ordnet sie die Dateien den Pfaden in affected.json zu.',
   },
 };
 

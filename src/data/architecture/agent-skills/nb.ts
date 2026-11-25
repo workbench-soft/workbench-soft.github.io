@@ -146,6 +146,12 @@ const arch: Arch = {
       'Et Node-skript fletter hookgruppene inn i innstillingene til Claude Code og Codex. Det kopierer også MCP-serverne fra Claude Code til Codex og Kimi Code.',
     Releases:
       'En arbeidsflyt i GitHub Actions starter når sjekkene består på en push til main. Den tagger commiten med en datoversjon og skriver notatene fra commitene.',
+    'Progress bars':
+      'En Claude Code-mod registrerer fremdriftsverktøyet og et panel. En hook teller sekundene siden forrige rapport og minner agenten på det.',
+    'Feature queue':
+      'Hver økt skriver en reservasjonsfil per repo med filene den endrer. Ferdigheten leser de andre reservasjonene før den velger main eller en worktree.',
+    'Workflow and code rules':
+      'install.sh lenker regelfilene inn i hjemmemappen, og hver agent leser dem på hver tur. Hver ferdighet holder reglene for én jobb.',
   },
 };
 

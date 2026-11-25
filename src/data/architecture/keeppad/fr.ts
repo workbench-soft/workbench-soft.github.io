@@ -127,6 +127,10 @@ const arch: Arch = {
       'expo-iap vend Pro via Google Play, et un module Pro le vérifie avant chaque action verrouillée. Un remboursement coupe Pro au lancement suivant.',
     'Fast scroll':
       'Le paquet fast-scroll du studio enveloppe la liste des notes. La liste suit le curseur à chaque image. iOS et le web gardent leur barre de défilement.',
+    'Notes in the phone backup':
+      'Android Auto Backup copie la base des notes et les réglages sur Google Drive. Les règles de sauvegarde de la config de l’app excluent les enregistrements et les jetons de connexion.',
+    'Crash reports':
+      'React Native Firebase Crashlytics attrape chaque exception non gérée, service Kotlin compris. Un rapport contient la trace, le modèle du téléphone et les versions, sans texte de note.',
   },
 };
 

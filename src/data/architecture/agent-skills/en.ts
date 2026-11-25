@@ -146,6 +146,12 @@ const arch: Arch = {
       'A Node script merges the hook groups into the settings of Claude Code and Codex. It also copies the MCP servers of Claude Code to Codex and Kimi Code.',
     Releases:
       'A GitHub Actions workflow starts once the checks pass on a push to main. It tags the commit with a date version and writes the notes from the commits.',
+    'Progress bars':
+      'A Claude Code mod registers the progress tool and a pane. A hook counts the seconds since the last report and reminds the agent.',
+    'Feature queue':
+      'Each session writes a claim file per repo with the files it edits. The skill reads the other claims before it picks main or a worktree.',
+    'Workflow and code rules':
+      'install.sh links the rules files into the home folder and each agent picks them up on every turn. Skills hold the rules of one job each.',
   },
 };
 

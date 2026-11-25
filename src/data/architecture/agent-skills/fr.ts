@@ -155,6 +155,12 @@ const arch: Arch = {
       'Un script Node fusionne les groupes de hooks dans les réglages de Claude Code et de Codex. Il copie aussi les serveurs MCP de Claude Code vers Codex et Kimi Code.',
     Releases:
       'Un workflow GitHub Actions démarre une fois les contrôles réussis sur un push vers main. Il pose un tag de version datée et écrit les notes à partir des commits.',
+    'Progress bars':
+      'Un mod de Claude Code enregistre l’outil de progression et un panneau. Un hook compte les secondes depuis le dernier rapport et le rappelle à l’agent.',
+    'Feature queue':
+      'Chaque session écrit par dépôt un fichier de réservation avec ses fichiers. Le skill lit les autres réservations avant de choisir main ou un worktree.',
+    'Workflow and code rules':
+      'install.sh lie les fichiers de règles dans le dossier personnel, et chaque agent les lit à chaque tour. Chaque skill porte les règles d’une tâche.',
   },
 };
 

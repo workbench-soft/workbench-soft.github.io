@@ -631,6 +631,14 @@ const es: Catalog = {
               'Desplazamiento rápido',
               'En Android, un dedo arrastra el control de la lista de notas a cualquier punto, hasta la última nota.',
             ],
+            [
+              'Notas en la copia del teléfono',
+              'La copia de seguridad de Android en Google Drive guarda las notas, los grupos y los ajustes, y un teléfono nuevo los recupera. Las grabaciones quedan fuera.',
+            ],
+            [
+              'Informes de fallos',
+              'Un fallo en Android envía su traza a Firebase Crashlytics, sin texto de notas ni grabaciones.',
+            ],
           ],
         },
       ],
@@ -1002,6 +1010,18 @@ const es: Catalog = {
               'La hora en cada mensaje, bloqueos del navegador integrado y del archivado, y los servidores MCP copiados a Codex y Kimi.',
             ],
             ['Versiones', 'Cada push a main que pasa las comprobaciones recibe una versión con fecha y notas.'],
+            [
+              'Barras de progreso',
+              'Un turno largo de Claude Code muestra cada minuto barras de texto para el script, el paso y toda la tarea, con los minutos que faltan.',
+            ],
+            [
+              'Cola de funciones',
+              'Cada sesión reserva los archivos que edita. Las sesiones con archivos en común esperan su turno y el resto sube directo a main.',
+            ],
+            [
+              'Reglas de trabajo y de código',
+              'Cada sesión planifica, publica e informa igual: primero una spec, un PR que se fusiona enseguida y un script para los pasos que quedan a una persona.',
+            ],
           ],
         },
       ],
@@ -1209,6 +1229,10 @@ const es: Catalog = {
             [
               'Revisión de iOS y build para simulador',
               'Lista cada parte solo de Android sin plan para iOS y compila la app para el simulador de iPhone con capturas de sus flujos de prueba.',
+            ],
+            [
+              'Paso affected',
+              'Las comprobaciones y la versión de un producto solo corren si cambiaron sus archivos o paquetes. Un push solo de docs no publica versión.',
             ],
           ],
         },
@@ -2009,6 +2033,10 @@ const es: Catalog = {
             ],
             ['Idioma', 'Los ajustes tienen una lista: el del sistema o uno de 9.'],
             ['Lista de hechos', 'Cada hilo publicado u omitido, con su fecha.'],
+            [
+              'Actividad',
+              'Un panel abajo registra cada pulsación, cada paso y cada línea de Claude, con la hora y el resultado.',
+            ],
           ],
         },
       ],

@@ -117,6 +117,10 @@ const arch: Arch = {
       'expo-iap이 Google Play로 Pro를 팔고, Pro 모듈이 잠긴 동작 전마다 확인합니다. 환불되면 다음 시작 때 Pro가 꺼집니다.',
     'Fast scroll':
       '스튜디오의 fast-scroll 패키지가 메모 목록을 감쌉니다. 목록은 매 프레임 손잡이를 따라가고, iOS와 웹은 자체 스크롤바를 씁니다.',
+    'Notes in the phone backup':
+      'Android 자동 백업이 메모 데이터베이스와 설정을 Google 드라이브에 복사합니다. 앱 설정의 백업 규칙이 녹음과 로그인 토큰을 제외합니다.',
+    'Crash reports':
+      'React Native Firebase Crashlytics가 Kotlin 서비스까지 포함해 처리되지 않은 예외를 모두 잡습니다. 보고서에는 추적 정보, 휴대폰 모델, 버전이 담기고 메모 내용은 없습니다.',
   },
 };
 

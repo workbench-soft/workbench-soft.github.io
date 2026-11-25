@@ -74,6 +74,8 @@ const arch: Arch = {
       '推送到 main 且 Lint 通过后，发布 workflow 启动。两个 shell 脚本选出日期标签，并根据上个标签以来的提交写出说明。',
     'iOS check and simulator build':
       'Node 脚本在包、原生模块和 Gradle 文件里查找只支持 Android 的部分。随后可复用 workflow 在 GitHub 的 macOS runner 上构建，由 Maestro 截图。',
+    'Affected step':
+      '组合 Action 在检查时把推送与 main 上最近一次成功运行比较，发布时与最近的发布标签比较，然后把文件对应到 affected.json 的路径。',
   },
 };
 

@@ -703,6 +703,14 @@ export const projects: Project[] = [
             name: 'Fast scroll',
             text: 'On Android a finger drags the scroll thumb of the notes list to any point, down to the last note.',
           },
+          {
+            name: 'Notes in the phone backup',
+            text: "Android's backup to Google Drive keeps the notes, groups and settings, so a new phone gets them back. Recordings stay out.",
+          },
+          {
+            name: 'Crash reports',
+            text: 'A crash on Android sends its trace to Firebase Crashlytics, with no note text or recording.',
+          },
         ],
       },
     ],
@@ -1400,7 +1408,7 @@ export const projects: Project[] = [
   },
   {
     id: 'neurohop',
-    kind: 'app',
+    kind: 'client',
     repo: 'neuroigry',
     hue: 35,
     code: 'NRG',
@@ -1665,6 +1673,18 @@ export const projects: Project[] = [
             text: 'The time on each prompt, guards on the built-in browser and on archiving, and the MCP servers copied to Codex and Kimi.',
           },
           { name: 'Releases', text: 'Each push to main that passes the checks gets a dated release with notes.' },
+          {
+            name: 'Progress bars',
+            text: 'A long Claude Code turn posts text bars each minute for the script, the step and the whole task, with the minutes left.',
+          },
+          {
+            name: 'Feature queue',
+            text: 'Each session claims the files it edits. Sessions with overlapping files wait their turn, and the rest push straight to main.',
+          },
+          {
+            name: 'Workflow and code rules',
+            text: 'Every session plans, ships and reports the same way: a spec first, a PR merged at once, and one script for the steps left to a person.',
+          },
         ],
       },
     ],
@@ -2037,6 +2057,10 @@ export const projects: Project[] = [
             name: 'iOS check and simulator build',
             text: 'Lists each Android only piece of an app with no iOS plan, and builds the app for the iPhone simulator with screenshots of its test flows.',
           },
+          {
+            name: 'Affected step',
+            text: 'The checks and the release of a product run only when its files or packages changed. A docs push ships no release.',
+          },
         ],
       },
     ],
@@ -2116,6 +2140,10 @@ export const projects: Project[] = [
           },
           { name: 'Language', text: "Settings has a language dropdown: the system's or one of 9." },
           { name: 'Done list', text: 'Each posted and skipped thread with its date.' },
+          {
+            name: 'Activity',
+            text: 'A panel at the bottom logs each press, each step and each line Claude prints, with the time and the result.',
+          },
         ],
       },
     ],

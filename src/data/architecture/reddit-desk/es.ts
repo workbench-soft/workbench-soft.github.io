@@ -114,6 +114,8 @@ const arch: Arch = {
       'i18next guarda los 9 catálogos en la ventana. La elección queda en el archivo de ajustes, así que la ventana de Tauri y el marco de Archon la comparten.',
     'Done list':
       'Los hilos publicados y saltados pasan a un archivo de historial con la fecha. La siguiente búsqueda se los pasa a Claude para que los salte.',
+    Activity:
+      'La parte en Rust envía a la ventana como eventos cada paso y cada línea de salida de Claude Code. El panel guarda en memoria las últimas 500.',
   },
 };
 

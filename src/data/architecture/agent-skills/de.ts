@@ -158,6 +158,12 @@ const arch: Arch = {
       'Ein Node-Skript fügt die Hook-Gruppen in die Einstellungen von Claude Code und Codex ein. Es kopiert auch die MCP-Server aus Claude Code zu Codex und Kimi Code.',
     Releases:
       'Ein Workflow in GitHub Actions startet, sobald die Prüfungen bei einem Push auf main bestehen. Er setzt einen Tag mit Datumsversion und schreibt die Notizen aus den Commits.',
+    'Progress bars':
+      'Ein Claude-Code-Mod registriert das Fortschrittswerkzeug und einen Bereich. Ein Hook zählt die Sekunden seit dem letzten Bericht und erinnert den Agenten.',
+    'Feature queue':
+      'Jede Sitzung schreibt pro Repo eine Belegungsdatei mit ihren Dateien. Der Skill liest die anderen Belegungen, bevor er main oder einen Worktree wählt.',
+    'Workflow and code rules':
+      'install.sh verlinkt die Regeldateien in den Home-Ordner, und jeder Agent liest sie in jedem Zug. Skills halten die Regeln je einer Aufgabe.',
   },
 };
 

@@ -104,6 +104,8 @@ const arch: Arch = {
       'i18next holder de 9 katalogene i vinduet. Valget lagres i innstillingsfilen, så Tauri-vinduet og Archon-rammen deler det.',
     'Done list':
       'Publiserte og hoppede tråder flyttes til en historikkfil med datoen. Neste søk gir dem til Claude så de hoppes over.',
+    Activity:
+      'Rust-siden strømmer hvert steg og hver utdatalinje fra Claude Code til vinduet som hendelser. Panelet holder de siste 500 i minnet.',
   },
 };
 

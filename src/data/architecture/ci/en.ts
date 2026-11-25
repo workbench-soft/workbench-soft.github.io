@@ -81,6 +81,8 @@ const arch: Arch = {
       'A release workflow starts once Lint passes on a push to main. Two shell scripts pick the date tag and write the notes from the commits since the last tag.',
     'iOS check and simulator build':
       "A Node script reads the app's packages, native modules and Gradle files for Android only pieces. A reusable workflow then builds on a GitHub macOS runner, and Maestro takes the screenshots.",
+    'Affected step':
+      'A composite action compares the push with the last green run on main for checks, or the last release tag for a release. It then matches the files to the paths in affected.json.',
   },
 };
 

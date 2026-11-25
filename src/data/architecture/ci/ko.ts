@@ -75,6 +75,8 @@ const arch: Arch = {
       'main 푸시에서 Lint가 통과하면 릴리스 workflow가 시작됩니다. shell 스크립트 2개가 날짜 태그를 정하고 지난 태그 이후의 커밋으로 노트를 씁니다.',
     'iOS check and simulator build':
       'Node 스크립트가 패키지와 네이티브 모듈, Gradle 파일에서 Android 전용 부분을 찾습니다. 그다음 재사용 workflow가 GitHub macOS 러너에서 빌드하고, Maestro가 스크린샷을 찍습니다.',
+    'Affected step':
+      '복합 액션이 검사에서는 main의 마지막 성공 실행과, 릴리스에서는 마지막 릴리스 태그와 푸시를 비교하고, 파일을 affected.json의 경로에 맞춥니다.',
   },
 };
 

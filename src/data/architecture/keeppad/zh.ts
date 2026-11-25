@@ -103,6 +103,10 @@ const arch: Arch = {
     'KeepPad Pro':
       'expo-iap 通过 Google Play 出售 Pro，一个 Pro 模块在每个锁定的操作前检查它。退款后，下次启动时 Pro 会关闭。',
     'Fast scroll': '工作室的 fast-scroll 包包住笔记列表。列表每帧跟随滑块移动，iOS 和网页保留自己的滚动条。',
+    'Notes in the phone backup':
+      'Android 自动备份把笔记数据库和设置复制到 Google 云端硬盘。应用配置里的备份规则排除录音和登录令牌。',
+    'Crash reports':
+      'React Native Firebase Crashlytics 捕获每个未处理的异常，包括 Kotlin 服务。报告包含堆栈、手机型号和版本，不含笔记文字。',
   },
 };
 

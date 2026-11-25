@@ -653,6 +653,14 @@ const fr: Catalog = {
               'Défilement rapide',
               'Sur Android, un doigt tire le curseur de la liste des notes à n’importe quel point, jusqu’à la dernière note.',
             ],
+            [
+              'Notes dans la sauvegarde du téléphone',
+              'La sauvegarde Android sur Google Drive garde les notes, les groupes et les réglages, et un nouveau téléphone les récupère. Les enregistrements restent dehors.',
+            ],
+            [
+              'Rapports de plantage',
+              'Un plantage sur Android envoie sa trace à Firebase Crashlytics, sans texte de note ni enregistrement.',
+            ],
           ],
         },
       ],
@@ -1036,6 +1044,18 @@ const fr: Catalog = {
               "L'heure dans chaque requête, des blocages du navigateur intégré et de l'archivage, les serveurs MCP copiés dans Codex et Kimi.",
             ],
             ['Versions', 'Chaque push sur main qui passe les contrôles devient une version datée avec ses notes.'],
+            [
+              'Barres de progression',
+              'Un long tour de Claude Code affiche chaque minute des barres texte pour le script, l’étape et toute la tâche, avec les minutes restantes.',
+            ],
+            [
+              'File des fonctionnalités',
+              'Chaque session réserve les fichiers qu’elle modifie. Les sessions aux fichiers communs attendent leur tour, les autres poussent directement sur main.',
+            ],
+            [
+              'Règles de travail et de code',
+              'Chaque session planifie, livre et rend compte de la même façon : une spec d’abord, une PR fusionnée aussitôt et un script pour les étapes laissées à une personne.',
+            ],
           ],
         },
       ],
@@ -1246,6 +1266,10 @@ const fr: Catalog = {
             [
               'Contrôle iOS et build simulateur',
               'Liste chaque partie Android seule sans plan iOS, et construit l’app pour le simulateur iPhone avec des captures de ses parcours de test.',
+            ],
+            [
+              'Étape affected',
+              'Les contrôles et la release d’un produit ne tournent que si ses fichiers ou ses paquets ont changé. Un push de docs ne publie aucune release.',
             ],
           ],
         },
@@ -2061,6 +2085,10 @@ const fr: Catalog = {
             ],
             ['Langue', "Les réglages ont une liste : la langue du système ou l'une des 9."],
             ['Liste des faits', 'Chaque fil publié ou ignoré, avec sa date.'],
+            [
+              'Activité',
+              'Un panneau en bas note chaque clic, chaque étape et chaque ligne de Claude, avec l’heure et le résultat.',
+            ],
           ],
         },
       ],

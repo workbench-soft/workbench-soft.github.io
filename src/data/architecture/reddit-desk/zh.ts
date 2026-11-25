@@ -93,6 +93,7 @@ const arch: Arch = {
     Updates: 'Tauri 更新插件在启动时和每 24 小时从 GitHub 发布读取已签名的更新文件。运行安装程序前它会校验签名。',
     Language: 'i18next 在窗口里保存 9 个目录。选择存在设置文件里，所以 Tauri 窗口和 Archon 框架共用它。',
     'Done list': '已发和跳过的帖子连同日期移进历史文件。下一次 Find 会把它们交给 Claude 跳过。',
+    Activity: 'Rust 端把 Claude Code 的每个步骤和每行输出作为事件发到窗口。面板在内存里保留最近 500 行。',
   },
 };
 

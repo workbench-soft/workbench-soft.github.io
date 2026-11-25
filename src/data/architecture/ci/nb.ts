@@ -84,6 +84,8 @@ const arch: Arch = {
       'En release-workflow starter når Lint består på en push til main. To shell-skript velger datotaggen og skriver notatene fra commitene siden forrige tagg.',
     'iOS check and simulator build':
       'Et Node-skript leter etter deler som bare finnes for Android i pakker, native moduler og Gradle-filer. Så bygger en gjenbrukbar workflow på en macOS-runner fra GitHub, og Maestro tar skjermbildene.',
+    'Affected step':
+      'En sammensatt action sammenligner pushen med siste grønne kjøring på main for sjekker, eller siste utgivelsestagg for en utgivelse. Så kobler den filene til stiene i affected.json.',
   },
 };
 

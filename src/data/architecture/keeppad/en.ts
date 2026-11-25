@@ -124,6 +124,10 @@ const arch: Arch = {
       'expo-iap sells Pro through Google Play, and one Pro module checks it before each locked action. A refund turns Pro off on the next start.',
     'Fast scroll':
       'The studio’s fast-scroll package wraps the notes list. The list follows the dragged thumb once per frame, and iOS and the web keep their own scrollbar.',
+    'Notes in the phone backup':
+      'Android Auto Backup copies the notes database and the settings store to Google Drive. Backup rules in the app config leave the recordings and sign in tokens out.',
+    'Crash reports':
+      'React Native Firebase Crashlytics catches each uncaught exception, the Kotlin service included. A report holds the trace, the phone model and the versions, with no note text.',
   },
 };
 

@@ -631,6 +631,14 @@ const de: Catalog = {
               'Schnelles Scrollen',
               'Auf Android zieht ein Finger den Scrollregler der Notizliste an jede Stelle, bis zur letzten Notiz.',
             ],
+            [
+              'Notizen im Telefon-Backup',
+              'Das Android-Backup in Google Drive sichert Notizen, Gruppen und Einstellungen, sodass ein neues Telefon sie zurückbekommt. Aufnahmen bleiben draußen.',
+            ],
+            [
+              'Absturzberichte',
+              'Ein Absturz unter Android schickt seinen Trace an Firebase Crashlytics, ohne Notiztext oder Aufnahme.',
+            ],
           ],
         },
       ],
@@ -1023,6 +1031,18 @@ const de: Catalog = {
               'Die Uhrzeit in jeder Eingabe, Sperren für den eingebauten Browser und das Archivieren, die MCP-Server in Codex und Kimi.',
             ],
             ['Releases', 'Jeder Push auf main, der die Prüfungen besteht, wird ein datiertes Release mit Notizen.'],
+            [
+              'Fortschrittsbalken',
+              'Ein langer Claude-Code-Zug zeigt jede Minute Textbalken für das Skript, den Schritt und die ganze Aufgabe, mit den restlichen Minuten.',
+            ],
+            [
+              'Feature-Warteschlange',
+              'Jede Sitzung belegt die Dateien, die sie bearbeitet. Sitzungen mit überlappenden Dateien warten, der Rest pusht direkt nach main.',
+            ],
+            [
+              'Arbeits- und Coderegeln',
+              'Jede Sitzung plant, liefert und berichtet gleich: zuerst eine Spezifikation, ein sofort gemergter PR und ein Skript für die Schritte, die einem Menschen bleiben.',
+            ],
           ],
         },
       ],
@@ -1227,6 +1247,10 @@ const de: Catalog = {
             [
               'iOS-Check und Simulator-Build',
               'Listet jeden reinen Android-Teil einer App ohne iOS-Plan und baut die App für den iPhone-Simulator, mit Screenshots der Testabläufe.',
+            ],
+            [
+              'Affected-Schritt',
+              'Prüfungen und Release eines Produkts laufen nur, wenn sich seine Dateien oder Pakete geändert haben. Ein reiner Doku-Push liefert kein Release.',
             ],
           ],
         },
@@ -2024,6 +2048,10 @@ const de: Catalog = {
             ],
             ['Sprache', 'Die Einstellungen haben eine Sprachliste: die des Systems oder eine von 9.'],
             ['Erledigt-Liste', 'Jeder gepostete und übersprungene Thread mit Datum.'],
+            [
+              'Aktivität',
+              'Ein Bereich unten protokolliert jeden Klick, jeden Schritt und jede Zeile von Claude, mit Uhrzeit und Ergebnis.',
+            ],
           ],
         },
       ],

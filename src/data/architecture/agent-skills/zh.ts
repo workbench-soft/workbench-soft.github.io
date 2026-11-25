@@ -132,6 +132,10 @@ const arch: Arch = {
     'Agent hooks':
       '一个 Node 脚本把钩子组合并进 Claude Code 和 Codex 的设置。它还把 Claude Code 的 MCP 服务器复制到 Codex 和 Kimi Code。',
     Releases: '推送到 main 且检查通过后，GitHub Actions 工作流开始运行。它给提交打上日期版本标签，并根据提交写出说明。',
+    'Progress bars': 'Claude Code 模组注册进度工具和一个面板。钩子统计距上次汇报的秒数并提醒代理。',
+    'Feature queue': '每个会话按仓库写一个占用文件，列出它改的文件。技能在选择 main 或工作树之前读取其他占用。',
+    'Workflow and code rules':
+      'install.sh 把规则文件链接到主目录，每个代理每回合都会读取。每个技能保存一项工作的规则。',
   },
 };
 

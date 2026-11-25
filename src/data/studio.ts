@@ -5,6 +5,7 @@ export const mailto = (subject: string) => `mailto:${email}?subject=${encodeURIC
 export const clientSites = [
   { name: 'Aspiration Style', href: 'https://aspirationstyle.ru' },
   { name: 'Alina Photography', href: 'https://alina-photo.memories-demo-webdav.workers.dev' },
+  { name: 'NeuroHop', href: 'https://neurohop.workbench-soft.com' },
 ];
 
 /** Platforms a person installs or opens an app on. Tool hosts such as VS Code stay out of the count. */
