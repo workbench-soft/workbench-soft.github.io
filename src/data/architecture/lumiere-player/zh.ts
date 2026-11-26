@@ -118,6 +118,10 @@ const arch: Arch = {
       '电影查询从 Wikidata 获取俄文和英文标题及年份。每个应用用一个函数拼出标题行：Android 上是 Titles.label，webOS 上是 titleLine。',
     'Library scan':
       '每个媒体库文件夹是一个带阶段的任务。一个函数根据这些任务算出已完成的比例和剩余时间：Android 上是 ScanProgress.kt，webOS 上是 scan-progress.ts，两者使用相同的测试。文件夹按设备分组，同时运行 3 组。',
+    'Play all and Shuffle all on a folder':
+      'Android 上的 FolderPlay.kt 和 webOS 上的 folder-play.ts 按树的顺序深度优先遍历文件夹及其每个子文件夹。歌曲进入音乐队列，视频进入视频队列，随机模式会先设置好。',
+    'Breadcrumbs and one level up or down':
+      'Android 上的 CrumbTrail.kt 和 webOS 上的 crumbs.ts 决定显示哪些面包屑：不超过 4 个时全部显示，否则显示第一个、省略号和最后两个。每个界面都会记住上移一级时要聚焦的行。',
   },
 };
 

@@ -1902,6 +1902,14 @@ const es: Catalog = {
               'Escaneo de la biblioteca',
               'Una línea sobre la lista de inicio indica la carpeta que se lee ahora, las carpetas terminadas y el tiempo que queda, con una barra. Las carpetas de dispositivos distintos se escanean a la vez. «Detener el escaneo» y «Volver a escanear la biblioteca» están en Ajustes. El teléfono, Google TV, la tele LG y el ordenador se comportan igual.',
             ],
+            [
+              '«Reproducir todo» y «Todo aleatorio» en una carpeta',
+              'Una carpeta abierta del árbol de inicio empieza con 2 filas. «Reproducir todo» pone cada película o canción de la carpeta y de sus subcarpetas, en el orden del árbol. «Todo aleatorio» pone los mismos archivos en orden aleatorio.',
+            ],
+            [
+              'Migas de pan y un nivel arriba o abajo',
+              'Una fila de botones sobre cada lista muestra la ruta hasta el nivel actual, y al pulsar uno saltas allí. «Subir», Atrás en el mando o Escape suben un nivel, y la fila de la que venías recibe el foco.',
+            ],
           ],
         },
       ],

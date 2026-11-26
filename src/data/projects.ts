@@ -1098,6 +1098,14 @@ export const projects: Project[] = [
             name: 'Library scan',
             text: 'A line above the home list names the folder read now, the folders done and the time left, with a bar. Folders on different devices scan at once. Stop the scan and Scan the library again sit in Settings. The phone, the Google TV, the LG TV and the desktop behave the same.',
           },
+          {
+            name: 'Play all and Shuffle all on a folder',
+            text: 'An open folder of the home tree starts with 2 rows. Play all plays each film or song in the folder and the folders inside it, in the order of the tree. Shuffle all plays the same files in random order.',
+          },
+          {
+            name: 'Breadcrumbs and one level up or down',
+            text: 'A row of buttons above each list shows the path to the level you are in, and a press on one jumps there. Up, Back on the remote or Escape goes one level up, and the row you came from takes the focus.',
+          },
         ],
       },
     ],

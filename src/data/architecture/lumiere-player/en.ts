@@ -138,6 +138,10 @@ const arch: Arch = {
       'The film lookup asks Wikidata for the Russian and English title and the year. One function per app builds the line: Titles.label on Android, titleLine on webOS.',
     'Library scan':
       'Each library folder is a job with a phase. One function turns the jobs into the share done and the time left: ScanProgress.kt on Android and scan-progress.ts on webOS, with the same tests. Folders group by device, and 3 groups run at once.',
+    'Play all and Shuffle all on a folder':
+      'FolderPlay.kt on Android and folder-play.ts on webOS walk the folder and each folder inside it, depth first, in the order of the tree. Songs go to the music queue and videos to the video queue, with shuffle set first.',
+    'Breadcrumbs and one level up or down':
+      'CrumbTrail.kt on Android and crumbs.ts on webOS pick the crumbs to show: each one up to 4, else the first, an ellipsis and the last two. Each screen keeps the row to focus when it goes one level up.',
   },
 };
 
