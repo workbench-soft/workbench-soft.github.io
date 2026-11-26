@@ -697,7 +697,7 @@ export const projects: Project[] = [
           },
           {
             name: 'KeepPad Pro',
-            text: 'A one time purchase opens new share links, sending to other apps and to Memories, and hides the ads.',
+            text: 'The free app makes 3 share links and links 1 app of your pick. A one time purchase lifts both limits, sends notes to Memories and hides the ads.',
           },
           {
             name: 'Fast scroll',

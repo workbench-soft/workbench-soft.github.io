@@ -590,7 +590,10 @@ const nb: Catalog = {
               'Notater om en person går til Memories',
               'Et notat som starter med navnet til noen i Memories, havner i dagboken deres på NAS-en hjemme.',
             ],
-            ['KeepPad Pro', 'Ett kjøp åpner nye lenker, sending til andre apper og til Memories, og fjerner reklamen.'],
+            [
+              'KeepPad Pro',
+              'Gratisappen lager 3 lenker og kobler til 1 app du velger. Ett kjøp fjerner begge grensene, åpner sending til Memories og fjerner reklamen.',
+            ],
             [
               'Rask rulling',
               'På Android drar en finger rulleknotten i notatlisten til hvilket som helst punkt, helt ned til siste notat.',
