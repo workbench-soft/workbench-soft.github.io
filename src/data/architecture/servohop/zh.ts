@@ -101,6 +101,8 @@ const arch: Arch = {
     'Station list': '列表和地图来自同一次回应，显示相同的加油站。距离是从手机算起的直线距离。',
     'Price history chart':
       'Pages Function 从 D1 读取每日数据，共用的图表代码把价格延续到没有变化的日子。react-native-svg 绘制折线和区间带。',
+    'Price alert':
+      'expo-background-task 每小时检查一次，读取 /api/station 和 /api/history，一条纯规则比较价格，expo-notifications 发出提醒。',
     'Driver price reports': '应用把报价发给 Pages Function，它检查价格范围和每个发送者每小时的上限。价格存入 D1。',
     'EV chargers': '轮询程序每天合并 3 个开放来源的充电桩。司机的报告在 D1 里保存每个网络每 kWh 的价格。',
     'Search pages':
@@ -109,7 +111,8 @@ const arch: Arch = {
     'Self-update from GitHub':
       '应用向 GitHub Releases 查询更新的 APK，并交给 Android 安装器。Google Play 版用空的替代文件换掉更新代码。',
     'Remove ads': 'expo-iap 通过 Google Play 销售这个商品。购买跟随 Google 账号，换新手机后用恢复购买找回。',
-    'ServoHop Pro': 'expo-iap 在每次启动时检查 Pro 购买。应用里的一处检查解锁 365 天图表并隐藏广告。',
+    'ServoHop Pro':
+      'expo-iap 在每次启动时检查 Pro 购买。应用里的一处检查解锁 365 天图表、Hey Servo 和多于 1 个的价格提醒，并隐藏广告。共用的 taste 包在手机上统计免费次数。',
     'Area search': 'Pages Function 借助 2 个索引在加油站表里查找区域或邮编。它不需要外部地理编码服务，也不需要密钥。',
     'Hey Servo': 'sherpa-onnx 在手机上听取唤醒词，Android 的语音服务听取命令。答案来自 ServoHop 的 API。',
     'Fuel panel': '所选燃料写进每次 API 请求，应用会记住它直到下次启动。充电桩按功率最大的插头归类。',

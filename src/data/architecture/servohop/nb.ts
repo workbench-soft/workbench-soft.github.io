@@ -103,6 +103,8 @@ const arch: Arch = {
       'Listen viser de samme stasjonene som kartet fra samme svar. Avstanden er en rett linje fra telefonen.',
     'Price history chart':
       'En Pages Function leser dagsradene fra D1, og felles grafkode fører prisen videre over dager uten endring. react-native-svg tegner linjen og båndet.',
+    'Price alert':
+      'En sjekk hver time i expo-background-task leser /api/station og /api/history, en ren regel sammenligner prisen, og expo-notifications viser varselet.',
     'Driver price reports':
       'Appen sender meldingen til en Pages Function, som sjekker spennet og timegrensen per avsender. Prisen havner i D1.',
     'EV chargers':
@@ -116,7 +118,7 @@ const arch: Arch = {
     'Remove ads':
       'expo-iap selger produktet gjennom Google Play. Kjøpet følger Google-kontoen, og Gjenopprett henter det tilbake på en ny telefon.',
     'ServoHop Pro':
-      'expo-iap sjekker Pro-kjøpet ved hver start. Én sjekk i appen åpner grafen for 365 dager og skjuler reklamen.',
+      'expo-iap sjekker Pro-kjøpet ved hver start. Én sjekk i appen åpner grafen for 365 dager, Hey Servo og mer enn ett prisvarsel, og skjuler reklamen. Den delte pakken taste teller gratis bruk på telefonen.',
     'Area search':
       'En Pages Function finner forstaden eller postnummeret i stasjonstabellen gjennom 2 indekser. Den trenger ingen ekstern geokoder og ingen nøkkel.',
     'Hey Servo':

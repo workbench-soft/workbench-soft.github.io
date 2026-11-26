@@ -626,7 +626,14 @@ const nb: Catalog = {
               'Stasjonsliste',
               'Stasjonene i bildet, billigst først, med merke, forstad og når prisen endret seg. Den sier fra når prisene i en delstat er sene. Uten nett viser den det siste området med lagrede priser og Prøv igjen.',
             ],
-            ['Prishistorikk', 'Dagssnittet over et bånd fra laveste til høyeste, for 30, 90 eller 365 dager.'],
+            [
+              'Prishistorikk',
+              'Dagssnittet over et bånd fra laveste til høyeste, for 30, 90 eller 365 dager. Året åpner gratis for 3 stasjoner.',
+            ],
+            [
+              'Prisvarsel',
+              'Lagre en stasjon og et drivstoff med din pris. Telefonen sier fra når prisen faller under den, eller til det laveste på 30 dager. Ett varsel er gratis.',
+            ],
             ['Meldinger fra sjåfører', 'Der det ikke finnes data fra delstaten, sender sjåfører prisen fra skiltet.'],
             [
               'Elbilladere',
@@ -642,14 +649,17 @@ const nb: Catalog = {
               'APK-en sjekker GitHub ved oppstart og hver gang du kommer tilbake, og viser nedlastingen i toppfeltet.',
             ],
             ['Fjern annonser', 'Et engangskjøp på Google Play, som gjenopprettes på en ny mobil.'],
-            ['ServoHop Pro', 'Ett kjøp skjuler reklamen og åpner prisdiagrammet for 365 dager.'],
+            [
+              'ServoHop Pro',
+              'Ett kjøp skjuler reklamen og åpner grafen for 365 dager, Hey Servo og et prisvarsel for hver stasjon. Hver av dem virker gratis innenfor en grense først.',
+            ],
             [
               'Områdesøk',
               'Søk etter en forstad eller et postnummer, og kartet flyr dit. Hver rad viser avstanden, sortert etter pris, avstand eller effekt.',
             ],
             [
               'Hey Servo',
-              'Si «Hey Servo, go to the nearest charger», så starter Google Maps navigasjonen. Bare Android.',
+              'Si «Hey Servo, go to the nearest charger», så starter Google Maps navigasjonen. 7 dager gratis, deretter en del av Pro. Bare Android.',
             ],
             ['Drivstoffpanel', 'Velg bensin, diesel, gass eller ladere, treg AC eller rask DC.'],
             ['Reklame', 'Ett banner under listen: AdMob i appen, AdSense på nettstedet.'],

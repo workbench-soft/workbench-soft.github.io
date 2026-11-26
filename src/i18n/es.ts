@@ -659,7 +659,14 @@ const es: Catalog = {
               'Lista de gasolineras',
               'Las gasolineras a la vista, la más barata primero, con marca, barrio y cuándo cambió el precio. Avisa cuando los precios de un estado llegan tarde. Sin conexión muestra la última zona con sus precios guardados y Reintentar.',
             ],
-            ['Historial de precios', 'La media diaria sobre una franja del mínimo al máximo, para 30, 90 o 365 días.'],
+            [
+              'Historial de precios',
+              'La media diaria sobre una franja del mínimo al máximo, para 30, 90 o 365 días. El año se abre gratis para 3 gasolineras.',
+            ],
+            [
+              'Alerta de precio',
+              'Guarda una gasolinera y un combustible con tu precio. El teléfono te avisa cuando el precio baja de ahí, o a su mínimo en 30 días. Una alerta es gratis.',
+            ],
             ['Avisos de conductores', 'Donde el estado no publica datos, los conductores envían el precio del cartel.'],
             [
               'Cargadores eléctricos',
@@ -678,14 +685,17 @@ const es: Catalog = {
               'El APK revisa GitHub al abrir y en cada regreso, y muestra la descarga en la cabecera.',
             ],
             ['Quitar anuncios', 'Una compra única en Google Play, que se restaura en un teléfono nuevo.'],
-            ['ServoHop Pro', 'Una compra oculta los anuncios y abre el gráfico de precios de 365 días.'],
+            [
+              'ServoHop Pro',
+              'Una compra oculta los anuncios y abre el gráfico de 365 días, Hey Servo y una alerta de precio para cada gasolinera. Cada uno funciona gratis primero dentro de un límite.',
+            ],
             [
               'Búsqueda de zona',
               'Busca un barrio o un código postal y el mapa vuela allí. Cada fila muestra la distancia, ordenada por precio, distancia o potencia.',
             ],
             [
               'Hey Servo',
-              'Di «Hey Servo, go to the nearest charger» y Google Maps inicia la navegación. Solo Android.',
+              'Di «Hey Servo, go to the nearest charger» y Google Maps inicia la navegación. 7 días gratis, luego parte de Pro. Solo Android.',
             ],
             ['Panel de combustible', 'Elige gasolina, diésel, gas o cargadores, AC lento o DC rápido.'],
             ['Anuncios', 'Un banner bajo la lista: AdMob en la app, AdSense en la web.'],

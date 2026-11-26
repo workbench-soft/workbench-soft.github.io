@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **ServoHop Pro tastes** the project lists Price alert and says what Pro gives free: the 365 day chart for 3 servos, Hey Servo for 7 days and 1 price alert. Hey Servo is now part of Pro, in the 9 languages.
 - **Farnear free board** the Farnear entry says the board is free and each Pro tool opens in 3 calls for free, in 9 languages.
 - **KeepPad free taste** the project says what Pro gives free: 3 share links and 1 linked app of your pick, in the 9 languages.
 - **Memoire free taste** the project says what Pro gives free: 3 talks a week and one Pro topic each week, in the 9 languages.
