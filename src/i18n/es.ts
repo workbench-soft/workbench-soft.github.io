@@ -625,7 +625,7 @@ const es: Catalog = {
             ],
             [
               'KeepPad Pro',
-              'Una compra única abre los enlaces nuevos, el envío a otras apps y a Memories, y quita los anuncios.',
+              'La app gratis crea 3 enlaces y vincula 1 app a tu elección. Una compra única quita ambos límites, abre el envío a Memories y quita los anuncios.',
             ],
             [
               'Desplazamiento rápido',

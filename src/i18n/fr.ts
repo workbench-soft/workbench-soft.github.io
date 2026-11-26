@@ -647,7 +647,7 @@ const fr: Catalog = {
             ],
             [
               'KeepPad Pro',
-              'Un achat unique ouvre les nouveaux liens, l’envoi vers d’autres apps et vers Memories, et retire les pubs.',
+              'L’app gratuite crée 3 liens et relie 1 app de votre choix. Un achat unique lève ces deux limites, ouvre l’envoi vers Memories et retire les pubs.',
             ],
             [
               'Défilement rapide',

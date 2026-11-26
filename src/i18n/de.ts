@@ -625,7 +625,7 @@ const de: Catalog = {
             ],
             [
               'KeepPad Pro',
-              'Ein einmaliger Kauf öffnet neue Links, das Senden an andere Apps und an Memories, und entfernt die Werbung.',
+              'Kostenlos gibt es 3 Links und 1 verbundene App deiner Wahl. Ein einmaliger Kauf hebt beide Grenzen auf, öffnet das Senden an Memories und entfernt die Werbung.',
             ],
             [
               'Schnelles Scrollen',
