@@ -103,6 +103,8 @@ const arch: Arch = {
       'Pages Function 从 D1 读取每日数据，共用的图表代码把价格延续到没有变化的日子。react-native-svg 绘制折线和区间带。',
     'Price alert':
       'expo-background-task 每小时检查一次，读取 /api/station 和 /api/history，一条纯规则比较价格，expo-notifications 发出提醒。',
+    'App Store':
+      'mise run ios-release 用团队证书和 ServoHop App Store 描述文件给构建签名，EAS 把它发到 App Store Connect。mise run app-store-listing 从 store/app-store-listing.json 写入 9 种语言的商店页面。',
     'Driver price reports': '应用把报价发给 Pages Function，它检查价格范围和每个发送者每小时的上限。价格存入 D1。',
     'EV chargers': '轮询程序每天合并 3 个开放来源的充电桩。司机的报告在 D1 里保存每个网络每 kWh 的价格。',
     'Search pages':

@@ -111,6 +111,8 @@ const arch: Arch = {
       'Une Pages Function lit les lignes du jour dans D1, et un code de graphique partagé reporte le prix sur les jours sans changement. react-native-svg dessine la ligne et la bande.',
     'Price alert':
       'Un contrôle par heure dans expo-background-task lit /api/station et /api/history, une règle pure compare le prix, et expo-notifications affiche l’alerte.',
+    'App Store':
+      "mise run ios-release signe le build avec le certificat de l'équipe et le profil ServoHop App Store, et EAS l'envoie à App Store Connect. mise run app-store-listing écrit la fiche en 9 langues depuis store/app-store-listing.json.",
     'Driver price reports':
       'L’app envoie le relevé à une Pages Function, qui vérifie la plage et la limite par heure et par expéditeur. Le prix va dans D1.',
     'EV chargers':

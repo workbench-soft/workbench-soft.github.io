@@ -718,6 +718,10 @@ const fr: Catalog = {
             ],
             ['Panneau carburant', 'Choisir essence, diesel, gaz ou bornes, AC lente ou DC rapide.'],
             ['Publicité', "Une bannière sous la liste : AdMob dans l'app, AdSense sur le site."],
+            [
+              'App Store',
+              "L'app pour iPhone et iPad passe par l'App Store, en Australie seulement, car les prix viennent des données des États australiens. La fiche existe en 9 langues.",
+            ],
             ['Langues', 'Les écrans existent en 9 langues et suivent le téléphone ou le navigateur.'],
             [
               'Les liens ouvrent l’app',

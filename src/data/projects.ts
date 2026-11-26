@@ -1174,6 +1174,10 @@ export const projects: Project[] = [
           },
           { name: 'Fuel panel', text: 'Pick petrol, diesel, gas or chargers, slow AC or fast DC.' },
           { name: 'Ads', text: 'One banner under the list: AdMob in the app, AdSense on the site.' },
+          {
+            name: 'App Store',
+            text: 'The iPhone and iPad app ships through the App Store, in Australia only, since the prices come from the Australian state feeds. The listing comes in 9 languages.',
+          },
           { name: 'Languages', text: 'The screens come in 9 languages and follow the phone or browser.' },
           {
             name: 'Links open the app',

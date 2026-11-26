@@ -708,6 +708,10 @@ const de: Catalog = {
             ],
             ['Kraftstoffpanel', 'Benzin, Diesel, Gas oder Ladesäulen wählen, langsames AC oder schnelles DC.'],
             ['Werbung', 'Ein Banner unter der Liste: AdMob in der App, AdSense auf der Seite.'],
+            [
+              'App Store',
+              'Die App für iPhone und iPad kommt über den App Store, nur in Australien, da die Preise aus den Daten der australischen Bundesstaaten stammen. Den Eintrag gibt es in 9 Sprachen.',
+            ],
             ['Sprachen', 'Die Bildschirme gibt es in 9 Sprachen, sie folgen dem Telefon oder Browser.'],
             [
               'Links öffnen die App',

@@ -699,6 +699,10 @@ const es: Catalog = {
             ],
             ['Panel de combustible', 'Elige gasolina, diésel, gas o cargadores, AC lento o DC rápido.'],
             ['Anuncios', 'Un banner bajo la lista: AdMob en la app, AdSense en la web.'],
+            [
+              'App Store',
+              'La app para iPhone y iPad llega por el App Store, solo en Australia, porque los precios vienen de los datos de los estados australianos. La ficha está en 9 idiomas.',
+            ],
             ['Idiomas', 'Las pantallas vienen en 9 idiomas y siguen al teléfono o al navegador.'],
             [
               'Los enlaces abren la app',
