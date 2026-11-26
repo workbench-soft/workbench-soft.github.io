@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Farnear free board** the Farnear entry says the board is free and each Pro tool opens in 3 calls for free, in 9 languages.
 - **KeepPad free taste** the project says what Pro gives free: 3 share links and 1 linked app of your pick, in the 9 languages.
 - **Memoire free taste** the project says what Pro gives free: 3 talks a week and one Pro topic each week, in the 9 languages.
 - **Tick-a-Lot free taste** the project says what Pro gives free: 3 prices in each list, 1 shop trip in store order, and 1 Packing and 1 Things to see list, in the 9 languages.

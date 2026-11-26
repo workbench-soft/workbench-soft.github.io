@@ -1636,7 +1636,7 @@ const de: Catalog = {
             ],
             [
               'Farnear Pro',
-              'Ein Kauf für A$5.99 unter Android öffnet die gemeinsame Tafel mit Medien für den Raum und entfernt Werbung.',
+              'Die Tafel ist kostenlos. YouTube gemeinsam, Dateien auf der Tafel, Unterricht und Ausmalen öffnen sich je in 3 Anrufen kostenlos. Ein Kauf für A$5.99 unter Android hebt die Grenze auf und entfernt Werbung.',
             ],
             [
               'Android-App',

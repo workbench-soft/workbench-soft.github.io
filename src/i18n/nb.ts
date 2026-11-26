@@ -1513,7 +1513,7 @@ const nb: Catalog = {
             ],
             [
               'Farnear Pro',
-              'Ett kjøp til A$5.99 på Android åpner den delte tavla og mediene for rommet, og fjerner reklamen.',
+              'Tavla er gratis. YouTube sammen, filer på tavla, timer og fargelegging åpner seg gratis i 3 samtaler hver. Ett kjøp til A$5.99 på Android fjerner grensen og reklamen.',
             ],
             ['Android-app', 'Nettappen i et Android-skall, med signerte APK- og AAB-releaser og daterte versjoner.'],
             [
