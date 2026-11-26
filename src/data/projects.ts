@@ -1094,6 +1094,10 @@ export const projects: Project[] = [
             name: 'Titles of films, series and books',
             text: 'The Russian and English title with the year from Wikidata, and the file name in small grey type under it.',
           },
+          {
+            name: 'Library scan',
+            text: 'A line above the home list names the folder read now, the folders done and the time left, with a bar. Folders on different devices scan at once. Stop the scan and Scan the library again sit in Settings. The phone, the Google TV, the LG TV and the desktop behave the same.',
+          },
         ],
       },
     ],

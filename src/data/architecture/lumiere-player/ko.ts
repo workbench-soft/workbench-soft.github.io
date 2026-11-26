@@ -129,6 +129,8 @@ const arch: Arch = {
       'GitHub APK의 리시버가 SongCatcher가 보낸 것인지 확인한 뒤 노래를 liked-songs.db에 저장합니다. 폴더에 있는 노래는 그 파일을 가리키고, 다른 노래는 YouTube 주소를 저장합니다.',
     'Titles of films, series and books':
       '영화 조회가 Wikidata에서 러시아어와 영어 제목, 연도를 가져옵니다. 앱마다 함수 하나가 줄을 만듭니다. Android는 Titles.label, webOS는 titleLine입니다.',
+    'Library scan':
+      '라이브러리의 각 폴더는 단계를 가진 작업입니다. 함수 하나가 작업들로 끝난 비율과 남은 시간을 계산합니다. Android는 ScanProgress.kt, webOS는 scan-progress.ts이며 테스트는 같습니다. 폴더는 기기별로 묶고 3개 그룹을 동시에 실행합니다.',
   },
 };
 

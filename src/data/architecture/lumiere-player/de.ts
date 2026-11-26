@@ -142,6 +142,8 @@ const arch: Arch = {
       'Ein Receiver im GitHub-APK prüft, dass SongCatcher den Fang geschickt hat, und speichert ihn in liked-songs.db. Ein Song aus den Ordnern verweist auf seine Datei, ein anderer behält seine YouTube-Adresse.',
     'Titles of films, series and books':
       'Die Filmsuche holt aus Wikidata den russischen und englischen Titel und das Jahr. Eine Funktion pro App baut die Zeile: Titles.label auf Android, titleLine auf webOS.',
+    'Library scan':
+      'Jeder Bibliotheksordner ist ein Job mit einer Phase. Eine Funktion rechnet aus den Jobs den fertigen Anteil und die Restzeit: ScanProgress.kt auf Android und scan-progress.ts auf webOS, mit denselben Tests. Ordner werden nach Gerät gruppiert, und 3 Gruppen laufen gleichzeitig.',
   },
 };
 

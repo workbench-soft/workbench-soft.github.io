@@ -1781,6 +1781,10 @@ const nb: Catalog = {
               'Titler på filmer, serier og bøker',
               'Russisk og engelsk tittel med år fra Wikidata, og filnavnet i liten grå skrift under.',
             ],
+            [
+              'Skanning av biblioteket',
+              'En linje over startlisten viser mappen som leses nå, mappene som er ferdige og tiden som er igjen, med en fremdriftslinje. Mapper på ulike enheter skannes samtidig. «Stopp skanningen» og «Skann biblioteket på nytt» ligger i Innstillinger. Telefonen, Google TV, LG-TV-en og skrivebordsappen oppfører seg likt.',
+            ],
           ],
         },
       ],

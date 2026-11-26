@@ -130,6 +130,8 @@ const arch: Arch = {
       'GitHub 版 APK のレシーバーが SongCatcher からの送信だと確かめ、曲を liked-songs.db に保存します。フォルダーにある曲はそのファイルを指し、ほかの曲は YouTube のアドレスを持ちます。',
     'Titles of films, series and books':
       '映画の検索が Wikidata からロシア語と英語のタイトルと年を取ります。各アプリの 1 つの関数が行を組み立てます。Android は Titles.label、webOS は titleLine です。',
+    'Library scan':
+      'ライブラリの各フォルダーは、フェーズを持つジョブです。1 つの関数がジョブから完了した割合と残り時間を計算します。Android では ScanProgress.kt、webOS では scan-progress.ts で、テストは同じです。フォルダーはデバイスごとにまとめ、3 グループを同時に実行します。',
   },
 };
 

@@ -1919,6 +1919,10 @@ const de: Catalog = {
               'Titel von Filmen, Serien und Büchern',
               'Der russische und englische Titel mit Jahr aus Wikidata, darunter klein und grau der Dateiname.',
             ],
+            [
+              'Bibliothek scannen',
+              'Eine Zeile über der Startliste nennt den Ordner, der gerade gelesen wird, die fertigen Ordner und die Restzeit, mit einem Balken. Ordner auf verschiedenen Geräten werden gleichzeitig gescannt. „Scan stoppen“ und „Bibliothek neu scannen“ stehen in den Einstellungen. Handy, Google TV, LG TV und Desktop verhalten sich gleich.',
+            ],
           ],
         },
       ],

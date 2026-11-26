@@ -1898,6 +1898,10 @@ const es: Catalog = {
               'Títulos de películas, series y libros',
               'El título ruso e inglés con el año desde Wikidata, y debajo el nombre del archivo en gris pequeño.',
             ],
+            [
+              'Escaneo de la biblioteca',
+              'Una línea sobre la lista de inicio indica la carpeta que se lee ahora, las carpetas terminadas y el tiempo que queda, con una barra. Las carpetas de dispositivos distintos se escanean a la vez. «Detener el escaneo» y «Volver a escanear la biblioteca» están en Ajustes. El teléfono, Google TV, la tele LG y el ordenador se comportan igual.',
+            ],
           ],
         },
       ],

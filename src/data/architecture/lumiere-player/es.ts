@@ -142,6 +142,8 @@ const arch: Arch = {
       'Un receptor en el APK de GitHub comprueba que SongCatcher envió la captura y la guarda en liked-songs.db. Una canción de las carpetas apunta a su archivo, y otra guarda su dirección de YouTube.',
     'Titles of films, series and books':
       'La búsqueda de películas pide a Wikidata el título ruso e inglés y el año. Una función por app arma la línea: Titles.label en Android, titleLine en webOS.',
+    'Library scan':
+      'Cada carpeta de la biblioteca es una tarea con una fase. Una función calcula con las tareas la parte hecha y el tiempo que queda: ScanProgress.kt en Android y scan-progress.ts en webOS, con las mismas pruebas. Las carpetas se agrupan por dispositivo, y 3 grupos corren a la vez.',
   },
 };
 
