@@ -102,6 +102,8 @@ const arch: Arch = {
     'Station list': '一覧は地図と同じ答えから、同じ給油所を出します。距離はスマホからの直線です。',
     'Price history chart':
       'Pages Function が D1 から日ごとの行を読み、共通のグラフのコードが変化のない日に価格を引き継ぎます。react-native-svg が線と帯を描きます。',
+    'Price alert':
+      'expo-background-task の 1 時間ごとの確認が /api/station と /api/history を読み、純粋なルールが価格を比べ、expo-notifications がアラートを出します。',
     'Driver price reports':
       'アプリは報告を Pages Function に送り、範囲と送り手ごとの 1 時間の上限を調べます。価格は D1 に入ります。',
     'EV chargers':
@@ -115,7 +117,7 @@ const arch: Arch = {
     'Remove ads':
       'expo-iap が Google Play で商品を売ります。購入は Google アカウントに付くので、新しいスマホでは復元で戻ります。',
     'ServoHop Pro':
-      'expo-iap が起動のたびに Pro の購入を確かめます。アプリの 1 か所の確認で 365 日のグラフが開き、広告が消えます。',
+      'expo-iap が起動のたびに Pro の購入を確かめます。アプリの 1 か所の確認で 365 日のグラフ、Hey Servo、2 件目からの価格アラートが開き、広告が消えます。無料で使った回数は共通の taste パッケージがスマホの上で数えます。',
     'Area search':
       'Pages Function が 2 つの索引で給油所の表から地区や郵便番号を探します。外部のジオコーダーもキーもいりません。',
     'Hey Servo':

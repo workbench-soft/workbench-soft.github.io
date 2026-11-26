@@ -100,6 +100,8 @@ const arch: Arch = {
       'The list shows the same servos as the map from the same answer. The distance is a straight line from the phone.',
     'Price history chart':
       'A Pages Function reads the daily rows from D1, and shared chart code carries a price over the days with no change. react-native-svg draws the line and band.',
+    'Price alert':
+      'An hourly expo-background-task check reads /api/station and /api/history, a pure rule compares the price, and expo-notifications posts the alert.',
     'Driver price reports':
       'The app posts a report to a Pages Function, which checks the range and the hourly limit per sender. The price goes into D1.',
     'EV chargers':
@@ -113,7 +115,7 @@ const arch: Arch = {
     'Remove ads':
       'expo-iap sells the product through Google Play. The purchase follows the Google account, so Restore brings it back on a new phone.',
     'ServoHop Pro':
-      'expo-iap checks the Pro purchase on each start. One check in the app opens the 365 day chart and hides the ads.',
+      'expo-iap checks the Pro purchase on each start. One check in the app opens the 365 day chart, Hey Servo and more than one price alert, and hides the ads. The shared taste package counts the free uses on the phone.',
     'Area search':
       'A Pages Function finds the suburb or postcode in the station table through 2 indexes. It needs no outside geocoder and no key.',
     'Hey Servo':

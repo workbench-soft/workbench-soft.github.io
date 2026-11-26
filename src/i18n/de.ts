@@ -662,7 +662,14 @@ const de: Catalog = {
               'Tankstellenliste',
               'Die Tankstellen im Bild, günstigste zuerst, mit Marke, Vorort und Zeit der letzten Preisänderung. Sie zeigt, wenn die Preise eines Bundesstaats verspätet sind. Ohne Verbindung bleiben das letzte Gebiet und seine Preise, mit Erneut versuchen.',
             ],
-            ['Preisverlauf', 'Der Tagesdurchschnitt über einem Band vom Tief bis zum Hoch, für 30, 90 oder 365 Tage.'],
+            [
+              'Preisverlauf',
+              'Der Tagesdurchschnitt über einem Band vom Tief bis zum Hoch, für 30, 90 oder 365 Tage. Das Jahr öffnet sich für 3 Tankstellen kostenlos.',
+            ],
+            [
+              'Preisalarm',
+              'Speichern Sie eine Tankstelle und einen Kraftstoff mit Ihrem Preis. Das Handy meldet, wenn der Preis darunter fällt oder auf den tiefsten Stand in 30 Tagen. Ein Alarm ist kostenlos.',
+            ],
             [
               'Meldungen von Fahrern',
               'Wo kein staatlicher Datenstrom existiert, melden Fahrer den Preis von der Anzeigetafel.',
@@ -687,14 +694,17 @@ const de: Catalog = {
               'Werbung entfernen',
               'Ein einmaliger Kauf bei Google Play, der auf einem neuen Handy wiederhergestellt wird.',
             ],
-            ['ServoHop Pro', 'Ein Kauf blendet die Werbung aus und öffnet das Preisdiagramm über 365 Tage.'],
+            [
+              'ServoHop Pro',
+              'Ein Kauf blendet die Werbung aus und öffnet das Diagramm über 365 Tage, Hey Servo und einen Preisalarm für jede Tankstelle. Jede Funktion läuft zuerst kostenlos bis zu einer Grenze.',
+            ],
             [
               'Gebietssuche',
               'Einen Vorort oder eine Postleitzahl suchen, und die Karte fliegt dorthin. Jede Zeile zeigt die Entfernung, sortiert nach Preis, Entfernung oder Leistung.',
             ],
             [
               'Hey Servo',
-              'Sagen Sie „Hey Servo, go to the nearest charger“, und Google Maps startet die Navigation. Nur Android.',
+              'Sagen Sie „Hey Servo, go to the nearest charger“, und Google Maps startet die Navigation. 7 Tage kostenlos, danach Teil von Pro. Nur Android.',
             ],
             ['Kraftstoffpanel', 'Benzin, Diesel, Gas oder Ladesäulen wählen, langsames AC oder schnelles DC.'],
             ['Werbung', 'Ein Banner unter der Liste: AdMob in der App, AdSense auf der Seite.'],

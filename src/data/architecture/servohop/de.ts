@@ -106,6 +106,8 @@ const arch: Arch = {
       'Die Liste zeigt dieselben Tankstellen wie die Karte aus derselben Antwort. Die Entfernung ist die Luftlinie vom Handy.',
     'Price history chart':
       'Eine Pages Function liest die Tageszeilen aus D1, und gemeinsamer Diagrammcode trägt den Preis über Tage ohne Änderung. react-native-svg zeichnet Linie und Band.',
+    'Price alert':
+      'Eine stündliche Prüfung mit expo-background-task liest /api/station und /api/history, eine reine Regel vergleicht den Preis, und expo-notifications zeigt den Alarm.',
     'Driver price reports':
       'Die App schickt die Meldung an eine Pages Function, die den Bereich und das Stundenlimit pro Absender prüft. Der Preis landet in D1.',
     'EV chargers':
@@ -119,7 +121,7 @@ const arch: Arch = {
     'Remove ads':
       'expo-iap verkauft das Produkt über Google Play. Der Kauf folgt dem Google-Konto, und Wiederherstellen holt ihn auf ein neues Handy.',
     'ServoHop Pro':
-      'expo-iap prüft den Pro-Kauf bei jedem Start. Eine Prüfung in der App öffnet das Diagramm über 365 Tage und blendet die Werbung aus.',
+      'expo-iap prüft den Pro-Kauf bei jedem Start. Eine Prüfung in der App öffnet das Diagramm über 365 Tage, Hey Servo und mehr als einen Preisalarm und blendet die Werbung aus. Das gemeinsame Paket taste zählt die kostenlosen Nutzungen auf dem Handy.',
     'Area search':
       'Eine Pages Function findet Vorort oder Postleitzahl in der Tankstellentabelle über 2 Indizes. Sie braucht keinen fremden Geocoder und keinen Schlüssel.',
     'Hey Servo':

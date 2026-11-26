@@ -1136,7 +1136,11 @@ export const projects: Project[] = [
           },
           {
             name: 'Price history chart',
-            text: 'The daily average over a band from the low to the high, for 30, 90 or 365 days.',
+            text: 'The daily average over a band from the low to the high, for 30, 90 or 365 days. The year opens free for 3 servos.',
+          },
+          {
+            name: 'Price alert',
+            text: 'Save a servo and a fuel with your price. The phone tells you when the price drops below it, or to its lowest in 30 days. One alert is free.',
           },
           { name: 'Driver price reports', text: 'Where no state feed exists, drivers send the price on the board.' },
           {
@@ -1156,14 +1160,17 @@ export const projects: Project[] = [
             text: 'The APK checks GitHub on start and on each return, and shows the download in the header.',
           },
           { name: 'Remove ads', text: 'A one time Google Play purchase, restored on a new phone.' },
-          { name: 'ServoHop Pro', text: 'One purchase hides the ads and opens the 365 day price chart.' },
+          {
+            name: 'ServoHop Pro',
+            text: 'One purchase hides the ads and opens the 365 day chart, Hey Servo and a price alert for each servo. Each one works free inside a limit first.',
+          },
           {
             name: 'Area search',
             text: 'Find a suburb or a postcode and fly the map there. Each row shows its distance, sorted by price, distance or power.',
           },
           {
             name: 'Hey Servo',
-            text: 'Say "Hey Servo, go to the nearest charger" and Google Maps starts. Android only.',
+            text: 'Say "Hey Servo, go to the nearest charger" and Google Maps starts. Free for 7 days, then part of Pro. Android only.',
           },
           { name: 'Fuel panel', text: 'Pick petrol, diesel, gas or chargers, slow AC or fast DC.' },
           { name: 'Ads', text: 'One banner under the list: AdMob in the app, AdSense on the site.' },

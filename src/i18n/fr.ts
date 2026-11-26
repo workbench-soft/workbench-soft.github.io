@@ -683,7 +683,11 @@ const fr: Catalog = {
             ],
             [
               'Historique des prix',
-              'La moyenne du jour sur une bande du plus bas au plus haut, sur 30, 90 ou 365 jours.',
+              'La moyenne du jour sur une bande du plus bas au plus haut, sur 30, 90 ou 365 jours. L’année s’ouvre gratuitement pour 3 stations.',
+            ],
+            [
+              'Alerte de prix',
+              'Enregistrez une station et un carburant avec votre prix. Le téléphone vous prévient quand le prix passe en dessous, ou à son plus bas en 30 jours. Une alerte est gratuite.',
             ],
             ['Relevés des conducteurs', 'Là où l’État ne publie rien, les conducteurs envoient le prix affiché.'],
             [
@@ -700,14 +704,17 @@ const fr: Catalog = {
               'L’APK vérifie GitHub au lancement et à chaque retour, et montre le téléchargement dans l’en-tête.',
             ],
             ['Retirer les pubs', 'Un achat unique sur Google Play, restauré sur un nouveau téléphone.'],
-            ['ServoHop Pro', 'Un achat masque les publicités et ouvre le graphique des prix sur 365 jours.'],
+            [
+              'ServoHop Pro',
+              'Un achat masque les publicités et ouvre le graphique sur 365 jours, Hey Servo et une alerte de prix pour chaque station. Chacun marche d’abord gratuitement dans une limite.',
+            ],
             [
               'Recherche de zone',
               "Cherchez une banlieue ou un code postal, et la carte s'y rend. Chaque ligne montre la distance, triée par prix, distance ou puissance.",
             ],
             [
               'Hey Servo',
-              'Dites « Hey Servo, go to the nearest charger » et Google Maps lance le guidage. Android uniquement.',
+              'Dites « Hey Servo, go to the nearest charger » et Google Maps lance le guidage. 7 jours gratuits, puis inclus dans Pro. Android uniquement.',
             ],
             ['Panneau carburant', 'Choisir essence, diesel, gaz ou bornes, AC lente ou DC rapide.'],
             ['Publicité', "Une bannière sous la liste : AdMob dans l'app, AdSense sur le site."],

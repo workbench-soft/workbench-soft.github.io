@@ -102,6 +102,8 @@ const arch: Arch = {
     'Station list': '목록은 지도와 같은 응답에서 같은 주유소를 보여 줍니다. 거리는 휴대폰에서 잰 직선거리입니다.',
     'Price history chart':
       'Pages Function이 D1에서 날짜별 행을 읽고, 공용 차트 코드가 변화 없는 날로 가격을 이어 갑니다. react-native-svg가 선과 띠를 그립니다.',
+    'Price alert':
+      'expo-background-task의 시간당 확인이 /api/station과 /api/history를 읽고, 순수한 규칙이 가격을 비교하고, expo-notifications가 알림을 띄웁니다.',
     'Driver price reports':
       '앱이 신고를 Pages Function에 보내면 범위와 보낸 사람별 시간당 한도를 확인합니다. 가격은 D1에 들어갑니다.',
     'EV chargers':
@@ -115,7 +117,7 @@ const arch: Arch = {
     'Remove ads':
       'expo-iap가 Google Play로 상품을 판매합니다. 구매는 Google 계정을 따라가서 새 휴대폰에서 복원으로 되찾습니다.',
     'ServoHop Pro':
-      'expo-iap가 시작할 때마다 Pro 구매를 확인합니다. 앱 안의 확인 한 곳이 365일 차트를 열고 광고를 숨깁니다.',
+      'expo-iap가 시작할 때마다 Pro 구매를 확인합니다. 앱 안의 확인 한 곳이 365일 차트, Hey Servo, 2개 이상의 가격 알림을 열고 광고를 숨깁니다. 무료 사용 횟수는 공용 taste 패키지가 휴대폰에서 셉니다.',
     'Area search':
       'Pages Function이 색인 2개로 주유소 표에서 지역이나 우편번호를 찾습니다. 외부 지오코더도 키도 필요 없습니다.',
     'Hey Servo':

@@ -109,6 +109,8 @@ const arch: Arch = {
       'La liste montre les mêmes stations que la carte, tirées de la même réponse. La distance est une ligne droite depuis le téléphone.',
     'Price history chart':
       'Une Pages Function lit les lignes du jour dans D1, et un code de graphique partagé reporte le prix sur les jours sans changement. react-native-svg dessine la ligne et la bande.',
+    'Price alert':
+      'Un contrôle par heure dans expo-background-task lit /api/station et /api/history, une règle pure compare le prix, et expo-notifications affiche l’alerte.',
     'Driver price reports':
       'L’app envoie le relevé à une Pages Function, qui vérifie la plage et la limite par heure et par expéditeur. Le prix va dans D1.',
     'EV chargers':
@@ -122,7 +124,7 @@ const arch: Arch = {
     'Remove ads':
       'expo-iap vend le produit par Google Play. L’achat suit le compte Google, et Restaurer le ramène sur un nouveau téléphone.',
     'ServoHop Pro':
-      'expo-iap vérifie l’achat Pro à chaque lancement. Un seul contrôle dans l’app ouvre le graphique sur 365 jours et cache les pubs.',
+      'expo-iap vérifie l’achat Pro à chaque lancement. Un seul contrôle dans l’app ouvre le graphique sur 365 jours, Hey Servo et plus d’une alerte de prix, et cache les pubs. Le paquet partagé taste compte les essais gratuits sur le téléphone.',
     'Area search':
       'Une Pages Function trouve la banlieue ou le code postal dans la table des stations grâce à 2 index. Elle n’a besoin d’aucun géocodeur externe ni de clé.',
     'Hey Servo':
