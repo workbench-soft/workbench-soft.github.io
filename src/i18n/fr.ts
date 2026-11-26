@@ -1959,6 +1959,10 @@ const fr: Catalog = {
               'Titres des films, séries et livres',
               'Le titre russe et anglais avec l’année depuis Wikidata, et le nom du fichier en petit gris dessous.',
             ],
+            [
+              'Analyse de la bibliothèque',
+              'Une ligne au-dessus de la liste d’accueil indique le dossier en cours de lecture, les dossiers terminés et le temps restant, avec une barre. Les dossiers situés sur des appareils différents sont analysés en même temps. « Arrêter l’analyse » et « Analyser à nouveau la bibliothèque » se trouvent dans les Réglages. Le téléphone, la Google TV, la TV LG et l’ordinateur se comportent de la même façon.',
+            ],
           ],
         },
       ],

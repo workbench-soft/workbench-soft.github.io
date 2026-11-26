@@ -136,6 +136,8 @@ const arch: Arch = {
       'A receiver in the GitHub APK checks that SongCatcher sent the catch, then saves it in liked-songs.db. A song the folders hold points at its file, and another keeps its YouTube address.',
     'Titles of films, series and books':
       'The film lookup asks Wikidata for the Russian and English title and the year. One function per app builds the line: Titles.label on Android, titleLine on webOS.',
+    'Library scan':
+      'Each library folder is a job with a phase. One function turns the jobs into the share done and the time left: ScanProgress.kt on Android and scan-progress.ts on webOS, with the same tests. Folders group by device, and 3 groups run at once.',
   },
 };
 

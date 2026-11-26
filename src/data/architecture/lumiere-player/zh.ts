@@ -116,6 +116,8 @@ const arch: Arch = {
       'GitHub APK 中的接收器确认消息来自 SongCatcher 后，将歌曲存入 liked-songs.db。文件夹里有的歌指向其文件，其他歌保存 YouTube 地址。',
     'Titles of films, series and books':
       '电影查询从 Wikidata 获取俄文和英文标题及年份。每个应用用一个函数拼出标题行：Android 上是 Titles.label，webOS 上是 titleLine。',
+    'Library scan':
+      '每个媒体库文件夹是一个带阶段的任务。一个函数根据这些任务算出已完成的比例和剩余时间：Android 上是 ScanProgress.kt，webOS 上是 scan-progress.ts，两者使用相同的测试。文件夹按设备分组，同时运行 3 组。',
   },
 };
 

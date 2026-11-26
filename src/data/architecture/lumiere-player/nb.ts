@@ -133,6 +133,8 @@ const arch: Arch = {
       'En mottaker i GitHub-APK-en sjekker at SongCatcher sendte fangsten, og lagrer den i liked-songs.db. En sang fra mappene peker på filen sin, en annen beholder YouTube-adressen.',
     'Titles of films, series and books':
       'Filmoppslaget henter russisk og engelsk tittel og år fra Wikidata. Én funksjon per app bygger linjen: Titles.label på Android, titleLine på webOS.',
+    'Library scan':
+      'Hver bibliotekmappe er en jobb med en fase. Én funksjon regner ut andelen som er ferdig og tiden som er igjen fra jobbene: ScanProgress.kt på Android og scan-progress.ts på webOS, med de samme testene. Mapper grupperes etter enhet, og 3 grupper kjører samtidig.',
   },
 };
 
