@@ -563,7 +563,7 @@ const es: Catalog = {
             ],
             [
               'Tick-a-Lot Pro',
-              'Una compra en Google Play desbloquea Equipaje, Qué ver, el orden de la tienda y los precios, y oculta los anuncios.',
+              'Una compra en Google Play desbloquea Equipaje, Qué ver, el orden de la tienda y los precios, y oculta los anuncios. Antes, gratis: 3 precios por lista, 1 compra en el orden de la tienda y 1 lista de cada tipo.',
             ],
             ['La compra semanal de dos', 'Uno prepara la lista y el otro la marca de camino a casa.'],
             ['Canciones por aprender', 'Una lista de canciones para la guitarra, las más deseadas primero.'],

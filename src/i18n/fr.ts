@@ -576,7 +576,7 @@ const fr: Catalog = {
             ],
             [
               'Tick-a-Lot Pro',
-              'Un achat Google Play ouvre les bagages, les choses à voir, l’ordre du magasin et les prix, et masque les publicités.',
+              'Un achat Google Play ouvre les bagages, les choses à voir, l’ordre du magasin et les prix, et masque les publicités. Avant l’achat, gratuitement : 3 prix par liste, 1 visite dans l’ordre du magasin et 1 liste de chaque type.',
             ],
             ['Les courses de la semaine à deux', "L'un prépare la liste, l'autre la coche en rentrant."],
             ['Morceaux à apprendre', "Une liste de morceaux à la guitare, les plus voulus d'abord."],
