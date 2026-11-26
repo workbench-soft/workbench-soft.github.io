@@ -144,6 +144,8 @@ const arch: Arch = {
       '앱의 Android 창이 화면을 켜 두라고 시스템에 요청합니다. 앱이 백그라운드로 가면 요청이 끝납니다.',
     'Self-update':
       'GitHub 빌드는 GitHub Releases에 새 APK를 묻고 Android 설치 프로그램에 넘깁니다. Google Play 빌드에는 업데이트 코드가 빠져 있습니다.',
+    'SpotTheCam Pro':
+      '페이지의 표 하나가 무료 한도를 정하고, 휴대폰의 카운터가 서버 없이 사용 횟수를 저장합니다. Kotlin 코드가 저절로 시작된 주행을 세므로 앱을 닫아도 한도가 적용됩니다. Pro는 Google Play Billing이 판매합니다.',
     'Same app on the iPhone':
       'Capacitor가 같은 사이트를 iOS용으로 감쌉니다. Kotlin 주행과 경로 코드를 Swift로 옮긴 코드가 네이티브 일을 하고, StoreKit 2가 Pro를 판매합니다.',
   },

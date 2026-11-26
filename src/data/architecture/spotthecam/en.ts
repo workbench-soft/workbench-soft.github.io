@@ -139,6 +139,8 @@ const arch: Arch = {
       'The Android window of the app asks the system to keep the screen on. It ends when the app goes to the background.',
     'Self-update':
       'The GitHub build asks GitHub Releases for a newer APK and hands it to the Android installer. The Google Play build leaves the update code out.',
+    'SpotTheCam Pro':
+      'One table on the page sets the free limits, and a counter on the phone keeps the uses with no server. The Kotlin code counts each drive that starts by itself, so the limit holds with the app closed. Google Play Billing sells Pro.',
     'Same app on the iPhone':
       'Capacitor wraps the same site for iOS. Swift ports of the Kotlin drive and route code do the native work, and StoreKit 2 sells Pro.',
   },
