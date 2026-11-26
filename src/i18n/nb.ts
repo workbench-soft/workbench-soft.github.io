@@ -663,6 +663,10 @@ const nb: Catalog = {
             ],
             ['Drivstoffpanel', 'Velg bensin, diesel, gass eller ladere, treg AC eller rask DC.'],
             ['Reklame', 'Ett banner under listen: AdMob i appen, AdSense på nettstedet.'],
+            [
+              'App Store',
+              'Appen for iPhone og iPad kommer gjennom App Store, bare i Australia, siden prisene kommer fra dataene til de australske delstatene. Oppføringen finnes på 9 språk.',
+            ],
             ['Språk', 'Skjermene finnes på 9 språk og følger telefonen eller nettleseren.'],
             [
               'Lenker åpner appen',

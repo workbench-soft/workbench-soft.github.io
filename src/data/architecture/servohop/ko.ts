@@ -104,6 +104,8 @@ const arch: Arch = {
       'Pages Function이 D1에서 날짜별 행을 읽고, 공용 차트 코드가 변화 없는 날로 가격을 이어 갑니다. react-native-svg가 선과 띠를 그립니다.',
     'Price alert':
       'expo-background-task의 시간당 확인이 /api/station과 /api/history를 읽고, 순수한 규칙이 가격을 비교하고, expo-notifications가 알림을 띄웁니다.',
+    'App Store':
+      'mise run ios-release가 팀 인증서와 ServoHop App Store 프로파일로 빌드에 서명하고, EAS가 App Store Connect로 보냅니다. mise run app-store-listing이 store/app-store-listing.json에서 9개 언어 등록 정보를 씁니다.',
     'Driver price reports':
       '앱이 신고를 Pages Function에 보내면 범위와 보낸 사람별 시간당 한도를 확인합니다. 가격은 D1에 들어갑니다.',
     'EV chargers':

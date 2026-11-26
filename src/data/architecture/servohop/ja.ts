@@ -104,6 +104,8 @@ const arch: Arch = {
       'Pages Function が D1 から日ごとの行を読み、共通のグラフのコードが変化のない日に価格を引き継ぎます。react-native-svg が線と帯を描きます。',
     'Price alert':
       'expo-background-task の 1 時間ごとの確認が /api/station と /api/history を読み、純粋なルールが価格を比べ、expo-notifications がアラートを出します。',
+    'App Store':
+      'mise run ios-release がチーム証明書と ServoHop App Store プロファイルでビルドに署名し、EAS が App Store Connect に送ります。mise run app-store-listing が store/app-store-listing.json から 9 言語の掲載を書き込みます。',
     'Driver price reports':
       'アプリは報告を Pages Function に送り、範囲と送り手ごとの 1 時間の上限を調べます。価格は D1 に入ります。',
     'EV chargers':

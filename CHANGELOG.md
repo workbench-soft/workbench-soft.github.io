@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **ServoHop on the App Store** the project lists App Store: the iPhone and iPad app ships there in Australia only, in the 9 languages.
 - **ServoHop Pro tastes** the project lists Price alert and says what Pro gives free: the 365 day chart for 3 servos, Hey Servo for 7 days and 1 price alert. Hey Servo is now part of Pro, in the 9 languages.
 - **Farnear free board** the Farnear entry says the board is free and each Pro tool opens in 3 calls for free, in 9 languages.
 - **KeepPad free taste** the project says what Pro gives free: 3 share links and 1 linked app of your pick, in the 9 languages.
