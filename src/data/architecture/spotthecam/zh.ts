@@ -120,6 +120,8 @@ const arch: Arch = {
     'Hey Spot, what street am I on?': '应用读取车下那条 OpenStreetMap 道路的名称和限速。手机的语音合成把它们说出来。',
     'Screen stays on': '应用的 Android 窗口请求系统保持屏幕常亮。应用转到后台时，这个请求结束。',
     'Self-update': 'GitHub 版向 GitHub Releases 查询更新的 APK，并交给 Android 安装器。Google Play 版不含更新代码。',
+    'SpotTheCam Pro':
+      '页面里的一张表设定免费额度，手机上的计数器保存使用次数，不需要服务器。Kotlin 代码统计每次自动开始的驾驶，所以应用关闭时额度同样有效。Pro 通过 Google Play Billing 出售。',
     'Same app on the iPhone':
       'Capacitor 把同一个网站封装给 iOS。从 Kotlin 移植到 Swift 的驾驶和路线代码负责原生部分，StoreKit 2 销售 Pro。',
   },

@@ -336,6 +336,10 @@ export const projects: Project[] = [
             name: 'Self-update',
             text: 'The APK checks GitHub for a newer release, with the size, progress and a cancel button.',
           },
+          {
+            name: 'SpotTheCam Pro',
+            text: 'The free app starts 3 drives by itself, shows the stats of the last trip and gives Ava or Andrew free each week. A one time purchase lifts each limit and hides the ads.',
+          },
         ],
       },
       {

@@ -422,6 +422,10 @@ const es: Catalog = {
               'Actualización automática',
               'El APK busca en GitHub una versión más nueva, con el tamaño, el progreso y un botón para cancelar.',
             ],
+            [
+              'SpotTheCam Pro',
+              'Gratis: 3 viajes con inicio automático, los datos del último viaje y la voz Ava o Andrew cada semana. Una compra única quita cada límite y oculta los anuncios.',
+            ],
           ],
         },
         {

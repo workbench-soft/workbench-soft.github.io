@@ -145,6 +145,8 @@ const arch: Arch = {
       'アプリの Android の画面が、画面を消さないようシステムに頼みます。アプリが裏に回るとその頼みは終わります。',
     'Self-update':
       'GitHub 版は GitHub Releases に新しい APK を問い合わせ、Android のインストーラーに渡します。Google Play 版には更新のコードがありません。',
+    'SpotTheCam Pro':
+      'ページの 1 つの表が無料の上限を決め、スマホのカウンターがサーバーなしで使用回数を保存します。Kotlin のコードが自動で始まった運転を数えるので、アプリを閉じていても上限が働きます。Pro は Google Play Billing が販売します。',
     'Same app on the iPhone':
       'Capacitor が同じサイトを iOS 向けに包みます。Kotlin の運転とルートのコードを Swift に移したものがネイティブの仕事をし、StoreKit 2 が Pro を販売します。',
   },

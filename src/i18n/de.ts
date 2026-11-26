@@ -425,6 +425,10 @@ const de: Catalog = {
               'Selbst-Update',
               'Das APK sucht bei GitHub nach einem neueren Release, mit Größe, Fortschritt und Abbrechen-Knopf.',
             ],
+            [
+              'SpotTheCam Pro',
+              'Gratis: 3 Fahrten mit Autostart, die Statistik der letzten Fahrt und jede Woche die Stimme Ava oder Andrew. Ein einmaliger Kauf hebt jedes Limit auf und blendet die Werbung aus.',
+            ],
           ],
         },
         {

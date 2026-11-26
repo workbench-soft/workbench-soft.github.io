@@ -401,6 +401,10 @@ const nb: Catalog = {
               'Selvoppdatering',
               'APK-en ser etter en nyere utgivelse på GitHub, med størrelse, fremdrift og en avbryt-knapp.',
             ],
+            [
+              'SpotTheCam Pro',
+              'Gratis: 3 turer med autostart, statistikken for den siste turen og stemmen Ava eller Andrew hver uke. Et engangskjøp fjerner hver grense og skjuler annonsene.',
+            ],
           ],
         },
         {

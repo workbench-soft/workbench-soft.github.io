@@ -429,6 +429,10 @@ const fr: Catalog = {
               'Mise à jour auto',
               'L’APK cherche une version plus récente sur GitHub, avec la taille, la progression et un bouton d’annulation.',
             ],
+            [
+              'SpotTheCam Pro',
+              'Gratuit : 3 trajets en démarrage auto, les stats du dernier trajet et la voix Ava ou Andrew chaque semaine. Un achat unique lève chaque limite et masque les pubs.',
+            ],
           ],
         },
         {
