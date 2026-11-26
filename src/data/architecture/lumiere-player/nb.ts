@@ -135,6 +135,10 @@ const arch: Arch = {
       'Filmoppslaget henter russisk og engelsk tittel og år fra Wikidata. Én funksjon per app bygger linjen: Titles.label på Android, titleLine på webOS.',
     'Library scan':
       'Hver bibliotekmappe er en jobb med en fase. Én funksjon regner ut andelen som er ferdig og tiden som er igjen fra jobbene: ScanProgress.kt på Android og scan-progress.ts på webOS, med de samme testene. Mapper grupperes etter enhet, og 3 grupper kjører samtidig.',
+    'Play all and Shuffle all on a folder':
+      'FolderPlay.kt på Android og folder-play.ts på webOS går gjennom mappen og hver mappe inni den, dybde først, i treets rekkefølge. Sanger går til musikkøen og videoer til videokøen, med stokking satt først.',
+    'Breadcrumbs and one level up or down':
+      'CrumbTrail.kt på Android og crumbs.ts på webOS velger hvilke brødsmuler som vises: hver av dem opp til 4, ellers den første, en ellipse og de to siste. Hver skjerm husker raden som får fokus når den går ett nivå opp.',
   },
 };
 

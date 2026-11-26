@@ -131,6 +131,10 @@ const arch: Arch = {
       '영화 조회가 Wikidata에서 러시아어와 영어 제목, 연도를 가져옵니다. 앱마다 함수 하나가 줄을 만듭니다. Android는 Titles.label, webOS는 titleLine입니다.',
     'Library scan':
       '라이브러리의 각 폴더는 단계를 가진 작업입니다. 함수 하나가 작업들로 끝난 비율과 남은 시간을 계산합니다. Android는 ScanProgress.kt, webOS는 scan-progress.ts이며 테스트는 같습니다. 폴더는 기기별로 묶고 3개 그룹을 동시에 실행합니다.',
+    'Play all and Shuffle all on a folder':
+      'Android의 FolderPlay.kt와 webOS의 folder-play.ts가 폴더와 그 안의 각 폴더를 트리 순서대로 깊이 우선으로 훑습니다. 노래는 음악 대기열로, 동영상은 동영상 대기열로 가며 무작위 재생은 먼저 설정합니다.',
+    'Breadcrumbs and one level up or down':
+      'Android의 CrumbTrail.kt와 webOS의 crumbs.ts가 보여 줄 경로 항목을 고릅니다. 4개까지는 모두, 그보다 많으면 첫 항목, 줄임표, 마지막 두 항목입니다. 각 화면은 한 단계 위로 갈 때 포커스할 행을 기억합니다.',
   },
 };
 

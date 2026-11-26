@@ -1923,6 +1923,14 @@ const de: Catalog = {
               'Bibliothek scannen',
               'Eine Zeile über der Startliste nennt den Ordner, der gerade gelesen wird, die fertigen Ordner und die Restzeit, mit einem Balken. Ordner auf verschiedenen Geräten werden gleichzeitig gescannt. „Scan stoppen“ und „Bibliothek neu scannen“ stehen in den Einstellungen. Handy, Google TV, LG TV und Desktop verhalten sich gleich.',
             ],
+            [
+              '„Alle abspielen“ und „Alle zufällig“ für einen Ordner',
+              'Ein offener Ordner im Startbaum beginnt mit 2 Zeilen. „Alle abspielen“ spielt jeden Film oder Song im Ordner und in seinen Unterordnern, in der Reihenfolge des Baums. „Alle zufällig“ spielt dieselben Dateien in zufälliger Reihenfolge.',
+            ],
+            [
+              'Brotkrumen und eine Ebene hoch oder runter',
+              'Eine Reihe von Schaltflächen über jeder Liste zeigt den Pfad zur aktuellen Ebene, und ein Druck auf eine springt dorthin. „Hoch“, Zurück auf der Fernbedienung oder Escape geht eine Ebene höher, und die Zeile, von der du kamst, bekommt den Fokus.',
+            ],
           ],
         },
       ],

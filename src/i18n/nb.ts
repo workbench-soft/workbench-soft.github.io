@@ -1785,6 +1785,14 @@ const nb: Catalog = {
               'Skanning av biblioteket',
               'En linje over startlisten viser mappen som leses nå, mappene som er ferdige og tiden som er igjen, med en fremdriftslinje. Mapper på ulike enheter skannes samtidig. «Stopp skanningen» og «Skann biblioteket på nytt» ligger i Innstillinger. Telefonen, Google TV, LG-TV-en og skrivebordsappen oppfører seg likt.',
             ],
+            [
+              '«Spill alle» og «Stokk alle» på en mappe',
+              'En åpen mappe i starttreet begynner med 2 rader. «Spill alle» spiller hver film eller sang i mappen og i mappene inni den, i treets rekkefølge. «Stokk alle» spiller de samme filene i tilfeldig rekkefølge.',
+            ],
+            [
+              'Brødsmuler og ett nivå opp eller ned',
+              'En rad med knapper over hver liste viser stien til nivået du er på, og et trykk på en knapp hopper dit. «Opp», Tilbake på fjernkontrollen eller Escape går ett nivå opp, og raden du kom fra får fokus.',
+            ],
           ],
         },
       ],

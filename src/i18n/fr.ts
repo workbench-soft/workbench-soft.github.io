@@ -1963,6 +1963,14 @@ const fr: Catalog = {
               'Analyse de la bibliothèque',
               'Une ligne au-dessus de la liste d’accueil indique le dossier en cours de lecture, les dossiers terminés et le temps restant, avec une barre. Les dossiers situés sur des appareils différents sont analysés en même temps. « Arrêter l’analyse » et « Analyser à nouveau la bibliothèque » se trouvent dans les Réglages. Le téléphone, la Google TV, la TV LG et l’ordinateur se comportent de la même façon.',
             ],
+            [
+              '« Tout lire » et « Tout en aléatoire » sur un dossier',
+              'Un dossier ouvert de l’arborescence d’accueil commence par 2 lignes. « Tout lire » lit chaque film ou chanson du dossier et de ses sous-dossiers, dans l’ordre de l’arborescence. « Tout en aléatoire » lit les mêmes fichiers dans un ordre aléatoire.',
+            ],
+            [
+              'Fil d’Ariane et un niveau plus haut ou plus bas',
+              'Une rangée de boutons au-dessus de chaque liste montre le chemin jusqu’au niveau courant, et un appui sur l’un d’eux y mène. « Remonter », Retour sur la télécommande ou Échap remonte d’un niveau, et la ligne d’où vous venez prend le focus.',
+            ],
           ],
         },
       ],

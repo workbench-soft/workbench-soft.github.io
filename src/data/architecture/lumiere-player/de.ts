@@ -144,6 +144,10 @@ const arch: Arch = {
       'Die Filmsuche holt aus Wikidata den russischen und englischen Titel und das Jahr. Eine Funktion pro App baut die Zeile: Titles.label auf Android, titleLine auf webOS.',
     'Library scan':
       'Jeder Bibliotheksordner ist ein Job mit einer Phase. Eine Funktion rechnet aus den Jobs den fertigen Anteil und die Restzeit: ScanProgress.kt auf Android und scan-progress.ts auf webOS, mit denselben Tests. Ordner werden nach Gerät gruppiert, und 3 Gruppen laufen gleichzeitig.',
+    'Play all and Shuffle all on a folder':
+      'FolderPlay.kt auf Android und folder-play.ts auf webOS gehen den Ordner und jeden Unterordner in der Tiefe durch, in der Reihenfolge des Baums. Songs gehen in die Musikwarteschlange und Videos in die Videowarteschlange, der Zufallsmodus wird vorher gesetzt.',
+    'Breadcrumbs and one level up or down':
+      'CrumbTrail.kt auf Android und crumbs.ts auf webOS wählen die sichtbaren Brotkrumen: bis 4 jede, sonst die erste, Auslassungspunkte und die letzten zwei. Jeder Bildschirm merkt sich die Zeile für den Fokus, wenn er eine Ebene höher geht.',
   },
 };
 

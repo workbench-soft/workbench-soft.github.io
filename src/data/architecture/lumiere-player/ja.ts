@@ -132,6 +132,10 @@ const arch: Arch = {
       '映画の検索が Wikidata からロシア語と英語のタイトルと年を取ります。各アプリの 1 つの関数が行を組み立てます。Android は Titles.label、webOS は titleLine です。',
     'Library scan':
       'ライブラリの各フォルダーは、フェーズを持つジョブです。1 つの関数がジョブから完了した割合と残り時間を計算します。Android では ScanProgress.kt、webOS では scan-progress.ts で、テストは同じです。フォルダーはデバイスごとにまとめ、3 グループを同時に実行します。',
+    'Play all and Shuffle all on a folder':
+      'Android の FolderPlay.kt と webOS の folder-play.ts が、フォルダーとその中の各フォルダーをツリーの順に深さ優先でたどります。曲は音楽のキューへ、動画は動画のキューへ送り、シャッフルは先に設定します。',
+    'Breadcrumbs and one level up or down':
+      'Android の CrumbTrail.kt と webOS の crumbs.ts が、表示するパンくずを選びます。4 個までは全部、それを超えると最初の 1 個、省略記号、最後の 2 個です。各画面は、1 階層上がるときにフォーカスする行を覚えています。',
   },
 };
 
