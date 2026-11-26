@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Memoire free taste** the project says what Pro gives free: 3 talks a week and one Pro topic each week, in the 9 languages.
 - **Tick-a-Lot free taste** the project says what Pro gives free: 3 prices in each list, 1 shop trip in store order, and 1 Packing and 1 Things to see list, in the 9 languages.
 - **Sky Altar free taste** the project says what Pro gives free: one Pro culture each night, the first tip of Today and 3 pairs in Match. The Pro line now counts 18 more cultures, in the 9 languages.
 - **Lumiere folders** the project lists Play all and Shuffle all on a folder, and Breadcrumbs with one level up or down, in the 9 languages.

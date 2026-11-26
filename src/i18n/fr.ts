@@ -1849,7 +1849,7 @@ const fr: Catalog = {
             ],
             [
               'Memoire Pro',
-              'Un achat de A$5.99 sur Android ouvre la pratique de conversation, la synchro, le widget et les 14 thèmes, et retire les pubs.',
+              'Un achat de A$5.99 sur Android ouvre la pratique de conversation, la synchro, le widget et les 14 thèmes, et retire les pubs. Sans Pro, 3 conversations par semaine et un thème Pro gratuit chaque semaine.',
             ],
             [
               'Mises à jour',

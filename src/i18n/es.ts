@@ -1788,7 +1788,7 @@ const es: Catalog = {
             ],
             [
               'Memoire Pro',
-              'Una compra de A$5.99 en Android abre la práctica de conversación, la sincronización, el widget y los 14 temas, y quita los anuncios.',
+              'Una compra de A$5.99 en Android abre la práctica de conversación, la sincronización, el widget y los 14 temas, y quita los anuncios. Sin Pro hay 3 conversaciones a la semana y un tema Pro gratis cada semana.',
             ],
             [
               'Actualizaciones',
