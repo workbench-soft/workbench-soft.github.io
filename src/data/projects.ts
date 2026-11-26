@@ -778,7 +778,7 @@ export const projects: Project[] = [
           },
           {
             name: 'Farnear Pro',
-            text: 'One A$5.99 purchase on Android opens the shared board and media for the room, and removes ads.',
+            text: 'The board is free. YouTube together, files on the board, lessons and colouring each open in 3 calls for free. One A$5.99 purchase on Android takes the limit away and removes ads.',
           },
           {
             name: 'Android app',

@@ -1606,7 +1606,7 @@ const es: Catalog = {
             ],
             [
               'Farnear Pro',
-              'Una compra de A$5.99 en Android abre la pizarra compartida y sus archivos para la sala, y quita los anuncios.',
+              'La pizarra es gratis. YouTube juntos, los archivos en la pizarra, las clases y colorear se abren gratis en 3 llamadas cada uno. Una compra de A$5.99 en Android quita el límite y los anuncios.',
             ],
             [
               'App de Android',

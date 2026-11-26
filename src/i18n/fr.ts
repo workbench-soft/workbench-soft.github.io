@@ -1664,7 +1664,7 @@ const fr: Catalog = {
             ],
             [
               'Farnear Pro',
-              'Un achat de A$5.99 sur Android ouvre le tableau partagé et ses médias pour la salle, et retire les pubs.',
+              "Le tableau est gratuit. YouTube ensemble, les fichiers sur le tableau, les cours et le coloriage s'ouvrent chacun gratuitement pendant 3 appels. Un achat de A$5.99 sur Android retire la limite et les pubs.",
             ],
             [
               'App Android',
