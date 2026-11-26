@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **SongCatcher privacy policy** at <https://workbench-soft.com/songcatcher/privacy-policy> for Google Play: the wake word stays on the phone, and only an audio fingerprint goes to ShazamKit.
 - **Alina Photography client galleries** the project says what the gallery does now: small watermarked previews of the whole session, picks to keep and to retouch, the amount to pay, and the bought files after the Paid tick. Its architecture line follows, in the 9 languages.
 - **Alina Photography reviews** the project lists Reviews: clients leave one with stars, and only the ones Alina approves show.
 - **Faster first paint everywhere** the games, LangFlip, the privacy page and the app sites load the visit counter after the page too.
