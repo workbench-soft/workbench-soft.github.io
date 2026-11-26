@@ -2022,7 +2022,7 @@ const es: Catalog = {
             ],
             [
               'Tripforge Pro',
-              'Una compra en Android da búsquedas ilimitadas, fechas desplazadas hasta 30 días, hasta 50 viajes guardados y cero anuncios.',
+              'Una compra en Android da búsquedas ilimitadas, fechas desplazadas hasta 30 días, hasta 50 viajes guardados y cero anuncios. La versión gratis deja probarlo: 3 búsquedas al mes con fechas amplias y 1 viaje guardado.',
             ],
             [
               'Páginas web para buscadores',

@@ -1902,7 +1902,7 @@ const nb: Catalog = {
             ['Reklame', 'Et banner og en fullskjermannonse på Android. Et engangskjøp av Fjern reklame skjuler dem.'],
             [
               'Tripforge Pro',
-              'Ett kjøp på Android gir ubegrensede søk, datoer flyttet opptil 30 dager, opptil 50 lagrede turer og ingen reklame.',
+              'Ett kjøp på Android gir ubegrensede søk, datoer flyttet opptil 30 dager, opptil 50 lagrede turer og ingen reklame. Gratisappen lar deg prøve: 3 brede søk i måneden og 1 lagret tur.',
             ],
             [
               'Nettsider for søk',
