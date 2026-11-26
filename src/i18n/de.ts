@@ -2043,7 +2043,7 @@ const de: Catalog = {
             ],
             [
               'Tripforge Pro',
-              'Ein Kauf unter Android bringt unbegrenzte Suchen, um bis zu 30 Tage verschobene Daten, bis zu 50 gespeicherte Reisen und keine Werbung.',
+              'Ein Kauf unter Android bringt unbegrenzte Suchen, um bis zu 30 Tage verschobene Daten, bis zu 50 gespeicherte Reisen und keine Werbung. Kostenlos gibt es zum Ausprobieren 3 Suchen im Monat mit weiter Verschiebung und 1 gespeicherte Reise.',
             ],
             [
               'Webseiten für die Suche',

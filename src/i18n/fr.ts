@@ -2077,7 +2077,7 @@ const fr: Catalog = {
             ],
             [
               'Tripforge Pro',
-              'Un achat sur Android donne des recherches illimitées, des dates décalées jusqu’à 30 jours, jusqu’à 50 voyages enregistrés et aucune publicité.',
+              'Un achat sur Android donne des recherches illimitées, des dates décalées jusqu’à 30 jours, jusqu’à 50 voyages enregistrés et aucune publicité. La version gratuite permet d’essayer : 3 recherches par mois avec le grand décalage et 1 voyage enregistré.',
             ],
             [
               'Pages du site pour la recherche',

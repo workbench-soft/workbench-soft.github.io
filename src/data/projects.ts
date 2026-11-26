@@ -1505,7 +1505,7 @@ export const projects: Project[] = [
           { name: 'Ads', text: 'A banner and a full screen ad on Android. A one time Remove ads purchase hides them.' },
           {
             name: 'Tripforge Pro',
-            text: 'One purchase on Android gives unlimited searches, dates shifted up to 30 days, up to 50 saved trips and no ads.',
+            text: 'One purchase on Android gives unlimited searches, dates shifted up to 30 days, up to 50 saved trips and no ads. The free app tries both first: 3 searches a month with the wide shift and 1 saved trip.',
           },
           {
             name: 'Website pages for search',
