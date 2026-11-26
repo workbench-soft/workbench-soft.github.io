@@ -962,7 +962,7 @@ export const projects: Project[] = [
           { name: 'Ads and Remove ads', text: 'Ads stay off the sky. A one time $2.99 purchase removes them.' },
           {
             name: 'Sky Altar Pro',
-            text: 'One A$4.99 purchase unlocks 11 more cultures, your own music, and Today and Match in Your stars. It hides the ads.',
+            text: 'One A$4.99 purchase unlocks 18 more cultures, your own music, and each tip of Today and Match in Your stars. It hides the ads. Without it, one Pro culture is free each night, Today shows its first tip, and Match opens for 3 pairs.',
           },
           { name: 'App languages', text: 'The screens and the constellation names in 9 languages.' },
           {

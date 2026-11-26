@@ -1728,7 +1728,7 @@ const es: Catalog = {
             ['Anuncios y quitarlos', 'Los anuncios no tapan el cielo. Una compra única de $2.99 los quita.'],
             [
               'Sky Altar Pro',
-              'Una compra de A$4.99 desbloquea 11 culturas más, tu propia música, y Hoy y Compatibilidad en Tus estrellas. Oculta los anuncios.',
+              'Una compra de A$4.99 desbloquea 18 culturas más, tu propia música, y cada consejo de Hoy y Compatibilidad en Tus estrellas. Oculta los anuncios. Sin Pro, cada noche una cultura Pro es gratis, Hoy muestra su primer consejo y Compatibilidad se abre para 3 parejas.',
             ],
             ['Idiomas de la app', 'Las pantallas y los nombres de las constelaciones en 9 idiomas.'],
             [

@@ -1792,7 +1792,7 @@ const fr: Catalog = {
             ['Publicités et retrait', 'Les pubs restent hors du ciel. Un achat unique de $2.99 les retire.'],
             [
               'Sky Altar Pro',
-              'Un achat de 4,99 A$ ouvre 11 cultures de plus, votre propre musique, et Aujourd’hui et Compatibilité dans Vos étoiles. Les publicités disparaissent.',
+              'Un achat de 4,99 A$ ouvre 18 cultures de plus, votre propre musique, et chaque conseil d’Aujourd’hui et Compatibilité dans Vos étoiles. Les publicités disparaissent. Sans Pro, une culture Pro est gratuite chaque nuit, Aujourd’hui montre son premier conseil, et Compatibilité s’ouvre pour 3 couples.',
             ],
             ['Langues de l’app', 'Les écrans et les noms des constellations en 9 langues.'],
             [

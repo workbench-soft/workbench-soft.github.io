@@ -1626,7 +1626,7 @@ const nb: Catalog = {
             ['Reklame og reklamefritt', 'Reklamen holder seg unna himmelen. Et engangskjøp på $2.99 fjerner den.'],
             [
               'Sky Altar Pro',
-              'Ett kjøp til A$4.99 låser opp 11 flere kulturer, egen musikk, og I dag og Match i Dine stjerner. Reklamen forsvinner.',
+              'Ett kjøp til A$4.99 låser opp 18 flere kulturer, egen musikk, og hvert tips i I dag og Match i Dine stjerner. Reklamen forsvinner. Uten Pro er én Pro-kultur gratis hver natt, I dag viser det første tipset, og Match åpner for 3 par.',
             ],
             ['Appspråk', 'Skjermene og navnene på stjernebildene på 9 språk.'],
             [
