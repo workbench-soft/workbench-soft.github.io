@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Sky Altar free taste** the project says what Pro gives free: one Pro culture each night, the first tip of Today and 3 pairs in Match. The Pro line now counts 18 more cultures, in the 9 languages.
 - **Lumiere folders** the project lists Play all and Shuffle all on a folder, and Breadcrumbs with one level up or down, in the 9 languages.
 - **Lumiere library scan** the project lists Library scan: a progress line with the folder, the folders done and the time left, folders on different devices at once, and Stop and Scan again in Settings, in the 9 languages.
 - **SongCatcher privacy policy** at <https://workbench-soft.com/songcatcher/privacy-policy> for Google Play: the wake word stays on the phone, and only an audio fingerprint goes to ShazamKit.

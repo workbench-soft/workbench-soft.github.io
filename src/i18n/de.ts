@@ -1764,7 +1764,7 @@ const de: Catalog = {
             ['Werbung und Werbefreiheit', 'Werbung bleibt vom Himmel fern. Ein Kauf für $2.99 entfernt sie.'],
             [
               'Sky Altar Pro',
-              'Ein Kauf für A$4.99 schaltet 11 weitere Kulturen, eigene Musik sowie Heute und Match in Deine Sterne frei. Die Werbung verschwindet.',
+              'Ein Kauf für A$4.99 schaltet 18 weitere Kulturen, eigene Musik sowie jeden Tipp in Heute und Match in Deine Sterne frei. Die Werbung verschwindet. Ohne Pro ist jede Nacht eine Pro-Kultur gratis, Heute zeigt den ersten Tipp, und Match öffnet für 3 Paare.',
             ],
             ['App-Sprachen', 'Die Ansichten und die Sternbildnamen in 9 Sprachen.'],
             [
