@@ -521,7 +521,7 @@ const nb: Catalog = {
             ['Reklame', 'Et engangskjøp. Folk i Europa ser samtykkeskjemaet før noen annonse.'],
             [
               'Tick-a-Lot Pro',
-              'Ett kjøp i Google Play låser opp Pakking, Ting å se, rekkefølgen i butikken og prisene, og skjuler reklamen.',
+              'Ett kjøp i Google Play låser opp Pakking, Ting å se, rekkefølgen i butikken og prisene, og skjuler reklamen. Før kjøpet er dette gratis: 3 priser per liste, 1 handletur i butikkrekkefølge og 1 liste av hvert slag.',
             ],
             ['Ukehandelen for to', 'Én lager listen, den andre krysser av på vei hjem.'],
             ['Sanger å lære', 'En liste med sanger på gitar, de mest ønskede først.'],

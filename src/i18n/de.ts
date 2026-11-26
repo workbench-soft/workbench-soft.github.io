@@ -560,7 +560,7 @@ const de: Catalog = {
             ['Werbung', 'Ein einmaliger Kauf. Menschen in Europa sehen das Einwilligungsformular vor jeder Werbung.'],
             [
               'Tick-a-Lot Pro',
-              'Ein Kauf bei Google Play schaltet Packen, Sehenswertes, die Reihenfolge im Laden und die Preise frei und blendet die Werbung aus.',
+              'Ein Kauf bei Google Play schaltet Packen, Sehenswertes, die Reihenfolge im Laden und die Preise frei und blendet die Werbung aus. Vorher kostenlos: 3 Preise pro Liste, 1 Einkauf in Ladenreihenfolge und 1 Liste jeder Art.',
             ],
             ['Der Wocheneinkauf zu zweit', 'Eine Person legt die Liste an, die andere hakt sie auf dem Heimweg ab.'],
             ['Songs zum Lernen', 'Eine Liste von Gitarrensongs, die gewünschtesten zuerst.'],

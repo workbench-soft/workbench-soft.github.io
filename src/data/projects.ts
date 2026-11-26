@@ -618,7 +618,7 @@ export const projects: Project[] = [
           { name: 'Ads', text: 'A one time purchase. People in Europe see the consent form before any ad.' },
           {
             name: 'Tick-a-Lot Pro',
-            text: 'One Google Play purchase unlocks Packing, Things to see, the store order and prices, and hides the ads.',
+            text: 'One Google Play purchase unlocks Packing, Things to see, the store order and prices, and hides the ads. Before that it gives a free taste: 3 prices in each list, 1 shop trip in store order, and 1 list of each kind.',
           },
           { name: 'The weekly shop for two', text: 'One person sets up the list, the other ticks it on the way home.' },
           { name: 'Songs to learn', text: 'A list of songs to learn on the guitar, the most wanted first.' },
