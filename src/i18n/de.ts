@@ -1818,7 +1818,7 @@ const de: Catalog = {
             ],
             [
               'Memoire Pro',
-              'Ein Kauf für A$5.99 auf Android schaltet Sprechübungen, Sync, das Widget und alle 14 Themen frei und blendet die Werbung aus.',
+              'Ein Kauf für A$5.99 auf Android schaltet Sprechübungen, Sync, das Widget und alle 14 Themen frei und blendet die Werbung aus. Ohne Pro gibt es 3 Gespräche pro Woche und jede Woche ein Pro-Thema gratis.',
             ],
             [
               'Updates',

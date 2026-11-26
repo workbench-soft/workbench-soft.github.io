@@ -1680,7 +1680,7 @@ const nb: Catalog = {
             ],
             [
               'Memoire Pro',
-              'Ett kjøp til A$5.99 på Android åpner samtaleøving, synk, widgeten og alle 14 emnene, og fjerner reklamen.',
+              'Ett kjøp til A$5.99 på Android åpner samtaleøving, synk, widgeten og alle 14 emnene, og fjerner reklamen. Uten Pro får du 3 samtaler i uken og ett Pro-emne gratis hver uke.',
             ],
             [
               'Oppdateringer',
