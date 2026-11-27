@@ -1073,7 +1073,10 @@ export const projects: Project[] = [
             name: 'Online music',
             text: 'In the APK from GitHub, Hey Lumi plays a song, an artist, an album or a style that no folder holds, found in the MusicBrainz catalog.',
           },
-          { name: 'Lumiere Pro', text: 'One payment unlocks the voice commands and Hey Lumi, and hides the ads.' },
+          {
+            name: 'Lumiere Pro',
+            text: 'One payment unlocks the voice commands and Hey Lumi, and hides the ads. Voice works free for the first 7 days.',
+          },
           {
             name: 'LG webOS app',
             text: 'A webOS app for an LG TV shows USB sticks and NAS folders as one tree, finds the NAS on the network so you type only the login, and plays with on-screen buttons, subtitle and audio pickers, and a film name said into the Magic Remote. At the first start you pick the folders of films, series, cartoons, music and audiobooks, and the tree shows them by kind. Lumiere keeps the index fresh by itself, so a title such as Paddington plays at once.',

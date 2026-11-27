@@ -1912,7 +1912,10 @@ const de: Catalog = {
               'Online-Musik',
               'In der APK von GitHub spielt Hey Lumi einen Song, eine Band, ein Album oder einen Stil, die in keinem Ordner liegen, gefunden im MusicBrainz-Katalog.',
             ],
-            ['Lumiere Pro', 'Ein Kauf schaltet Sprachbefehle und Hey Lumi frei und entfernt die Werbung.'],
+            [
+              'Lumiere Pro',
+              'Ein Kauf schaltet Sprachbefehle und Hey Lumi frei und entfernt die Werbung. Die Sprachsteuerung ist die ersten 7 Tage kostenlos.',
+            ],
             [
               'App für LG webOS',
               'Eine webOS-App für LG-Fernseher zeigt USB-Sticks und NAS-Ordner als Baum, findet das NAS im Netzwerk, sodass nur der Login fehlt, und spielt mit Tasten auf dem Bildschirm, Untertitel- und Tonspurwahl und einem Filmtitel, den Sie in die Magic Remote sagen. Beim ersten Start wählen Sie die Ordner mit Filmen, Serien, Zeichentrick, Musik und Hörbüchern, und der Baum zeigt sie nach Art. Lumiere hält den Index selbst aktuell, und ein Titel wie Paddington startet sofort.',

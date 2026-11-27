@@ -1777,7 +1777,10 @@ const nb: Catalog = {
               'Musikk på nett',
               'I APK-en fra GitHub spiller Hey Lumi en sang, en artist, et album eller en stil som ingen mappe har, funnet i MusicBrainz-katalogen.',
             ],
-            ['Lumiere Pro', 'Ett kjøp låser opp talekommandoer og Hey Lumi og fjerner reklamen.'],
+            [
+              'Lumiere Pro',
+              'Ett kjøp låser opp talekommandoer og Hey Lumi og fjerner reklamen. Stemme er gratis de første 7 dagene.',
+            ],
             [
               'App for LG webOS',
               'En webOS-app for LG-TV viser USB-pinner og NAS-mapper som et tre, finner NAS-en på nettverket så du bare skriver inn påloggingen, og spiller av med knapper på skjermen, valg av undertekster og lydspor, og en filmtittel sagt inn i Magic Remote. Ved første oppstart velger du mappene med filmer, serier, tegnefilmer, musikk og lydbøker, og treet viser dem etter type. Lumiere holder indeksen oppdatert selv, og en tittel som Paddington starter med en gang.',
