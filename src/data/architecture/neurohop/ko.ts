@@ -63,6 +63,8 @@ const arch: Arch = {
       'game/이 id로 놀이 파일을 불러와 각 항목을 그립니다. 놀이마다 고유 경로가 있어 공유한 링크로 열립니다.',
     'Premium games':
       'Worker가 Google ID 토큰으로 account.workbench-soft.com에 묻고, R2에서 premium/<id>.json을 읽습니다.',
+    'Free game of the week':
+      'pro/free-game.ts가 @workbench-soft/taste의 freePick으로 기기의 주에 맞춰 놀이를 고릅니다. Worker는 같은 규칙을 Rust로 갖고 그 놀이를 토큰 없이 제공합니다.',
     Ads: 'ads/가 앱에는 AdMob, 사이트에는 AdSense 배너를 띄우고, 요금제가 켜져 있으면 숨깁니다.',
     'Settings and the Workbench plan':
       'pro/에 결제 화면, Google Play 구매, useEntitled()가 있습니다. 사이트와 iOS는 로그인해 휴대폰에서 산 요금제를 엽니다.',

@@ -69,6 +69,8 @@ const arch: Arch = {
       'game/ が id で遊びのファイルを読み込み、各項目を描きます。遊びごとに専用のルートがあるので、共有したリンクで開けます。',
     'Premium games':
       'Worker が Google ID トークンで account.workbench-soft.com に問い合わせ、R2 から premium/<id>.json を読みます。',
+    'Free game of the week':
+      'pro/free-game.ts が @workbench-soft/taste の freePick で、端末の週に合わせて遊びを選びます。Worker は同じルールを Rust で持ち、その遊びをトークンなしで返します。',
     Ads: 'ads/ がアプリで AdMob、サイトで AdSense のバナーを出し、プランが有効なら隠します。',
     'Settings and the Workbench plan':
       'pro/ にペイウォール、Google Play での購入、useEntitled() があります。サイトと iOS はサインインして、スマホで買ったプランを開きます。',

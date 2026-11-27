@@ -1463,6 +1463,10 @@ export const projects: Project[] = [
             name: 'Premium games',
             text: 'A premium card shows a lock. The Workbench subscription opens the full game.',
           },
+          {
+            name: 'Free game of the week',
+            text: 'Each week 1 premium game opens with no sign in and no subscription. Its card says "Free this week", and its page names the day the next one opens.',
+          },
           { name: 'Ads', text: 'AdMob banners in the app and AdSense on the site. The subscription hides them.' },
           {
             name: 'Settings and the Workbench plan',

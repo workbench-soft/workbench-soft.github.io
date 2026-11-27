@@ -2040,6 +2040,10 @@ const fr: Catalog = {
               'Chaque jeu en sections : âge, description, but, matériel, étapes, plus facile, plus difficile, variantes et conseils. Chaque jeu a son propre lien. Les textes des jeux sont en russe, les écrans en 9 langues.',
             ],
             ['Jeux premium', 'Une carte premium affiche un cadenas. L’abonnement Workbench ouvre le jeu complet.'],
+            [
+              'Jeu gratuit de la semaine',
+              'Chaque semaine, un jeu premium s’ouvre sans connexion ni abonnement. Sa carte indique « Gratuit cette semaine », et sa page donne le jour où le suivant s’ouvre.',
+            ],
             ['Publicité', 'Des bannières AdMob dans l’appli et AdSense sur le site. L’abonnement les masque.'],
             [
               'Réglages et forfait Workbench',
