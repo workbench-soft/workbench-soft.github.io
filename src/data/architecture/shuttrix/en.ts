@@ -139,7 +139,7 @@ const arch: Arch = {
       'A React Native layer draws the time in the strip the hidden status bar leaves. One timer fires each minute, and taps pass through to the preview.',
     Gallery:
       'The gallery lists the shots the app saved through MediaStore and groups the versions of one photo. The Android share sheet sends the picked files.',
-    Plus: 'Google Play Billing sells the one time product, and the app checks it on the first gallery open. A locked mode opens the Plus sheet with the price from Google Play.',
+    Plus: 'Google Play Billing sells the one time product, and the app checks it on the first gallery open. A counter on the phone keeps the 3 free shots of each Plus mode. After the third shot is saved, the Plus sheet opens with the price from Google Play.',
     Ads: 'AdMob shows one banner under the gallery grid and asks for consent on the first open. The same Google Play check hides it after Remove ads or Plus.',
     'Edit photos':
       'The shared editor package of the Memories repo runs inside an Expo DOM component. The Kotlin module saves the result over the file or as a new JPEG, with its metadata.',

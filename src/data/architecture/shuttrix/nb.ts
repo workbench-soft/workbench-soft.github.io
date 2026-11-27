@@ -142,7 +142,7 @@ const arch: Arch = {
       'Et lag i React Native tegner klokken i stripen den skjulte statuslinjen etterlater. En tidtaker går hvert minutt, og trykk går videre til forhåndsvisningen.',
     Gallery:
       'Galleriet viser bildene appen lagret gjennom MediaStore og grupperer versjonene av ett bilde. Delingsmenyen i Android sender filene du valgte.',
-    Plus: 'Google Play Billing selger engangskjøpet, og appen sjekker det første gang galleriet åpnes. En låst modus åpner Plus-arket med prisen fra Google Play.',
+    Plus: 'Google Play Billing selger engangskjøpet, og appen sjekker det første gang galleriet åpnes. En teller på telefonen lagrer de 3 gratis bildene i hver Plus-modus. Når det tredje bildet er lagret, åpner Plus-arket med prisen fra Google Play.',
     Ads: 'AdMob viser ett banner under galleriets rutenett og ber om samtykke første gang. Samme sjekk mot Google Play skjuler det etter Fjern reklame eller Plus.',
     'Edit photos':
       'Den delte redigeringspakken fra Memories-repoet kjører i en Expo DOM-komponent. Kotlin-modulen lagrer resultatet over filen eller som en ny JPEG, med metadata.',

@@ -273,7 +273,7 @@ const de: Catalog = {
             ],
             [
               'Memories Pro',
-              'Ein Kauf für A$7.99 auf Android schaltet Personen, Album-Links, NAS-Duplikate, Bearbeiten und Zeichnen frei und blendet die Werbung aus.',
+              'Gratis: die 3 Personen mit den meisten Fotos, 5 Suchen nach dem Bildinhalt pro Monat und Bearbeiten. Ein Kauf für A$7.99 auf Android schaltet jede Person, die Suche ohne Limit, Album-Links, die Duplikatprüfung, die Reiseliste, die Ortskarte und Zeichnen frei und blendet die Werbung aus.',
             ],
             [
               'Sortierer am Computer',
@@ -1570,7 +1570,7 @@ const de: Catalog = {
             ],
             [
               'Plus',
-              'Ein Kauf öffnet Astro, Mond, Langzeit, Makro, Mini, Zeitlupe und Zeitraffer und blendet die Werbung aus.',
+              'Jeder Plus-Modus gibt 3 Aufnahmen gratis: Astro, Mond, Langzeit, Makro, Mini, Mini-Video, Zeitlupe und Zeitraffer. Die Kamera zeigt, wie viele übrig sind, und eine Gratisaufnahme bleibt in der Galerie. Ein Kauf öffnet jeden Modus ohne Limit und blendet die Werbung aus.',
             ],
             ['Werbung', 'Ein Banner unter dem Galerieraster. Ein einmaliger Kauf entfernt es.'],
             [

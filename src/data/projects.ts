@@ -170,7 +170,7 @@ export const projects: Project[] = [
           },
           {
             name: 'Memories Pro',
-            text: 'One A$7.99 purchase on Android opens People, album links, NAS duplicates, Edit and Draw, and hides the ads.',
+            text: 'Free: the 3 people with the most photos in People, 5 searches by what a photo shows each month, and Edit. One A$7.99 purchase on Android opens each person, Search with no limit, album links, the duplicates review, the trip list, the places map and Draw, and hides the ads.',
           },
           {
             name: 'Desktop sorter',
@@ -446,7 +446,7 @@ export const projects: Project[] = [
           },
           {
             name: 'Plus',
-            text: 'One purchase opens Astro, Moon, Long, Macro, Mini, Slo-mo and Lapse, and hides the ads.',
+            text: 'Each Plus mode gives 3 free shots: Astro, Moon, Long, Macro, Mini, Mini video, Slo-mo and Lapse. The camera shows how many are left, and a free shot stays in the gallery. One purchase opens each mode with no limit and hides the ads.',
           },
           { name: 'Ads', text: 'One banner under the gallery grid. A one time purchase removes it.' },
           {

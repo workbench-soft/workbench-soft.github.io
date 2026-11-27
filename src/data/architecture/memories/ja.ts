@@ -129,7 +129,7 @@ const arch: Arch = {
     'Ads and remove ads':
       '同意の後、Google Mobile Ads が AdMob のバナーと全画面広告を出します。expo-iap が Google Play で広告の削除を販売します。',
     'Memories Pro':
-      'expo-iap が Google Play と App Store で販売します。1 つのモジュールが、鍵の付いた機能を開く前に購入を確かめます。',
+      'expo-iap が Google Play と App Store で販売します。1 つのモジュールが、鍵の付いた機能を開く前に購入を確かめます。スマホのカウンターがその月の無料検索 5 回を保存し、人物の一覧は写真が最も多い 3 人を無料にします。',
     'Desktop sorter':
       'Rust のバックエンドを持つ Tauri アプリがパソコンのフォルダを整理します。スマホと同じフォルダ規則のクレートを使います。',
     Archive: '月の一覧はトリガーが保つ日ごとの写真数を読みます。タップするとその月のファイルを撮影時刻で引きます。',

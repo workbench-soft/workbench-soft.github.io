@@ -123,7 +123,7 @@ const arch: Arch = {
     'Ads and remove ads':
       '동의 후 Google Mobile Ads가 AdMob 배너와 전면 광고를 보여 줍니다. expo-iap가 Google Play에서 광고 제거를 판매합니다.',
     'Memories Pro':
-      'expo-iap가 Google Play와 App Store에서 판매합니다. 잠긴 기능을 열기 전에 모듈 하나가 구매를 확인합니다.',
+      'expo-iap가 Google Play와 App Store에서 판매합니다. 잠긴 기능을 열기 전에 모듈 하나가 구매를 확인합니다. 휴대폰의 카운터가 그 달의 무료 검색 5회를 저장하고, 인물 목록은 사진이 가장 많은 3명을 무료로 표시합니다.',
     'Desktop sorter':
       'Rust 백엔드를 갖춘 Tauri 앱이 컴퓨터의 폴더를 정리합니다. 휴대폰과 같은 폴더 규칙 크레이트를 씁니다.',
     Archive: '월 목록은 트리거가 유지하는 날짜별 사진 수를 읽습니다. 누르면 그 달의 파일을 촬영 시각으로 조회합니다.',

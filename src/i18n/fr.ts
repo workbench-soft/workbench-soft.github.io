@@ -277,7 +277,7 @@ const fr: Catalog = {
             ],
             [
               'Memories Pro',
-              'Un achat de A$7.99 sur Android ouvre les personnes, les liens d’album, les doublons du NAS, l’édition et le dessin, et retire les pubs.',
+              'Gratuit : les 3 personnes qui ont le plus de photos, 5 recherches par mois sur ce que montre une photo, et l’édition. Un achat de A$7.99 sur Android ouvre chaque personne, la recherche sans limite, les liens d’album, la revue des doublons, la liste des voyages, la carte des lieux et le dessin, et retire les pubs.',
             ],
             [
               'Tri sur ordinateur',
@@ -1595,7 +1595,7 @@ const fr: Catalog = {
             ],
             [
               'Plus',
-              'Un achat ouvre Astro, Lune, Pose longue, Macro, Mini, Ralenti et Accéléré, et masque les publicités.',
+              'Chaque mode Plus donne 3 prises gratuites : Astro, Lune, Pose longue, Macro, Mini, Mini vidéo, Ralenti et Accéléré. L’appareil affiche combien il en reste, et une prise gratuite reste dans la galerie. Un achat ouvre chaque mode sans limite et masque les publicités.',
             ],
             ['Publicités', 'Une bannière sous la grille de la galerie. Un achat unique la retire.'],
             [
