@@ -123,6 +123,8 @@ const arch: Arch = {
       'El módulo lee cada objetivo y su rango de la cámara, y un solo factor de zoom elige el objetivo. En la cámara frontal las caras detectadas ajustan el encuadre.',
     Focus:
       'El detector de caras de la cámara encuentra caras en cada fotograma. El módulo apunta el enfoque y la medición a la cara elegida o al punto tocado.',
+    'Focus peaking':
+      'Una capa sobre la vista previa lee un fotograma pequeño unas 8 veces por segundo. Un filtro de Sobel sobre el brillo marca los bordes nítidos en verde, y las fotos y los vídeos quedan limpios.',
     'White balance':
       'Camera2 fija los preajustes y las ganancias. Para los kelvin el módulo mide cada preajuste una vez por objetivo y sitúa el valor entre los 2 más cercanos.',
     Exposure:

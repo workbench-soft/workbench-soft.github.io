@@ -1500,6 +1500,10 @@ const es: Catalog = {
               'Enfoque',
               'AF-C sigue un sujeto en movimiento y las caras. Un toque enfoca un punto, y la retícula se arrastra.',
             ],
+            [
+              'Focus peaking',
+              'Unas líneas verdes finas marcan los bordes nítidos de la vista previa. Las fotos y los vídeos salen sin ellas.',
+            ],
             ['Balance de blancos', 'Auto, preajustes o kelvin en un dial.'],
             [
               'Exposición',

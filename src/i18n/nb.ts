@@ -1413,6 +1413,10 @@ const nb: Catalog = {
               'Fokus',
               'AF-C følger et motiv i bevegelse og ansikter. Et trykk fokuserer på et punkt, og fokusrammen kan dras.',
             ],
+            [
+              'Fokusmarkering',
+              'Tynne grønne linjer markerer de skarpe kantene i forhåndsvisningen. Bilder og videoer blir uten dem.',
+            ],
             ['Hvitbalanse', 'Auto, forvalg eller kelvin på et hjul.'],
             [
               'Eksponering',

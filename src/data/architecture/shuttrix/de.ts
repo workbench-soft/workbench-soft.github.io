@@ -117,6 +117,8 @@ const arch: Arch = {
       'Das Modul liest jedes Objektiv und seinen Bereich aus der Kamera, und ein Zoomfaktor wählt das Objektiv. Bei der Selfiekamera bestimmen die erkannten Gesichter den Ausschnitt.',
     Focus:
       'Der Gesichtsdetektor der Kamera findet Gesichter in jedem Bild. Das Modul richtet Fokus und Messung auf das Zielgesicht oder den angetippten Punkt.',
+    'Focus peaking':
+      'Eine Ebene über der Vorschau liest etwa 8 Mal pro Sekunde ein kleines Bild. Ein Sobel-Filter auf der Helligkeit markiert die starken Kanten grün, so bleiben Fotos und Videos sauber.',
     'White balance':
       'Camera2 setzt die Vorgaben und die Verstärkungen. Für Kelvin misst das Modul jede Vorgabe einmal pro Objektiv und setzt den Wert zwischen die 2 nächsten.',
     Exposure:

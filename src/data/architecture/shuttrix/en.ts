@@ -111,6 +111,8 @@ const arch: Arch = {
       'The module reads each lens and its range from the camera, and one zoom ratio picks the lens. On the selfie camera the faces it reports set the fit.',
     Focus:
       'The face detector of the camera finds faces on each frame. The module points focus and metering at the target face or the tapped spot.',
+    'Focus peaking':
+      'A layer over the preview reads a small frame about 8 times a second. A Sobel filter on its brightness marks the strong edges in green, so photos and videos stay clean.',
     'White balance':
       'Camera2 sets the presets and the gains. For kelvin the module measures each preset once per lens and places the value between the 2 nearest.',
     Exposure:
