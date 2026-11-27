@@ -130,7 +130,7 @@ const arch: Arch = {
       'React Native 레이어가 숨긴 상태 표시줄 자리에 시각을 그립니다. 타이머는 매분 돌고 탭은 아래 미리 보기로 전달됩니다.',
     Gallery:
       '갤러리는 앱이 MediaStore로 저장한 사진을 보여 주고 한 사진의 여러 버전을 묶습니다. Android 공유 메뉴가 고른 파일을 보냅니다.',
-    Plus: 'Google Play Billing이 일회성 상품을 팔고 앱은 갤러리를 처음 열 때 구매를 확인합니다. 잠긴 모드는 Google Play 가격이 적힌 Plus 화면을 엽니다.',
+    Plus: 'Google Play Billing이 일회성 상품을 팔고 앱은 갤러리를 처음 열 때 구매를 확인합니다. 휴대폰의 카운터가 Plus 모드마다 무료 3장을 저장합니다. 세 번째 사진이 저장되면 Google Play 가격이 적힌 Plus 화면이 열립니다.',
     Ads: 'AdMob이 갤러리 격자 아래에 배너 하나를 보이고 처음 열 때 동의를 묻습니다. 광고 제거나 Plus를 사면 같은 Google Play 확인이 배너를 숨깁니다.',
     'Edit photos':
       'Memories 저장소의 공유 편집기 패키지가 Expo DOM 컴포넌트 안에서 돌아갑니다. Kotlin 모듈이 결과를 원본 파일이나 새 JPEG로 메타데이터와 함께 저장합니다.',

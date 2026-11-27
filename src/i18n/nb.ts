@@ -261,7 +261,7 @@ const nb: Catalog = {
             ['Fjern annonser', 'Et engangskjøp på Google Play skjuler annonsene på hver mobil med samme Google-konto.'],
             [
               'Memories Pro',
-              'Ett kjøp til A$7.99 på Android åpner personer, albumlenker, NAS-duplikater, Rediger og Tegn, og fjerner reklamen.',
+              'Gratis: de 3 personene med flest bilder, 5 søk i måneden på det et bilde viser, og Rediger. Ett kjøp til A$7.99 på Android åpner hver person, søk uten grense, albumlenker, duplikatkontrollen, turlisten, stedskartet og Tegn, og fjerner reklamen.',
             ],
             [
               'Sortering på PC',
@@ -1453,7 +1453,7 @@ const nb: Catalog = {
             ],
             [
               'Plus',
-              'Ett kjøp åpner Astro, Måne, Lang lukker, Makro, Mini, Sakte film og Tidsforløp, og skjuler reklamen.',
+              'Hver Plus-modus gir 3 gratis bilder: Astro, Måne, Lang lukker, Makro, Mini, Minivideo, Sakte film og Tidsforløp. Kameraet viser hvor mange som er igjen, og et gratis bilde blir i galleriet. Ett kjøp åpner hver modus uten grense og skjuler reklamen.',
             ],
             ['Reklame', 'Ett banner under gallerirutenettet. Et engangskjøp fjerner det.'],
             [

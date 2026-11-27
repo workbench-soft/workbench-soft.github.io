@@ -273,7 +273,7 @@ const es: Catalog = {
             ],
             [
               'Memories Pro',
-              'Una compra de A$7.99 en Android abre las personas, los enlaces de álbum, los duplicados del NAS, Editar y Dibujar, y quita los anuncios.',
+              'Gratis: las 3 personas con más fotos, 5 búsquedas al mes por lo que muestra una foto, y Editar. Una compra de A$7.99 en Android abre cada persona, la búsqueda sin límite, los enlaces de álbum, la revisión de duplicados, la lista de viajes, el mapa de lugares y Dibujar, y quita los anuncios.',
             ],
             [
               'Ordenador de escritorio',
@@ -1543,7 +1543,7 @@ const es: Catalog = {
             ],
             [
               'Plus',
-              'Una compra abre Astro, Luna, Larga exposición, Macro, Mini, Cámara lenta y Timelapse, y oculta los anuncios.',
+              'Cada modo Plus da 3 tomas gratis: Astro, Luna, Larga exposición, Macro, Mini, Mini vídeo, Cámara lenta y Timelapse. La cámara muestra cuántas quedan, y una toma gratis se queda en la galería. Una compra abre cada modo sin límite y oculta los anuncios.',
             ],
             ['Anuncios', 'Un banner bajo la cuadrícula de la galería. Una compra única lo quita.'],
             [

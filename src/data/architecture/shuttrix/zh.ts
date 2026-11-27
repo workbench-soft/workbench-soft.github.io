@@ -110,7 +110,7 @@ const arch: Arch = {
     Clock: 'React Native 图层在隐藏的状态栏留下的位置绘制时间。计时器每分钟触发一次，点按会穿过时钟落到预览上。',
     Gallery:
       '相册列出应用通过 MediaStore 保存的照片，并把同一张照片的各个版本归在一起。Android 分享菜单发送选中的文件。',
-    Plus: 'Google Play Billing 出售这个一次性商品，应用在第一次打开相册时核对购买。锁定的模式会打开 Plus 面板，显示来自 Google Play 的价格。',
+    Plus: 'Google Play Billing 出售这个一次性商品，应用在第一次打开相册时核对购买。手机上的计数器保存每个 Plus 模式的 3 次免费拍摄。第三次拍摄保存后，会打开 Plus 面板，显示来自 Google Play 的价格。',
     Ads: 'AdMob 在相册网格下方显示一条横幅，并在第一次打开时征求同意。购买去广告或 Plus 后，同一项 Google Play 核对会隐藏它。',
     'Edit photos':
       'Memories 仓库中的共享编辑器包运行在 Expo DOM 组件里。Kotlin 模块把结果覆盖原文件或另存为新的 JPEG，并保留元数据。',

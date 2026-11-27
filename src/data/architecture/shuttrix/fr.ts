@@ -148,7 +148,7 @@ const arch: Arch = {
       'Une couche React Native dessine l’heure dans la bande laissée par la barre d’état cachée. Un minuteur part chaque minute, et les touchers passent jusqu’à l’aperçu.',
     Gallery:
       'La galerie liste les prises que l’app a enregistrées via MediaStore et regroupe les versions d’une photo. Le menu de partage d’Android envoie les fichiers choisis.',
-    Plus: 'Google Play Billing vend l’achat unique, et l’app le vérifie à la première ouverture de la galerie. Un mode verrouillé ouvre la fiche Plus avec le prix de Google Play.',
+    Plus: 'Google Play Billing vend l’achat unique, et l’app le vérifie à la première ouverture de la galerie. Un compteur sur le téléphone garde les 3 prises gratuites de chaque mode Plus. Une fois la troisième prise enregistrée, la fiche Plus s’ouvre avec le prix de Google Play.',
     Ads: 'AdMob affiche une bannière sous la grille de la galerie et demande le consentement à la première ouverture. La même vérification Google Play la masque après Retirer les pubs ou Plus.',
     'Edit photos':
       'Le paquet d’éditeur partagé du dépôt de Memories tourne dans un composant Expo DOM. Le module Kotlin enregistre le résultat sur le fichier ou en nouveau JPEG, avec ses métadonnées.',

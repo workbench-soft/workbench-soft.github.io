@@ -145,7 +145,7 @@ const arch: Arch = {
       'Eine Ebene in React Native zeichnet die Uhrzeit in den Streifen der versteckten Statusleiste. Ein Timer läuft jede Minute, und Berührungen gehen zur Vorschau durch.',
     Gallery:
       'Die Galerie listet die Aufnahmen, die die App über MediaStore gespeichert hat, und gruppiert die Versionen eines Fotos. Das Teilen-Menü von Android verschickt die gewählten Dateien.',
-    Plus: 'Google Play Billing verkauft das Einmalprodukt, und die App prüft es beim ersten Öffnen der Galerie. Ein gesperrter Modus öffnet das Plus-Fenster mit dem Preis aus Google Play.',
+    Plus: 'Google Play Billing verkauft das Einmalprodukt, und die App prüft es beim ersten Öffnen der Galerie. Ein Zähler auf dem Telefon merkt sich die 3 Gratisaufnahmen jedes Plus-Modus. Ist die dritte Aufnahme gespeichert, öffnet sich das Plus-Fenster mit dem Preis aus Google Play.',
     Ads: 'AdMob zeigt ein Banner unter dem Galerieraster und fragt beim ersten Öffnen nach Einwilligung. Dieselbe Prüfung bei Google Play blendet es nach Werbung entfernen oder Plus aus.',
     'Edit photos':
       'Das gemeinsame Editor-Paket aus dem Repo von Memories läuft in einer Expo-DOM-Komponente. Das Kotlin-Modul speichert das Ergebnis über die Datei oder als neues JPEG, mit Metadaten.',

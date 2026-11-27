@@ -127,7 +127,7 @@ const arch: Arch = {
     'Ads and remove ads':
       'Google Mobile Ads viser AdMob-bannerne og fullskjermannonsen etter samtykke. expo-iap selger Fjern annonser gjennom Google Play.',
     'Memories Pro':
-      'expo-iap selger produktet gjennom Google Play og App Store. Én modul sjekker kjøpet før hver låst funksjon åpner.',
+      'expo-iap selger produktet gjennom Google Play og App Store. Én modul sjekker kjøpet før hver låst funksjon åpner. En teller på telefonen lagrer de 5 gratis søkene i kalendermåneden, og personlisten merker de 3 personene med flest bilder som gratis.',
     'Desktop sorter':
       'En Tauri-app med Rust-backend sorterer en mappe på datamaskinen. Den bruker samme crate for mapperegler som telefonen.',
     Archive:
