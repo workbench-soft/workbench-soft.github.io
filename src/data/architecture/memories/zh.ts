@@ -106,7 +106,8 @@ const arch: Arch = {
     Theme: '一个调色板含浅色和深色两套颜色。页面通过一个钩子读取，跟随手机或保存的选择。',
     'Ads and remove ads':
       '用户同意后，Google Mobile Ads 显示 AdMob 横幅和全屏广告。expo-iap 通过 Google Play 出售去广告。',
-    'Memories Pro': 'expo-iap 通过 Google Play 和 App Store 出售这项购买。每个锁定功能打开前，由一个模块检查购买。手机上的计数器保存当月的 5 次免费搜索，人物列表把照片最多的 3 个人物标为免费。',
+    'Memories Pro':
+      'expo-iap 通过 Google Play 和 App Store 出售这项购买。每个锁定功能打开前，由一个模块检查购买。手机上的计数器保存当月的 5 次免费搜索，人物列表把照片最多的 3 个人物标为免费。',
     'Desktop sorter': '一款带 Rust 后端的 Tauri 应用整理电脑上的文件夹。它链接与手机相同的文件夹规则 crate。',
     Archive: '月份列表读取由触发器维护的每天照片数。点一下就按拍摄时间查询这个月的文件。',
     'Trip list and places map':
