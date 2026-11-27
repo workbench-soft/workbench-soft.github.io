@@ -63,6 +63,8 @@ const arch: Arch = {
       'game/ laster lekefilen etter id og tegner hver del. Hver lek har sin egen rute, så en delt lenke åpner den.',
     'Premium games':
       'Workeren spør account.workbench-soft.com med Google ID-tokenet og leser så premium/<id>.json fra R2.',
+    'Free game of the week':
+      'pro/free-game.ts velger leken med freePick fra @workbench-soft/taste, etter uken på enheten. Workeren har samme regel i Rust og leverer den leken uten token.',
     Ads: 'ads/ viser AdMob-bannere i appen og AdSense på nettstedet, og skjuler dem når planen er aktiv.',
     'Settings and the Workbench plan':
       'pro/ holder betalingsmuren, kjøpet i Google Play og useEntitled(). Nettstedet og iOS logger inn for å åpne en plan kjøpt på telefonen.',

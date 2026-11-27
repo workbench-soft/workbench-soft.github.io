@@ -1985,6 +1985,10 @@ const es: Catalog = {
               'Juegos premium',
               'Una tarjeta premium muestra un candado. La suscripción Workbench abre el juego completo.',
             ],
+            [
+              'Juego gratis de la semana',
+              'Cada semana un juego premium se abre sin iniciar sesión y sin suscripción. Su tarjeta dice «Gratis esta semana» y su página indica el día en que se abre el siguiente.',
+            ],
             ['Anuncios', 'Banners de AdMob en la app y AdSense en el sitio. La suscripción los oculta.'],
             [
               'Ajustes y el plan Workbench',

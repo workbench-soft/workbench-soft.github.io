@@ -63,6 +63,8 @@ const arch: Arch = {
       'game/ lädt die Spieldatei über ihre ID und zeichnet jeden Abschnitt. Jedes Spiel hat eine eigene Route, also öffnet ein geteilter Link es.',
     'Premium games':
       'Der Worker fragt account.workbench-soft.com mit dem Google-ID-Token und liest dann premium/<id>.json aus R2.',
+    'Free game of the week':
+      'pro/free-game.ts wählt das Spiel mit freePick aus @workbench-soft/taste, nach der Woche auf dem Gerät. Der Worker hält dieselbe Regel in Rust und liefert dieses Spiel ohne Token.',
     Ads: 'ads/ zeigt AdMob-Banner in der App und AdSense auf der Website und blendet sie bei aktivem Plan aus.',
     'Settings and the Workbench plan':
       'pro/ hält die Paywall, den Kauf über Google Play und useEntitled(). Website und iOS melden sich an, um einen am Telefon gekauften Plan zu öffnen.',

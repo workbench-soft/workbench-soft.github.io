@@ -2003,6 +2003,10 @@ const de: Catalog = {
               'Jedes Spiel in Abschnitten: Alter, Beschreibung, Ziel, Material, Schritte, leichter, schwerer, Varianten und Tipps. Jedes Spiel hat einen eigenen Link. Die Spieltexte sind russisch, die Oberfläche gibt es in 9 Sprachen.',
             ],
             ['Premium-Spiele', 'Eine Premium-Karte zeigt ein Schloss. Das Workbench-Abo öffnet das ganze Spiel.'],
+            [
+              'Gratisspiel der Woche',
+              'Jede Woche ist ein Premium-Spiel ohne Anmeldung und ohne Abo offen. Auf der Karte steht „Diese Woche gratis“, und die Seite nennt den Tag, an dem das nächste Spiel öffnet.',
+            ],
             ['Werbung', 'AdMob-Banner in der App und AdSense auf der Website. Das Abo blendet sie aus.'],
             [
               'Einstellungen und der Workbench-Plan',

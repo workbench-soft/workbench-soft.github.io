@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **NeuroHop gives a premium game free each week** the project lists Free game of the week: 1 premium game opens each week with no sign in, in the 9 languages.
 - **SpotTheCam says what Pro gives free** the project lists SpotTheCam Pro with its free taste: 3 trips with auto start, the stats of the last trip and Ava or Andrew each week, in the 9 languages.
 - **Tripforge says what Pro gives free** the Tripforge Pro line names the free taste: 3 searches a month with the wide shift and 1 saved trip, in the 9 languages.
 - **ServoHop on the App Store** the project lists App Store: the iPhone and iPad app ships there in Australia only, in the 9 languages.

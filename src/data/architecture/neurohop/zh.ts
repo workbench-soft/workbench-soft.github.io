@@ -58,6 +58,8 @@ const arch: Arch = {
       'catalog/ 在设备上筛选 index.json：同组勾选扩大列表，不同组之间缩小列表。没有图片的卡片使用其第一个脑功能区的颜色。',
     'Game page': 'game/ 按 id 加载游戏文件并绘制每个部分。每个游戏都有自己的路由，所以分享的链接能直接打开它。',
     'Premium games': 'Worker 带 Google ID 令牌询问 account.workbench-soft.com，然后从 R2 读取 premium/<id>.json。',
+    'Free game of the week':
+      'pro/free-game.ts 用 @workbench-soft/taste 的 freePick 按设备上的周选出游戏。Worker 用 Rust 保存同一规则，无需令牌即可提供该游戏。',
     Ads: 'ads/ 在应用中显示 AdMob 横幅，在网站上显示 AdSense，方案有效时隐藏它们。',
     'Settings and the Workbench plan':
       'pro/ 包含付费墙、Google Play 购买和 useEntitled()。网站和 iOS 登录后即可打开在手机上购买的方案。',

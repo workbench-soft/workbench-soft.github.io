@@ -1868,6 +1868,10 @@ const nb: Catalog = {
               'Hver lek i deler: alder, beskrivelse, mål, utstyr, trinn, lettere, vanskeligere, varianter og tips. Hver lek har sin egen lenke. Lekene er skrevet på russisk, skjermene finnes på 9 språk.',
             ],
             ['Premium-leker', 'Et premium-kort viser en lås. Workbench-abonnementet åpner hele leken.'],
+            [
+              'Ukens gratislek',
+              'Hver uke er én premiumlek åpen uten innlogging og abonnement. Kortet sier «Gratis denne uken», og siden viser dagen den neste åpnes.',
+            ],
             ['Annonser', 'AdMob-bannere i appen og AdSense på nettstedet. Abonnementet skjuler dem.'],
             [
               'Innstillinger og Workbench-planen',
