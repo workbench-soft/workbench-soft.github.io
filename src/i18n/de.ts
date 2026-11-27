@@ -1977,7 +1977,7 @@ const de: Catalog = {
             ],
             [
               'Property Trends Pro',
-              'Ein Kauf für A$5.99 unter Android schaltet Mieten und die ganze Preisgeschichte frei und entfernt die Werbung.',
+              'Ein Kauf für A$5.99 unter Android schaltet Mieten und die ganze Preisgeschichte frei und entfernt die Werbung. Die kostenlose App öffnet beides für 3 Vororte am Tag.',
             ],
             [
               'iPhone-App',

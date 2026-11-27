@@ -2014,7 +2014,7 @@ const fr: Catalog = {
             ],
             [
               'Property Trends Pro',
-              'Un achat de 5,99 A$ sur Android ouvre les loyers et tout l’historique des prix, et retire les publicités.',
+              'Un achat de 5,99 A$ sur Android ouvre les loyers et tout l’historique des prix, et retire les publicités. L’app gratuite ouvre les deux pour 3 banlieues par jour.',
             ],
             [
               'App iPhone',

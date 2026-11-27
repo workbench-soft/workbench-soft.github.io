@@ -1956,7 +1956,7 @@ const es: Catalog = {
             ],
             [
               'Property Trends Pro',
-              'Una compra de A$5.99 en Android desbloquea los alquileres y todo el historial de precios, y quita los anuncios.',
+              'Una compra de A$5.99 en Android desbloquea los alquileres y todo el historial de precios, y quita los anuncios. La app gratuita abre ambos para 3 barrios al día.',
             ],
             [
               'App para iPhone',

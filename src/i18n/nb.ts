@@ -1842,7 +1842,7 @@ const nb: Catalog = {
             ],
             [
               'Property Trends Pro',
-              'Ett kjøp til A$5.99 på Android låser opp leie og hele prishistorikken, og fjerner reklamen.',
+              'Ett kjøp til A$5.99 på Android låser opp leie og hele prishistorikken, og fjerner reklamen. Gratisappen åpner begge for 3 forsteder om dagen.',
             ],
             [
               'iPhone-app',
