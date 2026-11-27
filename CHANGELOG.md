@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Lumiere says what Pro gives free** the Lumiere Pro line names the free taste: voice and Hey Lumi for the first 7 days, in the 9 languages.
 - **NeuroHop gives a premium game free each week** the project lists Free game of the week: 1 premium game opens each week with no sign in, in the 9 languages.
 - **SpotTheCam says what Pro gives free** the project lists SpotTheCam Pro with its free taste: 3 trips with auto start, the stats of the last trip and Ava or Andrew each week, in the 9 languages.
 - **Tripforge says what Pro gives free** the Tripforge Pro line names the free taste: 3 searches a month with the wide shift and 1 saved trip, in the 9 languages.

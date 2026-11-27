@@ -1949,7 +1949,10 @@ const fr: Catalog = {
               'Musique en ligne',
               'Dans l’APK de GitHub, Hey Lumi joue un titre, un artiste, un album ou un style absent des dossiers, trouvé dans le catalogue MusicBrainz.',
             ],
-            ['Lumiere Pro', 'Un seul achat débloque les commandes vocales et Hey Lumi, et retire la pub.'],
+            [
+              'Lumiere Pro',
+              'Un seul achat débloque les commandes vocales et Hey Lumi, et retire la pub. La voix est gratuite les 7 premiers jours.',
+            ],
             [
               'App pour LG webOS',
               'Une app webOS pour télé LG affiche clés USB et dossiers NAS en arbre, trouve le NAS sur le réseau pour ne saisir que l’identifiant, et lit avec des boutons à l’écran, le choix des sous-titres et de la piste audio, et un titre de film dit à la Magic Remote. Au premier lancement, vous choisissez les dossiers de films, séries, dessins animés, musique et livres audio, et l’arbre les range par genre. Lumiere tient l’index à jour tout seul, et un titre comme Paddington démarre aussitôt.',
