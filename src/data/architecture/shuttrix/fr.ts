@@ -120,6 +120,8 @@ const arch: Arch = {
       'Le module lit chaque objectif et sa plage auprès de la caméra, et un seul facteur de zoom choisit l’objectif. Pour le selfie, les visages détectés règlent le cadrage.',
     Focus:
       'Le détecteur de visages de la caméra trouve les visages sur chaque image. Le module pointe la mise au point et la mesure sur le visage visé ou le point touché.',
+    'Focus peaking':
+      'Un calque au-dessus de l’aperçu lit une petite image environ 8 fois par seconde. Un filtre de Sobel sur la luminosité marque les bords nets en vert, et les photos et vidéos restent propres.',
     'White balance':
       'Camera2 règle les préréglages et les gains. Pour les kelvins, le module mesure chaque préréglage une fois par objectif et place la valeur entre les 2 plus proches.',
     Exposure:

@@ -1555,6 +1555,10 @@ const fr: Catalog = {
               'Mise au point',
               "L'AF-C suit un sujet en mouvement et les visages. Un appui vise un point, et le réticule se déplace au doigt.",
             ],
+            [
+              'Focus peaking',
+              'De fines lignes vertes marquent les bords nets de l’aperçu. Les photos et les vidéos restent sans elles.',
+            ],
             ['Balance des blancs', 'Auto, préréglages ou kelvins sur une molette.'],
             [
               'Exposition',

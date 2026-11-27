@@ -403,6 +403,10 @@ export const projects: Project[] = [
             name: 'Focus',
             text: 'AF-C follows a moving subject and faces. A tap focuses on a point, and a drag of the reticle moves it.',
           },
+          {
+            name: 'Focus peaking',
+            text: 'Thin green lines mark the sharp edges of the preview. Photos and videos come out without them.',
+          },
           { name: 'White balance', text: 'Auto, presets or kelvin on a dial.' },
           {
             name: 'Exposure',

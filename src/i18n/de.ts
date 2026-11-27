@@ -1530,6 +1530,10 @@ const de: Catalog = {
               'Fokus',
               'AF-C folgt bewegten Motiven und Gesichtern. Ein Tipp fokussiert einen Punkt, und das Fokusfeld lässt sich ziehen.',
             ],
+            [
+              'Fokus-Peaking',
+              'Dünne grüne Linien markieren die scharfen Kanten in der Vorschau. Fotos und Videos bleiben ohne sie.',
+            ],
             ['Weißabgleich', 'Auto, Voreinstellungen oder Kelvin auf einem Rad.'],
             [
               'Belichtung',

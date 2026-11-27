@@ -114,6 +114,8 @@ const arch: Arch = {
       'Modulen leser hvert objektiv og området fra kameraet, og ett zoomforhold velger objektivet. På selfiekameraet styrer ansiktene som blir funnet utsnittet.',
     Focus:
       'Kameraets egen ansiktsdetektor finner ansikter i hvert bilde. Modulen retter fokus og lysmåling mot målansiktet eller punktet du trykket på.',
+    'Focus peaking':
+      'Et lag over forhåndsvisningen leser et lite bilde omtrent 8 ganger i sekundet. Et Sobel-filter på lysstyrken markerer de skarpe kantene i grønt, så bilder og videoer blir rene.',
     'White balance':
       'Camera2 setter forhåndsvalgene og forsterkningene. For kelvin måler modulen hvert forhåndsvalg én gang per objektiv og plasserer verdien mellom de 2 nærmeste.',
     Exposure:
