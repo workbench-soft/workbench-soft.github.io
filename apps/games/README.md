@@ -45,7 +45,9 @@ mise run app:android
 - **iOS** `mise run app:ios` does the same for `ios/`. Building it needs Xcode on a Mac or a cloud Mac.
 - **Icons** `pnpm icons` draws the PNG icons and the share image from SVG.
 - **Ads** a release build of the Android app uses the AdMob app `ca-app-pub-8598703460892343~1509665312` and the banner `ca-app-pub-8598703460892343/4481644716`. Debug builds, iOS and the developer's phone use Google's test IDs.
-- **Google Play** the app is `com.workbenchsoft.games` on closed testing. The upload key sits in `%USERPROFILE%\.android-keys\games`, and Bitwarden holds `GAMES_ANDROID_KEYSTORE_BASE64` and `GAMES_ANDROID_KEYSTORE_PASSWORD`. Each upload takes a higher code: `./gradlew bundleRelease -PversionCode=2` with the `android.injected.signing.*` flags.
+- **Google Play** the app is `com.workbenchsoft.games` on production. The `Games Play bundle` workflow builds the signed bundle at 19:00 Sydney when `apps/games` changed, and sends it to the `PLAY_TRACK` variable's track with What's New in 9 languages. Its version code is `2 + run number`. A run by hand from the Actions tab does the same at once.
+- **Play secrets** the repo holds `GAMES_ANDROID_KEYSTORE_BASE64`, `GAMES_ANDROID_KEYSTORE_PASSWORD` and `PLAY_SERVICE_ACCOUNT_JSON`, copied from Bitwarden by `rotate-secrets.ps1 -FromVault`. The upload key, alias `upload`, sits in `%USERPROFILE%\.android-keys\games`.
+- **Play listing** `store/play-listing.json` holds the title and the descriptions in the 9 store languages. A change there goes to Play through the Play Developer API.
 - **Consent** the AdMob message "Workbench Games GDPR" asks for consent in the EEA, the UK and Switzerland, in 8 languages. In the apps, the Ad privacy choices button on the privacy page changes the answer, where Google asks for one.
 - **Remove ads** the `remove_ads` one-time product of Play Console, bought through `@capgo/native-purchases`.
 - **App Links** `well-known/assetlinks.json` holds the Play app signing certificates, and the build copies it to `/.well-known/` of the site.
