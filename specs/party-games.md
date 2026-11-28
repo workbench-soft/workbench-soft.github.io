@@ -440,3 +440,30 @@ score, since the browser keeps a secret token.
   `src/game/purchase.ts`, a chip in the lobby, the flag in `storage.ts`.
 - **Release** build 2 goes to closed testing, then `remove_ads` at A$2.99.
 - **Steps** this entry, then the code with its test, then the docs.
+
+### 2026-11-28 Play production by itself, listing in 9 languages
+
+- **Why** each Workbench Soft app ships its Play bundle each night through
+  the Store release job of the workspace, `specs/store-autorelease.md`.
+  Workbench Games was the last one uploaded by hand, with build 2 on
+  production and an English listing.
+- **Job** `.github/workflows/games-play.yml` builds a signed `bundleRelease`
+  at 19:00 Sydney, on the cron lines `0 8 * * *` and `0 9 * * *`, and on a
+  run by hand. Each cron line has its own concurrency group.
+  `.github/scripts/play-due.sh` from keeppad cancels the line that isn't
+  19:00 and skips a day with no change under `apps/games`.
+- **Checks first** the job builds the commit of the last finished run of the
+  `Games` workflow on `main`, and stops when that run failed.
+- **Version code** `2 + github.run_number`, so the first run gives 3.
+- **Upload** `workbench-soft/ci/actions/play-upload@main` sends it to
+  `vars.PLAY_TRACK`, `production`, with What's New in 9 languages.
+- **Runner** `ubuntu-latest`, since the repo is public.
+- **Secrets** `GAMES_ANDROID_KEYSTORE_BASE64`,
+  `GAMES_ANDROID_KEYSTORE_PASSWORD` and `PLAY_SERVICE_ACCOUNT_JSON` in
+  `.github/secret-rotation.json`, copied from Bitwarden with
+  `rotate-secrets.ps1 -FromVault`. The key alias is `upload`.
+- **Listing** `apps/games/store/play-listing.json` holds the title, the short
+  and the full description in `en-US`, `ru-RU`, `de-DE`, `fr-FR`, `es-ES`,
+  `zh-CN`, `ja-JP`, `ko-KR` and `no-NO`, with the game names of the app
+  catalogs. The Play Developer API sets them in one edit.
+- **Left** a launch check of the bundle on an emulator before the upload.

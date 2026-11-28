@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **Workbench Games ships to Google Play each night** a new `Games Play bundle` workflow builds the signed bundle at 19:00 Sydney when the games changed and sends it to production with What's New in 9 languages. The Play listing now reads in 9 languages too.
+
 - **Shuttrix shows what's in focus** the project lists Focus peaking: thin green lines mark the sharp edges of the preview, and photos and videos come out without them, in the 9 languages.
 - **Memories and Shuttrix say what Pro and Plus give free** Memories Pro names its free taste: the 3 people with the most photos, 5 searches a month by what a photo shows, and Edit. Shuttrix Plus names 3 free shots in each Plus mode, in the 9 languages.
 - **Lumiere says what Pro gives free** the Lumiere Pro line names the free taste: voice and Hey Lumi for the first 7 days, in the 9 languages.

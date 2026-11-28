@@ -1,0 +1,158 @@
+name: Games Play bundle
+
+# Builds the signed Play bundle of the games app and sends it to Google Play with What's New in 9 languages.
+# It runs at 19:00 in Sydney when apps/games changed since the last nightly bundle, and by hand.
+# The repo is public, so each job runs on a GitHub runner: a self-hosted one would run code from any fork.
+on:
+  workflow_dispatch:
+  # Cron runs in UTC, so one line is 19:00 in summer time and one in winter time. play-due.sh cancels the other.
+  schedule:
+    - cron: '0 8 * * *'
+    - cron: '0 9 * * *'
+
+# Each cron line has a group of its own: on 2026-11-27 GitHub started both lines late in keeppad, and the 0 9 run
+# cancelled the waiting 0 8 bundle. An upload runs to the end, so a newer run waits instead of cancelling it.
+concurrency:
+  group: ${{ github.workflow }}-${{ format('bundle {0}', github.event.schedule || 'by hand') }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  RELEASE_WORKFLOW: games-play.yml
+  AAB: apps/games/android/app/build/outputs/bundle/release/app-release.aab
+
+jobs:
+  # Picks the commit of the newest Games run on main, and stops when that run hasn't passed.
+  # A push that skips Games, such as a site change, leaves apps/ as the last Games run checked it.
+  checks:
+    if: github.ref == 'refs/heads/main' && (github.event_name != 'schedule' || vars.PLAY_TRACK != '')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      actions: read
+      contents: read
+    outputs:
+      sha: ${{ steps.checks.outputs.sha }}
+    steps:
+      - id: checks
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          run=$(gh run list -R "$GITHUB_REPOSITORY" --workflow games.yml --branch main --limit 20 \
+            --json headSha,status,conclusion,event,url \
+            --jq '[.[] | select(.event == "push" or .event == "workflow_dispatch")][0]')
+          [ -n "$run" ] || { echo "::error::No Games run on main yet."; exit 1; }
+          state=$(echo "$run" | jq -r '"\(.status) \(.conclusion)"')
+          if [ "$state" != "completed success" ]; then
+            # A failed night counts as no bundle, so the next evening builds again.
+            echo "::error::The newest Games run on main reads $state: $(echo "$run" | jq -r .url)"
+            exit 1
+          fi
+          echo "sha=$(echo "$run" | jq -r .headSha)" >> "$GITHUB_OUTPUT"
+
+  # A day with no change to the app since the last nightly bundle builds nothing.
+  due:
+    needs: checks
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    # play-due.sh reads the nightly runs, and cancels the cron line that isn't 19:00 in Sydney.
+    permissions:
+      actions: write
+      contents: read
+    outputs:
+      due: ${{ steps.due.outputs.due }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: ${{ needs.checks.outputs.sha }}
+          fetch-depth: 0
+          filter: blob:none
+          persist-credentials: false
+      - id: due
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SHA: ${{ needs.checks.outputs.sha }}
+          SCHEDULE: ${{ github.event.schedule }}
+        run: sh .github/scripts/play-due.sh apps/games ':!*.md'
+
+  bundle:
+    needs: [checks, due]
+    # The plain success() also reads the due job above, which a run by hand skips.
+    if: ${{ !cancelled() && needs.checks.result == 'success' && (github.event_name != 'schedule' || needs.due.outputs.due == 'true') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    outputs:
+      code: ${{ steps.bundle.outputs.code }}
+    defaults:
+      run:
+        working-directory: apps/games
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: ${{ needs.checks.outputs.sha }}
+          persist-credentials: false
+      - uses: jdx/mise-action@d5574b52816a478f9d4e6529a3f6ff17a8a36785 # v5.2.8
+        with:
+          working_directory: apps/games
+      # Capacitor 8 builds with Java 21.
+      - uses: actions/setup-java@d1374f8ac74474200d16ef8ecee22c7ae7a51880 # v6.3.0
+        with:
+          distribution: temurin
+          java-version: 21
+      - uses: gradle/actions/setup-gradle@8da46b539cd8fe6ab27ca75128919a18d757604c # v6.4.1
+      - name: Build the pages and copy them into the Android app
+        run: |
+          mise x -- pnpm install --frozen-lockfile
+          mise run build
+          mise x -- pnpm exec cap sync android
+      - name: Build the signed Play bundle
+        id: bundle
+        env:
+          KEYSTORE_BASE64: ${{ secrets.GAMES_ANDROID_KEYSTORE_BASE64 }}
+          KEYSTORE_PASSWORD: ${{ secrets.GAMES_ANDROID_KEYSTORE_PASSWORD }}
+        run: |
+          test -n "$KEYSTORE_BASE64" || { echo "::error::Set the GAMES_ANDROID_KEYSTORE_BASE64 secret."; exit 1; }
+          test -n "$KEYSTORE_PASSWORD" || { echo "::error::Set the GAMES_ANDROID_KEYSTORE_PASSWORD secret."; exit 1; }
+          echo "$KEYSTORE_BASE64" | base64 -d > "$RUNNER_TEMP/upload.jks"
+          # Build 2 was the last upload by hand, so the first run of this workflow gives 3.
+          code=$((2 + GITHUB_RUN_NUMBER))
+          cd android
+          ./gradlew --no-daemon bundleRelease -PversionCode="$code" \
+            -Pandroid.injected.signing.store.file="$RUNNER_TEMP/upload.jks" \
+            -Pandroid.injected.signing.store.password="$KEYSTORE_PASSWORD" \
+            -Pandroid.injected.signing.key.alias=upload \
+            -Pandroid.injected.signing.key.password="$KEYSTORE_PASSWORD"
+          rm "$RUNNER_TEMP/upload.jks"
+          echo "code=$code" >> "$GITHUB_OUTPUT"
+      # The upload job holds the Play key, so it gets the bundle alone and runs no code of the dependencies.
+      - uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          key: games-aab-${{ github.run_id }}
+          path: ${{ env.AAB }}
+
+  upload:
+    needs: bundle
+    if: ${{ !cancelled() && needs.bundle.result == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          key: games-aab-${{ github.run_id }}
+          path: ${{ env.AAB }}
+          fail-on-cache-miss: true
+      - name: Check the Play key
+        env:
+          PLAY_SERVICE_ACCOUNT_JSON: ${{ secrets.PLAY_SERVICE_ACCOUNT_JSON }}
+        run: test -n "$PLAY_SERVICE_ACCOUNT_JSON" || { echo "::error::Set the PLAY_SERVICE_ACCOUNT_JSON secret."; exit 1; }
+      - name: Send the bundle to Google Play
+        uses: workbench-soft/ci/actions/play-upload@main
+        with:
+          service_account_json: ${{ secrets.PLAY_SERVICE_ACCOUNT_JSON }}
+          package: com.workbenchsoft.games
+          release_files: ${{ env.AAB }}
+          release_name: Build ${{ needs.bundle.outputs.code }}
+          track: ${{ vars.PLAY_TRACK || 'internal' }}
